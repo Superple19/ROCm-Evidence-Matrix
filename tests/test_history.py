@@ -32,15 +32,17 @@ class HistoryTests(unittest.TestCase):
         rules = [{"torch_series": "2.14", "torchaudio_series": "2.11", "torchvision_series": "0.29"}]
 
         candidates = build_history_observations(
-            {"id": "nightly", "channel": "nightly"}, ["gfx1201"], packages, rules
+            {"id": "nightly", "channel": "nightly"}, ["gfx1201"], packages, rules, "therock"
         )
 
         self.assertEqual(len(candidates), 1)
+        self.assertEqual(candidates[0]["distribution_family"], "therock")
         self.assertEqual(candidates[0]["python_tags"], ["cp312"])
 
     def test_retains_candidate_when_artifact_disappears(self):
         observation = {
             "id": "candidate",
+            "distribution_family": "therock",
             "channel": "stable",
             "rocm_version": "7.14.0",
             "torch_version": "2.12.0+rocm7.14.0",
@@ -56,8 +58,60 @@ class HistoryTests(unittest.TestCase):
         self.assertFalse(second["candidates"][0]["artifact_available"])
         self.assertEqual(second["candidates"][0]["gfx_targets"], ["gfx1201"])
 
+    def test_computes_lifecycle_within_distribution_and_channel(self):
+        base = {
+            "distribution_family": "therock",
+            "channel": "nightly",
+            "torch_version": "2.14.0",
+            "torchvision_version": "0.29.0",
+            "torchaudio_version": "2.11.0",
+            "python_tags": ["cp312"],
+            "gfx_targets": ["gfx1201"],
+            "source_id": "packages-nightly",
+        }
+        older = {**base, "id": "older", "rocm_version": "10.0.0"}
+        newer = {**base, "id": "newer", "rocm_version": "10.1.0"}
+
+        history = merge_history(None, [older, newer], {"packages-nightly": {}}, "2026-08-07T00:00:00Z", {"packages-nightly"})
+        by_version = {candidate["rocm_version"]: candidate for candidate in history["candidates"]}
+
+        self.assertEqual(by_version["10.0.0"]["lifecycle"], "historical")
+        self.assertEqual(by_version["10.1.0"]["lifecycle"], "current")
+
+    def test_migrates_existing_therock_history(self):
+        existing = {
+            "schema_version": 1,
+            "sources": {},
+            "candidates": [
+                {
+                    "id": "nightly:10.0.0:2.14.0:0.29.0:2.11.0:cp312",
+                    "channel": "nightly",
+                    "rocm_version": "10.0.0",
+                    "torch_version": "2.14.0",
+                    "torchvision_version": "0.29.0",
+                    "torchaudio_version": "2.11.0",
+                    "python_tags": ["cp312"],
+                    "gfx_targets": ["gfx1201"],
+                    "available_gfx_targets": ["gfx1201"],
+                    "artifact_available": True,
+                    "source_id": "packages-nightly",
+                    "first_observed_at": "2026-08-07T00:00:00Z",
+                    "last_observed_at": "2026-08-07T00:00:00Z",
+                }
+            ],
+        }
+
+        history = merge_history(existing, [], {}, "2026-08-08T00:00:00Z", set())
+
+        self.assertEqual(history["schema_version"], 2)
+        self.assertEqual(history["candidates"][0]["distribution_family"], "therock")
+        self.assertEqual(history["candidates"][0]["lifecycle"], "current")
+        self.assertTrue(history["candidates"][0]["id"].startswith("therock:"))
+
     def test_resolves_and_formats_install_command(self):
         candidate = {
+            "distribution_family": "therock",
+            "lifecycle": "current",
             "channel": "stable",
             "rocm_version": "7.14.0",
             "torch_version": "2.12.0+rocm7.14.0",

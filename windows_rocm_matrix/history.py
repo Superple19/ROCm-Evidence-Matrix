@@ -32,7 +32,9 @@ def compatible_python_tags(package_versions):
     return sorted(set.intersection(*tag_sets))
 
 
-def build_history_observations(source, gfx_targets, packages, framework_compatibility):
+def build_history_observations(source, gfx_targets, packages, framework_compatibility, distribution_family):
+    if distribution_family not in {"therock", "legacy"}:
+        raise ValueError(f"Unsupported distribution family: {distribution_family}")
     compatibility = {item["torch_series"]: item for item in framework_compatibility}
     package_versions = {name: versions_by_name(artifacts) for name, artifacts in packages.items()}
     torch_versions = package_versions.get("torch", {})
@@ -83,10 +85,11 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
     observations = []
     for key, targets in grouped.items():
         rocm_version, torch_version, vision_version, audio_version, python_tags = key
-        candidate_id = ":".join((source["channel"], rocm_version, torch_version, vision_version, audio_version, ",".join(python_tags)))
+        candidate_id = ":".join((distribution_family, source["channel"], rocm_version, torch_version, vision_version, audio_version, ",".join(python_tags)))
         observations.append(
             {
                 "id": candidate_id,
+                "distribution_family": distribution_family,
                 "channel": source["channel"],
                 "rocm_version": rocm_version,
                 "torch_version": torch_version,
@@ -102,6 +105,7 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
 
 def candidate_sort_key(candidate):
     return (
+        candidate["distribution_family"],
         candidate["channel"],
         version_key(candidate["rocm_version"]),
         version_key(candidate["torch_version"]),
@@ -110,8 +114,51 @@ def candidate_sort_key(candidate):
     )
 
 
+def candidate_id(candidate):
+    return ":".join(
+        (
+            candidate["distribution_family"],
+            candidate["channel"],
+            candidate["rocm_version"],
+            candidate["torch_version"],
+            candidate["torchvision_version"],
+            candidate["torchaudio_version"],
+            ",".join(candidate["python_tags"]),
+        )
+    )
+
+
+def migrate_history(existing):
+    if not existing:
+        return {"sources": {}, "candidates": []}
+    schema_version = existing.get("schema_version")
+    if schema_version == 2:
+        return existing
+    if schema_version != 1:
+        raise ValueError("Unsupported history schema")
+    candidates = []
+    for item in existing.get("candidates", []):
+        candidate = {**item, "distribution_family": "therock"}
+        candidate["id"] = candidate_id(candidate)
+        candidates.append(candidate)
+    return {**existing, "schema_version": 2, "candidates": candidates}
+
+
+def classify_lifecycle(candidates):
+    latest = {}
+    for candidate in candidates:
+        key = (candidate["distribution_family"], candidate["channel"])
+        version = version_key(candidate["rocm_version"])
+        if key not in latest or version > latest[key]:
+            latest[key] = version
+    for candidate in candidates:
+        key = (candidate["distribution_family"], candidate["channel"])
+        candidate["lifecycle"] = "current" if version_key(candidate["rocm_version"]) == latest[key] else "historical"
+
+
 def merge_history(existing, observations, sources, observed_at, observed_source_ids):
-    candidates = {item["id"]: dict(item) for item in (existing or {}).get("candidates", [])}
+    existing = migrate_history(existing)
+    candidates = {item["id"]: dict(item) for item in existing["candidates"]}
     for candidate in candidates.values():
         if candidate["source_id"] in observed_source_ids:
             candidate["artifact_available"] = False
@@ -135,10 +182,11 @@ def merge_history(existing, observations, sources, observed_at, observed_source_
         current["last_observed_at"] = observed_at
         current["artifact_available"] = True
 
-    merged_sources = dict((existing or {}).get("sources", {}))
+    classify_lifecycle(candidates.values())
+    merged_sources = dict(existing.get("sources", {}))
     merged_sources.update(sources)
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "generated_at": observed_at,
         "sources": merged_sources,
         "candidates": sorted(candidates.values(), key=candidate_sort_key),
@@ -148,7 +196,7 @@ def merge_history(existing, observations, sources, observed_at, observed_source_
 def render_history(history):
     grouped = {}
     for candidate in history["candidates"]:
-        key = (candidate["channel"], candidate["rocm_version"])
+        key = (candidate["distribution_family"], candidate["channel"], candidate["lifecycle"], candidate["rocm_version"])
         group = grouped.setdefault(key, {"sets": 0, "known": set(), "available": set(), "python": set()})
         group["sets"] += 1
         group["known"].update(candidate["gfx_targets"])
@@ -162,12 +210,12 @@ def render_history(history):
         "",
         "Each row summarizes install candidates derived from official framework compatibility rules and matching Windows package build identifiers. Candidates are artifact evidence, not resolver or runtime verification.",
         "",
-        "| Channel | ROCm build | Framework sets | Known GFX targets | Currently available GFX targets | Python tags |",
-        "| --- | --- | --- | --- | --- | --- |",
+        "| Distribution | Channel | Lifecycle | ROCm build | Framework sets | Known GFX targets | Currently available GFX targets | Python tags |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
-    for (channel, rocm_version), group in sorted(grouped.items(), key=lambda item: (item[0][0], version_key(item[0][1]))):
+    for (family, channel, lifecycle, rocm_version), group in sorted(grouped.items(), key=lambda item: (item[0][0], item[0][1], version_key(item[0][3]))):
         lines.append(
-            f"| {channel} | `{rocm_version}` | {group['sets']} | {len(group['known'])} | "
+            f"| {family} | {channel} | {lifecycle} | `{rocm_version}` | {group['sets']} | {len(group['known'])} | "
             f"{len(group['available'])} | {', '.join(f'`{tag}`' for tag in sorted(group['python']))} |"
         )
     return "\n".join(lines).rstrip() + "\n"

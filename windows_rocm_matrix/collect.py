@@ -93,7 +93,7 @@ def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_co
         "gfx_targets": target_rows,
         "packages": packages,
     }
-    history = build_history_observations(source, gfx_targets, all_packages, framework_compatibility) if framework_compatibility else []
+    history = build_history_observations(source, gfx_targets, all_packages, framework_compatibility, "therock") if framework_compatibility else []
     return snapshot, history
 
 
@@ -266,7 +266,7 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
         package_snapshots = [read_json(path) for path in sorted(output_dir.glob("*.json"))]
         existing_history = read_json(args.history_output)
         package_sources = {
-            f"packages-{snapshot['source']['id']}": {**snapshot["source"], "observed_at": snapshot["last_observed_at"]}
+            f"packages-{snapshot['source']['id']}": {**snapshot["source"], "distribution_family": "therock", "observed_at": snapshot["last_observed_at"]}
             for snapshot in package_snapshots
         }
         history = merge_history(

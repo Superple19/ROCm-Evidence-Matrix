@@ -71,6 +71,8 @@ Package snapshots are written to `data/snapshots/`. Documentation evidence is wr
 
 Each collection replaces the current snapshots and merges every observed compatible package set into the history catalog. A candidate remains in the catalog if its upstream artifact later disappears, while its current availability is updated separately.
 
+Historical candidates retain an immutable `distribution_family` (`therock` or `legacy`). The generated history view computes `lifecycle` as `current` for the newest known ROCm build within each distribution family and channel, and `historical` for older builds. Lifecycle is derived state and is not part of the source observation identity.
+
 Limit collection to one or more channels or GPU targets when developing a parser:
 
 ```powershell

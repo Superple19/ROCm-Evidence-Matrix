@@ -1,4 +1,4 @@
-from .simple_index import package_names_for_target
+from .simple_index import package_names_for_target, version_key
 
 
 def validate_snapshot(snapshot):
@@ -99,12 +99,13 @@ def validate_compatibility_matrix(matrix):
 
 
 def validate_history(history):
-    if history.get("schema_version") != 1:
+    if history.get("schema_version") != 2:
         raise ValueError("Unsupported history schema")
     if not history.get("generated_at", "").endswith("Z"):
         raise ValueError("History generation time must be UTC")
     source_ids = set(history.get("sources", {}))
     candidate_ids = set()
+    latest = {}
     for candidate in history.get("candidates", []):
         if candidate["id"] in candidate_ids:
             raise ValueError(f"Duplicate history candidate: {candidate['id']}")
@@ -113,12 +114,25 @@ def validate_history(history):
             raise ValueError(f"Unknown history source: {candidate['source_id']}")
         if candidate["channel"] not in {"stable", "nightly", "staging"}:
             raise ValueError(f"Unsupported history channel: {candidate['channel']}")
+        if candidate.get("distribution_family") not in {"therock", "legacy"}:
+            raise ValueError(f"Unsupported distribution family: {candidate['id']}")
+        if candidate.get("lifecycle") not in {"current", "historical"}:
+            raise ValueError(f"Unsupported lifecycle: {candidate['id']}")
         if not set(candidate["available_gfx_targets"]).issubset(candidate["gfx_targets"]):
             raise ValueError(f"Available targets are not known for {candidate['id']}")
         if candidate["artifact_available"] != bool(candidate["available_gfx_targets"]):
             raise ValueError(f"Incorrect artifact availability for {candidate['id']}")
         if not candidate["python_tags"]:
             raise ValueError(f"Missing Python tags for {candidate['id']}")
+        key = (candidate["distribution_family"], candidate["channel"])
+        version = version_key(candidate["rocm_version"])
+        if key not in latest or version > latest[key]:
+            latest[key] = version
+    for candidate in history.get("candidates", []):
+        key = (candidate["distribution_family"], candidate["channel"])
+        expected = "current" if version_key(candidate["rocm_version"]) == latest[key] else "historical"
+        if candidate["lifecycle"] != expected:
+            raise ValueError(f"Incorrect lifecycle for {candidate['id']}")
 
 
 def validate_resolver_verifications(document):

@@ -6,7 +6,7 @@
   "additionalProperties": false,
   "required": ["schema_version", "generated_at", "sources", "candidates"],
   "properties": {
-    "schema_version": {"const": 1},
+    "schema_version": {"const": 2},
     "generated_at": {"type": "string", "format": "date-time"},
     "sources": {"type": "object"},
     "candidates": {
@@ -14,9 +14,11 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "channel", "rocm_version", "torch_version", "torchvision_version", "torchaudio_version", "python_tags", "gfx_targets", "available_gfx_targets", "artifact_available", "source_id", "first_observed_at", "last_observed_at"],
+        "required": ["id", "distribution_family", "lifecycle", "channel", "rocm_version", "torch_version", "torchvision_version", "torchaudio_version", "python_tags", "gfx_targets", "available_gfx_targets", "artifact_available", "source_id", "first_observed_at", "last_observed_at"],
         "properties": {
           "id": {"type": "string"},
+          "distribution_family": {"enum": ["therock", "legacy"]},
+          "lifecycle": {"enum": ["current", "historical"]},
           "channel": {"enum": ["stable", "nightly", "staging"]},
           "rocm_version": {"type": "string"},
           "torch_version": {"type": "string"},
