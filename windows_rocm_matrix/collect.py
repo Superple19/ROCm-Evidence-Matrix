@@ -207,6 +207,8 @@ def parse_args(argv=None):
     build.add_argument("--history-docs-output", default="docs/generated/history.md")
     build.add_argument("--legacy-docs-output", default="docs/generated/legacy-windows.md")
     build.add_argument("--version-history-docs-output", default="docs/generated/version-history.md")
+    runtime = commands.add_parser("runtime", help="Record ROCm runtime evidence from the current Python environment.")
+    runtime.add_argument("--output", default="data/verifications/runtime.json")
     return parser.parse_args(argv)
 
 
@@ -481,6 +483,10 @@ def build_outputs(args):
 
 def main(argv=None):
     args = parse_args(argv)
+    if args.command == "runtime":
+        from .runtime import main as runtime_main
+        runtime_main(["--output", args.output])
+        return
     if args.command == "build":
         build_outputs(args)
         return

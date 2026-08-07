@@ -159,6 +159,22 @@ def validate_resolver_verifications(document):
             raise ValueError(f"Failed resolver verification has a successful exit code: {record['id']}")
 
 
+def validate_runtime_verifications(document):
+    if document.get("schema_version") != 1:
+        raise ValueError("Unsupported runtime verification schema")
+    if not document.get("generated_at", "").endswith("Z"):
+        raise ValueError("Runtime verification generation time must be UTC")
+    ids = set()
+    for record in document.get("verifications", []):
+        if record["id"] in ids:
+            raise ValueError(f"Duplicate runtime verification: {record['id']}")
+        ids.add(record["id"])
+        if record["result"] not in {"passed", "failed"} or not record.get("observed_at", "").endswith("Z"):
+            raise ValueError(f"Invalid runtime verification: {record['id']}")
+        if record["result"] == "passed" and (not record["rocm_available"] or record["device_count"] < 1):
+            raise ValueError(f"Passed runtime verification lacks a device: {record['id']}")
+
+
 def validate_legacy_windows(document):
     if document.get("schema_version") != 1:
         raise ValueError("Unsupported legacy Windows schema")
