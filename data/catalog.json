@@ -13,14 +13,32 @@
       "schema_version": 2
     },
     {
+      "id": "package_snapshots:nightly-linux",
+      "path": "data/snapshots/nightly-linux.json",
+      "schema": "schemas/package-snapshot.schema.json",
+      "schema_version": 1
+    },
+    {
       "id": "package_snapshots:nightly",
       "path": "data/snapshots/nightly.json",
       "schema": "schemas/package-snapshot.schema.json",
       "schema_version": 1
     },
     {
+      "id": "package_snapshots:stable-linux",
+      "path": "data/snapshots/stable-linux.json",
+      "schema": "schemas/package-snapshot.schema.json",
+      "schema_version": 1
+    },
+    {
       "id": "package_snapshots:stable",
       "path": "data/snapshots/stable.json",
+      "schema": "schemas/package-snapshot.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "package_snapshots:staging-linux",
+      "path": "data/snapshots/staging-linux.json",
       "schema": "schemas/package-snapshot.schema.json",
       "schema_version": 1
     },
@@ -34,6 +52,12 @@
       "id": "documentation",
       "path": "data/documentation.json",
       "schema": "schemas/documentation-snapshot.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "legacy_linux",
+      "path": "data/legacy-linux.json",
+      "schema": "schemas/legacy-linux.schema.json",
       "schema_version": 1
     },
     {
@@ -60,9 +84,10 @@
       "therock"
     ],
     "platforms": [
+      "linux",
       "windows"
     ]
   },
-  "generated_at": "2026-08-07T17:33:53Z",
+  "generated_at": "2026-08-07T17:51:42Z",
   "schema_version": 1
 }

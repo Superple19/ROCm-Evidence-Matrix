@@ -173,5 +173,14 @@
         "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
       }
     ]
-  }
+  },
+  "legacy_linux_sources": [
+    {
+      "id": "legacy-linux-manylinux-artifacts",
+      "distribution_family": "legacy",
+      "platform": "linux",
+      "channel": "stable",
+      "url": "https://repo.radeon.com/rocm/manylinux/"
+    }
+  ]
 }

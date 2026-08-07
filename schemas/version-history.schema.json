@@ -14,11 +14,25 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "distribution_family", "platform", "version", "channel", "release_date", "lifecycle", "windows_support", "windows_package_available", "windows_ci_verified", "documentation_status", "documentation_url", "source_ids", "gpu_support_observations", "framework_support_observations", "package_artifacts", "first_observed_at", "last_observed_at"],
+        "required": ["id", "distribution_family", "platform", "platform_evidence", "version", "channel", "release_date", "lifecycle", "windows_support", "windows_package_available", "windows_ci_verified", "documentation_status", "documentation_url", "source_ids", "gpu_support_observations", "framework_support_observations", "package_artifacts", "first_observed_at", "last_observed_at"],
         "properties": {
           "id": {"type": "string"},
           "distribution_family": {"enum": ["therock", "legacy"]},
           "platform": {"enum": ["windows", "linux", "macos", "unknown"]},
+          "platform_evidence": {
+            "type": "object",
+            "properties": {
+              "windows": {
+                "type": "object",
+                "required": ["support", "package_available", "ci_verified"],
+                "properties": {
+                  "support": {"enum": ["supported", "unsupported", "unknown"]},
+                  "package_available": {"type": "boolean"},
+                  "ci_verified": {"type": ["boolean", "null"]}
+                }
+              }
+            }
+          },
           "version": {"type": "string"},
           "channel": {"enum": ["stable", "nightly", "staging", "unknown"]},
           "release_date": {"type": ["string", "null"], "format": "date"},

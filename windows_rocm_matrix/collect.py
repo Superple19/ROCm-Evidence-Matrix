@@ -11,12 +11,13 @@ from .catalog import write_catalog
 from .history import build_history_observations, merge_history, write_history_document
 from .integration import build_compatibility_matrix
 from .legacy import build_legacy_candidates, collect_legacy_windows_sources, render_legacy_windows
+from .legacy_linux import collect_legacy_linux_sources, render_legacy_linux
 from .matrix_render import write_compatibility_document
 from .render import write_rendered_document
 from .simple_index import discover_gfx_targets, discover_packages, latest_artifacts, package_names_for_target, parse_package_artifacts
 from .source_cache import CachedSourceReader, SourceCache
 from .source_adapter import collection_status, run_source_adapter, utc_now
-from .validation import validate_ci_coverage, validate_ci_evidence, validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_history, validate_legacy_windows, validate_snapshot, validate_version_history
+from .validation import validate_ci_coverage, validate_ci_evidence, validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_history, validate_legacy_linux, validate_legacy_windows, validate_snapshot, validate_version_history
 from .version_history import collect_legacy_version_history, collect_therock_version_history, render_version_history
 
 
@@ -159,6 +160,7 @@ def parse_args(argv=None):
     add_config_path(legacy)
     add_cache_paths(legacy)
     legacy.add_argument("--legacy-output", default="data/legacy-windows.json")
+    legacy.add_argument("--legacy-linux-output", default="data/legacy-linux.json")
     legacy.add_argument("--version-history-output", default="data/version-history.json")
     legacy.add_argument("--status-output", default="data/status/legacy.json")
     legacy.add_argument("--timeout", type=int, default=20)
@@ -183,6 +185,7 @@ def parse_args(argv=None):
     add_config_path(normalize_legacy)
     add_cache_paths(normalize_legacy)
     normalize_legacy.add_argument("--legacy-output", default="data/legacy-windows.json")
+    normalize_legacy.add_argument("--legacy-linux-output", default="data/legacy-linux.json")
     normalize_legacy.add_argument("--version-history-output", default="data/version-history.json")
 
     integrate = commands.add_parser("integrate", help="Build the integrated matrix from normalized evidence without network access.")
@@ -200,6 +203,8 @@ def parse_args(argv=None):
     render.add_argument("--matrix-docs-output", default="docs/generated/compatibility-matrix.md")
     render.add_argument("--history-docs-output", default="docs/generated/history.md")
     render.add_argument("--legacy-docs-output", default="docs/generated/legacy-windows.md")
+    render.add_argument("--legacy-linux-output", default="data/legacy-linux.json")
+    render.add_argument("--legacy-linux-docs-output", default="docs/generated/legacy-linux.md")
     render.add_argument("--version-history-docs-output", default="docs/generated/version-history.md")
 
     build = commands.add_parser("build", help="Build integrated JSON and Markdown from collected data without network access.")
@@ -213,6 +218,8 @@ def parse_args(argv=None):
     build.add_argument("--matrix-docs-output", default="docs/generated/compatibility-matrix.md")
     build.add_argument("--history-docs-output", default="docs/generated/history.md")
     build.add_argument("--legacy-docs-output", default="docs/generated/legacy-windows.md")
+    build.add_argument("--legacy-linux-output", default="data/legacy-linux.json")
+    build.add_argument("--legacy-linux-docs-output", default="docs/generated/legacy-linux.md")
     build.add_argument("--version-history-docs-output", default="docs/generated/version-history.md")
     catalog = commands.add_parser("catalog", help="Write the machine-readable artifact catalog without network access.")
     catalog.add_argument("--root", default=".")
@@ -417,6 +424,22 @@ def normalize_legacy_sources(args, config, source_reader, observed_at, status_ou
     for result in results:
         if result["status"] == "failed":
             print(f"Failed {result['source_id']}: {result['error']}")
+    linux_sources = config.get("legacy_linux_sources", [])
+    if linux_sources:
+        legacy_linux, linux_results = collect_legacy_linux_sources(
+            linux_sources,
+            source_reader,
+            existing=read_json(args.legacy_linux_output),
+            observed_at=observed_at,
+        )
+        results.extend(linux_results)
+        if any(result["status"] == "passed" for result in linux_results):
+            validate_legacy_linux(legacy_linux)
+            write_json(legacy_linux, args.legacy_linux_output)
+            print(f"Wrote {args.legacy_linux_output}")
+        for result in linux_results:
+            if result["status"] == "failed":
+                print(f"Failed {result['source_id']}: {result['error']}")
     version_config = config.get("version_history_sources", {}).get("legacy")
     if version_config:
         version_history_path = getattr(args, "version_history_output", "data/version-history.json")
@@ -501,10 +524,18 @@ def render_outputs(args):
     legacy_path = Path(args.legacy_docs_output)
     legacy_path.parent.mkdir(parents=True, exist_ok=True)
     legacy_path.write_text(render_legacy_windows(legacy), encoding="utf-8", newline="\n")
+    legacy_linux = read_json(args.legacy_linux_output)
+    if legacy_linux is not None:
+        legacy_linux_path = Path(args.legacy_linux_docs_output)
+        legacy_linux_path.parent.mkdir(parents=True, exist_ok=True)
+        legacy_linux_path.write_text(render_legacy_linux(legacy_linux), encoding="utf-8", newline="\n")
     version_history_path = Path(args.version_history_docs_output)
     version_history_path.parent.mkdir(parents=True, exist_ok=True)
     version_history_path.write_text(render_version_history(version_history), encoding="utf-8", newline="\n")
-    for path in (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output, args.version_history_docs_output):
+    paths = (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output, args.version_history_docs_output)
+    if legacy_linux is not None:
+        paths += (args.legacy_linux_docs_output,)
+    for path in paths:
         print(f"Wrote {path}")
 
 

@@ -28,6 +28,7 @@ Current generated views:
 - [Package availability](docs/generated/package-availability.md)
 - [Historical package candidates](docs/generated/history.md)
 - [Legacy platform ROCm support](docs/generated/legacy-windows.md)
+- [Legacy Linux ROCm artifacts](docs/generated/legacy-linux.md)
 
 ## Development environment
 

@@ -232,6 +232,22 @@ def validate_legacy_windows(document):
                 raise ValueError(f"Artifact outside legacy release index: {artifact['url']}")
 
 
+def validate_legacy_linux(document):
+    if document.get("schema_version") != 1 or document.get("distribution_family") != "legacy" or document.get("platform") != "linux":
+        raise ValueError("Unsupported legacy Linux schema")
+    if not document.get("generated_at", "").endswith("Z"):
+        raise ValueError("Legacy Linux generation time must be UTC")
+    source_ids = set(document.get("sources", {}))
+    for release in document.get("artifact_releases", []):
+        if release.get("source_id") not in source_ids:
+            raise ValueError(f"Unknown legacy Linux source: {release.get('source_id')}")
+        if not release.get("url", "").startswith("https://"):
+            raise ValueError(f"Invalid legacy Linux release URL: {release.get('release_id')}")
+        for artifact in release.get("artifacts", []):
+            if not artifact.get("url", "").startswith(release["url"]):
+                raise ValueError(f"Artifact outside legacy Linux release index: {artifact.get('url')}")
+
+
 def validate_collection_status(document):
     if document.get("schema_version") != 1:
         raise ValueError("Unsupported collection status schema")
@@ -313,6 +329,11 @@ def validate_version_history(document):
             raise ValueError(f"Invalid version history family: {release['id']}")
         if release.get("platform") not in {"windows", "linux", "macos", "unknown"}:
             raise ValueError(f"Invalid version history platform: {release['id']}")
+        evidence = release.get("platform_evidence", {}).get("windows", {})
+        if evidence.get("support", release["windows_support"]) != release["windows_support"]:
+            raise ValueError(f"Windows support evidence mismatch: {release['id']}")
+        if evidence.get("package_available", release["windows_package_available"]) != release["windows_package_available"]:
+            raise ValueError(f"Windows package evidence mismatch: {release['id']}")
         if release.get("channel") not in {"stable", "nightly", "staging", "unknown"}:
             raise ValueError(f"Invalid release channel: {release['id']}")
         if release["windows_support"] not in {"supported", "unsupported", "unknown"}:

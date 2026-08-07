@@ -4,7 +4,7 @@
 
 This matrix keeps official release documentation, TheRock development status, and package availability as separate evidence. A package being available does not prove runtime or hardware compatibility.
 
-Generated at: `2026-08-07T15:36:41Z`
+Generated at: `2026-08-07T17:44:06Z`
 
 ## Released Windows support
 

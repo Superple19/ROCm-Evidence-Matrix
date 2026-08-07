@@ -4,6 +4,11 @@
       "adapter": "github_actions",
       "error": "HTTP Error 403: rate limit exceeded",
       "observed_at": "2026-08-07T15:57:17Z"
+    },
+    {
+      "adapter": "github_actions",
+      "error": "HTTP Error 403: rate limit exceeded",
+      "observed_at": "2026-08-07T17:44:06Z"
     }
   ],
   "executions": [
@@ -40490,6 +40495,16 @@
           "run_status": "in_progress",
           "started_at": "2026-08-07 14:43:36",
           "state": "in_progress"
+        },
+        {
+          "completed_at": "2026-08-07 16:19:45",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 14:43:36",
+          "state": "success"
         }
       ],
       "platform": "windows",
@@ -40599,6 +40614,988 @@
       "workflow_name": "TheRock HUD"
     },
     {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92927671685",
+      "job_id": 92927671685,
+      "job_name": "Windows::release / Validate Artifact Structure / Validate artifact structure",
+      "observations": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "queued",
+          "started_at": "2026-08-07 16:19:46",
+          "state": "queued"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92927671685",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92927671748",
+      "job_id": 92927671748,
+      "job_name": "Windows::release / Build Python Packages / Build Python | multi-arch-release",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:50:46",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:38:38",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [],
+      "test_kind": "framework",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92927671748",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92927673377",
+      "job_id": 92927673377,
+      "job_name": "Windows::release / Test gfx90a / Test Sanity Check",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:19:46",
+          "conclusion": "skipped",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "skipped",
+          "started_at": "2026-08-07 16:19:46",
+          "state": "skipped"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx90a"
+      ],
+      "test_kind": "sanity",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92927673377",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92927673386",
+      "job_id": 92927673386,
+      "job_name": "Windows::release / Test gfx120X-all / Test Sanity Check",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:19:46",
+          "conclusion": "skipped",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "skipped",
+          "started_at": "2026-08-07 16:19:46",
+          "state": "skipped"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx120X-all"
+      ],
+      "test_kind": "sanity",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92927673386",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92927673638",
+      "job_id": 92927673638,
+      "job_name": "Windows::release / Test gfx1151 / Test Sanity Check",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:19:46",
+          "conclusion": "skipped",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "skipped",
+          "started_at": "2026-08-07 16:19:46",
+          "state": "skipped"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx1151"
+      ],
+      "test_kind": "sanity",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92927673638",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92927817629",
+      "job_id": 92927817629,
+      "job_name": "Windows::release / Test gfx110X-all / Test Sanity Check / Test sanity (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:21:27",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:20:54",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "sanity",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92927817629",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143356",
+      "job_id": 92928143356,
+      "job_name": "Windows::release / Test gfx110X-all / Test miopenprovider / Test miopenprovider (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:22:46",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143356",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143426",
+      "job_id": 92928143426,
+      "job_name": "Windows::release / Test gfx110X-all / Test hipdnn-integration-tests / Test hipdnn-integration-tests (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:22:58",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143426",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143504",
+      "job_id": 92928143504,
+      "job_name": "Windows::release / Test gfx110X-all / Test rocalution / Test rocalution (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:22:33",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143504",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143522",
+      "job_id": 92928143522,
+      "job_name": "Windows::release / Test gfx110X-all / Test hipblasltprovider / Test hipblasltprovider (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:22:33",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143522",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143613",
+      "job_id": 92928143613,
+      "job_name": "Windows::release / Test gfx110X-all / Test hipsparse / Test hipsparse (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:23:27",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143613",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143646",
+      "job_id": 92928143646,
+      "job_name": "Windows::release / Test gfx110X-all / Test hipsolver / Test hipsolver (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:22:55",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143646",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143700",
+      "job_id": 92928143700,
+      "job_name": "Windows::release / Test gfx110X-all / Test hip-tests (PAL) / Test hip-tests (PAL) (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:23:42",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143700",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143709",
+      "job_id": 92928143709,
+      "job_name": "Windows::release / Test gfx110X-all / Test libhipcxx_amdclang / Test libhipcxx_amdclang (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:31:21",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143709",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143725",
+      "job_id": 92928143725,
+      "job_name": "Windows::release / Test gfx110X-all / Test hipdnn_install / Test hipdnn_install (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:22:57",
+          "conclusion": "failure",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "failure",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "failure"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143725",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143826",
+      "job_id": 92928143826,
+      "job_name": "Windows::release / Test gfx110X-all / Test hipthreads / Test hipthreads (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:28:06",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143826",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143900",
+      "job_id": 92928143900,
+      "job_name": "Windows::release / Test gfx110X-all / Test rocblas / Test rocblas (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:22:22",
+          "conclusion": "failure",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "failure",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "failure"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143900",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143914",
+      "job_id": 92928143914,
+      "job_name": "Windows::release / Test gfx110X-all / Test rocwmma / Test rocwmma (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:26:33",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:23:23",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143914",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143916",
+      "job_id": 92928143916,
+      "job_name": "Windows::release / Test gfx110X-all / Test origami / Test origami (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:22:33",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143916",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143923",
+      "job_id": 92928143923,
+      "job_name": "Windows::release / Test gfx110X-all / Test hiprand / Test hiprand (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:22:32",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143923",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143929",
+      "job_id": 92928143929,
+      "job_name": "Windows::release / Test gfx110X-all / Test hipdnn / Test hipdnn (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:22:28",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143929",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143965",
+      "job_id": 92928143965,
+      "job_name": "Windows::release / Test gfx110X-all / Test hipblaslt / Test hipblaslt (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:22:55",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143965",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143967",
+      "job_id": 92928143967,
+      "job_name": "Windows::release / Test gfx110X-all / Test rocthrust / Test rocthrust (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:23:08",
+          "conclusion": "failure",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "failure",
+          "started_at": "2026-08-07 16:22:33",
+          "state": "failure"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143967",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143998",
+      "job_id": 92928143998,
+      "job_name": "Windows::release / Test gfx110X-all / Test hipkernelprovider / Test hipkernelprovider (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:22:24",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928143998",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144013",
+      "job_id": 92928144013,
+      "job_name": "Windows::release / Test gfx110X-all / Test rocprim / Test rocprim (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:31:32",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:22:32",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144013",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144042",
+      "job_id": 92928144042,
+      "job_name": "Windows::release / Test gfx110X-all / Test hipfft / Test hipfft (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:29:46",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144042",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144044",
+      "job_id": 92928144044,
+      "job_name": "Windows::release / Test gfx110X-all / Test hipdnn-samples / Test hipdnn-samples (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:22:37",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144044",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144094",
+      "job_id": 92928144094,
+      "job_name": "Windows::release / Test gfx110X-all / Test hiptensor / Test hiptensor (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:23:16",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:46",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144094",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144131",
+      "job_id": 92928144131,
+      "job_name": "Windows::release / Test gfx110X-all / Test hipcub / Test hipcub (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:24:21",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:23:23",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144131",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144151",
+      "job_id": 92928144151,
+      "job_name": "Windows::release / Test gfx110X-all / Test miopen / Test miopen (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:26:35",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:23:25",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144151",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144159",
+      "job_id": 92928144159,
+      "job_name": "Windows::release / Test gfx110X-all / Test hipthreads_examples / Test hipthreads_examples (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:24:14",
+          "conclusion": "failure",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "failure",
+          "started_at": "2026-08-07 16:23:23",
+          "state": "failure"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144159",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144257",
+      "job_id": 92928144257,
+      "job_name": "Windows::release / Test gfx110X-all / Test rocsparse / Test rocsparse (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:23:06",
+          "conclusion": "failure",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "failure",
+          "started_at": "2026-08-07 16:22:32",
+          "state": "failure"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144257",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144301",
+      "job_id": 92928144301,
+      "job_name": "Windows::release / Test gfx110X-all / Test hipblas / Test hipblas (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:24:03",
+          "conclusion": "failure",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "failure",
+          "started_at": "2026-08-07 16:23:23",
+          "state": "failure"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144301",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "f7e08942caadc814fd4ddd04c31c1416b8ca4488",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144303",
+      "job_id": 92928144303,
+      "job_name": "Windows::release / Test gfx110X-all / Test rocrand / Test rocrand (shard 1/1) (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:25:40",
+          "conclusion": "success",
+          "created_at": "2026-08-07 14:04:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:23:24",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31185793129,
+      "source": "therock_hud",
+      "targets": [
+        "gfx110X-all"
+      ],
+      "test_kind": "unknown",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31185793129/job/92928144303",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
       "head_sha": "79ba43154127ad8c3edcb28df2e7ed9eae4fe30e",
       "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31192288353/job/92911960614",
       "job_id": 92911960614,
@@ -40640,6 +41637,16 @@
           "run_status": "queued",
           "started_at": "2026-08-07 15:52:42",
           "state": "queued"
+        },
+        {
+          "completed_at": "2026-08-07 16:21:11",
+          "conclusion": "success",
+          "created_at": "2026-08-07 15:22:35",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:15:39",
+          "state": "success"
         }
       ],
       "platform": "windows",
@@ -40667,6 +41674,16 @@
           "run_status": "queued",
           "started_at": "2026-08-07 15:52:42",
           "state": "queued"
+        },
+        {
+          "completed_at": "2026-08-07 16:55:41",
+          "conclusion": "success",
+          "created_at": "2026-08-07 15:22:35",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:17:38",
+          "state": "success"
         }
       ],
       "platform": "windows",
@@ -40694,6 +41711,16 @@
           "run_status": "queued",
           "started_at": "2026-08-07 15:52:42",
           "state": "queued"
+        },
+        {
+          "completed_at": "2026-08-07 17:22:52",
+          "conclusion": "success",
+          "created_at": "2026-08-07 15:22:35",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:17:54",
+          "state": "success"
         }
       ],
       "platform": "windows",
@@ -40723,6 +41750,16 @@
           "run_status": "queued",
           "started_at": "2026-08-07 15:52:42",
           "state": "queued"
+        },
+        {
+          "completed_at": "2026-08-07 17:12:37",
+          "conclusion": "success",
+          "created_at": "2026-08-07 15:22:35",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:16:01",
+          "state": "success"
         }
       ],
       "platform": "windows",
@@ -40757,6 +41794,16 @@
           "run_status": "queued",
           "started_at": "2026-08-07 15:52:42",
           "state": "queued"
+        },
+        {
+          "completed_at": "2026-08-07 16:55:15",
+          "conclusion": "success",
+          "created_at": "2026-08-07 15:22:35",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:17:12",
+          "state": "success"
         }
       ],
       "platform": "windows",
@@ -40786,6 +41833,16 @@
           "run_status": "queued",
           "started_at": "2026-08-07 15:52:42",
           "state": "queued"
+        },
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-07 15:22:35",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "in_progress",
+          "started_at": "2026-08-07 16:16:34",
+          "state": "in_progress"
         }
       ],
       "platform": "windows",
@@ -40801,8 +41858,470 @@
       "url": "https://github.com/ROCm/TheRock/actions/runs/31192288353/job/92920290900",
       "workflow_id": null,
       "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "54ea3dfeaa60600f2e822e4b1c4b676551e566e7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31195539427/job/92922955219",
+      "job_id": 92922955219,
+      "job_name": "Windows::release / Build Multi-Arch Stages / compiler-runtime / Stage - Compiler Runtime",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 16:35:33",
+          "conclusion": "success",
+          "created_at": "2026-08-07 16:01:30",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 16:21:55",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31195539427,
+      "source": "therock_hud",
+      "targets": [],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31195539427/job/92922955219",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "54ea3dfeaa60600f2e822e4b1c4b676551e566e7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31195539427/job/92931875501",
+      "job_id": 92931875501,
+      "job_name": "Windows::release / Build Multi-Arch Stages / debug-tools / Stage - Debug Tools",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 17:11:17",
+          "conclusion": "success",
+          "created_at": "2026-08-07 16:01:30",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 17:03:42",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31195539427,
+      "source": "therock_hud",
+      "targets": [],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31195539427/job/92931875501",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "54ea3dfeaa60600f2e822e4b1c4b676551e566e7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31195539427/job/92931875681",
+      "job_id": 92931875681,
+      "job_name": "Windows::release / Build Multi-Arch Stages / runtime-tests / Stage - Runtime Tests",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 17:40:53",
+          "conclusion": "success",
+          "created_at": "2026-08-07 16:01:30",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 17:03:38",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31195539427,
+      "source": "therock_hud",
+      "targets": [],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31195539427/job/92931875681",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "54ea3dfeaa60600f2e822e4b1c4b676551e566e7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31195539427/job/92931875933",
+      "job_id": 92931875933,
+      "job_name": "Windows::release / Build Multi-Arch Stages / math-libs (gfx120X-all, gfx1200,gfx1201, false) / Stage - Math Libs (gfx120X-all)",
+      "observations": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-07 16:01:30",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "in_progress",
+          "started_at": "2026-08-07 17:04:45",
+          "state": "in_progress"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31195539427,
+      "source": "therock_hud",
+      "targets": [
+        "gfx1200",
+        "gfx1201",
+        "gfx120X-all"
+      ],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31195539427/job/92931875933",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "54ea3dfeaa60600f2e822e4b1c4b676551e566e7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31195539427/job/92931876039",
+      "job_id": 92931876039,
+      "job_name": "Windows::release / Build Multi-Arch Stages / math-libs (gfx1151, gfx1151, false) / Stage - Math Libs (gfx1151)",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 17:40:16",
+          "conclusion": "success",
+          "created_at": "2026-08-07 16:01:30",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 17:03:49",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31195539427,
+      "source": "therock_hud",
+      "targets": [
+        "gfx1151"
+      ],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31195539427/job/92931876039",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "54ea3dfeaa60600f2e822e4b1c4b676551e566e7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31195539427/job/92931876117",
+      "job_id": 92931876117,
+      "job_name": "Windows::release / Build Multi-Arch Stages / math-libs (gfx110X-all, gfx1100,gfx1101,gfx1102,gfx1103, windows-gfx110X-gpu-rocm, false) / Stage - Math Libs (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-07 16:01:30",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "in_progress",
+          "started_at": "2026-08-07 17:01:43",
+          "state": "in_progress"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31195539427,
+      "source": "therock_hud",
+      "targets": [
+        "gfx1100",
+        "gfx1101",
+        "gfx1102",
+        "gfx1103",
+        "gfx110X-all",
+        "gfx110X-gpu-rocm"
+      ],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31195539427/job/92931876117",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "54ea3dfeaa60600f2e822e4b1c4b676551e566e7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31195539427/job/92931876131",
+      "job_id": 92931876131,
+      "job_name": "Windows::release / Build Multi-Arch Stages / math-libs (gfx90a, false) / Stage - Math Libs (gfx90a)",
+      "observations": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-07 16:01:30",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "in_progress",
+          "started_at": "2026-08-07 17:01:53",
+          "state": "in_progress"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31195539427,
+      "source": "therock_hud",
+      "targets": [
+        "gfx90a"
+      ],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31195539427/job/92931876131",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "a55b593362b2e717677f52114b74e3c8ecf8f6da",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31198331203/job/92931989408",
+      "job_id": 92931989408,
+      "job_name": "Windows::release / Build Multi-Arch Stages / compiler-runtime / Stage - Compiler Runtime",
+      "observations": [
+        {
+          "completed_at": "2026-08-07 17:19:36",
+          "conclusion": "success",
+          "created_at": "2026-08-07 16:35:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-07 17:05:07",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31198331203,
+      "source": "therock_hud",
+      "targets": [],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31198331203/job/92931989408",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "a55b593362b2e717677f52114b74e3c8ecf8f6da",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31198331203/job/92943205777",
+      "job_id": 92943205777,
+      "job_name": "Windows::release / Build Multi-Arch Stages / debug-tools / Stage - Debug Tools",
+      "observations": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-07 16:35:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "in_progress",
+          "started_at": "2026-08-07 17:42:39",
+          "state": "in_progress"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31198331203,
+      "source": "therock_hud",
+      "targets": [],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31198331203/job/92943205777",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "a55b593362b2e717677f52114b74e3c8ecf8f6da",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31198331203/job/92943205792",
+      "job_id": 92943205792,
+      "job_name": "Windows::release / Build Multi-Arch Stages / runtime-tests / Stage - Runtime Tests",
+      "observations": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-07 16:35:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "in_progress",
+          "started_at": "2026-08-07 17:42:22",
+          "state": "in_progress"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31198331203,
+      "source": "therock_hud",
+      "targets": [],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31198331203/job/92943205792",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "a55b593362b2e717677f52114b74e3c8ecf8f6da",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31198331203/job/92943205904",
+      "job_id": 92943205904,
+      "job_name": "Windows::release / Build Multi-Arch Stages / math-libs (gfx110X-all, gfx1100,gfx1101,gfx1102,gfx1103, windows-gfx110X-gpu-rocm, false) / Stage - Math Libs (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-07 16:35:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "in_progress",
+          "started_at": "2026-08-07 17:42:10",
+          "state": "in_progress"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31198331203,
+      "source": "therock_hud",
+      "targets": [
+        "gfx1100",
+        "gfx1101",
+        "gfx1102",
+        "gfx1103",
+        "gfx110X-all",
+        "gfx110X-gpu-rocm"
+      ],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31198331203/job/92943205904",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "a55b593362b2e717677f52114b74e3c8ecf8f6da",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31198331203/job/92943205940",
+      "job_id": 92943205940,
+      "job_name": "Windows::release / Build Multi-Arch Stages / math-libs (gfx90a, false) / Stage - Math Libs (gfx90a)",
+      "observations": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-07 16:35:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "in_progress",
+          "started_at": "2026-08-07 17:43:09",
+          "state": "in_progress"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31198331203,
+      "source": "therock_hud",
+      "targets": [
+        "gfx90a"
+      ],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31198331203/job/92943205940",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "a55b593362b2e717677f52114b74e3c8ecf8f6da",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31198331203/job/92943206132",
+      "job_id": 92943206132,
+      "job_name": "Windows::release / Build Multi-Arch Stages / math-libs (gfx120X-all, gfx1200,gfx1201, false) / Stage - Math Libs (gfx120X-all)",
+      "observations": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-07 16:35:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "in_progress",
+          "started_at": "2026-08-07 17:42:28",
+          "state": "in_progress"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31198331203,
+      "source": "therock_hud",
+      "targets": [
+        "gfx1200",
+        "gfx1201",
+        "gfx120X-all"
+      ],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31198331203/job/92943206132",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "a55b593362b2e717677f52114b74e3c8ecf8f6da",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31198331203/job/92943206206",
+      "job_id": 92943206206,
+      "job_name": "Windows::release / Build Multi-Arch Stages / math-libs (gfx1151, gfx1151, false) / Stage - Math Libs (gfx1151)",
+      "observations": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-07 16:35:48",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "in_progress",
+          "started_at": "2026-08-07 17:42:22",
+          "state": "in_progress"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31198331203,
+      "source": "therock_hud",
+      "targets": [
+        "gfx1151"
+      ],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31198331203/job/92943206206",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "d03446db4932d58e75711471f324cf8b525efe38",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31200023130/job/92937743480",
+      "job_id": 92937743480,
+      "job_name": "Windows::release / Build Multi-Arch Stages / compiler-runtime / Stage - Compiler Runtime",
+      "observations": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-07 16:57:20",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "in_progress",
+          "started_at": "2026-08-07 17:32:09",
+          "state": "in_progress"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31200023130,
+      "source": "therock_hud",
+      "targets": [],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31200023130/job/92937743480",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "1e3975eb5394f653bb1100619fbf1632063cc1a7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31201602024/job/92942739954",
+      "job_id": 92942739954,
+      "job_name": "Windows::release / Build Multi-Arch Stages / compiler-runtime / Stage - Compiler Runtime",
+      "observations": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-07 17:17:26",
+          "observed_at": "2026-08-07T17:44:06Z",
+          "run_started_at": null,
+          "run_status": "in_progress",
+          "started_at": "2026-08-07 17:40:53",
+          "state": "in_progress"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31201602024,
+      "source": "therock_hud",
+      "targets": [],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31201602024/job/92942739954",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
     }
   ],
-  "generated_at": "2026-08-07T15:57:17Z",
+  "generated_at": "2026-08-07T17:44:06Z",
   "schema_version": 1
 }

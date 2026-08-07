@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-07T15:57:17Z",
+  "generated_at": "2026-08-07T17:50:03Z",
   "responses": [
     {
       "encoding": "utf-8",
       "etag": "W/\"7fcf3b71bb361be27771ad2089dbc242342ef7b1fedc22848a00702bd944a842\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:33Z",
+      "observed_at": "2026-08-07T17:44:50Z",
       "sha256": "bcf947ba7434c4c90318cb8f31ead3b84abf7b7e3bacc60fd7bf039680c28808",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/16680291039/jobs?per_page=100"
     },
@@ -13,7 +13,7 @@
       "encoding": "utf-8",
       "etag": "W/\"805e6e5ec74a2bb4c2baef2e90d13f67faceb62c3f8c9c01dcc56a3c3671564d\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:32Z",
+      "observed_at": "2026-08-07T17:44:49Z",
       "sha256": "67e9ce06db49b8db70aea9a4a04e3d132b562ae05fd75147cb86c54a570d0543",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/16685864143/jobs?per_page=100"
     },
@@ -21,7 +21,7 @@
       "encoding": "utf-8",
       "etag": "W/\"fe0891dc4d06d270f78c85ea81a10ff741c3683e649f57e90f1122d3fe7c543e\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:32Z",
+      "observed_at": "2026-08-07T17:44:49Z",
       "sha256": "daefb9fac0db335a2b44c19ee5788a9d511f0ab015d3983b5a971ce08216123a",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/16686154914/jobs?per_page=100"
     },
@@ -29,7 +29,7 @@
       "encoding": "utf-8",
       "etag": "W/\"87290bbe3f0028450563f22a3dcc4b92b49d22711ba74ae919c899403a053032\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:31Z",
+      "observed_at": "2026-08-07T17:44:48Z",
       "sha256": "70554b0bd4746d5f7cd7682dbdd751aebf9f31f294640a71d352529ad3dca40d",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/16753254909/jobs?per_page=100"
     },
@@ -37,7 +37,7 @@
       "encoding": "utf-8",
       "etag": "W/\"6e4dfdaa78b7318b6e057d51cc6f5cfa2cf8875d8b619e13fdbacbdd949f7a60\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:38Z",
+      "observed_at": "2026-08-07T17:44:58Z",
       "sha256": "c85d297ae8cedc56550c60eba89bf6c3033cebee2fd0f96ccffc973dd14d1dae",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/18045500776/jobs?per_page=100"
     },
@@ -45,7 +45,7 @@
       "encoding": "utf-8",
       "etag": "W/\"2b0a5be8d8d6b49587b9da92dd537f9a3d11f94629532f2df32f2fa1dcb0a680\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:38Z",
+      "observed_at": "2026-08-07T17:44:58Z",
       "sha256": "97084a6a7be4caa99ed27de04a49f07568d5967b36f899c15d12797ca5d1e250",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/18045738896/jobs?per_page=100"
     },
@@ -53,7 +53,7 @@
       "encoding": "utf-8",
       "etag": "W/\"311c41f5d6187b4854d84b31ef44f48082a77751792605b028a327c44e3b5136\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:38Z",
+      "observed_at": "2026-08-07T17:44:57Z",
       "sha256": "19d0557f8dc6659e59e407ec30aa43a01d75401154a54d2c0f50d4ed2fb3931c",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/21530611440/jobs?per_page=100"
     },
@@ -61,7 +61,7 @@
       "encoding": "utf-8",
       "etag": "W/\"f40eabe45e0c0912cacfbd35f90c765c4dcdeb386150e1b0bff21fe8c3c5893f\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:37Z",
+      "observed_at": "2026-08-07T17:44:56Z",
       "sha256": "3ef1b75dbef8adc9c0f300f3e5c2a11194129b9f7bff6d14053be8c9493e9de4",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/21531021773/jobs?per_page=100"
     },
@@ -69,7 +69,7 @@
       "encoding": "utf-8",
       "etag": "W/\"63ff87bb2b03986dd1ad1a6734a5d9c5bb266cc50b98c6e8fb5bd589be98e6bb\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:36Z",
+      "observed_at": "2026-08-07T17:44:54Z",
       "sha256": "32f6d8435ee05ec467f67c35fbe536c323d8e40d580768589121141d71184fe4",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/21531122684/jobs?per_page=100"
     },
@@ -77,7 +77,7 @@
       "encoding": "utf-8",
       "etag": "W/\"b7956fdf1ea3f67c65eef7b21dd73573d889616366eb0fc19bca068d00644b51\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:36Z",
+      "observed_at": "2026-08-07T17:44:53Z",
       "sha256": "78dc2cea0e4de2e4f807fc9118b09fadc849754759827a1cbac7cd3be46d4c37",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/21531425807/jobs?per_page=100"
     },
@@ -85,7 +85,7 @@
       "encoding": "utf-8",
       "etag": "W/\"c9bd857b5bb4660f774bcec0522579fec224af7b1b9c0177ca47766fae648626\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:36Z",
+      "observed_at": "2026-08-07T17:44:53Z",
       "sha256": "edc5316d69d79e45e92306285d00cfe71b8852179c413130f93083589976775c",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/21531721497/jobs?per_page=100"
     },
@@ -93,7 +93,7 @@
       "encoding": "utf-8",
       "etag": "W/\"a94bf7aa2c456d55b9f879bf043d4ef987d69958db051cc3ed0001ce1a1c3012\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:35Z",
+      "observed_at": "2026-08-07T17:44:52Z",
       "sha256": "cfca71be938be5c6bc443653f65a115568ab218c31e44f6c2a54aeaafd82a079",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/21531996276/jobs?per_page=100"
     },
@@ -101,7 +101,7 @@
       "encoding": "utf-8",
       "etag": "W/\"d0ad0b89186c04bb387bedde0e248e48919658dfcdf6155a5c51840d57bcaf08\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:35Z",
+      "observed_at": "2026-08-07T17:44:51Z",
       "sha256": "d478e5caea0f3d2da0958ea4397970554d09404b3852387322bd52acf36fb0b6",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/21845110854/jobs?per_page=100"
     },
@@ -109,7 +109,7 @@
       "encoding": "utf-8",
       "etag": "W/\"e66b860d55c8b9e8c4064cc207b5c39114d59c6b349091679193d956d2b9ce9d\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:34Z",
+      "observed_at": "2026-08-07T17:44:51Z",
       "sha256": "4a105ca93dcb65924fa6b4c3fb20e6eed1dce3c6c8f21ffe7a7f2631b9e8bbcc",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/24369567496/jobs?per_page=100"
     },
@@ -117,7 +117,7 @@
       "encoding": "utf-8",
       "etag": "W/\"d2102163bdea65a7241259eb1e383e632d4b5d85583328c78db2c9ca39bf0952\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:30Z",
+      "observed_at": "2026-08-07T17:44:47Z",
       "sha256": "accb0c7faa62d697ec5b38b22fb906bc14f532206d2172275a117cdbbbb20a8c",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30112131357/jobs?per_page=100"
     },
@@ -125,7 +125,7 @@
       "encoding": "utf-8",
       "etag": "W/\"1020d741ea11f1998d5efe1353486de073ac807adc08d89b3a12d709f97f48f0\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:29Z",
+      "observed_at": "2026-08-07T17:44:46Z",
       "sha256": "7d1a0dac94efd685534235fb9a256c0b1c8e5b85ee4cd30389007340a164eb23",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30113179976/jobs?per_page=100"
     },
@@ -133,7 +133,7 @@
       "encoding": "utf-8",
       "etag": "W/\"9cd5d9ca9be2bed82be306d100650c9ab9f698f83a05f8ff82ebf20cc9c46623\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:29Z",
+      "observed_at": "2026-08-07T17:44:45Z",
       "sha256": "449d7bc7155aee017a3fb198527f674b969eb0be64414247125f311a57331a79",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30217671567/jobs?per_page=100"
     },
@@ -141,7 +141,7 @@
       "encoding": "utf-8",
       "etag": "W/\"5448afdce67bee37002f4a01d211801e6b9daa3b76cc848a018bf872a93c5af8\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:28Z",
+      "observed_at": "2026-08-07T17:44:45Z",
       "sha256": "8af00a1997fb05b25890a766fc51dfaaadd5d6ae72b84c525e13c4c9daf39920",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30218037322/jobs?per_page=100"
     },
@@ -149,7 +149,7 @@
       "encoding": "utf-8",
       "etag": "W/\"de4ff86c76b5b8571b842223926a6a6aee676a3fdb925e50a86282015eda8488\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:28Z",
+      "observed_at": "2026-08-07T17:44:44Z",
       "sha256": "ff7d875f84d2a116c0d6ea942c6a967f741ca38751bc282ef5a892b0c5cc98cc",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30390330251/jobs?per_page=100"
     },
@@ -157,7 +157,7 @@
       "encoding": "utf-8",
       "etag": "W/\"526da44f9fe422dfa19b9509bf4347cdf0d14d909b5a11d68466929fa0690513\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:28Z",
+      "observed_at": "2026-08-07T17:44:44Z",
       "sha256": "17cfefd27f39aba0030c8c94e47bfe37541d4094b684848b62784213901b5e20",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30564719005/jobs?per_page=100"
     },
@@ -165,7 +165,7 @@
       "encoding": "utf-8",
       "etag": "W/\"741be1da196fc3fa671c02ba302bfd4b4cfc38f32d2a9c4144ed35eec354cd56\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:27Z",
+      "observed_at": "2026-08-07T17:44:43Z",
       "sha256": "0b97e833f3d0a9708a47c36a47a96e24795e217879e5bfc0dce14120f7878f10",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30565526173/jobs?per_page=100"
     },
@@ -173,7 +173,7 @@
       "encoding": "utf-8",
       "etag": "W/\"c58455768033b1865f44a7e287aaabcc38abad4ff6674ebea06adae59e556bdd\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:27Z",
+      "observed_at": "2026-08-07T17:44:42Z",
       "sha256": "68dc51ee5275cd69f932cc927c0c2c1c8fc25af3d320ba8aa0a93f38beb0c0c7",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30565987573/jobs?per_page=100"
     },
@@ -181,7 +181,7 @@
       "encoding": "utf-8",
       "etag": "W/\"387a3b23eb4e933e13af048385b0e059445a83a93f36c3d2068f8366ab1cc42b\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:26Z",
+      "observed_at": "2026-08-07T17:44:42Z",
       "sha256": "c8b641aaf8cef0dc6cffab5704e8bfbd6fc531f590fa13589d6f53f308705122",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30567945417/jobs?per_page=100"
     },
@@ -189,7 +189,7 @@
       "encoding": "utf-8",
       "etag": "W/\"e6cbbccce7c77fbfa73d0e19c596486db9f10144407270f7ef94289968d8259b\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:26Z",
+      "observed_at": "2026-08-07T17:44:41Z",
       "sha256": "0f018d0a030baa8a664b63e314a9727afd8fd8b31bd5c43617a192850ba158ca",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30919328247/jobs?per_page=100"
     },
@@ -197,7 +197,7 @@
       "encoding": "utf-8",
       "etag": "W/\"62b3dd87ea5c802abdff6045bd239733f42533b9e4ebd581759d90a2d6a8fcb1\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:26Z",
+      "observed_at": "2026-08-07T17:44:40Z",
       "sha256": "ad2297fdaef8eee06a9a3432cf92a54d5d424a9413debcec8344228754348c07",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30921767561/jobs?per_page=100"
     },
@@ -205,7 +205,7 @@
       "encoding": "utf-8",
       "etag": "W/\"193454291b76127d5192d8c140a69a4a7147e9400ae1c69b5d90487c641085f1\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:25Z",
+      "observed_at": "2026-08-07T17:44:40Z",
       "sha256": "139a2e3b21b43cf56c164c461be3bb8d6ea721cffdbb2254a84d7a41698c195e",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30927914764/jobs?per_page=100"
     },
@@ -213,7 +213,7 @@
       "encoding": "utf-8",
       "etag": "W/\"5dad4e6a738bb9e66322b932e564c07fbdc18055375bafbf1323d8a7332b1fdc\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:25Z",
+      "observed_at": "2026-08-07T17:44:39Z",
       "sha256": "6aaa6bb305a736d0cfa1046f7825e89110cc7dd3a468cf6d01375ca4a7d18fa4",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30931473991/jobs?per_page=100"
     },
@@ -221,7 +221,7 @@
       "encoding": "utf-8",
       "etag": "W/\"dcaab12e83a488a5590f6fe7d34b89baaeeff4ba7561fb8f5d76ef7c78b8ef0c\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:24Z",
+      "observed_at": "2026-08-07T17:44:39Z",
       "sha256": "7a5103b11f4b6f0d01cf37415b251df241ef6155a4047aae450fe35a9178c0f2",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30943812343/jobs?per_page=100"
     },
@@ -229,7 +229,7 @@
       "encoding": "utf-8",
       "etag": "W/\"2cc2de6107f08c44b48abcd10ba27219f5e9140bd554450573add8eaf0cdee7f\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:24Z",
+      "observed_at": "2026-08-07T17:44:38Z",
       "sha256": "252ba5bd9f6b0c30abeff6d8defe59aaa0427f23aa74298fea4f143b4224c64a",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30950818789/jobs?per_page=100"
     },
@@ -237,7 +237,7 @@
       "encoding": "utf-8",
       "etag": "W/\"7393e9e2e1c6cd38aff892b8b8c1e715153995c0147bcf48a743aa2aa10c7c3f\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:23Z",
+      "observed_at": "2026-08-07T17:44:38Z",
       "sha256": "62e87ec556e10b4685293524c2f1545d806784177b4a0f4d3130799802404328",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30950940037/jobs?per_page=100"
     },
@@ -245,7 +245,7 @@
       "encoding": "utf-8",
       "etag": "W/\"e15a2dad941a512a5513d715dcaed252f7ddfe01c85531fa2d20ae38a360ab32\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:23Z",
+      "observed_at": "2026-08-07T17:44:37Z",
       "sha256": "a20873d41be2dbbc05b8e0fd8a12005eaf874bc4e77f751e6854634d9d295a9d",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30952979416/jobs?per_page=100"
     },
@@ -253,7 +253,7 @@
       "encoding": "utf-8",
       "etag": "W/\"8d4957475915c255e9609e27bdc2157805e98d0905fc1a43da43d7b4f7b0e9bd\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:22Z",
+      "observed_at": "2026-08-07T17:44:36Z",
       "sha256": "d30487dcd6ae30247f2df5522f9060d34fbac9853dcdfd88f82997286a91f07b",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30958499390/jobs?per_page=100"
     },
@@ -261,7 +261,7 @@
       "encoding": "utf-8",
       "etag": "W/\"b876dafa3969dc8d1768c16d5cbc22d821aa272779f07c9b27244cd3de637cfc\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:22Z",
+      "observed_at": "2026-08-07T17:44:36Z",
       "sha256": "bbf7e3654b0a0ca8ebc30e73c69d23d926c623941d8e1d9655a83a26aacb7609",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/30960731303/jobs?per_page=100"
     },
@@ -269,7 +269,7 @@
       "encoding": "utf-8",
       "etag": "W/\"d644a23ec6c8e23101d30fbd43f8fab898110f2623eec44d0250d4e9c03fb1a0\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:58:14Z",
+      "observed_at": "2026-08-07T17:45:38Z",
       "sha256": "a26fc3f31ece3865c54a042261f74a48e42545bd600e9a377ea3a4fb422d0905",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31099308029/jobs?per_page=100"
     },
@@ -277,7 +277,7 @@
       "encoding": "utf-8",
       "etag": "W/\"f73e3d1ad4cb68367dce319b967f55a044e108ce67b4f4345fb6584d50f99bdb\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:58:13Z",
+      "observed_at": "2026-08-07T17:45:37Z",
       "sha256": "6a87845c2d14fd71c3fe45bd31563d8f11b95226b3b467a57ac1013334c335a8",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31099313115/jobs?per_page=100"
     },
@@ -285,7 +285,7 @@
       "encoding": "utf-8",
       "etag": "W/\"f190fd76af8ac505d64f5e1a995303e77e30ac64504f53a1d0da1284f36d8be7\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:58:10Z",
+      "observed_at": "2026-08-07T17:45:34Z",
       "sha256": "e853fc93c9c0b243ba4721c2137cd438e537b964aeb6a1e2e306729859cbb2d1",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31104687736/jobs?per_page=100"
     },
@@ -293,7 +293,7 @@
       "encoding": "utf-8",
       "etag": "W/\"5691c801993346cd748d2743c6c295724055d1fbbbda94e8b36896fddb60e4c3\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:21Z",
+      "observed_at": "2026-08-07T17:44:35Z",
       "sha256": "7e4118112ba5680f137841bed60368a7db724642bce16de4881a46e0f9a9ce4b",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31127659017/jobs?per_page=100"
     },
@@ -301,7 +301,7 @@
       "encoding": "utf-8",
       "etag": "W/\"6c938aa3cbb5db1d96fec786b85cda870f37e7c8dad0be71225a60ba4bbbaaaa\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:58:08Z",
+      "observed_at": "2026-08-07T17:45:31Z",
       "sha256": "4a830a84c4c19c0d14b3f547c5be846ec93f4ca08980995f2906e592aa581b23",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31139221798/jobs?per_page=100"
     },
@@ -309,7 +309,7 @@
       "encoding": "utf-8",
       "etag": "W/\"c6cd1a1a5b405f223bb4e23f9f82760b9377430ecbcc75512a8bb685a562a84e\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:58:05Z",
+      "observed_at": "2026-08-07T17:45:28Z",
       "sha256": "81168a52f7d1cb892f43b90fe3ca19386974467340bcc3e175a160877bd9c9d8",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31139991027/jobs?per_page=100"
     },
@@ -317,7 +317,7 @@
       "encoding": "utf-8",
       "etag": "W/\"5a87e9603e9bf6636fd231dd2c8c39bf6f6a2d2a260023ffaa8c0572c3e5fbb6\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:58:04Z",
+      "observed_at": "2026-08-07T17:45:27Z",
       "sha256": "773e1cfe68e9e8932ee1161b0ee980c68deb1a28fc3ac52825b5e823812a2943",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31153309048/jobs?per_page=100"
     },
@@ -325,7 +325,7 @@
       "encoding": "utf-8",
       "etag": "W/\"02577879461582f4c3bcbede31d41d3efe1e06191afdbfc41005997dc17845f1\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:58:02Z",
+      "observed_at": "2026-08-07T17:45:25Z",
       "sha256": "48127905a94c0f8b9ad324d0d979fa55abc3e493554d9820770d4cb5263df961",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31153309824/jobs?per_page=100"
     },
@@ -333,7 +333,7 @@
       "encoding": "utf-8",
       "etag": "W/\"1b2f45cdec98e7f0b13ba4297f0970233dd55114049e04669897494feead5c94\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:58:01Z",
+      "observed_at": "2026-08-07T17:45:23Z",
       "sha256": "2794592a8f2f54686f2c7c136411affd7a1baf14fd08f9da6079e9d275fe4c73",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31153311081/jobs?per_page=100"
     },
@@ -341,7 +341,7 @@
       "encoding": "utf-8",
       "etag": "W/\"93b0a44259b75167cafe1ae4daac7b0781becec497dfcd924cf7f3253425419d\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:59Z",
+      "observed_at": "2026-08-07T17:45:21Z",
       "sha256": "319c6671a27423c817627a08e2f81273e94fcbc8284c0394dd60a4e7c1f7a9d8",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31153315928/jobs?per_page=100"
     },
@@ -349,7 +349,7 @@
       "encoding": "utf-8",
       "etag": "W/\"043306f1643d37e053dacc01058c2c8fcec9aab6060101f3706f569840a37a18\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:58Z",
+      "observed_at": "2026-08-07T17:45:19Z",
       "sha256": "c5a1e86a5d12553af655f11bbbb094ff6c28cd8160f9983abc09bd0d0346b800",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31153593396/jobs?per_page=100"
     },
@@ -357,7 +357,7 @@
       "encoding": "utf-8",
       "etag": "W/\"8e67de4fd39ec8fee9ab32f1c35e682e893190e2fce80c0b2aea9fa3e5faa40f\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:56Z",
+      "observed_at": "2026-08-07T17:45:17Z",
       "sha256": "6f9a9aa131357635e53f62821c2d249fbf1d51e0418f47512a6a83e3386c4f9a",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31153593922/jobs?per_page=100"
     },
@@ -365,7 +365,7 @@
       "encoding": "utf-8",
       "etag": "W/\"96bcdccfedbbb5f376c961d57499e01292545b9804d9720e93673f14b63447d0\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:53Z",
+      "observed_at": "2026-08-07T17:45:15Z",
       "sha256": "70b488fd35ee0b02416a68ac267d7f8f81bcf59506e75540bdf247d3e41a437e",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31153594778/jobs?per_page=100"
     },
@@ -373,7 +373,7 @@
       "encoding": "utf-8",
       "etag": "W/\"0ffe34e6789dc10ad72d87be47b142f271af2bc12fd87bba808bbdc3a8e481db\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:51Z",
+      "observed_at": "2026-08-07T17:45:12Z",
       "sha256": "14b0d9540edb85b52112153973b5da618eeb4a746ad538bc7681128ec3e59b88",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31153595000/jobs?per_page=100"
     },
@@ -381,7 +381,7 @@
       "encoding": "utf-8",
       "etag": "W/\"c5e5a64103f5b7f207fa6f17c9e6dbaa29127be3a207ab4c456e3711c834b890\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:49Z",
+      "observed_at": "2026-08-07T17:45:10Z",
       "sha256": "c7e284c0f7648b2f3514e8fb12d8145530cbacb41c3b76a660beb7249450b187",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31153595280/jobs?per_page=100"
     },
@@ -389,7 +389,7 @@
       "encoding": "utf-8",
       "etag": "W/\"5c5175b444a119c22d1f7a0dfc511b81810d00e069a2b5f566402f990c78d820\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:46Z",
+      "observed_at": "2026-08-07T17:45:08Z",
       "sha256": "e2365d2bd5e91764f32cda4ef95d066e37103b4e23a50f8f0d9efbf4666255e1",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31181071665/jobs?per_page=100"
     },
@@ -397,7 +397,7 @@
       "encoding": "utf-8",
       "etag": "W/\"416e9ce3c89f4e26bbd61f5d49030c5085da4a83510a6d69a399648f6ec1ab9f\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:45Z",
+      "observed_at": "2026-08-07T17:45:06Z",
       "sha256": "dac505d03143b005931b88ff54bdde82fc956c3efffbc9fc1ae38a8cef7a23bc",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31181072020/jobs?per_page=100"
     },
@@ -405,7 +405,7 @@
       "encoding": "utf-8",
       "etag": "W/\"0f18e65d941b76cb334070cd5d6582cd7b43a0439d69a3e92ab49919b83991f0\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:44Z",
+      "observed_at": "2026-08-07T17:45:04Z",
       "sha256": "be3d24ce9415207e549733ad04e82e66f441ed502374c51ca7bb1051226f8491",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31181073685/jobs?per_page=100"
     },
@@ -413,7 +413,7 @@
       "encoding": "utf-8",
       "etag": "W/\"eafb52f9c8129225c1485f628c2b5f61a277468d7a2d8ecba8b3ceaf910bf6f9\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:42Z",
+      "observed_at": "2026-08-07T17:45:02Z",
       "sha256": "925448f343747fc941dce0ee33df9febbd365141ff19f0cc70e5fd278eb564d9",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31181073969/jobs?per_page=100"
     },
@@ -421,23 +421,23 @@
       "encoding": "utf-8",
       "etag": "W/\"eca97d5a8de69567dac61b729914aceba25fa5ac2e156584ad941e557782058e\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:42Z",
+      "observed_at": "2026-08-07T17:45:02Z",
       "sha256": "8aab269179ad706bd440519ec48f2733afb75876d52908ef426e87df5b59f2b2",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31195030440/jobs?per_page=100"
     },
     {
       "encoding": "utf-8",
-      "etag": "W/\"6831fe1c2997e2fb948d05d62b3ad8cb5ee7a255a9b3e1fcc2c1e47d6cadcf2b\"",
+      "etag": "W/\"618af7c8c7cf5785d1ad2faa7f4b27ee8c502d80cbf7951bb0bb770580d79468\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:41Z",
-      "sha256": "24be8726cb1bfa69cd48b2ad2563a8f7d2a685193254ee0e68863d9b576f0e1a",
+      "observed_at": "2026-08-07T17:45:01Z",
+      "sha256": "72672b35ac043fa3fd6b68bc000748605eb688f480e7cf70b71b3d4c3a50ee3d",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/runs/31195115985/jobs?per_page=100"
     },
     {
       "encoding": "utf-8",
       "etag": "W/\"a46ab3f0b6c74e4ee421f947fab6edae8da54d6538cd4528d29e6ad80455d89c\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:21Z",
+      "observed_at": "2026-08-07T17:44:35Z",
       "sha256": "a925d23e929bcbf39d2a891c257e485922a5436f76477f59397ec40eb75047f4",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/workflows/170502567/runs?per_page=100"
     },
@@ -445,7 +445,7 @@
       "encoding": "utf-8",
       "etag": "W/\"0b859a765c44b6762cb9c0d106913cba178ff3db7708fff0d9ef7e136ec61897\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:31Z",
+      "observed_at": "2026-08-07T17:44:47Z",
       "sha256": "a6514f7e5b4a6fd2e810fe81756b5464ffad3a7c858ac768e29760bb2a20dd28",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/workflows/178567143/runs?per_page=100"
     },
@@ -453,16 +453,16 @@
       "encoding": "utf-8",
       "etag": "W/\"99fcbcec4975b9661b083be550b145a49936d7a6af3a33aa3a0f3bdb9854bfdb\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:34Z",
+      "observed_at": "2026-08-07T17:44:50Z",
       "sha256": "70929fde8647bef26733cc9b5185b2907d26a753285ac6c967a9f6f7d4216e6c",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/workflows/192868512/runs?per_page=100"
     },
     {
       "encoding": "utf-8",
-      "etag": "W/\"d775c21ae6146406a6e03b6c555a68f51ccacaadc0add88bcddf1bf70f78c7f9\"",
+      "etag": "W/\"6c8b3f33395e53388479eaed39f8a5e7ed0c47900c2a37a9f9dd8f53f6e54258\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:41Z",
-      "sha256": "c8e2af2fe408d9805e097a79528e4bd5f13b0a8025563a8416c9555fab0a9e14",
+      "observed_at": "2026-08-07T17:45:01Z",
+      "sha256": "afff807fa451b58a40921d0e01dae3ae41ef908c625a6aa7e832d2008eeffb4c",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/workflows/193729623/runs?per_page=100"
     },
     {
@@ -475,17 +475,17 @@
     },
     {
       "encoding": "utf-8",
-      "etag": "W/\"5180cb948dda357790470680ba7bd4802c85633c2825fdcec8b391b1f23aea63\"",
+      "etag": "W/\"607cf2df4270aee84f800b45e2716a2e375ef921a7d99300e166f9d314a2fd51\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:18Z",
-      "sha256": "f98ea05891f7efa862c27e9d9aaeba2064c6b7c16530b71c278233d0b3ba3827",
+      "observed_at": "2026-08-07T17:44:33Z",
+      "sha256": "396000f5b36232c6ebabb9965a74f04f372c965ec55ade34c62a5b9f5995d6f7",
       "url": "https://api.github.com/repos/ROCm/TheRock/actions/workflows?per_page=100"
     },
     {
       "encoding": "utf-8",
       "etag": "W/\"22f086cc817d5d046960721dcc522a5a01bb7d2afac6a18b3f986ab6d2b6c1c6\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:36:18Z",
+      "observed_at": "2026-08-07T17:44:08Z",
       "sha256": "9824f5f9e5790b1bbaf9129eeb5bfd1531ebc59e753922f465f05d31d4487916",
       "url": "https://api.github.com/repos/ROCm/TheRock/releases?per_page=100"
     },
@@ -501,7 +501,7 @@
       "encoding": "utf-8",
       "etag": "\"1d8b90e8c52edab001b0e2c6b1e395a0755058403e5f629fc057781ce63c69d0\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:36:17Z",
+      "observed_at": "2026-08-07T17:44:07Z",
       "sha256": "1053893d44053c7571fdb5cb425ca2bf593f4bf822480dce00d4cad31790dcb2",
       "url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst"
     },
@@ -509,7 +509,7 @@
       "encoding": "utf-8",
       "etag": "\"a4d0543574fb5d35c52b16ba82142eacacdc7edb39f890a2625a70757e866789\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:36:17Z",
+      "observed_at": "2026-08-07T17:44:07Z",
       "sha256": "b4790c2d82e8c5328fb8e9d48f8f61b2cfd86707c8318c07a6008f06461e96a9",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
     },
@@ -517,7 +517,7 @@
       "encoding": "utf-8",
       "etag": "\"fa9e27db68db83c8684f50ef95657ea90050d88657bc64c1ef0041ac8646dba5\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:36:17Z",
+      "observed_at": "2026-08-07T17:44:07Z",
       "sha256": "52497e563fe0dffa150297d349f8dac066a1651aa3386b18a8f6b64621fc9f2a",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     },
@@ -525,7 +525,7 @@
       "encoding": "utf-8",
       "etag": "\"437d700eb9e5b98625a02c2149ee68132cf4b3e5e12777fb43e6da66d6bf86da\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:57:18Z",
+      "observed_at": "2026-08-07T17:44:33Z",
       "sha256": "9496d6c1c6a053102ea971e3a6397e6a3c6b24a396de6c5d1fc2aae2ef92fd03",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/build_tools/github_actions/amdgpu_family_matrix.py"
     },
@@ -533,7 +533,7 @@
       "encoding": "utf-8",
       "etag": "\"e7379d4603f0b5205367fcc541f7a2b157eec53c13edcbb703232ce3e95f8c99\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:36:18Z",
+      "observed_at": "2026-08-07T17:44:08Z",
       "sha256": "cc68d885c73504f7f3517f86484325a58e6f245c75eed95e9f35ca6e55373a99",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/version.json"
     },
@@ -541,7 +541,7 @@
       "encoding": "utf-8",
       "etag": "\"801be983d9a36b511b693cd4fed28ca9d4d7f325bd9a8e413387918a543af0e3\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:36:18Z",
+      "observed_at": "2026-08-07T17:44:09Z",
       "sha256": "629c23231bb26782f5e18e4b21f7b380d35c4a57d9fd14b01d94aa9ed7bc0a6b",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.11/SUPPORTED_GPUS.md"
     },
@@ -549,7 +549,7 @@
       "encoding": "utf-8",
       "etag": "\"22d6a2b025376fed0e43367fa0384ee11b74c637b0f45d0b4a592c928689129b\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:36:19Z",
+      "observed_at": "2026-08-07T17:44:09Z",
       "sha256": "1fd51ba1e4f5e5e69a8a13a5e3185c8eb6b3c4562d5c05df62abfb1ab95a81fa",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.12/SUPPORTED_GPUS.md"
     },
@@ -557,7 +557,7 @@
       "encoding": "utf-8",
       "etag": "\"22d6a2b025376fed0e43367fa0384ee11b74c637b0f45d0b4a592c928689129b\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:36:19Z",
+      "observed_at": "2026-08-07T17:44:09Z",
       "sha256": "1fd51ba1e4f5e5e69a8a13a5e3185c8eb6b3c4562d5c05df62abfb1ab95a81fa",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.13/SUPPORTED_GPUS.md"
     },
@@ -565,7 +565,7 @@
       "encoding": "utf-8",
       "etag": "\"4b8334bf3338d7529444766fd7fe1ac6d5f2b11b492181c83919424d3aa97e00\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:36:19Z",
+      "observed_at": "2026-08-07T17:44:09Z",
       "sha256": "d1059465ca3db8074ae2b0ba5bbe6a13dc444da931f50cf9ce31300da6b5aacf",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.14/SUPPORTED_GPUS.md"
     },
@@ -573,7 +573,7 @@
       "encoding": "utf-8",
       "etag": "\"11d2d9f7d776d8a749129ad30fe3bedfca4017e74a7bb280088bb4c79dbf26b6\"",
       "last_modified": null,
-      "observed_at": "2026-08-07T15:36:17Z",
+      "observed_at": "2026-08-07T17:44:08Z",
       "sha256": "5cdec7856899d620b2312a0608db187c3c1ec44475f39d976d1fe18a3bc293bd",
       "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     },
@@ -581,7 +581,7 @@
       "encoding": "utf-8",
       "etag": "\"6aabe67cae1d35f03ac5d4ccc490ee3a\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:37 GMT",
-      "observed_at": "2026-08-07T15:36:20Z",
+      "observed_at": "2026-08-07T17:44:10Z",
       "sha256": "4f674286be9cfa93bdcf11c65ecc392bc1533b0860f44f79914a3ca156d53735",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/"
     },
@@ -589,7 +589,7 @@
       "encoding": "utf-8",
       "etag": "\"08b9a8e7cef1e4ecd2d75d4989b08dba\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:38 GMT",
-      "observed_at": "2026-08-07T15:36:20Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "0730cc9d38f004a84c3676c17b4d898cd87b58dadecd0197f54a867477dd7894",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1010/"
     },
@@ -597,7 +597,7 @@
       "encoding": "utf-8",
       "etag": "\"77f9929bff92b0aa8518d37d54612e09\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:38 GMT",
-      "observed_at": "2026-08-07T15:36:20Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "b08c79a7ec15cfc86de455d0f0496dab8fc28bf52bf2da5498dc2e0bd877ed79",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1011/"
     },
@@ -605,7 +605,7 @@
       "encoding": "utf-8",
       "etag": "\"00aebb5df85ea7bb268c0156ea399338\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:38 GMT",
-      "observed_at": "2026-08-07T15:36:20Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "67200e7fcd6b579eff2780caee1f109199d18bf69e8bcb9576b93ed1945296a6",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1012/"
     },
@@ -613,7 +613,7 @@
       "encoding": "utf-8",
       "etag": "\"89e1443047ab033ddcd6942e872588db\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:38 GMT",
-      "observed_at": "2026-08-07T15:36:20Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "3abf881be26f6b511fb76f30c6a89a8b51cd3837e7a8c7ed6b91503df83efafe",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1030/"
     },
@@ -621,7 +621,7 @@
       "encoding": "utf-8",
       "etag": "\"0c936e27a030bf8ec6c979c3223b8bdf\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:38 GMT",
-      "observed_at": "2026-08-07T15:36:20Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "3fa7e9601e3a986e4c79bcdcd75843b168a09afc43a33d78314871716b6107f6",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1031/"
     },
@@ -629,7 +629,7 @@
       "encoding": "utf-8",
       "etag": "\"b3ca5d85ae2e3560a9b968ad3c122709\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:38 GMT",
-      "observed_at": "2026-08-07T15:36:20Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "28d716a67a5812c6709085d7ac2f34d1c230700c585113cc1579e6b552448ce1",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1032/"
     },
@@ -637,7 +637,7 @@
       "encoding": "utf-8",
       "etag": "\"b53806f2647901f5fe8313358cb56834\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:39 GMT",
-      "observed_at": "2026-08-07T15:36:20Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "5bc4dee3dea8518be0be2365453954303208ba96c0d8ad02cc68746d1e807044",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1033/"
     },
@@ -645,7 +645,7 @@
       "encoding": "utf-8",
       "etag": "\"513f057720012578bb450f2411023bbe\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:39 GMT",
-      "observed_at": "2026-08-07T15:36:20Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "f43bc862fe15557d22a7fc6024d092abd7bcb931a4b843132e3bc5730baaa18d",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1034/"
     },
@@ -653,7 +653,7 @@
       "encoding": "utf-8",
       "etag": "\"8b1544032b526143846ec26cd488bb5f\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:39 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "135be4f20267c6beacf22dc81cb3cff9f99c2b6340354d94387e8c111962190d",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1035/"
     },
@@ -661,7 +661,7 @@
       "encoding": "utf-8",
       "etag": "\"156a3aa783b65a8e3a9851db1e2149aa\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:39 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "757a285504747d5280e8b04be55e611e250f0a509c7a4dc7463beaa650e53319",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1036/"
     },
@@ -669,7 +669,7 @@
       "encoding": "utf-8",
       "etag": "\"f2db0441cdd0bf08470801d3b181807d\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:39 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "581db9ed83ca8e9a15bda0b959b52250ac82a06c822741ab337f868185ea881d",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1100/"
     },
@@ -677,7 +677,7 @@
       "encoding": "utf-8",
       "etag": "\"526c7734e530c95561b85a8fc557c38e\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:39 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "c879e4f2af55ac137839431572be149570abcb6fbc0bd4b82ed56a05917d00b6",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1101/"
     },
@@ -685,7 +685,7 @@
       "encoding": "utf-8",
       "etag": "\"ab5fb89b44426a397b825dd14dd21d4b\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:40 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "c756951606e378b377b409e0fd8e17081659c5415b0c8625f073bf969311d379",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1102/"
     },
@@ -693,7 +693,7 @@
       "encoding": "utf-8",
       "etag": "\"51e711cc38e4ca2b62328df6bcb2b654\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:40 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "b7c606bb8a122ebd8938615629072a39c54e52200ec30740be2803c55c11f07e",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1103/"
     },
@@ -701,7 +701,7 @@
       "encoding": "utf-8",
       "etag": "\"5bc96d1643cf8fd47bcea5af16148c30\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:40 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "955685d8042bc1483664f7550e1be55c9470a5421a67e0223432313f6178591c",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1150/"
     },
@@ -709,7 +709,7 @@
       "encoding": "utf-8",
       "etag": "\"96b8ffafeb62f0699117088adf2e5bd3\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:40 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "dc51485368fc2eec4b46b1f2925429bad71310d8833e714f276edc8d9f060f0e",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1151/"
     },
@@ -717,7 +717,7 @@
       "encoding": "utf-8",
       "etag": "\"6da4f26f68bf7b90218076465fe7e2f0\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:40 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:11Z",
       "sha256": "dfff1eda640cf8db100f3e8e2461a9ed87694702e1e080bbb607bf380b5ae877",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1152/"
     },
@@ -725,7 +725,7 @@
       "encoding": "utf-8",
       "etag": "\"847b3ebfb2b292ca687f818fee3ae0bc\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:40 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "4213326e3d80664f20a35f1929d573d9fbb93d59f4a9badbd1070b5d172ecd36",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1153/"
     },
@@ -733,7 +733,7 @@
       "encoding": "utf-8",
       "etag": "\"e3e6dab580a62e6f1680aa6bec58d160\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:41 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "6a786835057565fb7c50fa1861ff42a69c6a8b6354d661c0d56d29726556c9ea",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1200/"
     },
@@ -741,7 +741,7 @@
       "encoding": "utf-8",
       "etag": "\"1a63e38815a1d600675ab6de9111ea42\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:41 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "a19743505d79e2b0f9e722bd6c82c2d4134323f41712000349a67c37e2856568",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1201/"
     },
@@ -749,7 +749,7 @@
       "encoding": "utf-8",
       "etag": "\"a2cfa2c1402891f323a9d9778ad7c1cc\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:41 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "b362b6a3de1d7631aa7b9f47c340a1b61339b3eb10a8186e42285309f1c8951d",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx1250/"
     },
@@ -757,7 +757,7 @@
       "encoding": "utf-8",
       "etag": "\"84d743ecd8fb49a8d8ddb6b9b205ad9b\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:41 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "74573d2cfa5941034ca24abd60f2ea1740d22ffb5610c11c1bf762b0d9998fa9",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx908/"
     },
@@ -765,7 +765,7 @@
       "encoding": "utf-8",
       "etag": "\"dbf7cac83d68ab9ab1fffbd7f942fb59\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:41 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "1d1ee7a19433ec3b502610781314799dd8370530db77ca2de6c0cc54f95e4843",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx90a/"
     },
@@ -773,7 +773,7 @@
       "encoding": "utf-8",
       "etag": "\"5040fab9bf3e10d446d0f3e22a3b7fce\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:42 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "cf844b2b702bf6f23e2d3be95cd9f2368bdaf3d0713e2e6079f034c92965fa06",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx942/"
     },
@@ -781,7 +781,7 @@
       "encoding": "utf-8",
       "etag": "\"f0b47e80314463e920be3352f73cdba1\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:42 GMT",
-      "observed_at": "2026-08-07T15:36:21Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "e4f6ccab2946fd6b0b1cac615a1d8e3fed81907301a595d9792129ad5ca70421",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torch-device-gfx950/"
     },
@@ -789,7 +789,7 @@
       "encoding": "utf-8",
       "etag": "\"b5f9d8ffe9861b75c104aa9232f54dea\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:42 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "fa054ca3dd6734e6f367d59b1e2a3a4d3866d4f3b2dbb14505a0edd4e2d6e359",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1010/"
     },
@@ -797,7 +797,7 @@
       "encoding": "utf-8",
       "etag": "\"c9db40342e366efa351a3410fcbec1c7\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:42 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "ab3cfbf7481f91845fc3b1b428eb5f9a62b766801cef27e1add9585737ecf2eb",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1011/"
     },
@@ -805,7 +805,7 @@
       "encoding": "utf-8",
       "etag": "\"97e3352b1c6318fc44e9e63aed6d5c53\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:42 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "d32012eb5c6f8c6ea7612d52b4dd9c456a4dfc6e37d9b173f5f776070db68e5e",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1012/"
     },
@@ -813,7 +813,7 @@
       "encoding": "utf-8",
       "etag": "\"31ab4b15c607f4d2ee0337411647fe05\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:42 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "b0ad627faea5f780f4043fecd48e355537a3eadc16567030bd9a8e05155481ba",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1030/"
     },
@@ -821,7 +821,7 @@
       "encoding": "utf-8",
       "etag": "\"79fe178eb5e1a54e254b695b265186b4\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:43 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "9b57b401dc5a3397d9b68d461bf4f8855355b2484665c818b3854a144fb330c4",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1031/"
     },
@@ -829,7 +829,7 @@
       "encoding": "utf-8",
       "etag": "\"6b3d1b15536ccf9d88b64925d7f30544\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:43 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "5274ba8f28318786ec73d658c414b5930b2f8619de825e8f467d026ce83cfd99",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1032/"
     },
@@ -837,7 +837,7 @@
       "encoding": "utf-8",
       "etag": "\"e055a6fe15e87709270d6f4f95ff193b\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:43 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "061a1213813498c16f2fd75570d5ce15fc0a14c7aa04a066f095ec913cdf4e87",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1033/"
     },
@@ -845,7 +845,7 @@
       "encoding": "utf-8",
       "etag": "\"9cdf3aa0f9784d56afdd324766096bdd\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:43 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "ee1494c1302ed1aa93ee5bb3e211bc3441352904e9fd09919f31fb24de661e9a",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1034/"
     },
@@ -853,7 +853,7 @@
       "encoding": "utf-8",
       "etag": "\"3668822b5db1d761c4ec201265e4dcf7\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:43 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:13Z",
       "sha256": "e7e8b8b96b02067c3153652e67e37fd66394e3365d513f32cdde11e825919a1f",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1035/"
     },
@@ -861,7 +861,7 @@
       "encoding": "utf-8",
       "etag": "\"b82abc62107413b019a604b2f34a786f\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:43 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:12Z",
       "sha256": "72cebd4380b0c5a95a8761ddc88e211524e053a5b29c0c752192b2220402efa5",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1036/"
     },
@@ -869,7 +869,7 @@
       "encoding": "utf-8",
       "etag": "\"e5ba6ee1442976b79735f23c5ca94d0e\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:43 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:13Z",
       "sha256": "9917c901cdb9ce2b3dc4f3110047236dbbb77fa5d98210d8c76d5c9f7de96c16",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1100/"
     },
@@ -877,7 +877,7 @@
       "encoding": "utf-8",
       "etag": "\"38549e581bdaeda57b409fa055c22f90\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:44 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:13Z",
       "sha256": "751d58602fd6e31f4e54da766df6c9737c0bcad8fd444f597c249b8a181a32d8",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1101/"
     },
@@ -885,7 +885,7 @@
       "encoding": "utf-8",
       "etag": "\"5cdd9d783bb23fda722eedf62f7e27a5\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:44 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:13Z",
       "sha256": "9adb244d958aea0bdd98d7f20e4d556ee9ed4f7bde612d1b0ec0cf81c81dc74a",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1102/"
     },
@@ -893,7 +893,7 @@
       "encoding": "utf-8",
       "etag": "\"3bbdc5477d2a6efde50759a7271494cb\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:44 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:13Z",
       "sha256": "7899260c3b326906fd52b9f3b84e811c64eeb11a5a90c4d6afd6417be769ed22",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1103/"
     },
@@ -901,7 +901,7 @@
       "encoding": "utf-8",
       "etag": "\"6d55df9702bcc07fe97ad2165051033d\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:44 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:13Z",
       "sha256": "4043c38fb81d89512e1ee568e70851f3d0c2e215323dda82fe16e3b18402a63c",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1150/"
     },
@@ -909,7 +909,7 @@
       "encoding": "utf-8",
       "etag": "\"cd43fe272e79db4df15ea42736cec9ad\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:44 GMT",
-      "observed_at": "2026-08-07T15:36:23Z",
+      "observed_at": "2026-08-07T17:44:13Z",
       "sha256": "5f3569f7f0b6a69cf63d0a6b55eac746bbf88a2b2f489f7412b5ae5bfbc25b1b",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1151/"
     },
@@ -917,7 +917,7 @@
       "encoding": "utf-8",
       "etag": "\"766973de4c0e69568e5d1624b29e141e\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:44 GMT",
-      "observed_at": "2026-08-07T15:36:23Z",
+      "observed_at": "2026-08-07T17:44:13Z",
       "sha256": "f6e5054b52d6d3913585cf78cdb5ccc1a1c36d3656af0e26c365ce030e9e0711",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1152/"
     },
@@ -925,7 +925,7 @@
       "encoding": "utf-8",
       "etag": "\"aadd32bab8e03226d854ebbfc4929e93\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:44 GMT",
-      "observed_at": "2026-08-07T15:36:22Z",
+      "observed_at": "2026-08-07T17:44:13Z",
       "sha256": "7018c878d9e5e7e80d3db60f2c3504326045ced55b63e1ed208bc8a25dd49d36",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1153/"
     },
@@ -933,7 +933,7 @@
       "encoding": "utf-8",
       "etag": "\"21ea0884a5dc02ffd49428959593e94c\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:45 GMT",
-      "observed_at": "2026-08-07T15:36:23Z",
+      "observed_at": "2026-08-07T17:44:13Z",
       "sha256": "ead8ed9446043c9b4d4acd2f28d318e9b2b0f1bd858d7e8ddd8ba3bb1e6ed267",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1200/"
     },
@@ -941,7 +941,7 @@
       "encoding": "utf-8",
       "etag": "\"91badf3c3cf46551fe6a980e2f95f781\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:45 GMT",
-      "observed_at": "2026-08-07T15:36:23Z",
+      "observed_at": "2026-08-07T17:44:13Z",
       "sha256": "6369b7d7ca869f190fd0f96db91fe5b5570d921c2995269d761c839202a512fa",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1201/"
     },
@@ -949,7 +949,7 @@
       "encoding": "utf-8",
       "etag": "\"8f5cae0903468cabf7889f1aefa887e2\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:45 GMT",
-      "observed_at": "2026-08-07T15:36:23Z",
+      "observed_at": "2026-08-07T17:44:13Z",
       "sha256": "83b8b75731173275cdd5e348591730207fcb7bdfa1351da3d6376bd2a9e3c2ee",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx1250/"
     },
@@ -957,7 +957,7 @@
       "encoding": "utf-8",
       "etag": "\"cc0bfa2761ea321501a909135e61b871\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:45 GMT",
-      "observed_at": "2026-08-07T15:36:23Z",
+      "observed_at": "2026-08-07T17:44:13Z",
       "sha256": "37dfcc2ee3091c99ce92e24f599f6cace7088e36ce2185aad236f8db17c4803e",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx908/"
     },
@@ -965,7 +965,7 @@
       "encoding": "utf-8",
       "etag": "\"f4b8fa124249818f3c775944f947c8e6\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:45 GMT",
-      "observed_at": "2026-08-07T15:36:23Z",
+      "observed_at": "2026-08-07T17:44:13Z",
       "sha256": "0083d59ed4646525781607bceec6970a506e0c020e326753d1e92eb8fe459f46",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx90a/"
     },
@@ -973,7 +973,7 @@
       "encoding": "utf-8",
       "etag": "\"25f830df4d6ce3db059d0e1d01069b0b\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:45 GMT",
-      "observed_at": "2026-08-07T15:36:23Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "7337f053ab142994ab21c182f55d970e68342d284cfdc7a98b4cd17d48a5c3ed",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx942/"
     },
@@ -981,7 +981,7 @@
       "encoding": "utf-8",
       "etag": "\"8c86d483356bddf28e5206602e53b887\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:46 GMT",
-      "observed_at": "2026-08-07T15:36:23Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "6c5e68a3d881cb34b533c7ba654baccc8666ed4117ae37aed84b023e3479afe3",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/amd-torchvision-device-gfx950/"
     },
@@ -989,7 +989,7 @@
       "encoding": "utf-8",
       "etag": "\"e99599aaab09e1696116ea3e328bbe44\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:48 GMT",
-      "observed_at": "2026-08-07T15:36:23Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "efeeb7cef7a68b400d9684611fa674a657b4fd4804f48d2e70a556f39f2fe2ad",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-core/"
     },
@@ -997,7 +997,7 @@
       "encoding": "utf-8",
       "etag": "\"d659f7dba13286adbacba95856d2f0d1\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:48 GMT",
-      "observed_at": "2026-08-07T15:36:23Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "50d4e9d68dcb54dbac312000b1f4651d19c6af4be028de47bcedf149c0105caa",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-devel/"
     },
@@ -1005,7 +1005,7 @@
       "encoding": "utf-8",
       "etag": "\"374f4f4ee1f5e45724a756b8613396d7\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:48 GMT",
-      "observed_at": "2026-08-07T15:36:23Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "3f9a06585e31c92a79054b7ccc6984ffc64e83bb39227e7fa6aae24f3df1df95",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1010/"
     },
@@ -1013,7 +1013,7 @@
       "encoding": "utf-8",
       "etag": "\"eb1e156d5a6dfdcb0a1c3907fd22d86f\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:48 GMT",
-      "observed_at": "2026-08-07T15:36:23Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "ab955775bffde4c9e23e4e5308690715f732e78b68d7f62642acc1047f9fe1e9",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1011/"
     },
@@ -1021,7 +1021,7 @@
       "encoding": "utf-8",
       "etag": "\"a5ff0fb104471a0acadac29b354fd695\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:48 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "4344e24e8a8b767b3b72232a23317a5ae74ab9d86a7093c8aa5def309b281e01",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1012/"
     },
@@ -1029,7 +1029,7 @@
       "encoding": "utf-8",
       "etag": "\"e2943c56e09842be3501d78fa230062e\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:48 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "980c58c98c7fb48e206935e85bcec04d25226008c7bcfdeeb8a15bb686f49a27",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1030/"
     },
@@ -1037,7 +1037,7 @@
       "encoding": "utf-8",
       "etag": "\"4e719505134eb4e2c4070d730977548f\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:49 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "33161f7d913dab2e798d0f9daa1534c32da0717140cf35eab7f66023bb59f5e4",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1031/"
     },
@@ -1045,7 +1045,7 @@
       "encoding": "utf-8",
       "etag": "\"da2baad1e4cbcc03acedde8771db8819\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:49 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "cc00fc6ef09c4ffa345f567a31f0d6951fc4118657353c9ef5d115f057ba2098",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1032/"
     },
@@ -1053,7 +1053,7 @@
       "encoding": "utf-8",
       "etag": "\"510834db143db908fb1406dce6de24f3\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:49 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "0d30f0f55a8459fd07c22acd3ebae995e68c0577ef03604e168cefb8c32a4bce",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1033/"
     },
@@ -1061,7 +1061,7 @@
       "encoding": "utf-8",
       "etag": "\"5652df46b2e5e549a0b06a8dfc6e0462\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:49 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "88ce99351d91fe8db6bf9dcca42e907dcd76eaaa43c9a28e29a6f1ac6d043d26",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1034/"
     },
@@ -1069,7 +1069,7 @@
       "encoding": "utf-8",
       "etag": "\"d8d80b332b3e49eb2409385f1ebd628e\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:49 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "f61f4639b7e0ab29a4fe25424c5886cea6fc5d45ff529931d9adc2a3254b53de",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1035/"
     },
@@ -1077,7 +1077,7 @@
       "encoding": "utf-8",
       "etag": "\"e9fcd93f6adad856f31313e0897ab5e2\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:49 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "fd6619405bd37abd713eb1cb721214e3e5e59236c4be88b8421e8ec9d82685c3",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1036/"
     },
@@ -1085,7 +1085,7 @@
       "encoding": "utf-8",
       "etag": "\"924b54be7862e4ddb85560ae58d866d6\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:49 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "a4eb2c8962380411aaa5bf694a4ddfda7efeeb59a472569cb9e68cdb86849541",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1100/"
     },
@@ -1093,7 +1093,7 @@
       "encoding": "utf-8",
       "etag": "\"05537ae7d96f4415471e1a1ca2e3c4a6\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:50 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:15Z",
       "sha256": "75d643948864d3579cc18fe56abb599ed32ce5186a4bd220d80a4ee7831f436f",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1101/"
     },
@@ -1101,7 +1101,7 @@
       "encoding": "utf-8",
       "etag": "\"0b4da6e50a5ba8073ccb434eb71e60ed\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:50 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:15Z",
       "sha256": "36236fe171f69c0ae3b0cbd60f5e878039ebb54b7736082e9900ac774b0f7168",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1102/"
     },
@@ -1109,7 +1109,7 @@
       "encoding": "utf-8",
       "etag": "\"f49678ca45da88404c442a2a12a6d47d\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:50 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:15Z",
       "sha256": "a489a6846f87eb4b6f5704d4c3c94f66d83cdbfed82d3db35edc8d79c2f55742",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1103/"
     },
@@ -1117,7 +1117,7 @@
       "encoding": "utf-8",
       "etag": "\"32b5a900509039d11673d20ccd6a6693\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:50 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:15Z",
       "sha256": "0884b084e9bf5642789c01d8c8a05297c76b82ac58ae3f29bac20d82cc8936da",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1150/"
     },
@@ -1125,7 +1125,7 @@
       "encoding": "utf-8",
       "etag": "\"1762f7efaf0fc0784eb2ee433bc2de5e\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:50 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:15Z",
       "sha256": "92ff63dfc64292c1efba90fe2e2d89d52c97d115bc32a3125007f63625089192",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1151/"
     },
@@ -1133,7 +1133,7 @@
       "encoding": "utf-8",
       "etag": "\"dd2c4eb40dfd38281939d46a06207fb7\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:50 GMT",
-      "observed_at": "2026-08-07T15:36:24Z",
+      "observed_at": "2026-08-07T17:44:15Z",
       "sha256": "5f09d7419fcbddf0083fb7d5591213c8c41ad598a15b4293e54552bb695bd68c",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1152/"
     },
@@ -1141,7 +1141,7 @@
       "encoding": "utf-8",
       "etag": "\"b68c5e0e36e6f5dfd6ad00c391b8f0b2\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:50 GMT",
-      "observed_at": "2026-08-07T15:36:25Z",
+      "observed_at": "2026-08-07T17:44:15Z",
       "sha256": "9726aeca17ece08dfe1becf06f742dd6779fe487d320d5b56517cba8037565dd",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1153/"
     },
@@ -1149,7 +1149,7 @@
       "encoding": "utf-8",
       "etag": "\"ed180a958143027d0bae34506c554eca\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:51 GMT",
-      "observed_at": "2026-08-07T15:36:25Z",
+      "observed_at": "2026-08-07T17:44:15Z",
       "sha256": "8e9e136c6081a6c1f4600ea72e750dc7578d02d8fb7a7e08fdce0cf47b5a216d",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1200/"
     },
@@ -1157,7 +1157,7 @@
       "encoding": "utf-8",
       "etag": "\"99713a79859724d64097b5c5fe0cbca6\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:51 GMT",
-      "observed_at": "2026-08-07T15:36:25Z",
+      "observed_at": "2026-08-07T17:44:15Z",
       "sha256": "fb0814d8c2579f0f54767f3c07c8369dad8e8c448a239420ef60c21d74394a0c",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1201/"
     },
@@ -1165,7 +1165,7 @@
       "encoding": "utf-8",
       "etag": "\"adf8669f06e2aba10d1dbf21f4634a83\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:51 GMT",
-      "observed_at": "2026-08-07T15:36:25Z",
+      "observed_at": "2026-08-07T17:44:15Z",
       "sha256": "029a14e4703f678f796a462820ed22ba0a86819f927f04f4feb914f319264d85",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx1250/"
     },
@@ -1173,7 +1173,7 @@
       "encoding": "utf-8",
       "etag": "\"54eeb6401a0d3ccae1e2310677e88832\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:51 GMT",
-      "observed_at": "2026-08-07T15:36:25Z",
+      "observed_at": "2026-08-07T17:44:15Z",
       "sha256": "5742a3ca410f3e714054e676af935df1f368be40a9efc271f993417e4526636e",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx908/"
     },
@@ -1181,7 +1181,7 @@
       "encoding": "utf-8",
       "etag": "\"dd14432dd6bda925b8840bbaf8ce20c2\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:51 GMT",
-      "observed_at": "2026-08-07T15:36:25Z",
+      "observed_at": "2026-08-07T17:44:15Z",
       "sha256": "c00dbad93d179bbd7207e342cd15e4a933caebdd653dc1b9f3c6a8c0e3f58501",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx90a/"
     },
@@ -1189,7 +1189,7 @@
       "encoding": "utf-8",
       "etag": "\"ea8f23dfa1916c7602eebb2ad552fe61\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:51 GMT",
-      "observed_at": "2026-08-07T15:36:25Z",
+      "observed_at": "2026-08-07T17:44:15Z",
       "sha256": "55ed79e4da72a2c083635c4c7be9169c3ed8766538a568315155a14bdfd69d48",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx942/"
     },
@@ -1197,7 +1197,7 @@
       "encoding": "utf-8",
       "etag": "\"989b706d73594058ed04459834976d81\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:51 GMT",
-      "observed_at": "2026-08-07T15:36:25Z",
+      "observed_at": "2026-08-07T17:44:15Z",
       "sha256": "271bd70b33923995fdc5f20c18b4425b6e7abd049df1c5f32986c62476acbe90",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-device-gfx950/"
     },
@@ -1205,7 +1205,7 @@
       "encoding": "utf-8",
       "etag": "\"707c83e6eabd218c55db5cb78cea9f80\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:52 GMT",
-      "observed_at": "2026-08-07T15:36:25Z",
+      "observed_at": "2026-08-07T17:44:16Z",
       "sha256": "33c29597bae8e95c633ef0b4525971207b577d2e36dd9be235cf894049ac95cc",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-sdk-libraries/"
     },
@@ -1213,7 +1213,7 @@
       "encoding": "utf-8",
       "etag": "\"660bc69118bac9161c55f43ea62321c9\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:47 GMT",
-      "observed_at": "2026-08-07T15:36:23Z",
+      "observed_at": "2026-08-07T17:44:14Z",
       "sha256": "afb46fe7f9b14be331bf909aee57c49801e85a4423ed13328c2d79300f35ec11",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm/"
     },
@@ -1221,7 +1221,7 @@
       "encoding": "utf-8",
       "etag": "\"dd1d31320edcc92cab8c9c0240f42fb7\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:52 GMT",
-      "observed_at": "2026-08-07T15:36:25Z",
+      "observed_at": "2026-08-07T17:44:16Z",
       "sha256": "5591932e7dc2e24e7108bc47a3250704f027845b37de1352b3676baf6b83081e",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/torch/"
     },
@@ -1229,7 +1229,7 @@
       "encoding": "utf-8",
       "etag": "\"de46fc1cc79fe9d41c9586f73c76ae02\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:52 GMT",
-      "observed_at": "2026-08-07T15:36:25Z",
+      "observed_at": "2026-08-07T17:44:16Z",
       "sha256": "fa4b4734b285bb11c47be6d09dac90bba19d3ccc74eb3db149ac9d21959ae9cd",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/torchaudio/"
     },
@@ -1237,7 +1237,7 @@
       "encoding": "utf-8",
       "etag": "\"b5fa21a531760da44aeb271526ea6e98\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:53 GMT",
-      "observed_at": "2026-08-07T15:36:25Z",
+      "observed_at": "2026-08-07T17:44:16Z",
       "sha256": "34bd10f471a119466efda12ac50ad3c9f37367a01e3d7be3288382e18b9b4a99",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/torchvision/"
     },
@@ -1245,7 +1245,7 @@
       "encoding": "utf-8",
       "etag": "\"8ad7358916e1bd47518422e2a3dd726a\"",
       "last_modified": "Wed, 05 Aug 2026 18:14:53 GMT",
-      "observed_at": "2026-08-07T15:36:25Z",
+      "observed_at": "2026-08-07T17:44:16Z",
       "sha256": "edfdae5d33157eb716033e8e93e5050027477ee7b63847af07f423ca1dd85e24",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/triton/"
     },
@@ -1253,7 +1253,375 @@
       "encoding": "utf-8",
       "etag": null,
       "last_modified": null,
-      "observed_at": "2026-08-07T15:37:07Z",
+      "observed_at": "2026-08-07T17:50:09Z",
+      "sha256": "cdd0d1019db49e6e0051e08b071452e70ae377d98873c9ddee1a6f10df173b34",
+      "url": "https://repo.radeon.com/rocm/manylinux/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:10Z",
+      "sha256": "00f3216357ab1224424666c7d6e39be538db58f7355e8f31c43275be34edd681",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-3.10/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:11Z",
+      "sha256": "9b78a890fb2bc81fbaa78aa48e7340902d7291c67241a8e9042b1c093370532a",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-4.0.0/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:13Z",
+      "sha256": "e3763dec57d92f0086da518c5f9e2b3f229c67914333458ae6aa49782fdd87e2",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-4.0.1/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:14Z",
+      "sha256": "47dd6d0e7341423bb9d4ace843d5782c755dec8c68cdd05eb64338b602cacecf",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-4.1/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:15Z",
+      "sha256": "022ce34a2cef6eb86d2442cf7fd66d55987d1b9ea2094265939a75dca8383e87",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-4.2/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:16Z",
+      "sha256": "153cd45583c0e24e6da71a09372ed2e0c1e28c183cc0e6d6e9175f1b5e3e116a",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-4.5.2/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:17Z",
+      "sha256": "9741159633dab5f3b20948c4af952a3999ef86676610815178575e0ad41e7def",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-5.0.1/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:18Z",
+      "sha256": "5bf3b6ba10f438a7a05dfe5584071705af0bdb5af9216d495ab14420e8404bfc",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-5.1.1/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:19Z",
+      "sha256": "e41b88d2f414e20202d27075a48158e097ed355d7a3e31bc314d718a1b61d5ef",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-5.1.3/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:21Z",
+      "sha256": "5abef7ad61de95596ee8696a85c1ab130e429584099934805a7c5e8315e55ed2",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-5.2.3/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:20Z",
+      "sha256": "24eb427293c339c55a8f910cc0616f41532fd8251741b698bed677c71d20babe",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-5.2/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:22Z",
+      "sha256": "f90c249ea6e5be679f2a204adea64d4dd70b462935b8742467ea788049407cac",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-5.3.2/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:22Z",
+      "sha256": "deef8af1297f52b43db6b4d8ad5ef8898bab705b91b7f74130f85d7d74fc27f0",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-5.3/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:24Z",
+      "sha256": "d5f5fad6eeb6a0f5b58dd4dee29b74e314bfb0b91088ea4f2593697c98c6df79",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-5.4.1/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:23Z",
+      "sha256": "2bbcb5ae0278bf457c941bb4a83f46f38ee1dede9e5e4f6c526b133013dfc809",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-5.4/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:26Z",
+      "sha256": "e18b4aa1315361d1535d2d6c405b17fef138eb5cff61aadaf2c180b1604cedbd",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-5.5.1/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:25Z",
+      "sha256": "3ae9735c1c14ed7785778b76e380762f628ddd03a7274296f832db798aba6d6f",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-5.5/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:27Z",
+      "sha256": "67d3395dcb04d2944a4130b11f04a9000218d1cfb9dd9105df5834501116f94a",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-5.6/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:28Z",
+      "sha256": "b819614233f848bb60894b8cb7131319576d0fcbed750a793eb3d6e5925d53d0",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-5.7/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:30Z",
+      "sha256": "5270c82e6d9ee7f99c39f10091e2ed091d4ce855869a3372c0500bc0cb270369",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.0.2/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:29Z",
+      "sha256": "b1fe545f2af3c32fedc9723112dd5607de6a32e1b0369a00458e1dcf19ebe00b",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.0/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:32Z",
+      "sha256": "a635d6841d344c6d71cb4596fe3f5eb11ea7f1afd61aff380de3c0fd40c1a1d5",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.1.3/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:31Z",
+      "sha256": "7e54679897fbcaff4888edc0a38d4bfde58ef6435adc257c98769eb1a09f43be",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.1/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:33Z",
+      "sha256": "4c3eeea78691db0526e781102648f879d80c439f773ef58baaae113def9f6a2d",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.2.3/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:35Z",
+      "sha256": "deb0db44c6e52431d5d60dd231618cc11a1dbabed5da62f477507787ad7f2102",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.2.4/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:32Z",
+      "sha256": "36a29a43cb3b49a8311643af3946d9c786da2e0f0dd31bd51af11d4ae536a53d",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.2/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:37Z",
+      "sha256": "529653f0530893bf2a84fc483971c6e9a74c73087e132e336b3544022d61c755",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.3.1/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:39Z",
+      "sha256": "abaeeffc0dac388b33ac8d103aa64f6d121f005437225a376a0221f3abc17679",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.3.2/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:40Z",
+      "sha256": "e616795fd29c87597c0293aaaad9e3b4ee2652201842bf48e3a51d65595cf4e9",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.3.3/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:41Z",
+      "sha256": "b4e2606314b4a0153d40e725fa12b846933a7360f8a157740916bdd970db3b6e",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.3.4/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:36Z",
+      "sha256": "6b98d80e6a3a01e9a3df6f1d4a4062bc0ad2585d0965959eeb7af96f19d10e02",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.3/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:43Z",
+      "sha256": "45c9e2177209f3b6339bd30cf664ef6c12d3d023ed45774884c2272f23298a8c",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.1/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:43Z",
+      "sha256": "03650b0652e8d537b8cf53a53bc169e02a063f75643e8b7c70d5abaf6af5ba96",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.2/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:44Z",
+      "sha256": "12c713261f0dacb381dfe781463d0ef962fa653a0d940f0c0fc037ffde486ced",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.3/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:45Z",
+      "sha256": "06b8ca42e8b59dbea613078360f1eb6d1f7da263ff37bba526ce4ad29bfdde09",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:42Z",
+      "sha256": "71b637737af41cf5c7e54a54aea398928d851582ef18df548131dfb79fae7378",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:49Z",
+      "sha256": "b616b8ffa7d5d65d4e12ba44d24242f6ba429e05e52aca70a8b15e1013b68180",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:47Z",
+      "sha256": "61a826c6c66067dc68f158dde2eba19e4a77094e22cb7f4ab7aec8baf91db0e4",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:50Z",
+      "sha256": "81d504b9c038514ad11a497f8abf926439b9325a4c96d8dd6ded454329369c5e",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.1.1/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:49Z",
+      "sha256": "e72b137478b3d48688f936d097a31c5b0402aa0b41b5187acb2a4f6055600799",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.1/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:51Z",
+      "sha256": "d50152dd2f1d22c61db793e33a21cca19f4ff33a3db6c3525220858b732d7cd3",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.1/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:52Z",
+      "sha256": "41447ca00c7bc7034b16ca344e0f14fe762d89245e57dfb0ae71aa7d254df752",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:52Z",
+      "sha256": "3ade694f255c21ffa6242364ca4d43fdf7879443c37a52de82e93117f57b518e",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.3/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:53Z",
+      "sha256": "cb43741227e86943e99d31f05099519d603b68ddc31440642684e1f4b6b07424",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:50Z",
+      "sha256": "8bad353813452b4daf735d077063fda1981e38a5d92e67c49e7dba530fe593ee",
+      "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2/"
+    },
+    {
+      "encoding": "utf-8",
+      "etag": null,
+      "last_modified": null,
+      "observed_at": "2026-08-07T17:50:08Z",
       "sha256": "53cdfc4f9fbbfc32741e355f95d4fea1bb57cb73f6a32544677825ee356fb12d",
       "url": "https://repo.radeon.com/rocm/windows/"
     },
@@ -1261,7 +1629,7 @@
       "encoding": "utf-8",
       "etag": "W/\"68d2eb37-197\"",
       "last_modified": "Tue, 23 Sep 2025 18:47:19 GMT",
-      "observed_at": "2026-08-07T15:37:07Z",
+      "observed_at": "2026-08-07T17:50:08Z",
       "sha256": "8394477acbec3265d54d7cac4614ba390f460c294b1211627598d93195ff77aa",
       "url": "https://repo.radeon.com/rocm/windows/rocm-rel-6.4.4/"
     },
@@ -1269,7 +1637,7 @@
       "encoding": "utf-8",
       "etag": "W/\"68d2f03f-159\"",
       "last_modified": "Tue, 23 Sep 2025 19:08:47 GMT",
-      "observed_at": "2026-08-07T15:37:07Z",
+      "observed_at": "2026-08-07T17:50:08Z",
       "sha256": "5ebf6bd3495bd2e92b5323fbde1ad4bb0a16f49f9c113840effcb29619b49b49",
       "url": "https://repo.radeon.com/rocm/windows/rocm-rel-6.4.4/torch/"
     },
@@ -1277,7 +1645,7 @@
       "encoding": "utf-8",
       "etag": "W/\"68d2dff5-167\"",
       "last_modified": "Tue, 23 Sep 2025 17:59:17 GMT",
-      "observed_at": "2026-08-07T15:37:07Z",
+      "observed_at": "2026-08-07T17:50:08Z",
       "sha256": "0211a717136c2f7f612f1907d468fb60df02647a262883d6d54c07d7416dd572",
       "url": "https://repo.radeon.com/rocm/windows/rocm-rel-6.4.4/torchaudio/"
     },
@@ -1285,7 +1653,7 @@
       "encoding": "utf-8",
       "etag": "W/\"68d2e00b-16d\"",
       "last_modified": "Tue, 23 Sep 2025 17:59:39 GMT",
-      "observed_at": "2026-08-07T15:37:07Z",
+      "observed_at": "2026-08-07T17:50:09Z",
       "sha256": "a15e34eeccbe6f9ac279d858cf28c1331ccf86812cbe02e036416524fbaf8599",
       "url": "https://repo.radeon.com/rocm/windows/rocm-rel-6.4.4/torchvision/"
     },
@@ -1293,7 +1661,7 @@
       "encoding": "utf-8",
       "etag": null,
       "last_modified": null,
-      "observed_at": "2026-08-07T15:37:07Z",
+      "observed_at": "2026-08-07T17:50:09Z",
       "sha256": "9a257ea383a24722401d07c098eac2336c733b0190e1752ff0251f9bfcdae386",
       "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/"
     },
@@ -1301,7 +1669,7 @@
       "encoding": "utf-8",
       "etag": null,
       "last_modified": null,
-      "observed_at": "2026-08-07T15:37:07Z",
+      "observed_at": "2026-08-07T17:50:09Z",
       "sha256": "05b664246f4b2d11f996589a7ab98a0e586fface1ef272a6ee67b3130159258d",
       "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/"
     },
@@ -1309,15 +1677,15 @@
       "encoding": "utf-8",
       "etag": null,
       "last_modified": null,
-      "observed_at": "2026-08-07T15:37:07Z",
+      "observed_at": "2026-08-07T17:50:09Z",
       "sha256": "909c8cbbc588d97509a237899ebafd13541fb0c41cb72def7e019817f985b821",
       "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2/"
     },
     {
       "encoding": "utf-8",
-      "etag": "W/\"243b39ca001b331d890a7bc68c60fe28\"",
+      "etag": "\"243b39ca001b331d890a7bc68c60fe28\"",
       "last_modified": "Thu, 06 Aug 2026 20:26:23 GMT",
-      "observed_at": "2026-08-07T15:36:17Z",
+      "observed_at": "2026-08-07T17:44:06Z",
       "sha256": "13ec7326d7982f5c6117f9a88c412fa38347b67fdac01e56dde20d0a1a9f7330",
       "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
     },
@@ -1331,9 +1699,9 @@
     },
     {
       "encoding": "utf-8",
-      "etag": "W/\"a8d238dd56de6405e1b3c6a43f0cca1e\"",
+      "etag": "\"a8d238dd56de6405e1b3c6a43f0cca1e\"",
       "last_modified": "Wed, 05 Aug 2026 10:20:38 GMT",
-      "observed_at": "2026-08-07T15:37:08Z",
+      "observed_at": "2026-08-07T17:50:53Z",
       "sha256": "956739dfeb0557c35c044a4f1c817a97b45c613ef9d187606a2956b59c35ea13",
       "url": "https://rocm.docs.amd.com/en/latest/release/versions.html"
     },
@@ -1341,7 +1709,7 @@
       "encoding": "utf-8",
       "etag": "\"33fe8ace2b65689b33f4d6bda6925c27\"",
       "last_modified": "Mon, 12 Aug 2024 20:47:43 GMT",
-      "observed_at": "2026-08-07T15:37:05Z",
+      "observed_at": "2026-08-07T17:50:05Z",
       "sha256": "109b00e30169b6a7ee454858873faa3fb616db7377513c176a2fbb98a3bf9bc0",
       "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.1.2/reference/system-requirements.html"
     },
@@ -1349,7 +1717,7 @@
       "encoding": "utf-8",
       "etag": "\"306644f0510e4cf390885e30d2aae0c5\"",
       "last_modified": "Fri, 31 Jul 2026 20:00:14 GMT",
-      "observed_at": "2026-08-07T15:37:05Z",
+      "observed_at": "2026-08-07T17:50:06Z",
       "sha256": "ed574dded56bcf0f22be55e673a4b367df2653801d9185567abe4c13d031d116",
       "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.4.0/reference/system-requirements.html"
     },
@@ -1357,7 +1725,7 @@
       "encoding": "utf-8",
       "etag": "\"9f5f9e784d2555e984aa3227ef97d593\"",
       "last_modified": "Thu, 25 Jun 2026 19:39:06 GMT",
-      "observed_at": "2026-08-07T15:37:06Z",
+      "observed_at": "2026-08-07T17:50:06Z",
       "sha256": "aecd7c56ab31b648fcba31ea8748df83cd7ac9e5eb1a056fbfae7dd810b3e5dc",
       "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.1.1/reference/system-requirements.html"
     },
@@ -1365,7 +1733,7 @@
       "encoding": "utf-8",
       "etag": "\"45687e0d336b69ef1b050a99df597e5f\"",
       "last_modified": "Fri, 31 Jul 2026 20:00:14 GMT",
-      "observed_at": "2026-08-07T15:37:05Z",
+      "observed_at": "2026-08-07T17:50:04Z",
       "sha256": "2371cc26198ad303970aacc61fb864ba89e85f9f441d0d2458b7d99917f47f92",
       "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/latest/conceptual/release-versioning.html"
     },
@@ -1373,7 +1741,7 @@
       "encoding": "utf-8",
       "etag": "\"8ce4d969adaacdeea1870a5758fe6e46\"",
       "last_modified": "Fri, 24 Jul 2026 02:57:47 GMT",
-      "observed_at": "2026-08-07T15:37:06Z",
+      "observed_at": "2026-08-07T17:50:07Z",
       "sha256": "1af45515a6481b397e764bd713126fcdaa9c1b33dcc61415b89cb1ba2db2de9e",
       "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-6.4.4/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
     },
@@ -1381,7 +1749,7 @@
       "encoding": "utf-8",
       "etag": "\"44e01e727b9840758714d45cc3c11266\"",
       "last_modified": "Fri, 24 Jul 2026 02:57:47 GMT",
-      "observed_at": "2026-08-07T15:37:06Z",
+      "observed_at": "2026-08-07T17:50:07Z",
       "sha256": "724daad26b631a9fced476d5abc4e22e9805d9547b9216da7a1bbec0f0732f8d",
       "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-6.4.4/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
     },
@@ -1389,7 +1757,7 @@
       "encoding": "utf-8",
       "etag": "\"95336ccab3afd2d1e511c3eba5b96f50\"",
       "last_modified": "Fri, 24 Jul 2026 02:55:28 GMT",
-      "observed_at": "2026-08-07T15:37:06Z",
+      "observed_at": "2026-08-07T17:50:07Z",
       "sha256": "ea54e47f4702a970e22a4f053fb62628e305d8e6eb5a3b1d8a09215d3a11143b",
       "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-7.2/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
     },
@@ -1397,7 +1765,7 @@
       "encoding": "utf-8",
       "etag": "\"5ec8447d7d185247357f647e77f8130f\"",
       "last_modified": "Fri, 24 Jul 2026 02:55:28 GMT",
-      "observed_at": "2026-08-07T15:37:06Z",
+      "observed_at": "2026-08-07T17:50:07Z",
       "sha256": "43e76fbe51ff8246e2a18ee494b246947a0e197bb55b1452c8b6f788b4b6b0fe",
       "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-7.2/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
     },
@@ -1405,7 +1773,7 @@
       "encoding": "utf-8",
       "etag": "\"f7d0e9e8823ab8337372e2b402d16277\"",
       "last_modified": "Fri, 24 Jul 2026 02:51:21 GMT",
-      "observed_at": "2026-08-07T15:37:06Z",
+      "observed_at": "2026-08-07T17:50:08Z",
       "sha256": "d81f1efaa1a5b154878a8f3a1b94922e9336aa53a5204e15e161fe81d2456006",
       "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
     },
@@ -1413,7 +1781,7 @@
       "encoding": "utf-8",
       "etag": "\"05c29c3034d4570821e0d1430dbc0e58\"",
       "last_modified": "Fri, 24 Jul 2026 02:51:21 GMT",
-      "observed_at": "2026-08-07T15:37:06Z",
+      "observed_at": "2026-08-07T17:50:08Z",
       "sha256": "cbb56ee606637e496e4236f4a8a42497ef7669cc877c0993a4bb2a641bd39090",
       "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
     },
@@ -1421,7 +1789,7 @@
       "encoding": "utf-8",
       "etag": "\"cd1019e9733f45d3739e23c687bee354\"",
       "last_modified": "Fri, 31 Jul 2026 15:41:05 GMT",
-      "observed_at": "2026-08-07T15:36:26Z",
+      "observed_at": "2026-08-07T17:44:16Z",
       "sha256": "97123d863e4ffd0f69f31e2a9fbd815a53db57c266efc01e6280cf8da3a89bea",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
     },
@@ -1429,7 +1797,7 @@
       "encoding": "utf-8",
       "etag": "\"106cd73ca873dfc2902492f0b7655ba2\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:04 GMT",
-      "observed_at": "2026-08-07T15:36:27Z",
+      "observed_at": "2026-08-07T17:44:18Z",
       "sha256": "01ef1aacacf48bf0099c1c14e24f1dea786f44a9a7101b9a216f94315ef74f98",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1010/"
     },
@@ -1437,7 +1805,7 @@
       "encoding": "utf-8",
       "etag": "\"8d3c9f6aa3e5efa6d9572af38a3a77fa\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:06 GMT",
-      "observed_at": "2026-08-07T15:36:27Z",
+      "observed_at": "2026-08-07T17:44:18Z",
       "sha256": "ad91a768ba89abcf4e9fb9801f03a338ae4a7c8c2cb12ee6e43279ad1a5ed7ef",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1011/"
     },
@@ -1445,7 +1813,7 @@
       "encoding": "utf-8",
       "etag": "\"eb468d0d3aeebfeed50fc56796b9ce6a\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:04 GMT",
-      "observed_at": "2026-08-07T15:36:27Z",
+      "observed_at": "2026-08-07T17:44:17Z",
       "sha256": "0cca5a0d8f907b54208c5631da4716d9d74205c36ca530304a19be507b67ab16",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1012/"
     },
@@ -1453,7 +1821,7 @@
       "encoding": "utf-8",
       "etag": "\"eb453e91e77757275e110772a1f204c4\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:04 GMT",
-      "observed_at": "2026-08-07T15:36:27Z",
+      "observed_at": "2026-08-07T17:44:17Z",
       "sha256": "d6383f569bea6aa4f79c1972accb8eaf57f8ca17730f471bef730d38d784eda6",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1030/"
     },
@@ -1461,7 +1829,7 @@
       "encoding": "utf-8",
       "etag": "\"1de2f9964bb85dd7fd1fc534bf4bab8d\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:05 GMT",
-      "observed_at": "2026-08-07T15:36:26Z",
+      "observed_at": "2026-08-07T17:44:17Z",
       "sha256": "6586b40944a6b8a3e23b8fc3fda5a358df3c41c7566d03a32d8a6f39b2041603",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1031/"
     },
@@ -1469,7 +1837,7 @@
       "encoding": "utf-8",
       "etag": "\"5b827745e24d5f2ff04e1518d7d509c2\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:08 GMT",
-      "observed_at": "2026-08-07T15:36:27Z",
+      "observed_at": "2026-08-07T17:44:17Z",
       "sha256": "159026dd14b2c7d84e7658643b7059f8b8cf1ceb42201e96eb9ea73af21040c7",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1032/"
     },
@@ -1477,7 +1845,7 @@
       "encoding": "utf-8",
       "etag": "\"bc21429eb0b13d19ef9006599492c9b9\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:02 GMT",
-      "observed_at": "2026-08-07T15:36:27Z",
+      "observed_at": "2026-08-07T17:44:17Z",
       "sha256": "208100f5f85244861f4cd0d98011951261246914e90d9745c1ec57dcd8c58c03",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1033/"
     },
@@ -1485,7 +1853,7 @@
       "encoding": "utf-8",
       "etag": "\"d58032e96f428d9f8c9aba15cc8d73e3\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:05 GMT",
-      "observed_at": "2026-08-07T15:36:27Z",
+      "observed_at": "2026-08-07T17:44:17Z",
       "sha256": "c892c59ac3aa3da94a808c032256a20133a7c00f649a93a0b636de3b0fb038e6",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1034/"
     },
@@ -1493,7 +1861,7 @@
       "encoding": "utf-8",
       "etag": "\"13ddf43279d06b3c7f4f4b782174e24d\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:12 GMT",
-      "observed_at": "2026-08-07T15:36:27Z",
+      "observed_at": "2026-08-07T17:44:18Z",
       "sha256": "f8858aba10f82bf68f75159360f51c65b4ad51906a2e839a441644e0b1460f51",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1035/"
     },
@@ -1501,7 +1869,7 @@
       "encoding": "utf-8",
       "etag": "\"b8c25e84655b1876b2f484bb55806dc5\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:02 GMT",
-      "observed_at": "2026-08-07T15:36:28Z",
+      "observed_at": "2026-08-07T17:44:18Z",
       "sha256": "615d4f30bd5d31a5f357ad6dde7052470099f433474716691145befed3f2f334",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1036/"
     },
@@ -1509,7 +1877,7 @@
       "encoding": "utf-8",
       "etag": "\"d6be2ba4e4a7f9d2c5f32a2b3ae954a9\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:14 GMT",
-      "observed_at": "2026-08-07T15:36:28Z",
+      "observed_at": "2026-08-07T17:44:18Z",
       "sha256": "2b182a359b23f22c5b9554a646b2137ce23c3862e05dca90e69ad530927b3b58",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1100/"
     },
@@ -1517,7 +1885,7 @@
       "encoding": "utf-8",
       "etag": "\"71a67890103298df4404f53072363777\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:15 GMT",
-      "observed_at": "2026-08-07T15:36:28Z",
+      "observed_at": "2026-08-07T17:44:18Z",
       "sha256": "7273065e59a27cae4d7575c4347c3734173f100ea72f015f8449316beaef90ff",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1101/"
     },
@@ -1525,7 +1893,7 @@
       "encoding": "utf-8",
       "etag": "\"4a2b594b20d1284097322de1dab18782\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:14 GMT",
-      "observed_at": "2026-08-07T15:36:28Z",
+      "observed_at": "2026-08-07T17:44:18Z",
       "sha256": "c0f88f735fd20a891916c27822cb63533acc5df6aa9312927e6f3806eada425b",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1102/"
     },
@@ -1533,7 +1901,7 @@
       "encoding": "utf-8",
       "etag": "\"2ab5613aca91a267e3d282b1cdc119d3\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:13 GMT",
-      "observed_at": "2026-08-07T15:36:27Z",
+      "observed_at": "2026-08-07T17:44:18Z",
       "sha256": "4888dab2a9958de2c0d6ff3b2dde51876aa37bb52229e7a34e722a50dd2a3ff3",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1103/"
     },
@@ -1541,7 +1909,7 @@
       "encoding": "utf-8",
       "etag": "\"dff5604e485bdb582254ba49e220a83a\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:12 GMT",
-      "observed_at": "2026-08-07T15:36:28Z",
+      "observed_at": "2026-08-07T17:44:18Z",
       "sha256": "dd65023008296e4966ff8c15ebe8c5415e988ff026d55cf67045b1147008f8d8",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1150/"
     },
@@ -1549,7 +1917,7 @@
       "encoding": "utf-8",
       "etag": "\"8c8875f7458eee90593753242d421db0\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:15 GMT",
-      "observed_at": "2026-08-07T15:36:28Z",
+      "observed_at": "2026-08-07T17:44:19Z",
       "sha256": "265813dc3c6ca40604f0e1a03a27dd4b30815520413c434bd4300a8b9727ae64",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1151/"
     },
@@ -1557,7 +1925,7 @@
       "encoding": "utf-8",
       "etag": "\"208154c983ea9e559f7313c854266205\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:14 GMT",
-      "observed_at": "2026-08-07T15:36:27Z",
+      "observed_at": "2026-08-07T17:44:19Z",
       "sha256": "fb51416ef3881b154ae4ff25a37989b2d1c71286f60dcc39543804caebc6642c",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1152/"
     },
@@ -1565,7 +1933,7 @@
       "encoding": "utf-8",
       "etag": "\"a7ae77b1c9f3b0e8df25a6739fb34d7c\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:14 GMT",
-      "observed_at": "2026-08-07T15:36:28Z",
+      "observed_at": "2026-08-07T17:44:19Z",
       "sha256": "56653d56ddbf50384ef745c8860c7a13a6f3cb08c40dcfef43e216a44d53e90a",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1153/"
     },
@@ -1573,7 +1941,7 @@
       "encoding": "utf-8",
       "etag": "\"bf01b59197ef2498747019e51f292d43\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:16 GMT",
-      "observed_at": "2026-08-07T15:36:28Z",
+      "observed_at": "2026-08-07T17:44:19Z",
       "sha256": "0cba7003b0fd2463a2259d19ffb86dcf49a153d02763ca591a24bbfb012adb81",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1200/"
     },
@@ -1581,7 +1949,7 @@
       "encoding": "utf-8",
       "etag": "\"0d44ce3ade30e129f08b2723d32cd6a9\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:20 GMT",
-      "observed_at": "2026-08-07T15:36:28Z",
+      "observed_at": "2026-08-07T17:44:19Z",
       "sha256": "a51a536826589151c9f2dbf5595a2c209cf2494642e27b89fe2047734fd65867",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1201/"
     },
@@ -1589,7 +1957,7 @@
       "encoding": "utf-8",
       "etag": "\"652fea116df9bd66a3cbc6cac6183cd9\"",
       "last_modified": "Fri, 07 Aug 2026 10:37:26 GMT",
-      "observed_at": "2026-08-07T15:36:28Z",
+      "observed_at": "2026-08-07T17:44:19Z",
       "sha256": "420da822d1dbaf14e6585edfd776a92bb390d044ca7d8a300c5358d2f4e07159",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx1250/"
     },
@@ -1597,7 +1965,7 @@
       "encoding": "utf-8",
       "etag": "\"2363393edf98a469da6913c67ae75c3f\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:20 GMT",
-      "observed_at": "2026-08-07T15:36:28Z",
+      "observed_at": "2026-08-07T17:44:19Z",
       "sha256": "e8ee347efee8a96f1a7f44652a736f2bf6bf88dc39755107dc4e83f7f85c45ad",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx900/"
     },
@@ -1605,7 +1973,7 @@
       "encoding": "utf-8",
       "etag": "\"039dba03fee802ff23a61925390ee228\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:20 GMT",
-      "observed_at": "2026-08-07T15:36:29Z",
+      "observed_at": "2026-08-07T17:44:19Z",
       "sha256": "91be6319fe4444a7d7f2e43e97b147b2fdf947f41892645fdc456c84ff2896dc",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx906/"
     },
@@ -1613,7 +1981,7 @@
       "encoding": "utf-8",
       "etag": "\"2afcfd65bad8f2cfb8e1fc0ff037e1e1\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:20 GMT",
-      "observed_at": "2026-08-07T15:36:29Z",
+      "observed_at": "2026-08-07T17:44:19Z",
       "sha256": "3fe814860ed06636651f9579a8e3608b390484e7144bac9855a57b51ca76ffb4",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx908/"
     },
@@ -1621,7 +1989,7 @@
       "encoding": "utf-8",
       "etag": "\"9daf50fcec41b31bcf84978d633722bf\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:23 GMT",
-      "observed_at": "2026-08-07T15:36:29Z",
+      "observed_at": "2026-08-07T17:44:19Z",
       "sha256": "74ef94efcc691f85401032d0dbf6d52b60a6be340cd4d456dc515bd58d45fe29",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx90a/"
     },
@@ -1629,7 +1997,7 @@
       "encoding": "utf-8",
       "etag": "\"89576184097fd3b1fe5ace9c9b1b8b00\"",
       "last_modified": "Fri, 07 Aug 2026 10:37:52 GMT",
-      "observed_at": "2026-08-07T15:36:29Z",
+      "observed_at": "2026-08-07T17:44:20Z",
       "sha256": "301d2fd0a7f44f063a58375f9c75c9f2003a07cd88f0b0f17a733de6aa3e12cc",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx90c/"
     },
@@ -1637,7 +2005,7 @@
       "encoding": "utf-8",
       "etag": "\"8b68ed6b830a242bfc831f70203d5d10\"",
       "last_modified": "Fri, 07 Aug 2026 10:37:36 GMT",
-      "observed_at": "2026-08-07T15:36:29Z",
+      "observed_at": "2026-08-07T17:44:20Z",
       "sha256": "4fcab198dc54559e124d2bfdf99c8b73b9a8b776ba614c7e9d899cea77af9ca2",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx942/"
     },
@@ -1645,7 +2013,7 @@
       "encoding": "utf-8",
       "etag": "\"0b85aa072814d21ef5a54c68586272b2\"",
       "last_modified": "Fri, 07 Aug 2026 10:37:37 GMT",
-      "observed_at": "2026-08-07T15:36:29Z",
+      "observed_at": "2026-08-07T17:44:20Z",
       "sha256": "9062da1ddea60e60102348e6bf1ed52a69eed10d89c37c039f45a31db75bcb67",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torch-device-gfx950/"
     },
@@ -1653,7 +2021,7 @@
       "encoding": "utf-8",
       "etag": "\"bd4dd9093bc53310c1e230e4e479c5a0\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:14 GMT",
-      "observed_at": "2026-08-07T15:36:29Z",
+      "observed_at": "2026-08-07T17:44:20Z",
       "sha256": "cee379147d87510c34dd9e569aa5592b7574a8b7fbfe388ff944a7ec082f0e90",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1010/"
     },
@@ -1661,7 +2029,7 @@
       "encoding": "utf-8",
       "etag": "\"d34e5714e40405c9f124ae9fef74a46c\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:16 GMT",
-      "observed_at": "2026-08-07T15:36:29Z",
+      "observed_at": "2026-08-07T17:44:20Z",
       "sha256": "6c7659a7cef3a01f4b2af5219e8c8c4e873a972192a63dada01a85cbd0948e2a",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1011/"
     },
@@ -1669,7 +2037,7 @@
       "encoding": "utf-8",
       "etag": "\"18c8fbfacd6179376e4fab8ca70db128\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:13 GMT",
-      "observed_at": "2026-08-07T15:36:29Z",
+      "observed_at": "2026-08-07T17:44:20Z",
       "sha256": "15a14dae5b66829dc5fb0fdfce9fcc95cc8825ac7f618e31e07d03c6c9352a96",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1012/"
     },
@@ -1677,7 +2045,7 @@
       "encoding": "utf-8",
       "etag": "\"a337ef49eff217411fb69d3840f44d2c\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:16 GMT",
-      "observed_at": "2026-08-07T15:36:29Z",
+      "observed_at": "2026-08-07T17:44:20Z",
       "sha256": "6fc1cd327d42f9144fa95045654a5680a75b8d90ea286812aba0794a78fed521",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1030/"
     },
@@ -1685,7 +2053,7 @@
       "encoding": "utf-8",
       "etag": "\"307772b759d76ace51c1669631168f23\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:17 GMT",
-      "observed_at": "2026-08-07T15:36:29Z",
+      "observed_at": "2026-08-07T17:44:20Z",
       "sha256": "d92b3ef643e7adbfa8ea6483932b1dda065ac237e63ee0faec24c3b5cd4e292e",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1031/"
     },
@@ -1693,7 +2061,7 @@
       "encoding": "utf-8",
       "etag": "\"413452fb75f932f3da5392b0cf3dd868\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:14 GMT",
-      "observed_at": "2026-08-07T15:36:30Z",
+      "observed_at": "2026-08-07T17:44:20Z",
       "sha256": "6290d93b20c83af073cbae888c433eb0dc34ba66df25748f1046575b16ab470d",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1032/"
     },
@@ -1701,7 +2069,7 @@
       "encoding": "utf-8",
       "etag": "\"854e29cdbe7ff10e3081179fe1cec9ba\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:15 GMT",
-      "observed_at": "2026-08-07T15:36:30Z",
+      "observed_at": "2026-08-07T17:44:20Z",
       "sha256": "7ae62aa55d3d0d0485d5eaa45ddb8a1e038d5d89bc946c7370cf33972f30a654",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1033/"
     },
@@ -1709,7 +2077,7 @@
       "encoding": "utf-8",
       "etag": "\"db6aaa6f9c1da5a439eb24d39968ef4a\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:17 GMT",
-      "observed_at": "2026-08-07T15:36:30Z",
+      "observed_at": "2026-08-07T17:44:20Z",
       "sha256": "236e0965a60c7a4199b061c14f140d87b7bad0ec3b6d770b7ec9e49b7f9ecbae",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1034/"
     },
@@ -1717,7 +2085,7 @@
       "encoding": "utf-8",
       "etag": "\"cb423e62fcd6c5460754fdd62f0a6b60\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:18 GMT",
-      "observed_at": "2026-08-07T15:36:30Z",
+      "observed_at": "2026-08-07T17:44:20Z",
       "sha256": "ccff697777757e07389c575dba039d88661d18b537b41a737c99cd3b87d59459",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1035/"
     },
@@ -1725,7 +2093,7 @@
       "encoding": "utf-8",
       "etag": "\"994fa934e78db0bc94da2914af6a489e\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:22 GMT",
-      "observed_at": "2026-08-07T15:36:29Z",
+      "observed_at": "2026-08-07T17:44:21Z",
       "sha256": "86a025ce2b7bceadb970ac3727f1fb8d5cf222a98f0213c85d69f4b83cdfcaa2",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1036/"
     },
@@ -1733,7 +2101,7 @@
       "encoding": "utf-8",
       "etag": "\"b25a8ceea4710fe83c7e2a8ffedfc480\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:17 GMT",
-      "observed_at": "2026-08-07T15:36:30Z",
+      "observed_at": "2026-08-07T17:44:20Z",
       "sha256": "a4eaf2cad3a2e8cd30419cbba1319df537b45d6bc1e45e3f9818c37e3adb0a6c",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1100/"
     },
@@ -1741,7 +2109,7 @@
       "encoding": "utf-8",
       "etag": "\"698e5313c2a6f53ddc285b1728a7b52d\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:18 GMT",
-      "observed_at": "2026-08-07T15:36:30Z",
+      "observed_at": "2026-08-07T17:44:21Z",
       "sha256": "8c603d780a7cd5d67839fbdeb4d1e5051492524fd799b313528b138d3f5f93ff",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1101/"
     },
@@ -1749,7 +2117,7 @@
       "encoding": "utf-8",
       "etag": "\"823e47ea15d2cfd96b1d527e35bcff3c\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:16 GMT",
-      "observed_at": "2026-08-07T15:36:30Z",
+      "observed_at": "2026-08-07T17:44:21Z",
       "sha256": "bcd18442531c1167efd2482cde1fd32010bea0923c96e6f59b8c51c70f150f58",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1102/"
     },
@@ -1757,7 +2125,7 @@
       "encoding": "utf-8",
       "etag": "\"82013eaa8b859f88277fd8a8d5798e4c\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:16 GMT",
-      "observed_at": "2026-08-07T15:36:30Z",
+      "observed_at": "2026-08-07T17:44:21Z",
       "sha256": "9e9a2d48448b64857f9dd642288a80f43aab7a461ffa13ed089840f0ef0674f4",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1103/"
     },
@@ -1765,7 +2133,7 @@
       "encoding": "utf-8",
       "etag": "\"eb8033364969575776b912d1c7b9b814\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:15 GMT",
-      "observed_at": "2026-08-07T15:36:30Z",
+      "observed_at": "2026-08-07T17:44:21Z",
       "sha256": "429b2eb4bffffeeb092b4faa1b0a04987f7ddd6cc21ce9162309e16421628712",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1150/"
     },
@@ -1773,7 +2141,7 @@
       "encoding": "utf-8",
       "etag": "\"fac0b6a291e1d87f02350d40d487d2b8\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:16 GMT",
-      "observed_at": "2026-08-07T15:36:31Z",
+      "observed_at": "2026-08-07T17:44:21Z",
       "sha256": "bf1f8f64a5b915c409ac3217d91d4ec30def360c15054612276750daa1bff100",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1151/"
     },
@@ -1781,7 +2149,7 @@
       "encoding": "utf-8",
       "etag": "\"6514828966a2550ab64b8a3988850ec0\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:14 GMT",
-      "observed_at": "2026-08-07T15:36:30Z",
+      "observed_at": "2026-08-07T17:44:21Z",
       "sha256": "c98c6c4887a9adeb1106565ee9165b358434f2ff9a7758c1c99594e9366cbaa8",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1152/"
     },
@@ -1789,7 +2157,7 @@
       "encoding": "utf-8",
       "etag": "\"ea118a91486fb4adf8f399755c88d33e\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:15 GMT",
-      "observed_at": "2026-08-07T15:36:31Z",
+      "observed_at": "2026-08-07T17:44:21Z",
       "sha256": "5a4dd3e3b0672dde40c0270a64b76d2dc27dfaed136cf1ab7aa60a01e2d37b07",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1153/"
     },
@@ -1797,7 +2165,7 @@
       "encoding": "utf-8",
       "etag": "\"55ddab387eb2513ff8ea24c9384b93ac\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:17 GMT",
-      "observed_at": "2026-08-07T15:36:30Z",
+      "observed_at": "2026-08-07T17:44:21Z",
       "sha256": "06f335b66093ce93a5b9bd1efb599be93bfb30f0e780db061d54985e6624aa0d",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1200/"
     },
@@ -1805,7 +2173,7 @@
       "encoding": "utf-8",
       "etag": "\"61190570dd632b22da86cb6c6d10046a\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:23 GMT",
-      "observed_at": "2026-08-07T15:36:31Z",
+      "observed_at": "2026-08-07T17:44:21Z",
       "sha256": "c0954b1796a3debbc7cb9b6970e4a7ede49eb43aea07ec3d313d8cc1e74b819b",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1201/"
     },
@@ -1813,7 +2181,7 @@
       "encoding": "utf-8",
       "etag": "\"f0babfbf87bff6b8077ec6b79bcf8786\"",
       "last_modified": "Fri, 07 Aug 2026 10:37:26 GMT",
-      "observed_at": "2026-08-07T15:36:31Z",
+      "observed_at": "2026-08-07T17:44:21Z",
       "sha256": "922bb66163e453f5b7ebdb34a5c9a56f13321e3e9808cfb0ff593816d369b595",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx1250/"
     },
@@ -1821,7 +2189,7 @@
       "encoding": "utf-8",
       "etag": "\"c4cc263602161f57dedbf3df67e4a1fe\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:23 GMT",
-      "observed_at": "2026-08-07T15:36:31Z",
+      "observed_at": "2026-08-07T17:44:22Z",
       "sha256": "0e16c59885c1f18b77a83fe566490829e5582b78d9f31352b9018e23681e2baa",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx900/"
     },
@@ -1829,7 +2197,7 @@
       "encoding": "utf-8",
       "etag": "\"56f97ba1fa97142c2fd561fb2b3b2018\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:17 GMT",
-      "observed_at": "2026-08-07T15:36:31Z",
+      "observed_at": "2026-08-07T17:44:22Z",
       "sha256": "8526048bff7fa1c3342510f58b3464a6c492dd2ca0e494269f2c7bc8510f98dd",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx906/"
     },
@@ -1837,7 +2205,7 @@
       "encoding": "utf-8",
       "etag": "\"0bc2b89d98ec4d48682e4763bf0e4db4\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:17 GMT",
-      "observed_at": "2026-08-07T15:36:31Z",
+      "observed_at": "2026-08-07T17:44:22Z",
       "sha256": "520253f8cc893c42635e4c7a2e6ac26b63c181e2d29c6519f1202d7a620bbe69",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx908/"
     },
@@ -1845,7 +2213,7 @@
       "encoding": "utf-8",
       "etag": "\"8d104edfbf5b43e4b3b636490d09bf30\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:15 GMT",
-      "observed_at": "2026-08-07T15:36:31Z",
+      "observed_at": "2026-08-07T17:44:22Z",
       "sha256": "9872270c08b5021255f08c486b5bff4c2a4283d994c797429142467ec6b46be6",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx90a/"
     },
@@ -1853,7 +2221,7 @@
       "encoding": "utf-8",
       "etag": "\"561ada16931c0b0d2314451fa3899b5d\"",
       "last_modified": "Fri, 07 Aug 2026 10:37:49 GMT",
-      "observed_at": "2026-08-07T15:36:31Z",
+      "observed_at": "2026-08-07T17:44:22Z",
       "sha256": "0375b0b5cb2994f9d7a60d6a104e3c0b88c6deacfb22e93bdd811e2814931287",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx90c/"
     },
@@ -1861,7 +2229,7 @@
       "encoding": "utf-8",
       "etag": "\"61bfc74155fa4888d0ac528beebe0ab1\"",
       "last_modified": "Fri, 07 Aug 2026 10:37:37 GMT",
-      "observed_at": "2026-08-07T15:36:31Z",
+      "observed_at": "2026-08-07T17:44:22Z",
       "sha256": "fe8608c192dc614550e957c1ee7540b15602c2c2502db46a4e9a7dc3726ae861",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx942/"
     },
@@ -1869,7 +2237,7 @@
       "encoding": "utf-8",
       "etag": "\"e750cce09cc08d95d2cc133a8f463d37\"",
       "last_modified": "Fri, 07 Aug 2026 10:37:37 GMT",
-      "observed_at": "2026-08-07T15:36:31Z",
+      "observed_at": "2026-08-07T17:44:22Z",
       "sha256": "16b30e676fedd959d0df795bb01304c48e7d5adf77a0bd288aa9ba9ccacfc871",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd-torchvision-device-gfx950/"
     },
@@ -1877,7 +2245,7 @@
       "encoding": "utf-8",
       "etag": "\"58c46f0d2ffee0cf80ce8b4f5063d1d5\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:10 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:22Z",
       "sha256": "4e749a051d3b2e602930d343ae6fd6f859e5762a5877e6c2776015ce9a7d5a07",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-core/"
     },
@@ -1885,7 +2253,7 @@
       "encoding": "utf-8",
       "etag": "\"35e8ef886bf3b42b4b9091b70c01ca16\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:11 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:22Z",
       "sha256": "31d4ef81e137082d048e00d7038b2ee771bb5744390069e27956afcad945639b",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-devel/"
     },
@@ -1893,7 +2261,7 @@
       "encoding": "utf-8",
       "etag": "\"dbb2e5fcd2ce5a8501eab35942b1b4e7\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:10 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:22Z",
       "sha256": "1a0194adfcf0e4756ea92370d955d48887bb2e7a586622dc322f975d2e60d94a",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1010/"
     },
@@ -1901,7 +2269,7 @@
       "encoding": "utf-8",
       "etag": "\"5c14caf8c3d66d4010655cb989e452d4\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:10 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "debe98f997c120389c141e66c84225984991780df788bd748f5ce0228c0b20ae",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1011/"
     },
@@ -1909,7 +2277,7 @@
       "encoding": "utf-8",
       "etag": "\"b42f70e4fbb5ec2904a7aae49892c060\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:10 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:22Z",
       "sha256": "c6edd3f6b6b5a1543ad98b1564d58de4d39245313f221263c4342671be71d596",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1012/"
     },
@@ -1917,7 +2285,7 @@
       "encoding": "utf-8",
       "etag": "\"e0c5ab2e06d5846428c8aecf73b7d19e\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:11 GMT",
-      "observed_at": "2026-08-07T15:36:31Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "545cc4e85f4ff38d20d2d9676d6532cc80e3efa5b0664ecef10371ced2a98609",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1030/"
     },
@@ -1925,7 +2293,7 @@
       "encoding": "utf-8",
       "etag": "\"fc4220afc133f2a7e351a6898e0bc38e\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:10 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:22Z",
       "sha256": "5d9eed8a11f82bfb4ab17fe6a22de049987fe0b5f2f94c7f0937e4783e141d76",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1031/"
     },
@@ -1933,7 +2301,7 @@
       "encoding": "utf-8",
       "etag": "\"528dfafebff653e406b641bce58059a0\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:10 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:22Z",
       "sha256": "5930a64bd3575a003c9b982ea69018299df2ff44f0bb6274896a1ddc16b945c5",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1032/"
     },
@@ -1941,7 +2309,7 @@
       "encoding": "utf-8",
       "etag": "\"a536fcb5e6878a0a8f7784a92837cb36\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:10 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "221f7e1fd674389a4375a60345bf718a63808eebfb7f2adf76b782b75a467599",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1033/"
     },
@@ -1949,7 +2317,7 @@
       "encoding": "utf-8",
       "etag": "\"8c95d0baea16c0a7ce27ad195a04e4e3\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:10 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "d84f6c55c8081bf1ad4e32ed38f36284d3ec14b3b768a1cb6810ea901c0d9382",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1034/"
     },
@@ -1957,7 +2325,7 @@
       "encoding": "utf-8",
       "etag": "\"0fa667593e7c0a3c62aea8e9181cfee1\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:11 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "5bed81c82208793bb4261a17ad8d40eda872c7fcbc317d710a21991e98d69858",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1035/"
     },
@@ -1965,7 +2333,7 @@
       "encoding": "utf-8",
       "etag": "\"fb64af0d89e5529bb14f90464bf3f064\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:10 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "2a5866884e706c5f3109530a9d96aebb38a7b9a54488de19bbc4c437a407d009",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1036/"
     },
@@ -1973,7 +2341,7 @@
       "encoding": "utf-8",
       "etag": "\"0a262cf60a9bda827e9288281d00d4a4\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:11 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "67f8e8e9a9226632aec05cad9b009281c40ac0c07c55645dc0e74828a301f7ae",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1100/"
     },
@@ -1981,7 +2349,7 @@
       "encoding": "utf-8",
       "etag": "\"94330e2ee8fbbb31a8f20910bb073413\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:11 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "d1fb7b9e1a15bfe7be842c8b77a33a8518a87150ad5b00c1cc4034fe4b288182",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1101/"
     },
@@ -1989,7 +2357,7 @@
       "encoding": "utf-8",
       "etag": "\"95bc3cda17bfe71691418059c5559b8d\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:11 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "0e0013f4da719e9b5692fc7a213fdc06a94a0c45cbe75505be488ee7fb1cbb91",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1102/"
     },
@@ -1997,7 +2365,7 @@
       "encoding": "utf-8",
       "etag": "\"6516b052c2e9065cbf03b09dee035c6a\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:11 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "1c866216d526185b87b4dcd0c860c0e4e38e5540679e57b2009e25c4a0fe18f2",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1103/"
     },
@@ -2005,7 +2373,7 @@
       "encoding": "utf-8",
       "etag": "\"de790a2956c87a32c3e08280da0b6e0c\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:11 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "1230773c91985b4454a5a81a5d4e545b7d6c72e7107e77e057951800bc9831ed",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1150/"
     },
@@ -2013,7 +2381,7 @@
       "encoding": "utf-8",
       "etag": "\"296a119b59c0ca7297e2a0b02d5a2611\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:11 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "7895df9787467c0d98eee702570131d1a71c8ee3604ee01e4c63ad72941e7509",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1151/"
     },
@@ -2021,7 +2389,7 @@
       "encoding": "utf-8",
       "etag": "\"46aff7b7643fdb6c0c0d86cc3c87098b\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:11 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "e2123fab69526833ff447cd937445713d2c0e0405f10c95b8aeb0b3d2004cd8b",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1152/"
     },
@@ -2029,7 +2397,7 @@
       "encoding": "utf-8",
       "etag": "\"18875a03747793183cbc63c02a291bc8\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:11 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "99da2c8599c1a6ef74bf65b1b532adf11a4bbb301f608c18a18b1e80f5218c46",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1153/"
     },
@@ -2037,7 +2405,7 @@
       "encoding": "utf-8",
       "etag": "\"40b0d44978b4a279bf04c15a147f0e54\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:12 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "3afc969c07f256e06e2b5785a2e872f1fa897f797388b3b6903321157a1bdbfd",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1200/"
     },
@@ -2045,7 +2413,7 @@
       "encoding": "utf-8",
       "etag": "\"54532b04aebf425084c22ae8de894694\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:12 GMT",
-      "observed_at": "2026-08-07T15:36:33Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "6b9ff0f6588e11cdf70cbf3cea6754d43a540abeb20752723280590c6e32b675",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1201/"
     },
@@ -2053,7 +2421,7 @@
       "encoding": "utf-8",
       "etag": "\"ff98ba940fb85d1bf217243c81b6fe85\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:11 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "8ad15d65af855f5ccd4d655d3c4cb8c805799e3be2c744d8cc02bbdb8ee7893e",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx1250/"
     },
@@ -2061,7 +2429,7 @@
       "encoding": "utf-8",
       "etag": "\"95b50a943514673f97ef8811815f58a6\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:12 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "af60df5f91bc721fa8f7ecacf89511dd09cc0350c47a3a62edc4f4f02c71d09d",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx900/"
     },
@@ -2069,7 +2437,7 @@
       "encoding": "utf-8",
       "etag": "\"fccca0b8fcd4e304dcd714d4d95f4e26\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:12 GMT",
-      "observed_at": "2026-08-07T15:36:33Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "82c26b9cfe6b61b53b9fb7bd5152dde651418954ed028984549053a48d17a95f",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx906/"
     },
@@ -2077,7 +2445,7 @@
       "encoding": "utf-8",
       "etag": "\"af59de4b9cee79ee69e7fbbd59bf735d\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:12 GMT",
-      "observed_at": "2026-08-07T15:36:33Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "d23386da4e1223808ffb6139ff9aa8f6ac40b6579fd986fd5307ec67fbd5f860",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx908/"
     },
@@ -2085,7 +2453,7 @@
       "encoding": "utf-8",
       "etag": "\"d7a8de7adb4f9f6855bf27cef6e1a6de\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:13 GMT",
-      "observed_at": "2026-08-07T15:36:33Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "d4af98c53e9b6b011d9d0a698f2fffa0187a8af3cec5a30fa7a2c088778024d6",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx90a/"
     },
@@ -2093,7 +2461,7 @@
       "encoding": "utf-8",
       "etag": "\"e16ebe1d1cb56987f7f385afd47387a1\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:10 GMT",
-      "observed_at": "2026-08-07T15:36:32Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "43f6b00128b43123a6a9d0f86517a85b1902c1e4c23cfded27e0ffae43face54",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx90c/"
     },
@@ -2101,7 +2469,7 @@
       "encoding": "utf-8",
       "etag": "\"40ae89a065576d78df4fe81ecc1ee4fd\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:15 GMT",
-      "observed_at": "2026-08-07T15:36:33Z",
+      "observed_at": "2026-08-07T17:44:24Z",
       "sha256": "8cee453d088157d2e7cc757a3800b95d31f34494e17615f48a80e9fc26cdceef",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx942/"
     },
@@ -2109,7 +2477,7 @@
       "encoding": "utf-8",
       "etag": "\"3e88afd690e65864d0e7bd8bcc016d23\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:13 GMT",
-      "observed_at": "2026-08-07T15:36:33Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "aea17a1fabd605ff5d21a0c533603a56237ca438b44a09b2009e0fca3f9b9d1c",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-device-gfx950/"
     },
@@ -2117,7 +2485,7 @@
       "encoding": "utf-8",
       "etag": "\"b127f3f3c315d296f83b399deabdeff6\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:14 GMT",
-      "observed_at": "2026-08-07T15:36:33Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "8cb978cecc9b160b1585773eaf0d5d7543204b6672b2271441ac1cee37c28825",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-sdk-libraries/"
     },
@@ -2125,7 +2493,7 @@
       "encoding": "utf-8",
       "etag": "\"2107bcc1b82cfbb96f4f6b987eec4bbb\"",
       "last_modified": "Fri, 07 Aug 2026 07:37:07 GMT",
-      "observed_at": "2026-08-07T15:36:31Z",
+      "observed_at": "2026-08-07T17:44:22Z",
       "sha256": "f8650e4ab941812416997624fa213425dd633086c763a45e0a014dd98dee73d4",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm/"
     },
@@ -2133,7 +2501,7 @@
       "encoding": "utf-8",
       "etag": "\"891f05d71dbed97a2cdb38c545ed8001\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:15 GMT",
-      "observed_at": "2026-08-07T15:36:33Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "165d36c72db2a0eda624565fd5c59e3b07310cec859aaff58b1915b71ca143f0",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torch/"
     },
@@ -2141,7 +2509,7 @@
       "encoding": "utf-8",
       "etag": "\"ce92fa2824b6a132d29e9d874ea7d140\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:13 GMT",
-      "observed_at": "2026-08-07T15:36:33Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "26d28750f41947ee810d9add95b7c0da5b52070c2caddd4a6a8da3a99b0fac3a",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torchaudio/"
     },
@@ -2149,7 +2517,7 @@
       "encoding": "utf-8",
       "etag": "\"43b81ca56d78d1cd509df423776bc14e\"",
       "last_modified": "Fri, 07 Aug 2026 10:38:19 GMT",
-      "observed_at": "2026-08-07T15:36:33Z",
+      "observed_at": "2026-08-07T17:44:23Z",
       "sha256": "7ef97a1a866fb7e73a015e266908684533b2f72cd7b6e17dd667d5152ece30fc",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torchvision/"
     },
@@ -2157,7 +2525,7 @@
       "encoding": "utf-8",
       "etag": "\"06d204ae8c4e0115b0c5c982e09ec997\"",
       "last_modified": "Fri, 07 Aug 2026 10:37:35 GMT",
-      "observed_at": "2026-08-07T15:36:33Z",
+      "observed_at": "2026-08-07T17:44:24Z",
       "sha256": "7733bf3c83f03eaf28465170c48e69b04b7b7485d451d351a591fc550cfbff16",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/triton/"
     },
@@ -2165,7 +2533,7 @@
       "encoding": "utf-8",
       "etag": "\"0e6c69e944af61255173dccf68424c32\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:30 GMT",
-      "observed_at": "2026-08-07T15:36:35Z",
+      "observed_at": "2026-08-07T17:44:26Z",
       "sha256": "43c0fd12de7f1573b293744d15e5b75d97bdce7f21f5316693a659e8a68f0ded",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
     },
@@ -2173,7 +2541,7 @@
       "encoding": "utf-8",
       "etag": "\"54ef67eeab8a2712fc6f574ef5df2fcc\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:30 GMT",
-      "observed_at": "2026-08-07T15:36:35Z",
+      "observed_at": "2026-08-07T17:44:26Z",
       "sha256": "fd59e5125493c7f18e2fed2016714a15c184d496b8079b9f2399df63cb3f4433",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1010/"
     },
@@ -2181,7 +2549,7 @@
       "encoding": "utf-8",
       "etag": "\"d40a3be002f620578eb299ace5d6e09c\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:30 GMT",
-      "observed_at": "2026-08-07T15:36:35Z",
+      "observed_at": "2026-08-07T17:44:27Z",
       "sha256": "667d92cb25991226278a150a315d0737e5edcfec3dc881044d883a4ee18bac2e",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1011/"
     },
@@ -2189,7 +2557,7 @@
       "encoding": "utf-8",
       "etag": "\"25af539eb3960a2fa8f459e3b798149f\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:30 GMT",
-      "observed_at": "2026-08-07T15:36:35Z",
+      "observed_at": "2026-08-07T17:44:26Z",
       "sha256": "6fdde8b53c7c3523457f8774f6fb984837d91444c9237daee3e27664e973bdcf",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1012/"
     },
@@ -2197,7 +2565,7 @@
       "encoding": "utf-8",
       "etag": "\"b1735158811c1548234b53e7b4c982dd\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:30 GMT",
-      "observed_at": "2026-08-07T15:36:35Z",
+      "observed_at": "2026-08-07T17:44:26Z",
       "sha256": "eddba511b00571cb68b9141c3b4408ac17999092f266e1fdefdb33a28775badb",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1030/"
     },
@@ -2205,7 +2573,7 @@
       "encoding": "utf-8",
       "etag": "\"1f3c8bf0b036a810d64d6fe8be48657d\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:30 GMT",
-      "observed_at": "2026-08-07T15:36:35Z",
+      "observed_at": "2026-08-07T17:44:26Z",
       "sha256": "77458711f4f277c10776a84fadd60b43033478a3cf35cc7d6dd2d799c7f9d572",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1031/"
     },
@@ -2213,7 +2581,7 @@
       "encoding": "utf-8",
       "etag": "\"df234dacc0b143aa9bd9eed8fb05ed1b\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:30 GMT",
-      "observed_at": "2026-08-07T15:36:35Z",
+      "observed_at": "2026-08-07T17:44:27Z",
       "sha256": "332b0fa582648fbf6e6fc5577be74e4683e9d3fc99fed4b4d858c24173891385",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1032/"
     },
@@ -2221,7 +2589,7 @@
       "encoding": "utf-8",
       "etag": "\"c6f693904ab34eae27f4d61d826fce28\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:31 GMT",
-      "observed_at": "2026-08-07T15:36:35Z",
+      "observed_at": "2026-08-07T17:44:27Z",
       "sha256": "a920db7b6952c8d8de0648f4c9ab9cd56974ad7ab6001cb158b45e44cdcbc9fa",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1033/"
     },
@@ -2229,7 +2597,7 @@
       "encoding": "utf-8",
       "etag": "\"8954d5b97ad828d52bd00a51adb54127\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:31 GMT",
-      "observed_at": "2026-08-07T15:36:35Z",
+      "observed_at": "2026-08-07T17:44:26Z",
       "sha256": "39984b3efb5dc3c6953a8dd9ecf429f5696de90af93791dff54a4cc74d85bb2c",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1034/"
     },
@@ -2237,7 +2605,7 @@
       "encoding": "utf-8",
       "etag": "\"f7e033847db81a6bc4d51885678a9637\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:31 GMT",
-      "observed_at": "2026-08-07T15:36:36Z",
+      "observed_at": "2026-08-07T17:44:27Z",
       "sha256": "1e67a49daa254966858d1a8457d07def9b3c2cae50802c521b3f63f96c0d59a1",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1035/"
     },
@@ -2245,7 +2613,7 @@
       "encoding": "utf-8",
       "etag": "\"56c968144e9c071ce91067434f8f6b0e\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:31 GMT",
-      "observed_at": "2026-08-07T15:36:36Z",
+      "observed_at": "2026-08-07T17:44:27Z",
       "sha256": "0125db6675730e6c3dec8beadd6bc5b5331a9568b18e1f00ad6cea6480796ab8",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1036/"
     },
@@ -2253,7 +2621,7 @@
       "encoding": "utf-8",
       "etag": "\"476aa7cf37b28b03fbfacf30c1f0d9b5\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:31 GMT",
-      "observed_at": "2026-08-07T15:36:36Z",
+      "observed_at": "2026-08-07T17:44:27Z",
       "sha256": "4d3edbf4fa0fcd93268b167c4078120505bd080bb5afaabb53a42b48d9912c97",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1100/"
     },
@@ -2261,7 +2629,7 @@
       "encoding": "utf-8",
       "etag": "\"c96ae87da761bb8998d20bc897391c96\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:31 GMT",
-      "observed_at": "2026-08-07T15:36:36Z",
+      "observed_at": "2026-08-07T17:44:27Z",
       "sha256": "5bbbc27b113d2e8d881e9c9f6bfe88326c91e0617a7627ce4f2205e590cf7551",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1101/"
     },
@@ -2269,7 +2637,7 @@
       "encoding": "utf-8",
       "etag": "\"9e272399f404bf60cb2d95db10a35871\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:31 GMT",
-      "observed_at": "2026-08-07T15:36:36Z",
+      "observed_at": "2026-08-07T17:44:27Z",
       "sha256": "8a06127454159d0f1c50d70c279ac99c765b5d3929e747e597d33509e9666ad1",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1102/"
     },
@@ -2277,7 +2645,7 @@
       "encoding": "utf-8",
       "etag": "\"b7ee2d09a7000effb04a9592962f267f\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:31 GMT",
-      "observed_at": "2026-08-07T15:36:36Z",
+      "observed_at": "2026-08-07T17:44:27Z",
       "sha256": "41f297209133435498d2f76ac0982bc340116d7ac0e25963ace38d019657c594",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1103/"
     },
@@ -2285,7 +2653,7 @@
       "encoding": "utf-8",
       "etag": "\"c7384551715f2b2bf83ca846d5ea32da\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:31 GMT",
-      "observed_at": "2026-08-07T15:36:36Z",
+      "observed_at": "2026-08-07T17:44:27Z",
       "sha256": "0362d8f438b5e342967e34444bbccc4d951234a435e7d758a6248171802a76f8",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1150/"
     },
@@ -2293,7 +2661,7 @@
       "encoding": "utf-8",
       "etag": "\"31bd68d3b738043d56abc61fd49053a2\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:31 GMT",
-      "observed_at": "2026-08-07T15:36:36Z",
+      "observed_at": "2026-08-07T17:44:27Z",
       "sha256": "d5085e6dee55578956023297a7773dad823527e9cbf58ddba368534b62850aff",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1151/"
     },
@@ -2301,7 +2669,7 @@
       "encoding": "utf-8",
       "etag": "\"fb8b221d3d8a7a5cd20f9f7d12a8580e\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:31 GMT",
-      "observed_at": "2026-08-07T15:36:36Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "23237b4419afa9021b651fd5a8137a69409682ca30ca189b6bc565d74ff8971f",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1152/"
     },
@@ -2309,7 +2677,7 @@
       "encoding": "utf-8",
       "etag": "\"dae39275c47c8c903e5d0f2340f79ee4\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:32 GMT",
-      "observed_at": "2026-08-07T15:36:36Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "4d137e9cef4d6bb515367a1435862fb395b0984d673678afc9ecc3c5b8bb48c7",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1153/"
     },
@@ -2317,7 +2685,7 @@
       "encoding": "utf-8",
       "etag": "\"7fc070c1443edee5e8357734617f2a2f\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:32 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "87bdeb1499abb17a3fb09425c97abae962e18c6ec83ebd8a5408e869eb10ddbe",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1200/"
     },
@@ -2325,7 +2693,7 @@
       "encoding": "utf-8",
       "etag": "\"01fc553059a647ae798457f341cfb465\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:32 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "fa9701e8fd362e63fd757646be175c11c71d1d45b38b41a0107f2e37b504bfd5",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx1201/"
     },
@@ -2333,7 +2701,7 @@
       "encoding": "utf-8",
       "etag": "\"7f322b9b787a0689e6d0342bba87f417\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:32 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "5afdce1d5d8ea3f43c890ecd7e8717b9810d3dc294abf210e1509805b3b79b0c",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx900/"
     },
@@ -2341,7 +2709,7 @@
       "encoding": "utf-8",
       "etag": "\"b90fff51755d007818964213ffecf39a\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:32 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "95d2e7474ce136e36f5c7a03e291398e2e39455cbed0c59a6aafe234ebc7f479",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx906/"
     },
@@ -2349,7 +2717,7 @@
       "encoding": "utf-8",
       "etag": "\"bd3ebd84a9bc151d016cfe82ef9eb53e\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:32 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "0df39b86cd02d2a99a0d03b684de3cbd8ad0eccfdf9144fc25a36006955981e0",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx908/"
     },
@@ -2357,7 +2725,7 @@
       "encoding": "utf-8",
       "etag": "\"db35eac809effdbef6d706943320b394\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:32 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "5164e35db9d210c22cb5f292557ee3061810fe129d5bb8608682ce747a9838bb",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx90a/"
     },
@@ -2365,7 +2733,7 @@
       "encoding": "utf-8",
       "etag": "\"9ea84231e09fa6ab176ca2967af6190e\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:32 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "ec69ee7d0ef32e8b34a84500ec90d8d98298beb7ce09fa9f8187b7bf15bce293",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx942/"
     },
@@ -2373,7 +2741,7 @@
       "encoding": "utf-8",
       "etag": "\"ab23b0d59b885d57b931fe44b607ab5c\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:32 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "8ee4e9342d74938d9869d10e92ebde6ab7fa45a8ef2be6d000c0c68c419a3235",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torch-device-gfx950/"
     },
@@ -2381,7 +2749,7 @@
       "encoding": "utf-8",
       "etag": "\"53ff9d38f88a054a1df4b1f33b946195\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:32 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "f2227380017677b1ab858d6c48a07d0efc243b4327e0f0f3d497ca6fd3f9d7d7",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1010/"
     },
@@ -2389,7 +2757,7 @@
       "encoding": "utf-8",
       "etag": "\"ebf277ceeb962f7226cdbf42e2180e3a\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:32 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "c023998cd0ed7784133de6159eba751d7e0162ada45f3f58ddf01fbde9c0e909",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1011/"
     },
@@ -2397,7 +2765,7 @@
       "encoding": "utf-8",
       "etag": "\"7aec123ca4441a865589d28552caca23\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:33 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "0710445e59683810eddbc8f0c5c6a7ae1560fe7f93b95a4a69c04db422e70e30",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1012/"
     },
@@ -2405,7 +2773,7 @@
       "encoding": "utf-8",
       "etag": "\"51c16f0e6f64ced5ea13c2a1ab15a5e3\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:33 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "a2035ce7e406091b08feb52c9719930b965e8eaff5ebc81be7bcc8fbc2a5b126",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1030/"
     },
@@ -2413,7 +2781,7 @@
       "encoding": "utf-8",
       "etag": "\"ace3b80ae7dd2036e466b5c8fbefc462\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:33 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "3427b100b89ab7d62eefe5958ea9c301a67d3d786aeb816152c5de1cae165c09",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1031/"
     },
@@ -2421,7 +2789,7 @@
       "encoding": "utf-8",
       "etag": "\"4ae1e7718b9f030186dffb73f0722a35\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:33 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:28Z",
       "sha256": "7f9e56595aa4b205327c21a0ab7be08f25c6788c2f4ee5fbe263f388594d2ee0",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1032/"
     },
@@ -2429,7 +2797,7 @@
       "encoding": "utf-8",
       "etag": "\"24932e4804d6f11b90b93ead2b770b53\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:33 GMT",
-      "observed_at": "2026-08-07T15:36:37Z",
+      "observed_at": "2026-08-07T17:44:29Z",
       "sha256": "2405fdf793c916f329c7b1fc6a803dc79d2634dd18beeca8dba6a87ab97ab917",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1033/"
     },
@@ -2437,7 +2805,7 @@
       "encoding": "utf-8",
       "etag": "\"25c563311d7562a0b64310d3063af75d\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:33 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:29Z",
       "sha256": "df1fe7d45a258cb717dde8fe6eaf4ca5ae879f81735ec1bf1a269f0f20b61bec",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1034/"
     },
@@ -2445,7 +2813,7 @@
       "encoding": "utf-8",
       "etag": "\"7c86e6443a0769c6458d34fae8e0710f\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:33 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:29Z",
       "sha256": "2f63a8c20a328c01dfdde037821db6d3a02c41844cb50019bd50166472591975",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1035/"
     },
@@ -2453,7 +2821,7 @@
       "encoding": "utf-8",
       "etag": "\"eb67bd6d52725bf32a6bbcae950c647b\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:33 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:29Z",
       "sha256": "e4ecd3f25368934ba529c3bbd797308d6aba48d526697910799492efc0e5cf80",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1036/"
     },
@@ -2461,7 +2829,7 @@
       "encoding": "utf-8",
       "etag": "\"465f6c6302febc1023ba4ff21a05d910\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:33 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:29Z",
       "sha256": "8e616d62bd839b51e5f4d46a092ed2ebe087c5d011d2b9748fc65f9fa1b7cbad",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1100/"
     },
@@ -2469,7 +2837,7 @@
       "encoding": "utf-8",
       "etag": "\"a8a2035a77c3ae3532d42ccb30ddd204\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:33 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:29Z",
       "sha256": "341da041d4eb7f5a8ab526b56eaed531405ff80777f7f27d0bc17917f7a90972",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1101/"
     },
@@ -2477,7 +2845,7 @@
       "encoding": "utf-8",
       "etag": "\"1bdced8163715f57894dc713a1e604a5\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:33 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:29Z",
       "sha256": "157506f89d3efed356409a873fe27e2d7384dc51c7c73576a8bacf87ebd3a11a",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1102/"
     },
@@ -2485,7 +2853,7 @@
       "encoding": "utf-8",
       "etag": "\"91f8e18a2347ce6ce12b1f3dde6c7283\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:34 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:29Z",
       "sha256": "c1dc76783b33bb4df95c69dde744376b824f42d2538f213a9d41d5c08bd14d6a",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1103/"
     },
@@ -2493,7 +2861,7 @@
       "encoding": "utf-8",
       "etag": "\"bd0b93ac90c609abf82f7c52b79112d1\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:34 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:29Z",
       "sha256": "73ed8a605576fe053fb6651971b0686fed57947a4a8ca8ea8779ded5270e4b0e",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1150/"
     },
@@ -2501,7 +2869,7 @@
       "encoding": "utf-8",
       "etag": "\"bf880cee7f5bbc6db81bc1914ea1e7f1\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:34 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:29Z",
       "sha256": "425bcd8e3f466c68b9bedc8b36c1d35deeaa0385fc5331a5798e6af8f83f5023",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1151/"
     },
@@ -2509,7 +2877,7 @@
       "encoding": "utf-8",
       "etag": "\"6468ab1b2f84c69760fb96a6e6a6a0e8\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:34 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:29Z",
       "sha256": "4b3b4aaaf66f71699755099699b3ae6de3c838a2b94397d9b4ef1c699b73e88c",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1152/"
     },
@@ -2517,7 +2885,7 @@
       "encoding": "utf-8",
       "etag": "\"d1133cf040b69f557b491e9b46463ffd\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:34 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:29Z",
       "sha256": "9e20ccb6205b9d43e8c55f85d2b238c3c74b319bd0f04a4338fd01ea8454aaa4",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1153/"
     },
@@ -2525,7 +2893,7 @@
       "encoding": "utf-8",
       "etag": "\"4300bacca09bb2c935dd70007017091e\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:34 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "a97cc22a6f21e9c8ec733962b697e745f2389f707a136f285eba15b6718f29da",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1200/"
     },
@@ -2533,7 +2901,7 @@
       "encoding": "utf-8",
       "etag": "\"133711b163accaa22a0efbe95419cb02\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:34 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:29Z",
       "sha256": "8543f99f4727c17321532f1d55cf52720495bdb7ddcf05e42e32d3c29df45b81",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx1201/"
     },
@@ -2541,7 +2909,7 @@
       "encoding": "utf-8",
       "etag": "\"5707b07411fb4e9574c544a3f78c5467\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:34 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "73bcfc7c5f8f933edb5b52e1dccfcee15eb52354b126cc383c7b721e4614dddc",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx900/"
     },
@@ -2549,7 +2917,7 @@
       "encoding": "utf-8",
       "etag": "\"fdfe4beffd1319e5f23e98333b2fc250\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:34 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "334a1e0751638670c71ef9ea6d30cbe5ab2ac984d711fd6cc3cd997f58925eec",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx906/"
     },
@@ -2557,7 +2925,7 @@
       "encoding": "utf-8",
       "etag": "\"8eed03c2494e80044cd2cdd4f5c19af4\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:34 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "8a0d4dc2ce61db1e38c4004967601fbf47a87c33d1ee9ab6f703398c51fbca15",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx908/"
     },
@@ -2565,7 +2933,7 @@
       "encoding": "utf-8",
       "etag": "\"c5038c36930755c41f5fc71be1f23903\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:35 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "5d561f7c84c1e1e50595003a40f72f0af4028d0c15ef5bb470ffd424bb8eb1c7",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx90a/"
     },
@@ -2573,7 +2941,7 @@
       "encoding": "utf-8",
       "etag": "\"c878b968a2cb257a6d7af525782d5253\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:35 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "bff15c063c457b37f1a85cca9703b140097c8cff0a57177207b0bd03dd1149cb",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx942/"
     },
@@ -2581,7 +2949,7 @@
       "encoding": "utf-8",
       "etag": "\"3ead3aab59d9f946924ef3204aac1695\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:35 GMT",
-      "observed_at": "2026-08-07T15:36:38Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "e20179f63a7d562feebf0cc07655cce1fd955aa954258de19e2752c2d7c83ed8",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd-torchvision-device-gfx950/"
     },
@@ -2589,7 +2957,7 @@
       "encoding": "utf-8",
       "etag": "\"4550258e408a94194ba202efe2c22ad6\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:36 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "fa9b2cf62a7e1fc4f0bcc106a839da53c60072a9cef1a261c48be46e56fc7332",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-core/"
     },
@@ -2597,7 +2965,7 @@
       "encoding": "utf-8",
       "etag": "\"96ccaeabd06a1cf7ec6629465f0d93ff\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:36 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "40cf4f2f63e3b1f92b6ac5a17681fcc1c5cc6d639df06d698cf78436f86f62a2",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-devel/"
     },
@@ -2605,7 +2973,7 @@
       "encoding": "utf-8",
       "etag": "\"8c746f1d50acbd16dc45f783199baaa5\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:36 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "0288a99a57dd9b605465df6884606cc374eeebb14a7441d18e89687d5417d4c3",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1010/"
     },
@@ -2613,7 +2981,7 @@
       "encoding": "utf-8",
       "etag": "\"1f6486d1078a88d9aef035a4b6e3d16b\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:36 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "de45f947a7b1f23627714ae97ab798dfceb701a55c678fbdc8e183b9eee81c2f",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1011/"
     },
@@ -2621,7 +2989,7 @@
       "encoding": "utf-8",
       "etag": "\"2b67fdba5d5c04ff11ab83a2d520aaac\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:36 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "8aa2952f7e8e0c4761354cdd339ebfe517724470acf6bbdf9b1124a497d4235d",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1012/"
     },
@@ -2629,7 +2997,7 @@
       "encoding": "utf-8",
       "etag": "\"6ef3d64fed750a4c881f008f1151d880\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:36 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "c49ef10407a86b5d48a9dc376314bc8485f9bf7a380abf4cc95ed57317c34163",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1030/"
     },
@@ -2637,7 +3005,7 @@
       "encoding": "utf-8",
       "etag": "\"db64659ce887902ae66a028bee6701e5\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:36 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "0eb48f04e3f2f30130513f2618e07a9758fc73a9e00ea3933814e9818c3fa16d",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1031/"
     },
@@ -2645,7 +3013,7 @@
       "encoding": "utf-8",
       "etag": "\"5ad00019fcd4c9c077a373b12059739f\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:36 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:31Z",
       "sha256": "7abc8cdbbe442ed42add8dc07720885660103ddec2d8d021599f3eb1e5982157",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1032/"
     },
@@ -2653,7 +3021,7 @@
       "encoding": "utf-8",
       "etag": "\"2aefaed6f6127ed824764242172e7275\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:36 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:31Z",
       "sha256": "2d8b8d361a1ee63910289a86c4f75ed988ed173880029da17a26301c45a604af",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1033/"
     },
@@ -2661,7 +3029,7 @@
       "encoding": "utf-8",
       "etag": "\"8786cf8914879a1b469a3484eb6f6492\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:37 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:31Z",
       "sha256": "68de8e359d896593d1af058d13e79ec63c57111350102b5bd44ea6d5e623fa7a",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1034/"
     },
@@ -2669,7 +3037,7 @@
       "encoding": "utf-8",
       "etag": "\"35a4bcf1328f4937f84bc362f9495cca\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:37 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "fb249ba245098f776103d719263f345e79c4dc5cc41527edb88b47a246a024cb",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1035/"
     },
@@ -2677,7 +3045,7 @@
       "encoding": "utf-8",
       "etag": "\"7de3bdff2a962ab91d92cc93047b00a9\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:37 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "ba553ecba13e7286585a179e28578ea11a884b8c82669e247d9cb1ea9e8ee704",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1036/"
     },
@@ -2685,7 +3053,7 @@
       "encoding": "utf-8",
       "etag": "\"f2104c616ccbb44ed70b981bd0deb2b8\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:37 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:31Z",
       "sha256": "0890150b108466ddfa2bf6e9e17942e80e9ae67ae9057e9638d7515b08c43418",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1100/"
     },
@@ -2693,7 +3061,7 @@
       "encoding": "utf-8",
       "etag": "\"afa35b50fada894fda90d3495d463a76\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:37 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:31Z",
       "sha256": "da0ddf4dbbf5c84fc9f4ee40e21c1d73065b9da21076f87c3fe56e8c1fb0d840",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1101/"
     },
@@ -2701,7 +3069,7 @@
       "encoding": "utf-8",
       "etag": "\"a2370f2404208ef6046822a066388864\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:37 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:31Z",
       "sha256": "482cf2c822e0e28ff5e7fb99067151f57a8d8e6b3eeea037082d567a360958b4",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1102/"
     },
@@ -2709,7 +3077,7 @@
       "encoding": "utf-8",
       "etag": "\"95cb8d6b7f540f30bbcbd0140bd83f9e\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:37 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:31Z",
       "sha256": "fb5061b93f1a73f5dff72db7c8302435ae515bca2ad9657a21edb6f599c47db9",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1103/"
     },
@@ -2717,7 +3085,7 @@
       "encoding": "utf-8",
       "etag": "\"a13aba64fddb0778c7b6c580244a7b6d\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:37 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:31Z",
       "sha256": "40b912e33f98faec75b0296cf4b265109865ada1e4dbcfc99d37aa33d06f0dac",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1150/"
     },
@@ -2725,7 +3093,7 @@
       "encoding": "utf-8",
       "etag": "\"c3a64b25c81803a8cdde2da429960e6a\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:37 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:31Z",
       "sha256": "f903ecfae58e8bc3d4e55cf0d7f773632d433d379d34cd91928b6148b6d18c19",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1151/"
     },
@@ -2733,7 +3101,7 @@
       "encoding": "utf-8",
       "etag": "\"d67d49c25d747252e79587988985ae7e\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:37 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:31Z",
       "sha256": "3ed8a61c907c668a25ecbff27e434f80f9d4a60f7a3181ef0bc7e3a73fb0c8eb",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1152/"
     },
@@ -2741,7 +3109,7 @@
       "encoding": "utf-8",
       "etag": "\"8b587b24297f27c14218d1b5f8bd2a7a\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:37 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:31Z",
       "sha256": "9bc561bb74e1ca09d4d998d3a375df322ceb67d9c863dde8c94edbb6300acd0d",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1153/"
     },
@@ -2749,7 +3117,7 @@
       "encoding": "utf-8",
       "etag": "\"eafe6be849ac0d2c18d780904ee73e72\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:37 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:31Z",
       "sha256": "230df6cf397a01587094766a47add0d827e4f4abe7bf1acbb83112ebca719432",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1200/"
     },
@@ -2757,7 +3125,7 @@
       "encoding": "utf-8",
       "etag": "\"bcac4ada9baa0c036b6701886182ce0f\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:37 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:31Z",
       "sha256": "42c997f1bdd4a7a6a35beeb3b9faf76b814b905649b05b48f3b2608e768bd33b",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx1201/"
     },
@@ -2765,7 +3133,7 @@
       "encoding": "utf-8",
       "etag": "\"1bb147eb25283e43c6207da17932c2aa\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:38 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:32Z",
       "sha256": "6c7a94d4ee0b66e0d14eaa0e4388cc1b2f10cc8d7e1b35c57837b1a2dca3dba2",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx900/"
     },
@@ -2773,7 +3141,7 @@
       "encoding": "utf-8",
       "etag": "\"58c2e6f21ff44b7b73af98b81a3fe07f\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:38 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:32Z",
       "sha256": "6ae7957706d110f5eaf070d8a461a5c84a9f687670e185b8c7c4707c49616700",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx906/"
     },
@@ -2781,7 +3149,7 @@
       "encoding": "utf-8",
       "etag": "\"90649ada6587ba0be5bb055b30ce260d\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:38 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:32Z",
       "sha256": "789a3f4edb863e1e4d8afb8ccca1091217374675b0ec9fb2210bf339dbd28317",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx908/"
     },
@@ -2789,7 +3157,7 @@
       "encoding": "utf-8",
       "etag": "\"ff3e9ac16fbe2e79c5a0664f3f2f0547\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:38 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:32Z",
       "sha256": "de28cd2f935fc4106f55a9a74ee87c93f5f934fe5b11b2e5387a079a6cedb1fb",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx90a/"
     },
@@ -2797,7 +3165,7 @@
       "encoding": "utf-8",
       "etag": "\"609c15007f199582ddd1a04ce7d705e0\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:38 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:32Z",
       "sha256": "9acd8b65c9668696e10ee871c10bf730b94ccbe2d9166c6b8260a7d46517197b",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx942/"
     },
@@ -2805,7 +3173,7 @@
       "encoding": "utf-8",
       "etag": "\"c3b39666b17fed33daf943b938b62ae7\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:38 GMT",
-      "observed_at": "2026-08-07T15:36:41Z",
+      "observed_at": "2026-08-07T17:44:32Z",
       "sha256": "766c115748c5e64c28f1b08f5189271bfa29ceef2472172585f295f269bf586e",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-device-gfx950/"
     },
@@ -2813,7 +3181,7 @@
       "encoding": "utf-8",
       "etag": "\"ed1a1a08802f8f2654c2b5891ee892f7\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:38 GMT",
-      "observed_at": "2026-08-07T15:36:40Z",
+      "observed_at": "2026-08-07T17:44:32Z",
       "sha256": "8ae04b1ff42189f32bd2194187a58e56c5acf8b81ec7f56ded12774658b222a2",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm-sdk-libraries/"
     },
@@ -2821,7 +3189,7 @@
       "encoding": "utf-8",
       "etag": "\"1f0fe6856dd3742432922d26de94f05f\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:35 GMT",
-      "observed_at": "2026-08-07T15:36:39Z",
+      "observed_at": "2026-08-07T17:44:30Z",
       "sha256": "1605a4833cdf92a1e51d46da7f7199e3539b7cf92fd0b03c937b16c54012d99d",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm/"
     },
@@ -2829,7 +3197,7 @@
       "encoding": "utf-8",
       "etag": "\"6482191606c8b7a655ff19bb0221a09a\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:38 GMT",
-      "observed_at": "2026-08-07T15:36:41Z",
+      "observed_at": "2026-08-07T17:44:32Z",
       "sha256": "02b0435f39525b7f869e11a6855c1f5275a87edbbb3483ae1e5e9d48941545a4",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/torch/"
     },
@@ -2837,7 +3205,7 @@
       "encoding": "utf-8",
       "etag": "\"8bce7575f4e3bd1e6bbeb820b82c2e64\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:38 GMT",
-      "observed_at": "2026-08-07T15:36:41Z",
+      "observed_at": "2026-08-07T17:44:32Z",
       "sha256": "ce2f7a6a8d360632a446a18e5f577f11bd4b5735b50151eaaca71b97480ccff8",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/torchaudio/"
     },
@@ -2845,7 +3213,7 @@
       "encoding": "utf-8",
       "etag": "\"b51413dd816b0e884b67b063230dcbdd\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:38 GMT",
-      "observed_at": "2026-08-07T15:36:41Z",
+      "observed_at": "2026-08-07T17:44:32Z",
       "sha256": "cd7bc6ec2634f61ad2e80d9fe3b94e906f5b31adbca26d735d4a56446c2aee5e",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/torchvision/"
     },
@@ -2853,7 +3221,7 @@
       "encoding": "utf-8",
       "etag": "\"6222a4e82691e3bf968ff4a18e295024\"",
       "last_modified": "Thu, 04 Jun 2026 14:36:39 GMT",
-      "observed_at": "2026-08-07T15:36:41Z",
+      "observed_at": "2026-08-07T17:44:32Z",
       "sha256": "9b8599ef7c9ef5cb7ec8cf885f62cb24b684d36c454266364b04e7ddee907c83",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/triton/"
     },
@@ -2861,8 +3229,8 @@
       "encoding": "utf-8",
       "etag": null,
       "last_modified": null,
-      "observed_at": "2026-08-07T15:58:16Z",
-      "sha256": "1af31c1b7b7d584a4d9c1d09b75baadedce88045f9251950a1b165307387d398",
+      "observed_at": "2026-08-07T17:45:40Z",
+      "sha256": "0c75ca356ea5f149d7457ea5c0b7cf2277aa6eb7e386c147a8c24a382b03a1bf",
       "url": "https://therock-hud.amd.com/api/ci-hud.json"
     }
   ],

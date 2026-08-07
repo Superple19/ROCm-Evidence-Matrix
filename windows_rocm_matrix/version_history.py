@@ -117,10 +117,16 @@ def matching_release(version, releases):
 
 def release_record(family, version, observed_at, **values):
     platform = values.get("platform", "windows")
+    windows_evidence = {
+        "support": values.get("windows_support", "unknown"),
+        "package_available": values.get("windows_package_available", False),
+        "ci_verified": values.get("windows_ci_verified"),
+    }
     return {
         "id": f"{family}:{version}" if platform == "windows" else f"{family}:{platform}:{version}",
         "distribution_family": family,
         "platform": platform,
+        "platform_evidence": {"windows": windows_evidence},
         "version": version,
         "channel": values.get("channel", "stable"),
         "release_date": values.get("release_date"),
@@ -144,6 +150,14 @@ def merge_version_history(existing, family, releases, gpu_support, sources, obse
     for item in existing.get("releases", []):
         item = dict(item)
         item.setdefault("platform", "windows")
+        item.setdefault(
+            "platform_evidence",
+            {"windows": {
+                "support": item.get("windows_support", "unknown"),
+                "package_available": item.get("windows_package_available", False),
+                "ci_verified": item.get("windows_ci_verified"),
+            }},
+        )
         item.setdefault("channel", "nightly" if item["distribution_family"] == "therock" and item["version"] == "10.1.0" else "stable")
         item.setdefault("windows_package_available", item.get("package_artifacts", 0) > 0)
         item.setdefault("windows_ci_verified", None)
@@ -363,14 +377,15 @@ def render_version_history(document):
         "",
         "# ROCm version history",
         "",
-        "Windows support, documentation availability, and observed package or test evidence are independent fields. A missing archive is not an unsupported release.",
+        "Platform support, documentation availability, and observed package or test evidence are independent fields. A missing archive is not an unsupported release.",
         "",
-        "| Distribution | Version | Channel | Lifecycle | Windows support | Windows package | Windows CI | Documentation | GPU observations | Framework observations | Package artifacts |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- | ---: | ---: | ---: |",
+        "| Distribution | Platform | Version | Channel | Lifecycle | Windows support | Windows package | Windows CI | Documentation | GPU observations | Framework observations | Package artifacts |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: |",
     ]
     for item in document["releases"]:
+        windows = item.get("platform_evidence", {}).get("windows", {})
         lines.append(
-            f"| {item['distribution_family']} | `{item['version']}` | {item['channel']} | {item['lifecycle']} | {item['windows_support']} | "
-            f"{item['windows_package_available']} | {item['windows_ci_verified']} | {item['documentation_status']} | {item['gpu_support_observations']} | {item['framework_support_observations']} | {item['package_artifacts']} |"
+            f"| {item['distribution_family']} | {item.get('platform', 'windows')} | `{item['version']}` | {item['channel']} | {item['lifecycle']} | {windows.get('support', item['windows_support'])} | "
+            f"{windows.get('package_available', item['windows_package_available'])} | {windows.get('ci_verified', item['windows_ci_verified'])} | {item['documentation_status']} | {item['gpu_support_observations']} | {item['framework_support_observations']} | {item['package_artifacts']} |"
         )
     return "\n".join(lines).rstrip() + "\n"
