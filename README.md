@@ -1,22 +1,22 @@
-# Windows ROCm Compatibility Matrix
+# ROCm Compatibility Matrix
 
-Windows ROCm Compatibility Matrix is an unofficial, community-maintained project that collects evidence about ROCm availability and compatibility on Windows.
+ROCm Compatibility Matrix is an unofficial, community-maintained project that collects evidence about ROCm availability and compatibility across platforms. Windows is the first fully populated platform adapter; Linux evidence is being added to the same model.
 
 The repository keeps machine-readable observations separate from generated documentation. Package availability does not imply that a package resolves, imports, or works on physical hardware.
 
 ## Current scope
 
-The initial collector reads the official AMD stable, nightly, and staging Python package indexes. It:
+The collector reads official AMD stable, nightly, and staging sources. It:
 
 - Discovers exact `gfx` targets from `rocm-sdk-device-{gfx}` packages.
-- Records Windows wheel filenames, versions, Python tags, ABI tags, platform tags, URLs, and observation times.
+- Records platform-specific wheel filenames, versions, Python tags, ABI tags, platform tags, URLs, and observation times.
 - Checks whether ROCm, PyTorch, and TorchVision device packages exist for each target.
 - Keeps every Windows ABI variant for the latest observed version of each package.
-- Collects current released Windows support and product-to-GFX mappings from AMD documentation.
-- Collects TheRock Build Passing, Sanity Tested, and Release Ready status for Windows.
+- Collects released platform support and product-to-GFX mappings from AMD documentation.
+- Collects TheRock Build Passing, Sanity Tested, and Release Ready status by platform.
 - Integrates the evidence by exact GFX target without promoting availability to compatibility.
 - Preserves observed package sets in an append-only historical catalog.
-- Collects legacy Windows HIP SDK release support, versioned GPU support, and pre-multi-arch PyTorch artifacts.
+- Collects legacy Windows HIP SDK release support, versioned GPU support, and pre-multi-arch PyTorch artifacts as a Windows-specific adapter.
 - Generates a Markdown availability summary from the JSON snapshots.
 
 Official documentation sources and their evidence boundaries are listed in [docs/sources.md](docs/sources.md).
@@ -26,7 +26,7 @@ Current generated views:
 - [Integrated compatibility matrix](docs/generated/compatibility-matrix.md)
 - [Package availability](docs/generated/package-availability.md)
 - [Historical package candidates](docs/generated/history.md)
-- [Legacy Windows ROCm support](docs/generated/legacy-windows.md)
+- [Legacy platform ROCm support](docs/generated/legacy-windows.md)
 
 ## Development environment
 
@@ -45,9 +45,9 @@ The project currently has no third-party runtime dependencies. Future collector 
 Collect TheRock and legacy evidence independently, then build integrated data and documentation:
 
 ```powershell
-windows-rocm-matrix collect therock
-windows-rocm-matrix collect legacy
-windows-rocm-matrix build
+rocm-matrix collect therock
+rocm-matrix collect legacy
+rocm-matrix build
 ```
 
 Each `collect` command fetches source responses and normalizes that distribution family. After changing a parser, rebuild every downstream stage from the local cache without network access:

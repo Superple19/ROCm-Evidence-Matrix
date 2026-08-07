@@ -4,24 +4,62 @@
 
 Windows support, documentation availability, and observed package or test evidence are independent fields. A missing archive is not an unsupported release.
 
-| Distribution | Version | Lifecycle | Windows support | Documentation | GPU observations | Framework observations | Package artifacts |
-| --- | --- | --- | --- | --- | ---: | ---: | ---: |
-| legacy | `5.5` | historical | supported | archive_missing | 0 | 0 | 0 |
-| legacy | `5.6` | historical | unsupported | archive_missing | 0 | 0 | 0 |
-| legacy | `5.7` | historical | supported | archive_missing | 0 | 0 | 0 |
-| legacy | `6.0` | historical | unsupported | available | 0 | 0 | 0 |
-| legacy | `6.1` | historical | supported | available | 23 | 0 | 0 |
-| legacy | `6.2` | historical | supported | available | 0 | 0 | 0 |
-| legacy | `6.3` | historical | unsupported | available | 0 | 0 | 0 |
-| legacy | `6.4` | historical | supported | available | 43 | 0 | 0 |
-| legacy | `6.4.4` | historical | supported | available | 43 | 2 | 3 |
-| legacy | `7.1` | historical | supported | available | 38 | 0 | 0 |
-| legacy | `7.1.1` | historical | supported | available | 38 | 0 | 7 |
-| legacy | `7.2` | historical | unknown | available | 0 | 2 | 7 |
-| legacy | `7.2.1` | current | unknown | available | 0 | 2 | 7 |
-| therock | `7.10` | historical | unknown | archive_missing | 0 | 0 | 0 |
-| therock | `7.11` | historical | unknown | available | 13 | 0 | 0 |
-| therock | `7.12` | historical | unknown | available | 13 | 0 | 0 |
-| therock | `7.13` | historical | unknown | available | 13 | 0 | 0 |
-| therock | `7.14` | historical | unknown | available | 23 | 0 | 0 |
-| therock | `10.1.0` | current | unknown | available | 23 | 0 | 0 |
+| Distribution | Version | Channel | Lifecycle | Windows support | Windows package | Windows CI | Documentation | GPU observations | Framework observations | Package artifacts |
+| --- | --- | --- | --- | --- | --- | --- | --- | ---: | ---: | ---: |
+| legacy | `5.0.0` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.0.1` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.0.2` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.1.0` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.1.1` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.1.3` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.2.0` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.2.1` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.2.3` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.3.0` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.3.2` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.3.3` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.4.0` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.4.1` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.4.2` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.4.3` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.5.0` | stable | historical | supported | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.5.1` | stable | historical | supported | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.6.0` | stable | historical | unsupported | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.6.1` | stable | historical | unsupported | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.7.0` | stable | historical | supported | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `5.7.1` | stable | historical | supported | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `6.0.0` | stable | historical | unsupported | False | None | available | 0 | 0 | 0 |
+| legacy | `6.0.2` | stable | historical | unsupported | False | None | available | 0 | 0 | 0 |
+| legacy | `6.1.0` | stable | historical | supported | False | None | available | 23 | 0 | 0 |
+| legacy | `6.1.1` | stable | historical | supported | False | None | available | 23 | 0 | 0 |
+| legacy | `6.1.2` | stable | historical | supported | False | None | available | 23 | 0 | 0 |
+| legacy | `6.1.5` | stable | historical | supported | False | None | available | 23 | 0 | 0 |
+| legacy | `6.2.0` | stable | historical | supported | False | None | available | 0 | 0 | 0 |
+| legacy | `6.2.1` | stable | historical | supported | False | None | available | 0 | 0 | 0 |
+| legacy | `6.2.2` | stable | historical | supported | False | None | available | 0 | 0 | 0 |
+| legacy | `6.2.4` | stable | historical | supported | False | None | available | 0 | 0 | 0 |
+| legacy | `6.3.0` | stable | historical | unsupported | False | None | available | 0 | 0 | 0 |
+| legacy | `6.3.1` | stable | historical | unsupported | False | None | available | 0 | 0 | 0 |
+| legacy | `6.3.2` | stable | historical | unsupported | False | None | available | 0 | 0 | 0 |
+| legacy | `6.3.3` | stable | historical | unsupported | False | None | available | 0 | 0 | 0 |
+| legacy | `6.4.0` | stable | historical | supported | False | None | available | 43 | 0 | 0 |
+| legacy | `6.4.1` | stable | historical | supported | False | None | available | 43 | 0 | 0 |
+| legacy | `6.4.2` | stable | historical | supported | False | None | available | 43 | 0 | 0 |
+| legacy | `6.4.3` | stable | historical | supported | False | None | available | 43 | 0 | 0 |
+| legacy | `6.4.4` | stable | historical | supported | True | None | available | 43 | 2 | 3 |
+| legacy | `7.0.0` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `7.0.1` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `7.0.2` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| legacy | `7.1.0` | stable | historical | supported | False | None | available | 38 | 0 | 0 |
+| legacy | `7.1.1` | stable | historical | supported | True | None | available | 38 | 0 | 7 |
+| legacy | `7.2.0` | stable | historical | unknown | False | None | available | 0 | 0 | 0 |
+| legacy | `7.2.1` | stable | historical | unknown | True | None | available | 0 | 2 | 7 |
+| legacy | `7.2.2` | stable | historical | unknown | False | None | available | 0 | 0 | 0 |
+| legacy | `7.2.3` | stable | historical | unknown | False | None | available | 0 | 0 | 0 |
+| legacy | `7.2.4` | stable | current | unknown | False | None | available | 0 | 0 | 0 |
+| therock | `7.10` | stable | historical | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| therock | `7.11` | stable | historical | unknown | False | None | available | 13 | 0 | 0 |
+| therock | `7.12` | stable | historical | unknown | False | None | available | 13 | 0 | 0 |
+| therock | `7.13` | stable | historical | unknown | False | None | available | 13 | 0 | 0 |
+| therock | `7.14.0` | stable | current | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| therock | `10.1.0` | nightly | current | unknown | False | None | available | 23 | 0 | 0 |

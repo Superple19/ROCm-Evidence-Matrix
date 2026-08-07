@@ -14,6 +14,12 @@ def version_series(version):
     return match.group(1) if match else None
 
 
+def is_therock_version(version):
+    """TheRock replaced the legacy Windows release line starting with 7.10."""
+    parts = version.split(".")
+    return len(parts) >= 2 and (int(parts[0]) > 7 or (int(parts[0]) == 7 and int(parts[1]) >= 10))
+
+
 def parse_release_date(value):
     for pattern in ("%B %d, %Y", "%b %d, %Y"):
         try:
@@ -114,8 +120,11 @@ def release_record(family, version, observed_at, **values):
         "id": f"{family}:{version}",
         "distribution_family": family,
         "version": version,
+        "channel": values.get("channel", "stable"),
         "release_date": values.get("release_date"),
         "windows_support": values.get("windows_support", "unknown"),
+        "windows_package_available": values.get("windows_package_available", False),
+        "windows_ci_verified": values.get("windows_ci_verified"),
         "documentation_status": values.get("documentation_status", "unknown"),
         "documentation_url": values.get("documentation_url"),
         "source_ids": sorted(set(values.get("source_ids", []))),
@@ -129,7 +138,13 @@ def release_record(family, version, observed_at, **values):
 
 def merge_version_history(existing, family, releases, gpu_support, sources, observed_at):
     existing = existing or {"schema_version": 1, "sources": {}, "releases": [], "therock_gpu_support": []}
-    records = {item["id"]: dict(item) for item in existing.get("releases", [])}
+    records = {}
+    for item in existing.get("releases", []):
+        item = dict(item)
+        item.setdefault("channel", "nightly" if item["distribution_family"] == "therock" and item["version"] == "10.1.0" else "stable")
+        item.setdefault("windows_package_available", item.get("package_artifacts", 0) > 0)
+        item.setdefault("windows_ci_verified", None)
+        records[item["id"]] = item
     for release in releases:
         current = records.get(release["id"])
         if current:
@@ -137,13 +152,42 @@ def merge_version_history(existing, family, releases, gpu_support, sources, obse
             release["release_date"] = release["release_date"] or current["release_date"]
             release["source_ids"] = sorted(set(release["source_ids"]) | set(current["source_ids"]))
         records[release["id"]] = release
-    latest = max(
-        (version_key(item["version"]) for item in records.values() if item["distribution_family"] == family),
-        default=None,
-    )
+        if family == "therock":
+            records.pop(f"legacy:{release['version']}", None)
+    exact_records = {
+        version_series(item["version"]): item
+        for item in records.values()
+        if item.get("distribution_family") == family and len(item["version"].split(".")) >= 3
+    }
+    for key, item in list(records.items()):
+        if item.get("distribution_family") != family or len(item["version"].split(".")) != 2:
+            continue
+        exact = exact_records.get(version_series(item["version"]))
+        if exact:
+            exact["source_ids"] = sorted(set(exact["source_ids"]) | set(item["source_ids"]))
+            for field in ("gpu_support_observations", "framework_support_observations", "package_artifacts"):
+                exact[field] = max(exact[field], item[field])
+            if exact["documentation_status"] == "archive_missing" and item["documentation_status"] == "available":
+                exact["documentation_status"] = item["documentation_status"]
+                exact["documentation_url"] = item["documentation_url"]
+            records.pop(key, None)
+    exact_versions = {release["version"] for release in releases}
+    exact_series = {version_series(version) for version in exact_versions}
+    records = {
+        key: item
+        for key, item in records.items()
+        if item.get("distribution_family") != family
+        or item["version"] not in exact_series
+        or item["version"] in exact_versions
+    }
+    latest = {}
     for item in records.values():
-        if item["distribution_family"] == family:
-            item["lifecycle"] = "current" if version_key(item["version"]) == latest else "historical"
+        item_family = (item["distribution_family"], item["channel"])
+        version = version_key(item["version"])
+        if item_family not in latest or version > latest[item_family]:
+            latest[item_family] = version
+    for item in records.values():
+            item["lifecycle"] = "current" if version_key(item["version"]) == latest[(item["distribution_family"], item["channel"])] else "historical"
     updated_gpu_versions = {item["version"] for item in gpu_support}
     existing_gpu = [
         item
@@ -210,6 +254,7 @@ def collect_therock_version_history(config, fetch_text, current_status, existing
                 release["version"],
                 observed_at,
                 release_date=release["release_date"],
+                channel="stable",
                 documentation_status=documentation_status,
                 documentation_url=release["documentation_url"],
                 source_ids=[release["source_id"], source_id] if status else [release["source_id"]],
@@ -228,6 +273,7 @@ def collect_therock_version_history(config, fetch_text, current_status, existing
                 documentation_url=current_source["url"],
                 source_ids=[current["source_id"], current_source["id"]],
                 gpu_support_observations=len(current_status),
+                channel="nightly",
             )
         )
         gpu_support.extend({**item, "version": current["version"], "distribution_family": "therock"} for item in current_status)
@@ -259,6 +305,14 @@ def collect_legacy_version_history(config, fetch_text, legacy, existing=None, ob
     versions.update(item["rocm_series"] for item in legacy["hip_sdk_gpu_support"])
     versions.update(item["rocm_version"] for item in legacy["pytorch_windows_support"])
     versions.update(item["release_id"] for item in legacy["artifact_releases"])
+    # Preserve every official release-table row, including patch releases that
+    # have no separate Windows support or package observation.
+    versions.update(item["version"] for item in release_history)
+    # A support source may identify a series (for example ``7.2``) while the
+    # release table contains its exact patch releases. Keep the exact rows and
+    # avoid presenting the series alias as a second release.
+    exact_series = {version_series(item["version"]) for item in release_history}
+    versions = {version for version in versions if version not in exact_series or version in releases_by_version}
     records = []
     for version in sorted(versions, key=version_key):
         series = version_series(version)
@@ -275,12 +329,14 @@ def collect_legacy_version_history(config, fetch_text, legacy, existing=None, ob
         source_ids.extend(item["source_id"] for item in legacy["hip_sdk_gpu_support"] if item["rocm_series"] == series)
         source_ids.extend(item["source_id"] for item in legacy["pytorch_windows_support"] if item["rocm_version"] == version)
         source_ids.extend(item["source_id"] for item in legacy["artifact_releases"] if item["release_id"] == version)
+        family = "therock" if release and is_therock_version(version) else "legacy"
         records.append(
             release_record(
-                "legacy",
+                family,
                 version,
                 observed_at,
                 release_date=release["release_date"] if release else None,
+                channel="stable",
                 windows_support="supported" if support is True else "unsupported" if support is False else "unknown",
                 documentation_status="available" if branch else "archive_missing",
                 documentation_url=f"https://rocm.docs.amd.com/projects/install-on-windows/en/docs-{branch}/" if branch else None,
@@ -288,9 +344,14 @@ def collect_legacy_version_history(config, fetch_text, legacy, existing=None, ob
                 gpu_support_observations=gpu_count,
                 framework_support_observations=framework_count,
                 package_artifacts=package_count,
+                windows_package_available=package_count > 0,
             )
         )
-    return merge_version_history(existing, "legacy", records, [], source_records, observed_at), results
+    history = merge_version_history(existing, "legacy", [item for item in records if item["distribution_family"] == "legacy"], [], source_records, observed_at)
+    therock_records = [item for item in records if item["distribution_family"] == "therock"]
+    if therock_records:
+        history = merge_version_history(history, "therock", therock_records, [], source_records, observed_at)
+    return history, results
 
 
 def render_version_history(document):
@@ -301,12 +362,12 @@ def render_version_history(document):
         "",
         "Windows support, documentation availability, and observed package or test evidence are independent fields. A missing archive is not an unsupported release.",
         "",
-        "| Distribution | Version | Lifecycle | Windows support | Documentation | GPU observations | Framework observations | Package artifacts |",
-        "| --- | --- | --- | --- | --- | ---: | ---: | ---: |",
+        "| Distribution | Version | Channel | Lifecycle | Windows support | Windows package | Windows CI | Documentation | GPU observations | Framework observations | Package artifacts |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | ---: | ---: | ---: |",
     ]
     for item in document["releases"]:
         lines.append(
-            f"| {item['distribution_family']} | `{item['version']}` | {item['lifecycle']} | {item['windows_support']} | "
-            f"{item['documentation_status']} | {item['gpu_support_observations']} | {item['framework_support_observations']} | {item['package_artifacts']} |"
+            f"| {item['distribution_family']} | `{item['version']}` | {item['channel']} | {item['lifecycle']} | {item['windows_support']} | "
+            f"{item['windows_package_available']} | {item['windows_ci_verified']} | {item['documentation_status']} | {item['gpu_support_observations']} | {item['framework_support_observations']} | {item['package_artifacts']} |"
         )
     return "\n".join(lines).rstrip() + "\n"

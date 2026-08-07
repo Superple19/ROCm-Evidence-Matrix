@@ -3,9 +3,9 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "windows-rocm-matrix"
+name = "rocm-matrix"
 version = "0.1.0"
-description = "Evidence-based Windows ROCm compatibility data and documentation"
+description = "Evidence-based ROCm platform compatibility data and documentation"
 readme = "README.md"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
@@ -18,10 +18,15 @@ dependencies = []
 Repository = "https://github.com/Superple19/windows-rocm-matrix"
 
 [project.scripts]
+rocm-matrix = "windows_rocm_matrix.collect:main"
 windows-rocm-matrix = "windows_rocm_matrix.collect:main"
+rocm-resolve = "windows_rocm_matrix.resolve:main"
 windows-rocm-resolve = "windows_rocm_matrix.resolve:main"
+rocm-verify = "windows_rocm_matrix.verify:main"
 windows-rocm-verify = "windows_rocm_matrix.verify:main"
+rocm-runtime = "windows_rocm_matrix.runtime:main"
 windows-rocm-runtime = "windows_rocm_matrix.runtime:main"
+rocm-hardware = "windows_rocm_matrix.hardware:main"
 windows-rocm-hardware = "windows_rocm_matrix.hardware:main"
 
 [tool.setuptools.packages.find]

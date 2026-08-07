@@ -66,12 +66,33 @@ class VersionHistoryTests(unittest.TestCase):
         history, results = collect_legacy_version_history(config, pages.__getitem__, legacy, observed_at=OBSERVED_AT)
         by_version = {item["version"]: item for item in history["releases"]}
 
-        self.assertEqual(by_version["5.5"]["windows_support"], "supported")
-        self.assertEqual(by_version["5.5"]["documentation_status"], "archive_missing")
-        self.assertEqual(by_version["5.6"]["windows_support"], "unsupported")
-        self.assertEqual(by_version["5.6"]["documentation_status"], "available")
+        self.assertEqual(by_version["5.5.0"]["windows_support"], "supported")
+        self.assertEqual(by_version["5.5.0"]["documentation_status"], "archive_missing")
+        self.assertEqual(by_version["5.6.0"]["windows_support"], "unsupported")
+        self.assertEqual(by_version["5.6.0"]["documentation_status"], "available")
+        self.assertNotIn("5.5", by_version)
+        self.assertNotIn("5.6", by_version)
         self.assertTrue(all(result["status"] == "passed" for result in results))
         validate_version_history(history)
+
+    def test_preserves_release_only_patch_versions(self):
+        config = {
+            "rocm_releases": {"id": "releases", "url": "https://example.test/releases"},
+            "documentation_branches": {"id": "branches", "url": "https://example.test/branches"},
+        }
+        legacy = {
+            "sources": {"versions": {"id": "versions"}},
+            "hip_sdk_releases": [],
+            "hip_sdk_gpu_support": [],
+            "pytorch_windows_support": [],
+            "artifact_releases": [],
+        }
+        pages = {
+            "https://example.test/releases": "<table><tr><th>Version</th><th>Release date</th></tr><tr><td>7.2.2</td><td>April 14, 2026</td></tr><tr><td>7.2.4</td><td>May 29, 2026</td></tr></table>",
+            "https://example.test/branches": "[]",
+        }
+        history, _ = collect_legacy_version_history(config, pages.__getitem__, legacy, observed_at=OBSERVED_AT)
+        self.assertEqual([item["version"] for item in history["releases"]], ["7.2.2", "7.2.4"])
 
     def test_derives_lifecycle_without_changing_distribution_family(self):
         older = release_record("therock", "7.14", OBSERVED_AT, source_ids=["source"])
@@ -82,6 +103,28 @@ class VersionHistoryTests(unittest.TestCase):
         self.assertEqual(by_version["7.14"]["lifecycle"], "historical")
         self.assertEqual(by_version["10.1.0"]["lifecycle"], "current")
         self.assertEqual(by_version["7.14"]["distribution_family"], "therock")
+        validate_version_history(history)
+
+    def test_lifecycle_is_scoped_to_distribution_and_channel(self):
+        history = merge_version_history(
+            None,
+            "legacy",
+            [release_record("legacy", "7.2.4", OBSERVED_AT, channel="stable", source_ids=["source"])],
+            [],
+            {"source": {}},
+            OBSERVED_AT,
+        )
+        history = merge_version_history(
+            history,
+            "therock",
+            [release_record("therock", "10.1.0", OBSERVED_AT, channel="nightly", source_ids=["source"])],
+            [],
+            {"source": {}},
+            OBSERVED_AT,
+        )
+        by_id = {item["id"]: item for item in history["releases"]}
+        self.assertEqual(by_id["legacy:7.2.4"]["lifecycle"], "current")
+        self.assertEqual(by_id["therock:10.1.0"]["lifecycle"], "current")
         validate_version_history(history)
 
 

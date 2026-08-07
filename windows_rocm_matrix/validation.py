@@ -295,6 +295,8 @@ def validate_version_history(document):
         release_ids.add(release["id"])
         if release["distribution_family"] not in {"therock", "legacy"}:
             raise ValueError(f"Invalid version history family: {release['id']}")
+        if release.get("channel") not in {"stable", "nightly", "staging", "unknown"}:
+            raise ValueError(f"Invalid release channel: {release['id']}")
         if release["windows_support"] not in {"supported", "unsupported", "unknown"}:
             raise ValueError(f"Invalid Windows support status: {release['id']}")
         if release["documentation_status"] not in {"available", "archive_missing", "unknown"}:
@@ -305,12 +307,12 @@ def validate_version_history(document):
             raise ValueError(f"Unknown version history source: {release['id']}")
         if not release["first_observed_at"].endswith("Z") or not release["last_observed_at"].endswith("Z"):
             raise ValueError(f"Invalid version history observation time: {release['id']}")
-        family = release["distribution_family"]
+        family = (release["distribution_family"], release["channel"])
         version = version_key(release["version"])
         if family not in latest or version > latest[family]:
             latest[family] = version
     for release in document.get("releases", []):
-        expected = "current" if version_key(release["version"]) == latest[release["distribution_family"]] else "historical"
+        expected = "current" if version_key(release["version"]) == latest[(release["distribution_family"], release["channel"])] else "historical"
         if release["lifecycle"] != expected:
             raise ValueError(f"Incorrect version lifecycle: {release['id']}")
     seen_gpu = set()
