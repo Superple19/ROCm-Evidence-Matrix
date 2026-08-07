@@ -72,7 +72,7 @@ def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_co
         for future in as_completed(futures):
             name = futures[future]
             html = future.result()
-            all_packages[name] = parse_package_artifacts(html, package_url(index_url, name), name)
+            all_packages[name] = parse_package_artifacts(html, package_url(index_url, name), name, source.get("platform", "windows"))
 
     all_packages = {name: all_packages[name] for name in sorted(all_packages)}
     packages = {name: latest_artifacts(artifacts) for name, artifacts in all_packages.items()}
@@ -91,7 +91,7 @@ def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_co
     snapshot = {
         "schema_version": 1,
         "last_observed_at": observed_at or datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
-        "source": source,
+        "source": {**source, "platform": source.get("platform", "windows")},
         "gfx_targets": target_rows,
         "packages": packages,
     }

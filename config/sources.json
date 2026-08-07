@@ -15,6 +15,24 @@
       "id": "staging",
       "channel": "staging",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
+    },
+    {
+      "id": "stable-linux",
+      "channel": "stable",
+      "platform": "linux",
+      "url": "https://repo.amd.com/rocm/whl-multi-arch/"
+    },
+    {
+      "id": "nightly-linux",
+      "channel": "nightly",
+      "platform": "linux",
+      "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
+    },
+    {
+      "id": "staging-linux",
+      "channel": "staging",
+      "platform": "linux",
+      "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
     }
   ],
   "documentation_sources": [

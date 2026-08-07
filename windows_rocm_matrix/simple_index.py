@@ -92,6 +92,22 @@ def parse_windows_wheels(html, base_url, package_name):
     return sorted(artifacts, key=lambda item: (version_key(item["version"]), item["filename"]))
 
 
+def parse_linux_wheels(html, base_url, package_name):
+    artifacts = []
+    expected_name = normalize_package_name(package_name)
+    for url, text in parse_links(html, base_url):
+        filename = unquote(PurePosixPath(urlparse(url).path).name)
+        if not filename.lower().endswith(".whl"):
+            continue
+        parts = filename[:-4].split("-")
+        if len(parts) < 5 or not any(parts[-1].lower().startswith(prefix) for prefix in ("linux", "manylinux", "musllinux")):
+            continue
+        if normalize_package_name(parts[0]) != expected_name:
+            continue
+        artifacts.append({"filename": filename, "version": parts[1], "python_tag": parts[-3], "abi_tag": parts[-2], "platform_tag": parts[-1], "url": url})
+    return sorted(artifacts, key=lambda item: (version_key(item["version"]), item["filename"]))
+
+
 def parse_source_distributions(html, base_url, package_name):
     artifacts = []
     expected_name = normalize_package_name(package_name)
@@ -115,9 +131,10 @@ def parse_source_distributions(html, base_url, package_name):
     return sorted(artifacts, key=lambda item: (version_key(item["version"]), item["filename"]))
 
 
-def parse_package_artifacts(html, base_url, package_name):
+def parse_package_artifacts(html, base_url, package_name, platform="windows"):
+    wheels = parse_linux_wheels(html, base_url, package_name) if platform == "linux" else parse_windows_wheels(html, base_url, package_name)
     return sorted(
-        parse_windows_wheels(html, base_url, package_name) + parse_source_distributions(html, base_url, package_name),
+        wheels + parse_source_distributions(html, base_url, package_name),
         key=lambda item: (version_key(item["version"]), item["filename"]),
     )
 

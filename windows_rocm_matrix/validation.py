@@ -10,8 +10,10 @@ def validate_snapshot(snapshot):
         raise ValueError("last_observed_at must be a UTC timestamp")
 
     source = snapshot.get("source")
-    if not isinstance(source, dict) or set(source) != {"id", "channel", "url"}:
+    if not isinstance(source, dict) or not {"id", "channel", "url"}.issubset(source):
         raise ValueError("source must contain id, channel, and url")
+    if source.get("platform", "windows") not in {"windows", "linux", "macos", "unknown"}:
+        raise ValueError(f"Unsupported platform: {source.get('platform')}")
     if source["channel"] not in {"stable", "nightly", "staging"}:
         raise ValueError(f"Unsupported channel: {source['channel']}")
     if not source["url"].startswith("https://"):
@@ -30,7 +32,7 @@ def validate_snapshot(snapshot):
             required = {"filename", "version", "python_tag", "abi_tag", "platform_tag", "url"}
             if set(artifact) != required:
                 raise ValueError(f"Invalid artifact fields for {package_name}")
-            if not (artifact["platform_tag"].startswith("win") or artifact["platform_tag"] in {"any", "source"}):
+            if source.get("platform", "windows") == "windows" and not (artifact["platform_tag"].startswith("win") or artifact["platform_tag"] in {"any", "source"}):
                 raise ValueError(f"Artifact is not applicable to Windows: {package_name}")
             if not artifact["url"].startswith("https://"):
                 raise ValueError(f"Artifact URL must use HTTPS: {package_name}")
