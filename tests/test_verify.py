@@ -1,6 +1,6 @@
 import unittest
 
-from windows_rocm_matrix.verify import merge_verification, normalized_command, resolved_packages
+from windows_rocm_matrix.verify import candidate_hash, install_arguments_for_candidate, merge_verification, normalized_command, resolved_packages
 
 
 class VerificationTests(unittest.TestCase):
@@ -44,6 +44,14 @@ class VerificationTests(unittest.TestCase):
         document = merge_verification(None, record)
 
         self.assertEqual(document["verifications"], [record])
+
+    def test_keeps_legacy_resolver_direct_wheels_separate(self):
+        candidate = {"distribution_family": "legacy", "wheel_urls": ["https://example.test/torch.whl"]}
+        self.assertEqual(install_arguments_for_candidate(candidate, "gfx1201"), ["install", "--no-index", "https://example.test/torch.whl"])
+
+    def test_candidate_hash_is_stable(self):
+        candidate = {"id": "candidate", "source_id": "packages-stable", "torch_version": "2.12.0"}
+        self.assertEqual(candidate_hash(candidate, "gfx1201", "cp312"), candidate_hash(candidate, "gfx1201", "cp312"))
 
 
 if __name__ == "__main__":

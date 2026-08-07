@@ -1,4 +1,5 @@
 import argparse
+import hashlib
 import json
 import os
 import subprocess
@@ -22,7 +23,7 @@ def current_python_tag():
 
 
 def verification_arguments(candidate, gfx, report_path):
-    install = install_arguments(candidate, gfx)
+    install = install_arguments_for_candidate(candidate, gfx)
     return [
         install[0],
         "--dry-run",
@@ -37,6 +38,27 @@ def verification_arguments(candidate, gfx, report_path):
 
 def normalized_command(candidate, gfx):
     return ["python", "-m", "pip", *verification_arguments(candidate, gfx, "<report.json>")]
+
+
+def install_arguments_for_candidate(candidate, gfx):
+    if candidate.get("distribution_family", "therock") == "therock":
+        return install_arguments(candidate, gfx)
+    urls = candidate.get("wheel_urls")
+    if not urls:
+        raise ValueError("Legacy resolver candidates must provide direct wheel_urls")
+    return ["install", "--no-index", *urls]
+
+
+def candidate_hash(candidate, gfx, python_tag):
+    identity = {
+        "distribution_family": candidate.get("distribution_family", "therock"),
+        "source_id": candidate.get("source_id"),
+        "gfx": gfx,
+        "python_tag": python_tag,
+        "packages": {name: candidate.get(name) for name in ("rocm_version", "torch_version", "torchvision_version", "torchaudio_version")},
+        "wheel_urls": candidate.get("wheel_urls", []),
+    }
+    return hashlib.sha256(json.dumps(identity, sort_keys=True).encode("utf-8")).hexdigest()
 
 
 def resolved_packages(report):
@@ -64,7 +86,8 @@ def error_summary(output):
 
 def merge_verification(existing, observation):
     records = list((existing or {}).get("verifications", []))
-    records.append(observation)
+    if not any(item.get("id") == observation.get("id") for item in records):
+        records.append(observation)
     return {
         "schema_version": 1,
         "generated_at": observation["observed_at"],
@@ -76,8 +99,10 @@ def verify_candidate(candidate, gfx, timeout):
     observed_at = utc_now()
     python_tag = current_python_tag()
     record = {
-        "id": f"{candidate['id']}:{gfx}:{python_tag}:{observed_at}",
+        "id": f"{candidate['id']}:{gfx}:{python_tag}",
+        "candidate_hash": candidate_hash(candidate, gfx, python_tag),
         "candidate_id": candidate["id"],
+        "distribution_family": candidate.get("distribution_family", "therock"),
         "source_id": candidate["source_id"],
         "gfx": gfx,
         "python_tag": python_tag,

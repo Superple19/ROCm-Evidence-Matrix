@@ -145,6 +145,10 @@ def validate_resolver_verifications(document):
         if record["id"] in ids:
             raise ValueError(f"Duplicate resolver verification: {record['id']}")
         ids.add(record["id"])
+        if record.get("distribution_family") not in {None, "therock", "legacy"}:
+            raise ValueError(f"Invalid resolver distribution family: {record['id']}")
+        if record.get("candidate_hash") is not None and len(record["candidate_hash"]) != 64:
+            raise ValueError(f"Invalid resolver candidate hash: {record['id']}")
         if record["result"] not in {"passed", "failed"}:
             raise ValueError(f"Invalid resolver result: {record['result']}")
         if not record["gfx"].startswith("gfx") or not record["python_tag"].startswith("cp"):
