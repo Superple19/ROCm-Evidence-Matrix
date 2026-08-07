@@ -12,6 +12,7 @@ from .legacy import collect_legacy_windows_sources, render_legacy_windows
 from .matrix_render import write_compatibility_document
 from .render import write_rendered_document
 from .simple_index import discover_gfx_targets, discover_packages, latest_artifacts, package_names_for_target, parse_package_artifacts
+from .source_cache import SourceCache
 from .source_adapter import collection_status, run_source_adapter, utc_now
 from .validation import validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_history, validate_legacy_windows, validate_snapshot
 
@@ -40,9 +41,10 @@ def package_url(index_url, package_name):
     return index_url.rstrip("/") + "/" + package_name + "/"
 
 
-def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_compatibility=()):
+def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_compatibility=(), fetch=None):
+    fetch = fetch or (lambda url: fetch_text(url, timeout))
     index_url = source["url"]
-    root_html = fetch_text(index_url, timeout)
+    root_html = fetch(index_url)
     available_packages = discover_packages(root_html, index_url)
     available_set = set(available_packages)
     discovered_gfx = discover_gfx_targets(available_packages)
@@ -62,7 +64,7 @@ def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_co
     all_packages = {}
     with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {
-            executor.submit(fetch_text, package_url(index_url, name), timeout): name
+            executor.submit(fetch, package_url(index_url, name)): name
             for name in sorted(package_names)
         }
         for future in as_completed(futures):
@@ -118,6 +120,11 @@ def add_config_path(parser):
     parser.add_argument("--config", default="config/sources.json")
 
 
+def add_cache_paths(parser):
+    parser.add_argument("--cache-dir", default=".cache/sources")
+    parser.add_argument("--source-manifest", default="data/observations/source-manifest.json")
+
+
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(description="Collect and build Windows ROCm compatibility evidence.")
     commands = parser.add_subparsers(dest="command", required=True)
@@ -126,6 +133,7 @@ def parse_args(argv=None):
 
     therock = families.add_parser("therock", help="Collect TheRock documentation and package indexes.")
     add_config_path(therock)
+    add_cache_paths(therock)
     therock.add_argument("--output-dir", default="data/snapshots")
     therock.add_argument("--documentation-output", default="data/documentation.json")
     therock.add_argument("--history-output", default="data/history.json")
@@ -137,6 +145,7 @@ def parse_args(argv=None):
 
     legacy = families.add_parser("legacy", help="Collect pre-TheRock Windows documentation and package repositories.")
     add_config_path(legacy)
+    add_cache_paths(legacy)
     legacy.add_argument("--legacy-output", default="data/legacy-windows.json")
     legacy.add_argument("--status-output", default="data/status/legacy.json")
     legacy.add_argument("--timeout", type=int, default=20)
@@ -171,10 +180,11 @@ def write_status(family, started_at, results, path):
 
 def collect_therock(args, config):
     started_at = utc_now()
+    source_cache = SourceCache(args.cache_dir, args.source_manifest, args.timeout)
     existing_documentation = read_json(args.documentation_output)
     documentation, results = collect_documentation_sources(
         config["documentation_sources"],
-        lambda url: fetch_text(url, args.timeout),
+        source_cache,
         existing=existing_documentation,
     )
     if any(result["status"] == "passed" for result in results):
@@ -201,6 +211,7 @@ def collect_therock(args, config):
                 workers=args.workers,
                 requested_gfx=args.gfx_targets,
                 framework_compatibility=documentation["framework_compatibility"],
+                fetch=source_cache,
             ),
         )
         results.append(result)
@@ -234,15 +245,18 @@ def collect_therock(args, config):
 
     status = write_status("therock", started_at, results, args.status_output)
     print(f"Wrote {args.status_output}")
+    source_cache.write_manifest()
+    print(f"Wrote {args.source_manifest}")
     return all(result["status"] == "passed" for result in status["results"])
 
 
 def collect_legacy(args, config):
     started_at = utc_now()
+    source_cache = SourceCache(args.cache_dir, args.source_manifest, args.timeout)
     existing = read_json(args.legacy_output)
     legacy, results = collect_legacy_windows_sources(
         config["legacy_windows_sources"],
-        lambda url: fetch_text(url, args.timeout),
+        source_cache,
         existing=existing,
     )
     if any(result["status"] == "passed" for result in results):
@@ -254,6 +268,8 @@ def collect_legacy(args, config):
             print(f"Failed {result['source_id']}: {result['error']}")
     status = write_status("legacy", started_at, results, args.status_output)
     print(f"Wrote {args.status_output}")
+    source_cache.write_manifest()
+    print(f"Wrote {args.source_manifest}")
     return all(result["status"] == "passed" for result in status["results"])
 
 

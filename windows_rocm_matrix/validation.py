@@ -176,3 +176,21 @@ def validate_collection_status(document):
             raise ValueError(f"Passed source has an error: {result['source_id']}")
         if result["status"] == "failed" and not result["error"]:
             raise ValueError(f"Failed source lacks an error: {result['source_id']}")
+
+
+def validate_source_manifest(document):
+    if document.get("schema_version") != 1:
+        raise ValueError("Unsupported source manifest schema")
+    if not document.get("generated_at", "").endswith("Z"):
+        raise ValueError("Source manifest generation time must be UTC")
+    urls = set()
+    for response in document.get("responses", []):
+        if response["url"] in urls:
+            raise ValueError(f"Duplicate source response: {response['url']}")
+        urls.add(response["url"])
+        if not response["url"].startswith("https://"):
+            raise ValueError(f"Source response URL must use HTTPS: {response['url']}")
+        if len(response["sha256"]) != 64 or any(character not in "0123456789abcdef" for character in response["sha256"]):
+            raise ValueError(f"Invalid source response hash: {response['url']}")
+        if not response["observed_at"].endswith("Z"):
+            raise ValueError(f"Source response observation time must be UTC: {response['url']}")

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/source-manifest.schema.json",
+  "title": "Windows ROCm source response manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "responses"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "responses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["url", "sha256", "etag", "last_modified", "observed_at", "encoding"],
+        "properties": {
+          "url": {"type": "string", "format": "uri"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "etag": {"type": ["string", "null"]},
+          "last_modified": {"type": ["string", "null"]},
+          "observed_at": {"type": "string", "format": "date-time"},
+          "encoding": {"type": "string"}
+        }
+      }
+    }
+  }
+}

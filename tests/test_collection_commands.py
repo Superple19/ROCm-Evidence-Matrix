@@ -100,6 +100,8 @@ class CollectionCommandTests(unittest.TestCase):
                 output_dir=root / "snapshots",
                 history_output=root / "history.json",
                 status_output=root / "status.json",
+                cache_dir=root / "cache",
+                source_manifest=root / "source-manifest.json",
                 timeout=1,
                 workers=1,
                 gfx_targets=[],
