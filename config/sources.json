@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "artifact_sources": [
+    {
+      "id": "stable",
+      "channel": "stable",
+      "url": "https://repo.amd.com/rocm/whl-multi-arch/"
+    },
+    {
+      "id": "nightly",
+      "channel": "nightly",
+      "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
+    },
+    {
+      "id": "staging",
+      "channel": "staging",
+      "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
+    }
+  ],
+  "documentation_sources": [
+    {
+      "id": "rocm-compatibility-matrix",
+      "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
+    },
+    {
+      "id": "amd-gpu-specifications",
+      "url": "https://rocm.docs.amd.com/en/latest/reference/gpu-specs.html"
+    },
+    {
+      "id": "therock-supported-gpus",
+      "url": "https://github.com/ROCm/TheRock/blob/main/SUPPORTED_GPUS.md"
+    },
+    {
+      "id": "therock-releases",
+      "url": "https://github.com/ROCm/TheRock/blob/main/RELEASES.md"
+    }
+  ]
+}

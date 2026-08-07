@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "windows-rocm-matrix"
+version = "0.1.0"
+description = "Evidence-based Windows ROCm compatibility data and documentation"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Superple19"}
+]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/Superple19/windows-rocm-matrix"
+
+[project.scripts]
+windows-rocm-matrix = "windows_rocm_matrix.collect:main"
+
+[tool.setuptools.packages.find]
+include = ["windows_rocm_matrix*"]
