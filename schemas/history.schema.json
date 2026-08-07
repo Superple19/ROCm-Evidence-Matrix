@@ -30,6 +30,7 @@
           "available_gfx_targets": {"type": "array", "items": {"type": "string", "pattern": "^gfx[0-9a-z]+$"}},
           "artifact_available": {"type": "boolean"},
           "source_id": {"type": "string"},
+          "wheel_urls": {"type": "array", "items": {"type": "string", "format": "uri"}},
           "first_observed_at": {"type": "string", "format": "date-time"},
           "last_observed_at": {"type": "string", "format": "date-time"}
         }

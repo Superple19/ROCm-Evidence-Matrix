@@ -221,7 +221,7 @@ def merge_history(existing, observations, sources, observed_at, observed_source_
 def render_history(history):
     grouped = {}
     for candidate in history["candidates"]:
-        key = (candidate["distribution_family"], candidate["channel"], candidate["lifecycle"], candidate["rocm_version"])
+        key = (candidate["distribution_family"], candidate.get("platform", "windows"), candidate["channel"], candidate["lifecycle"], candidate["rocm_version"])
         group = grouped.setdefault(key, {"sets": 0, "known": set(), "available": set(), "python": set()})
         group["sets"] += 1
         group["known"].update(candidate["gfx_targets"])
@@ -235,12 +235,12 @@ def render_history(history):
         "",
         "Each row summarizes install candidates derived from official framework compatibility rules and matching platform package build identifiers. Candidates are artifact evidence, not resolver or runtime verification.",
         "",
-        "| Distribution | Channel | Lifecycle | ROCm build | Framework sets | Known GFX targets | Currently available GFX targets | Python tags |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- |",
+        "| Distribution | Platform | Channel | Lifecycle | ROCm build | Framework sets | Known GFX targets | Currently available GFX targets | Python tags |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
-    for (family, channel, lifecycle, rocm_version), group in sorted(grouped.items(), key=lambda item: (item[0][0], item[0][1], version_key(item[0][3]))):
+    for (family, platform, channel, lifecycle, rocm_version), group in sorted(grouped.items(), key=lambda item: (item[0][0], item[0][1], item[0][2], version_key(item[0][4]))):
         lines.append(
-            f"| {family} | {channel} | {lifecycle} | `{rocm_version}` | {group['sets']} | {len(group['known'])} | "
+            f"| {family} | {platform} | {channel} | {lifecycle} | `{rocm_version}` | {group['sets']} | {len(group['known'])} | "
             f"{len(group['available'])} | {', '.join(f'`{tag}`' for tag in sorted(group['python']))} |"
         )
     return "\n".join(lines).rstrip() + "\n"

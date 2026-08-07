@@ -24,6 +24,10 @@ Do not infer channel from a version string or URL. Use the recorded source
 metadata. Do not treat artifact availability as resolver, runtime, or hardware
 compatibility.
 
+Legacy direct-wheel candidates use the same history record but include
+`wheel_urls`. Consumers must use those URLs with `--no-index`; they must not
+apply TheRock's device-extra installation syntax to a `legacy` candidate.
+
 ## Stable identities
 
 - GFX targets use lowercase `gfx` identifiers such as `gfx1201`.

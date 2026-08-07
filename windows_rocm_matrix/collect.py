@@ -10,7 +10,7 @@ from .ci import build_evidence, collect_github, collect_hud, parse_matrix
 from .catalog import write_catalog
 from .history import build_history_observations, merge_history, write_history_document
 from .integration import build_compatibility_matrix
-from .legacy import collect_legacy_windows_sources, render_legacy_windows
+from .legacy import build_legacy_candidates, collect_legacy_windows_sources, render_legacy_windows
 from .matrix_render import write_compatibility_document
 from .render import write_rendered_document
 from .simple_index import discover_gfx_targets, discover_packages, latest_artifacts, package_names_for_target, parse_package_artifacts
@@ -394,6 +394,26 @@ def normalize_legacy_sources(args, config, source_reader, observed_at, status_ou
         validate_legacy_windows(legacy)
         write_json(legacy, args.legacy_output)
         print(f"Wrote {args.legacy_output}")
+        history_path = getattr(args, "history_output", "data/history.json")
+        legacy_candidates = build_legacy_candidates(legacy)
+        legacy_source = {
+            "id": "legacy-artifacts",
+            "distribution_family": "legacy",
+            "platform": "windows",
+            "channel": "stable",
+            "url": config["legacy_windows_sources"]["artifact_index"]["url"],
+            "observed_at": observed_at,
+        }
+        history = merge_history(
+            read_json(history_path),
+            legacy_candidates,
+            {"legacy-artifacts": legacy_source},
+            observed_at,
+            {"legacy-artifacts"},
+        )
+        validate_history(history)
+        write_json(history, history_path)
+        print(f"Wrote {history_path}")
     for result in results:
         if result["status"] == "failed":
             print(f"Failed {result['source_id']}: {result['error']}")

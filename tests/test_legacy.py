@@ -1,9 +1,26 @@
 import unittest
 
-from windows_rocm_matrix.legacy import parse_hip_sdk_gpu_support, parse_hip_sdk_release_versions, parse_legacy_artifact, parse_pytorch_windows_support
+from windows_rocm_matrix.legacy import build_legacy_candidates, parse_hip_sdk_gpu_support, parse_hip_sdk_release_versions, parse_legacy_artifact, parse_pytorch_windows_support
 
 
 class LegacyWindowsTests(unittest.TestCase):
+    def test_builds_common_candidate_from_direct_wheels(self):
+        document = {
+            "pytorch_windows_support": [{"rocm_version": "7.2.1", "gfx_targets": ["gfx1201"]}],
+            "artifact_releases": [{
+                "release_id": "7.2.1",
+                "artifacts": [
+                    {"package": "torch", "version": "2.9.1+rocm7.2.1", "python_tag": "cp312", "filename": "torch.whl", "url": "https://example.test/torch.whl"},
+                    {"package": "torchvision", "version": "0.24.1+rocm7.2.1", "python_tag": "cp312", "filename": "torchvision.whl", "url": "https://example.test/torchvision.whl"},
+                    {"package": "torchaudio", "version": "2.9.1+rocm7.2.1", "python_tag": "cp312", "filename": "torchaudio.whl", "url": "https://example.test/torchaudio.whl"},
+                ],
+            }],
+        }
+        candidates = build_legacy_candidates(document)
+        self.assertEqual(candidates[0]["distribution_family"], "legacy")
+        self.assertEqual(candidates[0]["platform"], "windows")
+        self.assertEqual(len(candidates[0]["wheel_urls"]), 3)
+
     def test_parses_joint_hip_sdk_releases(self):
         html = """
         <table><tr><th>ROCm version</th><th>Linux support</th><th>Windows support</th></tr>
