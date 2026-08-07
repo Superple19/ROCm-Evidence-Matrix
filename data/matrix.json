@@ -1,48 +1,48 @@
 {
-  "generated_at": "2026-08-07T13:21:56Z",
+  "generated_at": "2026-08-07T13:46:35Z",
   "schema_version": 1,
   "sources": {
     "amd-gpu-specifications": {
       "id": "amd-gpu-specifications",
-      "observed_at": "2026-08-07T13:21:28Z",
+      "observed_at": "2026-08-07T13:46:10Z",
       "url": "https://rocm.docs.amd.com/en/latest/reference/gpu-specs.html"
     },
     "packages-nightly": {
       "channel": "nightly",
       "id": "nightly",
-      "observed_at": "2026-08-07T13:21:48Z",
+      "observed_at": "2026-08-07T13:46:28Z",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
     },
     "packages-stable": {
       "channel": "stable",
       "id": "stable",
-      "observed_at": "2026-08-07T13:21:35Z",
+      "observed_at": "2026-08-07T13:46:16Z",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/"
     },
     "packages-staging": {
       "channel": "staging",
       "id": "staging",
-      "observed_at": "2026-08-07T13:21:56Z",
+      "observed_at": "2026-08-07T13:46:35Z",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
     },
     "pytorch-version-compatibility": {
       "id": "pytorch-version-compatibility",
-      "observed_at": "2026-08-07T13:21:28Z",
+      "observed_at": "2026-08-07T13:46:10Z",
       "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     },
     "rocm-compatibility-matrix": {
       "id": "rocm-compatibility-matrix",
-      "observed_at": "2026-08-07T13:21:28Z",
+      "observed_at": "2026-08-07T13:46:10Z",
       "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
     },
     "therock-release-packaging": {
       "id": "therock-release-packaging",
-      "observed_at": "2026-08-07T13:21:28Z",
+      "observed_at": "2026-08-07T13:46:10Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
     },
     "therock-supported-gpus": {
       "id": "therock-supported-gpus",
-      "observed_at": "2026-08-07T13:21:28Z",
+      "observed_at": "2026-08-07T13:46:10Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     }
   },

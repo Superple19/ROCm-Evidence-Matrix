@@ -112,6 +112,24 @@ The project is unofficial and community-maintained. A linked artifact or package
 - Evidence: `artifact_available`
 - Notes: Keep this source separate from the newer multi-architecture Python package repository.
 
+### HIP SDK release versioning
+
+- URL: https://rocm.docs.amd.com/projects/install-on-windows/en/latest/conceptual/release-versioning.html
+- Authority: AMD HIP SDK for Windows documentation
+- Use: Identify joint Windows HIP SDK releases and Linux-only skipped release series.
+- Evidence: `documented`
+- Notes: A joint HIP SDK release does not imply that PyTorch on Windows was available for that release.
+
+### Versioned HIP SDK system requirements
+
+- URL pattern: `https://rocm.docs.amd.com/projects/install-on-windows/en/docs-{version}/reference/system-requirements.html`
+- Authority: AMD HIP SDK for Windows documentation
+- Use: Preserve product, architecture, exact GFX target, Runtime status, and HIP SDK status for a documented release series.
+- Evidence: `documented`
+- Notes: Runtime and HIP SDK status are separate fields. Missing archived documentation remains unknown rather than unsupported.
+
+The current collector has versioned GPU tables for ROCm 6.1, 6.4, and 7.1. ROCm 5.5, 5.7, and 6.2 are retained as documented Windows release series, but their GPU-level history remains incomplete until a stable official archive is identified.
+
 ## Development artifact sources
 
 ### Multi-architecture nightly Python packages

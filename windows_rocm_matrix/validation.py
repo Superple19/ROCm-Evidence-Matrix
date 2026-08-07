@@ -130,3 +130,28 @@ def validate_resolver_verifications(document):
             raise ValueError(f"Passed resolver verification lacks evidence: {record['id']}")
         if record["result"] == "failed" and record["exit_code"] == 0:
             raise ValueError(f"Failed resolver verification has a successful exit code: {record['id']}")
+
+
+def validate_legacy_windows(document):
+    if document.get("schema_version") != 1:
+        raise ValueError("Unsupported legacy Windows schema")
+    if not document.get("generated_at", "").endswith("Z"):
+        raise ValueError("Legacy Windows generation time must be UTC")
+    source_ids = set(document.get("sources", {}))
+    for collection in ("hip_sdk_releases", "hip_sdk_gpu_support", "pytorch_windows_support", "artifact_releases"):
+        if not isinstance(document.get(collection), list):
+            raise ValueError(f"{collection} must be a list")
+        for item in document[collection]:
+            if item["source_id"] not in source_ids:
+                raise ValueError(f"Unknown legacy source in {collection}: {item['source_id']}")
+    for product in document["hip_sdk_gpu_support"]:
+        if not product["gfx"].startswith("gfx"):
+            raise ValueError(f"Invalid legacy GFX target: {product['gfx']}")
+        if product["runtime_status"] not in {"supported", "deprecated", "unsupported", "unknown"}:
+            raise ValueError(f"Invalid runtime status: {product['runtime_status']}")
+        if product["hip_sdk_status"] not in {"supported", "deprecated", "unsupported", "unknown"}:
+            raise ValueError(f"Invalid HIP SDK status: {product['hip_sdk_status']}")
+    for release in document["artifact_releases"]:
+        for artifact in release["artifacts"]:
+            if not artifact["url"].startswith(release["url"]):
+                raise ValueError(f"Artifact outside legacy release index: {artifact['url']}")

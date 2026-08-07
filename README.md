@@ -16,6 +16,7 @@ The initial collector reads the official AMD stable, nightly, and staging Python
 - Collects TheRock Build Passing, Sanity Tested, and Release Ready status for Windows.
 - Integrates the evidence by exact GFX target without promoting availability to compatibility.
 - Preserves observed package sets in an append-only historical catalog.
+- Collects legacy Windows HIP SDK release support, versioned GPU support, and pre-multi-arch PyTorch artifacts.
 - Generates a Markdown availability summary from the JSON snapshots.
 
 Official documentation sources and their evidence boundaries are listed in [docs/sources.md](docs/sources.md).
@@ -25,6 +26,7 @@ Current generated views:
 - [Integrated compatibility matrix](docs/generated/compatibility-matrix.md)
 - [Package availability](docs/generated/package-availability.md)
 - [Historical package candidates](docs/generated/history.md)
+- [Legacy Windows ROCm support](docs/generated/legacy-windows.md)
 
 ## Development environment
 
@@ -46,7 +48,7 @@ Run the collector from the activated virtual environment:
 windows-rocm-matrix
 ```
 
-Package snapshots are written to `data/snapshots/`. Documentation evidence is written to `data/documentation.json`, the append-only package catalog is written to `data/history.json`, and the integrated view is written to `data/matrix.json`. Generated Markdown is stored under `docs/generated/`.
+Package snapshots are written to `data/snapshots/`. Documentation evidence is written to `data/documentation.json`, legacy Windows evidence to `data/legacy-windows.json`, the append-only package catalog to `data/history.json`, and the integrated view to `data/matrix.json`. Generated Markdown is stored under `docs/generated/`.
 
 Each collection replaces the current snapshots and merges every observed compatible package set into the history catalog. A candidate remains in the catalog if its upstream artifact later disappears, while its current availability is updated separately.
 

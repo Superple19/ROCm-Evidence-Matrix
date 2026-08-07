@@ -1,0 +1,1460 @@
+{
+  "artifact_releases": [
+    {
+      "artifacts": [
+        {
+          "abi_tag": "cp312",
+          "filename": "torch-2.8.0a0+gitfc14c65-cp312-cp312-win_amd64.whl",
+          "package": "torch",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp312",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-6.4.4/torch-2.8.0a0%2Bgitfc14c65-cp312-cp312-win_amd64.whl#sha256=",
+          "version": "2.8.0a0+gitfc14c65"
+        },
+        {
+          "abi_tag": "cp312",
+          "filename": "torchaudio-2.6.0a0+1a8f621-cp312-cp312-win_amd64.whl",
+          "package": "torchaudio",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp312",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-6.4.4/torchaudio-2.6.0a0%2B1a8f621-cp312-cp312-win_amd64.whl#sha256=",
+          "version": "2.6.0a0+1a8f621"
+        },
+        {
+          "abi_tag": "cp312",
+          "filename": "torchvision-0.24.0a0+c85f008-cp312-cp312-win_amd64.whl",
+          "package": "torchvision",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp312",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-6.4.4/torchvision-0.24.0a0%2Bc85f008-cp312-cp312-win_amd64.whl#sha256=",
+          "version": "0.24.0a0+c85f008"
+        }
+      ],
+      "release_id": "6.4.4",
+      "source_id": "legacy-windows-artifacts",
+      "url": "https://repo.radeon.com/rocm/windows/rocm-rel-6.4.4/"
+    },
+    {
+      "artifacts": [
+        {
+          "abi_tag": "source",
+          "filename": "rocm-0.1.dev0.tar.gz",
+          "package": "rocm",
+          "platform_tag": "source",
+          "python_tag": "source",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/rocm-0.1.dev0.tar.gz",
+          "version": "0.1.dev0"
+        },
+        {
+          "abi_tag": "none",
+          "filename": "rocm_sdk_core-0.1.dev0-py3-none-win_amd64.whl",
+          "package": "rocm-sdk-core",
+          "platform_tag": "win_amd64",
+          "python_tag": "py3",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/rocm_sdk_core-0.1.dev0-py3-none-win_amd64.whl",
+          "version": "0.1.dev0"
+        },
+        {
+          "abi_tag": "none",
+          "filename": "rocm_sdk_devel-0.1.dev0-py3-none-win_amd64.whl",
+          "package": "rocm-sdk-devel",
+          "platform_tag": "win_amd64",
+          "python_tag": "py3",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/rocm_sdk_devel-0.1.dev0-py3-none-win_amd64.whl",
+          "version": "0.1.dev0"
+        },
+        {
+          "abi_tag": "none",
+          "filename": "rocm_sdk_libraries_custom-0.1.dev0-py3-none-win_amd64.whl",
+          "package": "rocm-sdk-libraries-custom",
+          "platform_tag": "win_amd64",
+          "python_tag": "py3",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/rocm_sdk_libraries_custom-0.1.dev0-py3-none-win_amd64.whl",
+          "version": "0.1.dev0"
+        },
+        {
+          "abi_tag": "cp312",
+          "filename": "torch-2.9.0+rocmsdk20251116-cp312-cp312-win_amd64.whl",
+          "package": "torch",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp312",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/torch-2.9.0%2Brocmsdk20251116-cp312-cp312-win_amd64.whl",
+          "version": "2.9.0+rocmsdk20251116"
+        },
+        {
+          "abi_tag": "cp312",
+          "filename": "torchaudio-2.9.0+rocmsdk20251116-cp312-cp312-win_amd64.whl",
+          "package": "torchaudio",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp312",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/torchaudio-2.9.0%2Brocmsdk20251116-cp312-cp312-win_amd64.whl",
+          "version": "2.9.0+rocmsdk20251116"
+        },
+        {
+          "abi_tag": "cp312",
+          "filename": "torchvision-0.24.0+rocmsdk20251116-cp312-cp312-win_amd64.whl",
+          "package": "torchvision",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp312",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/torchvision-0.24.0%2Brocmsdk20251116-cp312-cp312-win_amd64.whl",
+          "version": "0.24.0+rocmsdk20251116"
+        }
+      ],
+      "release_id": "7.1.1",
+      "source_id": "legacy-windows-artifacts",
+      "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/"
+    },
+    {
+      "artifacts": [
+        {
+          "abi_tag": "source",
+          "filename": "rocm-7.2.0.dev0.tar.gz",
+          "package": "rocm",
+          "platform_tag": "source",
+          "python_tag": "source",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2/rocm-7.2.0.dev0.tar.gz",
+          "version": "7.2.0.dev0"
+        },
+        {
+          "abi_tag": "none",
+          "filename": "rocm_sdk_core-7.2.0.dev0-py3-none-win_amd64.whl",
+          "package": "rocm-sdk-core",
+          "platform_tag": "win_amd64",
+          "python_tag": "py3",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2/rocm_sdk_core-7.2.0.dev0-py3-none-win_amd64.whl",
+          "version": "7.2.0.dev0"
+        },
+        {
+          "abi_tag": "none",
+          "filename": "rocm_sdk_devel-7.2.0.dev0-py3-none-win_amd64.whl",
+          "package": "rocm-sdk-devel",
+          "platform_tag": "win_amd64",
+          "python_tag": "py3",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2/rocm_sdk_devel-7.2.0.dev0-py3-none-win_amd64.whl",
+          "version": "7.2.0.dev0"
+        },
+        {
+          "abi_tag": "none",
+          "filename": "rocm_sdk_libraries_custom-7.2.0.dev0-py3-none-win_amd64.whl",
+          "package": "rocm-sdk-libraries-custom",
+          "platform_tag": "win_amd64",
+          "python_tag": "py3",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2/rocm_sdk_libraries_custom-7.2.0.dev0-py3-none-win_amd64.whl",
+          "version": "7.2.0.dev0"
+        },
+        {
+          "abi_tag": "cp312",
+          "filename": "torch-2.9.1+rocmsdk20260116-cp312-cp312-win_amd64.whl",
+          "package": "torch",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp312",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2/torch-2.9.1%2Brocmsdk20260116-cp312-cp312-win_amd64.whl",
+          "version": "2.9.1+rocmsdk20260116"
+        },
+        {
+          "abi_tag": "cp312",
+          "filename": "torchaudio-2.9.1+rocmsdk20260116-cp312-cp312-win_amd64.whl",
+          "package": "torchaudio",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp312",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2/torchaudio-2.9.1%2Brocmsdk20260116-cp312-cp312-win_amd64.whl",
+          "version": "2.9.1+rocmsdk20260116"
+        },
+        {
+          "abi_tag": "cp312",
+          "filename": "torchvision-0.24.1+rocmsdk20260116-cp312-cp312-win_amd64.whl",
+          "package": "torchvision",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp312",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2/torchvision-0.24.1%2Brocmsdk20260116-cp312-cp312-win_amd64.whl",
+          "version": "0.24.1+rocmsdk20260116"
+        }
+      ],
+      "release_id": "7.2",
+      "source_id": "legacy-windows-artifacts",
+      "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2/"
+    },
+    {
+      "artifacts": [
+        {
+          "abi_tag": "source",
+          "filename": "rocm-7.2.1.tar.gz",
+          "package": "rocm",
+          "platform_tag": "source",
+          "python_tag": "source",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/rocm-7.2.1.tar.gz",
+          "version": "7.2.1"
+        },
+        {
+          "abi_tag": "none",
+          "filename": "rocm_sdk_core-7.2.1-py3-none-win_amd64.whl",
+          "package": "rocm-sdk-core",
+          "platform_tag": "win_amd64",
+          "python_tag": "py3",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/rocm_sdk_core-7.2.1-py3-none-win_amd64.whl",
+          "version": "7.2.1"
+        },
+        {
+          "abi_tag": "none",
+          "filename": "rocm_sdk_devel-7.2.1-py3-none-win_amd64.whl",
+          "package": "rocm-sdk-devel",
+          "platform_tag": "win_amd64",
+          "python_tag": "py3",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/rocm_sdk_devel-7.2.1-py3-none-win_amd64.whl",
+          "version": "7.2.1"
+        },
+        {
+          "abi_tag": "none",
+          "filename": "rocm_sdk_libraries_custom-7.2.1-py3-none-win_amd64.whl",
+          "package": "rocm-sdk-libraries-custom",
+          "platform_tag": "win_amd64",
+          "python_tag": "py3",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/rocm_sdk_libraries_custom-7.2.1-py3-none-win_amd64.whl",
+          "version": "7.2.1"
+        },
+        {
+          "abi_tag": "cp312",
+          "filename": "torch-2.9.1+rocm7.2.1-cp312-cp312-win_amd64.whl",
+          "package": "torch",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp312",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/torch-2.9.1%2Brocm7.2.1-cp312-cp312-win_amd64.whl",
+          "version": "2.9.1+rocm7.2.1"
+        },
+        {
+          "abi_tag": "cp312",
+          "filename": "torchaudio-2.9.1+rocm7.2.1-cp312-cp312-win_amd64.whl",
+          "package": "torchaudio",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp312",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/torchaudio-2.9.1%2Brocm7.2.1-cp312-cp312-win_amd64.whl",
+          "version": "2.9.1+rocm7.2.1"
+        },
+        {
+          "abi_tag": "cp312",
+          "filename": "torchvision-0.24.1+rocm7.2.1-cp312-cp312-win_amd64.whl",
+          "package": "torchvision",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp312",
+          "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/torchvision-0.24.1%2Brocm7.2.1-cp312-cp312-win_amd64.whl",
+          "version": "0.24.1+rocm7.2.1"
+        }
+      ],
+      "release_id": "7.2.1",
+      "source_id": "legacy-windows-artifacts",
+      "url": "https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/"
+    }
+  ],
+  "generated_at": "2026-08-07T13:46:35Z",
+  "hip_sdk_gpu_support": [
+    {
+      "architecture": "RDNA1",
+      "gfx": "gfx1012",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon PRO W5500",
+      "rocm_series": "6.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon PRO W6800",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 6800",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 6800 XT",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 6900 XT",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 6950 XT",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1031",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6700",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1031",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6700 XT",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1031",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6750 XT",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1032",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon PRO W6600",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1032",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6600",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1032",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6600 XT",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1032",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6650 XT",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon PRO W7800",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon PRO W7900",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon PRO W7900 Dual Slot",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7900 XT",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7900 XTX",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1101",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon PRO W7700",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1101",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7700 XT",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1101",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7800 XT",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1102",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7600",
+      "rocm_series": "6.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "GCN5.1",
+      "gfx": "gfx906",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon PRO VII",
+      "rocm_series": "6.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.1"
+    },
+    {
+      "architecture": "RDNA1",
+      "gfx": "gfx1012",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon PRO W5500",
+      "rocm_series": "6.4",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon PRO W6800",
+      "rocm_series": "6.4",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6800",
+      "rocm_series": "6.4",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6800 XT",
+      "rocm_series": "6.4",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6900 XT",
+      "rocm_series": "6.4",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6950 XT",
+      "rocm_series": "6.4",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1031",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6700",
+      "rocm_series": "6.4",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1031",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6700 XT",
+      "rocm_series": "6.4",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1031",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6750 XT",
+      "rocm_series": "6.4",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1032",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon PRO W6600",
+      "rocm_series": "6.4",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1032",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6600",
+      "rocm_series": "6.4",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1032",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6600 XT",
+      "rocm_series": "6.4",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1032",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6650 XT",
+      "rocm_series": "6.4",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon PRO W7800",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon PRO W7900",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon PRO W7900 Dual Slot",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7900 XT",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7900 XTX",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1101",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon PRO W7700",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1101",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7700 XT",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1101",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7800 XT",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1102",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7600",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1102",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7600 XT",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1102",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7650 GRE",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1150",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI 300 Series",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1150",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI 9 400 Series",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI MAX+ 492",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI MAX+ 495",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI Max 385",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI Max 390",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI Max Pro 380",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI Max Pro 385",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI Max Pro 390",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI Max+ 395",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI Max+ Pro 395",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AII MAX PRO 490",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA4",
+      "gfx": "gfx1200",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 9060",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA4",
+      "gfx": "gfx1200",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 9060 XT",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA4",
+      "gfx": "gfx1201",
+      "hip_sdk_status": "supported",
+      "product": "AMD RX 9070 GRE",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA4",
+      "gfx": "gfx1201",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon AI PRO R9700",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA4",
+      "gfx": "gfx1201",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 9070",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA4",
+      "gfx": "gfx1201",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 9070 XT",
+      "rocm_series": "6.4",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "GCN5.1",
+      "gfx": "gfx906",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon PRO VII",
+      "rocm_series": "6.4",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-6.4"
+    },
+    {
+      "architecture": "RDNA1",
+      "gfx": "gfx1012",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon PRO W5500",
+      "rocm_series": "7.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon PRO W6800",
+      "rocm_series": "7.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6800",
+      "rocm_series": "7.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6800 XT",
+      "rocm_series": "7.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6900 XT",
+      "rocm_series": "7.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1030",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6950 XT",
+      "rocm_series": "7.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1031",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6700",
+      "rocm_series": "7.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1031",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6700 XT",
+      "rocm_series": "7.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1031",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6750 XT",
+      "rocm_series": "7.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1032",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon PRO W6600",
+      "rocm_series": "7.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1032",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6600",
+      "rocm_series": "7.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1032",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6600 XT",
+      "rocm_series": "7.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "gfx": "gfx1032",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon RX 6650 XT",
+      "rocm_series": "7.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon PRO W7800",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon PRO W7900",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon PRO W7900 Dual Slot",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7900 XT",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1100",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7900 XTX",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1101",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon PRO W7700",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1101",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7700 XT",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1101",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7800 XT",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1102",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7600",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1102",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7600 XT",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "gfx": "gfx1102",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 7650 GRE",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI Max 385",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI Max 390",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI Max Pro 380",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI Max Pro 385",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI Max Pro 390",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI Max+ 395",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "gfx": "gfx1151",
+      "hip_sdk_status": "supported",
+      "product": "AMD Ryzen AI Max+ Pro 395",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA4",
+      "gfx": "gfx1200",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 9060",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA4",
+      "gfx": "gfx1200",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 9060 XT",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA4",
+      "gfx": "gfx1201",
+      "hip_sdk_status": "supported",
+      "product": "AMD RX 9070 GRE",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA4",
+      "gfx": "gfx1201",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon AI PRO R9700",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA4",
+      "gfx": "gfx1201",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 9070",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "RDNA4",
+      "gfx": "gfx1201",
+      "hip_sdk_status": "supported",
+      "product": "AMD Radeon RX 9070 XT",
+      "rocm_series": "7.1",
+      "runtime_status": "supported",
+      "source_id": "hip-sdk-gpus-7.1"
+    },
+    {
+      "architecture": "GCN5.1",
+      "gfx": "gfx906",
+      "hip_sdk_status": "unsupported",
+      "product": "AMD Radeon PRO VII",
+      "rocm_series": "7.1",
+      "runtime_status": "unsupported",
+      "source_id": "hip-sdk-gpus-7.1"
+    }
+  ],
+  "hip_sdk_releases": [
+    {
+      "linux_support": true,
+      "rocm_series": "5.5",
+      "source_id": "hip-sdk-release-versioning",
+      "windows_support": true
+    },
+    {
+      "linux_support": true,
+      "rocm_series": "5.6",
+      "source_id": "hip-sdk-release-versioning",
+      "windows_support": false
+    },
+    {
+      "linux_support": true,
+      "rocm_series": "5.7",
+      "source_id": "hip-sdk-release-versioning",
+      "windows_support": true
+    },
+    {
+      "linux_support": true,
+      "rocm_series": "6.0",
+      "source_id": "hip-sdk-release-versioning",
+      "windows_support": false
+    },
+    {
+      "linux_support": true,
+      "rocm_series": "6.1",
+      "source_id": "hip-sdk-release-versioning",
+      "windows_support": true
+    },
+    {
+      "linux_support": true,
+      "rocm_series": "6.2",
+      "source_id": "hip-sdk-release-versioning",
+      "windows_support": true
+    },
+    {
+      "linux_support": true,
+      "rocm_series": "6.3",
+      "source_id": "hip-sdk-release-versioning",
+      "windows_support": false
+    },
+    {
+      "linux_support": true,
+      "rocm_series": "6.4",
+      "source_id": "hip-sdk-release-versioning",
+      "windows_support": true
+    },
+    {
+      "linux_support": true,
+      "rocm_series": "7.1",
+      "source_id": "hip-sdk-release-versioning",
+      "windows_support": true
+    }
+  ],
+  "pytorch_windows_support": [
+    {
+      "comments": "Official production support. See Install PyTorch for Radeon GPUs.",
+      "gfx_targets": [
+        "gfx1100",
+        "gfx1200",
+        "gfx1201"
+      ],
+      "product_family": "radeon",
+      "products": [
+        "AMD Radeon RX 9070",
+        "AMD Radeon RX 9070 XT",
+        "AMD Radeon AI PRO R9700",
+        "AMD Radeon RX 9060 XT",
+        "AMD Radeon RX 7900 XTX",
+        "AMD Radeon PRO W7900",
+        "AMD Radeon PRO W7900 Dual Slot"
+      ],
+      "python_versions": [
+        "3.12"
+      ],
+      "rocm_version": "6.4.4",
+      "source_id": "pytorch-windows-radeon-6.4.4",
+      "torch_version": "2.8"
+    },
+    {
+      "comments": "Official production support. See Install PyTorch for Ryzen APUs.",
+      "gfx_targets": [
+        "gfx1150",
+        "gfx1151"
+      ],
+      "product_family": "ryzen",
+      "products": [
+        "AMD Ryzen AI Max+ 395",
+        "AMD Ryzen AI Max 390",
+        "AMD Ryzen AI Max 385",
+        "AMD Ryzen AI 9 HX 375",
+        "AMD Ryzen AI 9 HX 370",
+        "AMD Ryzen AI 9 365"
+      ],
+      "python_versions": [
+        "3.12"
+      ],
+      "rocm_version": "6.4.4",
+      "source_id": "pytorch-windows-ryzen-6.4.4",
+      "torch_version": "2.8"
+    },
+    {
+      "comments": "See Install PyTorch for Radeon GPUs.",
+      "gfx_targets": [
+        "gfx1100",
+        "gfx1101",
+        "gfx1200",
+        "gfx1201"
+      ],
+      "product_family": "radeon",
+      "products": [
+        "AMD Radeon RX 9070",
+        "AMD Radeon RX 9070 XT",
+        "AMD Radeon AI PRO R9700",
+        "AMD Radeon RX 9060 XT",
+        "AMD Radeon RX 7900 XTX",
+        "AMD Radeon PRO W7900",
+        "AMD Radeon PRO W7900 Dual Slot",
+        "AMD Radeon RX 7700"
+      ],
+      "python_versions": [
+        "3.12"
+      ],
+      "rocm_version": "7.2",
+      "source_id": "pytorch-windows-radeon-7.2",
+      "torch_version": "2.9"
+    },
+    {
+      "comments": "See Install PyTorch for Ryzen APUs.",
+      "gfx_targets": [
+        "gfx1150",
+        "gfx1151"
+      ],
+      "product_family": "ryzen",
+      "products": [
+        "AMD Ryzen AI Max+ 395",
+        "AMD Ryzen AI Max 390",
+        "AMD Ryzen AI Max 385",
+        "AMD Ryzen AI 9 HX 375",
+        "AMD Ryzen AI 9 HX 370",
+        "AMD Ryzen AI 9 365",
+        "AMD Ryzen AI 9 HX 475",
+        "AMD Ryzen AI 9 HX 470",
+        "AMD Ryzen AI 9 465"
+      ],
+      "python_versions": [
+        "3.12"
+      ],
+      "rocm_version": "7.2",
+      "source_id": "pytorch-windows-ryzen-7.2",
+      "torch_version": "2.9"
+    },
+    {
+      "comments": "See Install PyTorch for Radeon GPUs.",
+      "gfx_targets": [
+        "gfx1100",
+        "gfx1101",
+        "gfx1200",
+        "gfx1201"
+      ],
+      "product_family": "radeon",
+      "products": [
+        "AMD Radeon RX 9070",
+        "AMD Radeon RX 9070 XT",
+        "AMD Radeon AI PRO R9700",
+        "AMD Radeon RX 9060 XT",
+        "AMD Radeon RX 7900 XTX",
+        "AMD Radeon PRO W7900",
+        "AMD Radeon PRO W7900 Dual Slot",
+        "AMD Radeon RX 7700"
+      ],
+      "python_versions": [
+        "3.12"
+      ],
+      "rocm_version": "7.2.1",
+      "source_id": "pytorch-windows-radeon-7.2.1",
+      "torch_version": "2.9"
+    },
+    {
+      "comments": "See Install PyTorch for Ryzen APUs.",
+      "gfx_targets": [
+        "gfx1150",
+        "gfx1151"
+      ],
+      "product_family": "ryzen",
+      "products": [
+        "AMD Ryzen AI Max+ 395",
+        "AMD Ryzen AI Max 390",
+        "AMD Ryzen AI Max 385",
+        "AMD Ryzen AI 9 HX 375",
+        "AMD Ryzen AI 9 HX 370",
+        "AMD Ryzen AI 9 365",
+        "AMD Ryzen AI 9 HX 475",
+        "AMD Ryzen AI 9 HX 470",
+        "AMD Ryzen AI 9 465"
+      ],
+      "python_versions": [
+        "3.12"
+      ],
+      "rocm_version": "7.2.1",
+      "source_id": "pytorch-windows-ryzen-7.2.1",
+      "torch_version": "2.9.1"
+    }
+  ],
+  "schema_version": 1,
+  "sources": {
+    "hip-sdk-gpus-6.1": {
+      "id": "hip-sdk-gpus-6.1",
+      "observed_at": "2026-08-07T13:46:35Z",
+      "rocm_series": "6.1",
+      "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.1.2/reference/system-requirements.html"
+    },
+    "hip-sdk-gpus-6.4": {
+      "id": "hip-sdk-gpus-6.4",
+      "observed_at": "2026-08-07T13:46:35Z",
+      "rocm_series": "6.4",
+      "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.4.0/reference/system-requirements.html"
+    },
+    "hip-sdk-gpus-7.1": {
+      "id": "hip-sdk-gpus-7.1",
+      "observed_at": "2026-08-07T13:46:35Z",
+      "rocm_series": "7.1",
+      "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.1.1/reference/system-requirements.html"
+    },
+    "hip-sdk-release-versioning": {
+      "id": "hip-sdk-release-versioning",
+      "observed_at": "2026-08-07T13:46:35Z",
+      "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/latest/conceptual/release-versioning.html"
+    },
+    "legacy-windows-artifacts": {
+      "id": "legacy-windows-artifacts",
+      "observed_at": "2026-08-07T13:46:35Z",
+      "url": "https://repo.radeon.com/rocm/windows/"
+    },
+    "pytorch-windows-radeon-6.4.4": {
+      "id": "pytorch-windows-radeon-6.4.4",
+      "observed_at": "2026-08-07T13:46:35Z",
+      "product_family": "radeon",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-6.4.4/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-radeon-7.2": {
+      "id": "pytorch-windows-radeon-7.2",
+      "observed_at": "2026-08-07T13:46:35Z",
+      "product_family": "radeon",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-7.2/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-radeon-7.2.1": {
+      "id": "pytorch-windows-radeon-7.2.1",
+      "observed_at": "2026-08-07T13:46:35Z",
+      "product_family": "radeon",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-ryzen-6.4.4": {
+      "id": "pytorch-windows-ryzen-6.4.4",
+      "observed_at": "2026-08-07T13:46:35Z",
+      "product_family": "ryzen",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-6.4.4/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-ryzen-7.2": {
+      "id": "pytorch-windows-ryzen-7.2",
+      "observed_at": "2026-08-07T13:46:35Z",
+      "product_family": "ryzen",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-7.2/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-ryzen-7.2.1": {
+      "id": "pytorch-windows-ryzen-7.2.1",
+      "observed_at": "2026-08-07T13:46:35Z",
+      "product_family": "ryzen",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
+    }
+  }
+}

@@ -7,7 +7,7 @@ A package listed here was observed in an official AMD index. Versions are select
 ## Stable
 
 - Source: https://repo.amd.com/rocm/whl-multi-arch/
-- Last observed: `2026-08-07T13:21:35Z`
+- Last observed: `2026-08-07T13:46:16Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -40,7 +40,7 @@ A package listed here was observed in an official AMD index. Versions are select
 ## Nightly
 
 - Source: https://rocm.nightlies.amd.com/whl-multi-arch/
-- Last observed: `2026-08-07T13:21:48Z`
+- Last observed: `2026-08-07T13:46:28Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -76,7 +76,7 @@ A package listed here was observed in an official AMD index. Versions are select
 ## Staging
 
 - Source: https://rocm.nightlies.amd.com/whl-staging-multi-arch/
-- Last observed: `2026-08-07T13:21:56Z`
+- Last observed: `2026-08-07T13:46:35Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |

@@ -1,6 +1,6 @@
 import unittest
 
-from windows_rocm_matrix.validation import validate_snapshot
+from windows_rocm_matrix.validation import validate_legacy_windows, validate_snapshot
 
 
 def valid_snapshot():
@@ -51,6 +51,27 @@ class ValidationTests(unittest.TestCase):
 
         with self.assertRaisesRegex(ValueError, "multiple versions"):
             validate_snapshot(snapshot)
+
+    def test_rejects_legacy_artifact_outside_release_index(self):
+        document = {
+            "schema_version": 1,
+            "generated_at": "2026-08-07T00:00:00Z",
+            "sources": {"legacy": {}},
+            "hip_sdk_releases": [],
+            "hip_sdk_gpu_support": [],
+            "pytorch_windows_support": [],
+            "artifact_releases": [
+                {
+                    "release_id": "7.2.1",
+                    "url": "https://example.test/7.2.1/",
+                    "source_id": "legacy",
+                    "artifacts": [{"url": "https://other.test/torch.whl"}],
+                }
+            ],
+        }
+
+        with self.assertRaisesRegex(ValueError, "outside legacy release index"):
+            validate_legacy_windows(document)
 
 
 if __name__ == "__main__":

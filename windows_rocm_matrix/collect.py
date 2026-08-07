@@ -8,10 +8,11 @@ from urllib.request import Request, urlopen
 from .documentation import collect_documentation
 from .history import build_history_observations, merge_history, write_history_document
 from .integration import build_compatibility_matrix
+from .legacy import collect_legacy_windows, render_legacy_windows
 from .matrix_render import write_compatibility_document
 from .render import write_rendered_document
 from .simple_index import discover_gfx_targets, discover_packages, latest_artifacts, package_names_for_target, parse_package_artifacts
-from .validation import validate_compatibility_matrix, validate_documentation_snapshot, validate_history, validate_snapshot
+from .validation import validate_compatibility_matrix, validate_documentation_snapshot, validate_history, validate_legacy_windows, validate_snapshot
 
 
 USER_AGENT = "windows-rocm-matrix/0.1 (+https://github.com/Superple19/windows-rocm-matrix)"
@@ -122,6 +123,9 @@ def parse_args(argv=None):
     parser.add_argument("--matrix-docs-output", default="docs/generated/compatibility-matrix.md")
     parser.add_argument("--history-output", default="data/history.json")
     parser.add_argument("--history-docs-output", default="docs/generated/history.md")
+    parser.add_argument("--legacy-output", default="data/legacy-windows.json")
+    parser.add_argument("--legacy-docs-output", default="docs/generated/legacy-windows.md")
+    parser.add_argument("--skip-legacy", action="store_true")
     parser.add_argument("--skip-documentation", action="store_true")
     parser.add_argument("--source", action="append", dest="sources", help="Collect only the named source. Repeat to select multiple sources.")
     parser.add_argument("--gfx", action="append", dest="gfx_targets", default=[], help="Collect only the exact GFX target. Repeat to select multiple targets.")
@@ -208,6 +212,17 @@ def main(argv=None):
     write_compatibility_document(matrix, args.matrix_docs_output)
     print(f"Wrote {args.matrix_output}")
     print(f"Wrote {args.matrix_docs_output}")
+
+    if not args.skip_legacy:
+        print("Collecting legacy Windows ROCm evidence")
+        legacy = collect_legacy_windows(config["legacy_windows_sources"], lambda url: fetch_text(url, args.timeout))
+        validate_legacy_windows(legacy)
+        write_json(legacy, args.legacy_output)
+        legacy_path = Path(args.legacy_docs_output)
+        legacy_path.parent.mkdir(parents=True, exist_ok=True)
+        legacy_path.write_text(render_legacy_windows(legacy), encoding="utf-8", newline="\n")
+        print(f"Wrote {args.legacy_output}")
+        print(f"Wrote {args.legacy_docs_output}")
 
 
 if __name__ == "__main__":

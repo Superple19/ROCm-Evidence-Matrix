@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/legacy-windows.schema.json",
+  "title": "Legacy Windows ROCm evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "sources", "hip_sdk_releases", "hip_sdk_gpu_support", "pytorch_windows_support", "artifact_releases"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "sources": {"type": "object"},
+    "hip_sdk_releases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rocm_series", "linux_support", "windows_support", "source_id"],
+        "properties": {
+          "rocm_series": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+$"},
+          "linux_support": {"type": "boolean"},
+          "windows_support": {"type": "boolean"},
+          "source_id": {"type": "string"}
+        }
+      }
+    },
+    "hip_sdk_gpu_support": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rocm_series", "product", "architecture", "gfx", "runtime_status", "hip_sdk_status", "source_id"],
+        "properties": {
+          "rocm_series": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+$"},
+          "product": {"type": "string"},
+          "architecture": {"type": "string"},
+          "gfx": {"type": "string", "pattern": "^gfx[0-9a-z]+$"},
+          "runtime_status": {"enum": ["supported", "deprecated", "unsupported", "unknown"]},
+          "hip_sdk_status": {"enum": ["supported", "deprecated", "unsupported", "unknown"]},
+          "source_id": {"type": "string"}
+        }
+      }
+    },
+    "pytorch_windows_support": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rocm_version", "product_family", "torch_version", "python_versions", "gfx_targets", "products", "comments", "source_id"],
+        "properties": {
+          "rocm_version": {"type": "string"},
+          "product_family": {"enum": ["radeon", "ryzen"]},
+          "torch_version": {"type": "string"},
+          "python_versions": {"type": "array", "items": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+$"}},
+          "gfx_targets": {"type": "array", "items": {"type": "string", "pattern": "^gfx[0-9a-z]+$"}},
+          "products": {"type": "array", "items": {"type": "string"}},
+          "comments": {"type": "string"},
+          "source_id": {"type": "string"}
+        }
+      }
+    },
+    "artifact_releases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["release_id", "url", "artifacts", "source_id"],
+        "properties": {
+          "release_id": {"type": "string"},
+          "url": {"type": "string", "format": "uri"},
+          "source_id": {"type": "string"},
+          "artifacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["package", "version", "filename", "python_tag", "abi_tag", "platform_tag", "url"],
+              "properties": {
+                "package": {"type": "string"},
+                "version": {"type": "string"},
+                "filename": {"type": "string"},
+                "python_tag": {"type": "string"},
+                "abi_tag": {"type": "string"},
+                "platform_tag": {"type": "string"},
+                "url": {"type": "string", "format": "uri"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
