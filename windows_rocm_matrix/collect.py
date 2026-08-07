@@ -11,7 +11,7 @@ from .catalog import write_catalog
 from .history import build_history_observations, merge_history, write_history_document
 from .integration import build_compatibility_matrix
 from .legacy import build_legacy_candidates, collect_legacy_windows_sources, render_legacy_windows
-from .legacy_linux import collect_legacy_linux_sources, render_legacy_linux
+from .legacy_linux import build_legacy_linux_candidates, collect_legacy_linux_sources, render_legacy_linux
 from .matrix_render import write_compatibility_document
 from .render import write_rendered_document
 from .simple_index import discover_gfx_targets, discover_packages, latest_artifacts, package_names_for_target, parse_package_artifacts
@@ -437,6 +437,25 @@ def normalize_legacy_sources(args, config, source_reader, observed_at, status_ou
             validate_legacy_linux(legacy_linux)
             write_json(legacy_linux, args.legacy_linux_output)
             print(f"Wrote {args.legacy_linux_output}")
+            history_path = getattr(args, "history_output", "data/history.json")
+            legacy_linux_source = {
+                "id": "legacy-linux-artifacts",
+                "distribution_family": "legacy",
+                "platform": "linux",
+                "channel": "stable",
+                "url": linux_sources[0]["url"],
+                "observed_at": observed_at,
+            }
+            history = merge_history(
+                read_json(history_path),
+                build_legacy_linux_candidates(legacy_linux),
+                {"legacy-linux-artifacts": legacy_linux_source},
+                observed_at,
+                {"legacy-linux-artifacts"},
+            )
+            validate_history(history)
+            write_json(history, history_path)
+            print(f"Wrote {history_path}")
         for result in linux_results:
             if result["status"] == "failed":
                 print(f"Failed {result['source_id']}: {result['error']}")

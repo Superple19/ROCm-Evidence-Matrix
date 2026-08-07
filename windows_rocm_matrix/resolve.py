@@ -22,7 +22,7 @@ def resolve_candidates(history, gfx, platform=None, channel=None, rocm_version=N
     matches = []
     for candidate in history["candidates"]:
         targets = candidate["gfx_targets"] if include_unavailable else candidate["available_gfx_targets"]
-        if gfx not in targets:
+        if gfx and gfx not in targets:
             continue
         if platform and candidate.get("platform", "windows") != platform:
             continue
@@ -50,6 +50,8 @@ def install_arguments(candidate, gfx):
         if not urls:
             raise ValueError("Legacy resolver candidates must provide direct wheel_urls")
         return ["install", "--no-index", *urls]
+    if not gfx:
+        raise ValueError("TheRock candidates require --gfx")
     source = candidate["source_id"].removeprefix("packages-")
     indexes = {
         "stable": "https://repo.amd.com/rocm/whl-multi-arch/",
@@ -74,7 +76,7 @@ def install_arguments(candidate, gfx):
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(description="Resolve a historical ROCm package candidate without installing it.")
     parser.add_argument("--history", default="data/history.json")
-    parser.add_argument("--gfx", required=True)
+    parser.add_argument("--gfx")
     parser.add_argument("--platform", choices=("windows", "linux", "macos", "unknown"))
     parser.add_argument("--channel", choices=("stable", "nightly", "staging"))
     parser.add_argument("--rocm")

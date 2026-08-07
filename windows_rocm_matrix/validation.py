@@ -132,11 +132,16 @@ def validate_history(history):
             raise ValueError(f"Unsupported distribution family: {candidate['id']}")
         if candidate.get("platform") not in {"windows", "linux", "macos", "unknown"}:
             raise ValueError(f"Unsupported candidate platform: {candidate['id']}")
+        if candidate.get("gfx_support", "known") not in {"known", "unknown"}:
+            raise ValueError(f"Unsupported GFX support state: {candidate['id']}")
         if candidate.get("lifecycle") not in {"current", "historical"}:
             raise ValueError(f"Unsupported lifecycle: {candidate['id']}")
         if not set(candidate["available_gfx_targets"]).issubset(candidate["gfx_targets"]):
             raise ValueError(f"Available targets are not known for {candidate['id']}")
-        if candidate["artifact_available"] != bool(candidate["available_gfx_targets"]):
+        if candidate.get("gfx_support", "known") == "unknown":
+            if candidate["available_gfx_targets"]:
+                raise ValueError(f"Unknown GFX support cannot have available targets: {candidate['id']}" )
+        elif candidate["artifact_available"] != bool(candidate["available_gfx_targets"]):
             raise ValueError(f"Incorrect artifact availability for {candidate['id']}")
         if not candidate["python_tags"]:
             raise ValueError(f"Missing Python tags for {candidate['id']}")

@@ -28,6 +28,11 @@ Legacy direct-wheel candidates use the same history record but include
 `wheel_urls`. Consumers must use those URLs with `--no-index`; they must not
 apply TheRock's device-extra installation syntax to a `legacy` candidate.
 
+Some legacy Linux releases have package artifacts but no authoritative GFX
+mapping. Those candidates use `gfx_support: "unknown"` and may be listed with
+`rocm-resolve --platform linux` without `--gfx`; they must not be presented as
+hardware-compatible for a specific GPU.
+
 ## Stable identities
 
 - GFX targets use lowercase `gfx` identifiers such as `gfx1201`.

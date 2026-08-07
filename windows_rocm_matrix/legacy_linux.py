@@ -3,6 +3,7 @@ from urllib.parse import unquote, urlparse
 
 from .simple_index import parse_links, version_key
 from .source_adapter import run_source_adapter, utc_now
+from .simple_index import normalize_package_name
 
 
 def render_legacy_linux(document):
@@ -60,3 +61,57 @@ def collect_legacy_linux_sources(sources, fetch_text, existing=None, observed_at
         "sources": {key: records[key] for key in sorted(records)},
         "artifact_releases": sorted(releases, key=lambda item: version_key(item["release_id"])),
     }, results
+
+
+def build_legacy_linux_candidates(document):
+    candidates = []
+    for release in document.get("artifact_releases", []):
+        packages = {"torch": [], "torchvision": [], "torchaudio": []}
+        for item in release.get("artifacts", []):
+            filename = item["filename"]
+            if not filename.endswith(".whl"):
+                continue
+            parts = filename[:-4].split("-")
+            if len(parts) < 5:
+                continue
+            package = normalize_package_name(parts[0])
+            if package not in packages:
+                continue
+            packages[package].append({
+                "package": package,
+                "version": parts[1],
+                "python_tag": parts[-3],
+                "abi_tag": parts[-2],
+                "platform_tag": parts[-1],
+                "filename": filename,
+                "url": item["url"],
+            })
+        if not all(packages.values()):
+            continue
+        for torch in packages["torch"]:
+            matching = []
+            for package in ("torchvision", "torchaudio"):
+                options = [item for item in packages[package] if item["python_tag"] == torch["python_tag"]]
+                if not options:
+                    break
+                matching.append(sorted(options, key=lambda item: item["version"])[-1])
+            if len(matching) != 2:
+                continue
+            vision, audio = matching
+            candidate_id = ":".join(("legacy", "linux", "stable", release["release_id"], torch["version"], vision["version"], audio["version"], torch["python_tag"]))
+            candidates.append({
+                "id": candidate_id,
+                "distribution_family": "legacy",
+                "platform": "linux",
+                "channel": "stable",
+                "rocm_version": release["release_id"],
+                "torch_version": torch["version"],
+                "torchvision_version": vision["version"],
+                "torchaudio_version": audio["version"],
+                "python_tags": [torch["python_tag"]],
+                "gfx_support": "unknown",
+                "gfx_targets": [],
+                "source_id": "legacy-linux-artifacts",
+                "wheel_urls": [torch["url"], vision["url"], audio["url"]],
+            })
+    return candidates

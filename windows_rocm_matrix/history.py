@@ -100,6 +100,7 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
                 "id": candidate_id,
                 "distribution_family": distribution_family,
                 "platform": source.get("platform", "windows"),
+                "gfx_support": "known",
                 "channel": source["channel"],
                 "rocm_version": rocm_version,
                 "torch_version": torch_version,
@@ -154,6 +155,7 @@ def migrate_history(existing):
         for item in existing.get("candidates", []):
             candidate = {**item}
             candidate.setdefault("platform", "windows")
+            candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
             candidate["id"] = candidate_id(candidate)
             candidates.append(candidate)
         return {**existing, "candidates": candidates}
@@ -163,6 +165,7 @@ def migrate_history(existing):
     for item in existing.get("candidates", []):
         candidate = {**item, "distribution_family": "therock"}
         candidate.setdefault("platform", "windows")
+        candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
         candidate["id"] = candidate_id(candidate)
         candidates.append(candidate)
     return {**existing, "schema_version": 2, "candidates": candidates}
@@ -172,6 +175,7 @@ def classify_lifecycle(candidates):
     latest = {}
     for candidate in candidates:
         candidate.setdefault("platform", "windows")
+        candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
         key = (candidate["distribution_family"], candidate["channel"])
         version = version_key(candidate["rocm_version"])
         if key not in latest or version > latest[key]:

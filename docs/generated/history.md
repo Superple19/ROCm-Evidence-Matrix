@@ -6,9 +6,28 @@ Each row summarizes install candidates derived from official framework compatibi
 
 | Distribution | Platform | Channel | Lifecycle | ROCm build | Framework sets | Known GFX targets | Currently available GFX targets | Python tags |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| legacy | linux | stable | historical | `6.2.4` | 14 | 0 | 0 | `cp310`, `cp311`, `cp39` |
+| legacy | linux | stable | historical | `6.3` | 17 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp39` |
+| legacy | linux | stable | historical | `6.3.1` | 20 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp39` |
+| legacy | linux | stable | historical | `6.3.2` | 15 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp39` |
+| legacy | linux | stable | historical | `6.3.3` | 21 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `6.3.4` | 11 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp39` |
+| legacy | linux | stable | historical | `6.4` | 12 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `6.4.1` | 17 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `6.4.2` | 11 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `6.4.3` | 4 | 0 | 0 | `cp310`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `6.4.4` | 16 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `7.0` | 37 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `7.0.2` | 53 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `7.1` | 19 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `7.2` | 16 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313` |
+| legacy | linux | stable | historical | `7.2.1` | 14 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| legacy | linux | stable | historical | `7.2.2` | 35 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313` |
+| legacy | linux | stable | historical | `7.2.3` | 16 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313` |
+| legacy | linux | stable | current | `7.2.4` | 16 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313` |
 | legacy | windows | stable | historical | `6.4.4` | 1 | 5 | 5 | `cp312` |
 | legacy | windows | stable | historical | `7.2` | 1 | 6 | 6 | `cp312` |
-| legacy | windows | stable | current | `7.2.1` | 1 | 6 | 6 | `cp312` |
+| legacy | windows | stable | historical | `7.2.1` | 1 | 6 | 6 | `cp312` |
 | therock | linux | nightly | historical | `7.14.0a20260520` | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `7.14.0a20260521` | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `7.14.0a20260522` | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
