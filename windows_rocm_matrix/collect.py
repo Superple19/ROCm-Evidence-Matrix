@@ -7,6 +7,7 @@ from urllib.request import Request, urlopen
 
 from .documentation import collect_documentation_sources
 from .ci import build_evidence, collect_github, collect_hud, parse_matrix
+from .catalog import write_catalog
 from .history import build_history_observations, merge_history, write_history_document
 from .integration import build_compatibility_matrix
 from .legacy import collect_legacy_windows_sources, render_legacy_windows
@@ -213,6 +214,9 @@ def parse_args(argv=None):
     build.add_argument("--history-docs-output", default="docs/generated/history.md")
     build.add_argument("--legacy-docs-output", default="docs/generated/legacy-windows.md")
     build.add_argument("--version-history-docs-output", default="docs/generated/version-history.md")
+    catalog = commands.add_parser("catalog", help="Write the machine-readable artifact catalog without network access.")
+    catalog.add_argument("--root", default=".")
+    catalog.add_argument("--output", default="data/catalog.json")
     runtime = commands.add_parser("runtime", help="Record ROCm runtime evidence from the current Python environment.")
     runtime.add_argument("--output", default="data/verifications/runtime.json")
     hardware = commands.add_parser("hardware", help="Run a reproducible ROCm GPU tensor smoke test.")
@@ -501,6 +505,9 @@ def main(argv=None):
         return
     if args.command == "build":
         build_outputs(args)
+        return
+    if args.command == "catalog":
+        print(f"Wrote {write_catalog(args.root, args.output)}")
         return
     if args.command == "integrate":
         integrate_outputs(args)

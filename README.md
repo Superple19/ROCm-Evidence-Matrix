@@ -20,7 +20,7 @@ The collector reads official AMD stable, nightly, and staging sources. It:
 - Collects legacy Windows HIP SDK release support, versioned GPU support, and pre-multi-arch PyTorch artifacts as a Windows-specific adapter.
 - Generates a Markdown availability summary from the JSON snapshots.
 
-Official documentation sources and their evidence boundaries are listed in [docs/sources.md](docs/sources.md). The data boundaries and processing layers are documented in [docs/architecture.md](docs/architecture.md).
+Official documentation sources and their evidence boundaries are listed in [docs/sources.md](docs/sources.md). The data boundaries and processing layers are documented in [docs/architecture.md](docs/architecture.md), and the machine-readable consumer contract is in [docs/consumer-contract.md](docs/consumer-contract.md).
 
 Current generated views:
 

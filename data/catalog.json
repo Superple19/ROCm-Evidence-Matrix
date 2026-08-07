@@ -1,0 +1,68 @@
+{
+  "artifacts": [
+    {
+      "id": "compatibility_matrix",
+      "path": "data/matrix.json",
+      "schema": "schemas/compatibility-matrix.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "package_history",
+      "path": "data/history.json",
+      "schema": "schemas/history.schema.json",
+      "schema_version": 2
+    },
+    {
+      "id": "package_snapshots:nightly",
+      "path": "data/snapshots/nightly.json",
+      "schema": "schemas/package-snapshot.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "package_snapshots:stable",
+      "path": "data/snapshots/stable.json",
+      "schema": "schemas/package-snapshot.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "package_snapshots:staging",
+      "path": "data/snapshots/staging.json",
+      "schema": "schemas/package-snapshot.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "documentation",
+      "path": "data/documentation.json",
+      "schema": "schemas/documentation-snapshot.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "version_history",
+      "path": "data/version-history.json",
+      "schema": "schemas/version-history.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "resolver_verifications",
+      "path": "data/verifications/resolver.json",
+      "schema": "schemas/resolver-verifications.schema.json",
+      "schema_version": 1
+    }
+  ],
+  "dimensions": {
+    "channels": [
+      "nightly",
+      "stable",
+      "staging"
+    ],
+    "distribution_families": [
+      "legacy",
+      "therock"
+    ],
+    "platforms": [
+      "windows"
+    ]
+  },
+  "generated_at": "2026-08-07T17:27:06Z",
+  "schema_version": 1
+}
