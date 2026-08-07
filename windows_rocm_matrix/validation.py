@@ -155,3 +155,24 @@ def validate_legacy_windows(document):
         for artifact in release["artifacts"]:
             if not artifact["url"].startswith(release["url"]):
                 raise ValueError(f"Artifact outside legacy release index: {artifact['url']}")
+
+
+def validate_collection_status(document):
+    if document.get("schema_version") != 1:
+        raise ValueError("Unsupported collection status schema")
+    if document.get("distribution_family") not in {"therock", "legacy"}:
+        raise ValueError("Invalid collection distribution family")
+    for field in ("started_at", "completed_at"):
+        if not document.get(field, "").endswith("Z"):
+            raise ValueError(f"{field} must be a UTC timestamp")
+    source_ids = set()
+    for result in document.get("results", []):
+        if result["source_id"] in source_ids:
+            raise ValueError(f"Duplicate collection result: {result['source_id']}")
+        source_ids.add(result["source_id"])
+        if result["status"] not in {"passed", "failed"}:
+            raise ValueError(f"Invalid collection result: {result['status']}")
+        if result["status"] == "passed" and result["error"] is not None:
+            raise ValueError(f"Passed source has an error: {result['source_id']}")
+        if result["status"] == "failed" and not result["error"]:
+            raise ValueError(f"Failed source lacks an error: {result['source_id']}")

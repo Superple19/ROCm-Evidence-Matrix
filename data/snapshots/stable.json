@@ -226,7 +226,7 @@
       "gfx": "gfx950"
     }
   ],
-  "last_observed_at": "2026-08-07T13:46:16Z",
+  "last_observed_at": "2026-08-07T14:10:00Z",
   "packages": {
     "amd-torch-device-gfx1010": [
       {

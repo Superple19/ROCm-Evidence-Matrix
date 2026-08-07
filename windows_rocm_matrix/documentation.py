@@ -3,6 +3,8 @@ import re
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 
+from .source_adapter import run_source_adapter, utc_now
+
 
 class StructuredTableParser(HTMLParser):
     def __init__(self):
@@ -270,3 +272,65 @@ def collect_documentation(sources, fetch_text):
             key=lambda item: tuple(int(part) for part in item["torch_series"].split(".")),
         ),
     }
+
+
+def collect_documentation_sources(sources, fetch_text, existing=None):
+    existing = existing or {
+        "schema_version": 1,
+        "last_observed_at": utc_now(),
+        "sources": {},
+        "products": [],
+        "windows_release_support": [],
+        "therock_windows_status": [],
+        "framework_compatibility": [],
+    }
+    observed_at = utc_now()
+    source_records = dict(existing.get("sources", {}))
+    collections = {
+        "products": list(existing.get("products", [])),
+        "windows_release_support": list(existing.get("windows_release_support", [])),
+        "therock_windows_status": list(existing.get("therock_windows_status", [])),
+        "framework_compatibility": list(existing.get("framework_compatibility", [])),
+    }
+    parsers = {
+        "rocm-compatibility-matrix": ("windows_release_support", parse_compatibility_matrix),
+        "amd-gpu-specifications": ("products", parse_gpu_specifications),
+        "therock-supported-gpus": ("therock_windows_status", parse_therock_windows_status),
+        "therock-release-packaging": ("framework_compatibility", parse_framework_compatibility),
+        "pytorch-version-compatibility": ("framework_compatibility", parse_pytorch_version_compatibility),
+    }
+    results = []
+    passed = False
+    for source in sources:
+        if source["id"] not in parsers:
+            raise ValueError(f"Unsupported documentation source adapter: {source['id']}")
+        collection_name, parser = parsers[source["id"]]
+        items, result = run_source_adapter(
+            source,
+            lambda source=source, parser=parser: parser(fetch_text(source["url"]), source["id"]),
+            observed_at,
+        )
+        results.append(result)
+        if items is None:
+            continue
+        passed = True
+        collections[collection_name] = [item for item in collections[collection_name] if item["source_id"] != source["id"]]
+        collections[collection_name].extend(items)
+        source_records[source["id"]] = {**source, "observed_at": observed_at}
+
+    framework_by_torch = {}
+    priority = {"pytorch-version-compatibility": 0, "therock-release-packaging": 1}
+    for item in sorted(collections["framework_compatibility"], key=lambda value: priority.get(value["source_id"], -1)):
+        framework_by_torch[item["torch_series"]] = item
+    return {
+        "schema_version": 1,
+        "last_observed_at": observed_at if passed else existing["last_observed_at"],
+        "sources": {key: source_records[key] for key in sorted(source_records)},
+        "products": sorted(collections["products"], key=lambda item: (item["gfx"], item["name"])),
+        "windows_release_support": sorted(collections["windows_release_support"], key=lambda item: item["gfx"]),
+        "therock_windows_status": sorted(collections["therock_windows_status"], key=lambda item: item["gfx"]),
+        "framework_compatibility": sorted(
+            framework_by_torch.values(),
+            key=lambda item: tuple(int(part) for part in item["torch_series"].split(".")),
+        ),
+    }, results

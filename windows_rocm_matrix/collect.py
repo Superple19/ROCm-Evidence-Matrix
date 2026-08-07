@@ -5,14 +5,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
 
-from .documentation import collect_documentation
+from .documentation import collect_documentation_sources
 from .history import build_history_observations, merge_history, write_history_document
 from .integration import build_compatibility_matrix
-from .legacy import collect_legacy_windows, render_legacy_windows
+from .legacy import collect_legacy_windows_sources, render_legacy_windows
 from .matrix_render import write_compatibility_document
 from .render import write_rendered_document
 from .simple_index import discover_gfx_targets, discover_packages, latest_artifacts, package_names_for_target, parse_package_artifacts
-from .validation import validate_compatibility_matrix, validate_documentation_snapshot, validate_history, validate_legacy_windows, validate_snapshot
+from .source_adapter import collection_status, run_source_adapter, utc_now
+from .validation import validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_history, validate_legacy_windows, validate_snapshot
 
 
 USER_AGENT = "windows-rocm-matrix/0.1 (+https://github.com/Superple19/windows-rocm-matrix)"
@@ -113,30 +114,74 @@ def write_json(value, path):
     path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
 
 
-def parse_args(argv=None):
-    parser = argparse.ArgumentParser(description="Collect Windows ROCm package availability from official AMD indexes.")
+def add_config_path(parser):
     parser.add_argument("--config", default="config/sources.json")
-    parser.add_argument("--output-dir", default="data/snapshots")
-    parser.add_argument("--docs-output", default="docs/generated/package-availability.md")
-    parser.add_argument("--documentation-output", default="data/documentation.json")
-    parser.add_argument("--matrix-output", default="data/matrix.json")
-    parser.add_argument("--matrix-docs-output", default="docs/generated/compatibility-matrix.md")
-    parser.add_argument("--history-output", default="data/history.json")
-    parser.add_argument("--history-docs-output", default="docs/generated/history.md")
-    parser.add_argument("--legacy-output", default="data/legacy-windows.json")
-    parser.add_argument("--legacy-docs-output", default="docs/generated/legacy-windows.md")
-    parser.add_argument("--skip-legacy", action="store_true")
-    parser.add_argument("--skip-documentation", action="store_true")
-    parser.add_argument("--source", action="append", dest="sources", help="Collect only the named source. Repeat to select multiple sources.")
-    parser.add_argument("--gfx", action="append", dest="gfx_targets", default=[], help="Collect only the exact GFX target. Repeat to select multiple targets.")
-    parser.add_argument("--timeout", type=int, default=20)
-    parser.add_argument("--workers", type=int, default=8)
+
+
+def parse_args(argv=None):
+    parser = argparse.ArgumentParser(description="Collect and build Windows ROCm compatibility evidence.")
+    commands = parser.add_subparsers(dest="command", required=True)
+    collect_parser = commands.add_parser("collect", help="Collect one distribution family from official sources.")
+    families = collect_parser.add_subparsers(dest="family", required=True)
+
+    therock = families.add_parser("therock", help="Collect TheRock documentation and package indexes.")
+    add_config_path(therock)
+    therock.add_argument("--output-dir", default="data/snapshots")
+    therock.add_argument("--documentation-output", default="data/documentation.json")
+    therock.add_argument("--history-output", default="data/history.json")
+    therock.add_argument("--status-output", default="data/status/therock.json")
+    therock.add_argument("--source", action="append", dest="sources", help="Collect only the named package source. Repeat to select multiple sources.")
+    therock.add_argument("--gfx", action="append", dest="gfx_targets", default=[], help="Collect only the exact GFX target. Repeat to select multiple targets.")
+    therock.add_argument("--timeout", type=int, default=20)
+    therock.add_argument("--workers", type=int, default=8)
+
+    legacy = families.add_parser("legacy", help="Collect pre-TheRock Windows documentation and package repositories.")
+    add_config_path(legacy)
+    legacy.add_argument("--legacy-output", default="data/legacy-windows.json")
+    legacy.add_argument("--status-output", default="data/status/legacy.json")
+    legacy.add_argument("--timeout", type=int, default=20)
+
+    build = commands.add_parser("build", help="Build integrated JSON and Markdown from collected data without network access.")
+    build.add_argument("--output-dir", default="data/snapshots")
+    build.add_argument("--documentation-output", default="data/documentation.json")
+    build.add_argument("--history-output", default="data/history.json")
+    build.add_argument("--legacy-output", default="data/legacy-windows.json")
+    build.add_argument("--docs-output", default="docs/generated/package-availability.md")
+    build.add_argument("--matrix-output", default="data/matrix.json")
+    build.add_argument("--matrix-docs-output", default="docs/generated/compatibility-matrix.md")
+    build.add_argument("--history-docs-output", default="docs/generated/history.md")
+    build.add_argument("--legacy-docs-output", default="docs/generated/legacy-windows.md")
     return parser.parse_args(argv)
 
 
-def main(argv=None):
-    args = parse_args(argv)
-    config = load_config(args.config)
+def read_json(path):
+    path = Path(path)
+    if not path.exists():
+        return None
+    with path.open(encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def write_status(family, started_at, results, path):
+    status = collection_status(family, started_at, results)
+    validate_collection_status(status)
+    write_json(status, path)
+    return status
+
+
+def collect_therock(args, config):
+    started_at = utc_now()
+    existing_documentation = read_json(args.documentation_output)
+    documentation, results = collect_documentation_sources(
+        config["documentation_sources"],
+        lambda url: fetch_text(url, args.timeout),
+        existing=existing_documentation,
+    )
+    if any(result["status"] == "passed" for result in results):
+        validate_documentation_snapshot(documentation)
+        write_json(documentation, args.documentation_output)
+        print(f"Wrote {args.documentation_output}")
+
     selected = set(args.sources or [])
     sources = [source for source in config["artifact_sources"] if not selected or source["id"] in selected]
     missing = selected - {source["id"] for source in sources}
@@ -144,85 +189,112 @@ def main(argv=None):
         raise SystemExit(f"Unknown sources: {', '.join(sorted(missing))}")
 
     output_dir = Path(args.output_dir)
-    documentation = None
-    if not args.skip_documentation:
-        print("Collecting official compatibility documentation")
-        documentation = collect_documentation(
-            config["documentation_sources"],
-            lambda url: fetch_text(url, args.timeout),
-        )
-        validate_documentation_snapshot(documentation)
-        write_json(documentation, args.documentation_output)
-        print(f"Wrote {args.documentation_output}")
-
-    snapshot_paths = []
     history_observations = []
+    successful_sources = []
     for source in sources:
         print(f"Collecting {source['id']} from {source['url']}")
-        snapshot, observations = collect_source(
+        collected, result = run_source_adapter(
             source,
-            timeout=args.timeout,
-            workers=args.workers,
-            requested_gfx=args.gfx_targets,
-            framework_compatibility=documentation["framework_compatibility"] if documentation else (),
+            lambda source=source: collect_source(
+                source,
+                timeout=args.timeout,
+                workers=args.workers,
+                requested_gfx=args.gfx_targets,
+                framework_compatibility=documentation["framework_compatibility"],
+            ),
         )
+        results.append(result)
+        if collected is None:
+            print(f"Failed {source['id']}: {result['error']}")
+            continue
+        snapshot, observations = collected
         snapshot_path = output_dir / f"{source['id']}.json"
         write_snapshot(snapshot, snapshot_path)
-        snapshot_paths.append(snapshot_path)
         history_observations.extend(observations)
+        successful_sources.append(source)
         print(f"Wrote {snapshot_path}")
 
-    write_rendered_document(output_dir.glob("*.json"), args.docs_output)
-    print(f"Wrote {args.docs_output}")
+    if successful_sources:
+        package_snapshots = [read_json(path) for path in sorted(output_dir.glob("*.json"))]
+        existing_history = read_json(args.history_output)
+        package_sources = {
+            f"packages-{snapshot['source']['id']}": {**snapshot["source"], "observed_at": snapshot["last_observed_at"]}
+            for snapshot in package_snapshots
+        }
+        history = merge_history(
+            existing_history,
+            history_observations,
+            package_sources,
+            max(snapshot["last_observed_at"] for snapshot in package_snapshots),
+            {f"packages-{source['id']}" for source in successful_sources},
+        )
+        validate_history(history)
+        write_json(history, args.history_output)
+        print(f"Wrote {args.history_output}")
 
-    if args.skip_documentation:
-        return
+    status = write_status("therock", started_at, results, args.status_output)
+    print(f"Wrote {args.status_output}")
+    return all(result["status"] == "passed" for result in status["results"])
 
-    package_snapshots = []
-    for path in sorted(output_dir.glob("*.json")):
-        with path.open(encoding="utf-8") as handle:
-            package_snapshots.append(json.load(handle))
 
-    history_path = Path(args.history_output)
-    existing_history = None
-    if history_path.exists():
-        with history_path.open(encoding="utf-8") as handle:
-            existing_history = json.load(handle)
-    package_sources = {
-        f"packages-{snapshot['source']['id']}": {**snapshot["source"], "observed_at": snapshot["last_observed_at"]}
-        for snapshot in package_snapshots
-    }
-    observed_source_ids = {f"packages-{source['id']}" for source in sources}
-    history = merge_history(
-        existing_history,
-        history_observations,
-        package_sources,
-        max(snapshot["last_observed_at"] for snapshot in package_snapshots),
-        observed_source_ids,
+def collect_legacy(args, config):
+    started_at = utc_now()
+    existing = read_json(args.legacy_output)
+    legacy, results = collect_legacy_windows_sources(
+        config["legacy_windows_sources"],
+        lambda url: fetch_text(url, args.timeout),
+        existing=existing,
     )
-    validate_history(history)
-    write_json(history, history_path)
-    write_history_document(history, args.history_docs_output)
-    print(f"Wrote {history_path}")
-    print(f"Wrote {args.history_docs_output}")
+    if any(result["status"] == "passed" for result in results):
+        validate_legacy_windows(legacy)
+        write_json(legacy, args.legacy_output)
+        print(f"Wrote {args.legacy_output}")
+    for result in results:
+        if result["status"] == "failed":
+            print(f"Failed {result['source_id']}: {result['error']}")
+    status = write_status("legacy", started_at, results, args.status_output)
+    print(f"Wrote {args.status_output}")
+    return all(result["status"] == "passed" for result in status["results"])
 
+
+def build_outputs(args):
+    documentation = read_json(args.documentation_output)
+    history = read_json(args.history_output)
+    legacy = read_json(args.legacy_output)
+    if documentation is None or history is None or legacy is None:
+        raise SystemExit("Collected documentation, history, and legacy data are required before build")
+    validate_documentation_snapshot(documentation)
+    validate_history(history)
+    validate_legacy_windows(legacy)
+    snapshot_paths = sorted(Path(args.output_dir).glob("*.json"))
+    if not snapshot_paths:
+        raise SystemExit("Package snapshots are required before build")
+    package_snapshots = [read_json(path) for path in snapshot_paths]
+    for snapshot in package_snapshots:
+        validate_snapshot(snapshot)
+
+    write_rendered_document(snapshot_paths, args.docs_output)
+    write_history_document(history, args.history_docs_output)
     matrix = build_compatibility_matrix(documentation, package_snapshots)
     validate_compatibility_matrix(matrix)
     write_json(matrix, args.matrix_output)
     write_compatibility_document(matrix, args.matrix_docs_output)
-    print(f"Wrote {args.matrix_output}")
-    print(f"Wrote {args.matrix_docs_output}")
+    legacy_path = Path(args.legacy_docs_output)
+    legacy_path.parent.mkdir(parents=True, exist_ok=True)
+    legacy_path.write_text(render_legacy_windows(legacy), encoding="utf-8", newline="\n")
+    for path in (args.docs_output, args.history_docs_output, args.matrix_output, args.matrix_docs_output, args.legacy_docs_output):
+        print(f"Wrote {path}")
 
-    if not args.skip_legacy:
-        print("Collecting legacy Windows ROCm evidence")
-        legacy = collect_legacy_windows(config["legacy_windows_sources"], lambda url: fetch_text(url, args.timeout))
-        validate_legacy_windows(legacy)
-        write_json(legacy, args.legacy_output)
-        legacy_path = Path(args.legacy_docs_output)
-        legacy_path.parent.mkdir(parents=True, exist_ok=True)
-        legacy_path.write_text(render_legacy_windows(legacy), encoding="utf-8", newline="\n")
-        print(f"Wrote {args.legacy_output}")
-        print(f"Wrote {args.legacy_docs_output}")
+
+def main(argv=None):
+    args = parse_args(argv)
+    if args.command == "build":
+        build_outputs(args)
+        return
+    config = load_config(args.config)
+    success = collect_therock(args, config) if args.family == "therock" else collect_legacy(args, config)
+    if not success:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

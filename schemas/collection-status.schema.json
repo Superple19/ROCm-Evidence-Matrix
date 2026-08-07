@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/collection-status.schema.json",
+  "title": "Windows ROCm source collection status",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "distribution_family", "started_at", "completed_at", "results"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "distribution_family": {"enum": ["therock", "legacy"]},
+    "started_at": {"type": "string", "format": "date-time"},
+    "completed_at": {"type": "string", "format": "date-time"},
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "url", "status", "observed_at", "error"],
+        "properties": {
+          "source_id": {"type": "string"},
+          "url": {"type": "string", "format": "uri"},
+          "status": {"enum": ["passed", "failed"]},
+          "observed_at": {"type": "string", "format": "date-time"},
+          "error": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

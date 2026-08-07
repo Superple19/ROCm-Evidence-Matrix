@@ -5,6 +5,7 @@ from urllib.parse import unquote, urlparse
 
 from .documentation import parse_html_tables
 from .simple_index import normalize_package_name, parse_links, version_key
+from .source_adapter import run_source_adapter
 
 
 STATUS = {"✅": "supported", "⚠️": "deprecated", "⚠": "deprecated", "❌": "unsupported"}
@@ -150,30 +151,10 @@ def artifact_links(html, base_url):
     return artifacts, sorted(set(subindexes))
 
 
-def collect_legacy_windows(config, fetch_text):
-    observed_at = utc_now()
-    source_records = {}
-
-    release_source = config["hip_sdk_release_versions"]
-    release_html = fetch_text(release_source["url"])
-    source_records[release_source["id"]] = {**release_source, "observed_at": observed_at}
-    hip_sdk_releases = parse_hip_sdk_release_versions(release_html, release_source["id"])
-
-    hip_sdk_gpu_support = []
-    for source in config["hip_sdk_gpu_support"]:
-        source_records[source["id"]] = {**source, "observed_at": observed_at}
-        hip_sdk_gpu_support.extend(parse_hip_sdk_gpu_support(fetch_text(source["url"]), source["rocm_series"], source["id"]))
-
-    pytorch_windows_support = []
-    for source in config["pytorch_windows_support"]:
-        source_records[source["id"]] = {**source, "observed_at": observed_at}
-        pytorch_windows_support.append(parse_pytorch_windows_support(fetch_text(source["url"]), source["product_family"], source["id"]))
-
-    artifact_source = config["artifact_index"]
-    source_records[artifact_source["id"]] = {**artifact_source, "observed_at": observed_at}
-    root_html = fetch_text(artifact_source["url"])
-    artifact_releases = []
-    for url, text in parse_links(root_html, artifact_source["url"]):
+def collect_artifact_releases(source, fetch_text):
+    root_html = fetch_text(source["url"])
+    releases = []
+    for url, text in parse_links(root_html, source["url"]):
         match = re.search(r"/rocm-rel-([^/]+)/$", url)
         if not match:
             continue
@@ -181,24 +162,91 @@ def collect_legacy_windows(config, fetch_text):
         for subindex in subindexes:
             nested, ignored = artifact_links(fetch_text(subindex), subindex)
             artifacts.extend(nested)
-        artifact_releases.append(
+        releases.append(
             {
                 "release_id": match.group(1),
                 "url": url,
                 "artifacts": sorted(artifacts, key=lambda item: (item["package"], version_key(item["version"]), item["filename"])),
-                "source_id": artifact_source["id"],
+                "source_id": source["id"],
             }
         )
+    return sorted(releases, key=lambda item: version_key(item["release_id"]))
 
-    return {
+
+def collect_legacy_windows_sources(config, fetch_text, existing=None):
+    observed_at = utc_now()
+    existing = existing or {
         "schema_version": 1,
         "generated_at": observed_at,
-        "sources": {key: source_records[key] for key in sorted(source_records)},
-        "hip_sdk_releases": hip_sdk_releases,
-        "hip_sdk_gpu_support": hip_sdk_gpu_support,
-        "pytorch_windows_support": sorted(pytorch_windows_support, key=lambda item: (version_key(item["rocm_version"]), item["product_family"])),
-        "artifact_releases": sorted(artifact_releases, key=lambda item: version_key(item["release_id"])),
+        "sources": {},
+        "hip_sdk_releases": [],
+        "hip_sdk_gpu_support": [],
+        "pytorch_windows_support": [],
+        "artifact_releases": [],
     }
+    source_records = dict(existing.get("sources", {}))
+    collections = {
+        "hip_sdk_releases": list(existing.get("hip_sdk_releases", [])),
+        "hip_sdk_gpu_support": list(existing.get("hip_sdk_gpu_support", [])),
+        "pytorch_windows_support": list(existing.get("pytorch_windows_support", [])),
+        "artifact_releases": list(existing.get("artifact_releases", [])),
+    }
+    results = []
+    passed = False
+
+    def run(source, collection_name, collect):
+        nonlocal passed
+        items, result = run_source_adapter(source, collect, observed_at)
+        results.append(result)
+        if items is None:
+            return
+        passed = True
+        collections[collection_name] = [item for item in collections[collection_name] if item["source_id"] != source["id"]]
+        collections[collection_name].extend(items)
+        source_records[source["id"]] = {**source, "observed_at": observed_at}
+
+    release_source = config["hip_sdk_release_versions"]
+    run(
+        release_source,
+        "hip_sdk_releases",
+        lambda: parse_hip_sdk_release_versions(fetch_text(release_source["url"]), release_source["id"]),
+    )
+
+    for source in config["hip_sdk_gpu_support"]:
+        run(
+            source,
+            "hip_sdk_gpu_support",
+            lambda source=source: parse_hip_sdk_gpu_support(fetch_text(source["url"]), source["rocm_series"], source["id"]),
+        )
+
+    for source in config["pytorch_windows_support"]:
+        run(
+            source,
+            "pytorch_windows_support",
+            lambda source=source: [parse_pytorch_windows_support(fetch_text(source["url"]), source["product_family"], source["id"])],
+        )
+
+    artifact_source = config["artifact_index"]
+    run(artifact_source, "artifact_releases", lambda: collect_artifact_releases(artifact_source, fetch_text))
+
+    document = {
+        "schema_version": 1,
+        "generated_at": observed_at if passed else existing["generated_at"],
+        "sources": {key: source_records[key] for key in sorted(source_records)},
+        "hip_sdk_releases": sorted(collections["hip_sdk_releases"], key=lambda item: version_key(item["rocm_series"])),
+        "hip_sdk_gpu_support": sorted(collections["hip_sdk_gpu_support"], key=lambda item: (version_key(item["rocm_series"]), item["gfx"], item["product"])),
+        "pytorch_windows_support": sorted(collections["pytorch_windows_support"], key=lambda item: (version_key(item["rocm_version"]), item["product_family"])),
+        "artifact_releases": sorted(collections["artifact_releases"], key=lambda item: version_key(item["release_id"])),
+    }
+    return document, results
+
+
+def collect_legacy_windows(config, fetch_text):
+    document, results = collect_legacy_windows_sources(config, fetch_text)
+    failures = [result for result in results if result["status"] == "failed"]
+    if failures:
+        raise ValueError("Legacy source collection failed: " + ", ".join(result["source_id"] for result in failures))
+    return document
 
 
 def render_legacy_windows(document):
