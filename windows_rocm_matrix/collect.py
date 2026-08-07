@@ -95,7 +95,13 @@ def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_co
         "gfx_targets": target_rows,
         "packages": packages,
     }
-    history = build_history_observations(source, gfx_targets, all_packages, framework_compatibility, "therock") if framework_compatibility else []
+    history = build_history_observations(
+        source,
+        gfx_targets,
+        all_packages,
+        framework_compatibility,
+        source.get("distribution_family", "therock"),
+    ) if framework_compatibility else []
     return snapshot, history
 
 

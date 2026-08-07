@@ -2670,6 +2670,7 @@
   "schema_version": 1,
   "source": {
     "channel": "staging",
+    "distribution_family": "therock",
     "id": "staging",
     "platform": "windows",
     "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"

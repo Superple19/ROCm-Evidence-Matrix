@@ -3,36 +3,42 @@
   "artifact_sources": [
     {
       "id": "stable",
+      "distribution_family": "therock",
       "channel": "stable",
       "platform": "windows",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/"
     },
     {
       "id": "nightly",
+      "distribution_family": "therock",
       "channel": "nightly",
       "platform": "windows",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
     },
     {
       "id": "staging",
+      "distribution_family": "therock",
       "channel": "staging",
       "platform": "windows",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
     },
     {
       "id": "stable-linux",
+      "distribution_family": "therock",
       "channel": "stable",
       "platform": "linux",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/"
     },
     {
       "id": "nightly-linux",
+      "distribution_family": "therock",
       "channel": "nightly",
       "platform": "linux",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
     },
     {
       "id": "staging-linux",
+      "distribution_family": "therock",
       "channel": "staging",
       "platform": "linux",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"

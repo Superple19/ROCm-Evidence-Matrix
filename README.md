@@ -15,6 +15,7 @@ The collector reads official AMD stable, nightly, and staging sources. It:
 - Collects released platform support and product-to-GFX mappings from AMD documentation.
 - Collects TheRock Build Passing, Sanity Tested, and Release Ready status by platform.
 - Integrates the evidence by exact GFX target without promoting availability to compatibility.
+- Classifies each source independently by distribution family, platform, and configured channel.
 - Preserves observed package sets in an append-only historical catalog.
 - Collects legacy Windows HIP SDK release support, versioned GPU support, and pre-multi-arch PyTorch artifacts as a Windows-specific adapter.
 - Generates a Markdown availability summary from the JSON snapshots.

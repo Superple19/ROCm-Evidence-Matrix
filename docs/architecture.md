@@ -4,11 +4,18 @@ ROCm Compatibility Matrix separates evidence by two independent dimensions:
 
 - `distribution_family`: `therock` or `legacy`
 - `platform`: `windows`, `linux`, `macos`, or `unknown`
+- `channel`: `stable`, `nightly`, or `staging`
+- `evidence_kind`: documentation, package, CI, resolver, runtime, or hardware
 
 The distribution family describes how an artifact or release is produced. The
 platform describes where the artifact or observation applies. TheRock can
 contain more than one platform; the legacy adapter currently covers Windows
 HIP SDK and pre-multi-arch Windows wheels only.
+
+These dimensions are independent. For example, a nightly wheel is identified
+by its configured source channel, not by parsing a version string, and a
+future Linux legacy source would remain `distribution_family=legacy` with
+`platform=linux`.
 
 ## Data flow
 

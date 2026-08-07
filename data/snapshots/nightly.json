@@ -2785,6 +2785,7 @@
   "schema_version": 1,
   "source": {
     "channel": "nightly",
+    "distribution_family": "therock",
     "id": "nightly",
     "platform": "windows",
     "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"

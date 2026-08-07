@@ -2476,6 +2476,7 @@
   "schema_version": 1,
   "source": {
     "channel": "stable",
+    "distribution_family": "therock",
     "id": "stable",
     "platform": "windows",
     "url": "https://repo.amd.com/rocm/whl-multi-arch/"

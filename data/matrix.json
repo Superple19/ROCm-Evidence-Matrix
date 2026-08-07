@@ -11,6 +11,7 @@
     },
     "packages-nightly": {
       "channel": "nightly",
+      "distribution_family": "therock",
       "id": "nightly",
       "observed_at": "2026-08-07T15:36:41Z",
       "platform": "windows",
@@ -18,6 +19,7 @@
     },
     "packages-stable": {
       "channel": "stable",
+      "distribution_family": "therock",
       "id": "stable",
       "observed_at": "2026-08-07T15:36:41Z",
       "platform": "windows",
@@ -25,6 +27,7 @@
     },
     "packages-staging": {
       "channel": "staging",
+      "distribution_family": "therock",
       "id": "staging",
       "observed_at": "2026-08-07T15:36:41Z",
       "platform": "windows",

@@ -22,9 +22,10 @@
     "source": {
       "type": "object",
       "additionalProperties": false,
-        "required": ["id", "channel", "url", "platform"],
-      "properties": {
+        "required": ["id", "distribution_family", "channel", "url", "platform"],
+        "properties": {
         "id": {"type": "string", "minLength": 1},
+        "distribution_family": {"enum": ["therock", "legacy"]},
         "channel": {"enum": ["stable", "nightly", "staging"]},
         "url": {"type": "string", "format": "uri"},
         "platform": {"enum": ["windows", "linux", "macos", "unknown"]}

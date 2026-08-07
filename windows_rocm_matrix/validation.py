@@ -12,6 +12,8 @@ def validate_snapshot(snapshot):
     source = snapshot.get("source")
     if not isinstance(source, dict) or not {"id", "channel", "url"}.issubset(source):
         raise ValueError("source must contain id, channel, and url")
+    if source.get("distribution_family", "therock") not in {"therock", "legacy"}:
+        raise ValueError(f"Unsupported distribution family: {source.get('distribution_family')}")
     if source.get("platform", "windows") not in {"windows", "linux", "macos", "unknown"}:
         raise ValueError(f"Unsupported platform: {source.get('platform')}")
     if source["channel"] not in {"stable", "nightly", "staging"}:
