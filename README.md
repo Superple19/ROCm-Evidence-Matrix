@@ -87,10 +87,10 @@ rocm-matrix collect therock --source nightly --gfx gfx1201 --output-dir .tmp/sna
 Query the historical catalog for a specific environment:
 
 ```powershell
-rocm-resolve --gfx gfx1201 --channel stable --rocm 7.13.0 --python 3.12
+rocm-resolve --platform windows --gfx gfx1201 --channel stable --rocm 7.13.0 --python 3.12
 ```
 
-The resolver selects the newest matching candidate by default and prints a pinned `pip` command. Add `--torch 2.9` to request a Torch series, or `--all` to list every match. It does not install packages or claim that dependency resolution, imports, or execution have been verified.
+The resolver selects the newest matching candidate by default and prints a pinned `pip` command. Add `--torch 2.9` to request a Torch series, or `--all` to list every match. Legacy candidates print direct wheel URLs with `--no-index`; TheRock candidates use their configured package index and device extras. The resolver does not install packages or claim that dependency resolution, imports, or execution have been verified.
 
 ## Verify dependency resolution
 
