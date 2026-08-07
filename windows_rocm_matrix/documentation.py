@@ -346,6 +346,7 @@ def collect_documentation_sources(sources, fetch_text, existing=None, observed_a
         "last_observed_at": utc_now(),
         "sources": {},
         "products": [],
+        "platforms": {"windows": {"release_support": [], "therock_status": []}},
         "windows_release_support": [],
         "therock_windows_status": [],
         "framework_compatibility": [],
@@ -358,6 +359,14 @@ def collect_documentation_sources(sources, fetch_text, existing=None, observed_a
         "therock_windows_status": list(existing.get("therock_windows_status", [])),
         "framework_compatibility": list(existing.get("framework_compatibility", [])),
     }
+    existing_platforms = existing.get("platforms", {})
+    windows_platform = existing_platforms.get("windows", {})
+    collections["windows_release_support"] = list(
+        windows_platform.get("release_support", collections["windows_release_support"])
+    )
+    collections["therock_windows_status"] = list(
+        windows_platform.get("therock_status", collections["therock_windows_status"])
+    )
     parsers = {
         "compatibility-html": parse_compatibility_matrix,
         "gpu-specifications-html": parse_gpu_specifications,
@@ -413,6 +422,12 @@ def collect_documentation_sources(sources, fetch_text, existing=None, observed_a
         "last_observed_at": observed_at if passed else existing["last_observed_at"],
         "sources": {key: source_records[key] for key in sorted(source_records)},
         "products": sorted(collections["products"], key=lambda item: (item["gfx"], item["name"])),
+        "platforms": {
+            "windows": {
+                "release_support": sorted(collections["windows_release_support"], key=lambda item: item["gfx"]),
+                "therock_status": sorted(collections["therock_windows_status"], key=lambda item: item["gfx"]),
+            }
+        },
         "windows_release_support": sorted(collections["windows_release_support"], key=lambda item: item["gfx"]),
         "therock_windows_status": sorted(collections["therock_windows_status"], key=lambda item: item["gfx"]),
         "framework_compatibility": sorted(

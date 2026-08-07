@@ -4,7 +4,7 @@
   "title": "ROCm documentation snapshot",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "last_observed_at", "sources", "products", "windows_release_support", "therock_windows_status", "framework_compatibility"],
+  "required": ["schema_version", "last_observed_at", "sources", "products", "platforms", "windows_release_support", "therock_windows_status", "framework_compatibility"],
   "properties": {
     "schema_version": {"const": 1},
     "last_observed_at": {"type": "string", "format": "date-time"},
@@ -35,6 +35,18 @@
           "gfx": {"type": "string", "pattern": "^gfx[0-9a-z]+$"},
           "graphics_model": {"type": "string"},
           "source_id": {"type": "string"}
+        }
+      }
+    },
+    "platforms": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["release_support", "therock_status"],
+        "properties": {
+          "release_support": {"type": "array"},
+          "therock_status": {"type": "array"}
         }
       }
     },

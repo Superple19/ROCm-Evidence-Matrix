@@ -25,6 +25,10 @@ platform and distribution metadata. Integration combines independent evidence
 without promoting package availability to compatibility. Renderers only read
 normalized data and never fetch from the network.
 
+Documentation and matrix records expose platform evidence under `platforms`.
+The current Windows fields remain as compatibility aliases for existing
+consumers; new platform integrations must use the grouped representation.
+
 ## Ownership
 
 - `config/sources.json`: upstream source declarations and platform metadata

@@ -75,6 +75,12 @@ def validate_documentation_snapshot(snapshot):
     for item in snapshot["windows_release_support"]:
         if not item["windows_versions"]:
             raise ValueError(f"Missing Windows version for {item['gfx']}")
+    platforms = snapshot.get("platforms", {})
+    windows = platforms.get("windows", {})
+    if windows.get("release_support", snapshot["windows_release_support"]) != snapshot["windows_release_support"]:
+        raise ValueError("Windows release support must match the platform evidence group")
+    if windows.get("therock_status", snapshot["therock_windows_status"]) != snapshot["therock_windows_status"]:
+        raise ValueError("TheRock Windows status must match the platform evidence group")
 
 
 def validate_compatibility_matrix(matrix):
@@ -89,8 +95,12 @@ def validate_compatibility_matrix(matrix):
         if not gfx or gfx in seen:
             raise ValueError("Compatibility matrix targets must have unique GFX identifiers")
         seen.add(gfx)
+        platforms = target.get("platforms", {})
+        windows = platforms.get("windows", {})
         support = target.get("windows_release_support")
         status = target.get("therock_windows_status")
+        if windows.get("release_support", support) != support or windows.get("therock_status", status) != status:
+            raise ValueError(f"Windows platform evidence does not match legacy matrix fields for {gfx}")
         if support and support["source_id"] not in source_ids:
             raise ValueError(f"Unknown release support source for {gfx}")
         if status and status["source_id"] not in source_ids:

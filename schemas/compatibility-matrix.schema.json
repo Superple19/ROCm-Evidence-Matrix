@@ -14,10 +14,21 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["gfx", "products", "windows_release_support", "therock_windows_status", "package_channels"],
+        "required": ["gfx", "products", "platforms", "windows_release_support", "therock_windows_status", "package_channels"],
         "properties": {
           "gfx": {"type": "string", "pattern": "^gfx[0-9a-z]+$"},
           "products": {"type": "array", "items": {"type": "string"}},
+          "platforms": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": ["release_support", "therock_status"],
+              "properties": {
+                "release_support": {"type": ["object", "null"]},
+                "therock_status": {"type": ["object", "null"]}
+              }
+            }
+          },
           "windows_release_support": {"type": ["object", "null"]},
           "therock_windows_status": {"type": ["object", "null"]},
           "package_channels": {

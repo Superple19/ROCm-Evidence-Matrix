@@ -5,8 +5,9 @@ def build_compatibility_matrix(documentation, package_snapshots):
     products_by_gfx = {}
     for product in documentation["products"]:
         products_by_gfx.setdefault(product["gfx"], []).append(product["name"])
-    release_by_gfx = {item["gfx"]: item for item in documentation["windows_release_support"]}
-    therock_by_gfx = {item["gfx"]: item for item in documentation["therock_windows_status"]}
+    windows_evidence = documentation.get("platforms", {}).get("windows", {})
+    release_by_gfx = {item["gfx"]: item for item in windows_evidence.get("release_support", documentation.get("windows_release_support", []))}
+    therock_by_gfx = {item["gfx"]: item for item in windows_evidence.get("therock_status", documentation.get("therock_windows_status", []))}
     packages_by_channel = {snapshot["source"]["channel"]: snapshot for snapshot in package_snapshots}
 
     targets = set(products_by_gfx) | set(release_by_gfx) | set(therock_by_gfx)
@@ -32,6 +33,12 @@ def build_compatibility_matrix(documentation, package_snapshots):
             {
                 "gfx": gfx,
                 "products": sorted(products_by_gfx.get(gfx, [])),
+                "platforms": {
+                    "windows": {
+                        "release_support": release_by_gfx.get(gfx),
+                        "therock_status": therock_by_gfx.get(gfx),
+                    }
+                },
                 "windows_release_support": release_by_gfx.get(gfx),
                 "therock_windows_status": therock_by_gfx.get(gfx),
                 "package_channels": channels,

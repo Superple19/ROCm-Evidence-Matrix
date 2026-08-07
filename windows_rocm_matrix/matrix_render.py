@@ -23,7 +23,7 @@ def render_compatibility_matrix(matrix):
         "| --- | --- | --- | --- | --- |",
     ]
     for target in matrix["targets"]:
-        support = target["windows_release_support"]
+        support = target_platform(target, "windows").get("release_support")
         if support is None:
             continue
         products = ", ".join(target["products"]) or "—"
@@ -43,7 +43,7 @@ def render_compatibility_matrix(matrix):
         ]
     )
     for target in matrix["targets"]:
-        status = target["therock_windows_status"]
+        status = target_platform(target, "windows").get("therock_status")
         if status is None:
             continue
         lines.append(
@@ -75,6 +75,16 @@ def render_compatibility_matrix(matrix):
                 f"{status_mark(packages['all_device_packages_available'])} |"
             )
     return "\n".join(lines).rstrip() + "\n"
+
+
+def target_platform(target, platform):
+    return target.get("platforms", {}).get(
+        platform,
+        {
+            "release_support": target.get("windows_release_support"),
+            "therock_status": target.get("therock_windows_status"),
+        },
+    )
 
 
 def write_compatibility_document(matrix, output_path):
