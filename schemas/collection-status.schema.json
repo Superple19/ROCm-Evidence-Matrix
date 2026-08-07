@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/collection-status.schema.json",
-  "title": "Windows ROCm source collection status",
+  "title": "ROCm source collection status",
   "type": "object",
   "additionalProperties": false,
   "required": ["schema_version", "distribution_family", "started_at", "completed_at", "results"],

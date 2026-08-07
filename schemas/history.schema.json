@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/history.schema.json",
-  "title": "Windows ROCm historical package catalog",
+  "title": "ROCm historical package catalog",
   "type": "object",
   "additionalProperties": false,
   "required": ["schema_version", "generated_at", "sources", "candidates"],

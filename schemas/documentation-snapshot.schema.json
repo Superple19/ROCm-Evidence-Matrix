@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/documentation-snapshot.schema.json",
-  "title": "Windows ROCm documentation snapshot",
+  "title": "ROCm documentation snapshot",
   "type": "object",
   "additionalProperties": false,
   "required": ["schema_version", "last_observed_at", "sources", "products", "windows_release_support", "therock_windows_status", "framework_compatibility"],

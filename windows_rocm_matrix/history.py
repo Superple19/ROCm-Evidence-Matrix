@@ -208,7 +208,7 @@ def render_history(history):
         "",
         "# Historical package catalog",
         "",
-        "Each row summarizes install candidates derived from official framework compatibility rules and matching Windows package build identifiers. Candidates are artifact evidence, not resolver or runtime verification.",
+        "Each row summarizes install candidates derived from official framework compatibility rules and matching platform package build identifiers. Candidates are artifact evidence, not resolver or runtime verification.",
         "",
         "| Distribution | Channel | Lifecycle | ROCm build | Framework sets | Known GFX targets | Currently available GFX targets | Python tags |",
         "| --- | --- | --- | --- | --- | --- | --- | --- |",

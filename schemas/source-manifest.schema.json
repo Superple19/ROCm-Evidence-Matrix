@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/source-manifest.schema.json",
-  "title": "Windows ROCm source response manifest",
+  "title": "ROCm source response manifest",
   "type": "object",
   "additionalProperties": false,
   "required": ["schema_version", "generated_at", "responses"],

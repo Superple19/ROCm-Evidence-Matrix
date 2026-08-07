@@ -168,7 +168,7 @@ def write_verification(record, output_path):
 
 
 def parse_args(argv=None):
-    parser = argparse.ArgumentParser(description="Verify one Windows ROCm package candidate with pip in a disposable environment.")
+    parser = argparse.ArgumentParser(description="Verify one ROCm package candidate with pip in a disposable environment.")
     parser.add_argument("--history", default="data/history.json")
     parser.add_argument("--output", default="data/verifications/resolver.json")
     parser.add_argument("--gfx", required=True)

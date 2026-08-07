@@ -134,7 +134,7 @@ AMD's Python package repositories currently return the standardized HTML Simple 
 - Authority: AMD package repository
 - Use: Released ROCm and framework Python package availability.
 - Evidence: `artifact_available`
-- Required checks: Package version, Python ABI tag, Windows platform tag, and every required device package for the selected exact `gfx` target.
+- Required checks: Package version, Python ABI tag, platform tag matching the selected adapter, and every required device package for the selected exact `gfx` target.
 
 ### Stable multi-architecture tarballs
 

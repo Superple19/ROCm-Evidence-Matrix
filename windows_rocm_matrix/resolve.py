@@ -64,7 +64,7 @@ def install_arguments(candidate, gfx):
 
 
 def parse_args(argv=None):
-    parser = argparse.ArgumentParser(description="Resolve a historical Windows ROCm package candidate without installing it.")
+    parser = argparse.ArgumentParser(description="Resolve a historical ROCm package candidate without installing it.")
     parser.add_argument("--history", default="data/history.json")
     parser.add_argument("--gfx", required=True)
     parser.add_argument("--channel", choices=("stable", "nightly", "staging"))
