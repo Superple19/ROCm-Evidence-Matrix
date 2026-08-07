@@ -50,6 +50,17 @@ windows-rocm-matrix collect legacy
 windows-rocm-matrix build
 ```
 
+Each `collect` command fetches source responses and normalizes that distribution family. After changing a parser, rebuild every downstream stage from the local cache without network access:
+
+```powershell
+windows-rocm-matrix normalize therock
+windows-rocm-matrix normalize legacy
+windows-rocm-matrix integrate
+windows-rocm-matrix render
+```
+
+`integrate` writes the machine-readable matrix, while `render` writes Markdown from normalized and integrated data. `build` remains a convenience command that runs both stages.
+
 Each collection command writes its source results to `data/status/therock.json` or `data/status/legacy.json`. A failed source does not stop unrelated adapters, and its previously collected evidence is retained. The command exits unsuccessfully after all adapters finish if any source failed.
 
 Raw responses are stored by SHA-256 under the ignored `.cache/sources/` directory. `data/observations/source-manifest.json` records each URL, content hash, validator headers, encoding, and observation time. Later collections send conditional requests when an `ETag` or `Last-Modified` value is available and reuse the cached body when the source has not changed.

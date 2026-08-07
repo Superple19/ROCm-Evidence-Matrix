@@ -12,7 +12,7 @@ from .legacy import collect_legacy_windows_sources, render_legacy_windows
 from .matrix_render import write_compatibility_document
 from .render import write_rendered_document
 from .simple_index import discover_gfx_targets, discover_packages, latest_artifacts, package_names_for_target, parse_package_artifacts
-from .source_cache import SourceCache
+from .source_cache import CachedSourceReader, SourceCache
 from .source_adapter import collection_status, run_source_adapter, utc_now
 from .validation import validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_history, validate_legacy_windows, validate_snapshot
 
@@ -41,7 +41,7 @@ def package_url(index_url, package_name):
     return index_url.rstrip("/") + "/" + package_name + "/"
 
 
-def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_compatibility=(), fetch=None):
+def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_compatibility=(), fetch=None, observed_at=None):
     fetch = fetch or (lambda url: fetch_text(url, timeout))
     index_url = source["url"]
     root_html = fetch(index_url)
@@ -88,7 +88,7 @@ def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_co
 
     snapshot = {
         "schema_version": 1,
-        "last_observed_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        "last_observed_at": observed_at or datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "source": source,
         "gfx_targets": target_rows,
         "packages": packages,
@@ -150,6 +150,39 @@ def parse_args(argv=None):
     legacy.add_argument("--status-output", default="data/status/legacy.json")
     legacy.add_argument("--timeout", type=int, default=20)
 
+    normalize_parser = commands.add_parser("normalize", help="Rebuild normalized evidence from cached source responses without network access.")
+    normalizers = normalize_parser.add_subparsers(dest="family", required=True)
+
+    normalize_therock = normalizers.add_parser("therock", help="Normalize cached TheRock documentation and package indexes.")
+    add_config_path(normalize_therock)
+    add_cache_paths(normalize_therock)
+    normalize_therock.add_argument("--output-dir", default="data/snapshots")
+    normalize_therock.add_argument("--documentation-output", default="data/documentation.json")
+    normalize_therock.add_argument("--history-output", default="data/history.json")
+    normalize_therock.add_argument("--source", action="append", dest="sources", help="Normalize only the named package source. Repeat to select multiple sources.")
+    normalize_therock.add_argument("--gfx", action="append", dest="gfx_targets", default=[], help="Normalize only the exact GFX target. Repeat to select multiple targets.")
+    normalize_therock.add_argument("--workers", type=int, default=8)
+
+    normalize_legacy = normalizers.add_parser("legacy", help="Normalize cached pre-TheRock Windows sources.")
+    add_config_path(normalize_legacy)
+    add_cache_paths(normalize_legacy)
+    normalize_legacy.add_argument("--legacy-output", default="data/legacy-windows.json")
+
+    integrate = commands.add_parser("integrate", help="Build the integrated matrix from normalized evidence without network access.")
+    integrate.add_argument("--output-dir", default="data/snapshots")
+    integrate.add_argument("--documentation-output", default="data/documentation.json")
+    integrate.add_argument("--matrix-output", default="data/matrix.json")
+
+    render = commands.add_parser("render", help="Render documentation from normalized and integrated data without network access.")
+    render.add_argument("--output-dir", default="data/snapshots")
+    render.add_argument("--history-output", default="data/history.json")
+    render.add_argument("--legacy-output", default="data/legacy-windows.json")
+    render.add_argument("--matrix-output", default="data/matrix.json")
+    render.add_argument("--docs-output", default="docs/generated/package-availability.md")
+    render.add_argument("--matrix-docs-output", default="docs/generated/compatibility-matrix.md")
+    render.add_argument("--history-docs-output", default="docs/generated/history.md")
+    render.add_argument("--legacy-docs-output", default="docs/generated/legacy-windows.md")
+
     build = commands.add_parser("build", help="Build integrated JSON and Markdown from collected data without network access.")
     build.add_argument("--output-dir", default="data/snapshots")
     build.add_argument("--documentation-output", default="data/documentation.json")
@@ -178,19 +211,22 @@ def write_status(family, started_at, results, path):
     return status
 
 
-def collect_therock(args, config):
+def normalize_therock_sources(args, config, source_reader, observed_at, status_output=None):
     started_at = utc_now()
-    source_cache = SourceCache(args.cache_dir, args.source_manifest, args.timeout)
     existing_documentation = read_json(args.documentation_output)
     documentation, results = collect_documentation_sources(
         config["documentation_sources"],
-        source_cache,
+        source_reader,
         existing=existing_documentation,
+        observed_at=observed_at,
     )
     if any(result["status"] == "passed" for result in results):
         validate_documentation_snapshot(documentation)
         write_json(documentation, args.documentation_output)
         print(f"Wrote {args.documentation_output}")
+    for result in results:
+        if result["status"] == "failed":
+            print(f"Failed {result['source_id']}: {result['error']}")
 
     selected = set(args.sources or [])
     sources = [source for source in config["artifact_sources"] if not selected or source["id"] in selected]
@@ -202,16 +238,17 @@ def collect_therock(args, config):
     history_observations = []
     successful_sources = []
     for source in sources:
-        print(f"Collecting {source['id']} from {source['url']}")
+        print(f"Processing {source['id']} from {source['url']}")
         collected, result = run_source_adapter(
             source,
             lambda source=source: collect_source(
                 source,
-                timeout=args.timeout,
+                timeout=getattr(args, "timeout", 20),
                 workers=args.workers,
                 requested_gfx=args.gfx_targets,
                 framework_compatibility=documentation["framework_compatibility"],
-                fetch=source_cache,
+                fetch=source_reader,
+                observed_at=observed_at,
             ),
         )
         results.append(result)
@@ -243,21 +280,38 @@ def collect_therock(args, config):
         write_json(history, args.history_output)
         print(f"Wrote {args.history_output}")
 
-    status = write_status("therock", started_at, results, args.status_output)
-    print(f"Wrote {args.status_output}")
+    if status_output:
+        status = write_status("therock", started_at, results, status_output)
+        print(f"Wrote {status_output}")
+        results = status["results"]
+    return all(result["status"] == "passed" for result in results)
+
+
+def collect_therock(args, config):
+    source_cache = SourceCache(args.cache_dir, args.source_manifest, args.timeout)
+    success = normalize_therock_sources(args, config, source_cache, source_cache.generated_at, args.status_output)
     source_cache.write_manifest()
     print(f"Wrote {args.source_manifest}")
-    return all(result["status"] == "passed" for result in status["results"])
+    return success
 
 
-def collect_legacy(args, config):
+def normalize_therock(args, config):
+    source_reader = CachedSourceReader(args.cache_dir, args.source_manifest)
+    documentation_urls = [source["url"] for source in config["documentation_sources"]]
+    selected = set(args.sources or [])
+    artifact_prefixes = [source["url"] for source in config["artifact_sources"] if not selected or source["id"] in selected]
+    observed_at = source_reader.latest_observed_at(documentation_urls, artifact_prefixes)
+    return normalize_therock_sources(args, config, source_reader, observed_at)
+
+
+def normalize_legacy_sources(args, config, source_reader, observed_at, status_output=None):
     started_at = utc_now()
-    source_cache = SourceCache(args.cache_dir, args.source_manifest, args.timeout)
     existing = read_json(args.legacy_output)
     legacy, results = collect_legacy_windows_sources(
         config["legacy_windows_sources"],
-        source_cache,
+        source_reader,
         existing=existing,
+        observed_at=observed_at,
     )
     if any(result["status"] == "passed" for result in results):
         validate_legacy_windows(legacy)
@@ -266,40 +320,77 @@ def collect_legacy(args, config):
     for result in results:
         if result["status"] == "failed":
             print(f"Failed {result['source_id']}: {result['error']}")
-    status = write_status("legacy", started_at, results, args.status_output)
-    print(f"Wrote {args.status_output}")
+    if status_output:
+        status = write_status("legacy", started_at, results, status_output)
+        print(f"Wrote {status_output}")
+        results = status["results"]
+    return all(result["status"] == "passed" for result in results)
+
+
+def collect_legacy(args, config):
+    source_cache = SourceCache(args.cache_dir, args.source_manifest, args.timeout)
+    success = normalize_legacy_sources(args, config, source_cache, source_cache.generated_at, args.status_output)
     source_cache.write_manifest()
     print(f"Wrote {args.source_manifest}")
-    return all(result["status"] == "passed" for result in status["results"])
+    return success
 
 
-def build_outputs(args):
-    documentation = read_json(args.documentation_output)
-    history = read_json(args.history_output)
-    legacy = read_json(args.legacy_output)
-    if documentation is None or history is None or legacy is None:
-        raise SystemExit("Collected documentation, history, and legacy data are required before build")
-    validate_documentation_snapshot(documentation)
-    validate_history(history)
-    validate_legacy_windows(legacy)
-    snapshot_paths = sorted(Path(args.output_dir).glob("*.json"))
+def normalize_legacy(args, config):
+    source_reader = CachedSourceReader(args.cache_dir, args.source_manifest)
+    sources = config["legacy_windows_sources"]
+    source_urls = [sources["hip_sdk_release_versions"]["url"]]
+    source_urls.extend(source["url"] for source in sources["hip_sdk_gpu_support"])
+    source_urls.extend(source["url"] for source in sources["pytorch_windows_support"])
+    observed_at = source_reader.latest_observed_at(source_urls, [sources["artifact_index"]["url"]])
+    return normalize_legacy_sources(args, config, source_reader, observed_at)
+
+
+def load_package_snapshots(output_dir):
+    snapshot_paths = sorted(Path(output_dir).glob("*.json"))
     if not snapshot_paths:
-        raise SystemExit("Package snapshots are required before build")
+        raise SystemExit("Package snapshots are required")
     package_snapshots = [read_json(path) for path in snapshot_paths]
     for snapshot in package_snapshots:
         validate_snapshot(snapshot)
+    return snapshot_paths, package_snapshots
 
-    write_rendered_document(snapshot_paths, args.docs_output)
-    write_history_document(history, args.history_docs_output)
+
+def integrate_outputs(args):
+    documentation = read_json(args.documentation_output)
+    if documentation is None:
+        raise SystemExit("Normalized documentation evidence is required before integration")
+    validate_documentation_snapshot(documentation)
+    _, package_snapshots = load_package_snapshots(args.output_dir)
     matrix = build_compatibility_matrix(documentation, package_snapshots)
     validate_compatibility_matrix(matrix)
     write_json(matrix, args.matrix_output)
+    print(f"Wrote {args.matrix_output}")
+
+
+def render_outputs(args):
+    history = read_json(args.history_output)
+    legacy = read_json(args.legacy_output)
+    matrix = read_json(args.matrix_output)
+    if history is None or legacy is None or matrix is None:
+        raise SystemExit("Integrated matrix, history, and legacy evidence are required before rendering")
+    validate_history(history)
+    validate_legacy_windows(legacy)
+    validate_compatibility_matrix(matrix)
+    snapshot_paths, _ = load_package_snapshots(args.output_dir)
+
+    write_rendered_document(snapshot_paths, args.docs_output)
+    write_history_document(history, args.history_docs_output)
     write_compatibility_document(matrix, args.matrix_docs_output)
     legacy_path = Path(args.legacy_docs_output)
     legacy_path.parent.mkdir(parents=True, exist_ok=True)
     legacy_path.write_text(render_legacy_windows(legacy), encoding="utf-8", newline="\n")
-    for path in (args.docs_output, args.history_docs_output, args.matrix_output, args.matrix_docs_output, args.legacy_docs_output):
+    for path in (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output):
         print(f"Wrote {path}")
+
+
+def build_outputs(args):
+    integrate_outputs(args)
+    render_outputs(args)
 
 
 def main(argv=None):
@@ -307,8 +398,17 @@ def main(argv=None):
     if args.command == "build":
         build_outputs(args)
         return
+    if args.command == "integrate":
+        integrate_outputs(args)
+        return
+    if args.command == "render":
+        render_outputs(args)
+        return
     config = load_config(args.config)
-    success = collect_therock(args, config) if args.family == "therock" else collect_legacy(args, config)
+    if args.command == "collect":
+        success = collect_therock(args, config) if args.family == "therock" else collect_legacy(args, config)
+    else:
+        success = normalize_therock(args, config) if args.family == "therock" else normalize_legacy(args, config)
     if not success:
         raise SystemExit(1)
 

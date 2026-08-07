@@ -6,7 +6,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from urllib.error import HTTPError
 
-from windows_rocm_matrix.source_cache import SourceCache
+from windows_rocm_matrix.source_cache import CachedSourceReader, SourceCache
 from windows_rocm_matrix.validation import validate_source_manifest
 
 
@@ -121,6 +121,35 @@ class SourceCacheTests(unittest.TestCase):
 
             self.assertIsNone(requests[0].get_header("If-none-match"))
             self.assertTrue((root / "cache" / hashlib.sha256(b"restored").hexdigest()).exists())
+
+    def test_reads_cached_response_without_a_network_client(self):
+        content = b"offline source"
+        digest = hashlib.sha256(content).hexdigest()
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "cache").mkdir()
+            (root / "cache" / digest).write_bytes(content)
+            manifest = {
+                "schema_version": 1,
+                "generated_at": "2026-08-07T00:00:00Z",
+                "responses": [
+                    {
+                        "url": "https://example.test/source",
+                        "sha256": digest,
+                        "etag": None,
+                        "last_modified": None,
+                        "observed_at": "2026-08-07T00:00:00Z",
+                        "encoding": "utf-8",
+                    }
+                ],
+            }
+            (root / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
+
+            reader = CachedSourceReader(root / "cache", root / "manifest.json")
+
+            self.assertEqual(reader.generated_at, "2026-08-07T00:00:00Z")
+            self.assertEqual(reader("https://example.test/source"), "offline source")
+            self.assertEqual(reader.latest_observed_at(prefixes=["https://example.test/"]), "2026-08-07T00:00:00Z")
 
 
 if __name__ == "__main__":

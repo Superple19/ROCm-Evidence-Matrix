@@ -1,5 +1,3 @@
-from datetime import datetime, timezone
-
 from .simple_index import latest_version, package_names_for_target
 
 
@@ -46,5 +44,7 @@ def build_compatibility_matrix(documentation, package_snapshots):
             **snapshot["source"],
             "observed_at": snapshot["last_observed_at"],
         }
-    generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    observed_at = [snapshot["last_observed_at"] for snapshot in package_snapshots]
+    observed_at.extend(source["observed_at"] for source in documentation["sources"].values())
+    generated_at = max(observed_at)
     return {"schema_version": 1, "generated_at": generated_at, "sources": sources, "targets": rows}

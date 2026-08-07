@@ -274,7 +274,7 @@ def collect_documentation(sources, fetch_text):
     }
 
 
-def collect_documentation_sources(sources, fetch_text, existing=None):
+def collect_documentation_sources(sources, fetch_text, existing=None, observed_at=None):
     existing = existing or {
         "schema_version": 1,
         "last_observed_at": utc_now(),
@@ -284,7 +284,7 @@ def collect_documentation_sources(sources, fetch_text, existing=None):
         "therock_windows_status": [],
         "framework_compatibility": [],
     }
-    observed_at = utc_now()
+    observed_at = observed_at or utc_now()
     source_records = dict(existing.get("sources", {}))
     collections = {
         "products": list(existing.get("products", [])),

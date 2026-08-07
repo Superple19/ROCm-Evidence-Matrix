@@ -23,6 +23,7 @@ class SourceCache:
         self.timeout = timeout
         self.opener = opener
         self.observed_at = observed_at
+        self.generated_at = observed_at()
         self.lock = threading.Lock()
         self.responses = {}
         if self.manifest_path.exists():
@@ -78,10 +79,43 @@ class SourceCache:
     def write_manifest(self):
         manifest = {
             "schema_version": 1,
-            "generated_at": self.observed_at(),
+            "generated_at": self.generated_at,
             "responses": sorted(self.responses.values(), key=lambda response: response["url"]),
         }
         validate_source_manifest(manifest)
         self.manifest_path.parent.mkdir(parents=True, exist_ok=True)
         self.manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
         return manifest
+
+
+class CachedSourceReader:
+    def __init__(self, cache_dir, manifest_path):
+        self.cache_dir = Path(cache_dir)
+        self.manifest_path = Path(manifest_path)
+        if not self.manifest_path.exists():
+            raise OSError(f"Source manifest is missing: {self.manifest_path}")
+        with self.manifest_path.open(encoding="utf-8") as handle:
+            manifest = json.load(handle)
+        validate_source_manifest(manifest)
+        self.generated_at = manifest["generated_at"]
+        self.responses = {response["url"]: response for response in manifest["responses"]}
+
+    def __call__(self, url):
+        response = self.responses.get(url)
+        if response is None:
+            raise OSError(f"Source response is not recorded in the manifest: {url}")
+        cache_path = self.cache_dir / response["sha256"]
+        if not cache_path.exists():
+            raise OSError(f"Cached source response is missing: {cache_path}")
+        return cache_path.read_bytes().decode(response["encoding"], errors="replace")
+
+    def latest_observed_at(self, urls=(), prefixes=()):
+        exact_urls = set(urls)
+        observed_at = [
+            response["observed_at"]
+            for response in self.responses.values()
+            if response["url"] in exact_urls or any(response["url"].startswith(prefix) for prefix in prefixes)
+        ]
+        if not observed_at:
+            raise ValueError("No cached source observations match the requested sources")
+        return max(observed_at)

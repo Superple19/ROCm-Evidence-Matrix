@@ -24,6 +24,7 @@ class IntegrationTests(unittest.TestCase):
         self.assertIsNotNone(target["windows_release_support"])
         self.assertFalse(target["package_channels"]["nightly"]["all_device_packages_available"])
         self.assertIsNone(target["package_channels"]["nightly"]["torch_device_version"])
+        self.assertEqual(matrix["generated_at"], "2026-08-07T00:00:00Z")
 
 
 if __name__ == "__main__":

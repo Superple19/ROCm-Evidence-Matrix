@@ -163,7 +163,7 @@
       "torchvision_series": "0.29"
     }
   ],
-  "last_observed_at": "2026-08-07T14:09:53Z",
+  "last_observed_at": "2026-08-07T14:25:55Z",
   "products": [
     {
       "architecture": "RDNA3",
@@ -469,27 +469,27 @@
   "sources": {
     "amd-gpu-specifications": {
       "id": "amd-gpu-specifications",
-      "observed_at": "2026-08-07T14:09:53Z",
+      "observed_at": "2026-08-07T14:25:55Z",
       "url": "https://rocm.docs.amd.com/en/latest/reference/gpu-specs.html"
     },
     "pytorch-version-compatibility": {
       "id": "pytorch-version-compatibility",
-      "observed_at": "2026-08-07T14:09:53Z",
+      "observed_at": "2026-08-07T14:25:55Z",
       "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     },
     "rocm-compatibility-matrix": {
       "id": "rocm-compatibility-matrix",
-      "observed_at": "2026-08-07T14:09:53Z",
+      "observed_at": "2026-08-07T14:25:55Z",
       "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
     },
     "therock-release-packaging": {
       "id": "therock-release-packaging",
-      "observed_at": "2026-08-07T14:09:53Z",
+      "observed_at": "2026-08-07T14:25:55Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
     },
     "therock-supported-gpus": {
       "id": "therock-supported-gpus",
-      "observed_at": "2026-08-07T14:09:53Z",
+      "observed_at": "2026-08-07T14:25:55Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     }
   },

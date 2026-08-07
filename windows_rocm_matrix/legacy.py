@@ -173,8 +173,8 @@ def collect_artifact_releases(source, fetch_text):
     return sorted(releases, key=lambda item: version_key(item["release_id"]))
 
 
-def collect_legacy_windows_sources(config, fetch_text, existing=None):
-    observed_at = utc_now()
+def collect_legacy_windows_sources(config, fetch_text, existing=None, observed_at=None):
+    observed_at = observed_at or utc_now()
     existing = existing or {
         "schema_version": 1,
         "generated_at": observed_at,

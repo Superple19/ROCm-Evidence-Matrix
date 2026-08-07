@@ -14,10 +14,18 @@ class CollectionCommandTests(unittest.TestCase):
     def test_parses_distribution_family_commands(self):
         therock = parse_args(["collect", "therock"])
         legacy = parse_args(["collect", "legacy"])
+        normalize_therock = parse_args(["normalize", "therock"])
+        normalize_legacy = parse_args(["normalize", "legacy"])
+        integrate = parse_args(["integrate"])
+        render = parse_args(["render"])
         build = parse_args(["build"])
 
         self.assertEqual((therock.command, therock.family), ("collect", "therock"))
         self.assertEqual((legacy.command, legacy.family), ("collect", "legacy"))
+        self.assertEqual((normalize_therock.command, normalize_therock.family), ("normalize", "therock"))
+        self.assertEqual((normalize_legacy.command, normalize_legacy.family), ("normalize", "legacy"))
+        self.assertEqual(integrate.command, "integrate")
+        self.assertEqual(render.command, "render")
         self.assertEqual(build.command, "build")
 
     def test_source_failure_does_not_stop_next_adapter(self):
