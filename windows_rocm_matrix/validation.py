@@ -201,6 +201,50 @@ def validate_collection_status(document):
             raise ValueError(f"Failed source lacks an error: {result['source_id']}")
 
 
+def validate_ci_coverage(document):
+    if document.get("schema_version") != 1 or document.get("source", {}).get("id") != "therock-ci-matrix":
+        raise ValueError("Unsupported TheRock CI coverage schema")
+    if not document.get("generated_at", "").endswith("Z"):
+        raise ValueError("CI coverage generation time must be UTC")
+    ids = set()
+    for entry in document.get("entries", []):
+        if entry["id"] in ids:
+            raise ValueError(f"Duplicate CI coverage entry: {entry['id']}")
+        ids.add(entry["id"])
+        if entry["platform"] != "windows" or not entry["configured_targets"]:
+            raise ValueError(f"Invalid CI coverage entry: {entry['id']}")
+        if entry["trigger"] not in {"presubmit", "postsubmit", "nightly"}:
+            raise ValueError(f"Invalid CI coverage trigger: {entry['id']}")
+
+
+def validate_ci_evidence(document):
+    if document.get("schema_version") != 1:
+        raise ValueError("Unsupported CI evidence schema")
+    if not document.get("generated_at", "").endswith("Z"):
+        raise ValueError("CI evidence generation time must be UTC")
+    ids = set()
+    for execution in document.get("executions", []):
+        if execution["id"] in ids:
+            raise ValueError(f"Duplicate CI execution: {execution['id']}")
+        ids.add(execution["id"])
+        if execution["platform"] != "windows" or execution["test_kind"] not in {"build", "sanity", "framework", "full", "unknown"}:
+            raise ValueError(f"Invalid CI execution: {execution['id']}")
+        if not execution.get("run_attempt"):
+            raise ValueError(f"CI execution lacks run attempt: {execution['id']}")
+        seen = set()
+        for observation in execution.get("observations", []):
+            state = observation.get("state")
+            if state not in {"queued", "in_progress", "success", "failure", "cancelled", "skipped", "timed_out", "unknown"}:
+                raise ValueError(f"Invalid CI execution state: {execution['id']}")
+            key = (state, observation.get("conclusion"), observation.get("started_at"), observation.get("completed_at"), observation.get("run_status"))
+            if key in seen:
+                raise ValueError(f"Duplicate CI observation: {execution['id']}")
+            seen.add(key)
+    for failure in document.get("adapter_failures", []):
+        if not failure.get("adapter") or not failure.get("observed_at", "").endswith("Z"):
+            raise ValueError("Invalid CI adapter failure")
+
+
 def validate_version_history(document):
     if document.get("schema_version") != 1:
         raise ValueError("Unsupported version history schema")

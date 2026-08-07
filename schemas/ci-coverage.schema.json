@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "source", "generated_at", "entries"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "source": {"type": "object", "required": ["id", "url"]},
+    "generated_at": {"type": "string", "pattern": "Z$"},
+    "entries": {"type": "array"}
+  }
+}
