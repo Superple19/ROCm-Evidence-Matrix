@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 import platform
 import sys
 from datetime import datetime, timezone
@@ -12,6 +13,10 @@ def utc_now():
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
+def environment_evidence():
+    return {name: os.environ[name] for name in ("ROCM_PATH", "HIP_PATH", "HSA_OVERRIDE_GFX_VERSION") if os.environ.get(name)}
+
+
 def collect_runtime(torch_module, observed_at=None):
     observed_at = observed_at or utc_now()
     record = {
@@ -19,6 +24,11 @@ def collect_runtime(torch_module, observed_at=None):
         "observed_at": observed_at,
         "python_version": platform.python_version(),
         "platform": platform.platform(),
+        "os": sys.platform,
+        "machine": platform.machine(),
+        "architecture": platform.architecture()[0],
+        "driver_version": os.environ.get("AMDGPU_DRIVER_VERSION") or os.environ.get("ROCM_DRIVER_VERSION"),
+        "environment": environment_evidence(),
         "torch_version": getattr(torch_module, "__version__", None),
         "hip_version": getattr(getattr(torch_module, "version", None), "hip", None),
         "rocm_available": False,
@@ -39,6 +49,8 @@ def collect_runtime(torch_module, observed_at=None):
                     value = getattr(properties, field, None)
                     if value is not None:
                         device[field] = str(value) if field == "gcnArchName" else int(value)
+                if "gcnArchName" in device:
+                    device["gfx"] = device["gcnArchName"]
                 record["devices"].append(device)
         record["result"] = "passed" if record["rocm_available"] and record["device_count"] > 0 else "failed"
         if record["result"] == "failed":

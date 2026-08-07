@@ -57,6 +57,9 @@ def install_arguments(candidate, gfx):
         "stable": "https://repo.amd.com/rocm/whl-multi-arch/",
         "nightly": "https://rocm.nightlies.amd.com/whl-multi-arch/",
         "staging": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/",
+        "stable-linux": "https://repo.amd.com/rocm/whl-multi-arch/",
+        "nightly-linux": "https://rocm.nightlies.amd.com/whl-multi-arch/",
+        "staging-linux": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/",
     }
     index_url = indexes[source]
     prerelease = any(re.search(r"(?:a|b|rc|dev)\d", candidate[name]) for name in ("rocm_version", "torch_version", "torchvision_version", "torchaudio_version"))

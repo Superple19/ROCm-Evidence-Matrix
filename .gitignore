@@ -20,3 +20,4 @@ htmlcov/
 # Machine-specific GPU verification results
 data/verifications/runtime.json
 data/verifications/hardware.json
+data/verifications/resolver.json

@@ -22,9 +22,9 @@ def current_python_tag():
     return f"cp{sys.version_info.major}{sys.version_info.minor}"
 
 
-def verification_arguments(candidate, gfx, report_path):
+def verification_arguments(candidate, gfx, report_path, python_tag=None, platform_tag=None):
     install = install_arguments_for_candidate(candidate, gfx)
-    return [
+    arguments = [
         install[0],
         "--dry-run",
         "--ignore-installed",
@@ -34,10 +34,15 @@ def verification_arguments(candidate, gfx, report_path):
         str(report_path),
         *install[1:],
     ]
+    if platform_tag:
+        arguments[1:1] = ["--platform", platform_tag, "--only-binary=:all:"]
+    if python_tag and platform_tag:
+        arguments[1:1] = ["--python-version", python_tag.removeprefix("cp"), "--implementation", "cp", "--abi", python_tag]
+    return arguments
 
 
-def normalized_command(candidate, gfx):
-    return ["python", "-m", "pip", *verification_arguments(candidate, gfx, "<report.json>")]
+def normalized_command(candidate, gfx, python_tag=None, platform_tag=None):
+    return ["python", "-m", "pip", *verification_arguments(candidate, gfx, "<report.json>", python_tag, platform_tag)]
 
 
 def install_arguments_for_candidate(candidate, gfx):
@@ -49,12 +54,13 @@ def install_arguments_for_candidate(candidate, gfx):
     return ["install", "--no-index", *urls]
 
 
-def candidate_hash(candidate, gfx, python_tag):
+def candidate_hash(candidate, gfx, python_tag, platform_tag=None):
     identity = {
         "distribution_family": candidate.get("distribution_family", "therock"),
         "source_id": candidate.get("source_id"),
         "gfx": gfx,
         "python_tag": python_tag,
+        "platform_tag": platform_tag,
         "packages": {name: candidate.get(name) for name in ("rocm_version", "torch_version", "torchvision_version", "torchaudio_version")},
         "wheel_urls": candidate.get("wheel_urls", []),
     }
@@ -95,25 +101,26 @@ def merge_verification(existing, observation):
     }
 
 
-def verify_candidate(candidate, gfx, timeout):
+def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None):
     observed_at = utc_now()
-    python_tag = current_python_tag()
+    python_tag = python_tag or current_python_tag()
     record = {
-        "id": f"{candidate['id']}:{gfx}:{python_tag}",
-        "candidate_hash": candidate_hash(candidate, gfx, python_tag),
+        "id": f"{candidate['id']}:{gfx or 'unknown'}:{python_tag}:{platform_tag or sysconfig.get_platform()}",
+        "candidate_hash": candidate_hash(candidate, gfx, python_tag, platform_tag),
         "candidate_id": candidate["id"],
         "distribution_family": candidate.get("distribution_family", "therock"),
         "source_id": candidate["source_id"],
         "gfx": gfx,
+        "platform": candidate.get("platform", "windows"),
         "python_tag": python_tag,
         "python_version": ".".join(str(part) for part in sys.version_info[:3]),
-        "platform_tag": sysconfig.get_platform().replace("-", "_").replace(".", "_"),
+        "platform_tag": platform_tag or sysconfig.get_platform().replace("-", "_").replace(".", "_"),
         "packages": {
             "torch": candidate["torch_version"],
             "torchvision": candidate["torchvision_version"],
             "torchaudio": candidate["torchaudio_version"],
         },
-        "command": normalized_command(candidate, gfx),
+        "command": normalized_command(candidate, gfx, python_tag, platform_tag),
         "observed_at": observed_at,
         "result": "failed",
         "exit_code": None,
@@ -137,7 +144,7 @@ def verify_candidate(candidate, gfx, timeout):
         try:
             environment = {**os.environ, "PIP_CACHE_DIR": str(root / "pip-cache")}
             completed = subprocess.run(
-                [python, "-m", "pip", *verification_arguments(candidate, gfx, report_path)],
+                [python, "-m", "pip", *verification_arguments(candidate, gfx, report_path, python_tag, platform_tag)],
                 capture_output=True,
                 env=environment,
                 text=True,
@@ -171,7 +178,10 @@ def parse_args(argv=None):
     parser = argparse.ArgumentParser(description="Verify one ROCm package candidate with pip in a disposable environment.")
     parser.add_argument("--history", default="data/history.json")
     parser.add_argument("--output", default="data/verifications/resolver.json")
-    parser.add_argument("--gfx", required=True)
+    parser.add_argument("--gfx")
+    parser.add_argument("--platform", choices=("windows", "linux", "macos", "unknown"))
+    parser.add_argument("--python", dest="python_tag")
+    parser.add_argument("--platform-tag")
     parser.add_argument("--channel", choices=("stable", "nightly", "staging"))
     parser.add_argument("--rocm")
     parser.add_argument("--torch")
@@ -182,10 +192,11 @@ def parse_args(argv=None):
 def main(argv=None):
     args = parse_args(argv)
     history = json.loads(Path(args.history).read_text(encoding="utf-8"))
-    python_tag = current_python_tag()
+    python_tag = args.python_tag or current_python_tag()
     matches = resolve_candidates(
         history,
         args.gfx,
+        platform=args.platform,
         channel=args.channel,
         rocm_version=args.rocm,
         torch_series=args.torch,
@@ -195,7 +206,7 @@ def main(argv=None):
         raise SystemExit(f"No available candidate matches {args.gfx} and the current interpreter ({python_tag})")
     candidate = matches[0]
     print(f"Verifying {candidate['id']} for {args.gfx} and {python_tag}")
-    record = verify_candidate(candidate, args.gfx, args.timeout)
+    record = verify_candidate(candidate, args.gfx, args.timeout, python_tag, args.platform_tag)
     write_verification(record, args.output)
     print(f"Resolver verification {record['result']}; wrote {args.output}")
     if record["result"] != "passed":

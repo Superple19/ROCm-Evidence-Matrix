@@ -172,7 +172,12 @@ def validate_resolver_verifications(document):
             raise ValueError(f"Invalid resolver candidate hash: {record['id']}")
         if record["result"] not in {"passed", "failed"}:
             raise ValueError(f"Invalid resolver result: {record['result']}")
-        if not record["gfx"].startswith("gfx") or not record["python_tag"].startswith("cp"):
+        if record.get("platform", "windows") not in {"windows", "linux", "macos", "unknown"}:
+            raise ValueError(f"Invalid resolver platform: {record['id']}")
+        gfx = record.get("gfx")
+        if gfx is not None and not gfx.startswith("gfx"):
+            raise ValueError(f"Invalid resolver GFX: {record['id']}")
+        if not record["python_tag"].startswith("cp"):
             raise ValueError(f"Invalid resolver environment: {record['id']}")
         if record["result"] == "passed" and (record["exit_code"] != 0 or not record["resolved_packages"]):
             raise ValueError(f"Passed resolver verification lacks evidence: {record['id']}")

@@ -105,6 +105,14 @@ The result is appended to `data/verifications/resolver.json` with the exact cand
 
 A passing record establishes only `resolver_verified`. Runtime imports and physical GPU execution require separate isolated tests and must be recorded as `runtime_verified` or `hardware_verified` evidence.
 
+For Linux TheRock candidates, `rocm-verify-matrix` runs the resolver across stable, nightly, and staging channels, available GFX targets, and each candidate Python tag. Use `--limit` while developing and override the target wheel tag when needed:
+
+```text
+rocm-verify-matrix --platform linux --gfx gfx1201 --python cp312 --limit 1
+```
+
+Resolver, runtime, and hardware outputs under `data/verifications/` are local machine evidence and are ignored by Git.
+
 ## Run tests
 
 ```powershell

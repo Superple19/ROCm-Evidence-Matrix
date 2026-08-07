@@ -1,10 +1,11 @@
 import argparse
 import json
+import os
 import platform
 import time
 from pathlib import Path
 
-from .runtime import utc_now
+from .runtime import environment_evidence, utc_now
 from .validation import validate_hardware_verifications
 
 
@@ -14,6 +15,12 @@ def collect_hardware(torch_module, observed_at=None):
         "id": f"hardware:{observed_at}",
         "observed_at": observed_at,
         "python_version": platform.python_version(),
+        "platform": platform.platform(),
+        "os": os.name,
+        "machine": platform.machine(),
+        "architecture": platform.architecture()[0],
+        "driver_version": os.environ.get("AMDGPU_DRIVER_VERSION") or os.environ.get("ROCM_DRIVER_VERSION"),
+        "environment": environment_evidence(),
         "torch_version": getattr(torch_module, "__version__", None),
         "hip_version": getattr(getattr(torch_module, "version", None), "hip", None),
         "operation": "2x2 float32 GPU matmul with synchronization",
@@ -33,6 +40,7 @@ def collect_hardware(torch_module, observed_at=None):
         arch = getattr(properties, "gcnArchName", None)
         if arch is not None:
             record["device"]["gcnArchName"] = str(arch)
+            record["device"]["gfx"] = str(arch)
         started = time.perf_counter()
         left = torch_module.ones((2, 2), device="cuda", dtype=torch_module.float32)
         right = torch_module.ones((2, 2), device="cuda", dtype=torch_module.float32)
