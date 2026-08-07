@@ -30,8 +30,8 @@ def validate_snapshot(snapshot):
             required = {"filename", "version", "python_tag", "abi_tag", "platform_tag", "url"}
             if set(artifact) != required:
                 raise ValueError(f"Invalid artifact fields for {package_name}")
-            if not artifact["platform_tag"].startswith("win"):
-                raise ValueError(f"Non-Windows artifact in {package_name}")
+            if not (artifact["platform_tag"].startswith("win") or artifact["platform_tag"] in {"any", "source"}):
+                raise ValueError(f"Artifact is not applicable to Windows: {package_name}")
             if not artifact["url"].startswith("https://"):
                 raise ValueError(f"Artifact URL must use HTTPS: {package_name}")
 
@@ -53,13 +53,13 @@ def validate_documentation_snapshot(snapshot):
     if not snapshot.get("last_observed_at", "").endswith("Z"):
         raise ValueError("Documentation observation time must be UTC")
     source_ids = set(snapshot.get("sources", {}))
-    for collection in ("products", "windows_release_support", "therock_windows_status"):
+    for collection in ("products", "windows_release_support", "therock_windows_status", "framework_compatibility"):
         if not isinstance(snapshot.get(collection), list):
             raise ValueError(f"{collection} must be a list")
         for item in snapshot[collection]:
             if item.get("source_id") not in source_ids:
                 raise ValueError(f"Unknown source id in {collection}")
-            if not item.get("gfx", "").startswith("gfx"):
+            if collection != "framework_compatibility" and not item.get("gfx", "").startswith("gfx"):
                 raise ValueError(f"Invalid GFX target in {collection}")
     for item in snapshot["windows_release_support"]:
         if not item["windows_versions"]:
@@ -87,3 +87,46 @@ def validate_compatibility_matrix(matrix):
         for packages in target.get("package_channels", {}).values():
             if packages["source_id"] not in source_ids:
                 raise ValueError(f"Unknown package source for {gfx}")
+
+
+def validate_history(history):
+    if history.get("schema_version") != 1:
+        raise ValueError("Unsupported history schema")
+    if not history.get("generated_at", "").endswith("Z"):
+        raise ValueError("History generation time must be UTC")
+    source_ids = set(history.get("sources", {}))
+    candidate_ids = set()
+    for candidate in history.get("candidates", []):
+        if candidate["id"] in candidate_ids:
+            raise ValueError(f"Duplicate history candidate: {candidate['id']}")
+        candidate_ids.add(candidate["id"])
+        if candidate["source_id"] not in source_ids:
+            raise ValueError(f"Unknown history source: {candidate['source_id']}")
+        if candidate["channel"] not in {"stable", "nightly", "staging"}:
+            raise ValueError(f"Unsupported history channel: {candidate['channel']}")
+        if not set(candidate["available_gfx_targets"]).issubset(candidate["gfx_targets"]):
+            raise ValueError(f"Available targets are not known for {candidate['id']}")
+        if candidate["artifact_available"] != bool(candidate["available_gfx_targets"]):
+            raise ValueError(f"Incorrect artifact availability for {candidate['id']}")
+        if not candidate["python_tags"]:
+            raise ValueError(f"Missing Python tags for {candidate['id']}")
+
+
+def validate_resolver_verifications(document):
+    if document.get("schema_version") != 1:
+        raise ValueError("Unsupported resolver verification schema")
+    if not document.get("generated_at", "").endswith("Z"):
+        raise ValueError("Resolver verification generation time must be UTC")
+    ids = set()
+    for record in document.get("verifications", []):
+        if record["id"] in ids:
+            raise ValueError(f"Duplicate resolver verification: {record['id']}")
+        ids.add(record["id"])
+        if record["result"] not in {"passed", "failed"}:
+            raise ValueError(f"Invalid resolver result: {record['result']}")
+        if not record["gfx"].startswith("gfx") or not record["python_tag"].startswith("cp"):
+            raise ValueError(f"Invalid resolver environment: {record['id']}")
+        if record["result"] == "passed" and (record["exit_code"] != 0 or not record["resolved_packages"]):
+            raise ValueError(f"Passed resolver verification lacks evidence: {record['id']}")
+        if record["result"] == "failed" and record["exit_code"] == 0:
+            raise ValueError(f"Failed resolver verification has a successful exit code: {record['id']}")

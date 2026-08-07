@@ -1,5 +1,169 @@
 {
-  "last_observed_at": "2026-08-07T12:22:59Z",
+  "framework_compatibility": [
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "1.2",
+      "torchaudio_series": "0.3",
+      "torchvision_series": "0.4"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "1.3",
+      "torchaudio_series": "0.3",
+      "torchvision_series": "0.4"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "1.4",
+      "torchaudio_series": "0.4",
+      "torchvision_series": "0.5"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "1.5",
+      "torchaudio_series": "0.5",
+      "torchvision_series": "0.6"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "1.6",
+      "torchaudio_series": "0.6",
+      "torchvision_series": "0.7"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "1.7",
+      "torchaudio_series": "0.7",
+      "torchvision_series": "0.8"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "1.8",
+      "torchaudio_series": "0.8",
+      "torchvision_series": "0.9"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "1.9",
+      "torchaudio_series": "0.9",
+      "torchvision_series": "0.10"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "1.10",
+      "torchaudio_series": "0.10",
+      "torchvision_series": "0.11"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "1.11",
+      "torchaudio_series": "0.11",
+      "torchvision_series": "0.12"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "1.12",
+      "torchaudio_series": "0.12",
+      "torchvision_series": "0.13"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "1.13",
+      "torchaudio_series": "0.13",
+      "torchvision_series": "0.14"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "2.0",
+      "torchaudio_series": "2.0",
+      "torchvision_series": "0.15"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "2.1",
+      "torchaudio_series": "2.1",
+      "torchvision_series": "0.16"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "2.2",
+      "torchaudio_series": "2.2",
+      "torchvision_series": "0.17"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "2.3",
+      "torchaudio_series": "2.3",
+      "torchvision_series": "0.18"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "2.4",
+      "torchaudio_series": "2.4",
+      "torchvision_series": "0.19"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "2.5",
+      "torchaudio_series": "2.5",
+      "torchvision_series": "0.20"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "2.6",
+      "torchaudio_series": "2.6",
+      "torchvision_series": "0.21"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "2.7",
+      "torchaudio_series": "2.7",
+      "torchvision_series": "0.22"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "2.8",
+      "torchaudio_series": "2.7",
+      "torchvision_series": "0.22"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "2.9",
+      "torchaudio_series": "2.9",
+      "torchvision_series": "0.24"
+    },
+    {
+      "source_id": "pytorch-version-compatibility",
+      "torch_series": "2.10",
+      "torchaudio_series": "2.10",
+      "torchvision_series": "0.25"
+    },
+    {
+      "source_id": "therock-release-packaging",
+      "torch_series": "2.11",
+      "torchaudio_series": "2.11",
+      "torchvision_series": "0.26"
+    },
+    {
+      "source_id": "therock-release-packaging",
+      "torch_series": "2.12",
+      "torchaudio_series": "2.11",
+      "torchvision_series": "0.27"
+    },
+    {
+      "source_id": "therock-release-packaging",
+      "torch_series": "2.13",
+      "torchaudio_series": "2.11",
+      "torchvision_series": "0.28"
+    },
+    {
+      "source_id": "therock-release-packaging",
+      "torch_series": "2.14",
+      "torchaudio_series": "2.11",
+      "torchvision_series": "0.29"
+    }
+  ],
+  "last_observed_at": "2026-08-07T13:21:28Z",
   "products": [
     {
       "architecture": "RDNA3",
@@ -305,17 +469,27 @@
   "sources": {
     "amd-gpu-specifications": {
       "id": "amd-gpu-specifications",
-      "observed_at": "2026-08-07T12:22:59Z",
+      "observed_at": "2026-08-07T13:21:28Z",
       "url": "https://rocm.docs.amd.com/en/latest/reference/gpu-specs.html"
+    },
+    "pytorch-version-compatibility": {
+      "id": "pytorch-version-compatibility",
+      "observed_at": "2026-08-07T13:21:28Z",
+      "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     },
     "rocm-compatibility-matrix": {
       "id": "rocm-compatibility-matrix",
-      "observed_at": "2026-08-07T12:22:59Z",
+      "observed_at": "2026-08-07T13:21:28Z",
       "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
+    },
+    "therock-release-packaging": {
+      "id": "therock-release-packaging",
+      "observed_at": "2026-08-07T13:21:28Z",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
     },
     "therock-supported-gpus": {
       "id": "therock-supported-gpus",
-      "observed_at": "2026-08-07T12:22:59Z",
+      "observed_at": "2026-08-07T13:21:28Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     }
   },

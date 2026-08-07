@@ -75,7 +75,7 @@ def parse_windows_wheels(html, base_url, package_name):
             continue
         stem = filename[:-4]
         parts = stem.split("-")
-        if len(parts) < 5 or not parts[-1].lower().startswith("win"):
+        if len(parts) < 5 or not (parts[-1].lower().startswith("win") or parts[-1].lower() == "any"):
             continue
         if normalize_package_name(parts[0]) != expected_name:
             continue
@@ -90,6 +90,36 @@ def parse_windows_wheels(html, base_url, package_name):
             }
         )
     return sorted(artifacts, key=lambda item: (version_key(item["version"]), item["filename"]))
+
+
+def parse_source_distributions(html, base_url, package_name):
+    artifacts = []
+    expected_name = normalize_package_name(package_name)
+    for url, text in parse_links(html, base_url):
+        filename = unquote(PurePosixPath(urlparse(url).path).name)
+        if not filename.lower().endswith(".tar.gz"):
+            continue
+        name, separator, version = filename[:-7].rpartition("-")
+        if not separator or normalize_package_name(name) != expected_name:
+            continue
+        artifacts.append(
+            {
+                "filename": filename,
+                "version": version,
+                "python_tag": "source",
+                "abi_tag": "source",
+                "platform_tag": "source",
+                "url": url,
+            }
+        )
+    return sorted(artifacts, key=lambda item: (version_key(item["version"]), item["filename"]))
+
+
+def parse_package_artifacts(html, base_url, package_name):
+    return sorted(
+        parse_windows_wheels(html, base_url, package_name) + parse_source_distributions(html, base_url, package_name),
+        key=lambda item: (version_key(item["version"]), item["filename"]),
+    )
 
 
 def version_key(version):

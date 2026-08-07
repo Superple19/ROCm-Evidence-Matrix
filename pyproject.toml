@@ -19,6 +19,8 @@ Repository = "https://github.com/Superple19/windows-rocm-matrix"
 
 [project.scripts]
 windows-rocm-matrix = "windows_rocm_matrix.collect:main"
+windows-rocm-resolve = "windows_rocm_matrix.resolve:main"
+windows-rocm-verify = "windows_rocm_matrix.verify:main"
 
 [tool.setuptools.packages.find]
 include = ["windows_rocm_matrix*"]

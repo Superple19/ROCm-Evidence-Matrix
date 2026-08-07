@@ -1,0 +1,179 @@
+import re
+from pathlib import Path
+
+from .simple_index import version_key
+
+
+def version_series(version):
+    match = re.match(r"(\d+\.\d+)", version)
+    return match.group(1) if match else None
+
+
+def rocm_version_from_framework(version):
+    match = re.search(r"\+rocm(.+)$", version)
+    return match.group(1) if match else None
+
+
+def versions_by_name(artifacts):
+    versions = {}
+    for artifact in artifacts:
+        versions.setdefault(artifact["version"], set()).add(artifact["python_tag"])
+    return versions
+
+
+def compatible_python_tags(package_versions):
+    tag_sets = []
+    for tags in package_versions:
+        cpython_tags = {tag for tag in tags if re.fullmatch(r"cp\d+", tag)}
+        if cpython_tags:
+            tag_sets.append(cpython_tags)
+    if not tag_sets:
+        return []
+    return sorted(set.intersection(*tag_sets))
+
+
+def build_history_observations(source, gfx_targets, packages, framework_compatibility):
+    compatibility = {item["torch_series"]: item for item in framework_compatibility}
+    package_versions = {name: versions_by_name(artifacts) for name, artifacts in packages.items()}
+    torch_versions = package_versions.get("torch", {})
+    torchvision_versions = package_versions.get("torchvision", {})
+    torchaudio_versions = package_versions.get("torchaudio", {})
+    grouped = {}
+
+    for gfx in gfx_targets:
+        rocm_device = package_versions.get(f"rocm-sdk-device-{gfx}", {})
+        torch_device = package_versions.get(f"amd-torch-device-{gfx}", {})
+        torchvision_device = package_versions.get(f"amd-torchvision-device-{gfx}", {})
+        for torch_version, torch_tags in torch_versions.items():
+            rocm_version = rocm_version_from_framework(torch_version)
+            rule = compatibility.get(version_series(torch_version))
+            required_rocm_packages = ("rocm", "rocm-sdk-core", "rocm-sdk-libraries")
+            rocm_packages_available = rocm_version is not None and all(
+                rocm_version in package_versions.get(name, {}) for name in required_rocm_packages
+            )
+            if not rocm_packages_available or rule is None or rocm_version not in rocm_device or torch_version not in torch_device:
+                continue
+            matching_vision = [
+                version for version in torchvision_versions
+                if rocm_version_from_framework(version) == rocm_version
+                and version_series(version) == rule["torchvision_series"]
+                and version in torchvision_device
+            ]
+            matching_audio = [
+                version for version in torchaudio_versions
+                if rocm_version_from_framework(version) == rocm_version
+                and version_series(version) == rule["torchaudio_series"]
+            ]
+            for vision_version in matching_vision:
+                for audio_version in matching_audio:
+                    python_tags = compatible_python_tags(
+                        [
+                            torch_tags,
+                            torch_device[torch_version],
+                            torchvision_versions[vision_version],
+                            torchvision_device[vision_version],
+                            torchaudio_versions[audio_version],
+                        ]
+                    )
+                    if not python_tags:
+                        continue
+                    key = (rocm_version, torch_version, vision_version, audio_version, tuple(python_tags))
+                    grouped.setdefault(key, set()).add(gfx)
+
+    observations = []
+    for key, targets in grouped.items():
+        rocm_version, torch_version, vision_version, audio_version, python_tags = key
+        candidate_id = ":".join((source["channel"], rocm_version, torch_version, vision_version, audio_version, ",".join(python_tags)))
+        observations.append(
+            {
+                "id": candidate_id,
+                "channel": source["channel"],
+                "rocm_version": rocm_version,
+                "torch_version": torch_version,
+                "torchvision_version": vision_version,
+                "torchaudio_version": audio_version,
+                "python_tags": list(python_tags),
+                "gfx_targets": sorted(targets),
+                "source_id": f"packages-{source['id']}",
+            }
+        )
+    return sorted(observations, key=candidate_sort_key)
+
+
+def candidate_sort_key(candidate):
+    return (
+        candidate["channel"],
+        version_key(candidate["rocm_version"]),
+        version_key(candidate["torch_version"]),
+        version_key(candidate["torchvision_version"]),
+        version_key(candidate["torchaudio_version"]),
+    )
+
+
+def merge_history(existing, observations, sources, observed_at, observed_source_ids):
+    candidates = {item["id"]: dict(item) for item in (existing or {}).get("candidates", [])}
+    for candidate in candidates.values():
+        if candidate["source_id"] in observed_source_ids:
+            candidate["artifact_available"] = False
+            candidate["available_gfx_targets"] = []
+
+    for observation in observations:
+        current = candidates.get(observation["id"])
+        if current is None:
+            current = {
+                **observation,
+                "first_observed_at": observed_at,
+                "last_observed_at": observed_at,
+                "artifact_available": True,
+                "available_gfx_targets": observation["gfx_targets"],
+            }
+            candidates[observation["id"]] = current
+            continue
+        current["gfx_targets"] = sorted(set(current["gfx_targets"]) | set(observation["gfx_targets"]))
+        current["available_gfx_targets"] = observation["gfx_targets"]
+        current["python_tags"] = observation["python_tags"]
+        current["last_observed_at"] = observed_at
+        current["artifact_available"] = True
+
+    merged_sources = dict((existing or {}).get("sources", {}))
+    merged_sources.update(sources)
+    return {
+        "schema_version": 1,
+        "generated_at": observed_at,
+        "sources": merged_sources,
+        "candidates": sorted(candidates.values(), key=candidate_sort_key),
+    }
+
+
+def render_history(history):
+    grouped = {}
+    for candidate in history["candidates"]:
+        key = (candidate["channel"], candidate["rocm_version"])
+        group = grouped.setdefault(key, {"sets": 0, "known": set(), "available": set(), "python": set()})
+        group["sets"] += 1
+        group["known"].update(candidate["gfx_targets"])
+        group["available"].update(candidate["available_gfx_targets"])
+        group["python"].update(candidate["python_tags"])
+
+    lines = [
+        "<!-- Generated by windows_rocm_matrix.collect. Do not edit manually. -->",
+        "",
+        "# Historical package catalog",
+        "",
+        "Each row summarizes install candidates derived from official framework compatibility rules and matching Windows package build identifiers. Candidates are artifact evidence, not resolver or runtime verification.",
+        "",
+        "| Channel | ROCm build | Framework sets | Known GFX targets | Currently available GFX targets | Python tags |",
+        "| --- | --- | --- | --- | --- | --- |",
+    ]
+    for (channel, rocm_version), group in sorted(grouped.items(), key=lambda item: (item[0][0], version_key(item[0][1]))):
+        lines.append(
+            f"| {channel} | `{rocm_version}` | {group['sets']} | {len(group['known'])} | "
+            f"{len(group['available'])} | {', '.join(f'`{tag}`' for tag in sorted(group['python']))} |"
+        )
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def write_history_document(history, output_path):
+    path = Path(output_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_history(history), encoding="utf-8", newline="\n")

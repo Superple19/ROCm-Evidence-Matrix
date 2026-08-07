@@ -4,7 +4,7 @@
   "title": "Windows ROCm documentation snapshot",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "last_observed_at", "sources", "products", "windows_release_support", "therock_windows_status"],
+  "required": ["schema_version", "last_observed_at", "sources", "products", "windows_release_support", "therock_windows_status", "framework_compatibility"],
   "properties": {
     "schema_version": {"const": 1},
     "last_observed_at": {"type": "string", "format": "date-time"},
@@ -63,6 +63,19 @@
           "build_passing": {"type": "boolean"},
           "sanity_tested": {"type": "boolean"},
           "release_ready": {"type": "boolean"},
+          "source_id": {"type": "string"}
+        }
+      }
+    },
+    "framework_compatibility": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["torch_series", "torchaudio_series", "torchvision_series", "source_id"],
+        "properties": {
+          "torch_series": {"type": "string"},
+          "torchaudio_series": {"type": "string"},
+          "torchvision_series": {"type": "string"},
           "source_id": {"type": "string"}
         }
       }

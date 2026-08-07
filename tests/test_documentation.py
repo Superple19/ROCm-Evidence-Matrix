@@ -1,7 +1,7 @@
 import unittest
 from pathlib import Path
 
-from windows_rocm_matrix.documentation import parse_compatibility_matrix, parse_gpu_specifications, parse_therock_windows_status
+from windows_rocm_matrix.documentation import parse_compatibility_matrix, parse_framework_compatibility, parse_gpu_specifications, parse_pytorch_version_compatibility, parse_therock_windows_status
 
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -32,6 +32,20 @@ class DocumentationTests(unittest.TestCase):
         self.assertTrue(by_gfx["gfx1201"]["build_passing"])
         self.assertFalse(by_gfx["gfx1201"]["sanity_tested"])
         self.assertTrue(by_gfx["gfx1152"]["release_ready"])
+
+    def test_parses_framework_compatibility(self):
+        markdown = (FIXTURES / "supported-gpus.md").read_text(encoding="utf-8")
+        compatibility = parse_framework_compatibility(markdown, "releases")
+
+        self.assertEqual(compatibility[-1]["torch_series"], "2.14")
+        self.assertEqual(compatibility[-1]["torchvision_series"], "0.29")
+
+    def test_parses_pytorch_version_compatibility(self):
+        markdown = (FIXTURES / "supported-gpus.md").read_text(encoding="utf-8")
+        compatibility = parse_pytorch_version_compatibility(markdown, "pytorch")
+
+        self.assertEqual(compatibility[-1]["torch_series"], "2.10")
+        self.assertEqual(compatibility[-1]["torchaudio_series"], "2.10")
 
 
 if __name__ == "__main__":

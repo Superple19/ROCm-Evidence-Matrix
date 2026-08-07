@@ -6,15 +6,17 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 
 from .documentation import collect_documentation
+from .history import build_history_observations, merge_history, write_history_document
 from .integration import build_compatibility_matrix
 from .matrix_render import write_compatibility_document
 from .render import write_rendered_document
-from .simple_index import discover_gfx_targets, discover_packages, latest_artifacts, package_names_for_target, parse_windows_wheels
-from .validation import validate_compatibility_matrix, validate_documentation_snapshot, validate_snapshot
+from .simple_index import discover_gfx_targets, discover_packages, latest_artifacts, package_names_for_target, parse_package_artifacts
+from .validation import validate_compatibility_matrix, validate_documentation_snapshot, validate_history, validate_snapshot
 
 
 USER_AGENT = "windows-rocm-matrix/0.1 (+https://github.com/Superple19/windows-rocm-matrix)"
 BASE_PACKAGES = (
+    "rocm",
     "rocm-sdk-core",
     "rocm-sdk-libraries",
     "rocm-sdk-devel",
@@ -36,7 +38,7 @@ def package_url(index_url, package_name):
     return index_url.rstrip("/") + "/" + package_name + "/"
 
 
-def collect_source(source, timeout=20, workers=8, requested_gfx=()):
+def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_compatibility=()):
     index_url = source["url"]
     root_html = fetch_text(index_url, timeout)
     available_packages = discover_packages(root_html, index_url)
@@ -55,7 +57,7 @@ def collect_source(source, timeout=20, workers=8, requested_gfx=()):
     for gfx in gfx_targets:
         package_names.update(name for name in package_names_for_target(gfx) if name in available_set)
 
-    packages = {}
+    all_packages = {}
     with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {
             executor.submit(fetch_text, package_url(index_url, name), timeout): name
@@ -64,9 +66,10 @@ def collect_source(source, timeout=20, workers=8, requested_gfx=()):
         for future in as_completed(futures):
             name = futures[future]
             html = future.result()
-            artifacts = parse_windows_wheels(html, package_url(index_url, name), name)
-            packages[name] = latest_artifacts(artifacts)
+            all_packages[name] = parse_package_artifacts(html, package_url(index_url, name), name)
 
+    all_packages = {name: all_packages[name] for name in sorted(all_packages)}
+    packages = {name: latest_artifacts(artifacts) for name, artifacts in all_packages.items()}
     packages = {name: packages[name] for name in sorted(packages)}
     target_rows = []
     for gfx in gfx_targets:
@@ -79,13 +82,15 @@ def collect_source(source, timeout=20, workers=8, requested_gfx=()):
             }
         )
 
-    return {
+    snapshot = {
         "schema_version": 1,
         "last_observed_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "source": source,
         "gfx_targets": target_rows,
         "packages": packages,
     }
+    history = build_history_observations(source, gfx_targets, all_packages, framework_compatibility) if framework_compatibility else []
+    return snapshot, history
 
 
 def load_config(path):
@@ -115,6 +120,8 @@ def parse_args(argv=None):
     parser.add_argument("--documentation-output", default="data/documentation.json")
     parser.add_argument("--matrix-output", default="data/matrix.json")
     parser.add_argument("--matrix-docs-output", default="docs/generated/compatibility-matrix.md")
+    parser.add_argument("--history-output", default="data/history.json")
+    parser.add_argument("--history-docs-output", default="docs/generated/history.md")
     parser.add_argument("--skip-documentation", action="store_true")
     parser.add_argument("--source", action="append", dest="sources", help="Collect only the named source. Repeat to select multiple sources.")
     parser.add_argument("--gfx", action="append", dest="gfx_targets", default=[], help="Collect only the exact GFX target. Repeat to select multiple targets.")
@@ -133,13 +140,32 @@ def main(argv=None):
         raise SystemExit(f"Unknown sources: {', '.join(sorted(missing))}")
 
     output_dir = Path(args.output_dir)
+    documentation = None
+    if not args.skip_documentation:
+        print("Collecting official compatibility documentation")
+        documentation = collect_documentation(
+            config["documentation_sources"],
+            lambda url: fetch_text(url, args.timeout),
+        )
+        validate_documentation_snapshot(documentation)
+        write_json(documentation, args.documentation_output)
+        print(f"Wrote {args.documentation_output}")
+
     snapshot_paths = []
+    history_observations = []
     for source in sources:
         print(f"Collecting {source['id']} from {source['url']}")
-        snapshot = collect_source(source, timeout=args.timeout, workers=args.workers, requested_gfx=args.gfx_targets)
+        snapshot, observations = collect_source(
+            source,
+            timeout=args.timeout,
+            workers=args.workers,
+            requested_gfx=args.gfx_targets,
+            framework_compatibility=documentation["framework_compatibility"] if documentation else (),
+        )
         snapshot_path = output_dir / f"{source['id']}.json"
         write_snapshot(snapshot, snapshot_path)
         snapshot_paths.append(snapshot_path)
+        history_observations.extend(observations)
         print(f"Wrote {snapshot_path}")
 
     write_rendered_document(output_dir.glob("*.json"), args.docs_output)
@@ -148,19 +174,34 @@ def main(argv=None):
     if args.skip_documentation:
         return
 
-    print("Collecting official compatibility documentation")
-    documentation = collect_documentation(
-        config["documentation_sources"],
-        lambda url: fetch_text(url, args.timeout),
-    )
-    validate_documentation_snapshot(documentation)
-    write_json(documentation, args.documentation_output)
-    print(f"Wrote {args.documentation_output}")
-
     package_snapshots = []
     for path in sorted(output_dir.glob("*.json")):
         with path.open(encoding="utf-8") as handle:
             package_snapshots.append(json.load(handle))
+
+    history_path = Path(args.history_output)
+    existing_history = None
+    if history_path.exists():
+        with history_path.open(encoding="utf-8") as handle:
+            existing_history = json.load(handle)
+    package_sources = {
+        f"packages-{snapshot['source']['id']}": {**snapshot["source"], "observed_at": snapshot["last_observed_at"]}
+        for snapshot in package_snapshots
+    }
+    observed_source_ids = {f"packages-{source['id']}" for source in sources}
+    history = merge_history(
+        existing_history,
+        history_observations,
+        package_sources,
+        max(snapshot["last_observed_at"] for snapshot in package_snapshots),
+        observed_source_ids,
+    )
+    validate_history(history)
+    write_json(history, history_path)
+    write_history_document(history, args.history_docs_output)
+    print(f"Wrote {history_path}")
+    print(f"Wrote {args.history_docs_output}")
+
     matrix = build_compatibility_matrix(documentation, package_snapshots)
     validate_compatibility_matrix(matrix)
     write_json(matrix, args.matrix_output)

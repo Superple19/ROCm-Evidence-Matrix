@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/history.schema.json",
+  "title": "Windows ROCm historical package catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "sources", "candidates"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "sources": {"type": "object"},
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "channel", "rocm_version", "torch_version", "torchvision_version", "torchaudio_version", "python_tags", "gfx_targets", "available_gfx_targets", "artifact_available", "source_id", "first_observed_at", "last_observed_at"],
+        "properties": {
+          "id": {"type": "string"},
+          "channel": {"enum": ["stable", "nightly", "staging"]},
+          "rocm_version": {"type": "string"},
+          "torch_version": {"type": "string"},
+          "torchvision_version": {"type": "string"},
+          "torchaudio_version": {"type": "string"},
+          "python_tags": {"type": "array", "items": {"type": "string", "pattern": "^cp[0-9]+$"}},
+          "gfx_targets": {"type": "array", "items": {"type": "string", "pattern": "^gfx[0-9a-z]+$"}},
+          "available_gfx_targets": {"type": "array", "items": {"type": "string", "pattern": "^gfx[0-9a-z]+$"}},
+          "artifact_available": {"type": "boolean"},
+          "source_id": {"type": "string"},
+          "first_observed_at": {"type": "string", "format": "date-time"},
+          "last_observed_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    }
+  }
+}

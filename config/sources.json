@@ -29,6 +29,14 @@
     {
       "id": "therock-supported-gpus",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
+    },
+    {
+      "id": "therock-release-packaging",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
+    },
+    {
+      "id": "pytorch-version-compatibility",
+      "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     }
   ]
 }

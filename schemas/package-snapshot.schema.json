@@ -60,7 +60,7 @@
             "version": {"type": "string", "minLength": 1},
             "python_tag": {"type": "string", "minLength": 1},
             "abi_tag": {"type": "string", "minLength": 1},
-            "platform_tag": {"type": "string", "pattern": "^win"},
+            "platform_tag": {"type": "string", "pattern": "^(win|any$|source$)"},
             "url": {"type": "string", "format": "uri"}
           }
         }

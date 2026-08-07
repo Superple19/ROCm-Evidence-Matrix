@@ -168,9 +168,71 @@ def parse_therock_windows_status(markdown, source_id):
     return sorted(rows, key=lambda item: item["gfx"])
 
 
+def parse_framework_compatibility(markdown, source_id):
+    lines = markdown.splitlines()
+    header_index = None
+    for index, line in enumerate(lines):
+        table_line = line.lstrip("> ").strip()
+        cells = [cell.strip().lower() for cell in table_line.strip("|").split("|")]
+        if cells[:3] == ["torch version", "torchaudio version", "torchvision version"]:
+            header_index = index
+            break
+    if header_index is None:
+        raise ValueError("Could not find TheRock framework compatibility table")
+
+    rows = []
+    for line in lines[header_index + 2:]:
+        table_line = line.lstrip("> ").strip()
+        if not table_line or "|" not in table_line:
+            break
+        cells = [cell.strip().strip("`") for cell in table_line.strip("|").split("|")]
+        if len(cells) < 3 or not re.fullmatch(r"\d+\.\d+", cells[0]):
+            break
+        rows.append(
+            {
+                "torch_series": cells[0],
+                "torchaudio_series": cells[1],
+                "torchvision_series": cells[2],
+                "source_id": source_id,
+            }
+        )
+    if not rows:
+        raise ValueError("TheRock framework compatibility table is empty")
+    return sorted(rows, key=lambda item: tuple(int(part) for part in item["torch_series"].split(".")))
+
+
+def parse_pytorch_version_compatibility(markdown, source_id):
+    rows = []
+    for line in markdown.splitlines():
+        table_line = line.strip().strip("|")
+        cells = [cell.strip() for cell in table_line.split("|")]
+        if len(cells) < 4 or not re.fullmatch(r"\d+\.\d+(?:\.\d+)?", cells[0]):
+            continue
+        if not re.fullmatch(r"\d+\.\d+(?:\.\d+)?", cells[1]) or not re.fullmatch(r"\d+\.\d+(?:\.\d+)?", cells[3]):
+            continue
+        rows.append(
+            {
+                "torch_series": version_series(cells[0]),
+                "torchaudio_series": version_series(cells[3]),
+                "torchvision_series": version_series(cells[1]),
+                "source_id": source_id,
+            }
+        )
+    if not rows:
+        raise ValueError("PyTorch version compatibility table is empty")
+    return sorted(rows, key=lambda item: tuple(int(part) for part in item["torch_series"].split(".")))
+
+
+def version_series(version):
+    match = re.match(r"(\d+\.\d+)", version)
+    if not match:
+        raise ValueError(f"Invalid framework version: {version}")
+    return match.group(1)
+
+
 def collect_documentation(sources, fetch_text):
     sources_by_id = {source["id"]: source for source in sources}
-    required = {"rocm-compatibility-matrix", "amd-gpu-specifications", "therock-supported-gpus"}
+    required = {"rocm-compatibility-matrix", "amd-gpu-specifications", "therock-supported-gpus", "therock-release-packaging", "pytorch-version-compatibility"}
     missing = required - set(sources_by_id)
     if missing:
         raise ValueError(f"Missing documentation sources: {', '.join(sorted(missing))}")
@@ -183,6 +245,18 @@ def collect_documentation(sources, fetch_text):
     compatibility_html = fetch_text(sources_by_id["rocm-compatibility-matrix"]["url"])
     specifications_html = fetch_text(sources_by_id["amd-gpu-specifications"]["url"])
     therock_markdown = fetch_text(sources_by_id["therock-supported-gpus"]["url"])
+    releases_markdown = fetch_text(sources_by_id["therock-release-packaging"]["url"])
+    pytorch_versions_markdown = fetch_text(sources_by_id["pytorch-version-compatibility"]["url"])
+    compatibility_by_torch = {
+        item["torch_series"]: item
+        for item in parse_pytorch_version_compatibility(pytorch_versions_markdown, "pytorch-version-compatibility")
+    }
+    compatibility_by_torch.update(
+        {
+            item["torch_series"]: item
+            for item in parse_framework_compatibility(releases_markdown, "therock-release-packaging")
+        }
+    )
 
     return {
         "schema_version": 1,
@@ -191,4 +265,8 @@ def collect_documentation(sources, fetch_text):
         "products": parse_gpu_specifications(specifications_html, "amd-gpu-specifications"),
         "windows_release_support": parse_compatibility_matrix(compatibility_html, "rocm-compatibility-matrix"),
         "therock_windows_status": parse_therock_windows_status(therock_markdown, "therock-supported-gpus"),
+        "framework_compatibility": sorted(
+            compatibility_by_torch.values(),
+            key=lambda item: tuple(int(part) for part in item["torch_series"].split(".")),
+        ),
     }

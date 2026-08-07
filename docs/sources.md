@@ -56,6 +56,14 @@ The project is unofficial and community-maintained. A linked artifact or package
 - Evidence: `documented`
 - Notes: This document defines the relationship between architecture-neutral packages and GPU-specific device packages.
 
+### PyTorch version compatibility
+
+- URL: https://github.com/pytorch/pytorch/wiki/PyTorch-Versions
+- Authority: PyTorch repository wiki
+- Use: Historical Torch, TorchVision, and TorchAudio release-series compatibility.
+- Evidence: `documented`
+- Notes: This source establishes framework release relationships only. ROCm build suffixes and Windows wheel availability must still be observed in AMD package indexes.
+
 ### TheRock HUD
 
 - URL: https://therock-hud.amd.com/

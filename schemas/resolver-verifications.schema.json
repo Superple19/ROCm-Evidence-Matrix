@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/resolver-verifications.schema.json",
+  "title": "Windows ROCm resolver verification evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "verifications"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "verifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "candidate_id", "source_id", "gfx", "python_tag", "python_version", "platform_tag", "packages", "command", "observed_at", "result", "exit_code", "pip_version", "resolved_packages", "error"],
+        "properties": {
+          "id": {"type": "string"},
+          "candidate_id": {"type": "string"},
+          "source_id": {"type": "string"},
+          "gfx": {"type": "string", "pattern": "^gfx[0-9a-z]+$"},
+          "python_tag": {"type": "string", "pattern": "^cp[0-9]+$"},
+          "python_version": {"type": "string"},
+          "platform_tag": {"type": "string"},
+          "packages": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["torch", "torchvision", "torchaudio"],
+            "properties": {
+              "torch": {"type": "string"},
+              "torchvision": {"type": "string"},
+              "torchaudio": {"type": "string"}
+            }
+          },
+          "command": {"type": "array", "items": {"type": "string"}},
+          "observed_at": {"type": "string", "format": "date-time"},
+          "result": {"enum": ["passed", "failed"]},
+          "exit_code": {"type": ["integer", "null"]},
+          "pip_version": {"type": ["string", "null"]},
+          "resolved_packages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["name", "version", "url", "sha256"],
+              "properties": {
+                "name": {"type": "string"},
+                "version": {"type": "string"},
+                "url": {"type": "string"},
+                "sha256": {"type": ["string", "null"]}
+              }
+            }
+          },
+          "error": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

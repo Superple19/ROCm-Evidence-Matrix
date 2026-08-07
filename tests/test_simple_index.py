@@ -1,7 +1,7 @@
 import unittest
 from pathlib import Path
 
-from windows_rocm_matrix.simple_index import discover_gfx_targets, discover_packages, latest_artifacts, latest_version, parse_windows_wheels, version_key
+from windows_rocm_matrix.simple_index import discover_gfx_targets, discover_packages, latest_artifacts, latest_version, parse_source_distributions, parse_windows_wheels, version_key
 
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -29,6 +29,14 @@ class SimpleIndexTests(unittest.TestCase):
 
     def test_orders_prereleases_before_final_release(self):
         self.assertLess(version_key("2.14.0a0"), version_key("2.14.0"))
+
+    def test_parses_source_distribution(self):
+        html = '<a href="rocm-7.14.0.tar.gz">rocm-7.14.0.tar.gz</a>'
+
+        artifacts = parse_source_distributions(html, "https://example.test/simple/rocm/", "rocm")
+
+        self.assertEqual(artifacts[0]["version"], "7.14.0")
+        self.assertEqual(artifacts[0]["platform_tag"], "source")
 
 
 if __name__ == "__main__":

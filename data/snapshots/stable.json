@@ -226,7 +226,7 @@
       "gfx": "gfx950"
     }
   ],
-  "last_observed_at": "2026-08-07T12:22:40Z",
+  "last_observed_at": "2026-08-07T13:21:35Z",
   "packages": {
     "amd-torch-device-gfx1010": [
       {
@@ -2082,6 +2082,16 @@
     ],
     "amd-torchvision-device-gfx942": [],
     "amd-torchvision-device-gfx950": [],
+    "rocm": [
+      {
+        "abi_tag": "source",
+        "filename": "rocm-7.14.0.tar.gz",
+        "platform_tag": "source",
+        "python_tag": "source",
+        "url": "https://repo.amd.com/rocm/whl-multi-arch/rocm-7.14.0.tar.gz",
+        "version": "7.14.0"
+      }
+    ],
     "rocm-sdk-core": [
       {
         "abi_tag": "none",
