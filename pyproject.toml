@@ -22,6 +22,7 @@ windows-rocm-matrix = "windows_rocm_matrix.collect:main"
 windows-rocm-resolve = "windows_rocm_matrix.resolve:main"
 windows-rocm-verify = "windows_rocm_matrix.verify:main"
 windows-rocm-runtime = "windows_rocm_matrix.runtime:main"
+windows-rocm-hardware = "windows_rocm_matrix.hardware:main"
 
 [tool.setuptools.packages.find]
 include = ["windows_rocm_matrix*"]

@@ -209,6 +209,8 @@ def parse_args(argv=None):
     build.add_argument("--version-history-docs-output", default="docs/generated/version-history.md")
     runtime = commands.add_parser("runtime", help="Record ROCm runtime evidence from the current Python environment.")
     runtime.add_argument("--output", default="data/verifications/runtime.json")
+    hardware = commands.add_parser("hardware", help="Run a reproducible ROCm GPU tensor smoke test.")
+    hardware.add_argument("--output", default="data/verifications/hardware.json")
     return parser.parse_args(argv)
 
 
@@ -486,6 +488,10 @@ def main(argv=None):
     if args.command == "runtime":
         from .runtime import main as runtime_main
         runtime_main(["--output", args.output])
+        return
+    if args.command == "hardware":
+        from .hardware import main as hardware_main
+        hardware_main(["--output", args.output])
         return
     if args.command == "build":
         build_outputs(args)

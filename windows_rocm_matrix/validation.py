@@ -175,6 +175,22 @@ def validate_runtime_verifications(document):
             raise ValueError(f"Passed runtime verification lacks a device: {record['id']}")
 
 
+def validate_hardware_verifications(document):
+    if document.get("schema_version") != 1:
+        raise ValueError("Unsupported hardware verification schema")
+    if not document.get("generated_at", "").endswith("Z"):
+        raise ValueError("Hardware verification generation time must be UTC")
+    ids = set()
+    for record in document.get("verifications", []):
+        if record["id"] in ids:
+            raise ValueError(f"Duplicate hardware verification: {record['id']}")
+        ids.add(record["id"])
+        if record["result"] not in {"passed", "failed"} or not record.get("observed_at", "").endswith("Z"):
+            raise ValueError(f"Invalid hardware verification: {record['id']}")
+        if record["result"] == "passed" and (not record["correct"] or not record.get("device")):
+            raise ValueError(f"Passed hardware verification lacks correctness evidence: {record['id']}")
+
+
 def validate_legacy_windows(document):
     if document.get("schema_version") != 1:
         raise ValueError("Unsupported legacy Windows schema")

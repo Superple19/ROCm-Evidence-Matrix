@@ -16,3 +16,7 @@ htmlcov/
 
 .tmp/
 .cache/
+
+# Machine-specific GPU verification results
+data/verifications/runtime.json
+data/verifications/hardware.json
