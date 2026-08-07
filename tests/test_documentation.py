@@ -1,7 +1,8 @@
 import unittest
 from pathlib import Path
 
-from windows_rocm_matrix.documentation import parse_compatibility_matrix, parse_framework_compatibility, parse_gpu_specifications, parse_pytorch_version_compatibility, parse_therock_windows_status
+from windows_rocm_matrix.documentation import collect_documentation_sources, parse_compatibility_matrix, parse_framework_compatibility, parse_gpu_specifications, parse_gpu_specifications_rst, parse_pytorch_version_compatibility, parse_therock_windows_status
+from windows_rocm_matrix.validation import validate_documentation_snapshot
 
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -15,6 +16,61 @@ class DocumentationTests(unittest.TestCase):
         self.assertEqual(products[0]["gfx"], "gfx1152")
         self.assertEqual(products[0]["graphics_model"], "Radeon 860M")
         self.assertEqual(products[1]["name"], "Radeon RX 9070 XT")
+
+    def test_parses_product_categories_from_rst_table_identity(self):
+        rst = (FIXTURES / "gpu-specifications.rst").read_text(encoding="utf-8")
+        products = parse_gpu_specifications_rst(rst, "specs")
+        by_name = {product["name"]: product for product in products}
+
+        self.assertEqual(by_name["MI300X"]["category"], "instinct")
+        self.assertEqual(by_name["Radeon AI PRO R9700"]["category"], "radeon_pro")
+        self.assertEqual(by_name["Radeon RX 9070 XT"]["category"], "radeon")
+        self.assertEqual(by_name["AMD Ryzen AI 7 350"]["graphics_model"], "Radeon 860M")
+
+    def test_falls_back_to_rendered_gpu_specifications(self):
+        html = (FIXTURES / "gpu-specifications.html").read_text(encoding="utf-8")
+        source = {
+            "id": "amd-gpu-specifications",
+            "url": "https://example.test/gpu-specifications.rst",
+            "parser": "gpu-specifications-rst",
+            "fallback": {
+                "url": "https://example.test/gpu-specifications.html",
+                "parser": "gpu-specifications-html",
+            },
+        }
+
+        document, results = collect_documentation_sources(
+            [source],
+            lambda url: "invalid" if url.endswith(".rst") else html,
+            observed_at="2026-08-07T00:00:00Z",
+        )
+
+        self.assertEqual(results[0]["url"], source["fallback"]["url"])
+        self.assertTrue(document["sources"][source["id"]]["fallback_used"])
+        self.assertEqual(document["sources"][source["id"]]["preferred_url"], source["url"])
+        validate_documentation_snapshot(document)
+
+    def test_prefers_rst_gpu_specifications(self):
+        rst = (FIXTURES / "gpu-specifications.rst").read_text(encoding="utf-8")
+        source = {
+            "id": "amd-gpu-specifications",
+            "url": "https://example.test/gpu-specifications.rst",
+            "parser": "gpu-specifications-rst",
+            "fallback": {
+                "url": "https://example.test/gpu-specifications.html",
+                "parser": "gpu-specifications-html",
+            },
+        }
+
+        document, results = collect_documentation_sources(
+            [source],
+            lambda url: rst if url.endswith(".rst") else self.fail("fallback should not be fetched"),
+            observed_at="2026-08-07T00:00:00Z",
+        )
+
+        self.assertEqual(results[0]["url"], source["url"])
+        self.assertFalse(document["sources"][source["id"]]["fallback_used"])
+        validate_documentation_snapshot(document)
 
     def test_parses_windows_release_support_conditions(self):
         html = (FIXTURES / "compatibility-matrix.html").read_text(encoding="utf-8")
@@ -32,6 +88,13 @@ class DocumentationTests(unittest.TestCase):
         self.assertTrue(by_gfx["gfx1201"]["build_passing"])
         self.assertFalse(by_gfx["gfx1201"]["sanity_tested"])
         self.assertTrue(by_gfx["gfx1152"]["release_ready"])
+
+    def test_rejects_changed_therock_status_headers(self):
+        markdown = (FIXTURES / "supported-gpus.md").read_text(encoding="utf-8")
+        markdown = markdown.replace("| Architecture | LLVM target | Build Passing | Sanity Tested | Release Ready |", "| Architecture | LLVM target | Build Status | Sanity Tested | Release Ready |")
+
+        with self.assertRaisesRegex(ValueError, "unexpected headers"):
+            parse_therock_windows_status(markdown, "therock")
 
     def test_parses_framework_compatibility(self):
         markdown = (FIXTURES / "supported-gpus.md").read_text(encoding="utf-8")

@@ -1,6 +1,5 @@
 import json
 import re
-from datetime import datetime, timezone
 from html.parser import HTMLParser
 
 from .source_adapter import run_source_adapter, utc_now
@@ -90,6 +89,83 @@ def parse_gpu_specifications(html, source_id):
             if "Graphics model" in indexes:
                 product["graphics_model"] = cells[indexes["Graphics model"]]
             products.append(product)
+    if not products:
+        raise ValueError("Could not find GPU specification tables")
+    return sorted(products, key=lambda item: (item["gfx"], item["name"]))
+
+
+def parse_rst_list_tables(rst):
+    tables = []
+    table = None
+    row = None
+    for line in rst.splitlines():
+        if re.match(r"^\s*\.\. list-table::", line):
+            if table:
+                tables.append(table)
+            table = {"name": None, "rows": []}
+            row = None
+            continue
+        if table is None:
+            continue
+        name_match = re.match(r"^\s*:name:\s*(\S+)\s*$", line)
+        if name_match:
+            table["name"] = name_match.group(1)
+            continue
+        if re.match(r"^\s*\*\s*$", line):
+            row = []
+            table["rows"].append(row)
+            continue
+        cell_match = re.match(r"^\s+-(?:\s+(.*))?$", line)
+        if cell_match and row is not None:
+            row.append((cell_match.group(1) or "").strip())
+            continue
+        if re.match(r"^\s*\.\. ", line):
+            tables.append(table)
+            table = None
+            row = None
+    if table:
+        tables.append(table)
+    return tables
+
+
+def parse_gpu_specifications_rst(rst, source_id):
+    categories = {
+        "instinct-arch-spec-table": "instinct",
+        "radeon-pro-arch-spec-table": "radeon_pro",
+        "radeon-arch-spec-table": "radeon",
+        "ryzen-arch-spec-table": "apu",
+    }
+    products = []
+    found_tables = set()
+    for table in parse_rst_list_tables(rst):
+        category = categories.get(table["name"])
+        if category is None or not table["rows"]:
+            continue
+        headers = table["rows"][0]
+        required = {"Name", "Architecture", "LLVM target name"}
+        if not required.issubset(headers):
+            raise ValueError(f"GPU specification table has unexpected headers: {table['name']}")
+        indexes = {name: headers.index(name) for name in required}
+        graphics_model_index = headers.index("Graphics model") if "Graphics model" in headers else None
+        for cells in table["rows"][1:]:
+            if len(cells) < len(headers):
+                raise ValueError(f"GPU specification row has too few cells: {table['name']}")
+            product = {
+                "name": cells[indexes["Name"]],
+                "category": category,
+                "architecture": cells[indexes["Architecture"]],
+                "gfx": cells[indexes["LLVM target name"]],
+                "source_id": source_id,
+            }
+            if graphics_model_index is not None:
+                product["graphics_model"] = cells[graphics_model_index]
+            products.append(product)
+        found_tables.add(table["name"])
+    missing = set(categories) - found_tables
+    if missing:
+        raise ValueError(f"GPU specification RST is missing tables: {', '.join(sorted(missing))}")
+    if not products:
+        raise ValueError("GPU specification RST contains no products")
     return sorted(products, key=lambda item: (item["gfx"], item["name"]))
 
 
@@ -150,13 +226,22 @@ def parse_therock_windows_status(markdown, source_id):
     section_match = re.search(r"^## ROCm on Windows\s*$([\s\S]*?)(?=^## |\Z)", markdown, re.MULTILINE)
     if not section_match:
         raise ValueError("Could not find TheRock Windows support section")
+    expected_headers = ["Architecture", "LLVM target", "Build Passing", "Sanity Tested", "Release Ready"]
+    table_started = False
     rows = []
     for line in section_match.group(1).splitlines():
         if not line.lstrip().startswith("|"):
             continue
         cells = [cell.strip().replace("**", "") for cell in line.strip().strip("|").split("|")]
-        if len(cells) != 5 or cells[1] in {"LLVM target", "-----------"} or not cells[1].startswith("gfx"):
+        if cells == expected_headers:
+            table_started = True
             continue
+        if not table_started or all(re.fullmatch(r"[-:]+", cell) for cell in cells):
+            continue
+        if len(cells) != len(expected_headers):
+            raise ValueError("TheRock Windows support table has an unexpected column count")
+        if not re.fullmatch(r"gfx[0-9a-z]+", cells[1]):
+            raise ValueError(f"Invalid GFX target in TheRock Windows support table: {cells[1]}")
         rows.append(
             {
                 "architecture": cells[0],
@@ -167,6 +252,10 @@ def parse_therock_windows_status(markdown, source_id):
                 "source_id": source_id,
             }
         )
+    if not table_started:
+        raise ValueError("TheRock Windows support table has unexpected headers")
+    if not rows:
+        raise ValueError("TheRock Windows support table is empty")
     return sorted(rows, key=lambda item: item["gfx"])
 
 
@@ -232,46 +321,21 @@ def version_series(version):
     return match.group(1)
 
 
-def collect_documentation(sources, fetch_text):
-    sources_by_id = {source["id"]: source for source in sources}
-    required = {"rocm-compatibility-matrix", "amd-gpu-specifications", "therock-supported-gpus", "therock-release-packaging", "pytorch-version-compatibility"}
-    missing = required - set(sources_by_id)
-    if missing:
-        raise ValueError(f"Missing documentation sources: {', '.join(sorted(missing))}")
-
-    observed_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
-    source_records = {
-        source_id: {**sources_by_id[source_id], "observed_at": observed_at}
-        for source_id in sorted(required)
-    }
-    compatibility_html = fetch_text(sources_by_id["rocm-compatibility-matrix"]["url"])
-    specifications_html = fetch_text(sources_by_id["amd-gpu-specifications"]["url"])
-    therock_markdown = fetch_text(sources_by_id["therock-supported-gpus"]["url"])
-    releases_markdown = fetch_text(sources_by_id["therock-release-packaging"]["url"])
-    pytorch_versions_markdown = fetch_text(sources_by_id["pytorch-version-compatibility"]["url"])
-    compatibility_by_torch = {
-        item["torch_series"]: item
-        for item in parse_pytorch_version_compatibility(pytorch_versions_markdown, "pytorch-version-compatibility")
-    }
-    compatibility_by_torch.update(
-        {
-            item["torch_series"]: item
-            for item in parse_framework_compatibility(releases_markdown, "therock-release-packaging")
-        }
-    )
-
-    return {
-        "schema_version": 1,
-        "last_observed_at": observed_at,
-        "sources": source_records,
-        "products": parse_gpu_specifications(specifications_html, "amd-gpu-specifications"),
-        "windows_release_support": parse_compatibility_matrix(compatibility_html, "rocm-compatibility-matrix"),
-        "therock_windows_status": parse_therock_windows_status(therock_markdown, "therock-supported-gpus"),
-        "framework_compatibility": sorted(
-            compatibility_by_torch.values(),
-            key=lambda item: tuple(int(part) for part in item["torch_series"].split(".")),
-        ),
-    }
+def parse_documentation_source(source, parser, parsers, fetch_text):
+    try:
+        return parser(fetch_text(source["url"]), source["id"]), source["url"], False
+    except (OSError, ValueError) as preferred_error:
+        fallback = source.get("fallback")
+        if fallback is None:
+            raise
+        fallback_parser = parsers.get(fallback["parser"])
+        if fallback_parser is None:
+            raise ValueError(f"Unsupported fallback parser: {fallback['parser']}") from preferred_error
+        try:
+            items = fallback_parser(fetch_text(fallback["url"]), source["id"])
+        except (OSError, ValueError) as fallback_error:
+            raise ValueError(f"Preferred source failed: {preferred_error}; fallback failed: {fallback_error}") from fallback_error
+        return items, fallback["url"], True
 
 
 def collect_documentation_sources(sources, fetch_text, existing=None, observed_at=None):
@@ -293,30 +357,50 @@ def collect_documentation_sources(sources, fetch_text, existing=None, observed_a
         "framework_compatibility": list(existing.get("framework_compatibility", [])),
     }
     parsers = {
-        "rocm-compatibility-matrix": ("windows_release_support", parse_compatibility_matrix),
-        "amd-gpu-specifications": ("products", parse_gpu_specifications),
-        "therock-supported-gpus": ("therock_windows_status", parse_therock_windows_status),
-        "therock-release-packaging": ("framework_compatibility", parse_framework_compatibility),
-        "pytorch-version-compatibility": ("framework_compatibility", parse_pytorch_version_compatibility),
+        "compatibility-html": parse_compatibility_matrix,
+        "gpu-specifications-html": parse_gpu_specifications,
+        "gpu-specifications-rst": parse_gpu_specifications_rst,
+        "therock-status-markdown": parse_therock_windows_status,
+        "framework-compatibility-markdown": parse_framework_compatibility,
+        "pytorch-compatibility-markdown": parse_pytorch_version_compatibility,
+    }
+    adapters = {
+        "rocm-compatibility-matrix": ("windows_release_support", "compatibility-html"),
+        "amd-gpu-specifications": ("products", "gpu-specifications-html"),
+        "therock-supported-gpus": ("therock_windows_status", "therock-status-markdown"),
+        "therock-release-packaging": ("framework_compatibility", "framework-compatibility-markdown"),
+        "pytorch-version-compatibility": ("framework_compatibility", "pytorch-compatibility-markdown"),
     }
     results = []
     passed = False
     for source in sources:
-        if source["id"] not in parsers:
+        if source["id"] not in adapters:
             raise ValueError(f"Unsupported documentation source adapter: {source['id']}")
-        collection_name, parser = parsers[source["id"]]
-        items, result = run_source_adapter(
+        collection_name, default_parser = adapters[source["id"]]
+        parser_name = source.get("parser", default_parser)
+        parser = parsers.get(parser_name)
+        if parser is None:
+            raise ValueError(f"Unsupported documentation parser: {parser_name}")
+        collected, result = run_source_adapter(
             source,
-            lambda source=source, parser=parser: parser(fetch_text(source["url"]), source["id"]),
+            lambda source=source, parser=parser: parse_documentation_source(source, parser, parsers, fetch_text),
             observed_at,
         )
         results.append(result)
-        if items is None:
+        if collected is None:
             continue
+        items, used_url, fallback_used = collected
+        result["url"] = used_url
         passed = True
         collections[collection_name] = [item for item in collections[collection_name] if item["source_id"] != source["id"]]
         collections[collection_name].extend(items)
-        source_records[source["id"]] = {**source, "observed_at": observed_at}
+        source_records[source["id"]] = {
+            "id": source["id"],
+            "url": used_url,
+            "preferred_url": source["url"],
+            "fallback_used": fallback_used,
+            "observed_at": observed_at,
+        }
 
     framework_by_torch = {}
     priority = {"pytorch-version-compatibility": 0, "therock-release-packaging": 1}

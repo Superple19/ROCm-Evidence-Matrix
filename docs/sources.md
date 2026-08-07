@@ -4,6 +4,12 @@ This document lists the primary sources used by Windows ROCm Compatibility Matri
 
 The project is unofficial and community-maintained. A linked artifact or package is evidence of availability, not proof that it works on physical hardware.
 
+## Source format policy
+
+Collectors prefer authoritative machine-readable data or source markup over rendered pages. A rendered HTML parser remains available only when the configuration declares it as a fallback, and each observation records the URL that actually succeeded plus whether the fallback was used.
+
+AMD's Python package repositories currently return the standardized HTML Simple API even when PEP 691 JSON is requested. Those indexes therefore remain the primary artifact source. TheRock publishes several different kinds of official evidence: roadmap status and release guidance are maintained in Markdown, the repository version is JSON, CI coverage is configured in Python source, and build artifact structure is TOML. Collectors must use each source only for the claim it owns instead of treating one source as a complete compatibility matrix.
+
 ## Compatibility and hardware documentation
 
 ### Current ROCm compatibility matrix
@@ -16,11 +22,12 @@ The project is unofficial and community-maintained. A linked artifact or package
 
 ### AMD GPU specifications
 
-- URL: https://rocm.docs.amd.com/en/latest/reference/gpu-specs.html
+- Preferred URL: https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst
+- Fallback URL: https://rocm.docs.amd.com/en/latest/reference/gpu-specs.html
 - Authority: AMD ROCm documentation
 - Use: Map a GPU or APU product name to its architecture and exact LLVM target, such as `gfx1201`, `gfx1100`, or `gfx1151`.
 - Evidence: `documented`
-- Notes: Product-to-target mapping does not by itself establish Windows or framework support.
+- Notes: The official RST list-table source is preferred because its table identity explicitly supplies the product category. Rendered HTML is retained as a validated fallback. Product-to-target mapping does not by itself establish Windows or framework support.
 
 ### Legacy Windows compatibility matrices
 
@@ -46,7 +53,31 @@ The project is unofficial and community-maintained. A linked artifact or package
 - Authority: ROCm TheRock repository
 - Use: Architecture-specific Build Passing, Sanity Tested, and Release Ready status for Windows and Linux.
 - Evidence: `artifact_available` for Build Passing; stronger test claims must remain separate.
-- Notes: Build Passing means an artifact was produced. It does not prove device enumeration, library loading, or kernel execution on the target GPU.
+- Notes: This is TheRock's prioritized roadmap and the authoritative source for these three declared readiness fields. Build Passing means an artifact was produced. It does not prove device enumeration, library loading, or kernel execution on the target GPU. Configured CI coverage and observed CI results are separate evidence and must not overwrite these fields.
+
+### Repository version
+
+- URL: https://github.com/ROCm/TheRock/blob/main/version.json
+- Authority: ROCm TheRock repository
+- Use: Current ROCm version declared by the TheRock source tree.
+- Evidence: `documented`
+- Notes: Use the `rocm-version` value directly. Do not infer the repository version from a wheel filename, documentation heading, or branch name.
+
+### CI GPU family configuration
+
+- URL: https://github.com/ROCm/TheRock/blob/main/build_tools/github_actions/amdgpu_family_matrix.py
+- Authority: ROCm TheRock repository
+- Use: Configured presubmit, postsubmit, and nightly GPU families, operating systems, runner labels, fetched GFX targets, build variants, and test scope modifiers.
+- Evidence: `ci_configured`
+- Notes: The file identifies itself as the source of truth for GitHub workflows. A configured Windows runner or GFX target proves intended CI coverage only; it does not prove that the latest job passed and must not be converted into Build Passing, Sanity Tested, or Release Ready.
+
+### Build artifact topology
+
+- URL: https://github.com/ROCm/TheRock/blob/main/BUILD_TOPOLOGY.toml
+- Authority: ROCm TheRock repository
+- Use: Artifact groups, target-specific and target-neutral outputs, dependencies, platform exclusions, and build stages.
+- Evidence: `documented`
+- Notes: This is the source of truth for build artifact structure, not GPU readiness or runtime compatibility.
 
 ### Release and package documentation
 
@@ -70,7 +101,7 @@ The project is unofficial and community-maintained. A linked artifact or package
 - Authority: AMD TheRock CI status service
 - Use: Current build and test status.
 - Evidence: Depends on the reported job and result.
-- Notes: Preserve the job identity, target, commit or build identifier, result, and observation time. Do not reduce all HUD results to a single supported flag.
+- Notes: Preserve the job identity, target, commit or build identifier, result, and observation time. This is observed CI execution evidence, unlike the configured coverage in the GPU family matrix. Do not reduce all HUD results to a single supported flag or use them to rewrite TheRock's declared roadmap fields.
 
 ### TheRock releases
 

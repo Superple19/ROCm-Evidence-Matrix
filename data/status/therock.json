@@ -1,64 +1,64 @@
 {
-  "completed_at": "2026-08-07T14:10:20Z",
+  "completed_at": "2026-08-07T15:02:36Z",
   "distribution_family": "therock",
   "results": [
     {
       "error": null,
-      "observed_at": "2026-08-07T14:09:53Z",
+      "observed_at": "2026-08-07T15:02:14Z",
       "source_id": "amd-gpu-specifications",
       "status": "passed",
-      "url": "https://rocm.docs.amd.com/en/latest/reference/gpu-specs.html"
+      "url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst"
     },
     {
       "error": null,
-      "observed_at": "2026-08-07T14:10:00Z",
+      "observed_at": "2026-08-07T15:02:20Z",
       "source_id": "nightly",
       "status": "passed",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
     },
     {
       "error": null,
-      "observed_at": "2026-08-07T14:09:53Z",
+      "observed_at": "2026-08-07T15:02:14Z",
       "source_id": "pytorch-version-compatibility",
       "status": "passed",
       "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     },
     {
       "error": null,
-      "observed_at": "2026-08-07T14:09:53Z",
+      "observed_at": "2026-08-07T15:02:14Z",
       "source_id": "rocm-compatibility-matrix",
       "status": "passed",
       "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
     },
     {
       "error": null,
-      "observed_at": "2026-08-07T14:09:54Z",
+      "observed_at": "2026-08-07T15:02:14Z",
       "source_id": "stable",
       "status": "passed",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/"
     },
     {
       "error": null,
-      "observed_at": "2026-08-07T14:10:13Z",
+      "observed_at": "2026-08-07T15:02:29Z",
       "source_id": "staging",
       "status": "passed",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
     },
     {
       "error": null,
-      "observed_at": "2026-08-07T14:09:53Z",
+      "observed_at": "2026-08-07T15:02:14Z",
       "source_id": "therock-release-packaging",
       "status": "passed",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
     },
     {
       "error": null,
-      "observed_at": "2026-08-07T14:09:53Z",
+      "observed_at": "2026-08-07T15:02:14Z",
       "source_id": "therock-supported-gpus",
       "status": "passed",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     }
   ],
   "schema_version": 1,
-  "started_at": "2026-08-07T14:09:53Z"
+  "started_at": "2026-08-07T15:02:14Z"
 }

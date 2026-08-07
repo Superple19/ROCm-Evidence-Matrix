@@ -24,7 +24,12 @@
     },
     {
       "id": "amd-gpu-specifications",
-      "url": "https://rocm.docs.amd.com/en/latest/reference/gpu-specs.html"
+      "url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst",
+      "parser": "gpu-specifications-rst",
+      "fallback": {
+        "url": "https://rocm.docs.amd.com/en/latest/reference/gpu-specs.html",
+        "parser": "gpu-specifications-html"
+      }
     },
     {
       "id": "therock-supported-gpus",

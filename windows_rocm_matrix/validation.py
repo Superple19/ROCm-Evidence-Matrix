@@ -52,7 +52,16 @@ def validate_documentation_snapshot(snapshot):
         raise ValueError("Unsupported documentation snapshot schema")
     if not snapshot.get("last_observed_at", "").endswith("Z"):
         raise ValueError("Documentation observation time must be UTC")
-    source_ids = set(snapshot.get("sources", {}))
+    sources = snapshot.get("sources", {})
+    source_ids = set(sources)
+    for source in sources.values():
+        required = {"id", "url", "preferred_url", "fallback_used", "observed_at"}
+        if set(source) != required:
+            raise ValueError(f"Invalid documentation source record: {source.get('id', 'unknown')}")
+        if not source["url"].startswith("https://") or not source["preferred_url"].startswith("https://"):
+            raise ValueError(f"Documentation source URLs must use HTTPS: {source['id']}")
+        if not source["observed_at"].endswith("Z"):
+            raise ValueError(f"Documentation source observation time must be UTC: {source['id']}")
     for collection in ("products", "windows_release_support", "therock_windows_status", "framework_compatibility"):
         if not isinstance(snapshot.get(collection), list):
             raise ValueError(f"{collection} must be a list")

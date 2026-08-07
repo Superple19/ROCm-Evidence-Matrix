@@ -12,10 +12,13 @@
       "type": "object",
       "additionalProperties": {
         "type": "object",
-        "required": ["id", "url", "observed_at"],
+        "additionalProperties": false,
+        "required": ["id", "url", "preferred_url", "fallback_used", "observed_at"],
         "properties": {
           "id": {"type": "string"},
           "url": {"type": "string", "format": "uri"},
+          "preferred_url": {"type": "string", "format": "uri"},
+          "fallback_used": {"type": "boolean"},
           "observed_at": {"type": "string", "format": "date-time"}
         }
       }
