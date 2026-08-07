@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/documentation-snapshot.schema.json",
+  "title": "Windows ROCm documentation snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "last_observed_at", "sources", "products", "windows_release_support", "therock_windows_status"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "last_observed_at": {"type": "string", "format": "date-time"},
+    "sources": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["id", "url", "observed_at"],
+        "properties": {
+          "id": {"type": "string"},
+          "url": {"type": "string", "format": "uri"},
+          "observed_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "category", "architecture", "gfx", "source_id"],
+        "properties": {
+          "name": {"type": "string"},
+          "category": {"enum": ["instinct", "radeon", "radeon_pro", "apu"]},
+          "architecture": {"type": "string"},
+          "gfx": {"type": "string", "pattern": "^gfx[0-9a-z]+$"},
+          "graphics_model": {"type": "string"},
+          "source_id": {"type": "string"}
+        }
+      }
+    },
+    "windows_release_support": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["gfx", "device_family", "rocm_version", "windows_versions", "selector_ids", "adrenalin_driver_versions", "windows_oem_driver_versions", "source_id"],
+        "properties": {
+          "gfx": {"type": "string"},
+          "device_family": {"type": "string"},
+          "rocm_version": {"type": "string"},
+          "windows_versions": {"type": "array", "items": {"type": "string"}},
+          "selector_ids": {"type": "array", "items": {"type": "string"}},
+          "adrenalin_driver_versions": {"type": "array", "items": {"type": "string"}},
+          "windows_oem_driver_versions": {"type": "array", "items": {"type": "string"}},
+          "source_id": {"type": "string"}
+        }
+      }
+    },
+    "therock_windows_status": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["architecture", "gfx", "build_passing", "sanity_tested", "release_ready", "source_id"],
+        "properties": {
+          "architecture": {"type": "string"},
+          "gfx": {"type": "string"},
+          "build_passing": {"type": "boolean"},
+          "sanity_tested": {"type": "boolean"},
+          "release_ready": {"type": "boolean"},
+          "source_id": {"type": "string"}
+        }
+      }
+    }
+  }
+}

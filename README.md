@@ -12,9 +12,17 @@ The initial collector reads the official AMD stable, nightly, and staging Python
 - Records Windows wheel filenames, versions, Python tags, ABI tags, platform tags, URLs, and observation times.
 - Checks whether ROCm, PyTorch, and TorchVision device packages exist for each target.
 - Keeps every Windows ABI variant for the latest observed version of each package.
+- Collects current released Windows support and product-to-GFX mappings from AMD documentation.
+- Collects TheRock Build Passing, Sanity Tested, and Release Ready status for Windows.
+- Integrates the evidence by exact GFX target without promoting availability to compatibility.
 - Generates a Markdown availability summary from the JSON snapshots.
 
 Official documentation sources and their evidence boundaries are listed in [docs/sources.md](docs/sources.md).
+
+Current generated views:
+
+- [Integrated compatibility matrix](docs/generated/compatibility-matrix.md)
+- [Package availability](docs/generated/package-availability.md)
 
 ## Development environment
 
@@ -36,14 +44,14 @@ Run the collector from the activated virtual environment:
 windows-rocm-matrix
 ```
 
-Snapshots are written to `data/snapshots/`. The generated summary is written to `docs/generated/package-availability.md`.
+Package snapshots are written to `data/snapshots/`. Documentation evidence is written to `data/documentation.json`, and the integrated view is written to `data/matrix.json`. Generated Markdown is stored under `docs/generated/`.
 
 Each collection replaces the current snapshot. Git history preserves earlier observations without mirroring every historical wheel still present in an upstream index.
 
 Limit collection to one or more channels or GPU targets when developing a parser:
 
 ```powershell
-windows-rocm-matrix --source nightly --gfx gfx1201 --output-dir .tmp/snapshots --docs-output .tmp/package-availability.md
+windows-rocm-matrix --source nightly --gfx gfx1201 --output-dir .tmp/snapshots --docs-output .tmp/package-availability.md --skip-documentation
 ```
 
 ## Run tests

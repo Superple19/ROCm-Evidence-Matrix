@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/compatibility-matrix.schema.json",
+  "title": "Integrated Windows ROCm compatibility matrix",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "sources", "targets"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "sources": {"type": "object"},
+    "targets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["gfx", "products", "windows_release_support", "therock_windows_status", "package_channels"],
+        "properties": {
+          "gfx": {"type": "string", "pattern": "^gfx[0-9a-z]+$"},
+          "products": {"type": "array", "items": {"type": "string"}},
+          "windows_release_support": {"type": ["object", "null"]},
+          "therock_windows_status": {"type": ["object", "null"]},
+          "package_channels": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": ["all_device_packages_available", "rocm_device_version", "torch_device_version", "torchvision_device_version", "source_id"],
+              "properties": {
+                "all_device_packages_available": {"type": "boolean"},
+                "rocm_device_version": {"type": ["string", "null"]},
+                "torch_device_version": {"type": ["string", "null"]},
+                "torchvision_device_version": {"type": ["string", "null"]},
+                "source_id": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

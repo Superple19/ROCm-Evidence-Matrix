@@ -28,11 +28,7 @@
     },
     {
       "id": "therock-supported-gpus",
-      "url": "https://github.com/ROCm/TheRock/blob/main/SUPPORTED_GPUS.md"
-    },
-    {
-      "id": "therock-releases",
-      "url": "https://github.com/ROCm/TheRock/blob/main/RELEASES.md"
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     }
   ]
 }

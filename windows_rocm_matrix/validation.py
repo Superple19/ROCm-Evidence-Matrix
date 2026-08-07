@@ -45,3 +45,45 @@ def validate_snapshot(snapshot):
         expected_available = all(packages.get(name) for name in expected_names)
         if target["all_device_packages_available"] != expected_available:
             raise ValueError(f"Incorrect device package availability for {target['gfx']}")
+
+
+def validate_documentation_snapshot(snapshot):
+    if snapshot.get("schema_version") != 1:
+        raise ValueError("Unsupported documentation snapshot schema")
+    if not snapshot.get("last_observed_at", "").endswith("Z"):
+        raise ValueError("Documentation observation time must be UTC")
+    source_ids = set(snapshot.get("sources", {}))
+    for collection in ("products", "windows_release_support", "therock_windows_status"):
+        if not isinstance(snapshot.get(collection), list):
+            raise ValueError(f"{collection} must be a list")
+        for item in snapshot[collection]:
+            if item.get("source_id") not in source_ids:
+                raise ValueError(f"Unknown source id in {collection}")
+            if not item.get("gfx", "").startswith("gfx"):
+                raise ValueError(f"Invalid GFX target in {collection}")
+    for item in snapshot["windows_release_support"]:
+        if not item["windows_versions"]:
+            raise ValueError(f"Missing Windows version for {item['gfx']}")
+
+
+def validate_compatibility_matrix(matrix):
+    if matrix.get("schema_version") != 1:
+        raise ValueError("Unsupported compatibility matrix schema")
+    if not matrix.get("generated_at", "").endswith("Z"):
+        raise ValueError("Compatibility matrix generation time must be UTC")
+    source_ids = set(matrix.get("sources", {}))
+    seen = set()
+    for target in matrix.get("targets", []):
+        gfx = target.get("gfx")
+        if not gfx or gfx in seen:
+            raise ValueError("Compatibility matrix targets must have unique GFX identifiers")
+        seen.add(gfx)
+        support = target.get("windows_release_support")
+        status = target.get("therock_windows_status")
+        if support and support["source_id"] not in source_ids:
+            raise ValueError(f"Unknown release support source for {gfx}")
+        if status and status["source_id"] not in source_ids:
+            raise ValueError(f"Unknown TheRock source for {gfx}")
+        for packages in target.get("package_channels", {}).values():
+            if packages["source_id"] not in source_ids:
+                raise ValueError(f"Unknown package source for {gfx}")

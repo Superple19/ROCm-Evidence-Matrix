@@ -5,9 +5,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
 
+from .documentation import collect_documentation
+from .integration import build_compatibility_matrix
+from .matrix_render import write_compatibility_document
 from .render import write_rendered_document
 from .simple_index import discover_gfx_targets, discover_packages, latest_artifacts, package_names_for_target, parse_windows_wheels
-from .validation import validate_snapshot
+from .validation import validate_compatibility_matrix, validate_documentation_snapshot, validate_snapshot
 
 
 USER_AGENT = "windows-rocm-matrix/0.1 (+https://github.com/Superple19/windows-rocm-matrix)"
@@ -95,9 +98,13 @@ def load_config(path):
 
 def write_snapshot(snapshot, path):
     validate_snapshot(snapshot)
+    write_json(snapshot, path)
+
+
+def write_json(value, path):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(snapshot, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
 
 
 def parse_args(argv=None):
@@ -105,6 +112,10 @@ def parse_args(argv=None):
     parser.add_argument("--config", default="config/sources.json")
     parser.add_argument("--output-dir", default="data/snapshots")
     parser.add_argument("--docs-output", default="docs/generated/package-availability.md")
+    parser.add_argument("--documentation-output", default="data/documentation.json")
+    parser.add_argument("--matrix-output", default="data/matrix.json")
+    parser.add_argument("--matrix-docs-output", default="docs/generated/compatibility-matrix.md")
+    parser.add_argument("--skip-documentation", action="store_true")
     parser.add_argument("--source", action="append", dest="sources", help="Collect only the named source. Repeat to select multiple sources.")
     parser.add_argument("--gfx", action="append", dest="gfx_targets", default=[], help="Collect only the exact GFX target. Repeat to select multiple targets.")
     parser.add_argument("--timeout", type=int, default=20)
@@ -133,6 +144,29 @@ def main(argv=None):
 
     write_rendered_document(output_dir.glob("*.json"), args.docs_output)
     print(f"Wrote {args.docs_output}")
+
+    if args.skip_documentation:
+        return
+
+    print("Collecting official compatibility documentation")
+    documentation = collect_documentation(
+        config["documentation_sources"],
+        lambda url: fetch_text(url, args.timeout),
+    )
+    validate_documentation_snapshot(documentation)
+    write_json(documentation, args.documentation_output)
+    print(f"Wrote {args.documentation_output}")
+
+    package_snapshots = []
+    for path in sorted(output_dir.glob("*.json")):
+        with path.open(encoding="utf-8") as handle:
+            package_snapshots.append(json.load(handle))
+    matrix = build_compatibility_matrix(documentation, package_snapshots)
+    validate_compatibility_matrix(matrix)
+    write_json(matrix, args.matrix_output)
+    write_compatibility_document(matrix, args.matrix_docs_output)
+    print(f"Wrote {args.matrix_output}")
+    print(f"Wrote {args.matrix_docs_output}")
 
 
 if __name__ == "__main__":

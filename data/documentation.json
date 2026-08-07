@@ -1,0 +1,726 @@
+{
+  "last_observed_at": "2026-08-07T12:22:59Z",
+  "products": [
+    {
+      "architecture": "RDNA3",
+      "category": "radeon_pro",
+      "gfx": "gfx1100",
+      "name": "Radeon PRO W7800",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3",
+      "category": "radeon_pro",
+      "gfx": "gfx1100",
+      "name": "Radeon PRO W7800 48GB",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3",
+      "category": "radeon_pro",
+      "gfx": "gfx1100",
+      "name": "Radeon PRO W7900",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3",
+      "category": "radeon_pro",
+      "gfx": "gfx1100",
+      "name": "Radeon PRO W7900 Dual Slot",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3",
+      "category": "radeon",
+      "gfx": "gfx1100",
+      "name": "Radeon RX 7900 GRE",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3",
+      "category": "radeon",
+      "gfx": "gfx1100",
+      "name": "Radeon RX 7900 XT",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3",
+      "category": "radeon",
+      "gfx": "gfx1100",
+      "name": "Radeon RX 7900 XTX",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3",
+      "category": "radeon_pro",
+      "gfx": "gfx1101",
+      "name": "Radeon PRO V710",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3",
+      "category": "radeon_pro",
+      "gfx": "gfx1101",
+      "name": "Radeon PRO W7700",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3",
+      "category": "radeon",
+      "gfx": "gfx1101",
+      "name": "Radeon RX 7700",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3",
+      "category": "radeon",
+      "gfx": "gfx1101",
+      "name": "Radeon RX 7700 XT",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3",
+      "category": "radeon",
+      "gfx": "gfx1101",
+      "name": "Radeon RX 7800 XT",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3",
+      "category": "radeon",
+      "gfx": "gfx1102",
+      "name": "Radeon RX 7600",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3",
+      "category": "apu",
+      "gfx": "gfx1103",
+      "graphics_model": "Radeon 780M",
+      "name": "AMD Ryzen 7 7840U",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3",
+      "category": "apu",
+      "gfx": "gfx1103",
+      "graphics_model": "Radeon 780M",
+      "name": "AMD Ryzen 9 270",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "category": "apu",
+      "gfx": "gfx1150",
+      "graphics_model": "Radeon 890M",
+      "name": "AMD Ryzen AI 9 HX 375",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "category": "apu",
+      "gfx": "gfx1151",
+      "graphics_model": "Radeon 8060S",
+      "name": "AMD Ryzen AI Max+ PRO 395",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "category": "apu",
+      "gfx": "gfx1152",
+      "graphics_model": "Radeon 860M",
+      "name": "AMD Ryzen AI 7 350",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA4",
+      "category": "radeon",
+      "gfx": "gfx1200",
+      "name": "Radeon RX 9060",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA4",
+      "category": "radeon",
+      "gfx": "gfx1200",
+      "name": "Radeon RX 9060 XT",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA4",
+      "category": "radeon",
+      "gfx": "gfx1200",
+      "name": "Radeon RX 9060 XT LP",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA4",
+      "category": "radeon_pro",
+      "gfx": "gfx1201",
+      "name": "Radeon AI PRO R9600D",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA4",
+      "category": "radeon_pro",
+      "gfx": "gfx1201",
+      "name": "Radeon AI PRO R9700",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA4",
+      "category": "radeon_pro",
+      "gfx": "gfx1201",
+      "name": "Radeon AI PRO R9700S",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA4",
+      "category": "radeon",
+      "gfx": "gfx1201",
+      "name": "Radeon RX 9070",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA4",
+      "category": "radeon",
+      "gfx": "gfx1201",
+      "name": "Radeon RX 9070 GRE",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA4",
+      "category": "radeon",
+      "gfx": "gfx1201",
+      "name": "Radeon RX 9070 XT",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "GCN4.0",
+      "category": "instinct",
+      "gfx": "gfx803",
+      "name": "MI6",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "GCN3.0",
+      "category": "instinct",
+      "gfx": "gfx803",
+      "name": "MI8",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "GCN5.0",
+      "category": "instinct",
+      "gfx": "gfx900",
+      "name": "MI25",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "GCN5.1",
+      "category": "instinct",
+      "gfx": "gfx906",
+      "name": "MI50 (16GB)",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "GCN5.1",
+      "category": "instinct",
+      "gfx": "gfx906",
+      "name": "MI50 (32GB)",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "GCN5.1",
+      "category": "instinct",
+      "gfx": "gfx906",
+      "name": "MI60",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "CDNA",
+      "category": "instinct",
+      "gfx": "gfx908",
+      "name": "MI100",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "CDNA2",
+      "category": "instinct",
+      "gfx": "gfx90a",
+      "name": "MI210",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "CDNA2",
+      "category": "instinct",
+      "gfx": "gfx90a",
+      "name": "MI250",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "CDNA2",
+      "category": "instinct",
+      "gfx": "gfx90a",
+      "name": "MI250X",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "CDNA3",
+      "category": "instinct",
+      "gfx": "gfx942",
+      "name": "MI300A",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "CDNA3",
+      "category": "instinct",
+      "gfx": "gfx942",
+      "name": "MI300X",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "CDNA3",
+      "category": "instinct",
+      "gfx": "gfx942",
+      "name": "MI325X",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "CDNA4",
+      "category": "instinct",
+      "gfx": "gfx950",
+      "name": "MI350X",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "CDNA4",
+      "category": "instinct",
+      "gfx": "gfx950",
+      "name": "MI355X",
+      "source_id": "amd-gpu-specifications"
+    }
+  ],
+  "schema_version": 1,
+  "sources": {
+    "amd-gpu-specifications": {
+      "id": "amd-gpu-specifications",
+      "observed_at": "2026-08-07T12:22:59Z",
+      "url": "https://rocm.docs.amd.com/en/latest/reference/gpu-specs.html"
+    },
+    "rocm-compatibility-matrix": {
+      "id": "rocm-compatibility-matrix",
+      "observed_at": "2026-08-07T12:22:59Z",
+      "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
+    },
+    "therock-supported-gpus": {
+      "id": "therock-supported-gpus",
+      "observed_at": "2026-08-07T12:22:59Z",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
+    }
+  },
+  "therock_windows_status": [
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "gfx": "gfx1010",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "gfx": "gfx1011",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "gfx": "gfx1012",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "gfx": "gfx1030",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "gfx": "gfx1031",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "gfx": "gfx1032",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "gfx": "gfx1033",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "gfx": "gfx1034",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "gfx": "gfx1035",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "gfx": "gfx1036",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "gfx": "gfx1100",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "gfx": "gfx1101",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "gfx": "gfx1102",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "gfx": "gfx1103",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "gfx": "gfx1150",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "gfx": "gfx1151",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "gfx": "gfx1152",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "gfx": "gfx1153",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA4",
+      "build_passing": true,
+      "gfx": "gfx1200",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "RDNA4",
+      "build_passing": true,
+      "gfx": "gfx1201",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "GCN5.0",
+      "build_passing": true,
+      "gfx": "gfx900",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "GCN5.1",
+      "build_passing": true,
+      "gfx": "gfx906",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "GCN5.0",
+      "build_passing": true,
+      "gfx": "gfx90c",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus"
+    }
+  ],
+  "windows_release_support": [
+    {
+      "adrenalin_driver_versions": [
+        "26.6.4"
+      ],
+      "device_family": "radeon",
+      "gfx": "gfx1030",
+      "rocm_version": "7.14.0",
+      "selector_ids": [
+        "v620",
+        "w6800"
+      ],
+      "source_id": "rocm-compatibility-matrix",
+      "windows_oem_driver_versions": [
+        "26.10.28"
+      ],
+      "windows_versions": [
+        "Windows 11 25H2"
+      ]
+    },
+    {
+      "adrenalin_driver_versions": [
+        "26.6.4"
+      ],
+      "device_family": "radeon",
+      "gfx": "gfx1100",
+      "rocm_version": "7.14.0",
+      "selector_ids": [
+        "rx-7900-gre",
+        "rx-7900-xt",
+        "rx-7900-xtx",
+        "w7800",
+        "w7800-48gb",
+        "w7900",
+        "w7900-dual-slot"
+      ],
+      "source_id": "rocm-compatibility-matrix",
+      "windows_oem_driver_versions": [
+        "26.10.28"
+      ],
+      "windows_versions": [
+        "Windows 11 25H2"
+      ]
+    },
+    {
+      "adrenalin_driver_versions": [
+        "26.6.4"
+      ],
+      "device_family": "radeon",
+      "gfx": "gfx1101",
+      "rocm_version": "7.14.0",
+      "selector_ids": [
+        "rx-7700",
+        "rx-7700-xt",
+        "rx-7800-xt",
+        "v710",
+        "w7700"
+      ],
+      "source_id": "rocm-compatibility-matrix",
+      "windows_oem_driver_versions": [
+        "26.10.28"
+      ],
+      "windows_versions": [
+        "Windows 11 25H2"
+      ]
+    },
+    {
+      "adrenalin_driver_versions": [
+        "26.6.4"
+      ],
+      "device_family": "radeon",
+      "gfx": "gfx1102",
+      "rocm_version": "7.14.0",
+      "selector_ids": [
+        "rx-7600"
+      ],
+      "source_id": "rocm-compatibility-matrix",
+      "windows_oem_driver_versions": [
+        "26.10.28"
+      ],
+      "windows_versions": [
+        "Windows 11 25H2"
+      ]
+    },
+    {
+      "adrenalin_driver_versions": [
+        "26.6.4"
+      ],
+      "device_family": "ryzen",
+      "gfx": "gfx1103",
+      "rocm_version": "7.14.0",
+      "selector_ids": [
+        "gfx1103"
+      ],
+      "source_id": "rocm-compatibility-matrix",
+      "windows_oem_driver_versions": [
+        "26.10.28"
+      ],
+      "windows_versions": [
+        "Windows 11 25H2"
+      ]
+    },
+    {
+      "adrenalin_driver_versions": [
+        "26.6.4"
+      ],
+      "device_family": "ryzen",
+      "gfx": "gfx1150",
+      "rocm_version": "7.14.0",
+      "selector_ids": [
+        "gfx1150"
+      ],
+      "source_id": "rocm-compatibility-matrix",
+      "windows_oem_driver_versions": [
+        "26.10.28"
+      ],
+      "windows_versions": [
+        "Windows 11 25H2"
+      ]
+    },
+    {
+      "adrenalin_driver_versions": [
+        "26.6.4"
+      ],
+      "device_family": "ryzen",
+      "gfx": "gfx1151",
+      "rocm_version": "7.14.0",
+      "selector_ids": [
+        "gfx1151"
+      ],
+      "source_id": "rocm-compatibility-matrix",
+      "windows_oem_driver_versions": [
+        "26.10.28"
+      ],
+      "windows_versions": [
+        "Windows 11 25H2"
+      ]
+    },
+    {
+      "adrenalin_driver_versions": [
+        "26.6.4"
+      ],
+      "device_family": "ryzen",
+      "gfx": "gfx1152",
+      "rocm_version": "7.14.0",
+      "selector_ids": [
+        "gfx1152"
+      ],
+      "source_id": "rocm-compatibility-matrix",
+      "windows_oem_driver_versions": [
+        "26.10.28"
+      ],
+      "windows_versions": [
+        "Windows 11 25H2"
+      ]
+    },
+    {
+      "adrenalin_driver_versions": [
+        "26.6.4"
+      ],
+      "device_family": "ryzen",
+      "gfx": "gfx1153",
+      "rocm_version": "7.14.0",
+      "selector_ids": [
+        "gfx1153"
+      ],
+      "source_id": "rocm-compatibility-matrix",
+      "windows_oem_driver_versions": [
+        "26.10.28"
+      ],
+      "windows_versions": [
+        "Windows 11 25H2"
+      ]
+    },
+    {
+      "adrenalin_driver_versions": [
+        "26.6.4"
+      ],
+      "device_family": "radeon",
+      "gfx": "gfx1200",
+      "rocm_version": "7.14.0",
+      "selector_ids": [
+        "rx-9060",
+        "rx-9060-xt",
+        "rx-9060-xt-lp"
+      ],
+      "source_id": "rocm-compatibility-matrix",
+      "windows_oem_driver_versions": [
+        "26.10.28"
+      ],
+      "windows_versions": [
+        "Windows 11 25H2"
+      ]
+    },
+    {
+      "adrenalin_driver_versions": [
+        "26.6.4"
+      ],
+      "device_family": "radeon",
+      "gfx": "gfx1201",
+      "rocm_version": "7.14.0",
+      "selector_ids": [
+        "ai-r9600d",
+        "ai-r9700",
+        "ai-r9700s",
+        "rx-9070",
+        "rx-9070-gre",
+        "rx-9070-xt"
+      ],
+      "source_id": "rocm-compatibility-matrix",
+      "windows_oem_driver_versions": [
+        "26.10.28"
+      ],
+      "windows_versions": [
+        "Windows 11 25H2"
+      ]
+    }
+  ]
+}

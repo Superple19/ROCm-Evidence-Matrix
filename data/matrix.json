@@ -1,0 +1,1249 @@
+{
+  "generated_at": "2026-08-07T12:22:59Z",
+  "schema_version": 1,
+  "sources": {
+    "amd-gpu-specifications": {
+      "id": "amd-gpu-specifications",
+      "observed_at": "2026-08-07T12:22:59Z",
+      "url": "https://rocm.docs.amd.com/en/latest/reference/gpu-specs.html"
+    },
+    "packages-nightly": {
+      "channel": "nightly",
+      "id": "nightly",
+      "observed_at": "2026-08-07T12:22:52Z",
+      "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
+    },
+    "packages-stable": {
+      "channel": "stable",
+      "id": "stable",
+      "observed_at": "2026-08-07T12:22:40Z",
+      "url": "https://repo.amd.com/rocm/whl-multi-arch/"
+    },
+    "packages-staging": {
+      "channel": "staging",
+      "id": "staging",
+      "observed_at": "2026-08-07T12:22:59Z",
+      "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
+    },
+    "rocm-compatibility-matrix": {
+      "id": "rocm-compatibility-matrix",
+      "observed_at": "2026-08-07T12:22:59Z",
+      "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
+    },
+    "therock-supported-gpus": {
+      "id": "therock-supported-gpus",
+      "observed_at": "2026-08-07T12:22:59Z",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
+    }
+  },
+  "targets": [
+    {
+      "gfx": "gfx1010",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [],
+      "therock_windows_status": {
+        "architecture": "RDNA1",
+        "build_passing": true,
+        "gfx": "gfx1010",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx1011",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [],
+      "therock_windows_status": {
+        "architecture": "RDNA1",
+        "build_passing": true,
+        "gfx": "gfx1011",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx1012",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [],
+      "therock_windows_status": {
+        "architecture": "RDNA1",
+        "build_passing": true,
+        "gfx": "gfx1012",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx1030",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [],
+      "therock_windows_status": {
+        "architecture": "RDNA2",
+        "build_passing": true,
+        "gfx": "gfx1030",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": {
+        "adrenalin_driver_versions": [
+          "26.6.4"
+        ],
+        "device_family": "radeon",
+        "gfx": "gfx1030",
+        "rocm_version": "7.14.0",
+        "selector_ids": [
+          "v620",
+          "w6800"
+        ],
+        "source_id": "rocm-compatibility-matrix",
+        "windows_oem_driver_versions": [
+          "26.10.28"
+        ],
+        "windows_versions": [
+          "Windows 11 25H2"
+        ]
+      }
+    },
+    {
+      "gfx": "gfx1031",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [],
+      "therock_windows_status": {
+        "architecture": "RDNA2",
+        "build_passing": true,
+        "gfx": "gfx1031",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx1032",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [],
+      "therock_windows_status": {
+        "architecture": "RDNA2",
+        "build_passing": true,
+        "gfx": "gfx1032",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx1033",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [],
+      "therock_windows_status": {
+        "architecture": "RDNA2",
+        "build_passing": true,
+        "gfx": "gfx1033",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx1034",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [],
+      "therock_windows_status": {
+        "architecture": "RDNA2",
+        "build_passing": true,
+        "gfx": "gfx1034",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx1035",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [],
+      "therock_windows_status": {
+        "architecture": "RDNA2",
+        "build_passing": true,
+        "gfx": "gfx1035",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx1036",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [],
+      "therock_windows_status": {
+        "architecture": "RDNA2",
+        "build_passing": true,
+        "gfx": "gfx1036",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx1100",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [
+        "Radeon PRO W7800",
+        "Radeon PRO W7800 48GB",
+        "Radeon PRO W7900",
+        "Radeon PRO W7900 Dual Slot",
+        "Radeon RX 7900 GRE",
+        "Radeon RX 7900 XT",
+        "Radeon RX 7900 XTX"
+      ],
+      "therock_windows_status": {
+        "architecture": "RDNA3",
+        "build_passing": true,
+        "gfx": "gfx1100",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": {
+        "adrenalin_driver_versions": [
+          "26.6.4"
+        ],
+        "device_family": "radeon",
+        "gfx": "gfx1100",
+        "rocm_version": "7.14.0",
+        "selector_ids": [
+          "rx-7900-gre",
+          "rx-7900-xt",
+          "rx-7900-xtx",
+          "w7800",
+          "w7800-48gb",
+          "w7900",
+          "w7900-dual-slot"
+        ],
+        "source_id": "rocm-compatibility-matrix",
+        "windows_oem_driver_versions": [
+          "26.10.28"
+        ],
+        "windows_versions": [
+          "Windows 11 25H2"
+        ]
+      }
+    },
+    {
+      "gfx": "gfx1101",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [
+        "Radeon PRO V710",
+        "Radeon PRO W7700",
+        "Radeon RX 7700",
+        "Radeon RX 7700 XT",
+        "Radeon RX 7800 XT"
+      ],
+      "therock_windows_status": {
+        "architecture": "RDNA3",
+        "build_passing": true,
+        "gfx": "gfx1101",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": {
+        "adrenalin_driver_versions": [
+          "26.6.4"
+        ],
+        "device_family": "radeon",
+        "gfx": "gfx1101",
+        "rocm_version": "7.14.0",
+        "selector_ids": [
+          "rx-7700",
+          "rx-7700-xt",
+          "rx-7800-xt",
+          "v710",
+          "w7700"
+        ],
+        "source_id": "rocm-compatibility-matrix",
+        "windows_oem_driver_versions": [
+          "26.10.28"
+        ],
+        "windows_versions": [
+          "Windows 11 25H2"
+        ]
+      }
+    },
+    {
+      "gfx": "gfx1102",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [
+        "Radeon RX 7600"
+      ],
+      "therock_windows_status": {
+        "architecture": "RDNA3",
+        "build_passing": true,
+        "gfx": "gfx1102",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": {
+        "adrenalin_driver_versions": [
+          "26.6.4"
+        ],
+        "device_family": "radeon",
+        "gfx": "gfx1102",
+        "rocm_version": "7.14.0",
+        "selector_ids": [
+          "rx-7600"
+        ],
+        "source_id": "rocm-compatibility-matrix",
+        "windows_oem_driver_versions": [
+          "26.10.28"
+        ],
+        "windows_versions": [
+          "Windows 11 25H2"
+        ]
+      }
+    },
+    {
+      "gfx": "gfx1103",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [
+        "AMD Ryzen 7 7840U",
+        "AMD Ryzen 9 270"
+      ],
+      "therock_windows_status": {
+        "architecture": "RDNA3",
+        "build_passing": true,
+        "gfx": "gfx1103",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": {
+        "adrenalin_driver_versions": [
+          "26.6.4"
+        ],
+        "device_family": "ryzen",
+        "gfx": "gfx1103",
+        "rocm_version": "7.14.0",
+        "selector_ids": [
+          "gfx1103"
+        ],
+        "source_id": "rocm-compatibility-matrix",
+        "windows_oem_driver_versions": [
+          "26.10.28"
+        ],
+        "windows_versions": [
+          "Windows 11 25H2"
+        ]
+      }
+    },
+    {
+      "gfx": "gfx1150",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [
+        "AMD Ryzen AI 9 HX 375"
+      ],
+      "therock_windows_status": {
+        "architecture": "RDNA3.5",
+        "build_passing": true,
+        "gfx": "gfx1150",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": {
+        "adrenalin_driver_versions": [
+          "26.6.4"
+        ],
+        "device_family": "ryzen",
+        "gfx": "gfx1150",
+        "rocm_version": "7.14.0",
+        "selector_ids": [
+          "gfx1150"
+        ],
+        "source_id": "rocm-compatibility-matrix",
+        "windows_oem_driver_versions": [
+          "26.10.28"
+        ],
+        "windows_versions": [
+          "Windows 11 25H2"
+        ]
+      }
+    },
+    {
+      "gfx": "gfx1151",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [
+        "AMD Ryzen AI Max+ PRO 395"
+      ],
+      "therock_windows_status": {
+        "architecture": "RDNA3.5",
+        "build_passing": true,
+        "gfx": "gfx1151",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": {
+        "adrenalin_driver_versions": [
+          "26.6.4"
+        ],
+        "device_family": "ryzen",
+        "gfx": "gfx1151",
+        "rocm_version": "7.14.0",
+        "selector_ids": [
+          "gfx1151"
+        ],
+        "source_id": "rocm-compatibility-matrix",
+        "windows_oem_driver_versions": [
+          "26.10.28"
+        ],
+        "windows_versions": [
+          "Windows 11 25H2"
+        ]
+      }
+    },
+    {
+      "gfx": "gfx1152",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [
+        "AMD Ryzen AI 7 350"
+      ],
+      "therock_windows_status": {
+        "architecture": "RDNA3.5",
+        "build_passing": true,
+        "gfx": "gfx1152",
+        "release_ready": true,
+        "sanity_tested": true,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": {
+        "adrenalin_driver_versions": [
+          "26.6.4"
+        ],
+        "device_family": "ryzen",
+        "gfx": "gfx1152",
+        "rocm_version": "7.14.0",
+        "selector_ids": [
+          "gfx1152"
+        ],
+        "source_id": "rocm-compatibility-matrix",
+        "windows_oem_driver_versions": [
+          "26.10.28"
+        ],
+        "windows_versions": [
+          "Windows 11 25H2"
+        ]
+      }
+    },
+    {
+      "gfx": "gfx1153",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [],
+      "therock_windows_status": {
+        "architecture": "RDNA3.5",
+        "build_passing": true,
+        "gfx": "gfx1153",
+        "release_ready": false,
+        "sanity_tested": false,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": {
+        "adrenalin_driver_versions": [
+          "26.6.4"
+        ],
+        "device_family": "ryzen",
+        "gfx": "gfx1153",
+        "rocm_version": "7.14.0",
+        "selector_ids": [
+          "gfx1153"
+        ],
+        "source_id": "rocm-compatibility-matrix",
+        "windows_oem_driver_versions": [
+          "26.10.28"
+        ],
+        "windows_versions": [
+          "Windows 11 25H2"
+        ]
+      }
+    },
+    {
+      "gfx": "gfx1200",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [
+        "Radeon RX 9060",
+        "Radeon RX 9060 XT",
+        "Radeon RX 9060 XT LP"
+      ],
+      "therock_windows_status": {
+        "architecture": "RDNA4",
+        "build_passing": true,
+        "gfx": "gfx1200",
+        "release_ready": false,
+        "sanity_tested": false,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": {
+        "adrenalin_driver_versions": [
+          "26.6.4"
+        ],
+        "device_family": "radeon",
+        "gfx": "gfx1200",
+        "rocm_version": "7.14.0",
+        "selector_ids": [
+          "rx-9060",
+          "rx-9060-xt",
+          "rx-9060-xt-lp"
+        ],
+        "source_id": "rocm-compatibility-matrix",
+        "windows_oem_driver_versions": [
+          "26.10.28"
+        ],
+        "windows_versions": [
+          "Windows 11 25H2"
+        ]
+      }
+    },
+    {
+      "gfx": "gfx1201",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [
+        "Radeon AI PRO R9600D",
+        "Radeon AI PRO R9700",
+        "Radeon AI PRO R9700S",
+        "Radeon RX 9070",
+        "Radeon RX 9070 GRE",
+        "Radeon RX 9070 XT"
+      ],
+      "therock_windows_status": {
+        "architecture": "RDNA4",
+        "build_passing": true,
+        "gfx": "gfx1201",
+        "release_ready": false,
+        "sanity_tested": false,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": {
+        "adrenalin_driver_versions": [
+          "26.6.4"
+        ],
+        "device_family": "radeon",
+        "gfx": "gfx1201",
+        "rocm_version": "7.14.0",
+        "selector_ids": [
+          "ai-r9600d",
+          "ai-r9700",
+          "ai-r9700s",
+          "rx-9070",
+          "rx-9070-gre",
+          "rx-9070-xt"
+        ],
+        "source_id": "rocm-compatibility-matrix",
+        "windows_oem_driver_versions": [
+          "26.10.28"
+        ],
+        "windows_versions": [
+          "Windows 11 25H2"
+        ]
+      }
+    },
+    {
+      "gfx": "gfx1250",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": false,
+          "rocm_device_version": null,
+          "source_id": "packages-nightly",
+          "torch_device_version": null,
+          "torchvision_device_version": null
+        },
+        "stable": {
+          "all_device_packages_available": false,
+          "rocm_device_version": null,
+          "source_id": "packages-stable",
+          "torch_device_version": null,
+          "torchvision_device_version": null
+        }
+      },
+      "products": [],
+      "therock_windows_status": null,
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx803",
+      "package_channels": {},
+      "products": [
+        "MI6",
+        "MI8"
+      ],
+      "therock_windows_status": null,
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx900",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [
+        "MI25"
+      ],
+      "therock_windows_status": {
+        "architecture": "GCN5.0",
+        "build_passing": true,
+        "gfx": "gfx900",
+        "release_ready": false,
+        "sanity_tested": false,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx906",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [
+        "MI50 (16GB)",
+        "MI50 (32GB)",
+        "MI60"
+      ],
+      "therock_windows_status": {
+        "architecture": "GCN5.1",
+        "build_passing": true,
+        "gfx": "gfx906",
+        "release_ready": false,
+        "sanity_tested": false,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx908",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [
+        "MI100"
+      ],
+      "therock_windows_status": null,
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx90a",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        },
+        "stable": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0",
+          "source_id": "packages-stable",
+          "torch_device_version": "2.12.0+rocm7.14.0",
+          "torchvision_device_version": "0.27.0+rocm7.14.0"
+        },
+        "staging": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "7.14.0a20260519",
+          "source_id": "packages-staging",
+          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+        }
+      },
+      "products": [
+        "MI210",
+        "MI250",
+        "MI250X"
+      ],
+      "therock_windows_status": null,
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx90c",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": true,
+          "rocm_device_version": "10.1.0a20260807",
+          "source_id": "packages-nightly",
+          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+        }
+      },
+      "products": [],
+      "therock_windows_status": {
+        "architecture": "GCN5.0",
+        "build_passing": true,
+        "gfx": "gfx90c",
+        "release_ready": false,
+        "sanity_tested": false,
+        "source_id": "therock-supported-gpus"
+      },
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx942",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": false,
+          "rocm_device_version": null,
+          "source_id": "packages-nightly",
+          "torch_device_version": null,
+          "torchvision_device_version": null
+        },
+        "stable": {
+          "all_device_packages_available": false,
+          "rocm_device_version": null,
+          "source_id": "packages-stable",
+          "torch_device_version": null,
+          "torchvision_device_version": null
+        },
+        "staging": {
+          "all_device_packages_available": false,
+          "rocm_device_version": null,
+          "source_id": "packages-staging",
+          "torch_device_version": null,
+          "torchvision_device_version": null
+        }
+      },
+      "products": [
+        "MI300A",
+        "MI300X",
+        "MI325X"
+      ],
+      "therock_windows_status": null,
+      "windows_release_support": null
+    },
+    {
+      "gfx": "gfx950",
+      "package_channels": {
+        "nightly": {
+          "all_device_packages_available": false,
+          "rocm_device_version": null,
+          "source_id": "packages-nightly",
+          "torch_device_version": null,
+          "torchvision_device_version": null
+        },
+        "stable": {
+          "all_device_packages_available": false,
+          "rocm_device_version": null,
+          "source_id": "packages-stable",
+          "torch_device_version": null,
+          "torchvision_device_version": null
+        },
+        "staging": {
+          "all_device_packages_available": false,
+          "rocm_device_version": null,
+          "source_id": "packages-staging",
+          "torch_device_version": null,
+          "torchvision_device_version": null
+        }
+      },
+      "products": [
+        "MI350X",
+        "MI355X"
+      ],
+      "therock_windows_status": null,
+      "windows_release_support": null
+    }
+  ]
+}
