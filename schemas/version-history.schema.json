@@ -21,9 +21,20 @@
           "platform": {"enum": ["windows", "linux", "macos", "unknown"]},
           "platform_evidence": {
             "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["support", "package_available", "ci_verified"],
+              "properties": {
+                "support": {"enum": ["supported", "unsupported", "unknown"]},
+                "package_available": {"type": "boolean"},
+                "ci_verified": {"type": ["boolean", "null"]}
+              }
+            },
             "properties": {
               "windows": {
                 "type": "object",
+                "additionalProperties": false,
                 "required": ["support", "package_available", "ci_verified"],
                 "properties": {
                   "support": {"enum": ["supported", "unsupported", "unknown"]},

@@ -43,3 +43,6 @@ apply TheRock's device-extra installation syntax to a `legacy` candidate.
 Schema files under `schemas/` are the normative contracts. A minor additive
 field change keeps the schema version; a changed meaning, removed field, or
 identity change requires a new schema version and migration notes.
+
+The legacy `windows_*` version-history fields are compatibility aliases. New
+consumers should read `platform_evidence.windows` instead.

@@ -334,6 +334,8 @@ def validate_version_history(document):
             raise ValueError(f"Windows support evidence mismatch: {release['id']}")
         if evidence.get("package_available", release["windows_package_available"]) != release["windows_package_available"]:
             raise ValueError(f"Windows package evidence mismatch: {release['id']}")
+        if evidence.get("ci_verified", release["windows_ci_verified"]) != release["windows_ci_verified"]:
+            raise ValueError(f"Windows CI evidence mismatch: {release['id']}")
         if release.get("channel") not in {"stable", "nightly", "staging", "unknown"}:
             raise ValueError(f"Invalid release channel: {release['id']}")
         if release["windows_support"] not in {"supported", "unsupported", "unknown"}:
