@@ -85,11 +85,21 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
     observations = []
     for key, targets in grouped.items():
         rocm_version, torch_version, vision_version, audio_version, python_tags = key
-        candidate_id = ":".join((distribution_family, source["channel"], rocm_version, torch_version, vision_version, audio_version, ",".join(python_tags)))
+        candidate_id = candidate_id_for(
+            distribution_family,
+            source.get("platform", "windows"),
+            source["channel"],
+            rocm_version,
+            torch_version,
+            vision_version,
+            audio_version,
+            python_tags,
+        )
         observations.append(
             {
                 "id": candidate_id,
                 "distribution_family": distribution_family,
+                "platform": source.get("platform", "windows"),
                 "channel": source["channel"],
                 "rocm_version": rocm_version,
                 "torch_version": torch_version,
@@ -114,17 +124,24 @@ def candidate_sort_key(candidate):
     )
 
 
+def candidate_id_for(distribution_family, platform, channel, rocm_version, torch_version, torchvision_version, torchaudio_version, python_tags):
+    fields = [distribution_family]
+    if platform != "windows":
+        fields.append(platform)
+    fields.extend((channel, rocm_version, torch_version, torchvision_version, torchaudio_version, ",".join(python_tags)))
+    return ":".join(fields)
+
+
 def candidate_id(candidate):
-    return ":".join(
-        (
-            candidate["distribution_family"],
-            candidate["channel"],
-            candidate["rocm_version"],
-            candidate["torch_version"],
-            candidate["torchvision_version"],
-            candidate["torchaudio_version"],
-            ",".join(candidate["python_tags"]),
-        )
+    return candidate_id_for(
+        candidate["distribution_family"],
+        candidate.get("platform", "windows"),
+        candidate["channel"],
+        candidate["rocm_version"],
+        candidate["torch_version"],
+        candidate["torchvision_version"],
+        candidate["torchaudio_version"],
+        candidate["python_tags"],
     )
 
 
@@ -133,12 +150,19 @@ def migrate_history(existing):
         return {"sources": {}, "candidates": []}
     schema_version = existing.get("schema_version")
     if schema_version == 2:
-        return existing
+        candidates = []
+        for item in existing.get("candidates", []):
+            candidate = {**item}
+            candidate.setdefault("platform", "windows")
+            candidate["id"] = candidate_id(candidate)
+            candidates.append(candidate)
+        return {**existing, "candidates": candidates}
     if schema_version != 1:
         raise ValueError("Unsupported history schema")
     candidates = []
     for item in existing.get("candidates", []):
         candidate = {**item, "distribution_family": "therock"}
+        candidate.setdefault("platform", "windows")
         candidate["id"] = candidate_id(candidate)
         candidates.append(candidate)
     return {**existing, "schema_version": 2, "candidates": candidates}
@@ -147,6 +171,7 @@ def migrate_history(existing):
 def classify_lifecycle(candidates):
     latest = {}
     for candidate in candidates:
+        candidate.setdefault("platform", "windows")
         key = (candidate["distribution_family"], candidate["channel"])
         version = version_key(candidate["rocm_version"])
         if key not in latest or version > latest[key]:

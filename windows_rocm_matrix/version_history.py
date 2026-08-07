@@ -116,9 +116,11 @@ def matching_release(version, releases):
 
 
 def release_record(family, version, observed_at, **values):
+    platform = values.get("platform", "windows")
     return {
-        "id": f"{family}:{version}",
+        "id": f"{family}:{version}" if platform == "windows" else f"{family}:{platform}:{version}",
         "distribution_family": family,
+        "platform": platform,
         "version": version,
         "channel": values.get("channel", "stable"),
         "release_date": values.get("release_date"),
@@ -141,6 +143,7 @@ def merge_version_history(existing, family, releases, gpu_support, sources, obse
     records = {}
     for item in existing.get("releases", []):
         item = dict(item)
+        item.setdefault("platform", "windows")
         item.setdefault("channel", "nightly" if item["distribution_family"] == "therock" and item["version"] == "10.1.0" else "stable")
         item.setdefault("windows_package_available", item.get("package_artifacts", 0) > 0)
         item.setdefault("windows_ci_verified", None)

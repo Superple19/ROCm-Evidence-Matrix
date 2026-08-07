@@ -2477,6 +2477,7 @@
   "source": {
     "channel": "stable",
     "id": "stable",
+    "platform": "windows",
     "url": "https://repo.amd.com/rocm/whl-multi-arch/"
   }
 }

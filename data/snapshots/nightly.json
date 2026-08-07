@@ -2786,6 +2786,7 @@
   "source": {
     "channel": "nightly",
     "id": "nightly",
+    "platform": "windows",
     "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
   }
 }

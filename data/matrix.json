@@ -13,18 +13,21 @@
       "channel": "nightly",
       "id": "nightly",
       "observed_at": "2026-08-07T15:36:41Z",
+      "platform": "windows",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
     },
     "packages-stable": {
       "channel": "stable",
       "id": "stable",
       "observed_at": "2026-08-07T15:36:41Z",
+      "platform": "windows",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/"
     },
     "packages-staging": {
       "channel": "staging",
       "id": "staging",
       "observed_at": "2026-08-07T15:36:41Z",
+      "platform": "windows",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
     },
     "pytorch-version-compatibility": {

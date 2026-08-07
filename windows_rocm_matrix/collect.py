@@ -19,7 +19,7 @@ from .validation import validate_ci_coverage, validate_ci_evidence, validate_col
 from .version_history import collect_legacy_version_history, collect_therock_version_history, render_version_history
 
 
-USER_AGENT = "windows-rocm-matrix/0.1 (+https://github.com/Superple19/windows-rocm-matrix)"
+USER_AGENT = "rocm-matrix/0.1 (+https://github.com/Superple19/windows-rocm-matrix)"
 BASE_PACKAGES = (
     "rocm",
     "rocm-sdk-core",
@@ -128,7 +128,7 @@ def add_cache_paths(parser):
 
 
 def parse_args(argv=None):
-    parser = argparse.ArgumentParser(description="Collect and build Windows ROCm compatibility evidence.")
+    parser = argparse.ArgumentParser(description="Collect and build platform-aware ROCm compatibility evidence.")
     commands = parser.add_subparsers(dest="command", required=True)
     collect_parser = commands.add_parser("collect", help="Collect one distribution family from official sources.")
     families = collect_parser.add_subparsers(dest="family", required=True)

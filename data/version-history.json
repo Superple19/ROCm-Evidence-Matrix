@@ -13,6 +13,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2022-02-09",
       "source_ids": [
         "rocm-release-history"
@@ -34,6 +35,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2022-02-16",
       "source_ids": [
         "rocm-release-history"
@@ -55,6 +57,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2022-03-04",
       "source_ids": [
         "rocm-release-history"
@@ -76,6 +79,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2022-03-30",
       "source_ids": [
         "rocm-release-history"
@@ -97,6 +101,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2022-04-08",
       "source_ids": [
         "rocm-release-history"
@@ -118,6 +123,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2022-05-20",
       "source_ids": [
         "rocm-release-history"
@@ -139,6 +145,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2022-06-28",
       "source_ids": [
         "rocm-release-history"
@@ -160,6 +167,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2022-07-21",
       "source_ids": [
         "rocm-release-history"
@@ -181,6 +189,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2022-08-18",
       "source_ids": [
         "rocm-release-history"
@@ -202,6 +211,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2022-10-04",
       "source_ids": [
         "rocm-release-history"
@@ -223,6 +233,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2022-11-09",
       "source_ids": [
         "rocm-release-history"
@@ -244,6 +255,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2022-11-17",
       "source_ids": [
         "rocm-release-history"
@@ -265,6 +277,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2022-11-30",
       "source_ids": [
         "rocm-release-history"
@@ -286,6 +299,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2022-12-15",
       "source_ids": [
         "rocm-release-history"
@@ -307,6 +321,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2023-01-13",
       "source_ids": [
         "rocm-release-history"
@@ -328,6 +343,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2023-02-07",
       "source_ids": [
         "rocm-release-history"
@@ -349,6 +365,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2023-05-01",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -371,6 +388,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2023-05-24",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -393,6 +411,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2023-06-28",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -415,6 +434,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2023-08-29",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -437,6 +457,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2023-09-15",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -459,6 +480,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2023-10-13",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -481,6 +503,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2023-12-15",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -503,6 +526,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2024-01-31",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -525,6 +549,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2024-04-16",
       "source_ids": [
         "hip-sdk-gpus-6.1",
@@ -548,6 +573,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2024-05-08",
       "source_ids": [
         "hip-sdk-gpus-6.1",
@@ -571,6 +597,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2024-06-04",
       "source_ids": [
         "hip-sdk-gpus-6.1",
@@ -594,6 +621,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2025-03-13",
       "source_ids": [
         "hip-sdk-gpus-6.1",
@@ -617,6 +645,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2024-08-02",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -639,6 +668,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2024-09-20",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -661,6 +691,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2024-09-27",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -683,6 +714,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2024-11-06",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -705,6 +737,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2024-12-03",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -727,6 +760,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2024-12-20",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -749,6 +783,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2025-01-28",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -771,6 +806,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2025-02-19",
       "source_ids": [
         "hip-sdk-release-versioning",
@@ -793,6 +829,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2025-04-11",
       "source_ids": [
         "hip-sdk-gpus-6.4",
@@ -816,6 +853,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2025-05-21",
       "source_ids": [
         "hip-sdk-gpus-6.4",
@@ -839,6 +877,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2025-07-21",
       "source_ids": [
         "hip-sdk-gpus-6.4",
@@ -862,6 +901,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2025-08-07",
       "source_ids": [
         "hip-sdk-gpus-6.4",
@@ -885,6 +925,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 3,
+      "platform": "windows",
       "release_date": "2025-08-07",
       "source_ids": [
         "hip-sdk-gpus-6.4",
@@ -911,6 +952,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2025-09-16",
       "source_ids": [
         "rocm-release-history"
@@ -932,6 +974,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2025-09-17",
       "source_ids": [
         "rocm-release-history"
@@ -953,6 +996,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2025-10-10",
       "source_ids": [
         "rocm-release-history"
@@ -974,6 +1018,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2025-10-30",
       "source_ids": [
         "hip-sdk-gpus-7.1",
@@ -997,6 +1042,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 7,
+      "platform": "windows",
       "release_date": "2025-11-26",
       "source_ids": [
         "hip-sdk-gpus-7.1",
@@ -1021,6 +1067,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2026-01-21",
       "source_ids": [
         "rocm-release-history"
@@ -1042,6 +1089,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 7,
+      "platform": "windows",
       "release_date": "2026-03-25",
       "source_ids": [
         "legacy-windows-artifacts",
@@ -1066,6 +1114,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2026-04-14",
       "source_ids": [
         "rocm-release-history"
@@ -1087,6 +1136,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2026-05-04",
       "source_ids": [
         "rocm-release-history"
@@ -1108,6 +1158,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "current",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2026-05-29",
       "source_ids": [
         "rocm-release-history"
@@ -1129,6 +1180,7 @@
       "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2025-12-11",
       "source_ids": [
         "therock-releases"
@@ -1150,6 +1202,7 @@
       "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2026-02-11",
       "source_ids": [
         "therock-releases",
@@ -1172,6 +1225,7 @@
       "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2026-03-26",
       "source_ids": [
         "therock-releases",
@@ -1194,6 +1248,7 @@
       "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2026-05-15",
       "source_ids": [
         "therock-releases",
@@ -1216,6 +1271,7 @@
       "last_observed_at": "2026-08-07T15:37:08Z",
       "lifecycle": "current",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": "2026-07-15",
       "source_ids": [
         "rocm-release-history",
@@ -1239,6 +1295,7 @@
       "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "package_artifacts": 0,
+      "platform": "windows",
       "release_date": null,
       "source_ids": [
         "therock-supported-gpus",

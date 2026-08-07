@@ -118,6 +118,8 @@ def validate_history(history):
             raise ValueError(f"Unsupported history channel: {candidate['channel']}")
         if candidate.get("distribution_family") not in {"therock", "legacy"}:
             raise ValueError(f"Unsupported distribution family: {candidate['id']}")
+        if candidate.get("platform") not in {"windows", "linux", "macos", "unknown"}:
+            raise ValueError(f"Unsupported candidate platform: {candidate['id']}")
         if candidate.get("lifecycle") not in {"current", "historical"}:
             raise ValueError(f"Unsupported lifecycle: {candidate['id']}")
         if not set(candidate["available_gfx_targets"]).issubset(candidate["gfx_targets"]):
@@ -297,6 +299,8 @@ def validate_version_history(document):
         release_ids.add(release["id"])
         if release["distribution_family"] not in {"therock", "legacy"}:
             raise ValueError(f"Invalid version history family: {release['id']}")
+        if release.get("platform") not in {"windows", "linux", "macos", "unknown"}:
+            raise ValueError(f"Invalid version history platform: {release['id']}")
         if release.get("channel") not in {"stable", "nightly", "staging", "unknown"}:
             raise ValueError(f"Invalid release channel: {release['id']}")
         if release["windows_support"] not in {"supported", "unsupported", "unknown"}:

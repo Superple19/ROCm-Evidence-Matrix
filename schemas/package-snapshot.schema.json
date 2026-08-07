@@ -22,11 +22,12 @@
     "source": {
       "type": "object",
       "additionalProperties": false,
-        "required": ["id", "channel", "url"],
+        "required": ["id", "channel", "url", "platform"],
       "properties": {
         "id": {"type": "string", "minLength": 1},
         "channel": {"enum": ["stable", "nightly", "staging"]},
-        "url": {"type": "string", "format": "uri"}
+        "url": {"type": "string", "format": "uri"},
+        "platform": {"enum": ["windows", "linux", "macos", "unknown"]}
       }
     },
     "gfx_targets": {
