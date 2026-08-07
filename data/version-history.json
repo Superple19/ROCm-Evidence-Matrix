@@ -1,0 +1,1342 @@
+{
+  "generated_at": "2026-08-07T15:36:41Z",
+  "releases": [
+    {
+      "distribution_family": "legacy",
+      "documentation_status": "archive_missing",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-07T15:37:04Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:5.5",
+      "last_observed_at": "2026-08-07T15:37:08Z",
+      "lifecycle": "historical",
+      "package_artifacts": 0,
+      "release_date": "2023-05-24",
+      "source_ids": [
+        "hip-sdk-release-versioning",
+        "rocm-release-history"
+      ],
+      "version": "5.5",
+      "windows_support": "supported"
+    },
+    {
+      "distribution_family": "legacy",
+      "documentation_status": "archive_missing",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-07T15:37:04Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:5.6",
+      "last_observed_at": "2026-08-07T15:37:08Z",
+      "lifecycle": "historical",
+      "package_artifacts": 0,
+      "release_date": "2023-08-29",
+      "source_ids": [
+        "hip-sdk-release-versioning",
+        "rocm-release-history"
+      ],
+      "version": "5.6",
+      "windows_support": "unsupported"
+    },
+    {
+      "distribution_family": "legacy",
+      "documentation_status": "archive_missing",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-07T15:37:04Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:5.7",
+      "last_observed_at": "2026-08-07T15:37:08Z",
+      "lifecycle": "historical",
+      "package_artifacts": 0,
+      "release_date": "2023-10-13",
+      "source_ids": [
+        "hip-sdk-release-versioning",
+        "rocm-release-history"
+      ],
+      "version": "5.7",
+      "windows_support": "supported"
+    },
+    {
+      "distribution_family": "legacy",
+      "documentation_status": "available",
+      "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.0.2/",
+      "first_observed_at": "2026-08-07T15:37:04Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:6.0",
+      "last_observed_at": "2026-08-07T15:37:08Z",
+      "lifecycle": "historical",
+      "package_artifacts": 0,
+      "release_date": "2024-01-31",
+      "source_ids": [
+        "hip-sdk-release-versioning",
+        "rocm-release-history"
+      ],
+      "version": "6.0",
+      "windows_support": "unsupported"
+    },
+    {
+      "distribution_family": "legacy",
+      "documentation_status": "available",
+      "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.1.5/",
+      "first_observed_at": "2026-08-07T15:37:04Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 23,
+      "id": "legacy:6.1",
+      "last_observed_at": "2026-08-07T15:37:08Z",
+      "lifecycle": "historical",
+      "package_artifacts": 0,
+      "release_date": "2025-03-13",
+      "source_ids": [
+        "hip-sdk-gpus-6.1",
+        "hip-sdk-release-versioning",
+        "rocm-release-history"
+      ],
+      "version": "6.1",
+      "windows_support": "supported"
+    },
+    {
+      "distribution_family": "legacy",
+      "documentation_status": "available",
+      "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.2.4/",
+      "first_observed_at": "2026-08-07T15:37:04Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:6.2",
+      "last_observed_at": "2026-08-07T15:37:08Z",
+      "lifecycle": "historical",
+      "package_artifacts": 0,
+      "release_date": "2024-11-06",
+      "source_ids": [
+        "hip-sdk-release-versioning",
+        "rocm-release-history"
+      ],
+      "version": "6.2",
+      "windows_support": "supported"
+    },
+    {
+      "distribution_family": "legacy",
+      "documentation_status": "available",
+      "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.3.3/",
+      "first_observed_at": "2026-08-07T15:37:04Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:6.3",
+      "last_observed_at": "2026-08-07T15:37:08Z",
+      "lifecycle": "historical",
+      "package_artifacts": 0,
+      "release_date": "2025-02-19",
+      "source_ids": [
+        "hip-sdk-release-versioning",
+        "rocm-release-history"
+      ],
+      "version": "6.3",
+      "windows_support": "unsupported"
+    },
+    {
+      "distribution_family": "legacy",
+      "documentation_status": "available",
+      "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.4.2/",
+      "first_observed_at": "2026-08-07T15:37:04Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 43,
+      "id": "legacy:6.4",
+      "last_observed_at": "2026-08-07T15:37:08Z",
+      "lifecycle": "historical",
+      "package_artifacts": 0,
+      "release_date": "2025-08-07",
+      "source_ids": [
+        "hip-sdk-gpus-6.4",
+        "hip-sdk-release-versioning",
+        "rocm-release-history"
+      ],
+      "version": "6.4",
+      "windows_support": "supported"
+    },
+    {
+      "distribution_family": "legacy",
+      "documentation_status": "available",
+      "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.4.2/",
+      "first_observed_at": "2026-08-07T15:37:04Z",
+      "framework_support_observations": 2,
+      "gpu_support_observations": 43,
+      "id": "legacy:6.4.4",
+      "last_observed_at": "2026-08-07T15:37:08Z",
+      "lifecycle": "historical",
+      "package_artifacts": 3,
+      "release_date": "2025-08-07",
+      "source_ids": [
+        "hip-sdk-gpus-6.4",
+        "hip-sdk-release-versioning",
+        "legacy-windows-artifacts",
+        "pytorch-windows-radeon-6.4.4",
+        "pytorch-windows-ryzen-6.4.4",
+        "rocm-release-history"
+      ],
+      "version": "6.4.4",
+      "windows_support": "supported"
+    },
+    {
+      "distribution_family": "legacy",
+      "documentation_status": "available",
+      "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.1.1/",
+      "first_observed_at": "2026-08-07T15:37:04Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 38,
+      "id": "legacy:7.1",
+      "last_observed_at": "2026-08-07T15:37:08Z",
+      "lifecycle": "historical",
+      "package_artifacts": 0,
+      "release_date": "2025-11-26",
+      "source_ids": [
+        "hip-sdk-gpus-7.1",
+        "hip-sdk-release-versioning",
+        "rocm-release-history"
+      ],
+      "version": "7.1",
+      "windows_support": "supported"
+    },
+    {
+      "distribution_family": "legacy",
+      "documentation_status": "available",
+      "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.1.1/",
+      "first_observed_at": "2026-08-07T15:37:04Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 38,
+      "id": "legacy:7.1.1",
+      "last_observed_at": "2026-08-07T15:37:08Z",
+      "lifecycle": "historical",
+      "package_artifacts": 7,
+      "release_date": "2025-11-26",
+      "source_ids": [
+        "hip-sdk-gpus-7.1",
+        "hip-sdk-release-versioning",
+        "legacy-windows-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "7.1.1",
+      "windows_support": "supported"
+    },
+    {
+      "distribution_family": "legacy",
+      "documentation_status": "available",
+      "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.2/",
+      "first_observed_at": "2026-08-07T15:37:04Z",
+      "framework_support_observations": 2,
+      "gpu_support_observations": 0,
+      "id": "legacy:7.2",
+      "last_observed_at": "2026-08-07T15:37:08Z",
+      "lifecycle": "historical",
+      "package_artifacts": 7,
+      "release_date": "2026-05-29",
+      "source_ids": [
+        "legacy-windows-artifacts",
+        "pytorch-windows-radeon-7.2",
+        "pytorch-windows-ryzen-7.2",
+        "rocm-release-history"
+      ],
+      "version": "7.2",
+      "windows_support": "unknown"
+    },
+    {
+      "distribution_family": "legacy",
+      "documentation_status": "available",
+      "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.2/",
+      "first_observed_at": "2026-08-07T15:37:04Z",
+      "framework_support_observations": 2,
+      "gpu_support_observations": 0,
+      "id": "legacy:7.2.1",
+      "last_observed_at": "2026-08-07T15:37:08Z",
+      "lifecycle": "current",
+      "package_artifacts": 7,
+      "release_date": "2026-03-25",
+      "source_ids": [
+        "legacy-windows-artifacts",
+        "pytorch-windows-radeon-7.2.1",
+        "pytorch-windows-ryzen-7.2.1",
+        "rocm-release-history"
+      ],
+      "version": "7.2.1",
+      "windows_support": "unknown"
+    },
+    {
+      "distribution_family": "therock",
+      "documentation_status": "archive_missing",
+      "documentation_url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.10/SUPPORTED_GPUS.md",
+      "first_observed_at": "2026-08-07T15:36:17Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "therock:7.10",
+      "last_observed_at": "2026-08-07T15:36:41Z",
+      "lifecycle": "historical",
+      "package_artifacts": 0,
+      "release_date": "2025-12-11",
+      "source_ids": [
+        "therock-releases"
+      ],
+      "version": "7.10",
+      "windows_support": "unknown"
+    },
+    {
+      "distribution_family": "therock",
+      "documentation_status": "available",
+      "documentation_url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.11/SUPPORTED_GPUS.md",
+      "first_observed_at": "2026-08-07T15:36:17Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 13,
+      "id": "therock:7.11",
+      "last_observed_at": "2026-08-07T15:36:41Z",
+      "lifecycle": "historical",
+      "package_artifacts": 0,
+      "release_date": "2026-02-11",
+      "source_ids": [
+        "therock-releases",
+        "therock-supported-gpus-7.11"
+      ],
+      "version": "7.11",
+      "windows_support": "unknown"
+    },
+    {
+      "distribution_family": "therock",
+      "documentation_status": "available",
+      "documentation_url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.12/SUPPORTED_GPUS.md",
+      "first_observed_at": "2026-08-07T15:36:17Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 13,
+      "id": "therock:7.12",
+      "last_observed_at": "2026-08-07T15:36:41Z",
+      "lifecycle": "historical",
+      "package_artifacts": 0,
+      "release_date": "2026-03-26",
+      "source_ids": [
+        "therock-releases",
+        "therock-supported-gpus-7.12"
+      ],
+      "version": "7.12",
+      "windows_support": "unknown"
+    },
+    {
+      "distribution_family": "therock",
+      "documentation_status": "available",
+      "documentation_url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.13/SUPPORTED_GPUS.md",
+      "first_observed_at": "2026-08-07T15:36:17Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 13,
+      "id": "therock:7.13",
+      "last_observed_at": "2026-08-07T15:36:41Z",
+      "lifecycle": "historical",
+      "package_artifacts": 0,
+      "release_date": "2026-05-15",
+      "source_ids": [
+        "therock-releases",
+        "therock-supported-gpus-7.13"
+      ],
+      "version": "7.13",
+      "windows_support": "unknown"
+    },
+    {
+      "distribution_family": "therock",
+      "documentation_status": "available",
+      "documentation_url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.14/SUPPORTED_GPUS.md",
+      "first_observed_at": "2026-08-07T15:36:17Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 23,
+      "id": "therock:7.14",
+      "last_observed_at": "2026-08-07T15:36:41Z",
+      "lifecycle": "historical",
+      "package_artifacts": 0,
+      "release_date": "2026-07-15",
+      "source_ids": [
+        "therock-releases",
+        "therock-supported-gpus-7.14"
+      ],
+      "version": "7.14",
+      "windows_support": "unknown"
+    },
+    {
+      "distribution_family": "therock",
+      "documentation_status": "available",
+      "documentation_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md",
+      "first_observed_at": "2026-08-07T15:34:49Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 23,
+      "id": "therock:10.1.0",
+      "last_observed_at": "2026-08-07T15:36:41Z",
+      "lifecycle": "current",
+      "package_artifacts": 0,
+      "release_date": null,
+      "source_ids": [
+        "therock-supported-gpus",
+        "therock-version"
+      ],
+      "version": "10.1.0",
+      "windows_support": "unknown"
+    }
+  ],
+  "schema_version": 1,
+  "sources": {
+    "hip-sdk-gpus-6.1": {
+      "id": "hip-sdk-gpus-6.1",
+      "observed_at": "2026-08-07T15:37:08Z",
+      "rocm_series": "6.1",
+      "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.1.2/reference/system-requirements.html"
+    },
+    "hip-sdk-gpus-6.4": {
+      "id": "hip-sdk-gpus-6.4",
+      "observed_at": "2026-08-07T15:37:08Z",
+      "rocm_series": "6.4",
+      "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.4.0/reference/system-requirements.html"
+    },
+    "hip-sdk-gpus-7.1": {
+      "id": "hip-sdk-gpus-7.1",
+      "observed_at": "2026-08-07T15:37:08Z",
+      "rocm_series": "7.1",
+      "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.1.1/reference/system-requirements.html"
+    },
+    "hip-sdk-release-versioning": {
+      "id": "hip-sdk-release-versioning",
+      "observed_at": "2026-08-07T15:37:08Z",
+      "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/latest/conceptual/release-versioning.html"
+    },
+    "legacy-windows-artifacts": {
+      "id": "legacy-windows-artifacts",
+      "observed_at": "2026-08-07T15:37:08Z",
+      "url": "https://repo.radeon.com/rocm/windows/"
+    },
+    "pytorch-windows-radeon-6.4.4": {
+      "id": "pytorch-windows-radeon-6.4.4",
+      "observed_at": "2026-08-07T15:37:08Z",
+      "product_family": "radeon",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-6.4.4/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-radeon-7.2": {
+      "id": "pytorch-windows-radeon-7.2",
+      "observed_at": "2026-08-07T15:37:08Z",
+      "product_family": "radeon",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-7.2/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-radeon-7.2.1": {
+      "id": "pytorch-windows-radeon-7.2.1",
+      "observed_at": "2026-08-07T15:37:08Z",
+      "product_family": "radeon",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-ryzen-6.4.4": {
+      "id": "pytorch-windows-ryzen-6.4.4",
+      "observed_at": "2026-08-07T15:37:08Z",
+      "product_family": "ryzen",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-6.4.4/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-ryzen-7.2": {
+      "id": "pytorch-windows-ryzen-7.2",
+      "observed_at": "2026-08-07T15:37:08Z",
+      "product_family": "ryzen",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-7.2/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-ryzen-7.2.1": {
+      "id": "pytorch-windows-ryzen-7.2.1",
+      "observed_at": "2026-08-07T15:37:08Z",
+      "product_family": "ryzen",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
+    },
+    "rocm-release-history": {
+      "id": "rocm-release-history",
+      "observed_at": "2026-08-07T15:37:08Z",
+      "url": "https://rocm.docs.amd.com/en/latest/release/versions.html"
+    },
+    "therock-releases": {
+      "id": "therock-releases",
+      "observed_at": "2026-08-07T15:36:41Z",
+      "url": "https://api.github.com/repos/ROCm/TheRock/releases?per_page=100"
+    },
+    "therock-supported-gpus": {
+      "id": "therock-supported-gpus",
+      "observed_at": "2026-08-07T15:36:41Z",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
+    },
+    "therock-supported-gpus-7.11": {
+      "id": "therock-supported-gpus-7.11",
+      "observed_at": "2026-08-07T15:36:41Z",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.11/SUPPORTED_GPUS.md"
+    },
+    "therock-supported-gpus-7.12": {
+      "id": "therock-supported-gpus-7.12",
+      "observed_at": "2026-08-07T15:36:41Z",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.12/SUPPORTED_GPUS.md"
+    },
+    "therock-supported-gpus-7.13": {
+      "id": "therock-supported-gpus-7.13",
+      "observed_at": "2026-08-07T15:36:41Z",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.13/SUPPORTED_GPUS.md"
+    },
+    "therock-supported-gpus-7.14": {
+      "id": "therock-supported-gpus-7.14",
+      "observed_at": "2026-08-07T15:36:41Z",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.14/SUPPORTED_GPUS.md"
+    },
+    "therock-version": {
+      "id": "therock-version",
+      "observed_at": "2026-08-07T15:36:41Z",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/version.json"
+    },
+    "windows-documentation-branches": {
+      "id": "windows-documentation-branches",
+      "observed_at": "2026-08-07T15:37:08Z",
+      "url": "https://api.github.com/repos/ROCm/rocm-install-on-windows/branches?per_page=100"
+    }
+  },
+  "therock_gpu_support": [
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1010",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.11",
+      "version": "7.11"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1011",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.11",
+      "version": "7.11"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1012",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.11",
+      "version": "7.11"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1030",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.11",
+      "version": "7.11"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1100",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.11",
+      "version": "7.11"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1101",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.11",
+      "version": "7.11"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1102",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.11",
+      "version": "7.11"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": false,
+      "distribution_family": "therock",
+      "gfx": "gfx1103",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.11",
+      "version": "7.11"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1150",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.11",
+      "version": "7.11"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1151",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.11",
+      "version": "7.11"
+    },
+    {
+      "architecture": "RDNA4",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1200",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.11",
+      "version": "7.11"
+    },
+    {
+      "architecture": "RDNA4",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1201",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.11",
+      "version": "7.11"
+    },
+    {
+      "architecture": "GCN5.1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx906",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.11",
+      "version": "7.11"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1010",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.12",
+      "version": "7.12"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1011",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.12",
+      "version": "7.12"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1012",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.12",
+      "version": "7.12"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1030",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.12",
+      "version": "7.12"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1100",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.12",
+      "version": "7.12"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1101",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.12",
+      "version": "7.12"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1102",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.12",
+      "version": "7.12"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": false,
+      "distribution_family": "therock",
+      "gfx": "gfx1103",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.12",
+      "version": "7.12"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1150",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.12",
+      "version": "7.12"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1151",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.12",
+      "version": "7.12"
+    },
+    {
+      "architecture": "RDNA4",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1200",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.12",
+      "version": "7.12"
+    },
+    {
+      "architecture": "RDNA4",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1201",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.12",
+      "version": "7.12"
+    },
+    {
+      "architecture": "GCN5.1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx906",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.12",
+      "version": "7.12"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1010",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.13",
+      "version": "7.13"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1011",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.13",
+      "version": "7.13"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1012",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.13",
+      "version": "7.13"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1030",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.13",
+      "version": "7.13"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1100",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.13",
+      "version": "7.13"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1101",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.13",
+      "version": "7.13"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1102",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.13",
+      "version": "7.13"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": false,
+      "distribution_family": "therock",
+      "gfx": "gfx1103",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.13",
+      "version": "7.13"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1150",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.13",
+      "version": "7.13"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1151",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.13",
+      "version": "7.13"
+    },
+    {
+      "architecture": "RDNA4",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1200",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.13",
+      "version": "7.13"
+    },
+    {
+      "architecture": "RDNA4",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1201",
+      "release_ready": false,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.13",
+      "version": "7.13"
+    },
+    {
+      "architecture": "GCN5.1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx906",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.13",
+      "version": "7.13"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1010",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1011",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1012",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1030",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1031",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1032",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1033",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1034",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1035",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1036",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1100",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1101",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1102",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1103",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1150",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1151",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1152",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1153",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA4",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1200",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA4",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1201",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "GCN5.0",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx900",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "GCN5.1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx906",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "GCN5.0",
+      "build_passing": false,
+      "distribution_family": "therock",
+      "gfx": "gfx90c",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-7.14",
+      "version": "7.14"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1010",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1011",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1012",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1030",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1031",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1032",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1033",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1034",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1035",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1036",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1100",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1101",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1102",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1103",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1150",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1151",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1152",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1153",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA4",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1200",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA4",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1201",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "GCN5.0",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx900",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "GCN5.1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx906",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "GCN5.0",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx90c",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    }
+  ]
+}

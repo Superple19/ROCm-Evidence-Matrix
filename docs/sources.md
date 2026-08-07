@@ -109,13 +109,22 @@ AMD's Python package repositories currently return the standardized HTML Simple 
 - Authority: ROCm TheRock repository
 - Use: Tagged TheRock release history and release metadata.
 - Evidence: `documented` or `artifact_available`, depending on the recorded claim.
+- Notes: The collector uses the official GitHub Releases API and reads tagged `SUPPORTED_GPUS.md` files to preserve versioned readiness observations. A release whose tagged support document is absent is recorded as `archive_missing`, not unsupported.
 
 ### ROCm releases
 
-- URL: https://github.com/ROCm/ROCm/releases
-- Authority: ROCm repository
-- Use: ROCm release history, release notes, and tags.
+- URL: https://rocm.docs.amd.com/en/latest/release/versions.html
+- Authority: AMD ROCm documentation
+- Use: Discover released ROCm versions, release dates, and versioned documentation links.
 - Evidence: `documented`
+
+### Versioned Windows documentation branches
+
+- URL: https://github.com/ROCm/rocm-install-on-windows/branches
+- Authority: ROCm Windows installation documentation repository
+- Use: Discover archived `docs/{version}` documentation versions without guessing URLs.
+- Evidence: `documented`
+- Notes: AMD documents Windows by major.minor release series while Linux patch versions may differ. The collector prefers an exact branch and otherwise selects the newest branch in the same major.minor series. Missing branches remain distinct from explicit unsupported status.
 
 ## Stable artifact sources
 

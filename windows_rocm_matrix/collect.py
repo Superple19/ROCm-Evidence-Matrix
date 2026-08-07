@@ -14,7 +14,8 @@ from .render import write_rendered_document
 from .simple_index import discover_gfx_targets, discover_packages, latest_artifacts, package_names_for_target, parse_package_artifacts
 from .source_cache import CachedSourceReader, SourceCache
 from .source_adapter import collection_status, run_source_adapter, utc_now
-from .validation import validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_history, validate_legacy_windows, validate_snapshot
+from .validation import validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_history, validate_legacy_windows, validate_snapshot, validate_version_history
+from .version_history import collect_legacy_version_history, collect_therock_version_history, render_version_history
 
 
 USER_AGENT = "windows-rocm-matrix/0.1 (+https://github.com/Superple19/windows-rocm-matrix)"
@@ -31,7 +32,7 @@ BASE_PACKAGES = (
 
 
 def fetch_text(url, timeout):
-    request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "text/html"})
+    request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/vnd.github+json, application/json;q=0.9, text/html;q=0.8"})
     with urlopen(request, timeout=timeout) as response:
         charset = response.headers.get_content_charset() or "utf-8"
         return response.read().decode(charset, errors="replace")
@@ -137,6 +138,7 @@ def parse_args(argv=None):
     therock.add_argument("--output-dir", default="data/snapshots")
     therock.add_argument("--documentation-output", default="data/documentation.json")
     therock.add_argument("--history-output", default="data/history.json")
+    therock.add_argument("--version-history-output", default="data/version-history.json")
     therock.add_argument("--status-output", default="data/status/therock.json")
     therock.add_argument("--source", action="append", dest="sources", help="Collect only the named package source. Repeat to select multiple sources.")
     therock.add_argument("--gfx", action="append", dest="gfx_targets", default=[], help="Collect only the exact GFX target. Repeat to select multiple targets.")
@@ -147,6 +149,7 @@ def parse_args(argv=None):
     add_config_path(legacy)
     add_cache_paths(legacy)
     legacy.add_argument("--legacy-output", default="data/legacy-windows.json")
+    legacy.add_argument("--version-history-output", default="data/version-history.json")
     legacy.add_argument("--status-output", default="data/status/legacy.json")
     legacy.add_argument("--timeout", type=int, default=20)
 
@@ -159,6 +162,7 @@ def parse_args(argv=None):
     normalize_therock.add_argument("--output-dir", default="data/snapshots")
     normalize_therock.add_argument("--documentation-output", default="data/documentation.json")
     normalize_therock.add_argument("--history-output", default="data/history.json")
+    normalize_therock.add_argument("--version-history-output", default="data/version-history.json")
     normalize_therock.add_argument("--source", action="append", dest="sources", help="Normalize only the named package source. Repeat to select multiple sources.")
     normalize_therock.add_argument("--gfx", action="append", dest="gfx_targets", default=[], help="Normalize only the exact GFX target. Repeat to select multiple targets.")
     normalize_therock.add_argument("--workers", type=int, default=8)
@@ -167,6 +171,7 @@ def parse_args(argv=None):
     add_config_path(normalize_legacy)
     add_cache_paths(normalize_legacy)
     normalize_legacy.add_argument("--legacy-output", default="data/legacy-windows.json")
+    normalize_legacy.add_argument("--version-history-output", default="data/version-history.json")
 
     integrate = commands.add_parser("integrate", help="Build the integrated matrix from normalized evidence without network access.")
     integrate.add_argument("--output-dir", default="data/snapshots")
@@ -177,22 +182,26 @@ def parse_args(argv=None):
     render.add_argument("--output-dir", default="data/snapshots")
     render.add_argument("--history-output", default="data/history.json")
     render.add_argument("--legacy-output", default="data/legacy-windows.json")
+    render.add_argument("--version-history-output", default="data/version-history.json")
     render.add_argument("--matrix-output", default="data/matrix.json")
     render.add_argument("--docs-output", default="docs/generated/package-availability.md")
     render.add_argument("--matrix-docs-output", default="docs/generated/compatibility-matrix.md")
     render.add_argument("--history-docs-output", default="docs/generated/history.md")
     render.add_argument("--legacy-docs-output", default="docs/generated/legacy-windows.md")
+    render.add_argument("--version-history-docs-output", default="docs/generated/version-history.md")
 
     build = commands.add_parser("build", help="Build integrated JSON and Markdown from collected data without network access.")
     build.add_argument("--output-dir", default="data/snapshots")
     build.add_argument("--documentation-output", default="data/documentation.json")
     build.add_argument("--history-output", default="data/history.json")
     build.add_argument("--legacy-output", default="data/legacy-windows.json")
+    build.add_argument("--version-history-output", default="data/version-history.json")
     build.add_argument("--docs-output", default="docs/generated/package-availability.md")
     build.add_argument("--matrix-output", default="data/matrix.json")
     build.add_argument("--matrix-docs-output", default="docs/generated/compatibility-matrix.md")
     build.add_argument("--history-docs-output", default="docs/generated/history.md")
     build.add_argument("--legacy-docs-output", default="docs/generated/legacy-windows.md")
+    build.add_argument("--version-history-docs-output", default="docs/generated/version-history.md")
     return parser.parse_args(argv)
 
 
@@ -227,6 +236,22 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
     for result in results:
         if result["status"] == "failed":
             print(f"Failed {result['source_id']}: {result['error']}")
+
+    version_config = config.get("version_history_sources", {}).get("therock")
+    if version_config:
+        version_history_path = getattr(args, "version_history_output", "data/version-history.json")
+        version_history, version_results = collect_therock_version_history(
+            version_config,
+            source_reader,
+            documentation["therock_windows_status"],
+            existing=read_json(version_history_path),
+            observed_at=observed_at,
+        )
+        results.extend(version_results)
+        if any(result["status"] == "passed" for result in version_results):
+            validate_version_history(version_history)
+            write_json(version_history, version_history_path)
+            print(f"Wrote {version_history_path}")
 
     selected = set(args.sources or [])
     sources = [source for source in config["artifact_sources"] if not selected or source["id"] in selected]
@@ -300,6 +325,9 @@ def normalize_therock(args, config):
     documentation_urls = [source["url"] for source in config["documentation_sources"]]
     selected = set(args.sources or [])
     artifact_prefixes = [source["url"] for source in config["artifact_sources"] if not selected or source["id"] in selected]
+    version_sources = config.get("version_history_sources", {}).get("therock")
+    if version_sources:
+        documentation_urls.extend((version_sources["releases"]["url"], version_sources["version"]["url"]))
     observed_at = source_reader.latest_observed_at(documentation_urls, artifact_prefixes)
     return normalize_therock_sources(args, config, source_reader, observed_at)
 
@@ -320,6 +348,21 @@ def normalize_legacy_sources(args, config, source_reader, observed_at, status_ou
     for result in results:
         if result["status"] == "failed":
             print(f"Failed {result['source_id']}: {result['error']}")
+    version_config = config.get("version_history_sources", {}).get("legacy")
+    if version_config:
+        version_history_path = getattr(args, "version_history_output", "data/version-history.json")
+        version_history, version_results = collect_legacy_version_history(
+            version_config,
+            source_reader,
+            legacy,
+            existing=read_json(version_history_path),
+            observed_at=observed_at,
+        )
+        results.extend(version_results)
+        if any(result["status"] == "passed" for result in version_results):
+            validate_version_history(version_history)
+            write_json(version_history, version_history_path)
+            print(f"Wrote {version_history_path}")
     if status_output:
         status = write_status("legacy", started_at, results, status_output)
         print(f"Wrote {status_output}")
@@ -341,6 +384,9 @@ def normalize_legacy(args, config):
     source_urls = [sources["hip_sdk_release_versions"]["url"]]
     source_urls.extend(source["url"] for source in sources["hip_sdk_gpu_support"])
     source_urls.extend(source["url"] for source in sources["pytorch_windows_support"])
+    version_sources = config.get("version_history_sources", {}).get("legacy")
+    if version_sources:
+        source_urls.extend((version_sources["rocm_releases"]["url"], version_sources["documentation_branches"]["url"]))
     observed_at = source_reader.latest_observed_at(source_urls, [sources["artifact_index"]["url"]])
     return normalize_legacy_sources(args, config, source_reader, observed_at)
 
@@ -371,11 +417,13 @@ def render_outputs(args):
     history = read_json(args.history_output)
     legacy = read_json(args.legacy_output)
     matrix = read_json(args.matrix_output)
-    if history is None or legacy is None or matrix is None:
-        raise SystemExit("Integrated matrix, history, and legacy evidence are required before rendering")
+    version_history = read_json(args.version_history_output)
+    if history is None or legacy is None or matrix is None or version_history is None:
+        raise SystemExit("Integrated matrix, history, legacy evidence, and version history are required before rendering")
     validate_history(history)
     validate_legacy_windows(legacy)
     validate_compatibility_matrix(matrix)
+    validate_version_history(version_history)
     snapshot_paths, _ = load_package_snapshots(args.output_dir)
 
     write_rendered_document(snapshot_paths, args.docs_output)
@@ -384,7 +432,10 @@ def render_outputs(args):
     legacy_path = Path(args.legacy_docs_output)
     legacy_path.parent.mkdir(parents=True, exist_ok=True)
     legacy_path.write_text(render_legacy_windows(legacy), encoding="utf-8", newline="\n")
-    for path in (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output):
+    version_history_path = Path(args.version_history_docs_output)
+    version_history_path.parent.mkdir(parents=True, exist_ok=True)
+    version_history_path.write_text(render_version_history(version_history), encoding="utf-8", newline="\n")
+    for path in (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output, args.version_history_docs_output):
         print(f"Wrote {path}")
 
 

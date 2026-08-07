@@ -35,7 +35,7 @@ class SourceCache:
     def __call__(self, url):
         with self.lock:
             previous = self.responses.get(url)
-        headers = {"User-Agent": USER_AGENT, "Accept": "text/html"}
+        headers = {"User-Agent": USER_AGENT, "Accept": "application/vnd.github+json, application/json;q=0.9, text/html;q=0.8"}
         cached_path = self.cache_dir / previous["sha256"] if previous else None
         if cached_path and cached_path.exists():
             if previous.get("etag"):

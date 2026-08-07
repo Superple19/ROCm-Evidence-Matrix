@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/version-history.schema.json",
+  "title": "Windows ROCm version history",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "sources", "releases", "therock_gpu_support"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "sources": {"type": "object"},
+    "releases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "distribution_family", "version", "release_date", "lifecycle", "windows_support", "documentation_status", "documentation_url", "source_ids", "gpu_support_observations", "framework_support_observations", "package_artifacts", "first_observed_at", "last_observed_at"],
+        "properties": {
+          "id": {"type": "string"},
+          "distribution_family": {"enum": ["therock", "legacy"]},
+          "version": {"type": "string"},
+          "release_date": {"type": ["string", "null"], "format": "date"},
+          "lifecycle": {"enum": ["current", "historical"]},
+          "windows_support": {"enum": ["supported", "unsupported", "unknown"]},
+          "documentation_status": {"enum": ["available", "archive_missing", "unknown"]},
+          "documentation_url": {"type": ["string", "null"], "format": "uri"},
+          "source_ids": {"type": "array", "items": {"type": "string"}},
+          "gpu_support_observations": {"type": "integer", "minimum": 0},
+          "framework_support_observations": {"type": "integer", "minimum": 0},
+          "package_artifacts": {"type": "integer", "minimum": 0},
+          "first_observed_at": {"type": "string", "format": "date-time"},
+          "last_observed_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    },
+    "therock_gpu_support": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["version", "distribution_family", "architecture", "gfx", "build_passing", "sanity_tested", "release_ready", "source_id"],
+        "properties": {
+          "version": {"type": "string"},
+          "distribution_family": {"const": "therock"},
+          "architecture": {"type": "string"},
+          "gfx": {"type": "string", "pattern": "^gfx[0-9a-z]+$"},
+          "build_passing": {"type": "boolean"},
+          "sanity_tested": {"type": "boolean"},
+          "release_ready": {"type": "boolean"},
+          "source_id": {"type": "string"}
+        }
+      }
+    }
+  }
+}

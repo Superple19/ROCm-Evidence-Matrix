@@ -201,6 +201,48 @@ def validate_collection_status(document):
             raise ValueError(f"Failed source lacks an error: {result['source_id']}")
 
 
+def validate_version_history(document):
+    if document.get("schema_version") != 1:
+        raise ValueError("Unsupported version history schema")
+    if not document.get("generated_at", "").endswith("Z"):
+        raise ValueError("Version history generation time must be UTC")
+    source_ids = set(document.get("sources", {}))
+    release_ids = set()
+    latest = {}
+    for release in document.get("releases", []):
+        if release["id"] in release_ids:
+            raise ValueError(f"Duplicate version history release: {release['id']}")
+        release_ids.add(release["id"])
+        if release["distribution_family"] not in {"therock", "legacy"}:
+            raise ValueError(f"Invalid version history family: {release['id']}")
+        if release["windows_support"] not in {"supported", "unsupported", "unknown"}:
+            raise ValueError(f"Invalid Windows support status: {release['id']}")
+        if release["documentation_status"] not in {"available", "archive_missing", "unknown"}:
+            raise ValueError(f"Invalid documentation status: {release['id']}")
+        if release["documentation_status"] == "available" and not release["documentation_url"]:
+            raise ValueError(f"Available documentation has no URL: {release['id']}")
+        if not set(release["source_ids"]).issubset(source_ids):
+            raise ValueError(f"Unknown version history source: {release['id']}")
+        if not release["first_observed_at"].endswith("Z") or not release["last_observed_at"].endswith("Z"):
+            raise ValueError(f"Invalid version history observation time: {release['id']}")
+        family = release["distribution_family"]
+        version = version_key(release["version"])
+        if family not in latest or version > latest[family]:
+            latest[family] = version
+    for release in document.get("releases", []):
+        expected = "current" if version_key(release["version"]) == latest[release["distribution_family"]] else "historical"
+        if release["lifecycle"] != expected:
+            raise ValueError(f"Incorrect version lifecycle: {release['id']}")
+    seen_gpu = set()
+    for support in document.get("therock_gpu_support", []):
+        key = (support["version"], support["gfx"])
+        if key in seen_gpu:
+            raise ValueError(f"Duplicate TheRock GPU history: {support['version']} {support['gfx']}")
+        seen_gpu.add(key)
+        if support["distribution_family"] != "therock" or support["source_id"] not in source_ids:
+            raise ValueError(f"Invalid TheRock GPU history source: {support['version']} {support['gfx']}")
+
+
 def validate_source_manifest(document):
     if document.get("schema_version") != 1:
         raise ValueError("Unsupported source manifest schema")

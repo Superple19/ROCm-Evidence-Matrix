@@ -1,64 +1,113 @@
 {
-  "completed_at": "2026-08-07T15:02:36Z",
+  "completed_at": "2026-08-07T15:36:41Z",
   "distribution_family": "therock",
   "results": [
     {
       "error": null,
-      "observed_at": "2026-08-07T15:02:14Z",
+      "observed_at": "2026-08-07T15:36:17Z",
       "source_id": "amd-gpu-specifications",
       "status": "passed",
       "url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst"
     },
     {
       "error": null,
-      "observed_at": "2026-08-07T15:02:20Z",
+      "observed_at": "2026-08-07T15:36:25Z",
       "source_id": "nightly",
       "status": "passed",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
     },
     {
       "error": null,
-      "observed_at": "2026-08-07T15:02:14Z",
+      "observed_at": "2026-08-07T15:36:17Z",
       "source_id": "pytorch-version-compatibility",
       "status": "passed",
       "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     },
     {
       "error": null,
-      "observed_at": "2026-08-07T15:02:14Z",
+      "observed_at": "2026-08-07T15:36:17Z",
       "source_id": "rocm-compatibility-matrix",
       "status": "passed",
       "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
     },
     {
       "error": null,
-      "observed_at": "2026-08-07T15:02:14Z",
+      "observed_at": "2026-08-07T15:36:19Z",
       "source_id": "stable",
       "status": "passed",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/"
     },
     {
       "error": null,
-      "observed_at": "2026-08-07T15:02:29Z",
+      "observed_at": "2026-08-07T15:36:34Z",
       "source_id": "staging",
       "status": "passed",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
     },
     {
       "error": null,
-      "observed_at": "2026-08-07T15:02:14Z",
+      "observed_at": "2026-08-07T15:36:17Z",
       "source_id": "therock-release-packaging",
       "status": "passed",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
     },
     {
       "error": null,
-      "observed_at": "2026-08-07T15:02:14Z",
+      "observed_at": "2026-08-07T15:36:17Z",
+      "source_id": "therock-releases",
+      "status": "passed",
+      "url": "https://api.github.com/repos/ROCm/TheRock/releases?per_page=100"
+    },
+    {
+      "error": null,
+      "observed_at": "2026-08-07T15:36:17Z",
       "source_id": "therock-supported-gpus",
       "status": "passed",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
+    },
+    {
+      "error": null,
+      "observed_at": "2026-08-07T15:36:17Z",
+      "source_id": "therock-supported-gpus-7.10",
+      "status": "passed",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.10/SUPPORTED_GPUS.md"
+    },
+    {
+      "error": null,
+      "observed_at": "2026-08-07T15:36:17Z",
+      "source_id": "therock-supported-gpus-7.11",
+      "status": "passed",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.11/SUPPORTED_GPUS.md"
+    },
+    {
+      "error": null,
+      "observed_at": "2026-08-07T15:36:17Z",
+      "source_id": "therock-supported-gpus-7.12",
+      "status": "passed",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.12/SUPPORTED_GPUS.md"
+    },
+    {
+      "error": null,
+      "observed_at": "2026-08-07T15:36:17Z",
+      "source_id": "therock-supported-gpus-7.13",
+      "status": "passed",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.13/SUPPORTED_GPUS.md"
+    },
+    {
+      "error": null,
+      "observed_at": "2026-08-07T15:36:17Z",
+      "source_id": "therock-supported-gpus-7.14",
+      "status": "passed",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.14/SUPPORTED_GPUS.md"
+    },
+    {
+      "error": null,
+      "observed_at": "2026-08-07T15:36:17Z",
+      "source_id": "therock-version",
+      "status": "passed",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/version.json"
     }
   ],
   "schema_version": 1,
-  "started_at": "2026-08-07T15:02:14Z"
+  "started_at": "2026-08-07T15:36:17Z"
 }

@@ -44,6 +44,32 @@
       "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     }
   ],
+  "version_history_sources": {
+    "therock": {
+      "releases": {
+        "id": "therock-releases",
+        "url": "https://api.github.com/repos/ROCm/TheRock/releases?per_page=100"
+      },
+      "version": {
+        "id": "therock-version",
+        "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/version.json"
+      },
+      "current_support": {
+        "id": "therock-supported-gpus",
+        "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
+      }
+    },
+    "legacy": {
+      "rocm_releases": {
+        "id": "rocm-release-history",
+        "url": "https://rocm.docs.amd.com/en/latest/release/versions.html"
+      },
+      "documentation_branches": {
+        "id": "windows-documentation-branches",
+        "url": "https://api.github.com/repos/ROCm/rocm-install-on-windows/branches?per_page=100"
+      }
+    }
+  },
   "legacy_windows_sources": {
     "artifact_index": {
       "id": "legacy-windows-artifacts",

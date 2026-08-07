@@ -67,11 +67,13 @@ Raw responses are stored by SHA-256 under the ignored `.cache/sources/` director
 
 Source adapters prefer official machine-readable data or source markup when available. Declared rendered-page fallbacks remain independently validated, and normalized source records identify the URL that succeeded and whether fallback was required.
 
-Package snapshots are written to `data/snapshots/`. Documentation evidence is written to `data/documentation.json`, legacy Windows evidence to `data/legacy-windows.json`, the append-only package catalog to `data/history.json`, and the integrated view to `data/matrix.json`. Generated Markdown is stored under `docs/generated/`.
+Package snapshots are written to `data/snapshots/`. Documentation evidence is written to `data/documentation.json`, legacy Windows evidence to `data/legacy-windows.json`, discovered release history to `data/version-history.json`, the append-only package catalog to `data/history.json`, and the integrated view to `data/matrix.json`. Generated Markdown is stored under `docs/generated/`.
 
 Each collection replaces the current snapshots and merges every observed compatible package set into the history catalog. A candidate remains in the catalog if its upstream artifact later disappears, while its current availability is updated separately.
 
 Historical candidates retain an immutable `distribution_family` (`therock` or `legacy`). The generated history view computes `lifecycle` as `current` for the newest known ROCm build within each distribution family and channel, and `historical` for older builds. Lifecycle is derived state and is not part of the source observation identity.
+
+Version discovery combines TheRock releases and `version.json` with the official ROCm release list and versioned Windows documentation branches. The resulting view keeps declared Windows support separate from documentation availability: `archive_missing` means that no matching archived document was discovered, while `unsupported` requires an explicit Windows support statement.
 
 Limit collection to one or more channels or GPU targets when developing a parser:
 

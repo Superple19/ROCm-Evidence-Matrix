@@ -58,7 +58,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260521:2.9.1+rocm7.14.0a20260521:0.24.0+rocm7.14.0a20260521:2.9.0+rocm7.14.0a20260521:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -131,7 +131,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260521:2.10.0+rocm7.14.0a20260521:0.25.0+rocm7.14.0a20260521:2.10.0+rocm7.14.0a20260521:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -204,7 +204,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260521:2.11.0+rocm7.14.0a20260521:0.26.0+rocm7.14.0a20260521:2.11.0a0+rocm7.14.0a20260521:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -277,7 +277,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260521:2.11.0+rocm7.14.0a20260521:0.26.0+rocm7.14.0a20260521:2.11.0+rocm7.14.0a20260521:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -350,7 +350,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260521:2.12.0+rocm7.14.0a20260521:0.27.0+rocm7.14.0a20260521:2.11.0a0+rocm7.14.0a20260521:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -423,7 +423,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260521:2.12.0+rocm7.14.0a20260521:0.27.0+rocm7.14.0a20260521:2.11.0+rocm7.14.0a20260521:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -496,7 +496,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260521:2.13.0a0+rocm7.14.0a20260521:0.28.0a0+rocm7.14.0a20260521:2.11.0a0+rocm7.14.0a20260521:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -569,7 +569,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260521:2.13.0a0+rocm7.14.0a20260521:0.28.0a0+rocm7.14.0a20260521:2.11.0+rocm7.14.0a20260521:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -642,7 +642,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260522:2.9.1+rocm7.14.0a20260522:0.24.0+rocm7.14.0a20260522:2.9.0+rocm7.14.0a20260522:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -715,7 +715,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260522:2.10.0+rocm7.14.0a20260522:0.25.0+rocm7.14.0a20260522:2.10.0+rocm7.14.0a20260522:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -788,7 +788,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260522:2.11.0+rocm7.14.0a20260522:0.26.0+rocm7.14.0a20260522:2.11.0a0+rocm7.14.0a20260522:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -861,7 +861,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260522:2.11.0+rocm7.14.0a20260522:0.26.0+rocm7.14.0a20260522:2.11.0+rocm7.14.0a20260522:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -934,7 +934,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260522:2.12.0+rocm7.14.0a20260522:0.27.0+rocm7.14.0a20260522:2.11.0a0+rocm7.14.0a20260522:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -1007,7 +1007,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260522:2.12.0+rocm7.14.0a20260522:0.27.0+rocm7.14.0a20260522:2.11.0+rocm7.14.0a20260522:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -1080,7 +1080,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260524:2.9.1+rocm7.14.0a20260524:0.24.0+rocm7.14.0a20260524:2.9.0+rocm7.14.0a20260524:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -1153,7 +1153,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260524:2.10.0+rocm7.14.0a20260524:0.25.0+rocm7.14.0a20260524:2.10.0+rocm7.14.0a20260524:cp310,cp311,cp312,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -1225,7 +1225,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260524:2.11.0+rocm7.14.0a20260524:0.26.0+rocm7.14.0a20260524:2.11.0a0+rocm7.14.0a20260524:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -1298,7 +1298,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260524:2.11.0+rocm7.14.0a20260524:0.26.0+rocm7.14.0a20260524:2.11.0+rocm7.14.0a20260524:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -1371,7 +1371,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260524:2.12.0+rocm7.14.0a20260524:0.27.0+rocm7.14.0a20260524:2.11.0a0+rocm7.14.0a20260524:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -1444,7 +1444,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260524:2.12.0+rocm7.14.0a20260524:0.27.0+rocm7.14.0a20260524:2.11.0+rocm7.14.0a20260524:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -1517,7 +1517,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260525:2.9.1+rocm7.14.0a20260525:0.24.0+rocm7.14.0a20260525:2.9.0+rocm7.14.0a20260525:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -1590,7 +1590,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260525:2.10.0+rocm7.14.0a20260525:0.25.0+rocm7.14.0a20260525:2.10.0+rocm7.14.0a20260525:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -1663,7 +1663,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260525:2.11.0+rocm7.14.0a20260525:0.26.0+rocm7.14.0a20260525:2.11.0a0+rocm7.14.0a20260525:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -1736,7 +1736,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260525:2.11.0+rocm7.14.0a20260525:0.26.0+rocm7.14.0a20260525:2.11.0+rocm7.14.0a20260525:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -1809,7 +1809,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260525:2.12.0+rocm7.14.0a20260525:0.27.0+rocm7.14.0a20260525:2.11.0a0+rocm7.14.0a20260525:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -1882,7 +1882,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260525:2.12.0+rocm7.14.0a20260525:0.27.0+rocm7.14.0a20260525:2.11.0+rocm7.14.0a20260525:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -1955,7 +1955,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260526:2.9.1+rocm7.14.0a20260526:0.24.0+rocm7.14.0a20260526:2.9.0+rocm7.14.0a20260526:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -2028,7 +2028,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260526:2.10.0+rocm7.14.0a20260526:0.25.0+rocm7.14.0a20260526:2.10.0+rocm7.14.0a20260526:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -2101,7 +2101,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260526:2.11.0+rocm7.14.0a20260526:0.26.0+rocm7.14.0a20260526:2.11.0a0+rocm7.14.0a20260526:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -2174,7 +2174,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260526:2.11.0+rocm7.14.0a20260526:0.26.0+rocm7.14.0a20260526:2.11.0+rocm7.14.0a20260526:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -2247,7 +2247,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260526:2.12.0+rocm7.14.0a20260526:0.27.0+rocm7.14.0a20260526:2.11.0a0+rocm7.14.0a20260526:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -2320,7 +2320,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260526:2.12.0+rocm7.14.0a20260526:0.27.0+rocm7.14.0a20260526:2.11.0+rocm7.14.0a20260526:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -2393,7 +2393,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260527:2.9.1+rocm7.14.0a20260527:0.24.0+rocm7.14.0a20260527:2.9.0+rocm7.14.0a20260527:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -2466,7 +2466,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260527:2.10.0+rocm7.14.0a20260527:0.25.0+rocm7.14.0a20260527:2.10.0+rocm7.14.0a20260527:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -2539,7 +2539,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260527:2.11.0+rocm7.14.0a20260527:0.26.0+rocm7.14.0a20260527:2.11.0a0+rocm7.14.0a20260527:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -2612,7 +2612,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260527:2.11.0+rocm7.14.0a20260527:0.26.0+rocm7.14.0a20260527:2.11.0+rocm7.14.0a20260527:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -2685,7 +2685,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260527:2.12.0+rocm7.14.0a20260527:0.27.0+rocm7.14.0a20260527:2.11.0a0+rocm7.14.0a20260527:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -2758,7 +2758,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260527:2.12.0+rocm7.14.0a20260527:0.27.0+rocm7.14.0a20260527:2.11.0+rocm7.14.0a20260527:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -2831,7 +2831,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260527:2.13.0a0+rocm7.14.0a20260527:0.28.0a0+rocm7.14.0a20260527:2.11.0a0+rocm7.14.0a20260527:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -2904,7 +2904,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260527:2.13.0a0+rocm7.14.0a20260527:0.28.0a0+rocm7.14.0a20260527:2.11.0+rocm7.14.0a20260527:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -2977,7 +2977,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260528:2.9.1+rocm7.14.0a20260528:0.24.0+rocm7.14.0a20260528:2.9.0+rocm7.14.0a20260528:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -3050,7 +3050,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260528:2.10.0+rocm7.14.0a20260528:0.25.0+rocm7.14.0a20260528:2.10.0+rocm7.14.0a20260528:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -3123,7 +3123,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260528:2.11.0+rocm7.14.0a20260528:0.26.0+rocm7.14.0a20260528:2.11.0a0+rocm7.14.0a20260528:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -3196,7 +3196,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260528:2.11.0+rocm7.14.0a20260528:0.26.0+rocm7.14.0a20260528:2.11.0+rocm7.14.0a20260528:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -3269,7 +3269,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260528:2.12.0+rocm7.14.0a20260528:0.27.0+rocm7.14.0a20260528:2.11.0a0+rocm7.14.0a20260528:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -3342,7 +3342,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260528:2.12.0+rocm7.14.0a20260528:0.27.0+rocm7.14.0a20260528:2.11.0+rocm7.14.0a20260528:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -3415,7 +3415,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260529:2.9.1+rocm7.14.0a20260529:0.24.0+rocm7.14.0a20260529:2.9.0+rocm7.14.0a20260529:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -3488,7 +3488,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260529:2.10.0+rocm7.14.0a20260529:0.25.0+rocm7.14.0a20260529:2.10.0+rocm7.14.0a20260529:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -3561,7 +3561,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260529:2.11.0+rocm7.14.0a20260529:0.26.0+rocm7.14.0a20260529:2.11.0a0+rocm7.14.0a20260529:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -3634,7 +3634,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260529:2.11.0+rocm7.14.0a20260529:0.26.0+rocm7.14.0a20260529:2.11.0+rocm7.14.0a20260529:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -3707,7 +3707,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260529:2.12.0+rocm7.14.0a20260529:0.27.0+rocm7.14.0a20260529:2.11.0a0+rocm7.14.0a20260529:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -3780,7 +3780,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260529:2.12.0+rocm7.14.0a20260529:0.27.0+rocm7.14.0a20260529:2.11.0+rocm7.14.0a20260529:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -3853,7 +3853,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260531:2.9.1+rocm7.14.0a20260531:0.24.0+rocm7.14.0a20260531:2.9.0+rocm7.14.0a20260531:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -3926,7 +3926,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260531:2.10.0+rocm7.14.0a20260531:0.25.0+rocm7.14.0a20260531:2.10.0+rocm7.14.0a20260531:cp310,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -3998,7 +3998,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260531:2.11.0+rocm7.14.0a20260531:0.26.0+rocm7.14.0a20260531:2.11.0a0+rocm7.14.0a20260531:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -4071,7 +4071,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260531:2.11.0+rocm7.14.0a20260531:0.26.0+rocm7.14.0a20260531:2.11.0+rocm7.14.0a20260531:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -4144,7 +4144,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260531:2.12.0+rocm7.14.0a20260531:0.27.0+rocm7.14.0a20260531:2.11.0a0+rocm7.14.0a20260531:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -4217,7 +4217,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260531:2.12.0+rocm7.14.0a20260531:0.27.0+rocm7.14.0a20260531:2.11.0+rocm7.14.0a20260531:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -4290,7 +4290,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260601:2.9.1+rocm7.14.0a20260601:0.24.0+rocm7.14.0a20260601:2.9.0+rocm7.14.0a20260601:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -4363,7 +4363,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260601:2.10.0+rocm7.14.0a20260601:0.25.0+rocm7.14.0a20260601:2.10.0+rocm7.14.0a20260601:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -4436,7 +4436,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260601:2.11.0+rocm7.14.0a20260601:0.26.0+rocm7.14.0a20260601:2.11.0a0+rocm7.14.0a20260601:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -4509,7 +4509,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260601:2.11.0+rocm7.14.0a20260601:0.26.0+rocm7.14.0a20260601:2.11.0+rocm7.14.0a20260601:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -4582,7 +4582,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260601:2.12.0+rocm7.14.0a20260601:0.27.0+rocm7.14.0a20260601:2.11.0a0+rocm7.14.0a20260601:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -4655,7 +4655,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260601:2.12.0+rocm7.14.0a20260601:0.27.0+rocm7.14.0a20260601:2.11.0+rocm7.14.0a20260601:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -4728,7 +4728,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260602:2.9.1+rocm7.14.0a20260602:0.24.0+rocm7.14.0a20260602:2.9.0+rocm7.14.0a20260602:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -4801,7 +4801,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260602:2.10.0+rocm7.14.0a20260602:0.25.0+rocm7.14.0a20260602:2.10.0+rocm7.14.0a20260602:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -4874,7 +4874,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260602:2.11.0+rocm7.14.0a20260602:0.26.0+rocm7.14.0a20260602:2.11.0a0+rocm7.14.0a20260602:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -4947,7 +4947,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260602:2.11.0+rocm7.14.0a20260602:0.26.0+rocm7.14.0a20260602:2.11.0+rocm7.14.0a20260602:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -5020,7 +5020,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260602:2.12.0+rocm7.14.0a20260602:0.27.0+rocm7.14.0a20260602:2.11.0a0+rocm7.14.0a20260602:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -5093,7 +5093,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260602:2.12.0+rocm7.14.0a20260602:0.27.0+rocm7.14.0a20260602:2.11.0+rocm7.14.0a20260602:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -5166,7 +5166,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260603:2.9.1+rocm7.14.0a20260603:0.24.0+rocm7.14.0a20260603:2.9.0+rocm7.14.0a20260603:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -5239,7 +5239,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260603:2.10.0+rocm7.14.0a20260603:0.25.0+rocm7.14.0a20260603:2.10.0+rocm7.14.0a20260603:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -5312,7 +5312,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260603:2.11.0+rocm7.14.0a20260603:0.26.0+rocm7.14.0a20260603:2.11.0a0+rocm7.14.0a20260603:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -5385,7 +5385,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260603:2.11.0+rocm7.14.0a20260603:0.26.0+rocm7.14.0a20260603:2.11.0+rocm7.14.0a20260603:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -5458,7 +5458,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260603:2.12.0+rocm7.14.0a20260603:0.27.0+rocm7.14.0a20260603:2.11.0a0+rocm7.14.0a20260603:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -5531,7 +5531,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260603:2.12.0+rocm7.14.0a20260603:0.27.0+rocm7.14.0a20260603:2.11.0+rocm7.14.0a20260603:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -5604,7 +5604,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260604:2.9.1+rocm7.14.0a20260604:0.24.0+rocm7.14.0a20260604:2.9.0+rocm7.14.0a20260604:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -5677,7 +5677,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260604:2.10.0+rocm7.14.0a20260604:0.25.0+rocm7.14.0a20260604:2.10.0+rocm7.14.0a20260604:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -5750,7 +5750,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260604:2.11.0+rocm7.14.0a20260604:0.26.0+rocm7.14.0a20260604:2.11.0a0+rocm7.14.0a20260604:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -5823,7 +5823,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260604:2.11.0+rocm7.14.0a20260604:0.26.0+rocm7.14.0a20260604:2.11.0+rocm7.14.0a20260604:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -5896,7 +5896,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260604:2.12.0+rocm7.14.0a20260604:0.27.0+rocm7.14.0a20260604:2.11.0a0+rocm7.14.0a20260604:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -5969,7 +5969,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260604:2.12.0+rocm7.14.0a20260604:0.27.0+rocm7.14.0a20260604:2.11.0+rocm7.14.0a20260604:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -6042,7 +6042,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260605:2.9.1+rocm7.14.0a20260605:0.24.0+rocm7.14.0a20260605:2.9.0+rocm7.14.0a20260605:cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp311",
@@ -6114,7 +6114,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260605:2.10.0+rocm7.14.0a20260605:0.25.0+rocm7.14.0a20260605:2.10.0+rocm7.14.0a20260605:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -6187,7 +6187,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260605:2.11.0+rocm7.14.0a20260605:0.26.0+rocm7.14.0a20260605:2.11.0a0+rocm7.14.0a20260605:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -6260,7 +6260,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260605:2.11.0+rocm7.14.0a20260605:0.26.0+rocm7.14.0a20260605:2.11.0+rocm7.14.0a20260605:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -6333,7 +6333,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260605:2.12.0+rocm7.14.0a20260605:0.27.0+rocm7.14.0a20260605:2.11.0a0+rocm7.14.0a20260605:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -6406,7 +6406,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260605:2.12.0+rocm7.14.0a20260605:0.27.0+rocm7.14.0a20260605:2.11.0+rocm7.14.0a20260605:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -6479,7 +6479,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260606:2.9.1+rocm7.14.0a20260606:0.24.0+rocm7.14.0a20260606:2.9.0+rocm7.14.0a20260606:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -6552,7 +6552,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260606:2.10.0+rocm7.14.0a20260606:0.25.0+rocm7.14.0a20260606:2.10.0+rocm7.14.0a20260606:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -6625,7 +6625,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260606:2.11.0+rocm7.14.0a20260606:0.26.0+rocm7.14.0a20260606:2.11.0a0+rocm7.14.0a20260606:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -6698,7 +6698,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260606:2.11.0+rocm7.14.0a20260606:0.26.0+rocm7.14.0a20260606:2.11.0+rocm7.14.0a20260606:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -6771,7 +6771,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260606:2.12.0+rocm7.14.0a20260606:0.27.0+rocm7.14.0a20260606:2.11.0a0+rocm7.14.0a20260606:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -6844,7 +6844,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260606:2.12.0+rocm7.14.0a20260606:0.27.0+rocm7.14.0a20260606:2.11.0+rocm7.14.0a20260606:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -6917,7 +6917,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260607:2.9.1+rocm7.14.0a20260607:0.24.0+rocm7.14.0a20260607:2.9.0+rocm7.14.0a20260607:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -6990,7 +6990,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260607:2.10.0+rocm7.14.0a20260607:0.25.0+rocm7.14.0a20260607:2.10.0+rocm7.14.0a20260607:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -7063,7 +7063,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260607:2.11.0+rocm7.14.0a20260607:0.26.0+rocm7.14.0a20260607:2.11.0a0+rocm7.14.0a20260607:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -7136,7 +7136,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260607:2.11.0+rocm7.14.0a20260607:0.26.0+rocm7.14.0a20260607:2.11.0+rocm7.14.0a20260607:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -7209,7 +7209,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260607:2.12.0+rocm7.14.0a20260607:0.27.0+rocm7.14.0a20260607:2.11.0a0+rocm7.14.0a20260607:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -7282,7 +7282,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260607:2.12.0+rocm7.14.0a20260607:0.27.0+rocm7.14.0a20260607:2.11.0+rocm7.14.0a20260607:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -7355,7 +7355,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260608:2.9.1+rocm7.14.0a20260608:0.24.0+rocm7.14.0a20260608:2.9.0+rocm7.14.0a20260608:cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp312",
@@ -7426,7 +7426,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260608:2.10.0+rocm7.14.0a20260608:0.25.0+rocm7.14.0a20260608:2.10.0+rocm7.14.0a20260608:cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp311",
@@ -7498,7 +7498,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260608:2.11.0+rocm7.14.0a20260608:0.26.0+rocm7.14.0a20260608:2.11.0a0+rocm7.14.0a20260608:cp310,cp312,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -7569,7 +7569,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260608:2.11.0+rocm7.14.0a20260608:0.26.0+rocm7.14.0a20260608:2.11.0+rocm7.14.0a20260608:cp310,cp312,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -7640,7 +7640,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260608:2.12.0+rocm7.14.0a20260608:0.27.0+rocm7.14.0a20260608:2.11.0a0+rocm7.14.0a20260608:cp310,cp311,cp312,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -7712,7 +7712,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260608:2.12.0+rocm7.14.0a20260608:0.27.0+rocm7.14.0a20260608:2.11.0+rocm7.14.0a20260608:cp310,cp312,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -7783,7 +7783,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260611:2.9.1+rocm7.14.0a20260611:0.24.0+rocm7.14.0a20260611:2.9.0+rocm7.14.0a20260611:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -7856,7 +7856,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260611:2.10.0+rocm7.14.0a20260611:0.25.0+rocm7.14.0a20260611:2.10.0+rocm7.14.0a20260611:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -7929,7 +7929,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260611:2.11.0+rocm7.14.0a20260611:0.26.0+rocm7.14.0a20260611:2.11.0a0+rocm7.14.0a20260611:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -8002,7 +8002,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260611:2.11.0+rocm7.14.0a20260611:0.26.0+rocm7.14.0a20260611:2.11.0+rocm7.14.0a20260611:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -8075,7 +8075,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260611:2.12.0+rocm7.14.0a20260611:0.27.0+rocm7.14.0a20260611:2.11.0a0+rocm7.14.0a20260611:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -8148,7 +8148,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260611:2.12.0+rocm7.14.0a20260611:0.27.0+rocm7.14.0a20260611:2.11.0+rocm7.14.0a20260611:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -8221,7 +8221,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260612:2.9.1+rocm7.14.0a20260612:0.24.0+rocm7.14.0a20260612:2.9.0+rocm7.14.0a20260612:cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp311",
@@ -8293,7 +8293,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260612:2.10.0+rocm7.14.0a20260612:0.25.0+rocm7.14.0a20260612:2.10.0+rocm7.14.0a20260612:cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp311",
@@ -8365,7 +8365,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260612:2.11.0+rocm7.14.0a20260612:0.26.0+rocm7.14.0a20260612:2.11.0a0+rocm7.14.0a20260612:cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp311",
@@ -8437,7 +8437,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260612:2.11.0+rocm7.14.0a20260612:0.26.0+rocm7.14.0a20260612:2.11.0+rocm7.14.0a20260612:cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp311",
@@ -8509,7 +8509,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260612:2.12.0+rocm7.14.0a20260612:0.27.0+rocm7.14.0a20260612:2.11.0a0+rocm7.14.0a20260612:cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp311",
@@ -8581,7 +8581,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260612:2.12.0+rocm7.14.0a20260612:0.27.0+rocm7.14.0a20260612:2.11.0+rocm7.14.0a20260612:cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp311",
@@ -8653,7 +8653,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260614:2.9.1+rocm7.14.0a20260614:0.24.0+rocm7.14.0a20260614:2.9.0+rocm7.14.0a20260614:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -8726,7 +8726,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260614:2.10.0+rocm7.14.0a20260614:0.25.0+rocm7.14.0a20260614:2.10.0+rocm7.14.0a20260614:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -8799,7 +8799,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260614:2.11.0+rocm7.14.0a20260614:0.26.0+rocm7.14.0a20260614:2.11.0a0+rocm7.14.0a20260614:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -8872,7 +8872,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260614:2.11.0+rocm7.14.0a20260614:0.26.0+rocm7.14.0a20260614:2.11.0+rocm7.14.0a20260614:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -8945,7 +8945,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260614:2.12.0+rocm7.14.0a20260614:0.27.0+rocm7.14.0a20260614:2.11.0a0+rocm7.14.0a20260614:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -9018,7 +9018,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260614:2.12.0+rocm7.14.0a20260614:0.27.0+rocm7.14.0a20260614:2.11.0+rocm7.14.0a20260614:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -9091,7 +9091,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260615:2.9.1+rocm7.14.0a20260615:0.24.0+rocm7.14.0a20260615:2.9.0+rocm7.14.0a20260615:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -9164,7 +9164,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260615:2.10.0+rocm7.14.0a20260615:0.25.0+rocm7.14.0a20260615:2.10.0+rocm7.14.0a20260615:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -9237,7 +9237,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260615:2.11.0+rocm7.14.0a20260615:0.26.0+rocm7.14.0a20260615:2.11.0a0+rocm7.14.0a20260615:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -9310,7 +9310,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260615:2.11.0+rocm7.14.0a20260615:0.26.0+rocm7.14.0a20260615:2.11.0+rocm7.14.0a20260615:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -9383,7 +9383,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260615:2.12.0+rocm7.14.0a20260615:0.27.0+rocm7.14.0a20260615:2.11.0a0+rocm7.14.0a20260615:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -9456,7 +9456,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260615:2.12.0+rocm7.14.0a20260615:0.27.0+rocm7.14.0a20260615:2.11.0+rocm7.14.0a20260615:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -9529,7 +9529,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260616:2.11.0+rocm7.14.0a20260616:0.26.0+rocm7.14.0a20260616:2.11.0+rocm7.14.0a20260616:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -9602,7 +9602,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260617:2.9.1+rocm7.14.0a20260617:0.24.0+rocm7.14.0a20260617:2.9.0+rocm7.14.0a20260617:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -9675,7 +9675,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260617:2.10.0+rocm7.14.0a20260617:0.25.0+rocm7.14.0a20260617:2.10.0+rocm7.14.0a20260617:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -9748,7 +9748,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260617:2.11.0+rocm7.14.0a20260617:0.26.0+rocm7.14.0a20260617:2.11.0a0+rocm7.14.0a20260617:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -9821,7 +9821,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260617:2.11.0+rocm7.14.0a20260617:0.26.0+rocm7.14.0a20260617:2.11.0+rocm7.14.0a20260617:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -9894,7 +9894,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260617:2.12.0+rocm7.14.0a20260617:0.27.0+rocm7.14.0a20260617:2.11.0a0+rocm7.14.0a20260617:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -9967,7 +9967,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260617:2.12.0+rocm7.14.0a20260617:0.27.0+rocm7.14.0a20260617:2.11.0+rocm7.14.0a20260617:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -10040,7 +10040,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260618:2.9.1+rocm7.14.0a20260618:0.24.0+rocm7.14.0a20260618:2.9.0+rocm7.14.0a20260618:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -10113,7 +10113,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260618:2.10.0+rocm7.14.0a20260618:0.25.0+rocm7.14.0a20260618:2.10.0+rocm7.14.0a20260618:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -10186,7 +10186,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260618:2.11.0+rocm7.14.0a20260618:0.26.0+rocm7.14.0a20260618:2.11.0a0+rocm7.14.0a20260618:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -10259,7 +10259,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260618:2.11.0+rocm7.14.0a20260618:0.26.0+rocm7.14.0a20260618:2.11.0+rocm7.14.0a20260618:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -10332,7 +10332,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260618:2.12.0+rocm7.14.0a20260618:0.27.0+rocm7.14.0a20260618:2.11.0a0+rocm7.14.0a20260618:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -10405,7 +10405,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260618:2.12.0+rocm7.14.0a20260618:0.27.0+rocm7.14.0a20260618:2.11.0+rocm7.14.0a20260618:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -10478,7 +10478,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260620:2.9.1+rocm7.14.0a20260620:0.24.0+rocm7.14.0a20260620:2.9.0+rocm7.14.0a20260620:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -10551,7 +10551,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260620:2.10.0+rocm7.14.0a20260620:0.25.0+rocm7.14.0a20260620:2.10.0+rocm7.14.0a20260620:cp310,cp311,cp312,cp313",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -10623,7 +10623,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260620:2.11.0+rocm7.14.0a20260620:0.26.0+rocm7.14.0a20260620:2.11.0a0+rocm7.14.0a20260620:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -10696,7 +10696,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260620:2.11.0+rocm7.14.0a20260620:0.26.0+rocm7.14.0a20260620:2.11.0+rocm7.14.0a20260620:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -10769,7 +10769,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260620:2.12.0+rocm7.14.0a20260620:0.27.0+rocm7.14.0a20260620:2.11.0a0+rocm7.14.0a20260620:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -10842,7 +10842,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260620:2.12.0+rocm7.14.0a20260620:0.27.0+rocm7.14.0a20260620:2.11.0+rocm7.14.0a20260620:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -10915,7 +10915,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260623:2.9.1+rocm7.14.0a20260623:0.24.0+rocm7.14.0a20260623:2.9.0+rocm7.14.0a20260623:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -10988,7 +10988,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260623:2.10.0+rocm7.14.0a20260623:0.25.0+rocm7.14.0a20260623:2.10.0+rocm7.14.0a20260623:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -11061,7 +11061,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260623:2.11.0+rocm7.14.0a20260623:0.26.0+rocm7.14.0a20260623:2.11.0a0+rocm7.14.0a20260623:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -11134,7 +11134,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260623:2.11.0+rocm7.14.0a20260623:0.26.0+rocm7.14.0a20260623:2.11.0+rocm7.14.0a20260623:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -11207,7 +11207,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260623:2.12.0+rocm7.14.0a20260623:0.27.0+rocm7.14.0a20260623:2.11.0a0+rocm7.14.0a20260623:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -11280,7 +11280,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260623:2.12.0+rocm7.14.0a20260623:0.27.0+rocm7.14.0a20260623:2.11.0+rocm7.14.0a20260623:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -11353,7 +11353,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260624:2.9.1+rocm7.14.0a20260624:0.24.0+rocm7.14.0a20260624:2.9.0+rocm7.14.0a20260624:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -11426,7 +11426,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260624:2.10.0+rocm7.14.0a20260624:0.25.0+rocm7.14.0a20260624:2.10.0+rocm7.14.0a20260624:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -11499,7 +11499,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260624:2.11.0+rocm7.14.0a20260624:0.26.0+rocm7.14.0a20260624:2.11.0a0+rocm7.14.0a20260624:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -11572,7 +11572,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260624:2.11.0+rocm7.14.0a20260624:0.26.0+rocm7.14.0a20260624:2.11.0+rocm7.14.0a20260624:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -11645,7 +11645,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260624:2.12.0+rocm7.14.0a20260624:0.27.0+rocm7.14.0a20260624:2.11.0a0+rocm7.14.0a20260624:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -11718,7 +11718,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260624:2.12.0+rocm7.14.0a20260624:0.27.0+rocm7.14.0a20260624:2.11.0+rocm7.14.0a20260624:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -11791,7 +11791,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260624:2.14.0a0+rocm7.14.0a20260624:0.29.0a0+rocm7.14.0a20260624:2.11.0a0+rocm7.14.0a20260624:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -11864,7 +11864,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.14.0a20260624:2.14.0a0+rocm7.14.0a20260624:0.29.0a0+rocm7.14.0a20260624:2.11.0+rocm7.14.0a20260624:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -11937,7 +11937,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260626:2.9.1+rocm7.15.0a20260626:0.24.0+rocm7.15.0a20260626:2.9.0+rocm7.15.0a20260626:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -12010,7 +12010,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260626:2.10.0+rocm7.15.0a20260626:0.25.0+rocm7.15.0a20260626:2.10.0+rocm7.15.0a20260626:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -12083,7 +12083,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260626:2.11.0+rocm7.15.0a20260626:0.26.0+rocm7.15.0a20260626:2.11.0a0+rocm7.15.0a20260626:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -12156,7 +12156,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260626:2.11.0+rocm7.15.0a20260626:0.26.0+rocm7.15.0a20260626:2.11.0+rocm7.15.0a20260626:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -12229,7 +12229,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260626:2.12.0+rocm7.15.0a20260626:0.27.0+rocm7.15.0a20260626:2.11.0a0+rocm7.15.0a20260626:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -12302,7 +12302,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260626:2.12.0+rocm7.15.0a20260626:0.27.0+rocm7.15.0a20260626:2.11.0+rocm7.15.0a20260626:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -12375,7 +12375,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260626:2.14.0a0+rocm7.15.0a20260626:0.29.0a0+rocm7.15.0a20260626:2.11.0a0+rocm7.15.0a20260626:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -12448,7 +12448,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260626:2.14.0a0+rocm7.15.0a20260626:0.29.0a0+rocm7.15.0a20260626:2.11.0+rocm7.15.0a20260626:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -12521,7 +12521,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260627:2.9.1+rocm7.15.0a20260627:0.24.0+rocm7.15.0a20260627:2.9.0+rocm7.15.0a20260627:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -12594,7 +12594,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260627:2.10.0+rocm7.15.0a20260627:0.25.0+rocm7.15.0a20260627:2.10.0+rocm7.15.0a20260627:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -12667,7 +12667,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260627:2.11.0+rocm7.15.0a20260627:0.26.0+rocm7.15.0a20260627:2.11.0a0+rocm7.15.0a20260627:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -12740,7 +12740,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260627:2.11.0+rocm7.15.0a20260627:0.26.0+rocm7.15.0a20260627:2.11.0+rocm7.15.0a20260627:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -12813,7 +12813,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260627:2.12.0+rocm7.15.0a20260627:0.27.0+rocm7.15.0a20260627:2.11.0a0+rocm7.15.0a20260627:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -12886,7 +12886,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260627:2.12.0+rocm7.15.0a20260627:0.27.0+rocm7.15.0a20260627:2.11.0+rocm7.15.0a20260627:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -12959,7 +12959,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260627:2.14.0a0+rocm7.15.0a20260627:0.29.0a0+rocm7.15.0a20260627:2.11.0a0+rocm7.15.0a20260627:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -13032,7 +13032,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260627:2.14.0a0+rocm7.15.0a20260627:0.29.0a0+rocm7.15.0a20260627:2.11.0+rocm7.15.0a20260627:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -13105,7 +13105,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260628:2.9.1+rocm7.15.0a20260628:0.24.0+rocm7.15.0a20260628:2.9.0+rocm7.15.0a20260628:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -13178,7 +13178,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260628:2.10.0+rocm7.15.0a20260628:0.25.0+rocm7.15.0a20260628:2.10.0+rocm7.15.0a20260628:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -13251,7 +13251,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260628:2.11.0+rocm7.15.0a20260628:0.26.0+rocm7.15.0a20260628:2.11.0a0+rocm7.15.0a20260628:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -13324,7 +13324,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260628:2.11.0+rocm7.15.0a20260628:0.26.0+rocm7.15.0a20260628:2.11.0+rocm7.15.0a20260628:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -13397,7 +13397,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260628:2.12.0+rocm7.15.0a20260628:0.27.0+rocm7.15.0a20260628:2.11.0a0+rocm7.15.0a20260628:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -13470,7 +13470,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260628:2.12.0+rocm7.15.0a20260628:0.27.0+rocm7.15.0a20260628:2.11.0+rocm7.15.0a20260628:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -13543,7 +13543,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260628:2.14.0a0+rocm7.15.0a20260628:0.29.0a0+rocm7.15.0a20260628:2.11.0a0+rocm7.15.0a20260628:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -13616,7 +13616,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260628:2.14.0a0+rocm7.15.0a20260628:0.29.0a0+rocm7.15.0a20260628:2.11.0+rocm7.15.0a20260628:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -13689,7 +13689,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260629:2.9.1+rocm7.15.0a20260629:0.24.0+rocm7.15.0a20260629:2.9.0+rocm7.15.0a20260629:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -13762,7 +13762,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260629:2.10.0+rocm7.15.0a20260629:0.25.0+rocm7.15.0a20260629:2.10.0+rocm7.15.0a20260629:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -13835,7 +13835,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260629:2.11.0+rocm7.15.0a20260629:0.26.0+rocm7.15.0a20260629:2.11.0a0+rocm7.15.0a20260629:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -13908,7 +13908,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260629:2.11.0+rocm7.15.0a20260629:0.26.0+rocm7.15.0a20260629:2.11.0+rocm7.15.0a20260629:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -13981,7 +13981,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260629:2.12.0+rocm7.15.0a20260629:0.27.0+rocm7.15.0a20260629:2.11.0a0+rocm7.15.0a20260629:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -14054,7 +14054,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260629:2.12.0+rocm7.15.0a20260629:0.27.0+rocm7.15.0a20260629:2.11.0+rocm7.15.0a20260629:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -14127,7 +14127,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260629:2.14.0a0+rocm7.15.0a20260629:0.29.0a0+rocm7.15.0a20260629:2.11.0a0+rocm7.15.0a20260629:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -14200,7 +14200,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260629:2.14.0a0+rocm7.15.0a20260629:0.29.0a0+rocm7.15.0a20260629:2.11.0+rocm7.15.0a20260629:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -14273,7 +14273,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260630:2.9.1+rocm7.15.0a20260630:0.24.0+rocm7.15.0a20260630:2.9.0+rocm7.15.0a20260630:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -14346,7 +14346,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260630:2.10.0+rocm7.15.0a20260630:0.25.0+rocm7.15.0a20260630:2.10.0+rocm7.15.0a20260630:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -14419,7 +14419,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260630:2.11.0+rocm7.15.0a20260630:0.26.0+rocm7.15.0a20260630:2.11.0a0+rocm7.15.0a20260630:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -14492,7 +14492,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260630:2.11.0+rocm7.15.0a20260630:0.26.0+rocm7.15.0a20260630:2.11.0+rocm7.15.0a20260630:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -14565,7 +14565,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260630:2.12.0+rocm7.15.0a20260630:0.27.0+rocm7.15.0a20260630:2.11.0a0+rocm7.15.0a20260630:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -14638,7 +14638,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260630:2.12.0+rocm7.15.0a20260630:0.27.0+rocm7.15.0a20260630:2.11.0+rocm7.15.0a20260630:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -14711,7 +14711,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260630:2.14.0a0+rocm7.15.0a20260630:0.29.0a0+rocm7.15.0a20260630:2.11.0a0+rocm7.15.0a20260630:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -14784,7 +14784,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260630:2.14.0a0+rocm7.15.0a20260630:0.29.0a0+rocm7.15.0a20260630:2.11.0+rocm7.15.0a20260630:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -14857,7 +14857,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260701:2.9.1+rocm7.15.0a20260701:0.24.0+rocm7.15.0a20260701:2.9.0+rocm7.15.0a20260701:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -14930,7 +14930,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260701:2.10.0+rocm7.15.0a20260701:0.25.0+rocm7.15.0a20260701:2.10.0+rocm7.15.0a20260701:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -15003,7 +15003,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260701:2.11.0+rocm7.15.0a20260701:0.26.0+rocm7.15.0a20260701:2.11.0a0+rocm7.15.0a20260701:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -15076,7 +15076,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260701:2.11.0+rocm7.15.0a20260701:0.26.0+rocm7.15.0a20260701:2.11.0+rocm7.15.0a20260701:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -15149,7 +15149,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260701:2.12.0+rocm7.15.0a20260701:0.27.0+rocm7.15.0a20260701:2.11.0a0+rocm7.15.0a20260701:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -15222,7 +15222,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260701:2.12.0+rocm7.15.0a20260701:0.27.0+rocm7.15.0a20260701:2.11.0+rocm7.15.0a20260701:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -15295,7 +15295,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260701:2.14.0a0+rocm7.15.0a20260701:0.29.0a0+rocm7.15.0a20260701:2.11.0a0+rocm7.15.0a20260701:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -15368,7 +15368,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260701:2.14.0a0+rocm7.15.0a20260701:0.29.0a0+rocm7.15.0a20260701:2.11.0+rocm7.15.0a20260701:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -15441,7 +15441,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260702:2.9.1+rocm7.15.0a20260702:0.24.0+rocm7.15.0a20260702:2.9.0+rocm7.15.0a20260702:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -15514,7 +15514,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260702:2.10.0+rocm7.15.0a20260702:0.25.0+rocm7.15.0a20260702:2.10.0+rocm7.15.0a20260702:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -15587,7 +15587,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260702:2.11.0+rocm7.15.0a20260702:0.26.0+rocm7.15.0a20260702:2.11.0a0+rocm7.15.0a20260702:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -15660,7 +15660,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260702:2.11.0+rocm7.15.0a20260702:0.26.0+rocm7.15.0a20260702:2.11.0+rocm7.15.0a20260702:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -15733,7 +15733,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260702:2.12.0+rocm7.15.0a20260702:0.27.0+rocm7.15.0a20260702:2.11.0a0+rocm7.15.0a20260702:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -15806,7 +15806,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260702:2.12.0+rocm7.15.0a20260702:0.27.0+rocm7.15.0a20260702:2.11.0+rocm7.15.0a20260702:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -15879,7 +15879,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260702:2.14.0a0+rocm7.15.0a20260702:0.29.0a0+rocm7.15.0a20260702:2.11.0a0+rocm7.15.0a20260702:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -15952,7 +15952,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260702:2.14.0a0+rocm7.15.0a20260702:0.29.0a0+rocm7.15.0a20260702:2.11.0+rocm7.15.0a20260702:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -16025,7 +16025,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260703:2.9.1+rocm7.15.0a20260703:0.24.0+rocm7.15.0a20260703:2.9.0+rocm7.15.0a20260703:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -16098,7 +16098,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260703:2.10.0+rocm7.15.0a20260703:0.25.0+rocm7.15.0a20260703:2.10.0+rocm7.15.0a20260703:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -16171,7 +16171,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260703:2.11.0+rocm7.15.0a20260703:0.26.0+rocm7.15.0a20260703:2.11.0a0+rocm7.15.0a20260703:cp310,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -16243,7 +16243,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260703:2.11.0+rocm7.15.0a20260703:0.26.0+rocm7.15.0a20260703:2.11.0+rocm7.15.0a20260703:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -16316,7 +16316,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260703:2.12.0+rocm7.15.0a20260703:0.27.0+rocm7.15.0a20260703:2.11.0a0+rocm7.15.0a20260703:cp310,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -16388,7 +16388,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260703:2.12.0+rocm7.15.0a20260703:0.27.0+rocm7.15.0a20260703:2.11.0+rocm7.15.0a20260703:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -16461,7 +16461,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260703:2.14.0a0+rocm7.15.0a20260703:0.29.0a0+rocm7.15.0a20260703:2.11.0a0+rocm7.15.0a20260703:cp310,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -16533,7 +16533,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260703:2.14.0a0+rocm7.15.0a20260703:0.29.0a0+rocm7.15.0a20260703:2.11.0+rocm7.15.0a20260703:cp310,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -16605,7 +16605,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260704:2.9.1+rocm7.15.0a20260704:0.24.0+rocm7.15.0a20260704:2.9.0+rocm7.15.0a20260704:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -16678,7 +16678,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260704:2.10.0+rocm7.15.0a20260704:0.25.0+rocm7.15.0a20260704:2.10.0+rocm7.15.0a20260704:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -16751,7 +16751,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260704:2.11.0+rocm7.15.0a20260704:0.26.0+rocm7.15.0a20260704:2.11.0a0+rocm7.15.0a20260704:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -16824,7 +16824,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260704:2.11.0+rocm7.15.0a20260704:0.26.0+rocm7.15.0a20260704:2.11.0+rocm7.15.0a20260704:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -16897,7 +16897,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260704:2.12.0+rocm7.15.0a20260704:0.27.0+rocm7.15.0a20260704:2.11.0a0+rocm7.15.0a20260704:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -16970,7 +16970,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260704:2.12.0+rocm7.15.0a20260704:0.27.0+rocm7.15.0a20260704:2.11.0+rocm7.15.0a20260704:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -17043,7 +17043,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260704:2.14.0a0+rocm7.15.0a20260704:0.29.0a0+rocm7.15.0a20260704:2.11.0a0+rocm7.15.0a20260704:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -17116,7 +17116,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260704:2.14.0a0+rocm7.15.0a20260704:0.29.0a0+rocm7.15.0a20260704:2.11.0+rocm7.15.0a20260704:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -17189,7 +17189,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260706:2.9.1+rocm7.15.0a20260706:0.24.0+rocm7.15.0a20260706:2.9.0+rocm7.15.0a20260706:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -17262,7 +17262,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260706:2.10.0+rocm7.15.0a20260706:0.25.0+rocm7.15.0a20260706:2.10.0+rocm7.15.0a20260706:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -17335,7 +17335,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260706:2.11.0+rocm7.15.0a20260706:0.26.0+rocm7.15.0a20260706:2.11.0+rocm7.15.0a20260706:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -17408,7 +17408,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260706:2.12.0+rocm7.15.0a20260706:0.27.0+rocm7.15.0a20260706:2.11.0+rocm7.15.0a20260706:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -17481,7 +17481,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260707:2.9.1+rocm7.15.0a20260707:0.24.0+rocm7.15.0a20260707:2.9.0+rocm7.15.0a20260707:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -17554,7 +17554,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260707:2.10.0+rocm7.15.0a20260707:0.25.0+rocm7.15.0a20260707:2.10.0+rocm7.15.0a20260707:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -17627,7 +17627,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260707:2.11.0+rocm7.15.0a20260707:0.26.0+rocm7.15.0a20260707:2.11.0+rocm7.15.0a20260707:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -17700,7 +17700,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260707:2.12.0+rocm7.15.0a20260707:0.27.0+rocm7.15.0a20260707:2.11.0+rocm7.15.0a20260707:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -17773,7 +17773,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260708:2.9.1+rocm7.15.0a20260708:0.24.0+rocm7.15.0a20260708:2.9.0+rocm7.15.0a20260708:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -17846,7 +17846,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260708:2.10.0+rocm7.15.0a20260708:0.25.0+rocm7.15.0a20260708:2.10.0+rocm7.15.0a20260708:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -17919,7 +17919,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260708:2.11.0+rocm7.15.0a20260708:0.26.0+rocm7.15.0a20260708:2.11.0+rocm7.15.0a20260708:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -17992,7 +17992,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260708:2.12.0+rocm7.15.0a20260708:0.27.0+rocm7.15.0a20260708:2.11.0+rocm7.15.0a20260708:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -18065,7 +18065,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260709:2.9.1+rocm7.15.0a20260709:0.24.0+rocm7.15.0a20260709:2.9.0+rocm7.15.0a20260709:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -18138,7 +18138,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260709:2.10.0+rocm7.15.0a20260709:0.25.0+rocm7.15.0a20260709:2.10.0+rocm7.15.0a20260709:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -18211,7 +18211,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260709:2.11.0+rocm7.15.0a20260709:0.26.0+rocm7.15.0a20260709:2.11.0+rocm7.15.0a20260709:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -18284,7 +18284,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260709:2.12.0+rocm7.15.0a20260709:0.27.0+rocm7.15.0a20260709:2.11.0+rocm7.15.0a20260709:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -18357,7 +18357,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260710:2.9.1+rocm7.15.0a20260710:0.24.0+rocm7.15.0a20260710:2.9.0+rocm7.15.0a20260710:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -18430,7 +18430,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260710:2.10.0+rocm7.15.0a20260710:0.25.0+rocm7.15.0a20260710:2.10.0+rocm7.15.0a20260710:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -18503,7 +18503,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260710:2.11.0+rocm7.15.0a20260710:0.26.0+rocm7.15.0a20260710:2.11.0+rocm7.15.0a20260710:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -18576,7 +18576,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260710:2.12.0+rocm7.15.0a20260710:0.27.0+rocm7.15.0a20260710:2.11.0+rocm7.15.0a20260710:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -18649,7 +18649,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260711:2.9.1+rocm7.15.0a20260711:0.24.0+rocm7.15.0a20260711:2.9.0+rocm7.15.0a20260711:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -18722,7 +18722,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260711:2.10.0+rocm7.15.0a20260711:0.25.0+rocm7.15.0a20260711:2.10.0+rocm7.15.0a20260711:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -18795,7 +18795,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260711:2.11.0+rocm7.15.0a20260711:0.26.0+rocm7.15.0a20260711:2.11.0a0+rocm7.15.0a20260711:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -18868,7 +18868,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260711:2.11.0+rocm7.15.0a20260711:0.26.0+rocm7.15.0a20260711:2.11.0+rocm7.15.0a20260711:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -18941,7 +18941,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260711:2.12.0+rocm7.15.0a20260711:0.27.0+rocm7.15.0a20260711:2.11.0a0+rocm7.15.0a20260711:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -19014,7 +19014,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260711:2.12.0+rocm7.15.0a20260711:0.27.0+rocm7.15.0a20260711:2.11.0+rocm7.15.0a20260711:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -19087,7 +19087,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260711:2.14.0a0+rocm7.15.0a20260711:0.29.0a0+rocm7.15.0a20260711:2.11.0a0+rocm7.15.0a20260711:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -19160,7 +19160,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260711:2.14.0a0+rocm7.15.0a20260711:0.29.0a0+rocm7.15.0a20260711:2.11.0+rocm7.15.0a20260711:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -19233,7 +19233,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260713:2.9.1+rocm7.15.0a20260713:0.24.0+rocm7.15.0a20260713:2.9.0+rocm7.15.0a20260713:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -19306,7 +19306,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260713:2.10.0+rocm7.15.0a20260713:0.25.0+rocm7.15.0a20260713:2.10.0+rocm7.15.0a20260713:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -19379,7 +19379,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260713:2.11.0+rocm7.15.0a20260713:0.26.0+rocm7.15.0a20260713:2.11.0a0+rocm7.15.0a20260713:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -19452,7 +19452,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260713:2.11.0+rocm7.15.0a20260713:0.26.0+rocm7.15.0a20260713:2.11.0+rocm7.15.0a20260713:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -19525,7 +19525,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260713:2.12.0+rocm7.15.0a20260713:0.27.0+rocm7.15.0a20260713:2.11.0a0+rocm7.15.0a20260713:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -19598,7 +19598,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260713:2.12.0+rocm7.15.0a20260713:0.27.0+rocm7.15.0a20260713:2.11.0+rocm7.15.0a20260713:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -19671,7 +19671,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260713:2.14.0a0+rocm7.15.0a20260713:0.29.0a0+rocm7.15.0a20260713:2.11.0a0+rocm7.15.0a20260713:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -19744,7 +19744,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260713:2.14.0a0+rocm7.15.0a20260713:0.29.0a0+rocm7.15.0a20260713:2.11.0+rocm7.15.0a20260713:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -19817,7 +19817,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260714:2.9.1+rocm7.15.0a20260714:0.24.0+rocm7.15.0a20260714:2.9.0+rocm7.15.0a20260714:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -19890,7 +19890,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260714:2.10.0+rocm7.15.0a20260714:0.25.0+rocm7.15.0a20260714:2.10.0+rocm7.15.0a20260714:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -19963,7 +19963,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260714:2.11.0+rocm7.15.0a20260714:0.26.0+rocm7.15.0a20260714:2.11.0a0+rocm7.15.0a20260714:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -20036,7 +20036,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260714:2.11.0+rocm7.15.0a20260714:0.26.0+rocm7.15.0a20260714:2.11.0+rocm7.15.0a20260714:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -20109,7 +20109,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260714:2.12.0+rocm7.15.0a20260714:0.27.0+rocm7.15.0a20260714:2.11.0a0+rocm7.15.0a20260714:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -20182,7 +20182,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260714:2.12.0+rocm7.15.0a20260714:0.27.0+rocm7.15.0a20260714:2.11.0+rocm7.15.0a20260714:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -20255,7 +20255,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260714:2.14.0a0+rocm7.15.0a20260714:0.29.0a0+rocm7.15.0a20260714:2.11.0a0+rocm7.15.0a20260714:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -20328,7 +20328,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260714:2.14.0a0+rocm7.15.0a20260714:0.29.0a0+rocm7.15.0a20260714:2.11.0+rocm7.15.0a20260714:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -20401,7 +20401,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260715:2.9.1+rocm7.15.0a20260715:0.24.0+rocm7.15.0a20260715:2.9.0+rocm7.15.0a20260715:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -20474,7 +20474,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260715:2.10.0+rocm7.15.0a20260715:0.25.0+rocm7.15.0a20260715:2.10.0+rocm7.15.0a20260715:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -20547,7 +20547,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260715:2.11.0+rocm7.15.0a20260715:0.26.0+rocm7.15.0a20260715:2.11.0a0+rocm7.15.0a20260715:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -20620,7 +20620,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260715:2.11.0+rocm7.15.0a20260715:0.26.0+rocm7.15.0a20260715:2.11.0+rocm7.15.0a20260715:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -20693,7 +20693,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260715:2.12.0+rocm7.15.0a20260715:0.27.0+rocm7.15.0a20260715:2.11.0a0+rocm7.15.0a20260715:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -20766,7 +20766,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260715:2.12.0+rocm7.15.0a20260715:0.27.0+rocm7.15.0a20260715:2.11.0+rocm7.15.0a20260715:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -20839,7 +20839,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260715:2.14.0a0+rocm7.15.0a20260715:0.29.0a0+rocm7.15.0a20260715:2.11.0a0+rocm7.15.0a20260715:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -20912,7 +20912,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260715:2.14.0a0+rocm7.15.0a20260715:0.29.0a0+rocm7.15.0a20260715:2.11.0+rocm7.15.0a20260715:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -20985,7 +20985,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260717:2.10.0+rocm7.15.0a20260717:0.25.0+rocm7.15.0a20260717:2.10.0+rocm7.15.0a20260717:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -21058,7 +21058,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260717:2.11.0+rocm7.15.0a20260717:0.26.0+rocm7.15.0a20260717:2.11.0a0+rocm7.15.0a20260717:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -21131,7 +21131,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260717:2.11.0+rocm7.15.0a20260717:0.26.0+rocm7.15.0a20260717:2.11.0+rocm7.15.0a20260717:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -21204,7 +21204,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260717:2.12.0+rocm7.15.0a20260717:0.27.0+rocm7.15.0a20260717:2.11.0a0+rocm7.15.0a20260717:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -21277,7 +21277,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260717:2.12.0+rocm7.15.0a20260717:0.27.0+rocm7.15.0a20260717:2.11.0+rocm7.15.0a20260717:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -21350,7 +21350,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260717:2.14.0a0+rocm7.15.0a20260717:0.29.0a0+rocm7.15.0a20260717:2.11.0a0+rocm7.15.0a20260717:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -21423,7 +21423,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260717:2.14.0a0+rocm7.15.0a20260717:0.29.0a0+rocm7.15.0a20260717:2.11.0+rocm7.15.0a20260717:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -21496,7 +21496,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260718:2.10.0+rocm7.15.0a20260718:0.25.0+rocm7.15.0a20260718:2.10.0+rocm7.15.0a20260718:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -21569,7 +21569,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260718:2.11.0+rocm7.15.0a20260718:0.26.0+rocm7.15.0a20260718:2.11.0a0+rocm7.15.0a20260718:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -21642,7 +21642,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260718:2.11.0+rocm7.15.0a20260718:0.26.0+rocm7.15.0a20260718:2.11.0+rocm7.15.0a20260718:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -21715,7 +21715,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260718:2.12.0+rocm7.15.0a20260718:0.27.0+rocm7.15.0a20260718:2.11.0a0+rocm7.15.0a20260718:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -21788,7 +21788,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260718:2.12.0+rocm7.15.0a20260718:0.27.0+rocm7.15.0a20260718:2.11.0+rocm7.15.0a20260718:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -21861,7 +21861,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260718:2.14.0a0+rocm7.15.0a20260718:0.29.0a0+rocm7.15.0a20260718:2.11.0a0+rocm7.15.0a20260718:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -21934,7 +21934,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260718:2.14.0a0+rocm7.15.0a20260718:0.29.0a0+rocm7.15.0a20260718:2.11.0+rocm7.15.0a20260718:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -22007,7 +22007,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260720:2.10.0+rocm7.15.0a20260720:0.25.0+rocm7.15.0a20260720:2.10.0+rocm7.15.0a20260720:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -22080,7 +22080,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260720:2.11.0+rocm7.15.0a20260720:0.26.0+rocm7.15.0a20260720:2.11.0a0+rocm7.15.0a20260720:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -22153,7 +22153,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260720:2.11.0+rocm7.15.0a20260720:0.26.0+rocm7.15.0a20260720:2.11.0+rocm7.15.0a20260720:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -22226,7 +22226,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260720:2.12.0+rocm7.15.0a20260720:0.27.0+rocm7.15.0a20260720:2.11.0a0+rocm7.15.0a20260720:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -22299,7 +22299,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260720:2.12.0+rocm7.15.0a20260720:0.27.0+rocm7.15.0a20260720:2.11.0+rocm7.15.0a20260720:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -22372,7 +22372,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260720:2.14.0a0+rocm7.15.0a20260720:0.29.0a0+rocm7.15.0a20260720:2.11.0a0+rocm7.15.0a20260720:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -22445,7 +22445,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260720:2.14.0a0+rocm7.15.0a20260720:0.29.0a0+rocm7.15.0a20260720:2.11.0+rocm7.15.0a20260720:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -22518,7 +22518,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260721:2.10.0+rocm7.15.0a20260721:0.25.0+rocm7.15.0a20260721:2.10.0+rocm7.15.0a20260721:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -22591,7 +22591,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260721:2.11.0+rocm7.15.0a20260721:0.26.0+rocm7.15.0a20260721:2.11.0a0+rocm7.15.0a20260721:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -22664,7 +22664,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260721:2.11.0+rocm7.15.0a20260721:0.26.0+rocm7.15.0a20260721:2.11.0+rocm7.15.0a20260721:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -22737,7 +22737,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260721:2.12.0+rocm7.15.0a20260721:0.27.0+rocm7.15.0a20260721:2.11.0a0+rocm7.15.0a20260721:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -22810,7 +22810,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260721:2.12.0+rocm7.15.0a20260721:0.27.0+rocm7.15.0a20260721:2.11.0+rocm7.15.0a20260721:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -22883,7 +22883,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260721:2.14.0a0+rocm7.15.0a20260721:0.29.0a0+rocm7.15.0a20260721:2.11.0a0+rocm7.15.0a20260721:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -22956,7 +22956,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260721:2.14.0a0+rocm7.15.0a20260721:0.29.0a0+rocm7.15.0a20260721:2.11.0+rocm7.15.0a20260721:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -23029,7 +23029,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260722:2.10.0+rocm7.15.0a20260722:0.25.0+rocm7.15.0a20260722:2.10.0+rocm7.15.0a20260722:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -23102,7 +23102,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260722:2.11.0+rocm7.15.0a20260722:0.26.0+rocm7.15.0a20260722:2.11.0a0+rocm7.15.0a20260722:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -23175,7 +23175,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260722:2.11.0+rocm7.15.0a20260722:0.26.0+rocm7.15.0a20260722:2.11.0+rocm7.15.0a20260722:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -23248,7 +23248,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260722:2.12.0+rocm7.15.0a20260722:0.27.0+rocm7.15.0a20260722:2.11.0a0+rocm7.15.0a20260722:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -23321,7 +23321,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260722:2.12.0+rocm7.15.0a20260722:0.27.0+rocm7.15.0a20260722:2.11.0+rocm7.15.0a20260722:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -23394,7 +23394,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260722:2.14.0a0+rocm7.15.0a20260722:0.29.0a0+rocm7.15.0a20260722:2.11.0a0+rocm7.15.0a20260722:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -23467,7 +23467,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260722:2.14.0a0+rocm7.15.0a20260722:0.29.0a0+rocm7.15.0a20260722:2.11.0+rocm7.15.0a20260722:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -23540,7 +23540,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260723:2.10.0+rocm7.15.0a20260723:0.25.0+rocm7.15.0a20260723:2.10.0+rocm7.15.0a20260723:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -23613,7 +23613,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260723:2.11.0+rocm7.15.0a20260723:0.26.0+rocm7.15.0a20260723:2.11.0a0+rocm7.15.0a20260723:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -23686,7 +23686,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260723:2.11.0+rocm7.15.0a20260723:0.26.0+rocm7.15.0a20260723:2.11.0+rocm7.15.0a20260723:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -23759,7 +23759,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260723:2.12.0+rocm7.15.0a20260723:0.27.0+rocm7.15.0a20260723:2.11.0a0+rocm7.15.0a20260723:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -23832,7 +23832,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260723:2.12.0+rocm7.15.0a20260723:0.27.0+rocm7.15.0a20260723:2.11.0+rocm7.15.0a20260723:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -23907,7 +23907,7 @@
         "gfx90c"
       ],
       "id": "therock:nightly:7.15.0a20260723:2.14.0a0+rocm7.15.0a20260723:0.29.0a0+rocm7.15.0a20260723:2.11.0a0+rocm7.15.0a20260723:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -23982,7 +23982,7 @@
         "gfx90c"
       ],
       "id": "therock:nightly:7.15.0a20260723:2.14.0a0+rocm7.15.0a20260723:0.29.0a0+rocm7.15.0a20260723:2.11.0+rocm7.15.0a20260723:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -24055,7 +24055,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260724:2.10.0+rocm7.15.0a20260724:0.25.0+rocm7.15.0a20260724:2.10.0+rocm7.15.0a20260724:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -24128,7 +24128,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260724:2.11.0+rocm7.15.0a20260724:0.26.0+rocm7.15.0a20260724:2.11.0+rocm7.15.0a20260724:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -24201,7 +24201,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260724:2.12.0+rocm7.15.0a20260724:0.27.0+rocm7.15.0a20260724:2.11.0+rocm7.15.0a20260724:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -24274,7 +24274,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260725:2.10.0+rocm7.15.0a20260725:0.25.0+rocm7.15.0a20260725:2.10.0+rocm7.15.0a20260725:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -24347,7 +24347,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260725:2.11.0+rocm7.15.0a20260725:0.26.0+rocm7.15.0a20260725:2.11.0+rocm7.15.0a20260725:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -24420,7 +24420,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260725:2.12.0+rocm7.15.0a20260725:0.27.0+rocm7.15.0a20260725:2.11.0+rocm7.15.0a20260725:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -24493,7 +24493,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260726:2.10.0+rocm7.15.0a20260726:0.25.0+rocm7.15.0a20260726:2.10.0+rocm7.15.0a20260726:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -24566,7 +24566,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260726:2.11.0+rocm7.15.0a20260726:0.26.0+rocm7.15.0a20260726:2.11.0+rocm7.15.0a20260726:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -24639,7 +24639,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260726:2.12.0+rocm7.15.0a20260726:0.27.0+rocm7.15.0a20260726:2.11.0+rocm7.15.0a20260726:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -24712,7 +24712,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260727:2.10.0+rocm7.15.0a20260727:0.25.0+rocm7.15.0a20260727:2.10.0+rocm7.15.0a20260727:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -24785,7 +24785,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260727:2.11.0+rocm7.15.0a20260727:0.26.0+rocm7.15.0a20260727:2.11.0+rocm7.15.0a20260727:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -24858,7 +24858,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260727:2.12.0+rocm7.15.0a20260727:0.27.0+rocm7.15.0a20260727:2.11.0+rocm7.15.0a20260727:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -24931,7 +24931,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260728:2.11.0+rocm7.15.0a20260728:0.26.0+rocm7.15.0a20260728:2.11.0+rocm7.15.0a20260728:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -25004,7 +25004,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:7.15.0a20260728:2.12.0+rocm7.15.0a20260728:0.27.0+rocm7.15.0a20260728:2.11.0+rocm7.15.0a20260728:cp310,cp311,cp312,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -25076,7 +25076,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.0.0a20260729:2.11.0+rocm10.0.0a20260729:0.26.0+rocm10.0.0a20260729:2.11.0+rocm10.0.0a20260729:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -25149,7 +25149,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.0.0a20260729:2.12.0+rocm10.0.0a20260729:0.27.0+rocm10.0.0a20260729:2.11.0+rocm10.0.0a20260729:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -25222,7 +25222,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.0.0a20260730:2.11.0+rocm10.0.0a20260730:0.26.0+rocm10.0.0a20260730:2.11.0+rocm10.0.0a20260730:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -25295,7 +25295,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.0.0a20260730:2.12.0+rocm10.0.0a20260730:0.27.0+rocm10.0.0a20260730:2.11.0+rocm10.0.0a20260730:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -25368,7 +25368,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260731:2.11.0+rocm10.1.0a20260731:0.26.0+rocm10.1.0a20260731:2.11.0+rocm10.1.0a20260731:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -25441,7 +25441,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260731:2.12.0+rocm10.1.0a20260731:0.27.0+rocm10.1.0a20260731:2.11.0+rocm10.1.0a20260731:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -25514,7 +25514,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260802:2.11.0+rocm10.1.0a20260802:0.26.0+rocm10.1.0a20260802:2.11.0+rocm10.1.0a20260802:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -25587,7 +25587,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260802:2.12.0+rocm10.1.0a20260802:0.27.0+rocm10.1.0a20260802:2.11.0+rocm10.1.0a20260802:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -25660,7 +25660,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260803:2.11.0+rocm10.1.0a20260803:0.26.0+rocm10.1.0a20260803:2.11.0+rocm10.1.0a20260803:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -25733,7 +25733,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260803:2.12.0+rocm10.1.0a20260803:0.27.0+rocm10.1.0a20260803:2.11.0+rocm10.1.0a20260803:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -25806,7 +25806,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260804:2.11.0+rocm10.1.0a20260804:0.26.0+rocm10.1.0a20260804:2.11.0+rocm10.1.0a20260804:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -25879,7 +25879,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260804:2.12.0+rocm10.1.0a20260804:0.27.0+rocm10.1.0a20260804:2.11.0+rocm10.1.0a20260804:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -25952,7 +25952,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260805:2.11.0+rocm10.1.0a20260805:0.26.0+rocm10.1.0a20260805:2.11.0+rocm10.1.0a20260805:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -26025,7 +26025,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260805:2.12.0+rocm10.1.0a20260805:0.27.0+rocm10.1.0a20260805:2.11.0+rocm10.1.0a20260805:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -26098,7 +26098,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260806:2.11.0+rocm10.1.0a20260806:0.26.0+rocm10.1.0a20260806:2.11.0a0+rocm10.1.0a20260806:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -26171,7 +26171,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260806:2.11.0+rocm10.1.0a20260806:0.26.0+rocm10.1.0a20260806:2.11.0+rocm10.1.0a20260806:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -26244,7 +26244,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260806:2.12.0+rocm10.1.0a20260806:0.27.0+rocm10.1.0a20260806:2.11.0a0+rocm10.1.0a20260806:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -26317,7 +26317,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260806:2.12.0+rocm10.1.0a20260806:0.27.0+rocm10.1.0a20260806:2.11.0+rocm10.1.0a20260806:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -26392,7 +26392,7 @@
         "gfx90c"
       ],
       "id": "therock:nightly:10.1.0a20260806:2.14.0a0+rocm10.1.0a20260806:0.29.0a0+rocm10.1.0a20260806:2.11.0a0+rocm10.1.0a20260806:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -26467,7 +26467,7 @@
         "gfx90c"
       ],
       "id": "therock:nightly:10.1.0a20260806:2.14.0a0+rocm10.1.0a20260806:0.29.0a0+rocm10.1.0a20260806:2.11.0+rocm10.1.0a20260806:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -26540,7 +26540,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260807:2.11.0+rocm10.1.0a20260807:0.26.0+rocm10.1.0a20260807:2.11.0a0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -26613,7 +26613,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260807:2.11.0+rocm10.1.0a20260807:0.26.0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -26686,7 +26686,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260807:2.12.0+rocm10.1.0a20260807:0.27.0+rocm10.1.0a20260807:2.11.0a0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -26759,7 +26759,7 @@
         "gfx90a"
       ],
       "id": "therock:nightly:10.1.0a20260807:2.12.0+rocm10.1.0a20260807:0.27.0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -26834,7 +26834,7 @@
         "gfx90c"
       ],
       "id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0a0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -26909,7 +26909,7 @@
         "gfx90c"
       ],
       "id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -26972,7 +26972,7 @@
         "gfx1201"
       ],
       "id": "therock:stable:7.13.0:2.9.1+rocm7.13.0:0.24.0+rocm7.13.0:2.9.0+rocm7.13.0:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -27035,7 +27035,7 @@
         "gfx1201"
       ],
       "id": "therock:stable:7.13.0:2.10.0+rocm7.13.0:0.25.0+rocm7.13.0:2.10.0+rocm7.13.0:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -27098,7 +27098,7 @@
         "gfx1201"
       ],
       "id": "therock:stable:7.13.0:2.11.0+rocm7.13.0:0.26.0+rocm7.13.0:2.11.0+rocm7.13.0:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -27167,7 +27167,7 @@
         "gfx90a"
       ],
       "id": "therock:stable:7.14.0:2.10.0+rocm7.14.0:0.25.0+rocm7.14.0:2.10.0+rocm7.14.0:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -27236,7 +27236,7 @@
         "gfx90a"
       ],
       "id": "therock:stable:7.14.0:2.11.0+rocm7.14.0:0.26.0+rocm7.14.0:2.11.0+rocm7.14.0:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -27305,7 +27305,7 @@
         "gfx90a"
       ],
       "id": "therock:stable:7.14.0:2.12.0+rocm7.14.0:0.27.0+rocm7.14.0:2.11.0+rocm7.14.0:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -27378,7 +27378,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260430:2.9.1+rocm7.13.0a20260430:0.24.0+rocm7.13.0a20260430:2.9.0+rocm7.13.0a20260430:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -27451,7 +27451,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260430:2.10.0+rocm7.13.0a20260430:0.25.0+rocm7.13.0a20260430:2.10.0+rocm7.13.0a20260430:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -27524,7 +27524,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260430:2.11.0+rocm7.13.0a20260430:0.26.0+rocm7.13.0a20260430:2.11.0a0+rocm7.13.0a20260430:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -27597,7 +27597,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260430:2.11.0+rocm7.13.0a20260430:0.26.0+rocm7.13.0a20260430:2.11.0+rocm7.13.0a20260430:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -27670,7 +27670,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260501:2.9.1+rocm7.13.0a20260501:0.24.0+rocm7.13.0a20260501:2.9.0+rocm7.13.0a20260501:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -27743,7 +27743,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260501:2.10.0+rocm7.13.0a20260501:0.25.0+rocm7.13.0a20260501:2.10.0+rocm7.13.0a20260501:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -27816,7 +27816,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260501:2.11.0+rocm7.13.0a20260501:0.26.0+rocm7.13.0a20260501:2.11.0a0+rocm7.13.0a20260501:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -27889,7 +27889,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260501:2.11.0+rocm7.13.0a20260501:0.26.0+rocm7.13.0a20260501:2.11.0+rocm7.13.0a20260501:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -27962,7 +27962,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260502:2.9.1+rocm7.13.0a20260502:0.24.0+rocm7.13.0a20260502:2.9.0+rocm7.13.0a20260502:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -28035,7 +28035,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260502:2.10.0+rocm7.13.0a20260502:0.25.0+rocm7.13.0a20260502:2.10.0+rocm7.13.0a20260502:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -28108,7 +28108,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260502:2.11.0+rocm7.13.0a20260502:0.26.0+rocm7.13.0a20260502:2.11.0a0+rocm7.13.0a20260502:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -28181,7 +28181,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260502:2.11.0+rocm7.13.0a20260502:0.26.0+rocm7.13.0a20260502:2.11.0+rocm7.13.0a20260502:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -28254,7 +28254,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260504:2.9.1+rocm7.13.0a20260504:0.24.0+rocm7.13.0a20260504:2.9.0+rocm7.13.0a20260504:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -28327,7 +28327,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260504:2.10.0+rocm7.13.0a20260504:0.25.0+rocm7.13.0a20260504:2.10.0+rocm7.13.0a20260504:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -28400,7 +28400,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260504:2.11.0+rocm7.13.0a20260504:0.26.0+rocm7.13.0a20260504:2.11.0a0+rocm7.13.0a20260504:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -28473,7 +28473,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260504:2.11.0+rocm7.13.0a20260504:0.26.0+rocm7.13.0a20260504:2.11.0+rocm7.13.0a20260504:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -28546,7 +28546,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260506:2.9.1+rocm7.13.0a20260506:0.24.0+rocm7.13.0a20260506:2.9.0+rocm7.13.0a20260506:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -28619,7 +28619,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260506:2.10.0+rocm7.13.0a20260506:0.25.0+rocm7.13.0a20260506:2.10.0+rocm7.13.0a20260506:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -28692,7 +28692,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260506:2.11.0+rocm7.13.0a20260506:0.26.0+rocm7.13.0a20260506:2.11.0+rocm7.13.0a20260506:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -28765,7 +28765,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260507:2.9.1+rocm7.13.0a20260507:0.24.0+rocm7.13.0a20260507:2.9.0+rocm7.13.0a20260507:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -28838,7 +28838,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260507:2.10.0+rocm7.13.0a20260507:0.25.0+rocm7.13.0a20260507:2.10.0+rocm7.13.0a20260507:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -28911,7 +28911,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260507:2.11.0+rocm7.13.0a20260507:0.26.0+rocm7.13.0a20260507:2.11.0+rocm7.13.0a20260507:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -28984,7 +28984,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260508:2.9.1+rocm7.13.0a20260508:0.24.0+rocm7.13.0a20260508:2.9.0+rocm7.13.0a20260508:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -29057,7 +29057,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260508:2.10.0+rocm7.13.0a20260508:0.25.0+rocm7.13.0a20260508:2.10.0+rocm7.13.0a20260508:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -29130,7 +29130,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260508:2.11.0+rocm7.13.0a20260508:0.26.0+rocm7.13.0a20260508:2.11.0+rocm7.13.0a20260508:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -29203,7 +29203,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260509:2.9.1+rocm7.13.0a20260509:0.24.0+rocm7.13.0a20260509:2.9.0+rocm7.13.0a20260509:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -29276,7 +29276,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260509:2.10.0+rocm7.13.0a20260509:0.25.0+rocm7.13.0a20260509:2.10.0+rocm7.13.0a20260509:cp310,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -29348,7 +29348,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260509:2.11.0+rocm7.13.0a20260509:0.26.0+rocm7.13.0a20260509:2.11.0+rocm7.13.0a20260509:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -29421,7 +29421,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260511:2.9.1+rocm7.13.0a20260511:0.24.0+rocm7.13.0a20260511:2.9.0+rocm7.13.0a20260511:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -29494,7 +29494,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260511:2.10.0+rocm7.13.0a20260511:0.25.0+rocm7.13.0a20260511:2.10.0+rocm7.13.0a20260511:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -29567,7 +29567,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260511:2.11.0+rocm7.13.0a20260511:0.26.0+rocm7.13.0a20260511:2.11.0+rocm7.13.0a20260511:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -29640,7 +29640,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260512:2.9.1+rocm7.13.0a20260512:0.24.0+rocm7.13.0a20260512:2.9.0+rocm7.13.0a20260512:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -29713,7 +29713,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260512:2.10.0+rocm7.13.0a20260512:0.25.0+rocm7.13.0a20260512:2.10.0+rocm7.13.0a20260512:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -29786,7 +29786,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260512:2.11.0+rocm7.13.0a20260512:0.26.0+rocm7.13.0a20260512:2.11.0+rocm7.13.0a20260512:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -29859,7 +29859,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260513:2.9.1+rocm7.13.0a20260513:0.24.0+rocm7.13.0a20260513:2.9.0+rocm7.13.0a20260513:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -29932,7 +29932,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260513:2.10.0+rocm7.13.0a20260513:0.25.0+rocm7.13.0a20260513:2.10.0+rocm7.13.0a20260513:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -30005,7 +30005,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260513:2.11.0+rocm7.13.0a20260513:0.26.0+rocm7.13.0a20260513:2.11.0a0+rocm7.13.0a20260513:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -30078,7 +30078,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260513:2.11.0+rocm7.13.0a20260513:0.26.0+rocm7.13.0a20260513:2.11.0+rocm7.13.0a20260513:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -30151,7 +30151,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260513:2.12.0+rocm7.13.0a20260513:0.27.0+rocm7.13.0a20260513:2.11.0a0+rocm7.13.0a20260513:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -30224,7 +30224,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260513:2.12.0+rocm7.13.0a20260513:0.27.0+rocm7.13.0a20260513:2.11.0+rocm7.13.0a20260513:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -30297,7 +30297,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260514:2.9.1+rocm7.13.0a20260514:0.24.0+rocm7.13.0a20260514:2.9.0+rocm7.13.0a20260514:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -30370,7 +30370,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260514:2.10.0+rocm7.13.0a20260514:0.25.0+rocm7.13.0a20260514:2.10.0+rocm7.13.0a20260514:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -30443,7 +30443,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260514:2.11.0+rocm7.13.0a20260514:0.26.0+rocm7.13.0a20260514:2.11.0a0+rocm7.13.0a20260514:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -30516,7 +30516,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260514:2.11.0+rocm7.13.0a20260514:0.26.0+rocm7.13.0a20260514:2.11.0+rocm7.13.0a20260514:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -30589,7 +30589,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260514:2.12.0+rocm7.13.0a20260514:0.27.0+rocm7.13.0a20260514:2.11.0a0+rocm7.13.0a20260514:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -30662,7 +30662,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260514:2.12.0+rocm7.13.0a20260514:0.27.0+rocm7.13.0a20260514:2.11.0+rocm7.13.0a20260514:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -30735,7 +30735,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260515:2.9.1+rocm7.13.0a20260515:0.24.0+rocm7.13.0a20260515:2.9.0+rocm7.13.0a20260515:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -30808,7 +30808,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260515:2.10.0+rocm7.13.0a20260515:0.25.0+rocm7.13.0a20260515:2.10.0+rocm7.13.0a20260515:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -30881,7 +30881,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260515:2.11.0+rocm7.13.0a20260515:0.26.0+rocm7.13.0a20260515:2.11.0a0+rocm7.13.0a20260515:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -30954,7 +30954,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260515:2.11.0+rocm7.13.0a20260515:0.26.0+rocm7.13.0a20260515:2.11.0+rocm7.13.0a20260515:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -31027,7 +31027,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260515:2.12.0+rocm7.13.0a20260515:0.27.0+rocm7.13.0a20260515:2.11.0a0+rocm7.13.0a20260515:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -31100,7 +31100,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.13.0a20260515:2.12.0+rocm7.13.0a20260515:0.27.0+rocm7.13.0a20260515:2.11.0+rocm7.13.0a20260515:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -31173,7 +31173,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.14.0a20260518:2.9.1+rocm7.14.0a20260518:0.24.0+rocm7.14.0a20260518:2.9.0+rocm7.14.0a20260518:cp310,cp311,cp312,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -31245,7 +31245,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.14.0a20260518:2.10.0+rocm7.14.0a20260518:0.25.0+rocm7.14.0a20260518:2.10.0+rocm7.14.0a20260518:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -31318,7 +31318,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.14.0a20260518:2.11.0+rocm7.14.0a20260518:0.26.0+rocm7.14.0a20260518:2.11.0a0+rocm7.14.0a20260518:cp311,cp312",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp311",
@@ -31388,7 +31388,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.14.0a20260518:2.11.0+rocm7.14.0a20260518:0.26.0+rocm7.14.0a20260518:2.11.0+rocm7.14.0a20260518:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp310",
@@ -31461,7 +31461,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.14.0a20260518:2.12.0+rocm7.14.0a20260518:0.27.0+rocm7.14.0a20260518:2.11.0a0+rocm7.14.0a20260518:cp311,cp312",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp311",
@@ -31531,7 +31531,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.14.0a20260518:2.12.0+rocm7.14.0a20260518:0.27.0+rocm7.14.0a20260518:2.11.0+rocm7.14.0a20260518:cp311,cp312",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "historical",
       "python_tags": [
         "cp311",
@@ -31601,7 +31601,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.14.0a20260519:2.9.1+rocm7.14.0a20260519:0.24.0+rocm7.14.0a20260519:2.9.0+rocm7.14.0a20260519:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -31674,7 +31674,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.14.0a20260519:2.10.0+rocm7.14.0a20260519:0.25.0+rocm7.14.0a20260519:2.10.0+rocm7.14.0a20260519:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -31747,7 +31747,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.14.0a20260519:2.11.0+rocm7.14.0a20260519:0.26.0+rocm7.14.0a20260519:2.11.0a0+rocm7.14.0a20260519:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -31820,7 +31820,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.14.0a20260519:2.11.0+rocm7.14.0a20260519:0.26.0+rocm7.14.0a20260519:2.11.0+rocm7.14.0a20260519:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -31893,7 +31893,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.14.0a20260519:2.12.0+rocm7.14.0a20260519:0.27.0+rocm7.14.0a20260519:2.11.0a0+rocm7.14.0a20260519:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -31966,7 +31966,7 @@
         "gfx90a"
       ],
       "id": "therock:staging:7.14.0a20260519:2.12.0+rocm7.14.0a20260519:0.27.0+rocm7.14.0a20260519:2.11.0+rocm7.14.0a20260519:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-07T15:02:36Z",
+      "last_observed_at": "2026-08-07T15:36:41Z",
       "lifecycle": "current",
       "python_tags": [
         "cp310",
@@ -31982,28 +31982,28 @@
       "torchvision_version": "0.27.0+rocm7.14.0a20260519"
     }
   ],
-  "generated_at": "2026-08-07T15:02:36Z",
+  "generated_at": "2026-08-07T15:36:41Z",
   "schema_version": 2,
   "sources": {
     "packages-nightly": {
       "channel": "nightly",
       "distribution_family": "therock",
       "id": "nightly",
-      "observed_at": "2026-08-07T15:02:36Z",
+      "observed_at": "2026-08-07T15:36:41Z",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
     },
     "packages-stable": {
       "channel": "stable",
       "distribution_family": "therock",
       "id": "stable",
-      "observed_at": "2026-08-07T15:02:36Z",
+      "observed_at": "2026-08-07T15:36:41Z",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/"
     },
     "packages-staging": {
       "channel": "staging",
       "distribution_family": "therock",
       "id": "staging",
-      "observed_at": "2026-08-07T15:02:36Z",
+      "observed_at": "2026-08-07T15:36:41Z",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
     }
   }

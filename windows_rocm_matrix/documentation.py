@@ -20,7 +20,9 @@ class StructuredTableParser(HTMLParser):
         elif self._table is not None and tag == "tr":
             self._row = {"conditions": parse_conditions(attributes), "cells": []}
         elif self._row is not None and tag in {"th", "td"}:
-            self._cell = {"header": tag == "th", "conditions": parse_conditions(attributes), "text": []}
+            self._cell = {"header": tag == "th", "conditions": parse_conditions(attributes), "text": [], "links": []}
+        elif self._cell is not None and tag == "a" and attributes.get("href"):
+            self._cell["links"].append(attributes["href"])
 
     def handle_data(self, data):
         if self._cell is not None:
