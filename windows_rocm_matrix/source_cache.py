@@ -1,6 +1,8 @@
 import hashlib
 import json
+import os
 import threading
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError
@@ -17,12 +19,15 @@ def utc_now():
 
 
 class SourceCache:
-    def __init__(self, cache_dir, manifest_path, timeout, opener=urlopen, observed_at=utc_now):
+    def __init__(self, cache_dir, manifest_path, timeout, opener=urlopen, observed_at=utc_now, github_token=None, sleep=time.sleep, github_retries=3):
         self.cache_dir = Path(cache_dir)
         self.manifest_path = Path(manifest_path)
         self.timeout = timeout
         self.opener = opener
         self.observed_at = observed_at
+        self.github_token = github_token if github_token is not None else os.environ.get("GITHUB_TOKEN")
+        self.sleep = sleep
+        self.github_retries = github_retries
         self.generated_at = observed_at()
         self.lock = threading.Lock()
         self.responses = {}
@@ -36,6 +41,8 @@ class SourceCache:
         with self.lock:
             previous = self.responses.get(url)
         headers = {"User-Agent": USER_AGENT, "Accept": "application/vnd.github+json, application/json;q=0.9, text/html;q=0.8"}
+        if self.github_token and url.lower().startswith("https://api.github.com/"):
+            headers["Authorization"] = f"Bearer {self.github_token}"
         cached_path = self.cache_dir / previous["sha256"] if previous else None
         if cached_path and cached_path.exists():
             if previous.get("etag"):
@@ -44,21 +51,32 @@ class SourceCache:
                 headers["If-Modified-Since"] = previous["last_modified"]
 
         request = Request(url, headers=headers)
-        try:
-            with self.opener(request, timeout=self.timeout) as response:
-                content = response.read()
-                etag = response.headers.get("ETag")
-                last_modified = response.headers.get("Last-Modified")
-                encoding = response.headers.get_content_charset() or "utf-8"
-        except HTTPError as error:
-            if error.code != 304 or previous is None:
-                raise
-            if not cached_path.exists():
-                raise OSError(f"Cached source response is missing: {cached_path}") from error
-            content = cached_path.read_bytes()
-            etag = error.headers.get("ETag") or previous.get("etag")
-            last_modified = error.headers.get("Last-Modified") or previous.get("last_modified")
-            encoding = previous.get("encoding", "utf-8")
+        for attempt in range(self.github_retries + 1):
+            try:
+                with self.opener(request, timeout=self.timeout) as response:
+                    content = response.read()
+                    etag = response.headers.get("ETag")
+                    last_modified = response.headers.get("Last-Modified")
+                    encoding = response.headers.get_content_charset() or "utf-8"
+                break
+            except HTTPError as error:
+                if error.code == 304 and previous is not None:
+                    if not cached_path.exists():
+                        raise OSError(f"Cached source response is missing: {cached_path}") from error
+                    content = cached_path.read_bytes()
+                    etag = error.headers.get("ETag") or previous.get("etag")
+                    last_modified = error.headers.get("Last-Modified") or previous.get("last_modified")
+                    encoding = previous.get("encoding", "utf-8")
+                    break
+                rate_limited = url.lower().startswith("https://api.github.com/") and error.code in {403, 429}
+                if not rate_limited or attempt >= self.github_retries:
+                    raise
+                retry_after = error.headers.get("Retry-After")
+                try:
+                    delay = float(retry_after) if retry_after else 2**attempt
+                except ValueError:
+                    delay = 2**attempt
+                self.sleep(min(max(delay, 1.0), 30.0))
 
         digest = hashlib.sha256(content).hexdigest()
         cache_path = self.cache_dir / digest

@@ -26,6 +26,12 @@ class CITests(unittest.TestCase):
         self.assertEqual(len(document["executions"]), 1)
         self.assertEqual(len(document["executions"][0]["observations"]), 1)
 
+    def test_adapter_failure_keeps_existing_evidence(self):
+        existing = {"schema_version": 1, "generated_at": "2026-08-08T00:00:00Z", "executions": [{"id": "old", "observations": []}], "adapter_failures": []}
+        document = build_evidence([], [], existing=existing, observed_at="2026-08-08T00:01:00Z", failures=[{"adapter": "github_actions", "error": "rate limited", "observed_at": "2026-08-08T00:01:00Z"}])
+        self.assertEqual([item["id"] for item in document["executions"]], ["old"])
+        self.assertEqual(document["adapter_failures"][0]["adapter"], "github_actions")
+
 
 if __name__ == "__main__":
     unittest.main()

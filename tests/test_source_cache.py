@@ -151,6 +151,26 @@ class SourceCacheTests(unittest.TestCase):
             self.assertEqual(reader("https://example.test/source"), "offline source")
             self.assertEqual(reader.latest_observed_at(prefixes=["https://example.test/"]), "2026-08-07T00:00:00Z")
 
+    def test_authenticates_and_retries_github_rate_limits(self):
+        requests = []
+        sleeps = []
+
+        def open_response(request, timeout):
+            requests.append(request)
+            if len(requests) < 3:
+                headers = Message()
+                headers["Retry-After"] = "1"
+                raise HTTPError(request.full_url, 403, "rate limited", headers, None)
+            return Response(b"github response")
+
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            cache = SourceCache(root / "cache", root / "manifest.json", 5, opener=open_response, github_token="secret", sleep=sleeps.append)
+            self.assertEqual(cache("https://api.github.com/repos/example/project/actions/runs"), "github response")
+
+        self.assertEqual(sleeps, [1.0, 1.0])
+        self.assertEqual(requests[0].get_header("Authorization"), "Bearer secret")
+
 
 if __name__ == "__main__":
     unittest.main()

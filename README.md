@@ -113,6 +113,8 @@ rocm-verify-matrix --platform linux --gfx gfx1201 --python cp312 --limit 1
 
 Resolver, runtime, and hardware outputs under `data/verifications/` are local machine evidence and are ignored by Git.
 
+GitHub Actions collection uses `GITHUB_TOKEN` when present. GitHub API 403/429 responses are retried with bounded backoff; if collection still fails, the previous CI executions remain in the evidence file and the failed adapter is recorded separately.
+
 ## Run tests
 
 ```powershell
