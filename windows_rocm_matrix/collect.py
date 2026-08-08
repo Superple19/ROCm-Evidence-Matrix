@@ -41,6 +41,17 @@ def fetch_text(url, timeout):
         return response.read().decode(charset, errors="replace")
 
 
+def memoized_reader(reader):
+    responses = {}
+
+    def read(url):
+        if url not in responses:
+            responses[url] = reader(url)
+        return responses[url]
+
+    return read
+
+
 def package_url(index_url, package_name):
     return index_url.rstrip("/") + "/" + package_name + "/"
 
@@ -247,6 +258,7 @@ def write_status(family, started_at, results, path):
 
 
 def normalize_therock_sources(args, config, source_reader, observed_at, status_output=None):
+    source_reader = memoized_reader(source_reader)
     started_at = utc_now()
     existing_documentation = read_json(args.documentation_output)
     documentation, results = collect_documentation_sources(
@@ -389,6 +401,7 @@ def normalize_therock(args, config):
 
 
 def normalize_legacy_sources(args, config, source_reader, observed_at, status_output=None):
+    source_reader = memoized_reader(source_reader)
     started_at = utc_now()
     existing = read_json(args.legacy_output)
     legacy, results = collect_legacy_windows_sources(
