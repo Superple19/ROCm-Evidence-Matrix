@@ -23,6 +23,13 @@ def matrix_jobs(history, platform, channels, gfx=None, python_tag=None, limit=No
     for channel in channels:
         candidates = resolve_candidates(history, None, platform=platform, channel=channel, python_tag=python_tag)
         for candidate in candidates:
+            if candidate.get("distribution_family") == "legacy" and platform == "linux" and not candidate.get("available_gfx_targets"):
+                python_tags = [python_tag] if python_tag else candidate["python_tags"]
+                for tag in python_tags:
+                    jobs.append((candidate, None, tag, platform_tag_for(platform, platform_tag)))
+                    if limit and len(jobs) >= limit:
+                        return jobs
+                continue
             targets = candidate.get("available_gfx_targets", [])
             if not targets:
                 continue

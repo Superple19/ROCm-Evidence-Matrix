@@ -9,6 +9,24 @@ from windows_rocm_matrix.verify_matrix import matrix_jobs
 
 
 class VerificationTests(unittest.TestCase):
+    def test_legacy_linux_matrix_verifies_without_gfx_target(self):
+        candidate = {
+            "id": "legacy:linux:stable:7.2:torch:vision:audio:cp312",
+            "distribution_family": "legacy",
+            "platform": "linux",
+            "channel": "stable",
+            "rocm_version": "7.2",
+            "torch_version": "2.10.0",
+            "torchvision_version": "0.25.0",
+            "torchaudio_version": "2.9.0",
+            "python_tags": ["cp312"],
+            "gfx_targets": [],
+            "available_gfx_targets": [],
+        }
+        jobs = matrix_jobs({"candidates": [candidate]}, "linux", ["stable"], python_tag="cp312")
+
+        self.assertEqual(jobs, [(candidate, None, "cp312", "manylinux_2_28_x86_64")])
+
     def test_builds_safe_dry_run_command(self):
         candidate = {
             "id": "candidate",
