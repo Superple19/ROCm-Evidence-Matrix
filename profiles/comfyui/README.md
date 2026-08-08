@@ -11,3 +11,8 @@ evidence kinds.
 
 Extension requirements and performance recommendations belong under
 `extensions/` and must not be added to the core profile.
+
+Option constraints distinguish execution policy from performance advice. A
+`required` relationship describes the profile policy, while `claim_status`
+still controls whether that policy has verified evidence. An `optional`
+constraint must never be applied as a prerequisite by a consumer.

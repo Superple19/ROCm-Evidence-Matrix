@@ -11,8 +11,11 @@ class ProfileTests(unittest.TestCase):
         self.assertEqual(profile["metadata"]["domain"], "generation")
         self.assertEqual(
             {item["id"] for item in profile["constraints"]},
-            {"rocm-package-candidate", "torch-rocm", "rocm-channel", "supported-platform", "platform-package-layout", "python-tag", "gfx-target"},
+            {"rocm-package-candidate", "torch-rocm", "rocm-channel", "supported-platform", "platform-package-layout", "python-tag", "gfx-target", "disable-cudnn", "pinned-memory"},
         )
+        options = {item["id"]: item for item in profile["constraints"] if item["kind"] == "option"}
+        self.assertEqual(options["disable-cudnn"]["relationship"], "required")
+        self.assertEqual(options["pinned-memory"]["relationship"], "optional")
 
     def test_comfyui_extensions_are_optional_and_not_auto_verified(self):
         root = Path(__file__).parents[1] / "profiles" / "comfyui" / "extensions"

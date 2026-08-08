@@ -102,6 +102,37 @@
       },
       "claim_status": "documented",
       "evidence_refs": ["source:packages-stable", "source:packages-nightly"]
+    },
+    {
+      "id": "disable-cudnn",
+      "kind": "option",
+      "relationship": "required",
+      "name": "Disable cuDNN for the AMD execution path",
+      "value": {
+        "setting": "torch.backends.cudnn.enabled",
+        "value": false
+      },
+      "conditions": {
+        "platform": ["windows", "linux"],
+        "distribution_family": ["therock", "legacy"]
+      },
+      "claim_status": "unverified",
+      "evidence_refs": []
+    },
+    {
+      "id": "pinned-memory",
+      "kind": "option",
+      "relationship": "optional",
+      "name": "Pinned host memory",
+      "value": {
+        "setting": "pin_memory",
+        "value": "recommended"
+      },
+      "conditions": {
+        "platform": ["windows", "linux"]
+      },
+      "claim_status": "unverified",
+      "evidence_refs": []
     }
   ]
 }
