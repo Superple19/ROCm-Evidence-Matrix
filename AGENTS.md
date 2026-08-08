@@ -92,9 +92,11 @@
 
 ## Commit Messages
 
-- Use Conventional Commits.
+- Use Conventional Commits with `type: description` or `type(scope): description`.
 - Use a short imperative subject, for example: `docs: define compatibility evidence levels`.
-- When a body is useful, write it as `-` bullet points.
+- Use one of these project types when applicable: `build`, `chore`, `ci`, `data`, `docs`, `feat`, `fix`, `perf`, `refactor`, `revert`, `style`, or `test`.
+- When a body is useful, leave exactly one blank line after the subject, then write consecutive `-` bullet lines with no blank lines between bullets.
+- Pass the body as one multiline message or use the editor; do not pass separate `-m` options for individual bullets because Git inserts paragraph breaks.
 - Keep one coherent change per commit.
 - Example:
 
