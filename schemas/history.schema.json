@@ -23,6 +23,7 @@
           "lifecycle": {"enum": ["current", "historical"]},
           "channel": {"enum": ["stable", "nightly", "staging"]},
           "rocm_version": {"type": "string"},
+          "hip_version": {"type": ["string", "null"]},
           "torch_version": {"type": "string"},
           "torchvision_version": {"type": "string"},
           "torchaudio_version": {"type": "string"},

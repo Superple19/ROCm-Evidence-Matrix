@@ -115,7 +115,8 @@ def main(argv=None):
         print(json.dumps(selected, indent=2, sort_keys=True))
         return
     for candidate in selected:
-        print(f"ROCm {candidate['rocm_version']} | Torch {candidate['torch_version']} | Python {', '.join(candidate['python_tags'])}")
+        hip_version = candidate.get("hip_version") or "not observed"
+        print(f"ROCm {candidate['rocm_version']} | HIP {hip_version} | Torch {candidate['torch_version']} | Python {', '.join(candidate['python_tags'])}")
         print(install_command(candidate, args.gfx))
 
 

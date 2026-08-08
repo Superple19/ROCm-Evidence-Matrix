@@ -277,6 +277,7 @@ def build_legacy_candidates(document):
                 "platform": "windows",
                 "channel": "stable",
                 "rocm_version": release["release_id"],
+                "hip_version": None,
                 "torch_version": torch["version"],
                 "torchvision_version": vision["version"],
                 "torchaudio_version": audio["version"],

@@ -17,10 +17,12 @@ def environment_evidence():
     return {name: os.environ[name] for name in ("ROCM_PATH", "HIP_PATH", "HSA_OVERRIDE_GFX_VERSION") if os.environ.get(name)}
 
 
-def collect_runtime(torch_module, observed_at=None):
+def collect_runtime(torch_module, observed_at=None, candidate_id=None, gfx=None):
     observed_at = observed_at or utc_now()
     record = {
-        "id": f"runtime:{observed_at}",
+        "id": f"runtime:{candidate_id or 'unlinked'}:{observed_at}",
+        "candidate_id": candidate_id,
+        "gfx": gfx,
         "observed_at": observed_at,
         "python_version": platform.python_version(),
         "platform": platform.platform(),
@@ -78,6 +80,8 @@ def write_runtime(record, output_path):
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(description="Record ROCm runtime evidence from the current Python environment.")
     parser.add_argument("--output", default="data/verifications/runtime.json")
+    parser.add_argument("--candidate-id")
+    parser.add_argument("--gfx")
     return parser.parse_args(argv)
 
 
@@ -87,7 +91,7 @@ def main(argv=None):
         import torch
     except ImportError as error:
         raise SystemExit(f"PyTorch is not installed: {error}") from error
-    record = collect_runtime(torch)
+    record = collect_runtime(torch, candidate_id=args.candidate_id, gfx=args.gfx)
     write_runtime(record, args.output)
     print(f"Runtime verification {record['result']}; wrote {args.output}")
     if record["result"] != "passed":

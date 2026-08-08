@@ -9,10 +9,12 @@ from .runtime import environment_evidence, utc_now
 from .validation import validate_hardware_verifications
 
 
-def collect_hardware(torch_module, observed_at=None):
+def collect_hardware(torch_module, observed_at=None, candidate_id=None, gfx=None):
     observed_at = observed_at or utc_now()
     record = {
-        "id": f"hardware:{observed_at}",
+        "id": f"hardware:{candidate_id or 'unlinked'}:{observed_at}",
+        "candidate_id": candidate_id,
+        "gfx": gfx,
         "observed_at": observed_at,
         "python_version": platform.python_version(),
         "platform": platform.platform(),
@@ -74,6 +76,8 @@ def write_hardware(record, output_path):
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(description="Run a reproducible ROCm GPU tensor smoke test.")
     parser.add_argument("--output", default="data/verifications/hardware.json")
+    parser.add_argument("--candidate-id")
+    parser.add_argument("--gfx")
     return parser.parse_args(argv)
 
 
@@ -83,7 +87,7 @@ def main(argv=None):
         import torch
     except ImportError as error:
         raise SystemExit(f"PyTorch is not installed: {error}") from error
-    record = collect_hardware(torch)
+    record = collect_hardware(torch, candidate_id=args.candidate_id, gfx=args.gfx)
     write_hardware(record, args.output)
     print(f"Hardware verification {record['result']}; wrote {args.output}")
     if record["result"] != "passed":

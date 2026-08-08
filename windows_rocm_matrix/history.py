@@ -103,6 +103,8 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
                 "gfx_support": "known",
                 "channel": source["channel"],
                 "rocm_version": rocm_version,
+                # HIP is a runtime-reported version; package indexes do not expose it reliably.
+                "hip_version": None,
                 "torch_version": torch_version,
                 "torchvision_version": vision_version,
                 "torchaudio_version": audio_version,
@@ -155,6 +157,7 @@ def migrate_history(existing):
         for item in existing.get("candidates", []):
             candidate = {**item}
             candidate.setdefault("platform", "windows")
+            candidate.setdefault("hip_version", None)
             candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
             candidate["id"] = candidate_id(candidate)
             candidates.append(candidate)
@@ -165,6 +168,7 @@ def migrate_history(existing):
     for item in existing.get("candidates", []):
         candidate = {**item, "distribution_family": "therock"}
         candidate.setdefault("platform", "windows")
+        candidate.setdefault("hip_version", None)
         candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
         candidate["id"] = candidate_id(candidate)
         candidates.append(candidate)
@@ -239,12 +243,12 @@ def render_history(history):
         "",
         "Each row summarizes install candidates derived from official framework compatibility rules and matching platform package build identifiers. Candidates are artifact evidence, not resolver or runtime verification.",
         "",
-        "| Distribution | Platform | Channel | Lifecycle | ROCm build | Framework sets | Known GFX targets | Currently available GFX targets | Python tags |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+        "| Distribution | Platform | Channel | Lifecycle | ROCm build | HIP build | Framework sets | Known GFX targets | Currently available GFX targets | Python tags |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
     for (family, platform, channel, lifecycle, rocm_version), group in sorted(grouped.items(), key=lambda item: (item[0][0], item[0][1], item[0][2], version_key(item[0][4]))):
         lines.append(
-            f"| {family} | {platform} | {channel} | {lifecycle} | `{rocm_version}` | {group['sets']} | {len(group['known'])} | "
+            f"| {family} | {platform} | {channel} | {lifecycle} | `{rocm_version}` | not observed | {group['sets']} | {len(group['known'])} | "
             f"{len(group['available'])} | {', '.join(f'`{tag}`' for tag in sorted(group['python']))} |"
         )
     return "\n".join(lines).rstrip() + "\n"
