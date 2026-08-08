@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .resolve import install_arguments, resolve_candidates
-from .validation import validate_resolver_verifications
+from .validation import validate_history, validate_resolver_verifications
 
 
 def utc_now():
@@ -174,6 +174,24 @@ def write_verification(record, output_path):
     path.write_text(json.dumps(document, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
 
 
+def update_history_evidence(history_path, candidate_id, result):
+    path = Path(history_path)
+    history = json.loads(path.read_text(encoding="utf-8"))
+    status = "resolver_verified" if result == "passed" else "resolver_failed"
+    updated = False
+    for candidate in history.get("candidates", []):
+        if candidate.get("id") != candidate_id:
+            continue
+        evidence = candidate.setdefault("evidence_status", {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"})
+        evidence["resolver"] = status
+        updated = True
+        break
+    if updated:
+        validate_history(history)
+        path.write_text(json.dumps(history, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    return updated
+
+
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(description="Verify one ROCm package candidate with pip in a disposable environment.")
     parser.add_argument("--history", default="data/history.json")
@@ -208,6 +226,7 @@ def main(argv=None):
     print(f"Verifying {candidate['id']} for {args.gfx} and {python_tag}")
     record = verify_candidate(candidate, args.gfx, args.timeout, python_tag, args.platform_tag)
     write_verification(record, args.output)
+    update_history_evidence(args.history, candidate["id"], record["result"])
     print(f"Resolver verification {record['result']}; wrote {args.output}")
     if record["result"] != "passed":
         if record["error"]:

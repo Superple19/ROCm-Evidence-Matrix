@@ -78424,6 +78424,12 @@
       ],
       "channel": "stable",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "hardware": "not_collected",
+        "resolver": "resolver_failed",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T17:44:06Z",
       "gfx_support": "known",
       "gfx_targets": [

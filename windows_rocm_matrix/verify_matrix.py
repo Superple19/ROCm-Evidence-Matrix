@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 from .resolve import resolve_candidates
-from .verify import verify_candidate, write_verification
+from .verify import update_history_evidence, verify_candidate, write_verification
 
 
 def platform_tag_for(platform, requested=None):
@@ -69,6 +69,7 @@ def main(argv=None):
         print(f"[{index}/{len(jobs)}] Verifying {candidate['id']} for {gfx} and {python_tag}")
         record = verify_candidate(candidate, gfx, args.timeout, python_tag, platform_tag)
         write_verification(record, args.output)
+        update_history_evidence(args.history, candidate["id"], record["result"])
         print(f"    {record['result']}")
 
 

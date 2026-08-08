@@ -29,7 +29,7 @@
             "additionalProperties": false,
             "properties": {
               "artifact": {"enum": ["artifact_available", "not_collected"]},
-              "resolver": {"enum": ["resolver_verified", "not_collected"]},
+              "resolver": {"enum": ["resolver_verified", "resolver_failed", "not_collected"]},
               "runtime": {"enum": ["runtime_verified", "not_collected"]},
               "hardware": {"enum": ["hardware_verified", "not_collected"]}
             }

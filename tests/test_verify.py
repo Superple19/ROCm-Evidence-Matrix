@@ -1,6 +1,10 @@
 import unittest
 
-from windows_rocm_matrix.verify import candidate_hash, install_arguments_for_candidate, merge_verification, normalized_command, resolved_packages
+from pathlib import Path
+import json
+import tempfile
+
+from windows_rocm_matrix.verify import candidate_hash, install_arguments_for_candidate, merge_verification, normalized_command, resolved_packages, update_history_evidence
 from windows_rocm_matrix.verify_matrix import matrix_jobs
 
 
@@ -53,6 +57,19 @@ class VerificationTests(unittest.TestCase):
     def test_candidate_hash_is_stable(self):
         candidate = {"id": "candidate", "source_id": "packages-stable", "torch_version": "2.12.0"}
         self.assertEqual(candidate_hash(candidate, "gfx1201", "cp312"), candidate_hash(candidate, "gfx1201", "cp312"))
+
+    def test_records_resolver_failure_on_candidate(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "history.json"
+            path.write_text(json.dumps({"schema_version": 2, "generated_at": "2026-08-08T00:00:00Z", "sources": {"packages-stable-linux": {}}, "candidates": [{
+                "id": "candidate", "distribution_family": "therock", "platform": "linux", "lifecycle": "current", "channel": "stable",
+                "rocm_version": "7.14.0", "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
+                "python_tags": ["cp312"], "gfx_support": "known", "gfx_targets": ["gfx1201"], "available_gfx_targets": ["gfx1201"],
+                "artifact_available": True, "source_id": "packages-stable-linux", "first_observed_at": "2026-08-08T00:00:00Z", "last_observed_at": "2026-08-08T00:00:00Z"
+            }]}), encoding="utf-8")
+            self.assertTrue(update_history_evidence(path, "candidate", "failed"))
+            history = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(history["candidates"][0]["evidence_status"]["resolver"], "resolver_failed")
 
     def test_linux_matrix_selects_known_gfx_targets(self):
         history = {"candidates": [{
