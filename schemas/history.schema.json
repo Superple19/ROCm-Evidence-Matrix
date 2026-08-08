@@ -28,7 +28,7 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
-              "artifact": {"enum": ["artifact_available", "not_collected"]},
+              "artifact": {"enum": ["artifact_available", "artifact_stale", "not_collected"]},
               "documentation": {"enum": ["documented", "not_applicable", "unsupported", "unknown", "not_collected"]},
               "ci": {"enum": ["ci_verified", "ci_failed", "partial", "not_collected"]},
               "resolver": {"enum": ["resolver_verified", "resolver_failed", "partial", "not_collected"]},
@@ -49,6 +49,8 @@
                 "result": {"enum": ["passed", "failed"]},
                 "verification_id": {"type": ["string", "null"]},
                 "observed_at": {"type": "string", "format": "date-time"}
+                ,"error": {"type": ["string", "null"]}
+                ,"snapshot_observed_at": {"type": ["string", "null"], "format": "date-time"}
               }
             }
           },

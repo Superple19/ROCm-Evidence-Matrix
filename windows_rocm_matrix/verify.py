@@ -183,7 +183,7 @@ def write_verification(record, output_path):
     path.write_text(json.dumps(document, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
 
 
-def update_history_evidence(history_path, candidate_id, result, gfx=None, python_tag=None, platform_tag=None, verification_id=None, observed_at=None):
+def update_history_evidence(history_path, candidate_id, result, gfx=None, python_tag=None, platform_tag=None, verification_id=None, observed_at=None, error=None):
     path = Path(history_path)
     history = json.loads(path.read_text(encoding="utf-8"))
     status = "resolver_verified" if result == "passed" else "resolver_failed"
@@ -191,12 +191,17 @@ def update_history_evidence(history_path, candidate_id, result, gfx=None, python
     for candidate in history.get("candidates", []):
         if candidate.get("id") != candidate_id:
             continue
-        evidence = candidate.setdefault("evidence_status", {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"})
+        evidence = candidate.setdefault("evidence_status", {"artifact": "artifact_available", "documentation": "not_collected", "ci": "not_collected", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"})
         results = candidate.setdefault("resolver_results", [])
         scope = (gfx, python_tag, platform_tag)
         results[:] = [item for item in results if (item.get("gfx"), item.get("python_tag"), item.get("platform_tag")) != scope]
-        results.append({"gfx": gfx, "python_tag": python_tag, "platform_tag": platform_tag, "result": result, "verification_id": verification_id, "observed_at": observed_at or utc_now()})
-        evidence["resolver"] = "partial"
+        observed_at = observed_at or utc_now()
+        results.append({"gfx": gfx, "python_tag": python_tag, "platform_tag": platform_tag, "result": result, "verification_id": verification_id, "observed_at": observed_at, "error": error, "snapshot_observed_at": candidate.get("last_observed_at")})
+        passed = [item for item in results if item.get("result") == "passed"]
+        failed = [item for item in results if item.get("result") == "failed"]
+        evidence["resolver"] = "partial" if passed and failed else "resolver_verified" if passed else "resolver_failed"
+        if result == "failed" and candidate.get("artifact_available"):
+            evidence["artifact"] = "artifact_stale"
         updated = True
         break
     if updated:
@@ -239,7 +244,7 @@ def main(argv=None):
     print(f"Verifying {candidate['id']} for {args.gfx} and {python_tag}")
     record = verify_candidate(candidate, args.gfx, args.timeout, python_tag, args.platform_tag)
     write_verification(record, args.output)
-    update_history_evidence(args.history, candidate["id"], record["result"], args.gfx, python_tag, record["platform_tag"], record["id"], record["observed_at"])
+    update_history_evidence(args.history, candidate["id"], record["result"], args.gfx, python_tag, record["platform_tag"], record["id"], record["observed_at"], record.get("error"))
     print(f"Resolver verification {record['result']}; wrote {args.output}")
     if record["result"] != "passed":
         if record["error"]:

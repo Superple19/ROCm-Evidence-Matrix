@@ -91,7 +91,8 @@ class VerificationTests(unittest.TestCase):
             }]}), encoding="utf-8")
             self.assertTrue(update_history_evidence(path, "candidate", "failed", "gfx1201", "cp312", "manylinux_2_28_x86_64", "verification", "2026-08-08T00:00:00Z"))
             history = json.loads(path.read_text(encoding="utf-8"))
-            self.assertEqual(history["candidates"][0]["evidence_status"]["resolver"], "partial")
+            self.assertEqual(history["candidates"][0]["evidence_status"]["resolver"], "resolver_failed")
+            self.assertEqual(history["candidates"][0]["evidence_status"]["artifact"], "artifact_stale")
             self.assertEqual(history["candidates"][0]["resolver_results"][0]["gfx"], "gfx1201")
 
     def test_linux_matrix_selects_known_gfx_targets(self):
