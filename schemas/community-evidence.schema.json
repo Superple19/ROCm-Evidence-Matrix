@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/community-evidence.schema.json",
+  "title": "Community ROCm verification evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "submissions"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "submissions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "content_hash", "evidence_kind", "source", "provenance", "observed_at", "submitted_at", "result", "record", "privacy_redacted"],
+        "properties": {
+          "id": {"type": "string"},
+          "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "evidence_kind": {"enum": ["runtime", "hardware"]},
+          "source": {"const": "community"},
+          "provenance": {"const": "self-reported"},
+          "observed_at": {"type": "string", "format": "date-time"},
+          "submitted_at": {"type": "string", "format": "date-time"},
+          "result": {"enum": ["passed", "failed"]},
+          "privacy_redacted": {"const": true},
+          "record": {"type": "object"}
+        }
+      }
+    }
+  }
+}

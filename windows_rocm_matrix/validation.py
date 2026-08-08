@@ -398,3 +398,22 @@ def validate_profile(document):
     from .profile import validate_profile as validate
 
     return validate(document)
+
+
+def validate_community_evidence(document):
+    if document.get("schema_version") != 1 or not document.get("generated_at", "").endswith("Z"):
+        raise ValueError("Unsupported community evidence schema")
+    hashes = set()
+    for submission in document.get("submissions", []):
+        if submission.get("content_hash") in hashes:
+            raise ValueError(f"Duplicate community evidence: {submission.get('id')}")
+        hashes.add(submission.get("content_hash"))
+        if submission.get("source") != "community" or submission.get("provenance") != "self-reported":
+            raise ValueError(f"Invalid community evidence provenance: {submission.get('id')}")
+        if submission.get("evidence_kind") not in {"runtime", "hardware"} or submission.get("result") not in {"passed", "failed"}:
+            raise ValueError(f"Invalid community evidence: {submission.get('id')}")
+        if submission.get("privacy_redacted") is not True:
+            raise ValueError(f"Community evidence is not privacy redacted: {submission.get('id')}")
+        for field in ("observed_at", "submitted_at"):
+            if not submission.get(field, "").endswith("Z"):
+                raise ValueError(f"Community evidence {field} must be UTC: {submission.get('id')}")

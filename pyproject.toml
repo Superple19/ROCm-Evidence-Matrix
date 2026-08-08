@@ -30,6 +30,7 @@ rocm-runtime = "windows_rocm_matrix.runtime:main"
 windows-rocm-runtime = "windows_rocm_matrix.runtime:main"
 rocm-hardware = "windows_rocm_matrix.hardware:main"
 windows-rocm-hardware = "windows_rocm_matrix.hardware:main"
+rocm-evidence = "windows_rocm_matrix.community:main"
 
 [tool.setuptools.packages.find]
 include = ["windows_rocm_matrix*"]
