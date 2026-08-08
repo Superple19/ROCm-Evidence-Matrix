@@ -136,7 +136,34 @@ def candidate_sort_key(candidate):
 
 
 def initial_evidence_status():
-    return {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"}
+    return {"artifact": "artifact_available", "ci": "not_collected", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"}
+
+
+def attach_therock_ci_evidence(history, ci_document):
+    executions = ci_document.get("executions", []) if ci_document else []
+    for candidate in history.get("candidates", []):
+        if candidate.get("distribution_family") != "therock" or candidate.get("platform") != "windows" or candidate.get("lifecycle") != "current":
+            continue
+        refs = []
+        states = []
+        targets = set(candidate.get("gfx_targets", []))
+        for execution in executions:
+            if execution.get("platform") != "windows" or not targets.intersection(execution.get("targets", [])):
+                continue
+            refs.append(execution["id"])
+            states.extend(item.get("state") for item in execution.get("observations", []))
+        if not refs:
+            continue
+        candidate["ci_evidence_refs"] = sorted(set(refs))[-3:]
+        candidate["ci_evidence_scope"] = "gfx_platform"
+        status = candidate.setdefault("evidence_status", initial_evidence_status())
+        if "success" in states:
+            status["ci"] = "ci_verified"
+        elif states and all(state in {"failure", "cancelled", "skipped", "timed_out"} for state in states):
+            status["ci"] = "ci_failed"
+        else:
+            status["ci"] = "partial"
+    return history
 
 
 def candidate_id_for(distribution_family, platform, channel, rocm_version, torch_version, torchvision_version, torchaudio_version, python_tags):
@@ -247,7 +274,7 @@ def render_history(history):
     grouped = {}
     for candidate in history["candidates"]:
         key = (candidate["distribution_family"], candidate.get("platform", "windows"), candidate["channel"], candidate["lifecycle"], candidate["rocm_version"])
-        group = grouped.setdefault(key, {"sets": 0, "known": set(), "available": set(), "python": set(), "evidence": {"artifact": set(), "resolver": set(), "runtime": set(), "hardware": set()}})
+        group = grouped.setdefault(key, {"sets": 0, "known": set(), "available": set(), "python": set(), "evidence": {"artifact": set(), "ci": set(), "resolver": set(), "runtime": set(), "hardware": set()}})
         group["sets"] += 1
         group["known"].update(candidate["gfx_targets"])
         group["available"].update(candidate["available_gfx_targets"])
@@ -260,17 +287,17 @@ def render_history(history):
         "",
         "# Historical package catalog",
         "",
-        "Each row summarizes install candidates derived from official framework compatibility rules and matching platform package build identifiers. Candidates are artifact evidence, not resolver or runtime verification.",
+        "Each row summarizes install candidates derived from official framework compatibility rules and matching platform package build identifiers. CI status is GFX/platform-scoped evidence; it does not prove this exact package candidate passed. Artifact evidence does not prove resolver, runtime, or hardware compatibility.",
         "",
-        "| Distribution | Platform | Channel | Lifecycle | ROCm build | HIP build | Framework sets | Known GFX targets | Currently available GFX targets | Artifact | Resolver | Runtime | Hardware | Python tags |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+        "| Distribution | Platform | Channel | Lifecycle | ROCm build | HIP build | Framework sets | Known GFX targets | Currently available GFX targets | Artifact | CI | Resolver | Runtime | Hardware | Python tags |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
     for (family, platform, channel, lifecycle, rocm_version), group in sorted(
         grouped.items(), key=lambda item: version_key(item[0][4]), reverse=True
     ):
         lines.append(
             f"| {family} | {platform} | {channel} | {lifecycle} | `{rocm_version}` | not observed | {group['sets']} | {len(group['known'])} | "
-            f"{len(group['available'])} | {', '.join(sorted(group['evidence']['artifact']))} | {', '.join(sorted(group['evidence']['resolver']))} | "
+            f"{len(group['available'])} | {', '.join(sorted(group['evidence']['artifact']))} | {', '.join(sorted(group['evidence']['ci']))} | {', '.join(sorted(group['evidence']['resolver']))} | "
             f"{', '.join(sorted(group['evidence']['runtime']))} | {', '.join(sorted(group['evidence']['hardware']))} | "
             f"{', '.join(f'`{tag}`' for tag in sorted(group['python']))} |"
         )

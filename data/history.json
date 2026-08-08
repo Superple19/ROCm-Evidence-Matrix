@@ -75966,7 +75966,20 @@
         "gfx90a"
       ],
       "channel": "nightly",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T12:56:33Z",
       "gfx_support": "known",
       "gfx_targets": [
@@ -76124,7 +76137,20 @@
         "gfx90a"
       ],
       "channel": "nightly",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T12:56:33Z",
       "gfx_support": "known",
       "gfx_targets": [
@@ -76364,7 +76390,20 @@
         "gfx90a"
       ],
       "channel": "nightly",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T12:56:33Z",
       "gfx_support": "known",
       "gfx_targets": [
@@ -76523,7 +76562,20 @@
         "gfx90a"
       ],
       "channel": "nightly",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T12:56:33Z",
       "gfx_support": "known",
       "gfx_targets": [
@@ -77012,7 +77064,20 @@
         "gfx90c"
       ],
       "channel": "nightly",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T12:56:33Z",
       "gfx_support": "known",
       "gfx_targets": [
@@ -77172,7 +77237,20 @@
         "gfx90c"
       ],
       "channel": "nightly",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T12:56:33Z",
       "gfx_support": "known",
       "gfx_targets": [
@@ -77757,7 +77835,20 @@
         "gfx90a"
       ],
       "channel": "stable",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T13:02:04Z",
       "gfx_support": "known",
       "gfx_targets": [
@@ -77905,7 +77996,20 @@
         "gfx90a"
       ],
       "channel": "stable",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T12:56:33Z",
       "gfx_support": "known",
       "gfx_targets": [
@@ -78129,7 +78233,20 @@
         "gfx90a"
       ],
       "channel": "stable",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T12:56:33Z",
       "gfx_support": "known",
       "gfx_targets": [
@@ -85307,7 +85424,20 @@
         "gfx90a"
       ],
       "channel": "staging",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T13:02:04Z",
       "gfx_support": "known",
       "gfx_targets": [
@@ -85383,7 +85513,20 @@
         "gfx90a"
       ],
       "channel": "staging",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T13:02:04Z",
       "gfx_support": "known",
       "gfx_targets": [
@@ -85539,7 +85682,20 @@
         "gfx90a"
       ],
       "channel": "staging",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T12:56:33Z",
       "gfx_support": "known",
       "gfx_targets": [
@@ -85695,7 +85851,20 @@
         "gfx90a"
       ],
       "channel": "staging",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T12:56:33Z",
       "gfx_support": "known",
       "gfx_targets": [
@@ -85851,7 +86020,20 @@
         "gfx90a"
       ],
       "channel": "staging",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T12:56:33Z",
       "gfx_support": "known",
       "gfx_targets": [
@@ -86007,7 +86189,20 @@
         "gfx90a"
       ],
       "channel": "staging",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93034177231",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565476",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045565527"
+      ],
+      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "ci_verified",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T12:56:33Z",
       "gfx_support": "known",
       "gfx_targets": [

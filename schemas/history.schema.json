@@ -29,6 +29,7 @@
             "additionalProperties": false,
             "properties": {
               "artifact": {"enum": ["artifact_available", "not_collected"]},
+              "ci": {"enum": ["ci_verified", "ci_failed", "partial", "not_collected"]},
               "resolver": {"enum": ["resolver_verified", "resolver_failed", "partial", "not_collected"]},
               "runtime": {"enum": ["runtime_verified", "not_collected"]},
               "hardware": {"enum": ["hardware_verified", "not_collected"]}
@@ -50,6 +51,8 @@
               }
             }
           },
+          "ci_evidence_refs": {"type": "array", "items": {"type": "string"}},
+          "ci_evidence_scope": {"enum": ["gfx_platform"]},
           "torch_version": {"type": "string"},
           "torchvision_version": {"type": "string"},
           "torchaudio_version": {"type": "string"},

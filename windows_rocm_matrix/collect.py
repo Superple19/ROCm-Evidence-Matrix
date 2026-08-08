@@ -8,7 +8,7 @@ from urllib.request import Request, urlopen
 from .documentation import collect_documentation_sources
 from .ci import build_evidence, collect_github, collect_hud, parse_matrix
 from .catalog import write_catalog
-from .history import build_history_observations, merge_history, write_history_document
+from .history import attach_therock_ci_evidence, build_history_observations, merge_history, write_history_document
 from .integration import build_compatibility_matrix
 from .legacy import build_legacy_candidates, collect_legacy_windows_sources, render_legacy_windows
 from .legacy_linux import build_legacy_linux_candidates, collect_legacy_linux_sources, render_legacy_linux
@@ -222,6 +222,7 @@ def parse_args(argv=None):
     build.add_argument("--output-dir", default="data/snapshots")
     build.add_argument("--documentation-output", default="data/documentation.json")
     build.add_argument("--history-output", default="data/history.json")
+    build.add_argument("--ci-evidence-output", default="data/ci-evidence.json")
     build.add_argument("--legacy-output", default="data/legacy-windows.json")
     build.add_argument("--version-history-output", default="data/version-history.json")
     build.add_argument("--docs-output", default="docs/generated/package-availability.md")
@@ -371,6 +372,12 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
         validate_ci_evidence(evidence)
         write_json(evidence, args.ci_evidence_output)
         print(f"Wrote {args.ci_evidence_output}")
+        history = read_json(args.history_output)
+        if history is not None:
+            attach_therock_ci_evidence(history, evidence)
+            validate_history(history)
+            write_json(history, args.history_output)
+            print(f"Updated {args.history_output} with CI evidence")
         results.extend(ci_results)
 
     if status_output:
@@ -573,6 +580,13 @@ def render_outputs(args):
 
 def build_outputs(args):
     integrate_outputs(args)
+    history = read_json(args.history_output)
+    ci_evidence = read_json(args.ci_evidence_output)
+    if history is not None and ci_evidence is not None:
+        attach_therock_ci_evidence(history, ci_evidence)
+        validate_history(history)
+        write_json(history, args.history_output)
+        print(f"Updated {args.history_output} with CI evidence")
     render_outputs(args)
 
 

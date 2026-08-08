@@ -1,6 +1,6 @@
 import unittest
 
-from windows_rocm_matrix.history import build_history_observations, merge_history
+from windows_rocm_matrix.history import attach_therock_ci_evidence, build_history_observations, merge_history
 from windows_rocm_matrix.resolve import install_command, resolve_candidates
 
 
@@ -128,6 +128,23 @@ class HistoryTests(unittest.TestCase):
 
         self.assertEqual(matches, [candidate])
         self.assertIn('"torch[device-gfx1201]==2.12.0+rocm7.14.0"', install_command(candidate, "gfx1201"))
+
+    def test_attaches_ci_evidence_with_gfx_platform_scope(self):
+        candidate = {
+            "id": "therock:stable:candidate",
+            "distribution_family": "therock",
+            "platform": "windows",
+            "lifecycle": "current",
+            "gfx_targets": ["gfx1201"],
+            "evidence_status": {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"},
+        }
+        evidence = {"executions": [{"id": "github:1", "platform": "windows", "targets": ["gfx1201"], "observations": [{"state": "success"}]}]}
+
+        attach_therock_ci_evidence({"candidates": [candidate]}, evidence)
+
+        self.assertEqual(candidate["evidence_status"]["ci"], "ci_verified")
+        self.assertEqual(candidate["ci_evidence_refs"], ["github:1"])
+        self.assertEqual(candidate["ci_evidence_scope"], "gfx_platform")
 
 
 if __name__ == "__main__":
