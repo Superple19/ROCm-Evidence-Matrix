@@ -27,6 +27,30 @@ class IntegrationTests(unittest.TestCase):
         self.assertIsNone(target["package_channels"]["nightly"]["torch_device_version"])
         self.assertEqual(matrix["generated_at"], "2026-08-07T00:00:00Z")
 
+    def test_keeps_package_channels_separate_by_platform(self):
+        documentation = {
+            "sources": {},
+            "products": [{"name": "Example GPU", "gfx": "gfx1201"}],
+            "windows_release_support": [],
+            "therock_windows_status": [],
+        }
+        snapshots = []
+        for platform, source_id, rocm in (("windows", "stable", "7.14.0"), ("linux", "stable-linux", "7.2.4")):
+            snapshots.append({
+                "last_observed_at": "2026-08-07T00:00:00Z",
+                "source": {"id": source_id, "channel": "stable", "platform": platform, "url": "https://example.test/packages"},
+                "gfx_targets": [{"gfx": "gfx1201", "all_device_packages_available": True}],
+                "packages": {
+                    "rocm-sdk-device-gfx1201": [{"version": rocm}],
+                    "amd-torch-device-gfx1201": [{"version": f"2.0+rocm{rocm}"}],
+                    "amd-torchvision-device-gfx1201": [{"version": f"0.1+rocm{rocm}"}],
+                },
+            })
+
+        target = build_compatibility_matrix(documentation, snapshots)["targets"][0]
+        self.assertEqual(target["platforms"]["windows"]["package_channels"]["stable"]["rocm_device_version"], "7.14.0")
+        self.assertEqual(target["platforms"]["linux"]["package_channels"]["stable"]["rocm_device_version"], "7.2.4")
+
 
 if __name__ == "__main__":
     unittest.main()

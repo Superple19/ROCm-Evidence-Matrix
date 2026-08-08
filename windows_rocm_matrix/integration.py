@@ -8,7 +8,10 @@ def build_compatibility_matrix(documentation, package_snapshots):
     windows_evidence = documentation.get("platforms", {}).get("windows", {})
     release_by_gfx = {item["gfx"]: item for item in windows_evidence.get("release_support", documentation.get("windows_release_support", []))}
     therock_by_gfx = {item["gfx"]: item for item in windows_evidence.get("therock_status", documentation.get("therock_windows_status", []))}
-    packages_by_channel = {snapshot["source"]["channel"]: snapshot for snapshot in package_snapshots}
+    packages_by_platform = {}
+    for snapshot in package_snapshots:
+        source = snapshot["source"]
+        packages_by_platform.setdefault(source.get("platform", "windows"), {})[source["channel"]] = snapshot
 
     targets = set(products_by_gfx) | set(release_by_gfx) | set(therock_by_gfx)
     for snapshot in package_snapshots:
@@ -16,19 +19,23 @@ def build_compatibility_matrix(documentation, package_snapshots):
 
     rows = []
     for gfx in sorted(targets):
-        channels = {}
-        for channel, snapshot in sorted(packages_by_channel.items()):
-            target = next((item for item in snapshot["gfx_targets"] if item["gfx"] == gfx), None)
-            if target is None:
-                continue
-            names = package_names_for_target(gfx)
-            channels[channel] = {
-                "all_device_packages_available": target["all_device_packages_available"],
-                "rocm_device_version": latest_version(snapshot["packages"].get(names[0], [])),
-                "torch_device_version": latest_version(snapshot["packages"].get(names[1], [])),
-                "torchvision_device_version": latest_version(snapshot["packages"].get(names[2], [])),
-                "source_id": f"packages-{snapshot['source']['id']}",
-            }
+        platform_channels = {}
+        for platform, channels_by_name in sorted(packages_by_platform.items()):
+            channels = {}
+            for channel, snapshot in sorted(channels_by_name.items()):
+                target = next((item for item in snapshot["gfx_targets"] if item["gfx"] == gfx), None)
+                if target is None:
+                    continue
+                names = package_names_for_target(gfx)
+                channels[channel] = {
+                    "all_device_packages_available": target["all_device_packages_available"],
+                    "rocm_device_version": latest_version(snapshot["packages"].get(names[0], [])),
+                    "torch_device_version": latest_version(snapshot["packages"].get(names[1], [])),
+                    "torchvision_device_version": latest_version(snapshot["packages"].get(names[2], [])),
+                    "source_id": f"packages-{snapshot['source']['id']}",
+                }
+            platform_channels[platform] = channels
+        windows_channels = platform_channels.get("windows", {})
         rows.append(
             {
                 "gfx": gfx,
@@ -37,11 +44,17 @@ def build_compatibility_matrix(documentation, package_snapshots):
                     "windows": {
                         "release_support": release_by_gfx.get(gfx),
                         "therock_status": therock_by_gfx.get(gfx),
-                    }
+                        "package_channels": windows_channels,
+                    },
+                    **{
+                        platform: {"package_channels": channels}
+                        for platform, channels in platform_channels.items()
+                        if platform != "windows"
+                    },
                 },
                 "windows_release_support": release_by_gfx.get(gfx),
                 "therock_windows_status": therock_by_gfx.get(gfx),
-                "package_channels": channels,
+                "package_channels": windows_channels,
             }
         )
 

@@ -2,8 +2,9 @@
 
 ## Project Scope
 
-- Build an unofficial, community-maintained compatibility matrix for Windows ROCm.
+- Build an unofficial, community-maintained compatibility matrix for ROCm across Windows and Linux.
 - Keep the core dataset application-agnostic. ComfyUI, Ollama, and other consumers belong in separate framework, runtime, or application profiles.
+- Keep profile policy separate from core evidence. Profiles may describe consumers, extensions, and options, but must link claims to evidence IDs.
 - Treat the matrix as evidence-based compatibility data, not as an official AMD support statement or a universal compatibility guarantee.
 - Prefer machine-readable data that can also generate human-readable documentation.
 
@@ -35,6 +36,7 @@
   3. Official application documentation and releases.
   4. Reproducible community test reports.
 - Community reports must include enough environment and test detail to reproduce the result.
+- Community runtime and hardware reports are `source=community`, `provenance=self-reported`, and must be privacy-redacted before submission.
 - Do not silently replace an authoritative value with a community claim. Store conflicting evidence explicitly.
 - Do not scrape rendered pages when a stable API, package index, or machine-readable source is available.
 
@@ -64,7 +66,9 @@
 - Do not execute downloaded artifacts during collection.
 - Resolver and runtime tests must run in isolated disposable environments.
 - Hardware verification must report the exact machine, driver, GPU, package set, command, and result.
+- Public community submissions must redact usernames, hostnames, tokens, and absolute paths while retaining reproducibility-relevant environment fields.
 - Generated files must identify their generator and must not be edited manually.
+- `rocm-evidence` prepares a local, reviewable community submission; collection and evidence export must never upload credentials or results automatically.
 
 ## Engineering Style
 

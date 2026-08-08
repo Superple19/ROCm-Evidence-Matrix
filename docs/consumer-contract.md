@@ -51,3 +51,22 @@ identity change requires a new schema version and migration notes.
 
 The legacy `windows_*` version-history fields are compatibility aliases. New
 consumers should read `platform_evidence.windows` instead.
+
+## Profiles and community evidence
+
+Profiles under `profiles/` are policy consumed by applications; they do not
+modify core package or platform evidence. Validate them against
+`schemas/profile.schema.json`. A `verified` profile claim must reference at
+least one evidence ID. `optional` constraints are recommendations or optional
+extensions, not installation prerequisites, and `conflicting` constraints must
+not be selected together.
+
+ComfyUI extension profiles currently use `unverified` status unless resolver,
+runtime, or hardware evidence is explicitly linked. Consumers must not present
+an unverified extension as compatible automatically, and extension failures
+must remain separate from the ComfyUI core result.
+
+Community submissions use `schemas/community-evidence.schema.json`. They are
+`source=community` and `provenance=self-reported`, not official AMD support.
+Prepare them with `rocm-evidence`, review the redaction, and submit them
+manually; the command performs no upload.

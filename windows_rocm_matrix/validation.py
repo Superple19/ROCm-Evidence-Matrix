@@ -110,6 +110,10 @@ def validate_compatibility_matrix(matrix):
         for packages in target.get("package_channels", {}).values():
             if packages["source_id"] not in source_ids:
                 raise ValueError(f"Unknown package source for {gfx}")
+        for platform, platform_data in platforms.items():
+            for packages in platform_data.get("package_channels", {}).values():
+                if packages["source_id"] not in source_ids:
+                    raise ValueError(f"Unknown {platform} package source for {gfx}")
 
 
 def validate_history(history):

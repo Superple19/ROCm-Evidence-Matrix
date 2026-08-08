@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-07T17:44:06Z",
+  "generated_at": "2026-08-08T08:19:01Z",
   "schema_version": 1,
   "sources": {
     "amd-gpu-specifications": {
       "fallback_used": false,
       "id": "amd-gpu-specifications",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst",
       "url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst"
     },
@@ -13,7 +13,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "id": "nightly",
-      "observed_at": "2026-08-07T15:36:41Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "platform": "windows",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
     },
@@ -21,7 +21,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "id": "nightly-linux",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "platform": "linux",
       "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
     },
@@ -29,7 +29,7 @@
       "channel": "stable",
       "distribution_family": "therock",
       "id": "stable",
-      "observed_at": "2026-08-07T15:36:41Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "platform": "windows",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/"
     },
@@ -37,7 +37,7 @@
       "channel": "stable",
       "distribution_family": "therock",
       "id": "stable-linux",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "platform": "linux",
       "url": "https://repo.amd.com/rocm/whl-multi-arch/"
     },
@@ -45,7 +45,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "id": "staging",
-      "observed_at": "2026-08-07T15:36:41Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "platform": "windows",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
     },
@@ -53,35 +53,35 @@
       "channel": "staging",
       "distribution_family": "therock",
       "id": "staging-linux",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "platform": "linux",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
     },
     "pytorch-version-compatibility": {
       "fallback_used": false,
       "id": "pytorch-version-compatibility",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "preferred_url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md",
       "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     },
     "rocm-compatibility-matrix": {
       "fallback_used": false,
       "id": "rocm-compatibility-matrix",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "preferred_url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html",
       "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
     },
     "therock-release-packaging": {
       "fallback_used": false,
       "id": "therock-release-packaging",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
     },
     "therock-supported-gpus": {
       "fallback_used": false,
       "id": "therock-supported-gpus",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     }
@@ -113,7 +113,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": null,
           "therock_status": {
             "architecture": "RDNA1",
@@ -162,7 +210,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": null,
           "therock_status": {
             "architecture": "RDNA1",
@@ -211,7 +307,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": null,
           "therock_status": {
             "architecture": "RDNA1",
@@ -260,7 +404,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": {
             "adrenalin_driver_versions": [
               "26.6.4"
@@ -345,7 +537,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": null,
           "therock_status": {
             "architecture": "RDNA2",
@@ -394,7 +634,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": null,
           "therock_status": {
             "architecture": "RDNA2",
@@ -443,7 +731,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": null,
           "therock_status": {
             "architecture": "RDNA2",
@@ -492,7 +828,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": null,
           "therock_status": {
             "architecture": "RDNA2",
@@ -541,7 +925,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": null,
           "therock_status": {
             "architecture": "RDNA2",
@@ -590,7 +1022,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": null,
           "therock_status": {
             "architecture": "RDNA2",
@@ -639,7 +1119,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": {
             "adrenalin_driver_versions": [
               "26.6.4"
@@ -742,7 +1270,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": {
             "adrenalin_driver_versions": [
               "26.6.4"
@@ -839,7 +1415,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": {
             "adrenalin_driver_versions": [
               "26.6.4"
@@ -924,7 +1548,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": {
             "adrenalin_driver_versions": [
               "26.6.4"
@@ -1010,7 +1682,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": {
             "adrenalin_driver_versions": [
               "26.6.4"
@@ -1095,7 +1815,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": {
             "adrenalin_driver_versions": [
               "26.6.4"
@@ -1180,7 +1948,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": {
             "adrenalin_driver_versions": [
               "26.6.4"
@@ -1265,7 +2081,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": {
             "adrenalin_driver_versions": [
               "26.6.4"
@@ -1348,7 +2212,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": {
             "adrenalin_driver_versions": [
               "26.6.4"
@@ -1439,7 +2351,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": {
             "adrenalin_driver_versions": [
               "26.6.4"
@@ -1532,7 +2492,41 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.11.0+rocm7.14.0",
+              "torchvision_device_version": "0.26.0+rocm7.14.0"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": false,
+              "rocm_device_version": null,
+              "source_id": "packages-nightly",
+              "torch_device_version": null,
+              "torchvision_device_version": null
+            },
+            "stable": {
+              "all_device_packages_available": false,
+              "rocm_device_version": null,
+              "source_id": "packages-stable",
+              "torch_device_version": null,
+              "torchvision_device_version": null
+            }
+          },
           "release_support": null,
           "therock_status": null
         }
@@ -1545,7 +2539,11 @@
       "gfx": "gfx803",
       "package_channels": {},
       "platforms": {
+        "linux": {
+          "package_channels": {}
+        },
         "windows": {
+          "package_channels": {},
           "release_support": null,
           "therock_status": null
         }
@@ -1576,7 +2574,41 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": null,
           "therock_status": {
             "architecture": "GCN5.0",
@@ -1620,7 +2652,41 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": null,
           "therock_status": {
             "architecture": "GCN5.1",
@@ -1673,7 +2739,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": null,
           "therock_status": null
         }
@@ -1710,7 +2824,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable",
+              "torch_device_version": "2.12.0+rocm7.14.0",
+              "torchvision_device_version": "0.27.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging",
+              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          },
           "release_support": null,
           "therock_status": null
         }
@@ -1735,7 +2897,27 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.12.0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.27.0+rocm10.1.0a20260807"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            }
+          },
           "release_support": null,
           "therock_status": {
             "architecture": "GCN5.0",
@@ -1784,7 +2966,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": false,
+              "rocm_device_version": null,
+              "source_id": "packages-nightly",
+              "torch_device_version": null,
+              "torchvision_device_version": null
+            },
+            "stable": {
+              "all_device_packages_available": false,
+              "rocm_device_version": null,
+              "source_id": "packages-stable",
+              "torch_device_version": null,
+              "torchvision_device_version": null
+            },
+            "staging": {
+              "all_device_packages_available": false,
+              "rocm_device_version": null,
+              "source_id": "packages-staging",
+              "torch_device_version": null,
+              "torchvision_device_version": null
+            }
+          },
           "release_support": null,
           "therock_status": null
         }
@@ -1823,7 +3053,55 @@
         }
       },
       "platforms": {
+        "linux": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "10.1.0a20260807",
+              "source_id": "packages-nightly-linux",
+              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
+              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+            },
+            "stable": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0",
+              "source_id": "packages-stable-linux",
+              "torch_device_version": "2.13.0+rocm7.14.0",
+              "torchvision_device_version": "0.28.0+rocm7.14.0"
+            },
+            "staging": {
+              "all_device_packages_available": true,
+              "rocm_device_version": "7.14.0a20260519",
+              "source_id": "packages-staging-linux",
+              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
+              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+            }
+          }
+        },
         "windows": {
+          "package_channels": {
+            "nightly": {
+              "all_device_packages_available": false,
+              "rocm_device_version": null,
+              "source_id": "packages-nightly",
+              "torch_device_version": null,
+              "torchvision_device_version": null
+            },
+            "stable": {
+              "all_device_packages_available": false,
+              "rocm_device_version": null,
+              "source_id": "packages-stable",
+              "torch_device_version": null,
+              "torchvision_device_version": null
+            },
+            "staging": {
+              "all_device_packages_available": false,
+              "rocm_device_version": null,
+              "source_id": "packages-staging",
+              "torch_device_version": null,
+              "torchvision_device_version": null
+            }
+          },
           "release_support": null,
           "therock_status": null
         }

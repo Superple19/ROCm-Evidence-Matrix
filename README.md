@@ -17,7 +17,10 @@ The collector reads official AMD stable, nightly, and staging sources. It:
 - Integrates the evidence by exact GFX target without promoting availability to compatibility.
 - Classifies each source independently by distribution family, platform, and configured channel.
 - Preserves observed package sets in an append-only historical catalog.
-- Collects legacy Windows HIP SDK release support, versioned GPU support, and pre-multi-arch PyTorch artifacts as a Windows-specific adapter.
+- Collects legacy Windows HIP SDK release support, versioned GPU support, and pre-multi-arch Windows PyTorch artifacts.
+- Collects legacy Linux manylinux wheel artifacts without inventing GFX support.
+- Validates consumer profiles and keeps ComfyUI extension policy separate from core package evidence.
+- Prepares privacy-redacted community runtime and hardware submissions without uploading them.
 - Generates a Markdown availability summary from the JSON snapshots.
 
 Official documentation sources and their evidence boundaries are listed in [docs/sources.md](docs/sources.md). The data boundaries and processing layers are documented in [docs/architecture.md](docs/architecture.md), the machine-readable consumer contract is in [docs/consumer-contract.md](docs/consumer-contract.md), and schema changes follow [docs/schema-versioning.md](docs/schema-versioning.md).
@@ -69,7 +72,7 @@ Raw responses are stored by SHA-256 under the ignored `.cache/sources/` director
 
 Source adapters prefer official machine-readable data or source markup when available. Declared rendered-page fallbacks remain independently validated, and normalized source records identify the URL that succeeded and whether fallback was required.
 
-Package snapshots are written to `data/snapshots/` with explicit platform metadata. Documentation evidence is written to `data/documentation.json`, legacy Windows evidence to `data/legacy-windows.json`, discovered release history to `data/version-history.json`, the append-only package catalog to `data/history.json`, and the integrated view to `data/matrix.json`. Generated Markdown is stored under `docs/generated/`.
+Package snapshots are written to `data/snapshots/` with explicit platform metadata. Documentation evidence is written to `data/documentation.json`, legacy Windows evidence to `data/legacy-windows.json`, legacy Linux evidence to `data/legacy-linux.json`, discovered release history to `data/version-history.json`, the append-only package catalog to `data/history.json`, and the integrated view to `data/matrix.json`. Generated Markdown is stored under `docs/generated/`.
 
 Each collection replaces the current snapshots and merges every observed compatible package set into the history catalog. A candidate remains in the catalog if its upstream artifact later disappears, while its current availability is updated separately.
 
@@ -116,6 +119,19 @@ Resolver, runtime, and hardware outputs under `data/verifications/` are local ma
 GitHub Actions collection uses `GITHUB_TOKEN` when present. GitHub API 403/429 responses are retried with bounded backoff; if collection still fails, the previous CI executions remain in the evidence file and the failed adapter is recorded separately.
 
 Compatibility profiles use `schemas/profile.schema.json`. They keep framework, runtime, extension, and option constraints separate from core evidence, classify each constraint as `required`, `optional`, or `conflicting`, and link claims to evidence IDs. A `verified` claim must include at least one evidence reference.
+
+The current ComfyUI profile is under `profiles/comfyui/`. Its extension profiles
+are optional and remain unverified until explicit resolver, runtime, or hardware
+evidence is linked. Prepare a manually reviewed community submission with:
+
+```text
+rocm-evidence --input data/verifications/runtime.json --kind runtime
+rocm-evidence --input data/verifications/hardware.json --kind hardware
+```
+
+The command redacts local identity and paths, adds a content hash, and writes
+no network requests. Community evidence is self-reported and never replaces
+official or hardware verification evidence.
 
 ## Run tests
 

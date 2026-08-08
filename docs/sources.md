@@ -4,6 +4,10 @@ This document lists the primary sources used by ROCm Compatibility Matrix. It de
 
 The project is unofficial and community-maintained. A linked artifact or package is evidence of availability, not proof that it works on physical hardware.
 
+The repository supports Windows and Linux package sources. Platform-specific
+observations must retain their platform and distribution family rather than
+being merged into one generic ROCm result.
+
 ## Source format policy
 
 Collectors prefer authoritative machine-readable data or source markup over rendered pages. A rendered HTML parser remains available only when the configuration declares it as a fallback, and each observation records the URL that actually succeeded plus whether the fallback was used.
@@ -108,6 +112,14 @@ AMD's Python package repositories currently return the standardized HTML Simple 
 - URL: https://github.com/ROCm/TheRock/releases
 - Authority: ROCm TheRock repository
 - Use: Tagged TheRock release history and release metadata.
+
+### GitHub API access
+
+- API sources: `api.github.com` endpoints declared in `config/sources.json`
+- Authentication: optional `GITHUB_TOKEN` environment variable
+- Behavior: 403/429 responses use bounded backoff; a failed adapter is recorded
+  and prior evidence remains preserved.
+- Credentials are never stored in source manifests or committed data.
 - Evidence: `documented` or `artifact_available`, depending on the recorded claim.
 - Notes: The collector uses the official GitHub Releases API and reads tagged `SUPPORTED_GPUS.md` files to preserve versioned readiness observations. A release whose tagged support document is absent is recorded as `archive_missing`, not unsupported.
 
@@ -235,3 +247,14 @@ Sources establish different facts and must not be collapsed into a single compat
 - A successful test on identified physical hardware establishes `hardware_verified`.
 
 Every collected observation should retain its source URL and `last_observed_at` timestamp. Historical records should retain their original URLs and exact version strings even after a source stops publishing the artifact.
+
+## Profiles and community observations
+
+Consumer profiles are maintained separately from upstream source authority.
+`profiles/comfyui/` currently describes ComfyUI core and extension policy;
+profile claims remain documented or unverified until linked to stronger evidence.
+
+Runtime and hardware results generated on a user's physical machine are
+community observations, not official support claims. `rocm-evidence` creates a
+privacy-redacted, hashed submission with `source=community` and
+`provenance=self-reported`. Users must review and submit it manually.

@@ -58,22 +58,24 @@ def render_compatibility_matrix(matrix):
             "",
             "Versions are selected independently per device package and do not establish a resolver-compatible set.",
             "",
-            "| GFX target | Channel | ROCm device | Torch device | TorchVision device | All available |",
-            "| --- | --- | --- | --- | --- | --- |",
+            "| Platform | GFX target | Channel | ROCm device | Torch device | TorchVision device | All available |",
+            "| --- | --- | --- | --- | --- | --- | --- |",
         ]
     )
     channel_order = {"stable": 0, "nightly": 1, "staging": 2}
     for target in matrix["targets"]:
-        for channel, packages in sorted(target["package_channels"].items(), key=lambda item: channel_order[item[0]]):
-            values = [
-                packages["rocm_device_version"] or "—",
-                packages["torch_device_version"] or "—",
-                packages["torchvision_device_version"] or "—",
-            ]
-            lines.append(
-                f"| `{target['gfx']}` | {channel} | {' | '.join(values)} | "
-                f"{status_mark(packages['all_device_packages_available'])} |"
-            )
+        for platform, platform_data in sorted(target.get("platforms", {}).items()):
+            channels = platform_data.get("package_channels", {})
+            for channel, packages in sorted(channels.items(), key=lambda item: channel_order.get(item[0], 99)):
+                values = [
+                    packages["rocm_device_version"] or "—",
+                    packages["torch_device_version"] or "—",
+                    packages["torchvision_device_version"] or "—",
+                ]
+                lines.append(
+                    f"| {platform} | `{target['gfx']}` | {channel} | {' | '.join(values)} | "
+                    f"{status_mark(packages['all_device_packages_available'])} |"
+                )
     return "\n".join(lines).rstrip() + "\n"
 
 
