@@ -1,7 +1,7 @@
 import unittest
 from pathlib import Path
 
-from windows_rocm_matrix.profile import load_profile, validate_profile
+from windows_rocm_matrix.profile import compatible_extensions, load_profile, separate_profile_results, validate_extension_selection, validate_profile
 
 
 class ProfileTests(unittest.TestCase):
@@ -26,6 +26,22 @@ class ProfileTests(unittest.TestCase):
             self.assertEqual(constraint["relationship"], "optional")
             self.assertEqual(constraint["claim_status"], "unverified")
             self.assertFalse(profile["metadata"]["core_required"])
+
+        self.assertEqual(compatible_extensions(profiles), [])
+        with self.assertRaisesRegex(ValueError, "Unverified extension"):
+            validate_extension_selection(profiles)
+
+    def test_extension_results_do_not_change_core_result(self):
+        result = separate_profile_results("passed", [{"id": "aiter", "result": "failed"}])
+        self.assertEqual(result["core"], "passed")
+        self.assertEqual(result["extensions"][0]["result"], "failed")
+
+    def test_conflicting_extensions_are_rejected(self):
+        def extension(identifier, conflicts_with):
+            return {"metadata": {"domain": "extension"}, "constraints": [{"id": identifier, "kind": "extension", "relationship": "optional", "value": {"conflicts_with": conflicts_with}, "claim_status": "documented"}]}
+
+        with self.assertRaisesRegex(ValueError, "Conflicting extensions"):
+            validate_extension_selection([extension("flash", ["sage"]), extension("sage", [])])
 
     def test_supports_constraint_kinds_and_relationships(self):
         profile = {

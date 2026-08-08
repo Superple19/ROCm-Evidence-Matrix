@@ -16,3 +16,8 @@ Option constraints distinguish execution policy from performance advice. A
 `required` relationship describes the profile policy, while `claim_status`
 still controls whether that policy has verified evidence. An `optional`
 constraint must never be applied as a prerequisite by a consumer.
+
+Consumers should call the profile selection checks before presenting an
+extension as compatible. Unverified extensions are excluded, conflicting
+extensions are rejected, and extension failures remain separate from the core
+ComfyUI result.
