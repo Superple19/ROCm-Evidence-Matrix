@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ROCm optional extension artifact history",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "sources", "extensions"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "sources": {"type": "object"},
+    "extensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "distribution_family", "extension", "package_name", "platform", "channel", "lifecycle", "rocm_version", "version", "python_tags", "artifact_available", "source_id", "first_observed_at", "last_observed_at"],
+        "properties": {
+          "id": {"type": "string"},
+          "distribution_family": {"enum": ["therock", "legacy"]},
+          "extension": {"type": "string"},
+          "package_name": {"type": "string"},
+          "platform": {"enum": ["windows", "linux", "macos", "unknown"]},
+          "channel": {"enum": ["stable", "nightly", "staging"]},
+          "lifecycle": {"enum": ["current", "historical"]},
+          "rocm_version": {"type": "string"},
+          "version": {"type": "string"},
+          "python_tags": {"type": "array", "items": {"type": "string"}},
+          "artifact_available": {"type": "boolean"},
+          "source_id": {"type": "string"},
+          "first_observed_at": {"type": "string", "format": "date-time"},
+          "last_observed_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    }
+  }
+}

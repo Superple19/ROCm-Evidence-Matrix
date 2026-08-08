@@ -8,6 +8,7 @@ from urllib.request import Request, urlopen
 from .documentation import collect_documentation_sources
 from .ci import build_evidence, collect_github, collect_hud, parse_matrix
 from .catalog import write_catalog
+from .extensions import rebuild_extension_history, render_extension_history
 from .history import attach_therock_ci_evidence, attach_therock_documentation_evidence, build_history_observations, merge_history, migrate_history, write_history_document
 from .frameworks import rebuild_auxiliary_outputs, render_framework_history, render_sdk_components
 from .integration import build_compatibility_matrix
@@ -166,6 +167,7 @@ def add_cache_paths(parser):
 def add_auxiliary_paths(parser):
     parser.add_argument("--framework-history-output", default="data/framework-history.json")
     parser.add_argument("--sdk-components-output", default="data/sdk-components.json")
+    parser.add_argument("--extension-history-output", default="data/extension-history.json")
 
 
 def parse_args(argv=None):
@@ -262,6 +264,8 @@ def parse_args(argv=None):
     catalog = commands.add_parser("catalog", help="Write the machine-readable artifact catalog without network access.")
     catalog.add_argument("--root", default=".")
     catalog.add_argument("--output", default="data/catalog.json")
+    check = commands.add_parser("check", help="Validate committed evidence and generated documentation without network access.")
+    check.add_argument("--root", default=".")
     runtime = commands.add_parser("runtime", help="Record ROCm runtime evidence from the current Python environment.")
     runtime.add_argument("--output", default="data/verifications/runtime.json")
     runtime.add_argument("--candidate-id")
@@ -295,7 +299,8 @@ def auxiliary_paths(args):
     default_dir = output_dir.parent
     framework_path = getattr(args, "framework_history_output", None) or default_dir / "framework-history.json"
     components_path = getattr(args, "sdk_components_output", None) or default_dir / "sdk-components.json"
-    return Path(framework_path), Path(components_path)
+    extension_path = getattr(args, "extension_history_output", None) or default_dir / "extension-history.json"
+    return Path(framework_path), Path(components_path), Path(extension_path)
 
 
 def normalize_therock_sources(args, config, source_reader, observed_at, status_output=None):
@@ -422,10 +427,12 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
         results.extend(ci_results)
 
     if successful_sources:
-        framework_path, components_path = auxiliary_paths(args)
+        framework_path, components_path, extension_path = auxiliary_paths(args)
         rebuild_auxiliary_outputs(args.output_dir, framework_path, components_path, observed_at, read_json, write_json)
+        rebuild_extension_history(args.output_dir, extension_path, observed_at, read_json, write_json, read_json(args.history_output))
         print(f"Wrote {framework_path}")
         print(f"Wrote {components_path}")
+        print(f"Wrote {extension_path}")
 
     if status_output:
         status = write_status("therock", started_at, results, status_output)
@@ -605,9 +612,10 @@ def render_outputs(args):
     validate_compatibility_matrix(matrix)
     validate_version_history(version_history)
     snapshot_paths, _ = load_package_snapshots(args.output_dir)
-    framework_path, components_path = auxiliary_paths(args)
+    framework_path, components_path, extension_path = auxiliary_paths(args)
     framework_history = read_json(framework_path) or {"schema_version": 1, "generated_at": history["generated_at"], "sources": {}, "candidates": []}
     sdk_components = read_json(components_path) or {"schema_version": 1, "generated_at": history["generated_at"], "components": []}
+    extension_history = read_json(extension_path) or {"schema_version": 1, "generated_at": history["generated_at"], "sources": {}, "extensions": []}
 
     write_rendered_document(snapshot_paths, args.docs_output)
     write_history_document(history, args.history_docs_output)
@@ -625,7 +633,8 @@ def render_outputs(args):
     version_history_path.write_text(render_version_history(version_history), encoding="utf-8", newline="\n")
     Path("docs/generated/framework-history.md").write_text(render_framework_history(framework_history), encoding="utf-8", newline="\n")
     Path("docs/generated/sdk-components.md").write_text(render_sdk_components(sdk_components), encoding="utf-8", newline="\n")
-    paths = (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output, args.version_history_docs_output, "docs/generated/framework-history.md", "docs/generated/sdk-components.md")
+    Path("docs/generated/extension-history.md").write_text(render_extension_history(extension_history), encoding="utf-8", newline="\n")
+    paths = (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output, args.version_history_docs_output, "docs/generated/framework-history.md", "docs/generated/sdk-components.md", "docs/generated/extension-history.md")
     if legacy_linux is not None:
         paths += (args.legacy_linux_docs_output,)
     for path in paths:
@@ -634,8 +643,9 @@ def render_outputs(args):
 
 def build_outputs(args):
     integrate_outputs(args)
-    framework_path, components_path = auxiliary_paths(args)
+    framework_path, components_path, extension_path = auxiliary_paths(args)
     rebuild_auxiliary_outputs(args.output_dir, framework_path, components_path, utc_now(), read_json, write_json)
+    rebuild_extension_history(args.output_dir, extension_path, utc_now(), read_json, write_json, read_json(args.history_output))
     history = read_json(args.history_output)
     ci_evidence = read_json(args.ci_evidence_output)
     documentation = read_json(args.documentation_output)
@@ -677,6 +687,10 @@ def main(argv=None):
         return
     if args.command == "catalog":
         print(f"Wrote {write_catalog(args.root, args.output)}")
+        return
+    if args.command == "check":
+        from .check import run_check
+        run_check(args.root)
         return
     if args.command == "integrate":
         integrate_outputs(args)

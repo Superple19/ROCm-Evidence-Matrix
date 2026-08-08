@@ -7,7 +7,7 @@
       "first_observed_at": "2026-08-08T14:05:00Z",
       "framework": "jax",
       "id": "jax:jax-rocm10:linux:nightly:10.1.0a20260807:0.11.0+rocm10.1.0a20260807:0.11.0+rocm10.1.0a20260807:cp312,cp313,cp314",
-      "last_observed_at": "2026-08-08T14:22:26Z",
+      "last_observed_at": "2026-08-08T14:58:55Z",
       "lifecycle": "current",
       "pjrt_package": "jax-rocm10-pjrt",
       "pjrt_version": "0.11.0+rocm10.1.0a20260807",
@@ -30,7 +30,7 @@
       "first_observed_at": "2026-08-08T14:05:00Z",
       "framework": "jax",
       "id": "jax:jax-rocm7:linux:nightly:7.15.0a20260728:0.10.2+rocm7.15.0a20260728:0.10.2+rocm7.15.0a20260728:cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-08T14:22:26Z",
+      "last_observed_at": "2026-08-08T14:58:55Z",
       "lifecycle": "current",
       "pjrt_package": "jax-rocm7-pjrt",
       "pjrt_version": "0.10.2+rocm7.15.0a20260728",
@@ -54,7 +54,7 @@
       "first_observed_at": "2026-08-08T14:05:00Z",
       "framework": "jax",
       "id": "jax:jax-rocm7:linux:stable:7.14.0:0.10.0+rocm7.14.0:0.10.0+rocm7.14.0:cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-08T14:22:26Z",
+      "last_observed_at": "2026-08-08T14:58:55Z",
       "lifecycle": "current",
       "pjrt_package": "jax-rocm7-pjrt",
       "pjrt_version": "0.10.0+rocm7.14.0",
@@ -72,7 +72,7 @@
       "source_id": "packages-stable-linux"
     }
   ],
-  "generated_at": "2026-08-08T14:22:26Z",
+  "generated_at": "2026-08-08T14:58:55Z",
   "schema_version": 1,
   "sources": {
     "packages-nightly": {

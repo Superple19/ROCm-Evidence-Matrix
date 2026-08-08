@@ -39,7 +39,7 @@ class HistoryTests(unittest.TestCase):
         self.assertEqual(len(candidates), 1)
         self.assertEqual(candidates[0]["distribution_family"], "therock")
         self.assertEqual(candidates[0]["python_tags"], ["cp312"])
-        self.assertEqual(candidates[0]["triton_version"], "3.6.0+rocm10.1.0a20260807")
+        self.assertIsNone(candidates[0]["triton_version"])
 
     def test_retains_candidate_when_artifact_disappears(self):
         observation = {

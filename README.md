@@ -33,6 +33,7 @@ Current generated views:
 - [Package availability](docs/generated/package-availability.md)
 - [Historical package candidates](docs/generated/history.md)
 - [JAX framework artifact history](docs/generated/framework-history.md)
+- [Optional extension artifact history](docs/generated/extension-history.md)
 - [ROCm SDK component evidence](docs/generated/sdk-components.md)
 - [Legacy platform ROCm support](docs/generated/legacy-windows.md)
 - [Legacy Linux ROCm artifacts](docs/generated/legacy-linux.md)
@@ -69,6 +70,14 @@ rocm-matrix render
 ```
 
 `integrate` writes the machine-readable matrix, while `render` writes Markdown from normalized and integrated data. `build` remains a convenience command that runs both stages.
+
+Run the offline quality gate after collection or parser changes:
+
+```powershell
+rocm-matrix check
+```
+
+It validates every catalog artifact, profile, standalone evidence file, and generated Markdown view without making network requests.
 
 Each collection command writes its source results to `data/status/therock.json` or `data/status/legacy.json`. A failed source does not stop unrelated adapters, and its previously collected evidence is retained. The command exits unsuccessfully after all adapters finish if any source failed.
 
@@ -112,13 +121,24 @@ The result is appended to `data/verifications/resolver.json` with the exact cand
 
 A passing record establishes only `resolver_verified`. Runtime imports and physical GPU execution require separate isolated tests and must be recorded as `runtime_verified` or `hardware_verified` evidence.
 
-For Linux TheRock candidates, `rocm-verify-matrix` runs the resolver across stable, nightly, and staging channels, available GFX targets, and each candidate Python tag. Use `--limit` while developing and override the target wheel tag when needed:
+Triton is an optional extension and is tracked in [extension history](docs/generated/extension-history.md), not multiplied into every core Torch candidate. The core resolver command installs the Torch package set only; install or verify Triton separately when the selected workflow requires it.
+
+For Linux TheRock candidates, `rocm-verify-matrix` runs the resolver across stable and nightly channels by default, available representative GFX targets, and each candidate Python tag. Add `--channel staging` when staging evidence is needed. Use `--limit` while developing and override the target wheel tag when needed:
 
 ```text
 rocm-verify-matrix --platform linux --gfx gfx1201 --python cp312 --limit 1
 ```
 
 Resolver, runtime, and hardware outputs under `data/verifications/` are local machine evidence and are ignored by Git.
+
+Collect local runtime and hardware evidence against an exact candidate when the matching environment is available:
+
+```powershell
+rocm-matrix runtime --candidate-id <candidate-id> --gfx gfx1201
+rocm-matrix hardware --candidate-id <candidate-id> --gfx gfx1201
+```
+
+Both commands append timestamped records locally. Use `rocm-evidence` to create a privacy-redacted submission for manual review; no evidence is uploaded automatically.
 
 GitHub Actions collection uses `GITHUB_TOKEN` when present. GitHub API 403/429 responses are retried with bounded backoff; if collection still fails, the previous CI executions remain in the evidence file and the failed adapter is recorded separately.
 

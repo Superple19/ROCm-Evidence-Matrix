@@ -45,6 +45,8 @@ consumers; new platform integrations must use the grouped representation.
 - `windows_rocm_matrix/legacy.py`: legacy Windows adapter
 - `windows_rocm_matrix/ci.py`: TheRock CI configuration and execution evidence
 - `windows_rocm_matrix/frameworks.py`: JAX framework and ROCm SDK component evidence
+- `windows_rocm_matrix/extensions.py`: optional compiled-extension artifact history
+- `windows_rocm_matrix/check.py`: offline evidence and generated-document validation
 - `windows_rocm_matrix/profile.py`: consumer profile validation and selection policy
 - `windows_rocm_matrix/community.py`: privacy-redacted community evidence export
 - `windows_rocm_matrix/integration.py`: evidence integration by exact GFX target

@@ -8,6 +8,9 @@ from .resolve import resolve_candidates
 from .verify import update_history_evidence, verify_candidate, write_verification
 
 
+PREFERRED_GFX = ("gfx1201", "gfx1100", "gfx1030", "gfx90a")
+
+
 def platform_tag_for(platform, requested=None):
     if requested:
         return requested
@@ -18,10 +21,40 @@ def platform_tag_for(platform, requested=None):
     }.get(platform)
 
 
-def matrix_jobs(history, platform, channels, gfx=None, python_tag=None, limit=None, platform_tag=None, distribution_family=None):
+def representative_targets(candidates, all_gfx=False):
+    targets = sorted({target for candidate in candidates for target in candidate.get("available_gfx_targets", [])}, reverse=True)
+    if all_gfx:
+        return targets
+    preferred = [target for target in PREFERRED_GFX if target in targets]
+    return preferred or targets[:1]
+
+
+def matrix_jobs(history, platform, channels, gfx=None, python_tag=None, limit=None, platform_tag=None, distribution_family=None, rocm_version=None, torch_series=None, all_candidates=False, all_gfx=False):
     jobs = []
     for channel in channels:
-        candidates = resolve_candidates(history, None, platform=platform, channel=channel, python_tag=python_tag)
+        candidates = resolve_candidates(history, None, platform=platform, channel=channel, rocm_version=rocm_version, torch_series=torch_series, python_tag=python_tag)
+        candidates = [candidate for candidate in candidates if not distribution_family or candidate.get("distribution_family") == distribution_family]
+        if not candidates:
+            continue
+        if not all_candidates:
+            targets = [gfx] if gfx else representative_targets(candidates, all_gfx)
+            for target in targets:
+                matching = [candidate for candidate in candidates if target in candidate.get("available_gfx_targets", [])]
+                for candidate in matching[:1]:
+                    python_tags = [python_tag] if python_tag else candidate["python_tags"]
+                    for tag in python_tags:
+                        jobs.append((candidate, target, tag, platform_tag_for(platform, platform_tag)))
+                        if limit and len(jobs) >= limit:
+                            return jobs
+            legacy_without_gfx = [candidate for candidate in candidates if candidate.get("distribution_family") == "legacy" and platform == "linux" and not candidate.get("available_gfx_targets")]
+            if not gfx and legacy_without_gfx:
+                candidate = legacy_without_gfx[0]
+                python_tags = [python_tag] if python_tag else candidate["python_tags"]
+                for tag in python_tags:
+                    jobs.append((candidate, None, tag, platform_tag_for(platform, platform_tag)))
+                    if limit and len(jobs) >= limit:
+                        return jobs
+            continue
         for candidate in candidates:
             if distribution_family and candidate.get("distribution_family") != distribution_family:
                 continue
@@ -56,20 +89,24 @@ def parse_args(argv=None):
     parser.add_argument("--channel", action="append", dest="channels", choices=("stable", "nightly", "staging"))
     parser.add_argument("--gfx", action="append")
     parser.add_argument("--python", dest="python_tag")
+    parser.add_argument("--rocm")
+    parser.add_argument("--torch")
     parser.add_argument("--platform-tag")
     parser.add_argument("--limit", type=int)
     parser.add_argument("--timeout", type=int, default=900)
+    parser.add_argument("--all-candidates", action="store_true", help="Verify every matching candidate instead of one representative candidate per channel and target.")
+    parser.add_argument("--all-gfx", action="store_true", help="Verify every available GFX target instead of representative targets.")
     return parser.parse_args(argv)
 
 
 def main(argv=None):
     args = parse_args(argv)
     history = json.loads(Path(args.history).read_text(encoding="utf-8"))
-    channels = args.channels or ["stable", "nightly", "staging"]
+    channels = args.channels or ["stable", "nightly"]
     targets = args.gfx or [None]
     jobs = []
     for target in targets:
-        jobs.extend(matrix_jobs(history, args.platform, channels, target, args.python_tag, args.limit, args.platform_tag, args.distribution_family))
+        jobs.extend(matrix_jobs(history, args.platform, channels, target, args.python_tag, args.limit, args.platform_tag, args.distribution_family, args.rocm, args.torch, args.all_candidates, args.all_gfx))
         if args.limit and len(jobs) >= args.limit:
             jobs = jobs[: args.limit]
             break

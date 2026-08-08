@@ -38,6 +38,11 @@ Framework and SDK artifacts are separate machine-readable evidence. Use
 and exact-GFX device packages. An observed alias or extension artifact is not a
 complete Torch candidate unless it appears in `package_history`.
 
+Optional compiled extensions use `extension_history`. Triton records in that
+artifact are not part of core Torch candidate identity and must not be treated
+as installed or compatible without separate resolver, runtime, or hardware
+evidence.
+
 ## Stable identities
 
 - GFX targets use lowercase `gfx` identifiers such as `gfx1201`.

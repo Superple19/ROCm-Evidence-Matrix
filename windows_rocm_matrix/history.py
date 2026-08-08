@@ -63,7 +63,6 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
     torch_versions = package_versions.get("torch", {})
     torchvision_versions = package_versions.get("torchvision", {})
     torchaudio_versions = package_versions.get("torchaudio", {})
-    triton_versions = package_versions.get("triton", {})
     torchvision_by_rocm_series = {}
     for version in torchvision_versions:
         rocm_version = rocm_version_from_framework(version)
@@ -98,26 +97,22 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
             matching_audio = torchaudio_by_rocm_series.get((rocm_version, rule["torchaudio_series"]), [])
             for vision_version in matching_vision:
                 for audio_version in matching_audio:
-                    matching_triton = [version for version in triton_versions if rocm_version_from_framework(version) == rocm_version]
-                    for triton_version in matching_triton or [None]:
-                        tag_sources = [
-                            torch_tags,
-                            torch_device[torch_version],
-                            torchvision_versions[vision_version],
-                            torchvision_device[vision_version],
-                            torchaudio_versions[audio_version],
-                        ]
-                        if triton_version is not None:
-                            tag_sources.append(triton_versions[triton_version])
-                        python_tags = compatible_python_tags(tag_sources)
-                        if not python_tags:
-                            continue
-                        key = (rocm_version, torch_version, vision_version, audio_version, triton_version, tuple(python_tags))
-                        grouped.setdefault(key, set()).add(gfx)
+                    tag_sources = [
+                        torch_tags,
+                        torch_device[torch_version],
+                        torchvision_versions[vision_version],
+                        torchvision_device[vision_version],
+                        torchaudio_versions[audio_version],
+                    ]
+                    python_tags = compatible_python_tags(tag_sources)
+                    if not python_tags:
+                        continue
+                    key = (rocm_version, torch_version, vision_version, audio_version, tuple(python_tags))
+                    grouped.setdefault(key, set()).add(gfx)
 
     observations = []
     for key, targets in grouped.items():
-        rocm_version, torch_version, vision_version, audio_version, triton_version, python_tags = key
+        rocm_version, torch_version, vision_version, audio_version, python_tags = key
         candidate_id = candidate_id_for(
             distribution_family,
             source.get("platform", "windows"),
@@ -127,7 +122,6 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
             vision_version,
             audio_version,
             python_tags,
-            triton_version,
         )
         observations.append(
             {
@@ -144,7 +138,7 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
                 "torch_version": torch_version,
                 "torchvision_version": vision_version,
                 "torchaudio_version": audio_version,
-                "triton_version": triton_version,
+                "triton_version": None,
                 "python_tags": list(python_tags),
                 "gfx_targets": sorted(targets),
                 "source_id": f"packages-{source['id']}",
@@ -161,7 +155,6 @@ def candidate_sort_key(candidate):
         version_key(candidate["torch_version"]),
         version_key(candidate["torchvision_version"]),
         version_key(candidate["torchaudio_version"]),
-        version_key(candidate.get("triton_version") or "0"),
     )
 
 
@@ -269,7 +262,7 @@ def migrate_history(existing):
             candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
             candidate["id"] = candidate_id(candidate)
             candidates.append(candidate)
-        return {**existing, "candidates": candidates}
+        return {**existing, "candidates": collapse_triton_variants(candidates)}
     if schema_version != 1:
         raise ValueError("Unsupported history schema")
     candidates = []
@@ -287,7 +280,42 @@ def migrate_history(existing):
         candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
         candidate["id"] = candidate_id(candidate)
         candidates.append(candidate)
-    return {**existing, "schema_version": 2, "candidates": candidates}
+    return {**existing, "schema_version": 2, "candidates": collapse_triton_variants(candidates)}
+
+
+def collapse_triton_variants(candidates):
+    grouped = {}
+    preserved = []
+    for candidate in candidates:
+        if candidate.get("resolver_results"):
+            preserved.append(candidate)
+            continue
+        normalized = {**candidate, "triton_version": None}
+        normalized["id"] = candidate_id(normalized)
+        current = grouped.get(normalized["id"])
+        if current is None:
+            grouped[normalized["id"]] = normalized
+            continue
+        current["gfx_targets"] = sorted(set(current.get("gfx_targets", [])) | set(normalized.get("gfx_targets", [])))
+        current["available_gfx_targets"] = sorted(set(current.get("available_gfx_targets", [])) | set(normalized.get("available_gfx_targets", [])))
+        current["artifact_available"] = bool(current["available_gfx_targets"])
+        current["first_observed_at"] = min(current["first_observed_at"], normalized["first_observed_at"])
+        current["last_observed_at"] = max(current["last_observed_at"], normalized["last_observed_at"])
+        for kind in current.get("evidence_status", {}):
+            values = (current["evidence_status"].get(kind), normalized.get("evidence_status", {}).get(kind))
+            current["evidence_status"][kind] = min((value for value in values if value), key=lambda value: STATUS_ORDER.get(value, 99))
+    merged_preserved = []
+    for candidate in preserved:
+        key = candidate_id({**candidate, "triton_version": None})
+        current = grouped.get(key)
+        if current is None:
+            merged_preserved.append(candidate)
+            continue
+        current["resolver_results"] = current.get("resolver_results", []) + [
+            result for result in candidate.get("resolver_results", []) if result not in current.get("resolver_results", [])
+        ]
+        current["evidence_status"]["resolver"] = candidate.get("evidence_status", {}).get("resolver", current["evidence_status"].get("resolver"))
+    return merged_preserved + list(grouped.values())
 
 
 def classify_lifecycle(candidates):

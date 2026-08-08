@@ -128,6 +128,17 @@ class VerificationTests(unittest.TestCase):
         jobs = matrix_jobs(history, "linux", ["nightly"], gfx="gfx1201", python_tag="cp312")
         self.assertEqual([(job[1], job[2], job[3]) for job in jobs], [("gfx1201", "cp312", "manylinux_2_28_x86_64")])
 
+    def test_matrix_uses_one_representative_candidate_by_default(self):
+        candidates = []
+        for rocm, torch in (("7.14.0", "2.12.0"), ("7.13.0", "2.11.0")):
+            candidates.append({
+                "id": rocm, "platform": "linux", "channel": "stable", "distribution_family": "therock",
+                "available_gfx_targets": ["gfx1201", "gfx1100"], "python_tags": ["cp312"],
+                "rocm_version": rocm, "torch_version": torch, "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
+            })
+        jobs = matrix_jobs({"candidates": candidates}, "linux", ["stable"])
+        self.assertEqual([(job[0]["rocm_version"], job[1]) for job in jobs], [("7.14.0", "gfx1201"), ("7.14.0", "gfx1100")])
+
 
 if __name__ == "__main__":
     unittest.main()

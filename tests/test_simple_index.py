@@ -14,6 +14,14 @@ class SimpleIndexTests(unittest.TestCase):
 
         self.assertEqual(discover_gfx_targets(packages), ["gfx1100", "gfx1201"])
 
+    def test_discovers_alias_packages_without_treating_them_as_exact_targets(self):
+        html = (FIXTURES / "root-index-aliases.html").read_text(encoding="utf-8")
+        packages = discover_packages(html, "https://example.test/simple/")
+
+        self.assertIn("amd-torch-device-gfx12-0", packages)
+        self.assertIn("amd-torch-device-gfx110x", packages)
+        self.assertEqual(discover_gfx_targets(packages), ["gfx1201"])
+
     def test_parses_only_matching_windows_wheels(self):
         html = (FIXTURES / "package-index.html").read_text(encoding="utf-8")
         artifacts = parse_windows_wheels(
@@ -39,14 +47,15 @@ class SimpleIndexTests(unittest.TestCase):
         self.assertEqual(artifacts[0]["platform_tag"], "source")
 
     def test_parses_linux_wheels_without_accepting_windows_wheels(self):
-        html = '<a href="torch-2.12.0+rocm7.14-cp312-cp312-manylinux_2_28_x86_64.whl">torch</a><a href="torch-2.12.0+rocm7.14-cp312-cp312-win_amd64.whl">torch</a><a href="rocm_bootstrap-0.1.0-py3-none-any.whl">bootstrap</a>'
+        html = '<a href="torch-2.12.0+rocm7.14-cp312-cp312-manylinux_2_28_x86_64.whl">torch</a><a href="torch-2.12.0+rocm7.14-cp312-cp312-win_amd64.whl">torch</a>'
         artifacts = parse_linux_wheels(html, "https://example.test/", "torch")
         self.assertEqual(len(artifacts), 1)
         self.assertEqual(artifacts[0]["platform_tag"], "manylinux_2_28_x86_64")
 
-        any_artifacts = parse_linux_wheels(html, "https://example.test/", "rocm-bootstrap")
-        self.assertEqual(len(any_artifacts), 1)
-        self.assertEqual(any_artifacts[0]["platform_tag"], "any")
+    def test_parses_fixture_for_platform_independent_package(self):
+        html = (FIXTURES / "package-index-linux-any.html").read_text(encoding="utf-8")
+        artifacts = parse_linux_wheels(html, "https://example.test/rocm-bootstrap/", "rocm-bootstrap")
+        self.assertEqual([item["platform_tag"] for item in artifacts], ["any"])
 
 
 if __name__ == "__main__":

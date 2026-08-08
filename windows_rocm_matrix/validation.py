@@ -51,6 +51,87 @@ def validate_snapshot(snapshot):
             raise ValueError(f"Incorrect device package availability for {target['gfx']}")
 
 
+def validate_framework_history(document):
+    if document.get("schema_version") != 1 or not document.get("generated_at", "").endswith("Z"):
+        raise ValueError("Unsupported framework history schema")
+    ids = set()
+    latest = {}
+    required = {"id", "distribution_family", "framework", "runtime_family", "platform", "channel", "lifecycle", "rocm_version", "pjrt_package", "pjrt_version", "plugin_package", "plugin_version", "python_tags", "artifact_available", "source_id", "first_observed_at", "last_observed_at"}
+    for candidate in document.get("candidates", []):
+        if set(candidate) != required:
+            raise ValueError(f"Invalid framework candidate fields: {candidate.get('id', 'unknown')}")
+        if candidate["id"] in ids:
+            raise ValueError(f"Duplicate framework candidate: {candidate['id']}")
+        ids.add(candidate["id"])
+        if candidate["distribution_family"] not in {"therock", "legacy"} or candidate["platform"] not in {"windows", "linux", "macos", "unknown"}:
+            raise ValueError(f"Invalid framework candidate dimensions: {candidate['id']}")
+        if candidate["channel"] not in {"stable", "nightly", "staging"} or candidate["lifecycle"] not in {"current", "historical"}:
+            raise ValueError(f"Invalid framework candidate lifecycle: {candidate['id']}")
+        if not candidate["python_tags"] or not candidate["source_id"]:
+            raise ValueError(f"Framework candidate lacks package evidence: {candidate['id']}")
+        if not candidate["first_observed_at"].endswith("Z") or not candidate["last_observed_at"].endswith("Z"):
+            raise ValueError(f"Invalid framework observation time: {candidate['id']}")
+        key = (candidate["distribution_family"], candidate["runtime_family"], candidate["channel"])
+        latest[key] = max(latest.get(key, ()), version_key(candidate["rocm_version"]))
+    for candidate in document.get("candidates", []):
+        key = (candidate["distribution_family"], candidate["runtime_family"], candidate["channel"])
+        expected = "current" if version_key(candidate["rocm_version"]) == latest[key] else "historical"
+        if candidate["lifecycle"] != expected:
+            raise ValueError(f"Incorrect framework lifecycle: {candidate['id']}")
+
+
+def validate_extension_history(document):
+    if document.get("schema_version") != 1 or not document.get("generated_at", "").endswith("Z"):
+        raise ValueError("Unsupported extension history schema")
+    ids = set()
+    latest = {}
+    required = {"id", "distribution_family", "extension", "package_name", "platform", "channel", "lifecycle", "rocm_version", "version", "python_tags", "artifact_available", "source_id", "first_observed_at", "last_observed_at"}
+    for extension in document.get("extensions", []):
+        if set(extension) != required:
+            raise ValueError(f"Invalid extension fields: {extension.get('id', 'unknown')}")
+        if extension["id"] in ids:
+            raise ValueError(f"Duplicate extension evidence: {extension['id']}")
+        ids.add(extension["id"])
+        if extension["distribution_family"] not in {"therock", "legacy"} or extension["platform"] not in {"windows", "linux", "macos", "unknown"}:
+            raise ValueError(f"Invalid extension dimensions: {extension['id']}")
+        if extension["channel"] not in {"stable", "nightly", "staging"} or extension["lifecycle"] not in {"current", "historical"}:
+            raise ValueError(f"Invalid extension lifecycle: {extension['id']}")
+        if not extension["python_tags"] or not extension["source_id"]:
+            raise ValueError(f"Extension evidence lacks package details: {extension['id']}")
+        if not extension["first_observed_at"].endswith("Z") or not extension["last_observed_at"].endswith("Z"):
+            raise ValueError(f"Invalid extension observation time: {extension['id']}")
+        key = (extension["distribution_family"], extension["extension"], extension["platform"], extension["channel"])
+        latest[key] = max(latest.get(key, ()), version_key(extension["rocm_version"]))
+    for extension in document.get("extensions", []):
+        key = (extension["distribution_family"], extension["extension"], extension["platform"], extension["channel"])
+        expected = "current" if version_key(extension["rocm_version"]) == latest[key] else "historical"
+        if extension["lifecycle"] != expected:
+            raise ValueError(f"Incorrect extension lifecycle: {extension['id']}")
+
+
+def validate_sdk_components(document):
+    if document.get("schema_version") != 1 or not document.get("generated_at", "").endswith("Z"):
+        raise ValueError("Unsupported SDK component schema")
+    ids = set()
+    required = {"id", "distribution_family", "platform", "channel", "package_name", "component_kind", "versions", "python_tags", "artifact_available", "source_id", "first_observed_at", "last_observed_at"}
+    for component in document.get("components", []):
+        if not required.issubset(component):
+            raise ValueError(f"Invalid SDK component fields: {component.get('id', 'unknown')}")
+        if component["id"] in ids:
+            raise ValueError(f"Duplicate SDK component: {component['id']}")
+        ids.add(component["id"])
+        if component["distribution_family"] not in {"therock", "legacy"} or component["platform"] not in {"windows", "linux", "macos", "unknown"}:
+            raise ValueError(f"Invalid SDK component dimensions: {component['id']}")
+        if component["channel"] not in {"stable", "nightly", "staging"} or component["component_kind"] not in {"sdk-component", "device-package"}:
+            raise ValueError(f"Invalid SDK component classification: {component['id']}")
+        if not isinstance(component["versions"], list) or not isinstance(component["python_tags"], list):
+            raise ValueError(f"Invalid SDK component lists: {component['id']}")
+        if component["artifact_available"] != bool(component["versions"]):
+            raise ValueError(f"SDK component availability disagrees with versions: {component['id']}")
+        if not component["first_observed_at"].endswith("Z") or not component["last_observed_at"].endswith("Z"):
+            raise ValueError(f"Invalid SDK component observation time: {component['id']}")
+
+
 def validate_documentation_snapshot(snapshot):
     if snapshot.get("schema_version") != 1:
         raise ValueError("Unsupported documentation snapshot schema")

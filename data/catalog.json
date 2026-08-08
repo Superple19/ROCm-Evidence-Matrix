@@ -55,6 +55,12 @@
       "schema_version": 1
     },
     {
+      "id": "extension_history",
+      "path": "data/extension-history.json",
+      "schema": "schemas/extension-history.schema.json",
+      "schema_version": 1
+    },
+    {
       "id": "sdk_components",
       "path": "data/sdk-components.json",
       "schema": "schemas/sdk-components.schema.json",
@@ -64,6 +70,12 @@
       "id": "documentation",
       "path": "data/documentation.json",
       "schema": "schemas/documentation-snapshot.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "legacy_windows",
+      "path": "data/legacy-windows.json",
+      "schema": "schemas/legacy-windows.schema.json",
       "schema_version": 1
     },
     {
@@ -100,6 +112,6 @@
       "windows"
     ]
   },
-  "generated_at": "2026-08-08T14:22:26Z",
+  "generated_at": "2026-08-08T14:58:55Z",
   "schema_version": 1
 }
