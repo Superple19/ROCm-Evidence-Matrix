@@ -9,6 +9,7 @@ from .documentation import collect_documentation_sources
 from .ci import build_evidence, collect_github, collect_hud, parse_matrix
 from .catalog import write_catalog
 from .history import attach_therock_ci_evidence, attach_therock_documentation_evidence, build_history_observations, merge_history, migrate_history, write_history_document
+from .frameworks import rebuild_auxiliary_outputs, render_framework_history, render_sdk_components
 from .integration import build_compatibility_matrix
 from .legacy import build_legacy_candidates, collect_legacy_windows_sources, render_legacy_windows
 from .legacy_linux import build_legacy_linux_candidates, collect_legacy_linux_sources, render_legacy_linux
@@ -23,6 +24,7 @@ from .version_history import collect_legacy_version_history, collect_therock_ver
 
 USER_AGENT = "rocm-matrix/0.1 (+https://github.com/Superple19/windows-rocm-matrix)"
 BASE_PACKAGES = (
+    "apex",
     "rocm",
     "rocm-sdk-core",
     "rocm-sdk-libraries",
@@ -31,7 +33,15 @@ BASE_PACKAGES = (
     "torchvision",
     "torchaudio",
     "triton",
+    "jax-rocm7-pjrt",
+    "jax-rocm7-plugin",
+    "jax-rocm10-pjrt",
+    "jax-rocm10-plugin",
+    "rocm-bootstrap",
+    "rocm-profiler",
 )
+
+DEVICE_ALIAS_PREFIXES = ("amd-torch-device-", "amd-torchvision-device-")
 
 
 def fetch_text(url, timeout):
@@ -73,6 +83,13 @@ def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_co
         gfx_targets = discovered_gfx
 
     package_names = {name for name in BASE_PACKAGES if name in available_set}
+    alias_names = {
+        name
+        for name in available_packages
+        if any(name.startswith(prefix) for prefix in DEVICE_ALIAS_PREFIXES)
+        and (not requested_gfx or any(name.endswith(f"-{gfx}") for gfx in requested_gfx))
+    }
+    package_names.update(alias_names)
     for gfx in gfx_targets:
         package_names.update(name for name in package_names_for_target(gfx) if name in available_set)
 
@@ -146,6 +163,11 @@ def add_cache_paths(parser):
     parser.add_argument("--source-manifest", default="data/observations/source-manifest.json")
 
 
+def add_auxiliary_paths(parser):
+    parser.add_argument("--framework-history-output", default="data/framework-history.json")
+    parser.add_argument("--sdk-components-output", default="data/sdk-components.json")
+
+
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(description="Collect and build platform-aware ROCm compatibility evidence.")
     commands = parser.add_subparsers(dest="command", required=True)
@@ -155,6 +177,7 @@ def parse_args(argv=None):
     therock = families.add_parser("therock", help="Collect TheRock documentation and package indexes.")
     add_config_path(therock)
     add_cache_paths(therock)
+    add_auxiliary_paths(therock)
     therock.add_argument("--output-dir", default="data/snapshots")
     therock.add_argument("--documentation-output", default="data/documentation.json")
     therock.add_argument("--history-output", default="data/history.json")
@@ -182,6 +205,7 @@ def parse_args(argv=None):
     normalize_therock = normalizers.add_parser("therock", help="Normalize cached TheRock documentation and package indexes.")
     add_config_path(normalize_therock)
     add_cache_paths(normalize_therock)
+    add_auxiliary_paths(normalize_therock)
     normalize_therock.add_argument("--output-dir", default="data/snapshots")
     normalize_therock.add_argument("--documentation-output", default="data/documentation.json")
     normalize_therock.add_argument("--history-output", default="data/history.json")
@@ -217,6 +241,7 @@ def parse_args(argv=None):
     render.add_argument("--legacy-linux-output", default="data/legacy-linux.json")
     render.add_argument("--legacy-linux-docs-output", default="docs/generated/legacy-linux.md")
     render.add_argument("--version-history-docs-output", default="docs/generated/version-history.md")
+    add_auxiliary_paths(render)
 
     build = commands.add_parser("build", help="Build integrated JSON and Markdown from collected data without network access.")
     build.add_argument("--output-dir", default="data/snapshots")
@@ -233,6 +258,7 @@ def parse_args(argv=None):
     build.add_argument("--legacy-linux-output", default="data/legacy-linux.json")
     build.add_argument("--legacy-linux-docs-output", default="docs/generated/legacy-linux.md")
     build.add_argument("--version-history-docs-output", default="docs/generated/version-history.md")
+    add_auxiliary_paths(build)
     catalog = commands.add_parser("catalog", help="Write the machine-readable artifact catalog without network access.")
     catalog.add_argument("--root", default=".")
     catalog.add_argument("--output", default="data/catalog.json")
@@ -262,6 +288,14 @@ def write_status(family, started_at, results, path):
     validate_collection_status(status)
     write_json(status, path)
     return status
+
+
+def auxiliary_paths(args):
+    output_dir = Path(getattr(args, "output_dir", "data/snapshots"))
+    default_dir = output_dir.parent
+    framework_path = getattr(args, "framework_history_output", None) or default_dir / "framework-history.json"
+    components_path = getattr(args, "sdk_components_output", None) or default_dir / "sdk-components.json"
+    return Path(framework_path), Path(components_path)
 
 
 def normalize_therock_sources(args, config, source_reader, observed_at, status_output=None):
@@ -384,8 +418,14 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
             attach_therock_ci_evidence(history, evidence)
             validate_history(history)
             write_json(history, args.history_output)
-            print(f"Updated {args.history_output} with CI evidence")
+        print(f"Updated {args.history_output} with CI evidence")
         results.extend(ci_results)
+
+    if successful_sources:
+        framework_path, components_path = auxiliary_paths(args)
+        rebuild_auxiliary_outputs(args.output_dir, framework_path, components_path, observed_at, read_json, write_json)
+        print(f"Wrote {framework_path}")
+        print(f"Wrote {components_path}")
 
     if status_output:
         status = write_status("therock", started_at, results, status_output)
@@ -565,6 +605,9 @@ def render_outputs(args):
     validate_compatibility_matrix(matrix)
     validate_version_history(version_history)
     snapshot_paths, _ = load_package_snapshots(args.output_dir)
+    framework_path, components_path = auxiliary_paths(args)
+    framework_history = read_json(framework_path) or {"schema_version": 1, "generated_at": history["generated_at"], "sources": {}, "candidates": []}
+    sdk_components = read_json(components_path) or {"schema_version": 1, "generated_at": history["generated_at"], "components": []}
 
     write_rendered_document(snapshot_paths, args.docs_output)
     write_history_document(history, args.history_docs_output)
@@ -580,7 +623,9 @@ def render_outputs(args):
     version_history_path = Path(args.version_history_docs_output)
     version_history_path.parent.mkdir(parents=True, exist_ok=True)
     version_history_path.write_text(render_version_history(version_history), encoding="utf-8", newline="\n")
-    paths = (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output, args.version_history_docs_output)
+    Path("docs/generated/framework-history.md").write_text(render_framework_history(framework_history), encoding="utf-8", newline="\n")
+    Path("docs/generated/sdk-components.md").write_text(render_sdk_components(sdk_components), encoding="utf-8", newline="\n")
+    paths = (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output, args.version_history_docs_output, "docs/generated/framework-history.md", "docs/generated/sdk-components.md")
     if legacy_linux is not None:
         paths += (args.legacy_linux_docs_output,)
     for path in paths:
@@ -589,6 +634,8 @@ def render_outputs(args):
 
 def build_outputs(args):
     integrate_outputs(args)
+    framework_path, components_path = auxiliary_paths(args)
+    rebuild_auxiliary_outputs(args.output_dir, framework_path, components_path, utc_now(), read_json, write_json)
     history = read_json(args.history_output)
     ci_evidence = read_json(args.ci_evidence_output)
     documentation = read_json(args.documentation_output)

@@ -33,7 +33,7 @@ def version_series(version):
 
 
 def rocm_version_from_framework(version):
-    match = re.search(r"\+rocm(.+)$", version)
+    match = re.search(r"(?:^|[.+-])rocm(\d+(?:\.\d+)+(?:[a-z]+\d+)?)", version)
     return match.group(1) if match else None
 
 
@@ -63,6 +63,7 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
     torch_versions = package_versions.get("torch", {})
     torchvision_versions = package_versions.get("torchvision", {})
     torchaudio_versions = package_versions.get("torchaudio", {})
+    triton_versions = package_versions.get("triton", {})
     torchvision_by_rocm_series = {}
     for version in torchvision_versions:
         rocm_version = rocm_version_from_framework(version)
@@ -97,23 +98,26 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
             matching_audio = torchaudio_by_rocm_series.get((rocm_version, rule["torchaudio_series"]), [])
             for vision_version in matching_vision:
                 for audio_version in matching_audio:
-                    python_tags = compatible_python_tags(
-                        [
+                    matching_triton = [version for version in triton_versions if rocm_version_from_framework(version) == rocm_version]
+                    for triton_version in matching_triton or [None]:
+                        tag_sources = [
                             torch_tags,
                             torch_device[torch_version],
                             torchvision_versions[vision_version],
                             torchvision_device[vision_version],
                             torchaudio_versions[audio_version],
                         ]
-                    )
-                    if not python_tags:
-                        continue
-                    key = (rocm_version, torch_version, vision_version, audio_version, tuple(python_tags))
-                    grouped.setdefault(key, set()).add(gfx)
+                        if triton_version is not None:
+                            tag_sources.append(triton_versions[triton_version])
+                        python_tags = compatible_python_tags(tag_sources)
+                        if not python_tags:
+                            continue
+                        key = (rocm_version, torch_version, vision_version, audio_version, triton_version, tuple(python_tags))
+                        grouped.setdefault(key, set()).add(gfx)
 
     observations = []
     for key, targets in grouped.items():
-        rocm_version, torch_version, vision_version, audio_version, python_tags = key
+        rocm_version, torch_version, vision_version, audio_version, triton_version, python_tags = key
         candidate_id = candidate_id_for(
             distribution_family,
             source.get("platform", "windows"),
@@ -123,6 +127,7 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
             vision_version,
             audio_version,
             python_tags,
+            triton_version,
         )
         observations.append(
             {
@@ -134,11 +139,12 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
                 "rocm_version": rocm_version,
                 # HIP is a runtime-reported version; package indexes do not expose it reliably.
                 "hip_version": None,
-                "evidence_status": {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"},
+                "evidence_status": initial_evidence_status(),
                 "resolver_results": [],
                 "torch_version": torch_version,
                 "torchvision_version": vision_version,
                 "torchaudio_version": audio_version,
+                "triton_version": triton_version,
                 "python_tags": list(python_tags),
                 "gfx_targets": sorted(targets),
                 "source_id": f"packages-{source['id']}",
@@ -155,6 +161,7 @@ def candidate_sort_key(candidate):
         version_key(candidate["torch_version"]),
         version_key(candidate["torchvision_version"]),
         version_key(candidate["torchaudio_version"]),
+        version_key(candidate.get("triton_version") or "0"),
     )
 
 
@@ -218,11 +225,13 @@ def attach_therock_ci_evidence(history, ci_document):
     return history
 
 
-def candidate_id_for(distribution_family, platform, channel, rocm_version, torch_version, torchvision_version, torchaudio_version, python_tags):
+def candidate_id_for(distribution_family, platform, channel, rocm_version, torch_version, torchvision_version, torchaudio_version, python_tags, triton_version=None):
     fields = [distribution_family]
     if platform != "windows":
         fields.append(platform)
     fields.extend((channel, rocm_version, torch_version, torchvision_version, torchaudio_version, ",".join(python_tags)))
+    if triton_version:
+        fields.append(f"triton={triton_version}")
     return ":".join(fields)
 
 
@@ -236,6 +245,7 @@ def candidate_id(candidate):
         candidate["torchvision_version"],
         candidate["torchaudio_version"],
         candidate["python_tags"],
+        candidate.get("triton_version"),
     )
 
 
@@ -249,6 +259,7 @@ def migrate_history(existing):
             candidate = {**item}
             candidate.setdefault("platform", "windows")
             candidate.setdefault("hip_version", None)
+            candidate.setdefault("triton_version", None)
             if not isinstance(candidate.get("evidence_status"), dict):
                 candidate["evidence_status"] = initial_evidence_status()
             else:
@@ -266,6 +277,7 @@ def migrate_history(existing):
         candidate = {**item, "distribution_family": "therock"}
         candidate.setdefault("platform", "windows")
         candidate.setdefault("hip_version", None)
+        candidate.setdefault("triton_version", None)
         if not isinstance(candidate.get("evidence_status"), dict):
             candidate["evidence_status"] = initial_evidence_status()
         else:

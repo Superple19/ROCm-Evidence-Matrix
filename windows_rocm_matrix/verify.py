@@ -69,7 +69,7 @@ def candidate_hash(candidate, gfx, python_tag, platform_tag=None):
         "gfx": gfx,
         "python_tag": python_tag,
         "platform_tag": platform_tag,
-        "packages": {name: candidate.get(name) for name in ("rocm_version", "torch_version", "torchvision_version", "torchaudio_version")},
+        "packages": {name: candidate.get(name) for name in ("rocm_version", "torch_version", "torchvision_version", "torchaudio_version", "triton_version")},
         "wheel_urls": candidate.get("wheel_urls", []),
     }
     return hashlib.sha256(json.dumps(identity, sort_keys=True).encode("utf-8")).hexdigest()
@@ -137,6 +137,8 @@ def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None
         "resolved_packages": [],
         "error": None,
     }
+    if candidate.get("triton_version"):
+        record["packages"]["triton"] = candidate["triton_version"]
 
     if candidate.get("distribution_family") == "legacy" and candidate.get("platform") != sys.platform:
         record["result"] = "not_applicable"

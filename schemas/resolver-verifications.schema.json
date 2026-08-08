@@ -33,6 +33,7 @@
               "torch": {"type": "string"},
               "torchvision": {"type": "string"},
               "torchaudio": {"type": "string"}
+              ,"triton": {"type": "string"}
             }
           },
           "command": {"type": "array", "items": {"type": "string"}},

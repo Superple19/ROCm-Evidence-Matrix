@@ -39,10 +39,14 @@ class SimpleIndexTests(unittest.TestCase):
         self.assertEqual(artifacts[0]["platform_tag"], "source")
 
     def test_parses_linux_wheels_without_accepting_windows_wheels(self):
-        html = '<a href="torch-2.12.0+rocm7.14-cp312-cp312-manylinux_2_28_x86_64.whl">torch</a><a href="torch-2.12.0+rocm7.14-cp312-cp312-win_amd64.whl">torch</a>'
+        html = '<a href="torch-2.12.0+rocm7.14-cp312-cp312-manylinux_2_28_x86_64.whl">torch</a><a href="torch-2.12.0+rocm7.14-cp312-cp312-win_amd64.whl">torch</a><a href="rocm_bootstrap-0.1.0-py3-none-any.whl">bootstrap</a>'
         artifacts = parse_linux_wheels(html, "https://example.test/", "torch")
         self.assertEqual(len(artifacts), 1)
         self.assertEqual(artifacts[0]["platform_tag"], "manylinux_2_28_x86_64")
+
+        any_artifacts = parse_linux_wheels(html, "https://example.test/", "rocm-bootstrap")
+        self.assertEqual(len(any_artifacts), 1)
+        self.assertEqual(any_artifacts[0]["platform_tag"], "any")
 
 
 if __name__ == "__main__":

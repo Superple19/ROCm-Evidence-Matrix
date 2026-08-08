@@ -10,7 +10,9 @@ The collector reads official AMD stable, nightly, and staging sources. It:
 
 - Discovers exact `gfx` targets from `rocm-sdk-device-{gfx}` packages.
 - Records platform-specific wheel filenames, versions, Python tags, ABI tags, platform tags, URLs, and observation times.
+- Records ROCm-specific framework and extension artifacts, including Triton, JAX ROCm PJRT/plugin wheels, and Apex.
 - Checks whether ROCm, PyTorch, and TorchVision device packages exist for each target.
+- Reports device-package aliases without matching complete targets as separate observed artifacts.
 - Keeps every platform ABI variant for the latest observed version of each package.
 - Collects released platform support and product-to-GFX mappings from AMD documentation.
 - Collects TheRock Build Passing, Sanity Tested, and Release Ready status by platform.
@@ -30,6 +32,8 @@ Current generated views:
 - [Integrated compatibility matrix](docs/generated/compatibility-matrix.md)
 - [Package availability](docs/generated/package-availability.md)
 - [Historical package candidates](docs/generated/history.md)
+- [JAX framework artifact history](docs/generated/framework-history.md)
+- [ROCm SDK component evidence](docs/generated/sdk-components.md)
 - [Legacy platform ROCm support](docs/generated/legacy-windows.md)
 - [Legacy Linux ROCm artifacts](docs/generated/legacy-linux.md)
 

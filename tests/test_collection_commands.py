@@ -4,13 +4,44 @@ from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 from unittest.mock import patch
 
-from windows_rocm_matrix.collect import collect_therock, parse_args
+from windows_rocm_matrix.collect import collect_therock, collect_source, parse_args
 from windows_rocm_matrix.legacy import collect_legacy_windows_sources
 from windows_rocm_matrix.source_adapter import collection_status, run_source_adapter
 from windows_rocm_matrix.validation import validate_collection_status
 
 
 class CollectionCommandTests(unittest.TestCase):
+    def test_collects_apex_and_device_aliases_without_making_them_full_targets(self):
+        root = """
+        <a href="apex/">apex</a>
+        <a href="amd-torch-device-gfx12-0/">amd-torch-device-gfx12-0</a>
+        <a href="rocm-sdk-device-gfx1201/">rocm-sdk-device-gfx1201</a>
+        <a href="torch/">torch</a>
+        """
+        package_page = {
+            "apex": '<a href="apex-1.0+rocm7.14.0-cp312-cp312-manylinux_2_28_x86_64.whl">a</a>',
+            "amd-torch-device-gfx12-0": '<a href="amd_torch_device_gfx12_0-2.10.0+rocm7.14.0-cp312-cp312-manylinux_2_28_x86_64.whl">a</a>',
+            "rocm-sdk-device-gfx1201": '<a href="rocm_sdk_device_gfx1201-7.14.0-py3-none-manylinux_2_28_x86_64.whl">a</a>',
+            "torch": '<a href="torch-2.12.0+rocm7.14.0-cp312-cp312-manylinux_2_28_x86_64.whl">a</a>',
+        }
+
+        def fetch(url):
+            if url.rstrip("/") == "https://example.test":
+                return root
+            package = url.rstrip("/").rsplit("/", 1)[-1]
+            return package_page[package]
+
+        snapshot, _ = collect_source(
+            {"id": "stable-linux", "channel": "stable", "platform": "linux", "url": "https://example.test/"},
+            fetch=fetch,
+            framework_compatibility=[],
+            workers=1,
+        )
+
+        self.assertIn("apex", snapshot["packages"])
+        self.assertIn("amd-torch-device-gfx12-0", snapshot["packages"])
+        self.assertEqual([item["gfx"] for item in snapshot["gfx_targets"]], ["gfx1201"])
+
     def test_parses_distribution_family_commands(self):
         therock = parse_args(["collect", "therock"])
         legacy = parse_args(["collect", "legacy"])

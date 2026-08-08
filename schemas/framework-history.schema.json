@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ROCm framework artifact history",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "sources", "candidates"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "sources": {"type": "object"},
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "distribution_family", "framework", "runtime_family", "platform", "channel", "lifecycle", "rocm_version", "pjrt_package", "pjrt_version", "plugin_package", "plugin_version", "python_tags", "artifact_available", "source_id", "first_observed_at", "last_observed_at"],
+        "properties": {
+          "id": {"type": "string"},
+          "distribution_family": {"enum": ["therock", "legacy"]},
+          "framework": {"const": "jax"},
+          "runtime_family": {"type": "string"},
+          "platform": {"enum": ["windows", "linux", "macos", "unknown"]},
+          "channel": {"enum": ["stable", "nightly", "staging"]},
+          "lifecycle": {"enum": ["current", "historical"]},
+          "rocm_version": {"type": "string"},
+          "pjrt_package": {"type": "string"},
+          "pjrt_version": {"type": "string"},
+          "plugin_package": {"type": "string"},
+          "plugin_version": {"type": "string"},
+          "python_tags": {"type": "array", "items": {"type": "string"}},
+          "artifact_available": {"type": "boolean"},
+          "source_id": {"type": "string"},
+          "first_observed_at": {"type": "string", "format": "date-time"},
+          "last_observed_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    }
+  }
+}

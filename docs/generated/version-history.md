@@ -7,7 +7,7 @@ Platform support, documentation availability, and observed package or test evide
 | Distribution | Platform | Version | Channel | Lifecycle | Windows support | Legacy Windows package | Legacy Windows CI | Documentation | GPU observations | Framework observations | Package artifacts |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: |
 | therock | windows | `10.1.0` | nightly | current | unknown | False | None | available | 23 | 0 | 0 |
-| therock | windows | `7.14.0` | stable | current | unknown | False | None | archive_missing | 0 | 0 | 0 |
+| therock | windows | `7.14.0` | stable | current | unknown | False | None | available | 23 | 0 | 0 |
 | therock | windows | `7.13` | stable | historical | unknown | False | None | available | 13 | 0 | 0 |
 | therock | windows | `7.12` | stable | historical | unknown | False | None | available | 13 | 0 | 0 |
 | therock | windows | `7.11` | stable | historical | unknown | False | None | available | 13 | 0 | 0 |

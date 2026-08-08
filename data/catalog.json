@@ -49,6 +49,18 @@
       "schema_version": 1
     },
     {
+      "id": "framework_history",
+      "path": "data/framework-history.json",
+      "schema": "schemas/framework-history.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "sdk_components",
+      "path": "data/sdk-components.json",
+      "schema": "schemas/sdk-components.schema.json",
+      "schema_version": 1
+    },
+    {
       "id": "documentation",
       "path": "data/documentation.json",
       "schema": "schemas/documentation-snapshot.schema.json",
@@ -88,6 +100,6 @@
       "windows"
     ]
   },
-  "generated_at": "2026-08-07T18:01:19Z",
+  "generated_at": "2026-08-08T14:22:26Z",
   "schema_version": 1
 }

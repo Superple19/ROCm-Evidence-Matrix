@@ -7,7 +7,7 @@ A package listed here was observed in an official AMD index. Versions are select
 ## Windows — Stable
 
 - Source: https://repo.amd.com/rocm/whl-multi-arch/
-- Last observed: `2026-08-08T10:11:41Z`
+- Last observed: `2026-08-08T14:13:02Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -37,10 +37,34 @@ A package listed here was observed in an official AMD index. Versions are select
 | `gfx90a` | 7.14.0 | 2.12.0+rocm7.14.0 | 0.27.0+rocm7.14.0 | Yes |
 | `gfx908` | 7.14.0 | 2.12.0+rocm7.14.0 | 0.27.0+rocm7.14.0 | Yes |
 
+### Other observed packages
+
+These artifacts are reported separately because they are not complete GFX device-package candidates.
+
+| Package | Version | Artifacts |
+| --- | --- | --- |
+| `amd-torch-device-gfx11` | `2.12.0+rocm7.14.0` | 5 |
+| `amd-torch-device-gfx110x` | `2.11.0+rocm7.14.0` | 5 |
+| `amd-torch-device-gfx115x` | `2.11.0+rocm7.14.0` | 5 |
+| `amd-torch-device-gfx12-0` | `2.12.0+rocm7.14.0` | 5 |
+| `apex` | `—` | 0 |
+| `jax-rocm7-pjrt` | `—` | 0 |
+| `jax-rocm7-plugin` | `—` | 0 |
+| `rocm` | `7.14.0` | 1 |
+| `rocm-bootstrap` | `0.1.0` | 1 |
+| `rocm-profiler` | `—` | 0 |
+| `rocm-sdk-core` | `7.14.0` | 1 |
+| `rocm-sdk-devel` | `7.14.0` | 1 |
+| `rocm-sdk-libraries` | `7.14.0` | 1 |
+| `torch` | `2.12.0+rocm7.14.0` | 5 |
+| `torchaudio` | `2.11.0+rocm7.14.0` | 5 |
+| `torchvision` | `0.27.0+rocm7.14.0` | 5 |
+| `triton` | `—` | 0 |
+
 ## Windows — Nightly
 
 - Source: https://rocm.nightlies.amd.com/whl-multi-arch/
-- Last observed: `2026-08-08T10:11:41Z`
+- Last observed: `2026-08-08T14:13:02Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -73,10 +97,36 @@ A package listed here was observed in an official AMD index. Versions are select
 | `gfx906` | 10.1.0a20260807 | 2.14.0a0+rocm10.1.0a20260807 | 0.29.0a0+rocm10.1.0a20260807 | Yes |
 | `gfx900` | 10.1.0a20260807 | 2.14.0a0+rocm10.1.0a20260807 | 0.29.0a0+rocm10.1.0a20260807 | Yes |
 
+### Other observed packages
+
+These artifacts are reported separately because they are not complete GFX device-package candidates.
+
+| Package | Version | Artifacts |
+| --- | --- | --- |
+| `amd-torch-device-gfx11` | `2.13.0a0+rocm7.14.0a20260527` | 5 |
+| `amd-torch-device-gfx110x` | `2.14.0a0+rocm10.1.0a20260807` | 5 |
+| `amd-torch-device-gfx115x` | `2.14.0a0+rocm10.1.0a20260807` | 5 |
+| `amd-torch-device-gfx12-0` | `2.14.0a0+rocm10.1.0a20260807` | 5 |
+| `apex` | `—` | 0 |
+| `jax-rocm10-pjrt` | `—` | 0 |
+| `jax-rocm10-plugin` | `—` | 0 |
+| `jax-rocm7-pjrt` | `—` | 0 |
+| `jax-rocm7-plugin` | `—` | 0 |
+| `rocm` | `10.1.0a20260807` | 1 |
+| `rocm-bootstrap` | `0.1.0` | 1 |
+| `rocm-profiler` | `7.13.0a20260428` | 1 |
+| `rocm-sdk-core` | `10.1.0a20260807` | 1 |
+| `rocm-sdk-devel` | `10.1.0a20260807` | 1 |
+| `rocm-sdk-libraries` | `10.1.0a20260807` | 1 |
+| `torch` | `2.14.0a0+rocm10.1.0a20260807` | 5 |
+| `torchaudio` | `2.11.0+rocm10.1.0a20260807` | 5 |
+| `torchvision` | `0.29.0a0+rocm10.1.0a20260807` | 5 |
+| `triton` | `—` | 0 |
+
 ## Windows — Staging
 
 - Source: https://rocm.nightlies.amd.com/whl-staging-multi-arch/
-- Last observed: `2026-08-08T10:11:41Z`
+- Last observed: `2026-08-08T14:13:02Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -107,10 +157,30 @@ A package listed here was observed in an official AMD index. Versions are select
 | `gfx906` | 7.14.0a20260519 | 2.13.0a0+rocm7.13.0a20260504 | 0.27.0+rocm7.14.0a20260519 | Yes |
 | `gfx900` | 7.14.0a20260519 | 2.13.0a0+rocm7.13.0a20260504 | 0.27.0+rocm7.14.0a20260519 | Yes |
 
+### Other observed packages
+
+These artifacts are reported separately because they are not complete GFX device-package candidates.
+
+| Package | Version | Artifacts |
+| --- | --- | --- |
+| `amd-torch-device-gfx11` | `2.13.0a0+rocm7.13.0a20260504` | 5 |
+| `amd-torch-device-gfx12-0` | `2.13.0a0+rocm7.13.0a20260504` | 5 |
+| `apex` | `—` | 0 |
+| `rocm` | `7.14.0a20260519` | 1 |
+| `rocm-bootstrap` | `0.1.0` | 1 |
+| `rocm-profiler` | `—` | 0 |
+| `rocm-sdk-core` | `7.14.0a20260519` | 1 |
+| `rocm-sdk-devel` | `7.14.0a20260519` | 1 |
+| `rocm-sdk-libraries` | `7.14.0a20260519` | 1 |
+| `torch` | `2.13.0a0+rocm7.13.0a20260504` | 5 |
+| `torchaudio` | `2.11.0+rocm7.14.0a20260519` | 5 |
+| `torchvision` | `0.27.0+rocm7.14.0a20260519` | 5 |
+| `triton` | `—` | 0 |
+
 ## Linux — Stable
 
 - Source: https://repo.amd.com/rocm/whl-multi-arch/
-- Last observed: `2026-08-08T10:11:41Z`
+- Last observed: `2026-08-08T14:13:02Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -140,10 +210,34 @@ A package listed here was observed in an official AMD index. Versions are select
 | `gfx90a` | 7.14.0 | 2.13.0+rocm7.14.0 | 0.28.0+rocm7.14.0 | Yes |
 | `gfx908` | 7.14.0 | 2.13.0+rocm7.14.0 | 0.28.0+rocm7.14.0 | Yes |
 
+### Other observed packages
+
+These artifacts are reported separately because they are not complete GFX device-package candidates.
+
+| Package | Version | Artifacts |
+| --- | --- | --- |
+| `amd-torch-device-gfx11` | `2.12.0+rocm7.14.0` | 5 |
+| `amd-torch-device-gfx110x` | `2.13.0+rocm7.14.0` | 1 |
+| `amd-torch-device-gfx115x` | `2.13.0+rocm7.14.0` | 1 |
+| `amd-torch-device-gfx12-0` | `2.13.0+rocm7.14.0` | 1 |
+| `apex` | `1.13.0+rocm7.14.0` | 1 |
+| `jax-rocm7-pjrt` | `0.10.0+rocm7.14.0` | 1 |
+| `jax-rocm7-plugin` | `0.10.0+rocm7.14.0` | 4 |
+| `rocm` | `7.14.0` | 1 |
+| `rocm-bootstrap` | `0.1.0` | 1 |
+| `rocm-profiler` | `7.14.0` | 1 |
+| `rocm-sdk-core` | `7.14.0` | 1 |
+| `rocm-sdk-devel` | `7.14.0` | 1 |
+| `rocm-sdk-libraries` | `7.14.0` | 1 |
+| `torch` | `2.13.0+rocm7.14.0` | 1 |
+| `torchaudio` | `2.11.0.2+rocm7.14.0` | 1 |
+| `torchvision` | `0.28.0+rocm7.14.0` | 1 |
+| `triton` | `3.8.0+git4cff872c.rocm7.14.0` | 1 |
+
 ## Linux — Nightly
 
 - Source: https://rocm.nightlies.amd.com/whl-multi-arch/
-- Last observed: `2026-08-08T10:11:41Z`
+- Last observed: `2026-08-08T14:13:02Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -176,10 +270,36 @@ A package listed here was observed in an official AMD index. Versions are select
 | `gfx906` | 10.1.0a20260807 | 2.14.0a0+rocm10.1.0a20260807 | 0.29.0a0+rocm10.1.0a20260807 | Yes |
 | `gfx900` | 10.1.0a20260807 | 2.14.0a0+rocm10.1.0a20260807 | 0.29.0a0+rocm10.1.0a20260807 | Yes |
 
+### Other observed packages
+
+These artifacts are reported separately because they are not complete GFX device-package candidates.
+
+| Package | Version | Artifacts |
+| --- | --- | --- |
+| `amd-torch-device-gfx11` | `2.12.0+rocm7.15.0a20260710` | 5 |
+| `amd-torch-device-gfx110x` | `2.14.0a0+rocm10.1.0a20260807` | 5 |
+| `amd-torch-device-gfx115x` | `2.14.0a0+rocm10.1.0a20260807` | 5 |
+| `amd-torch-device-gfx12-0` | `2.14.0a0+rocm10.1.0a20260807` | 5 |
+| `apex` | `1.14.0a0+rocm10.1.0a20260807` | 5 |
+| `jax-rocm10-pjrt` | `0.11.0+rocm10.1.0a20260807` | 1 |
+| `jax-rocm10-plugin` | `0.11.0+rocm10.1.0a20260807` | 3 |
+| `jax-rocm7-pjrt` | `0.10.2+rocm7.15.0a20260728` | 1 |
+| `jax-rocm7-plugin` | `0.10.2+rocm7.15.0a20260728` | 4 |
+| `rocm` | `10.1.0a20260807` | 1 |
+| `rocm-bootstrap` | `0.1.0` | 1 |
+| `rocm-profiler` | `10.1.0a20260807` | 1 |
+| `rocm-sdk-core` | `10.1.0a20260807` | 1 |
+| `rocm-sdk-devel` | `10.1.0a20260807` | 1 |
+| `rocm-sdk-libraries` | `10.1.0a20260807` | 1 |
+| `torch` | `2.14.0a0+rocm10.1.0a20260807` | 5 |
+| `torchaudio` | `2.11.0.2+rocm10.1.0a20260807` | 5 |
+| `torchvision` | `0.29.0a0+rocm10.1.0a20260807` | 5 |
+| `triton` | `3.8.0+git4774139f.rocm7.15.0a20260721` | 5 |
+
 ## Linux — Staging
 
 - Source: https://rocm.nightlies.amd.com/whl-staging-multi-arch/
-- Last observed: `2026-08-08T10:11:41Z`
+- Last observed: `2026-08-08T14:13:02Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -209,3 +329,23 @@ A package listed here was observed in an official AMD index. Versions are select
 | `gfx908` | 7.14.0a20260519 | 2.12.0+rocm7.14.0a20260519 | 0.27.0+rocm7.14.0a20260519 | Yes |
 | `gfx906` | 7.14.0a20260519 | 2.12.0+rocm7.14.0a20260519 | 0.27.0+rocm7.14.0a20260519 | Yes |
 | `gfx900` | 7.14.0a20260519 | 2.12.0+rocm7.14.0a20260519 | 0.27.0+rocm7.14.0a20260519 | Yes |
+
+### Other observed packages
+
+These artifacts are reported separately because they are not complete GFX device-package candidates.
+
+| Package | Version | Artifacts |
+| --- | --- | --- |
+| `amd-torch-device-gfx11` | `2.12.0+rocm7.14.0a20260519` | 5 |
+| `amd-torch-device-gfx12-0` | `2.12.0+rocm7.14.0a20260519` | 5 |
+| `apex` | `1.11.0+rocm7.14.0a20260519` | 5 |
+| `rocm` | `7.14.0a20260519` | 1 |
+| `rocm-bootstrap` | `0.1.0` | 1 |
+| `rocm-profiler` | `7.14.0a20260519` | 1 |
+| `rocm-sdk-core` | `7.14.0a20260519` | 1 |
+| `rocm-sdk-devel` | `7.14.0a20260519` | 1 |
+| `rocm-sdk-libraries` | `7.14.0a20260519` | 1 |
+| `torch` | `2.12.0+rocm7.14.0a20260519` | 5 |
+| `torchaudio` | `2.11.0+rocm7.14.0a20260519` | 5 |
+| `torchvision` | `0.27.0+rocm7.14.0a20260519` | 5 |
+| `triton` | `3.7.0+gitfbb43d96.rocm7.14.0a20260519` | 1 |

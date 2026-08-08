@@ -111,7 +111,7 @@ def parse_linux_wheels(html, base_url, package_name):
         if not filename.lower().endswith(".whl"):
             continue
         parts = filename[:-4].split("-")
-        if len(parts) < 5 or not any(parts[-1].lower().startswith(prefix) for prefix in ("linux", "manylinux", "musllinux")):
+        if len(parts) < 5 or not (parts[-1].lower() == "any" or any(parts[-1].lower().startswith(prefix) for prefix in ("linux", "manylinux", "musllinux"))):
             continue
         if normalize_package_name(parts[0]) != expected_name:
             continue

@@ -235,7 +235,7 @@
       "gfx": "gfx950"
     }
   ],
-  "last_observed_at": "2026-08-08T10:11:41Z",
+  "last_observed_at": "2026-08-08T14:13:02Z",
   "packages": {
     "amd-torch-device-gfx1010": [
       {
@@ -657,6 +657,48 @@
         "version": "2.13.0a0+rocm7.13.0a20260504"
       }
     ],
+    "amd-torch-device-gfx11": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx11-2.13.0a0+rocm7.13.0a20260504-cp310-cp310-win_amd64.whl",
+        "platform_tag": "win_amd64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd_torch_device_gfx11-2.13.0a0%2Brocm7.13.0a20260504-cp310-cp310-win_amd64.whl",
+        "version": "2.13.0a0+rocm7.13.0a20260504"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx11-2.13.0a0+rocm7.13.0a20260504-cp311-cp311-win_amd64.whl",
+        "platform_tag": "win_amd64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd_torch_device_gfx11-2.13.0a0%2Brocm7.13.0a20260504-cp311-cp311-win_amd64.whl",
+        "version": "2.13.0a0+rocm7.13.0a20260504"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx11-2.13.0a0+rocm7.13.0a20260504-cp312-cp312-win_amd64.whl",
+        "platform_tag": "win_amd64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd_torch_device_gfx11-2.13.0a0%2Brocm7.13.0a20260504-cp312-cp312-win_amd64.whl",
+        "version": "2.13.0a0+rocm7.13.0a20260504"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx11-2.13.0a0+rocm7.13.0a20260504-cp313-cp313-win_amd64.whl",
+        "platform_tag": "win_amd64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd_torch_device_gfx11-2.13.0a0%2Brocm7.13.0a20260504-cp313-cp313-win_amd64.whl",
+        "version": "2.13.0a0+rocm7.13.0a20260504"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx11-2.13.0a0+rocm7.13.0a20260504-cp314-cp314-win_amd64.whl",
+        "platform_tag": "win_amd64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd_torch_device_gfx11-2.13.0a0%2Brocm7.13.0a20260504-cp314-cp314-win_amd64.whl",
+        "version": "2.13.0a0+rocm7.13.0a20260504"
+      }
+    ],
     "amd-torch-device-gfx1100": [
       {
         "abi_tag": "cp310",
@@ -990,6 +1032,48 @@
         "platform_tag": "win_amd64",
         "python_tag": "cp314",
         "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd_torch_device_gfx1153-2.13.0a0%2Brocm7.13.0a20260504-cp314-cp314-win_amd64.whl",
+        "version": "2.13.0a0+rocm7.13.0a20260504"
+      }
+    ],
+    "amd-torch-device-gfx12-0": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx12_0-2.13.0a0+rocm7.13.0a20260504-cp310-cp310-win_amd64.whl",
+        "platform_tag": "win_amd64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd_torch_device_gfx12_0-2.13.0a0%2Brocm7.13.0a20260504-cp310-cp310-win_amd64.whl",
+        "version": "2.13.0a0+rocm7.13.0a20260504"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx12_0-2.13.0a0+rocm7.13.0a20260504-cp311-cp311-win_amd64.whl",
+        "platform_tag": "win_amd64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd_torch_device_gfx12_0-2.13.0a0%2Brocm7.13.0a20260504-cp311-cp311-win_amd64.whl",
+        "version": "2.13.0a0+rocm7.13.0a20260504"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx12_0-2.13.0a0+rocm7.13.0a20260504-cp312-cp312-win_amd64.whl",
+        "platform_tag": "win_amd64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd_torch_device_gfx12_0-2.13.0a0%2Brocm7.13.0a20260504-cp312-cp312-win_amd64.whl",
+        "version": "2.13.0a0+rocm7.13.0a20260504"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx12_0-2.13.0a0+rocm7.13.0a20260504-cp313-cp313-win_amd64.whl",
+        "platform_tag": "win_amd64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd_torch_device_gfx12_0-2.13.0a0%2Brocm7.13.0a20260504-cp313-cp313-win_amd64.whl",
+        "version": "2.13.0a0+rocm7.13.0a20260504"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx12_0-2.13.0a0+rocm7.13.0a20260504-cp314-cp314-win_amd64.whl",
+        "platform_tag": "win_amd64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/amd_torch_device_gfx12_0-2.13.0a0%2Brocm7.13.0a20260504-cp314-cp314-win_amd64.whl",
         "version": "2.13.0a0+rocm7.13.0a20260504"
       }
     ],
@@ -2257,6 +2341,7 @@
     ],
     "amd-torchvision-device-gfx942": [],
     "amd-torchvision-device-gfx950": [],
+    "apex": [],
     "rocm": [
       {
         "abi_tag": "source",
@@ -2267,6 +2352,17 @@
         "version": "7.14.0a20260519"
       }
     ],
+    "rocm-bootstrap": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_bootstrap-0.1.0-py3-none-any.whl",
+        "platform_tag": "any",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/rocm_bootstrap-0.1.0-py3-none-any.whl",
+        "version": "0.1.0"
+      }
+    ],
+    "rocm-profiler": [],
     "rocm-sdk-core": [
       {
         "abi_tag": "none",

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ROCm SDK component evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "components"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "distribution_family", "platform", "channel", "package_name", "component_kind", "versions", "python_tags", "artifact_available", "source_id", "first_observed_at", "last_observed_at"],
+        "properties": {
+          "id": {"type": "string"},
+          "distribution_family": {"enum": ["therock", "legacy"]},
+          "platform": {"enum": ["windows", "linux", "macos", "unknown"]},
+          "channel": {"enum": ["stable", "nightly", "staging"]},
+          "package_name": {"type": "string"},
+          "component_kind": {"enum": ["sdk-component", "device-package"]},
+          "gfx": {"type": ["string", "null"]},
+          "versions": {"type": "array", "items": {"type": "string"}},
+          "python_tags": {"type": "array", "items": {"type": "string"}},
+          "artifact_available": {"type": "boolean"},
+          "source_id": {"type": "string"},
+          "first_observed_at": {"type": "string", "format": "date-time"},
+          "last_observed_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    }
+  }
+}

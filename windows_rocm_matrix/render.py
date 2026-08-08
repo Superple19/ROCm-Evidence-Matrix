@@ -51,6 +51,31 @@ def render_snapshots(snapshot_paths):
         if not snapshot["gfx_targets"]:
             lines.append("| — | — | — | — | No targets discovered |")
         lines.append("")
+        target_package_names = {
+            package_name
+            for target in snapshot["gfx_targets"]
+            for package_name in package_names_for_target(target["gfx"])
+        }
+        additional = [
+            (name, artifacts)
+            for name, artifacts in sorted(packages.items())
+            if name not in target_package_names
+        ]
+        if additional:
+            lines.extend(
+                [
+                    "### Other observed packages",
+                    "",
+                    "These artifacts are reported separately because they are not complete GFX device-package candidates.",
+                    "",
+                    "| Package | Version | Artifacts |",
+                    "| --- | --- | --- |",
+                ]
+            )
+            for name, artifacts in additional:
+                version = latest_version(artifacts) or "—"
+                lines.append(f"| `{name}` | `{version}` | {len(artifacts)} |")
+            lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"
 

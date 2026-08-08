@@ -14,7 +14,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "distribution_family", "platform", "lifecycle", "channel", "rocm_version", "torch_version", "torchvision_version", "torchaudio_version", "python_tags", "gfx_support", "gfx_targets", "available_gfx_targets", "artifact_available", "evidence_status", "resolver_results", "source_id", "first_observed_at", "last_observed_at"],
+        "required": ["id", "distribution_family", "platform", "lifecycle", "channel", "rocm_version", "torch_version", "torchvision_version", "torchaudio_version", "triton_version", "python_tags", "gfx_support", "gfx_targets", "available_gfx_targets", "artifact_available", "evidence_status", "resolver_results", "source_id", "first_observed_at", "last_observed_at"],
         "properties": {
           "id": {"type": "string"},
           "distribution_family": {"enum": ["therock", "legacy"]},
@@ -60,6 +60,7 @@
           "torch_version": {"type": "string"},
           "torchvision_version": {"type": "string"},
           "torchaudio_version": {"type": "string"},
+          "triton_version": {"type": ["string", "null"]},
           "python_tags": {"type": "array", "items": {"type": "string", "pattern": "^cp[0-9]+$"}},
           "gfx_targets": {"type": "array", "items": {"type": "string", "pattern": "^gfx[0-9a-z]+$"}},
           "available_gfx_targets": {"type": "array", "items": {"type": "string", "pattern": "^gfx[0-9a-z]+$"}},

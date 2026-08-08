@@ -33,6 +33,11 @@ mapping. Those candidates use `gfx_support: "unknown"` and may be listed with
 `rocm-resolve --platform linux` without `--gfx`; they must not be presented as
 hardware-compatible for a specific GPU.
 
+Framework and SDK artifacts are separate machine-readable evidence. Use
+`framework_history` for JAX PJRT/plugin pairs and `sdk_components` for ROCm SDK
+and exact-GFX device packages. An observed alias or extension artifact is not a
+complete Torch candidate unless it appears in `package_history`.
+
 ## Stable identities
 
 - GFX targets use lowercase `gfx` identifiers such as `gfx1201`.

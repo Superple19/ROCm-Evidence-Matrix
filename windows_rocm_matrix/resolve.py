@@ -77,6 +77,8 @@ def install_arguments(candidate, gfx):
             f'torchaudio=={candidate["torchaudio_version"]}',
         ]
     )
+    if candidate.get("triton_version"):
+        parts.append(f'triton=={candidate["triton_version"]}')
     return parts
 
 

@@ -163,7 +163,7 @@
       "torchvision_series": "0.29"
     }
   ],
-  "last_observed_at": "2026-08-08T10:11:41Z",
+  "last_observed_at": "2026-08-08T14:13:02Z",
   "platforms": {
     "windows": {
       "release_support": [
@@ -878,35 +878,35 @@
     "amd-gpu-specifications": {
       "fallback_used": false,
       "id": "amd-gpu-specifications",
-      "observed_at": "2026-08-08T10:11:41Z",
+      "observed_at": "2026-08-08T14:13:02Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst",
       "url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst"
     },
     "pytorch-version-compatibility": {
       "fallback_used": false,
       "id": "pytorch-version-compatibility",
-      "observed_at": "2026-08-08T10:11:41Z",
+      "observed_at": "2026-08-08T14:13:02Z",
       "preferred_url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md",
       "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     },
     "rocm-compatibility-matrix": {
       "fallback_used": false,
       "id": "rocm-compatibility-matrix",
-      "observed_at": "2026-08-08T10:11:41Z",
+      "observed_at": "2026-08-08T14:13:02Z",
       "preferred_url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html",
       "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
     },
     "therock-release-packaging": {
       "fallback_used": false,
       "id": "therock-release-packaging",
-      "observed_at": "2026-08-08T10:11:41Z",
+      "observed_at": "2026-08-08T14:13:02Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
     },
     "therock-supported-gpus": {
       "fallback_used": false,
       "id": "therock-supported-gpus",
-      "observed_at": "2026-08-08T10:11:41Z",
+      "observed_at": "2026-08-08T14:13:02Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     }

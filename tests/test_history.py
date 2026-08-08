@@ -25,6 +25,7 @@ class HistoryTests(unittest.TestCase):
             "torch": [artifact("torch", "2.14.0a0+rocm10.1.0a20260807")],
             "torchvision": [artifact("torchvision", "0.29.0a0+rocm10.1.0a20260807")],
             "torchaudio": [artifact("torchaudio", "2.11.0+rocm10.1.0a20260807")],
+            "triton": [artifact("triton", "3.6.0+rocm10.1.0a20260807")],
             "rocm-sdk-device-gfx1201": [artifact("rocm-sdk-device-gfx1201", "10.1.0a20260807", "py3")],
             "amd-torch-device-gfx1201": [artifact("amd-torch-device-gfx1201", "2.14.0a0+rocm10.1.0a20260807")],
             "amd-torchvision-device-gfx1201": [artifact("amd-torchvision-device-gfx1201", "0.29.0a0+rocm10.1.0a20260807")],
@@ -38,6 +39,7 @@ class HistoryTests(unittest.TestCase):
         self.assertEqual(len(candidates), 1)
         self.assertEqual(candidates[0]["distribution_family"], "therock")
         self.assertEqual(candidates[0]["python_tags"], ["cp312"])
+        self.assertEqual(candidates[0]["triton_version"], "3.6.0+rocm10.1.0a20260807")
 
     def test_retains_candidate_when_artifact_disappears(self):
         observation = {

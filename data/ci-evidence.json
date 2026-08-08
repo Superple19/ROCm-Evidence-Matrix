@@ -9,6 +9,16 @@
       "adapter": "github_actions",
       "error": "HTTP Error 403: rate limit exceeded",
       "observed_at": "2026-08-07T17:44:06Z"
+    },
+    {
+      "adapter": "github_actions",
+      "error": "HTTP Error 403: rate limit exceeded",
+      "observed_at": "2026-08-08T14:01:58Z"
+    },
+    {
+      "adapter": "github_actions",
+      "error": "HTTP Error 403: rate limit exceeded",
+      "observed_at": "2026-08-08T14:12:30Z"
     }
   ],
   "executions": [
@@ -59330,8 +59340,212 @@
       "url": "https://github.com/ROCm/TheRock/actions/runs/31230134046/job/93045614491",
       "workflow_id": null,
       "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "711ca68527b206385d01706dd9391d9b4a0cf4b7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93103643595",
+      "job_id": 93103643595,
+      "job_name": "Windows::release / Build Multi-Arch Stages / compiler-runtime / Stage - Compiler Runtime",
+      "observations": [
+        {
+          "completed_at": "2026-08-08 12:56:48",
+          "conclusion": "success",
+          "created_at": "2026-08-08 12:38:54",
+          "observed_at": "2026-08-08T14:01:58Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-08 12:42:57",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31257713957,
+      "source": "therock_hud",
+      "targets": [],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93103643595",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "711ca68527b206385d01706dd9391d9b4a0cf4b7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277772",
+      "job_id": 93105277772,
+      "job_name": "Windows::release / Build Multi-Arch Stages / runtime-tests / Stage - Runtime Tests",
+      "observations": [
+        {
+          "completed_at": "2026-08-08 13:58:16",
+          "conclusion": "success",
+          "created_at": "2026-08-08 12:38:54",
+          "observed_at": "2026-08-08T14:01:58Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-08 13:22:15",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31257713957,
+      "source": "therock_hud",
+      "targets": [],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277772",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "711ca68527b206385d01706dd9391d9b4a0cf4b7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277775",
+      "job_id": 93105277775,
+      "job_name": "Windows::release / Build Multi-Arch Stages / debug-tools / Stage - Debug Tools",
+      "observations": [
+        {
+          "completed_at": "2026-08-08 13:51:56",
+          "conclusion": "success",
+          "created_at": "2026-08-08 12:38:54",
+          "observed_at": "2026-08-08T14:01:58Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-08 13:44:50",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31257713957,
+      "source": "therock_hud",
+      "targets": [],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277775",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "711ca68527b206385d01706dd9391d9b4a0cf4b7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277879",
+      "job_id": 93105277879,
+      "job_name": "Windows::release / Build Multi-Arch Stages / math-libs (gfx110X-all, gfx1100,gfx1101,gfx1102,gfx1103, windows-gfx110X-gpu-rocm, false) / Stage - Math Libs (gfx110X-all)",
+      "observations": [
+        {
+          "completed_at": "2026-08-08 14:02:28",
+          "conclusion": "success",
+          "created_at": "2026-08-08 12:38:54",
+          "observed_at": "2026-08-08T14:01:58Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-08 13:04:03",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31257713957,
+      "source": "therock_hud",
+      "targets": [
+        "gfx1100",
+        "gfx1101",
+        "gfx1102",
+        "gfx1103",
+        "gfx110X-all",
+        "gfx110X-gpu-rocm"
+      ],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277879",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "711ca68527b206385d01706dd9391d9b4a0cf4b7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
+      "job_id": 93105277884,
+      "job_name": "Windows::release / Build Multi-Arch Stages / math-libs (gfx1151, gfx1151, false) / Stage - Math Libs (gfx1151)",
+      "observations": [
+        {
+          "completed_at": "2026-08-08 13:41:48",
+          "conclusion": "success",
+          "created_at": "2026-08-08 12:38:54",
+          "observed_at": "2026-08-08T14:01:58Z",
+          "run_started_at": null,
+          "run_status": "success",
+          "started_at": "2026-08-08 13:03:59",
+          "state": "success"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31257713957,
+      "source": "therock_hud",
+      "targets": [
+        "gfx1151"
+      ],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "711ca68527b206385d01706dd9391d9b4a0cf4b7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
+      "job_id": 93105277896,
+      "job_name": "Windows::release / Build Multi-Arch Stages / math-libs (gfx90a, false) / Stage - Math Libs (gfx90a)",
+      "observations": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-08 12:38:54",
+          "observed_at": "2026-08-08T14:01:58Z",
+          "run_started_at": null,
+          "run_status": "in_progress",
+          "started_at": "2026-08-08 13:03:51",
+          "state": "in_progress"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31257713957,
+      "source": "therock_hud",
+      "targets": [
+        "gfx90a"
+      ],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
+    },
+    {
+      "head_sha": "711ca68527b206385d01706dd9391d9b4a0cf4b7",
+      "id": "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900",
+      "job_id": 93105277900,
+      "job_name": "Windows::release / Build Multi-Arch Stages / math-libs (gfx120X-all, gfx1200,gfx1201, false) / Stage - Math Libs (gfx120X-all)",
+      "observations": [
+        {
+          "completed_at": null,
+          "conclusion": null,
+          "created_at": "2026-08-08 12:38:54",
+          "observed_at": "2026-08-08T14:01:58Z",
+          "run_started_at": null,
+          "run_status": "in_progress",
+          "started_at": "2026-08-08 13:39:57",
+          "state": "in_progress"
+        }
+      ],
+      "platform": "windows",
+      "run_attempt": 1,
+      "run_id": 31257713957,
+      "source": "therock_hud",
+      "targets": [
+        "gfx1200",
+        "gfx1201",
+        "gfx120X-all"
+      ],
+      "test_kind": "build",
+      "url": "https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900",
+      "workflow_id": null,
+      "workflow_name": "TheRock HUD"
     }
   ],
-  "generated_at": "2026-08-08T10:11:41Z",
+  "generated_at": "2026-08-08T14:13:02Z",
   "schema_version": 1
 }

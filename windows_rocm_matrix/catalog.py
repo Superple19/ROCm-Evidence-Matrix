@@ -7,6 +7,8 @@ ARTIFACTS = (
     ("compatibility_matrix", "data/matrix.json", "schemas/compatibility-matrix.schema.json"),
     ("package_history", "data/history.json", "schemas/history.schema.json"),
     ("package_snapshots", "data/snapshots", "schemas/package-snapshot.schema.json"),
+    ("framework_history", "data/framework-history.json", "schemas/framework-history.schema.json"),
+    ("sdk_components", "data/sdk-components.json", "schemas/sdk-components.schema.json"),
     ("documentation", "data/documentation.json", "schemas/documentation-snapshot.schema.json"),
     ("legacy_linux", "data/legacy-linux.json", "schemas/legacy-linux.schema.json"),
     ("version_history", "data/version-history.json", "schemas/version-history.schema.json"),
