@@ -24,6 +24,16 @@
           "channel": {"enum": ["stable", "nightly", "staging"]},
           "rocm_version": {"type": "string"},
           "hip_version": {"type": ["string", "null"]},
+          "evidence_status": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "artifact": {"enum": ["artifact_available", "not_collected"]},
+              "resolver": {"enum": ["resolver_verified", "not_collected"]},
+              "runtime": {"enum": ["runtime_verified", "not_collected"]},
+              "hardware": {"enum": ["hardware_verified", "not_collected"]}
+            }
+          },
           "torch_version": {"type": "string"},
           "torchvision_version": {"type": "string"},
           "torchaudio_version": {"type": "string"},

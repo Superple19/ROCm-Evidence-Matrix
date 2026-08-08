@@ -278,6 +278,7 @@ def build_legacy_candidates(document):
                 "channel": "stable",
                 "rocm_version": release["release_id"],
                 "hip_version": None,
+                "evidence_status": {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"},
                 "torch_version": torch["version"],
                 "torchvision_version": vision["version"],
                 "torchaudio_version": audio["version"],

@@ -4,198 +4,198 @@
 
 Each row summarizes install candidates derived from official framework compatibility rules and matching platform package build identifiers. Candidates are artifact evidence, not resolver or runtime verification.
 
-| Distribution | Platform | Channel | Lifecycle | ROCm build | HIP build | Framework sets | Known GFX targets | Currently available GFX targets | Python tags |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| therock | windows | nightly | current | `10.1.0a20260807` | not observed | 6 | 25 | 25 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | current | `10.1.0a20260807` | not observed | 12 | 28 | 28 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `10.1.0a20260806` | not observed | 6 | 25 | 25 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.1.0a20260806` | not observed | 12 | 28 | 28 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.1.0a20260805` | not observed | 12 | 28 | 28 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `10.1.0a20260805` | not observed | 2 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.1.0a20260804` | not observed | 12 | 28 | 28 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `10.1.0a20260804` | not observed | 2 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.1.0a20260803` | not observed | 12 | 28 | 28 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `10.1.0a20260803` | not observed | 2 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.1.0a20260802` | not observed | 12 | 28 | 28 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `10.1.0a20260802` | not observed | 2 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.1.0a20260801` | not observed | 12 | 28 | 28 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.1.0a20260731` | not observed | 12 | 28 | 28 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `10.1.0a20260731` | not observed | 2 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.0.0a20260730` | not observed | 12 | 28 | 28 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `10.0.0a20260730` | not observed | 2 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.0.0a20260729` | not observed | 12 | 28 | 28 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `10.0.0a20260729` | not observed | 2 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260728` | not observed | 2 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260728` | not observed | 6 | 28 | 28 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260727` | not observed | 3 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260727` | not observed | 7 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260726` | not observed | 3 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260726` | not observed | 7 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260725` | not observed | 3 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260725` | not observed | 7 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260724` | not observed | 3 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260724` | not observed | 3 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260723` | not observed | 7 | 25 | 25 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260723` | not observed | 3 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260722` | not observed | 7 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260721` | not observed | 7 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260721` | not observed | 7 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260720` | not observed | 7 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260720` | not observed | 3 | 26 | 26 | `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260719` | not observed | 7 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260718` | not observed | 7 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260718` | not observed | 7 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260717` | not observed | 7 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260717` | not observed | 7 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260716` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260715` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260715` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260714` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260713` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260712` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260711` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260711` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260710` | not observed | 4 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260710` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260709` | not observed | 4 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260709` | not observed | 6 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260708` | not observed | 4 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260708` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260707` | not observed | 4 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260707` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260706` | not observed | 4 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260706` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260705` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260704` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260704` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260703` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260703` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260702` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260702` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260701` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260701` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260630` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260630` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260629` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260629` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260628` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260628` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260627` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260627` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.15.0a20260626` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.15.0a20260626` | not observed | 8 | 27 | 27 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | stable | current | `7.14.0` | not observed | 3 | 22 | 22 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | stable | current | `7.14.0` | not observed | 7 | 25 | 25 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260624` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260624` | not observed | 8 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260623` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260623` | not observed | 3 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260622` | not observed | 3 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260620` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260620` | not observed | 3 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260619` | not observed | 3 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260618` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260618` | not observed | 3 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260617` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260617` | not observed | 6 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260616` | not observed | 6 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260616` | not observed | 1 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260615` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260615` | not observed | 6 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260614` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260613` | not observed | 6 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260612` | not observed | 6 | 24 | 24 | `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260612` | not observed | 6 | 26 | 26 | `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260611` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260611` | not observed | 6 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260608` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260608` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260607` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260607` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260606` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260606` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260605` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260605` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260604` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260604` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260603` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260603` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260602` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260602` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260601` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260601` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260531` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260531` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260529` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260529` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260528` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260528` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260527` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260527` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260526` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260526` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260525` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260525` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260524` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260524` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260523` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260522` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260522` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | nightly | historical | `7.14.0a20260521` | not observed | 8 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260521` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260520` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | current | `7.14.0a20260519` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | current | `7.14.0a20260519` | not observed | 5 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | historical | `7.14.0a20260518` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | stable | historical | `7.13.0` | not observed | 3 | 19 | 19 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | stable | historical | `7.13.0` | not observed | 2 | 23 | 23 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | historical | `7.13.0a20260515` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260515` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | historical | `7.13.0a20260514` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260514` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | historical | `7.13.0a20260513` | not observed | 6 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260513` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | historical | `7.13.0a20260512` | not observed | 3 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260512` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | historical | `7.13.0a20260511` | not observed | 3 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260511` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260510` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | historical | `7.13.0a20260509` | not observed | 3 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | historical | `7.13.0a20260508` | not observed | 3 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260508` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | historical | `7.13.0a20260507` | not observed | 3 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260507` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | historical | `7.13.0a20260506` | not observed | 3 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260506` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260505` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | historical | `7.13.0a20260504` | not observed | 4 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260504` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260503` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | historical | `7.13.0a20260502` | not observed | 4 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260502` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | historical | `7.13.0a20260501` | not observed | 4 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260501` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | windows | staging | historical | `7.13.0a20260430` | not observed | 4 | 24 | 24 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | historical | `7.13.0a20260430` | not observed | 2 | 26 | 26 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| legacy | linux | stable | current | `7.2.4` | not observed | 16 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313` |
-| legacy | linux | stable | historical | `7.2.3` | not observed | 16 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313` |
-| legacy | linux | stable | historical | `7.2.2` | not observed | 35 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313` |
-| legacy | linux | stable | historical | `7.2.1` | not observed | 14 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| legacy | windows | stable | historical | `7.2.1` | not observed | 1 | 6 | 6 | `cp312` |
-| legacy | linux | stable | historical | `7.2` | not observed | 16 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313` |
-| legacy | windows | stable | historical | `7.2` | not observed | 1 | 6 | 6 | `cp312` |
-| legacy | linux | stable | historical | `7.1` | not observed | 19 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
-| legacy | linux | stable | historical | `7.0.2` | not observed | 53 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
-| legacy | linux | stable | historical | `7.0` | not observed | 37 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
-| legacy | linux | stable | historical | `6.4.4` | not observed | 16 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
-| legacy | windows | stable | historical | `6.4.4` | not observed | 1 | 5 | 5 | `cp312` |
-| legacy | linux | stable | historical | `6.4.3` | not observed | 4 | 0 | 0 | `cp310`, `cp313`, `cp39` |
-| legacy | linux | stable | historical | `6.4.2` | not observed | 11 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
-| legacy | linux | stable | historical | `6.4.1` | not observed | 17 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
-| legacy | linux | stable | historical | `6.4` | not observed | 12 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
-| legacy | linux | stable | historical | `6.3.4` | not observed | 11 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp39` |
-| legacy | linux | stable | historical | `6.3.3` | not observed | 21 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
-| legacy | linux | stable | historical | `6.3.2` | not observed | 15 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp39` |
-| legacy | linux | stable | historical | `6.3.1` | not observed | 20 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp39` |
-| legacy | linux | stable | historical | `6.3` | not observed | 17 | 0 | 0 | `cp310`, `cp311`, `cp312`, `cp39` |
-| legacy | linux | stable | historical | `6.2.4` | not observed | 14 | 0 | 0 | `cp310`, `cp311`, `cp39` |
+| Distribution | Platform | Channel | Lifecycle | ROCm build | HIP build | Framework sets | Known GFX targets | Currently available GFX targets | Artifact | Resolver | Runtime | Hardware | Python tags |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| therock | windows | nightly | current | `10.1.0a20260807` | not observed | 6 | 25 | 25 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | current | `10.1.0a20260807` | not observed | 12 | 28 | 28 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `10.1.0a20260806` | not observed | 6 | 25 | 25 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.1.0a20260806` | not observed | 12 | 28 | 28 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.1.0a20260805` | not observed | 12 | 28 | 28 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `10.1.0a20260805` | not observed | 2 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.1.0a20260804` | not observed | 12 | 28 | 28 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `10.1.0a20260804` | not observed | 2 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.1.0a20260803` | not observed | 12 | 28 | 28 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `10.1.0a20260803` | not observed | 2 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.1.0a20260802` | not observed | 12 | 28 | 28 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `10.1.0a20260802` | not observed | 2 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.1.0a20260801` | not observed | 12 | 28 | 28 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.1.0a20260731` | not observed | 12 | 28 | 28 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `10.1.0a20260731` | not observed | 2 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.0.0a20260730` | not observed | 12 | 28 | 28 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `10.0.0a20260730` | not observed | 2 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.0.0a20260729` | not observed | 12 | 28 | 28 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `10.0.0a20260729` | not observed | 2 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260728` | not observed | 2 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260728` | not observed | 6 | 28 | 28 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260727` | not observed | 3 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260727` | not observed | 7 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260726` | not observed | 3 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260726` | not observed | 7 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260725` | not observed | 3 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260725` | not observed | 7 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260724` | not observed | 3 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260724` | not observed | 3 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260723` | not observed | 7 | 25 | 25 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260723` | not observed | 3 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260722` | not observed | 7 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260721` | not observed | 7 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260721` | not observed | 7 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260720` | not observed | 7 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260720` | not observed | 3 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260719` | not observed | 7 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260718` | not observed | 7 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260718` | not observed | 7 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260717` | not observed | 7 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260717` | not observed | 7 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260716` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260715` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260715` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260714` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260713` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260712` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260711` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260711` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260710` | not observed | 4 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260710` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260709` | not observed | 4 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260709` | not observed | 6 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260708` | not observed | 4 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260708` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260707` | not observed | 4 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260707` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260706` | not observed | 4 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260706` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260705` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260704` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260704` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260703` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260703` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260702` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260702` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260701` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260701` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260630` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260630` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260629` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260629` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260628` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260628` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260627` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260627` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.15.0a20260626` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.15.0a20260626` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | stable | current | `7.14.0` | not observed | 3 | 22 | 22 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | stable | current | `7.14.0` | not observed | 7 | 25 | 25 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260624` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260624` | not observed | 8 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260623` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260623` | not observed | 3 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260622` | not observed | 3 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260620` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260620` | not observed | 3 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260619` | not observed | 3 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260618` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260618` | not observed | 3 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260617` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260617` | not observed | 6 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260616` | not observed | 6 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260616` | not observed | 1 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260615` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260615` | not observed | 6 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260614` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260613` | not observed | 6 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260612` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260612` | not observed | 6 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260611` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260611` | not observed | 6 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260608` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260608` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260607` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260607` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260606` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260606` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260605` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260605` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260604` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260604` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260603` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260603` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260602` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260602` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260601` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260601` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260531` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260531` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260529` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260529` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260528` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260528` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260527` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260527` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260526` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260526` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260525` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260525` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260524` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260524` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260523` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260522` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260522` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | nightly | historical | `7.14.0a20260521` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260521` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260520` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | current | `7.14.0a20260519` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | current | `7.14.0a20260519` | not observed | 5 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | historical | `7.14.0a20260518` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | stable | historical | `7.13.0` | not observed | 3 | 19 | 19 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | stable | historical | `7.13.0` | not observed | 2 | 23 | 23 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | historical | `7.13.0a20260515` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260515` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | historical | `7.13.0a20260514` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260514` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | historical | `7.13.0a20260513` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260513` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | historical | `7.13.0a20260512` | not observed | 3 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260512` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | historical | `7.13.0a20260511` | not observed | 3 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260511` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260510` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | historical | `7.13.0a20260509` | not observed | 3 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | historical | `7.13.0a20260508` | not observed | 3 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260508` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | historical | `7.13.0a20260507` | not observed | 3 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260507` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | historical | `7.13.0a20260506` | not observed | 3 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260506` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260505` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | historical | `7.13.0a20260504` | not observed | 4 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260504` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260503` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | historical | `7.13.0a20260502` | not observed | 4 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260502` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | historical | `7.13.0a20260501` | not observed | 4 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260501` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | windows | staging | historical | `7.13.0a20260430` | not observed | 4 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | staging | historical | `7.13.0a20260430` | not observed | 2 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| legacy | linux | stable | current | `7.2.4` | not observed | 16 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313` |
+| legacy | linux | stable | historical | `7.2.3` | not observed | 16 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313` |
+| legacy | linux | stable | historical | `7.2.2` | not observed | 35 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313` |
+| legacy | linux | stable | historical | `7.2.1` | not observed | 14 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| legacy | windows | stable | historical | `7.2.1` | not observed | 1 | 6 | 6 | artifact_available | not_collected | not_collected | not_collected | `cp312` |
+| legacy | linux | stable | historical | `7.2` | not observed | 16 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313` |
+| legacy | windows | stable | historical | `7.2` | not observed | 1 | 6 | 6 | artifact_available | not_collected | not_collected | not_collected | `cp312` |
+| legacy | linux | stable | historical | `7.1` | not observed | 19 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `7.0.2` | not observed | 53 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `7.0` | not observed | 37 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `6.4.4` | not observed | 16 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | windows | stable | historical | `6.4.4` | not observed | 1 | 5 | 5 | artifact_available | not_collected | not_collected | not_collected | `cp312` |
+| legacy | linux | stable | historical | `6.4.3` | not observed | 4 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `6.4.2` | not observed | 11 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `6.4.1` | not observed | 17 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `6.4` | not observed | 12 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `6.3.4` | not observed | 11 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp39` |
+| legacy | linux | stable | historical | `6.3.3` | not observed | 21 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp39` |
+| legacy | linux | stable | historical | `6.3.2` | not observed | 15 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp39` |
+| legacy | linux | stable | historical | `6.3.1` | not observed | 20 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp39` |
+| legacy | linux | stable | historical | `6.3` | not observed | 17 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp39` |
+| legacy | linux | stable | historical | `6.2.4` | not observed | 14 | 0 | 0 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp39` |
