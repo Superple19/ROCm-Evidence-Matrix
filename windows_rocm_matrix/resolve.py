@@ -17,10 +17,14 @@ def normalize_python_tag(value):
     raise ValueError("Python must be formatted as cp312 or 3.12")
 
 
-def resolve_candidates(history, gfx, platform=None, channel=None, rocm_version=None, torch_series=None, python_tag=None, include_unavailable=False):
+def resolve_candidates(history, gfx, platform=None, channel=None, rocm_version=None, torch_series=None, python_tag=None, include_unavailable=False, include_failed=False):
     python_tag = normalize_python_tag(python_tag)
     matches = []
     for candidate in history["candidates"]:
+        if not include_failed:
+            evidence = candidate.get("evidence_status", {})
+            if evidence.get("artifact") == "artifact_stale" or evidence.get("resolver") in {"resolver_failed", "partial", "not_applicable"}:
+                continue
         targets = candidate["gfx_targets"] if include_unavailable else candidate["available_gfx_targets"]
         if gfx and gfx not in targets:
             continue
@@ -86,6 +90,7 @@ def parse_args(argv=None):
     parser.add_argument("--torch")
     parser.add_argument("--python", dest="python_tag")
     parser.add_argument("--include-unavailable", action="store_true")
+    parser.add_argument("--include-failed", action="store_true", help="Include candidates with failed, partial, stale, or not-applicable evidence.")
     parser.add_argument("--all", action="store_true", dest="show_all")
     parser.add_argument("--json", action="store_true", dest="json_output")
     return parser.parse_args(argv)
@@ -105,6 +110,7 @@ def main(argv=None):
             torch_series=args.torch,
             python_tag=args.python_tag,
             include_unavailable=args.include_unavailable,
+            include_failed=args.include_failed,
         )
     except ValueError as error:
         raise SystemExit(str(error)) from error

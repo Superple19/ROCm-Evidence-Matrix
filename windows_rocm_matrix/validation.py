@@ -124,6 +124,14 @@ def validate_history(history):
     source_ids = set(history.get("sources", {}))
     candidate_ids = set()
     latest = {}
+    evidence_values = {
+        "artifact": {"artifact_available", "artifact_stale", "not_collected"},
+        "documentation": {"documented", "not_applicable", "unsupported", "unknown", "not_collected"},
+        "ci": {"ci_verified", "ci_failed", "partial", "not_collected"},
+        "resolver": {"resolver_verified", "resolver_failed", "partial", "not_applicable", "not_collected"},
+        "runtime": {"runtime_verified", "runtime_failed", "not_applicable", "not_collected"},
+        "hardware": {"hardware_verified", "hardware_failed", "not_applicable", "not_collected"},
+    }
     for candidate in history.get("candidates", []):
         if candidate["id"] in candidate_ids:
             raise ValueError(f"Duplicate history candidate: {candidate['id']}")
@@ -140,6 +148,12 @@ def validate_history(history):
             raise ValueError(f"Unsupported GFX support state: {candidate['id']}")
         if candidate.get("lifecycle") not in {"current", "historical"}:
             raise ValueError(f"Unsupported lifecycle: {candidate['id']}")
+        evidence = candidate.get("evidence_status")
+        if not isinstance(evidence, dict):
+            raise ValueError(f"Missing evidence status: {candidate['id']}")
+        for name, values in evidence_values.items():
+            if evidence.get(name) not in values:
+                raise ValueError(f"Invalid {name} evidence status: {candidate['id']}")
         if not set(candidate["available_gfx_targets"]).issubset(candidate["gfx_targets"]):
             raise ValueError(f"Available targets are not known for {candidate['id']}")
         if candidate.get("gfx_support", "known") == "unknown":
@@ -147,6 +161,8 @@ def validate_history(history):
                 raise ValueError(f"Unknown GFX support cannot have available targets: {candidate['id']}" )
         elif candidate["artifact_available"] != bool(candidate["available_gfx_targets"]):
             raise ValueError(f"Incorrect artifact availability for {candidate['id']}")
+        if not candidate["artifact_available"] and evidence["artifact"] == "artifact_available":
+            raise ValueError(f"Artifact status disagrees with availability: {candidate['id']}")
         if not candidate["python_tags"]:
             raise ValueError(f"Missing Python tags for {candidate['id']}")
         key = (candidate["distribution_family"], candidate["channel"])

@@ -129,6 +129,19 @@ class HistoryTests(unittest.TestCase):
         self.assertEqual(matches, [candidate])
         self.assertIn('"torch[device-gfx1201]==2.12.0+rocm7.14.0"', install_command(candidate, "gfx1201"))
 
+    def test_excludes_failed_and_stale_candidates_by_default(self):
+        base = {
+            "distribution_family": "therock", "platform": "linux", "channel": "stable",
+            "rocm_version": "7.14.0", "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
+            "python_tags": ["cp312"], "gfx_targets": ["gfx1201"], "available_gfx_targets": ["gfx1201"],
+        }
+        failed = {**base, "id": "failed", "evidence_status": {"artifact": "artifact_available", "resolver": "resolver_failed"}}
+        stale = {**base, "id": "stale", "evidence_status": {"artifact": "artifact_stale", "resolver": "not_collected"}}
+        history = {"candidates": [failed, stale]}
+
+        self.assertEqual(resolve_candidates(history, "gfx1201"), [])
+        self.assertEqual(len(resolve_candidates(history, "gfx1201", include_failed=True)), 2)
+
     def test_attaches_ci_evidence_with_gfx_platform_scope(self):
         candidate = {
             "id": "therock:stable:candidate",

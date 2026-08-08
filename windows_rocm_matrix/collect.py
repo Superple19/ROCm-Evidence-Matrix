@@ -8,7 +8,7 @@ from urllib.request import Request, urlopen
 from .documentation import collect_documentation_sources
 from .ci import build_evidence, collect_github, collect_hud, parse_matrix
 from .catalog import write_catalog
-from .history import attach_therock_ci_evidence, attach_therock_documentation_evidence, build_history_observations, merge_history, write_history_document
+from .history import attach_therock_ci_evidence, attach_therock_documentation_evidence, build_history_observations, merge_history, migrate_history, write_history_document
 from .integration import build_compatibility_matrix
 from .legacy import build_legacy_candidates, collect_legacy_windows_sources, render_legacy_windows
 from .legacy_linux import build_legacy_linux_candidates, collect_legacy_linux_sources, render_legacy_linux
@@ -558,7 +558,9 @@ def render_outputs(args):
     version_history = read_json(args.version_history_output)
     if history is None or legacy is None or matrix is None or version_history is None:
         raise SystemExit("Integrated matrix, history, legacy evidence, and version history are required before rendering")
+    history = migrate_history(history)
     validate_history(history)
+    write_json(history, args.history_output)
     validate_legacy_windows(legacy)
     validate_compatibility_matrix(matrix)
     validate_version_history(version_history)
@@ -590,13 +592,16 @@ def build_outputs(args):
     history = read_json(args.history_output)
     ci_evidence = read_json(args.ci_evidence_output)
     documentation = read_json(args.documentation_output)
+    if history is not None:
+        history = migrate_history(history)
     if history is not None and documentation is not None:
         attach_therock_documentation_evidence(history, documentation)
     if history is not None and ci_evidence is not None:
         attach_therock_ci_evidence(history, ci_evidence)
+    if history is not None:
         validate_history(history)
         write_json(history, args.history_output)
-        print(f"Updated {args.history_output} with CI evidence")
+        print(f"Updated {args.history_output} with normalized evidence")
     render_outputs(args)
 
 

@@ -104,6 +104,20 @@ class VerificationTests(unittest.TestCase):
             self.assertEqual(history["candidates"][0]["evidence_status"]["artifact"], "artifact_stale")
             self.assertEqual(history["candidates"][0]["resolver_results"][0]["gfx"], "gfx1201")
 
+    def test_not_applicable_does_not_clear_stale_artifact(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "history.json"
+            path.write_text(json.dumps({"schema_version": 2, "generated_at": "2026-08-08T00:00:00Z", "sources": {"packages-stable": {}}, "candidates": [{
+                "id": "candidate", "distribution_family": "therock", "platform": "linux", "lifecycle": "current", "channel": "stable",
+                "rocm_version": "7.14.0", "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
+                "python_tags": ["cp312"], "gfx_support": "known", "gfx_targets": ["gfx1201"], "available_gfx_targets": ["gfx1201"],
+                "artifact_available": True, "source_id": "packages-stable", "first_observed_at": "2026-08-08T00:00:00Z", "last_observed_at": "2026-08-08T00:00:00Z"
+            }]}), encoding="utf-8")
+            update_history_evidence(path, "candidate", "failed", "gfx1201", "cp312", "manylinux_2_28_x86_64", "failed", "2026-08-08T00:00:00Z")
+            update_history_evidence(path, "candidate", "not_applicable", "gfx1201", "cp312", "manylinux_2_28_x86_64", "n/a", "2026-08-08T00:01:00Z")
+            history = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(history["candidates"][0]["evidence_status"]["artifact"], "artifact_stale")
+
     def test_linux_matrix_selects_known_gfx_targets(self):
         history = {"candidates": [{
             "id": "linux-candidate", "platform": "linux", "channel": "nightly",

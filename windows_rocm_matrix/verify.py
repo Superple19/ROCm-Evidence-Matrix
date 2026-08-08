@@ -198,8 +198,8 @@ def update_history_evidence(history_path, candidate_id, result, gfx=None, python
             continue
         evidence = candidate.setdefault("evidence_status", {"artifact": "artifact_available", "documentation": "not_collected", "ci": "not_collected", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"})
         results = candidate.setdefault("resolver_results", [])
-        scope = (gfx, python_tag, platform_tag)
-        results[:] = [item for item in results if (item.get("gfx"), item.get("python_tag"), item.get("platform_tag")) != scope]
+        scope = (gfx or "unknown", python_tag, platform_tag)
+        results[:] = [item for item in results if (item.get("gfx") or "unknown", item.get("python_tag"), item.get("platform_tag")) != scope]
         observed_at = observed_at or utc_now()
         results.append({"gfx": gfx, "python_tag": python_tag, "platform_tag": platform_tag, "result": result, "verification_id": verification_id, "observed_at": observed_at, "error": error, "snapshot_observed_at": candidate.get("last_observed_at")})
         passed = [item for item in results if item.get("result") == "passed"]
@@ -208,8 +208,6 @@ def update_history_evidence(history_path, candidate_id, result, gfx=None, python
         evidence["resolver"] = "partial" if passed and (failed or not_applicable) else "resolver_verified" if passed else "resolver_failed" if failed else "not_applicable"
         if result == "failed" and candidate.get("artifact_available"):
             evidence["artifact"] = "artifact_stale"
-        elif result == "not_applicable" and evidence.get("artifact") == "artifact_stale":
-            evidence["artifact"] = "artifact_available"
         updated = True
         break
     if updated:

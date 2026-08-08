@@ -5,6 +5,28 @@ from pathlib import Path
 from .simple_index import version_key
 
 
+STATUS_ORDER = {
+    "artifact_stale": 0,
+    "resolver_failed": 0,
+    "runtime_failed": 0,
+    "hardware_failed": 0,
+    "partial": 1,
+    "resolver_verified": 2,
+    "runtime_verified": 2,
+    "hardware_verified": 2,
+    "documented": 3,
+    "not_applicable": 4,
+    "unsupported": 5,
+    "unknown": 6,
+    "not_collected": 7,
+    "artifact_available": 8,
+}
+
+
+def ordered_statuses(values):
+    return sorted(values, key=lambda value: (STATUS_ORDER.get(value, 99), value))
+
+
 def version_series(version):
     match = re.match(r"(\d+\.\d+)", version)
     return match.group(1) if match else None
@@ -227,8 +249,12 @@ def migrate_history(existing):
             candidate = {**item}
             candidate.setdefault("platform", "windows")
             candidate.setdefault("hip_version", None)
-            candidate.setdefault("evidence_status", initial_evidence_status())
-            candidate.setdefault("resolver_results", [])
+            if not isinstance(candidate.get("evidence_status"), dict):
+                candidate["evidence_status"] = initial_evidence_status()
+            else:
+                candidate["evidence_status"] = {**initial_evidence_status(), **candidate["evidence_status"]}
+            if not isinstance(candidate.get("resolver_results"), list):
+                candidate["resolver_results"] = []
             candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
             candidate["id"] = candidate_id(candidate)
             candidates.append(candidate)
@@ -240,8 +266,12 @@ def migrate_history(existing):
         candidate = {**item, "distribution_family": "therock"}
         candidate.setdefault("platform", "windows")
         candidate.setdefault("hip_version", None)
-        candidate.setdefault("evidence_status", initial_evidence_status())
-        candidate.setdefault("resolver_results", [])
+        if not isinstance(candidate.get("evidence_status"), dict):
+            candidate["evidence_status"] = initial_evidence_status()
+        else:
+            candidate["evidence_status"] = {**initial_evidence_status(), **candidate["evidence_status"]}
+        if not isinstance(candidate.get("resolver_results"), list):
+            candidate["resolver_results"] = []
         candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
         candidate["id"] = candidate_id(candidate)
         candidates.append(candidate)
@@ -269,6 +299,9 @@ def merge_history(existing, observations, sources, observed_at, observed_source_
         if candidate["source_id"] in observed_source_ids:
             candidate["artifact_available"] = False
             candidate["available_gfx_targets"] = []
+            evidence = candidate.setdefault("evidence_status", initial_evidence_status())
+            if evidence.get("artifact") == "artifact_available":
+                evidence["artifact"] = "not_collected"
 
     for observation in observations:
         current = candidates.get(observation["id"])
@@ -327,8 +360,8 @@ def render_history(history):
     ):
         lines.append(
             f"| {family} | {platform} | {channel} | {lifecycle} | `{rocm_version}` | not observed | {group['sets']} | {len(group['known'])} | "
-            f"{len(group['available'])} | {', '.join(sorted(group['evidence']['artifact']))} | {', '.join(sorted(group['evidence']['documentation']))} | {', '.join(sorted(group['evidence']['ci']))} | {', '.join(sorted(group['evidence']['resolver']))} | "
-            f"{', '.join(sorted(group['evidence']['runtime']))} | {', '.join(sorted(group['evidence']['hardware']))} | "
+            f"{len(group['available'])} | {', '.join(ordered_statuses(group['evidence']['artifact']))} | {', '.join(ordered_statuses(group['evidence']['documentation']))} | {', '.join(ordered_statuses(group['evidence']['ci']))} | {', '.join(ordered_statuses(group['evidence']['resolver']))} | "
+            f"{', '.join(ordered_statuses(group['evidence']['runtime']))} | {', '.join(ordered_statuses(group['evidence']['hardware']))} | "
             f"{', '.join(f'`{tag}`' for tag in sorted(group['python']))} |"
         )
     return "\n".join(lines).rstrip() + "\n"
