@@ -225,6 +225,8 @@ def validate_history(history):
             raise ValueError(f"Unsupported distribution family: {candidate['id']}")
         if candidate.get("platform") not in {"windows", "linux", "macos", "unknown"}:
             raise ValueError(f"Unsupported candidate platform: {candidate['id']}")
+        if candidate.get("framework_compatibility") not in {None, "verified", "unknown", "not_collected", "incompatible"}:
+            raise ValueError(f"Unsupported framework compatibility state: {candidate['id']}")
         if candidate.get("gfx_support", "known") not in {"known", "unknown"}:
             raise ValueError(f"Unsupported GFX support state: {candidate['id']}")
         if candidate.get("lifecycle") not in {"current", "historical"}:

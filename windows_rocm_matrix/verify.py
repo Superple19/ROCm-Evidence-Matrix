@@ -7,10 +7,11 @@ import sys
 import sysconfig
 import tempfile
 import venv
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
-from .resolve import install_arguments, resolve_candidates
+from .resolve import host_platform, install_arguments, resolve_candidates
 from .validation import validate_history, validate_resolver_verifications
 
 
@@ -118,10 +119,11 @@ def merge_verification(existing, observation):
 
 def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None):
     observed_at = utc_now()
+    attempt_id = uuid.uuid4().hex[:12]
     python_tag = python_tag or current_python_tag()
     platform_tag = platform_tag or default_platform_tag(candidate)
     record = {
-        "id": f"{candidate['id']}:{gfx or 'unknown'}:{python_tag}:{platform_tag or sysconfig.get_platform()}",
+        "id": f"{candidate['id']}:{gfx or 'unknown'}:{python_tag}:{platform_tag or sysconfig.get_platform()}:{observed_at}:{attempt_id}",
         "candidate_hash": candidate_hash(candidate, gfx, python_tag, platform_tag),
         "candidate_id": candidate["id"],
         "distribution_family": candidate.get("distribution_family", "therock"),
@@ -144,7 +146,7 @@ def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None
         "resolved_packages": [],
         "error": None,
     }
-    if candidate.get("distribution_family") == "legacy" and candidate.get("platform") != sys.platform:
+    if candidate.get("distribution_family") == "legacy" and candidate.get("platform") != host_platform():
         record["result"] = "not_applicable"
         record["error"] = f"Legacy {candidate.get('platform')} wheels require a {candidate.get('platform')} verification host"
         return record
@@ -241,10 +243,11 @@ def main(argv=None):
     args = parse_args(argv)
     history = json.loads(Path(args.history).read_text(encoding="utf-8"))
     python_tag = args.python_tag or current_python_tag()
+    platform = args.platform or host_platform()
     matches = resolve_candidates(
         history,
         args.gfx,
-        platform=args.platform,
+        platform=platform,
         channel=args.channel,
         rocm_version=args.rocm,
         torch_series=args.torch,

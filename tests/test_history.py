@@ -1,6 +1,6 @@
 import unittest
 
-from windows_rocm_matrix.history import attach_therock_ci_evidence, build_history_observations, merge_history, render_history
+from windows_rocm_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, render_history
 from windows_rocm_matrix.resolve import install_command, resolve_candidates
 
 
@@ -59,6 +59,30 @@ class HistoryTests(unittest.TestCase):
 
         self.assertFalse(second["candidates"][0]["artifact_available"])
         self.assertEqual(second["candidates"][0]["gfx_targets"], ["gfx1201"])
+
+    def test_scoped_gfx_merge_preserves_other_available_targets(self):
+        observation = {
+            "id": "candidate",
+            "distribution_family": "therock",
+            "platform": "windows",
+            "channel": "stable",
+            "rocm_version": "7.14.0",
+            "torch_version": "2.12.0+rocm7.14.0",
+            "torchvision_version": "0.27.0+rocm7.14.0",
+            "torchaudio_version": "2.11.0+rocm7.14.0",
+            "python_tags": ["cp312"],
+            "gfx_targets": ["gfx1100", "gfx1201"],
+            "source_id": "packages-stable",
+        }
+        observation["id"] = candidate_id_for(
+            observation["distribution_family"], observation["platform"], observation["channel"],
+            observation["rocm_version"], observation["torch_version"], observation["torchvision_version"],
+            observation["torchaudio_version"], observation["python_tags"],
+        )
+        first = merge_history(None, [observation], {"packages-stable": {}}, "2026-08-07T00:00:00Z", {"packages-stable"})
+        scoped = {**observation, "gfx_targets": ["gfx1201"]}
+        second = merge_history(first, [scoped], {"packages-stable": {}}, "2026-08-08T00:00:00Z", {"packages-stable"}, ["gfx1201"])
+        self.assertEqual(second["candidates"][0]["available_gfx_targets"], ["gfx1100", "gfx1201"])
 
     def test_computes_lifecycle_within_distribution_and_channel(self):
         base = {
@@ -152,6 +176,19 @@ class HistoryTests(unittest.TestCase):
         }
         document = render_history({"candidates": [candidate]})
         self.assertIn("| legacy | linux | stable | current | `7.2.4` | not observed | 1 | unknown |", document)
+
+    def test_execution_evidence_requires_candidate_match(self):
+        candidate = {
+            "platform": "windows", "gfx_support": "known", "gfx_targets": ["gfx1201"],
+            "torch_version": "2.12.0", "hip_version": None,
+        }
+        record = {
+            "os": "windows", "gfx": "gfx1201", "torch_version": "2.12.0", "hip_version": None,
+            "result": "passed", "devices": [{"gfx": "gfx1201"}],
+        }
+        self.assertEqual(execution_evidence_errors(candidate, record, "runtime"), [])
+        self.assertTrue(execution_evidence_errors(candidate, {**record, "torch_version": "2.13.0"}, "runtime"))
+        self.assertTrue(execution_evidence_errors(candidate, {**record, "os": "linux"}, "runtime"))
 
     def test_attaches_ci_evidence_with_gfx_platform_scope(self):
         candidate = {

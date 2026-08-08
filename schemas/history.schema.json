@@ -24,6 +24,7 @@
           "channel": {"enum": ["stable", "nightly", "staging"]},
           "rocm_version": {"type": "string"},
           "hip_version": {"type": ["string", "null"]},
+          "framework_compatibility": {"enum": ["verified", "unknown", "not_collected", "incompatible"]},
           "evidence_status": {
             "type": "object",
             "additionalProperties": false,

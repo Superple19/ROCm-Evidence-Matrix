@@ -1,14 +1,22 @@
 import unittest
+from unittest.mock import patch
 
 from pathlib import Path
 import json
 import tempfile
 
 from windows_rocm_matrix.verify import candidate_hash, default_platform_tag, install_arguments_for_candidate, merge_verification, normalized_command, resolved_packages, update_history_evidence, virtualenv_python
-from windows_rocm_matrix.verify_matrix import matrix_jobs
+from windows_rocm_matrix.verify_matrix import matrix_jobs, parse_args as matrix_parse_args
+from windows_rocm_matrix.resolve import parse_args
 
 
 class VerificationTests(unittest.TestCase):
+    def test_resolver_defaults_to_host_platform(self):
+        with patch("windows_rocm_matrix.resolve.host_platform", return_value="linux"):
+            self.assertEqual(parse_args([]).platform, "linux")
+        with patch("windows_rocm_matrix.verify_matrix.host_platform", return_value="windows"):
+            self.assertEqual(matrix_parse_args([]).platform, "windows")
+
     def test_legacy_linux_matrix_verifies_without_gfx_target(self):
         candidate = {
             "id": "legacy:linux:stable:7.2:torch:vision:audio:cp312",
@@ -22,6 +30,7 @@ class VerificationTests(unittest.TestCase):
             "python_tags": ["cp312"],
             "gfx_targets": [],
             "available_gfx_targets": [],
+            "framework_compatibility": "verified",
         }
         jobs = matrix_jobs({"candidates": [candidate]}, "linux", ["stable"], python_tag="cp312")
 
@@ -32,7 +41,7 @@ class VerificationTests(unittest.TestCase):
             "id": "legacy:linux:stable:7.2:torch:vision:audio:cp312",
             "distribution_family": "legacy", "platform": "linux", "channel": "stable",
             "rocm_version": "7.2", "torch_version": "2.10.0", "torchvision_version": "0.25.0", "torchaudio_version": "2.9.0",
-            "python_tags": ["cp312"], "gfx_targets": [], "available_gfx_targets": [],
+            "python_tags": ["cp312"], "gfx_targets": [], "available_gfx_targets": [], "framework_compatibility": "verified",
         }
         self.assertEqual(len(matrix_jobs({"candidates": [candidate]}, "linux", ["stable"], distribution_family="legacy")), 1)
 
@@ -92,6 +101,12 @@ class VerificationTests(unittest.TestCase):
     def test_uses_host_virtualenv_layout(self):
         self.assertEqual(virtualenv_python("/tmp/env", "nt").as_posix(), "/tmp/env/Scripts/python.exe")
         self.assertEqual(virtualenv_python("/tmp/env", "posix").as_posix(), "/tmp/env/bin/python")
+
+    def test_repeated_resolver_attempts_are_append_only(self):
+        passed = {"id": "candidate:attempt-a", "observed_at": "2026-08-08T00:00:00Z", "result": "passed"}
+        failed = {"id": "candidate:attempt-b", "observed_at": "2026-08-08T00:01:00Z", "result": "failed"}
+        document = merge_verification({"verifications": [passed]}, failed)
+        self.assertEqual([item["result"] for item in document["verifications"]], ["passed", "failed"])
 
     def test_records_resolver_failure_on_candidate(self):
         with tempfile.TemporaryDirectory() as directory:

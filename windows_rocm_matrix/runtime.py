@@ -5,7 +5,7 @@ import platform
 from datetime import datetime, timezone
 from pathlib import Path
 
-from .history import update_execution_evidence
+from .history import promote_execution_evidence
 from .validation import validate_runtime_verifications
 
 
@@ -101,9 +101,14 @@ def main(argv=None):
     except ImportError as error:
         raise SystemExit(f"PyTorch is not installed: {error}") from error
     record = collect_runtime(torch, candidate_id=args.candidate_id, gfx=args.gfx)
-    write_runtime(record, args.output)
+    promotion_errors = []
     if args.candidate_id:
-        update_execution_evidence(args.history, "runtime", args.candidate_id, record["result"])
+        matched, promotion_errors = promote_execution_evidence(args.history, "runtime", record, args.gfx)
+        record["candidate_match"] = matched
+        record["candidate_errors"] = promotion_errors or None
+    write_runtime(record, args.output)
+    if promotion_errors:
+        raise SystemExit("Runtime evidence was not promoted: " + "; ".join(promotion_errors))
     print(f"Runtime verification {record['result']}; wrote {args.output}")
     if record["result"] != "passed":
         raise SystemExit(1)

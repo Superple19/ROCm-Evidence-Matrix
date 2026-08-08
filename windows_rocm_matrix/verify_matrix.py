@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-from .resolve import resolve_candidates
+from .resolve import host_platform, resolve_candidates
 from .verify import update_history_evidence, verify_candidate, write_verification
 
 
@@ -84,7 +84,7 @@ def parse_args(argv=None):
     parser = argparse.ArgumentParser(description="Verify ROCm package candidates across a platform matrix.")
     parser.add_argument("--history", default="data/history.json")
     parser.add_argument("--output", default="data/verifications/resolver.json")
-    parser.add_argument("--platform", choices=("linux", "windows", "macos"), default="linux")
+    parser.add_argument("--platform", choices=("linux", "windows", "macos"), default=host_platform())
     parser.add_argument("--distribution-family", choices=("therock", "legacy"))
     parser.add_argument("--channel", action="append", dest="channels", choices=("stable", "nightly", "staging"))
     parser.add_argument("--gfx", action="append")

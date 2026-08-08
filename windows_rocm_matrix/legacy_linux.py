@@ -1,3 +1,4 @@
+import re
 from pathlib import PurePosixPath
 from urllib.parse import unquote, urlparse
 
@@ -77,7 +78,37 @@ def collect_legacy_linux_sources(sources, fetch_text, existing=None, observed_at
     }, results
 
 
-def build_legacy_linux_candidates(document):
+def version_series(version):
+    match = re.match(r"(\d+\.\d+)", version or "")
+    return match.group(1) if match else None
+
+
+def framework_match(torch_version, torchvision_version, torchaudio_version, framework_compatibility):
+    torch_series = version_series(torch_version)
+    torchvision_series = version_series(torchvision_version)
+    torchaudio_series = version_series(torchaudio_version)
+    return any(
+        rule.get("torch_series") == torch_series
+        and rule.get("torchvision_series") == torchvision_series
+        and rule.get("torchaudio_series") == torchaudio_series
+        for rule in framework_compatibility
+    )
+
+
+def classify_legacy_linux_framework(history, framework_compatibility):
+    for candidate in history.get("candidates", []):
+        if candidate.get("distribution_family") != "legacy" or candidate.get("platform") != "linux":
+            continue
+        if not framework_compatibility:
+            candidate["framework_compatibility"] = "not_collected"
+        else:
+            candidate["framework_compatibility"] = "verified" if framework_match(
+                candidate.get("torch_version"), candidate.get("torchvision_version"), candidate.get("torchaudio_version"), framework_compatibility
+            ) else "incompatible"
+    return history
+
+
+def build_legacy_linux_candidates(document, framework_compatibility=()):
     candidates = []
     for release in document.get("artifact_releases", []):
         packages = {"torch": [], "torchvision": [], "torchaudio": []}
@@ -103,15 +134,17 @@ def build_legacy_linux_candidates(document):
         if not all(packages.values()):
             continue
         for torch in packages["torch"]:
-            matching = []
-            for package in ("torchvision", "torchaudio"):
-                options = [item for item in packages[package] if item["python_tag"] == torch["python_tag"]]
-                if not options:
-                    break
-                matching.append(sorted(options, key=lambda item: item["version"])[-1])
-            if len(matching) != 2:
+            vision_options = [item for item in packages["torchvision"] if item["python_tag"] == torch["python_tag"]]
+            audio_options = [item for item in packages["torchaudio"] if item["python_tag"] == torch["python_tag"]]
+            compatible = [
+                (vision, audio)
+                for vision in vision_options
+                for audio in audio_options
+                if framework_match(torch["version"], vision["version"], audio["version"], framework_compatibility)
+            ]
+            if not compatible:
                 continue
-            vision, audio = matching
+            vision, audio = max(compatible, key=lambda pair: (version_key(pair[0]["version"]), version_key(pair[1]["version"])))
             candidate_id = ":".join(("legacy", "linux", "stable", release["release_id"], torch["version"], vision["version"], audio["version"], torch["python_tag"]))
             candidates.append({
                 "id": candidate_id,
@@ -120,6 +153,7 @@ def build_legacy_linux_candidates(document):
                 "channel": "stable",
                 "rocm_version": release["release_id"],
                 "hip_version": None,
+                "framework_compatibility": "verified",
                 "evidence_status": initial_evidence_status(),
                 "resolver_results": [],
                 "torch_version": torch["version"],

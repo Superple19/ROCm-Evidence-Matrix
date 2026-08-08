@@ -22,6 +22,19 @@ class CommunityEvidenceTests(unittest.TestCase):
         validate_community_evidence(document)
         self.assertEqual(len(document["submissions"]), 1)
 
+    def test_redacts_secrets_paths_and_unlisted_fields(self):
+        record = {
+            "observed_at": "2026-08-08T00:00:00Z", "result": "passed", "notes": "/opt/private/run.log token=abc api_token=def",
+            "api_token": "abc", "environment": {"ROCM_PATH": "C:\\Users\\alice\\rocm"},
+            "devices": [{"gfx": "gfx1201", "name": "AMD GPU", "private_path": "C:\\Users\\alice\\x"}],
+        }
+        submission = submission_from_record(record, "runtime", "2026-08-08T00:01:00Z")
+        encoded = json_text(submission)
+        self.assertNotIn("abc", encoded)
+        self.assertNotIn("alice", encoded)
+        self.assertNotIn("notes", submission["record"])
+        self.assertNotIn("environment", submission["record"])
+
 
 def json_text(value):
     import json

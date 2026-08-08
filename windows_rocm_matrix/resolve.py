@@ -1,9 +1,18 @@
 import argparse
 import json
+import platform as host_platform_module
 import re
 from pathlib import Path
 
 from .history import candidate_sort_key
+
+
+def host_platform():
+    return {
+        "windows": "windows",
+        "linux": "linux",
+        "darwin": "macos",
+    }.get(host_platform_module.system().lower(), "unknown")
 
 
 def normalize_python_tag(value):
@@ -25,6 +34,8 @@ def resolve_candidates(history, gfx, platform=None, channel=None, rocm_version=N
             evidence = candidate.get("evidence_status", {})
             if evidence.get("artifact") == "artifact_stale" or evidence.get("resolver") in {"resolver_failed", "partial", "not_applicable"}:
                 continue
+        if candidate.get("distribution_family") == "legacy" and candidate.get("platform") == "linux" and candidate.get("framework_compatibility") != "verified":
+            continue
         targets = candidate["gfx_targets"] if include_unavailable else candidate["available_gfx_targets"]
         if gfx and gfx not in targets:
             continue
@@ -84,7 +95,7 @@ def parse_args(argv=None):
     parser = argparse.ArgumentParser(description="Resolve a historical ROCm package candidate without installing it.")
     parser.add_argument("--history", default="data/history.json")
     parser.add_argument("--gfx")
-    parser.add_argument("--platform", choices=("windows", "linux", "macos", "unknown"))
+    parser.add_argument("--platform", choices=("windows", "linux", "macos", "unknown"), default=host_platform())
     parser.add_argument("--channel", choices=("stable", "nightly", "staging"))
     parser.add_argument("--rocm")
     parser.add_argument("--torch")

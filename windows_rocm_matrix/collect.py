@@ -13,7 +13,7 @@ from .history import attach_therock_ci_evidence, attach_therock_documentation_ev
 from .frameworks import rebuild_auxiliary_outputs, render_framework_history, render_sdk_components
 from .integration import build_compatibility_matrix
 from .legacy import build_legacy_candidates, collect_legacy_windows_sources, render_legacy_windows
-from .legacy_linux import build_legacy_linux_candidates, collect_legacy_linux_sources, render_legacy_linux
+from .legacy_linux import build_legacy_linux_candidates, classify_legacy_linux_framework, collect_legacy_linux_sources, render_legacy_linux
 from .matrix_render import write_compatibility_document
 from .render import write_rendered_document
 from .simple_index import discover_gfx_targets, discover_packages, latest_artifacts, package_names_for_target, parse_package_artifacts
@@ -197,6 +197,7 @@ def parse_args(argv=None):
     add_cache_paths(legacy)
     legacy.add_argument("--legacy-output", default="data/legacy-windows.json")
     legacy.add_argument("--legacy-linux-output", default="data/legacy-linux.json")
+    legacy.add_argument("--documentation-output", default="data/documentation.json")
     legacy.add_argument("--version-history-output", default="data/version-history.json")
     legacy.add_argument("--status-output", default="data/status/legacy.json")
     legacy.add_argument("--timeout", type=int, default=20)
@@ -223,6 +224,7 @@ def parse_args(argv=None):
     add_cache_paths(normalize_legacy)
     normalize_legacy.add_argument("--legacy-output", default="data/legacy-windows.json")
     normalize_legacy.add_argument("--legacy-linux-output", default="data/legacy-linux.json")
+    normalize_legacy.add_argument("--documentation-output", default="data/documentation.json")
     normalize_legacy.add_argument("--version-history-output", default="data/version-history.json")
 
     integrate = commands.add_parser("integrate", help="Build the integrated matrix from normalized evidence without network access.")
@@ -384,6 +386,7 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
             package_sources,
             max(snapshot["last_observed_at"] for snapshot in package_snapshots),
             {f"packages-{source['id']}" for source in successful_sources},
+            args.gfx_targets,
         )
         validate_history(history)
         write_json(history, args.history_output)
@@ -500,6 +503,7 @@ def normalize_legacy_sources(args, config, source_reader, observed_at, status_ou
             print(f"Failed {result['source_id']}: {result['error']}")
     linux_sources = config.get("legacy_linux_sources", [])
     if linux_sources:
+        documentation = read_json(getattr(args, "documentation_output", "data/documentation.json")) or {}
         legacy_linux, linux_results = collect_legacy_linux_sources(
             linux_sources,
             source_reader,
@@ -522,11 +526,12 @@ def normalize_legacy_sources(args, config, source_reader, observed_at, status_ou
             }
             history = merge_history(
                 read_json(history_path),
-                build_legacy_linux_candidates(legacy_linux),
+                build_legacy_linux_candidates(legacy_linux, documentation.get("framework_compatibility", [])),
                 {"legacy-linux-artifacts": legacy_linux_source},
                 observed_at,
                 {"legacy-linux-artifacts"},
             )
+            classify_legacy_linux_framework(history, documentation.get("framework_compatibility", []))
             validate_history(history)
             write_json(history, history_path)
             print(f"Wrote {history_path}")

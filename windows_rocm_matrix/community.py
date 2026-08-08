@@ -10,8 +10,17 @@ from .validation import validate_community_evidence
 
 
 SENSITIVE_KEYS = {"username", "user", "hostname", "computer_name", "cwd", "home", "home_dir", "path", "command_path"}
-WINDOWS_PATH = re.compile(r"[A-Za-z]:\\[^\s]+")
-POSIX_PATH = re.compile(r"/(?:home|Users|mnt|workspace)/[^\s]+")
+WINDOWS_PATH = re.compile(r"[A-Za-z]:\\(?:[^\\\"']+\\?)*[^\s\"']*")
+POSIX_PATH = re.compile(r"/(?:home|Users|mnt|workspace|tmp|opt|var|root|data|usr|etc|run)/[^\s\"']+")
+SECRET_VALUE = re.compile(r"(?i)(?<![A-Za-z0-9_])(?:token|api[_-]?token|secret|password|authorization|api[_-]?key)\b\s*[:=]\s*(?:bearer\s+)?[^,;\s]+")
+
+COMMON_RECORD_FIELDS = {
+    "id", "candidate_id", "gfx", "observed_at", "python_version", "os", "architecture",
+    "driver_version", "torch_version", "hip_version", "result", "error",
+}
+RUNTIME_RECORD_FIELDS = COMMON_RECORD_FIELDS | {"rocm_available", "device_count", "devices"}
+HARDWARE_RECORD_FIELDS = COMMON_RECORD_FIELDS | {"device", "elapsed_ms", "correct", "operation"}
+DEVICE_FIELDS = {"index", "name", "gcnArchName", "gfx", "multi_processor_count", "total_memory"}
 
 
 def utc_now():
@@ -26,15 +35,32 @@ def _redact(value, key=None):
     if isinstance(value, list):
         return [_redact(item) for item in value]
     if isinstance(value, str):
+        value = SECRET_VALUE.sub("<redacted-secret>", value)
         return POSIX_PATH.sub("<redacted>", WINDOWS_PATH.sub("<redacted>", value))
     return value
+
+
+def _allowed_record(record, evidence_kind):
+    fields = RUNTIME_RECORD_FIELDS if evidence_kind == "runtime" else HARDWARE_RECORD_FIELDS
+    clean = {name: record[name] for name in fields if name in record}
+    if "devices" in clean:
+        clean["devices"] = [
+            {name: _redact(value, name) for name, value in device.items() if name in DEVICE_FIELDS}
+            for device in clean["devices"]
+            if isinstance(device, dict)
+        ]
+    if "device" in clean and isinstance(clean["device"], dict):
+        clean["device"] = {name: _redact(value, name) for name, value in clean["device"].items() if name in DEVICE_FIELDS}
+    return _redact(clean)
 
 
 def submission_from_record(record, evidence_kind, submitted_at=None):
     if evidence_kind not in {"runtime", "hardware"}:
         raise ValueError("Community evidence kind must be runtime or hardware")
     submitted_at = submitted_at or utc_now()
-    clean = _redact(copy.deepcopy(record))
+    if not isinstance(record, dict):
+        raise ValueError("Community evidence record must be an object")
+    clean = _allowed_record(copy.deepcopy(record), evidence_kind)
     payload = {"evidence_kind": evidence_kind, "observed_at": clean.get("observed_at"), "result": clean.get("result"), "record": clean}
     content_hash = hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
     return {

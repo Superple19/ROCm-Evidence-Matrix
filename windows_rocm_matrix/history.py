@@ -191,6 +191,57 @@ def update_execution_evidence(history_path, kind, candidate_id, result):
     return False
 
 
+def execution_evidence_errors(candidate, record, kind, requested_gfx=None):
+    errors = []
+    expected_platform = candidate.get("platform", "windows")
+    observed_platform = record.get("os")
+    if observed_platform and expected_platform not in {"unknown", observed_platform}:
+        errors.append(f"platform mismatch: candidate={expected_platform}, observed={observed_platform}")
+    if record.get("torch_version") and record["torch_version"] != candidate.get("torch_version"):
+        errors.append(f"Torch mismatch: candidate={candidate.get('torch_version')}, observed={record['torch_version']}")
+    if candidate.get("hip_version") and record.get("hip_version") and candidate["hip_version"] != record["hip_version"]:
+        errors.append(f"HIP mismatch: candidate={candidate['hip_version']}, observed={record['hip_version']}")
+
+    requested = requested_gfx or record.get("gfx")
+    candidate_targets = set(candidate.get("gfx_targets", []))
+    observed_targets = set()
+    for device in record.get("devices", []):
+        if device.get("gfx"):
+            observed_targets.add(device["gfx"])
+    device = record.get("device")
+    if device and device.get("gfx"):
+        observed_targets.add(device["gfx"])
+    if requested and requested not in candidate_targets:
+        errors.append(f"GFX is not part of candidate support: {requested}")
+    if record.get("result") == "passed":
+        if candidate.get("gfx_support") != "known":
+            errors.append("candidate has no authoritative GFX support mapping")
+        if not candidate_targets:
+            errors.append("candidate has no supported GFX targets")
+        if not observed_targets:
+            errors.append("successful evidence has no observed GFX target")
+        elif requested and requested not in observed_targets:
+            errors.append(f"observed GFX does not match requested target: {requested}")
+        elif not candidate_targets.intersection(observed_targets):
+            errors.append("observed GFX is outside candidate support")
+        if kind == "hardware" and not record.get("correct"):
+            errors.append("hardware evidence is not marked correct")
+    return errors
+
+
+def promote_execution_evidence(history_path, kind, record, requested_gfx=None):
+    path = Path(history_path)
+    history = json.loads(path.read_text(encoding="utf-8"))
+    candidate_id = record.get("candidate_id")
+    candidate = next((item for item in history.get("candidates", []) if item.get("id") == candidate_id), None)
+    if candidate is None:
+        return False, [f"unknown candidate: {candidate_id}"]
+    errors = execution_evidence_errors(candidate, record, kind, requested_gfx)
+    if errors:
+        return False, errors
+    return update_execution_evidence(path, kind, candidate_id, record["result"]), []
+
+
 def attach_therock_ci_evidence(history, ci_document):
     executions = ci_document.get("executions", []) if ci_document else []
     for candidate in history.get("candidates", []):
@@ -332,15 +383,22 @@ def classify_lifecycle(candidates):
         candidate["lifecycle"] = "current" if version_key(candidate["rocm_version"]) == latest[key] else "historical"
 
 
-def merge_history(existing, observations, sources, observed_at, observed_source_ids):
+def merge_history(existing, observations, sources, observed_at, observed_source_ids, observed_gfx_targets=None):
     existing = migrate_history(existing)
     candidates = {item["id"]: dict(item) for item in existing["candidates"]}
+    gfx_scope = set(observed_gfx_targets or ())
     for candidate in candidates.values():
         if candidate["source_id"] in observed_source_ids:
-            candidate["artifact_available"] = False
-            candidate["available_gfx_targets"] = []
+            if gfx_scope and candidate.get("gfx_support") == "known":
+                candidate["available_gfx_targets"] = sorted(
+                    set(candidate.get("available_gfx_targets", [])) - gfx_scope
+                )
+                candidate["artifact_available"] = bool(candidate["available_gfx_targets"])
+            else:
+                candidate["artifact_available"] = False
+                candidate["available_gfx_targets"] = []
             evidence = candidate.setdefault("evidence_status", initial_evidence_status())
-            if evidence.get("artifact") == "artifact_available":
+            if not candidate["artifact_available"] and evidence.get("artifact") == "artifact_available":
                 evidence["artifact"] = "not_collected"
 
     for observation in observations:
@@ -356,7 +414,12 @@ def merge_history(existing, observations, sources, observed_at, observed_source_
             candidates[observation["id"]] = current
             continue
         current["gfx_targets"] = sorted(set(current["gfx_targets"]) | set(observation["gfx_targets"]))
-        current["available_gfx_targets"] = observation["gfx_targets"]
+        if gfx_scope and current.get("gfx_support") == "known":
+            current["available_gfx_targets"] = sorted(
+                set(current.get("available_gfx_targets", [])) | set(observation["gfx_targets"])
+            )
+        else:
+            current["available_gfx_targets"] = observation["gfx_targets"]
         current["python_tags"] = observation["python_tags"]
         current["last_observed_at"] = observed_at
         current["artifact_available"] = True
@@ -377,9 +440,10 @@ def render_history(history):
     grouped = {}
     for candidate in history["candidates"]:
         key = (candidate["distribution_family"], candidate.get("platform", "windows"), candidate["channel"], candidate["lifecycle"], candidate["rocm_version"])
-        group = grouped.setdefault(key, {"sets": 0, "gfx_support": set(), "known": set(), "available": set(), "python": set(), "evidence": {"artifact": set(), "documentation": set(), "ci": set(), "resolver": set(), "runtime": set(), "hardware": set()}})
+        group = grouped.setdefault(key, {"sets": 0, "gfx_support": set(), "framework": set(), "known": set(), "available": set(), "python": set(), "evidence": {"artifact": set(), "documentation": set(), "ci": set(), "resolver": set(), "runtime": set(), "hardware": set()}})
         group["sets"] += 1
         group["gfx_support"].add(candidate.get("gfx_support", "unknown"))
+        group["framework"].add(candidate.get("framework_compatibility", "not_collected"))
         group["known"].update(candidate["gfx_targets"])
         group["available"].update(candidate["available_gfx_targets"])
         group["python"].update(candidate["python_tags"])
@@ -393,14 +457,14 @@ def render_history(history):
         "",
         "Each row summarizes install candidates derived from official framework compatibility rules and matching platform package build identifiers. CI status is GFX/platform-scoped evidence; it does not prove this exact package candidate passed. Artifact evidence does not prove resolver, runtime, or hardware compatibility. When GFX support is unknown, artifact availability must not be interpreted as GPU support.",
         "",
-        "| Distribution | Platform | Channel | Lifecycle | ROCm build | HIP build | Framework sets | GFX support | Known GFX targets | Currently available GFX targets | Artifact | Documentation | CI | Resolver | Runtime | Hardware | Python tags |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+        "| Distribution | Platform | Channel | Lifecycle | ROCm build | HIP build | Framework sets | GFX support | Framework compatibility | Known GFX targets | Currently available GFX targets | Artifact | Documentation | CI | Resolver | Runtime | Hardware | Python tags |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
     for (family, platform, channel, lifecycle, rocm_version), group in sorted(
         grouped.items(), key=lambda item: version_key(item[0][4]), reverse=True
     ):
         lines.append(
-            f"| {family} | {platform} | {channel} | {lifecycle} | `{rocm_version}` | not observed | {group['sets']} | {', '.join(sorted(group['gfx_support']))} | {len(group['known'])} | "
+            f"| {family} | {platform} | {channel} | {lifecycle} | `{rocm_version}` | not observed | {group['sets']} | {', '.join(sorted(group['gfx_support']))} | {', '.join(ordered_statuses(group['framework']))} | {len(group['known'])} | "
             f"{len(group['available'])} | {', '.join(ordered_statuses(group['evidence']['artifact']))} | {', '.join(ordered_statuses(group['evidence']['documentation']))} | {', '.join(ordered_statuses(group['evidence']['ci']))} | {', '.join(ordered_statuses(group['evidence']['resolver']))} | "
             f"{', '.join(ordered_statuses(group['evidence']['runtime']))} | {', '.join(ordered_statuses(group['evidence']['hardware']))} | "
             f"{', '.join(f'`{tag}`' for tag in sorted(group['python']))} |"

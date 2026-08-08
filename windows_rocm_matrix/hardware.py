@@ -6,7 +6,7 @@ import time
 from pathlib import Path
 
 from .runtime import environment_evidence, normalized_os, utc_now
-from .history import update_execution_evidence
+from .history import promote_execution_evidence
 from .validation import validate_hardware_verifications
 
 
@@ -90,9 +90,14 @@ def main(argv=None):
     except ImportError as error:
         raise SystemExit(f"PyTorch is not installed: {error}") from error
     record = collect_hardware(torch, candidate_id=args.candidate_id, gfx=args.gfx)
-    write_hardware(record, args.output)
+    promotion_errors = []
     if args.candidate_id:
-        update_execution_evidence(args.history, "hardware", args.candidate_id, record["result"])
+        matched, promotion_errors = promote_execution_evidence(args.history, "hardware", record, args.gfx)
+        record["candidate_match"] = matched
+        record["candidate_errors"] = promotion_errors or None
+    write_hardware(record, args.output)
+    if promotion_errors:
+        raise SystemExit("Hardware evidence was not promoted: " + "; ".join(promotion_errors))
     print(f"Hardware verification {record['result']}; wrote {args.output}")
     if record["result"] != "passed":
         raise SystemExit(1)
