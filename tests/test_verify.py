@@ -27,6 +27,15 @@ class VerificationTests(unittest.TestCase):
 
         self.assertEqual(jobs, [(candidate, None, "cp312", "manylinux_2_28_x86_64")])
 
+    def test_matrix_filters_distribution_family(self):
+        candidate = {
+            "id": "legacy:linux:stable:7.2:torch:vision:audio:cp312",
+            "distribution_family": "legacy", "platform": "linux", "channel": "stable",
+            "rocm_version": "7.2", "torch_version": "2.10.0", "torchvision_version": "0.25.0", "torchaudio_version": "2.9.0",
+            "python_tags": ["cp312"], "gfx_targets": [], "available_gfx_targets": [],
+        }
+        self.assertEqual(len(matrix_jobs({"candidates": [candidate]}, "linux", ["stable"], distribution_family="legacy")), 1)
+
     def test_builds_safe_dry_run_command(self):
         candidate = {
             "id": "candidate",

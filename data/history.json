@@ -9906,6 +9906,14 @@
       "available_gfx_targets": [],
       "channel": "stable",
       "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_applicable",
+        "runtime": "not_collected"
+      },
       "first_observed_at": "2026-08-07T17:50:53Z",
       "gfx_support": "unknown",
       "gfx_targets": [],
@@ -9916,6 +9924,18 @@
       "platform": "linux",
       "python_tags": [
         "cp312"
+      ],
+      "resolver_results": [
+        {
+          "error": "Legacy linux wheels require a linux verification host",
+          "gfx": null,
+          "observed_at": "2026-08-08T13:12:04Z",
+          "platform_tag": "manylinux_2_28_x86_64",
+          "python_tag": "cp312",
+          "result": "not_applicable",
+          "snapshot_observed_at": "2026-08-08T10:14:57Z",
+          "verification_id": "legacy:linux:stable:7.2.4:2.10.0+rocm7.2.4.lw.git3d3aa833:0.25.0+rocm7.2.4.git82df5f59:2.9.0+rocm7.2.4.gite3c6ee2b:cp312:unknown:cp312:manylinux_2_28_x86_64"
+        }
       ],
       "rocm_version": "7.2.4",
       "source_id": "legacy-linux-artifacts",
@@ -79715,9 +79735,9 @@
         "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "documented",
-        "hardware": "not_collected",
+        "hardware": "hardware_verified",
         "resolver": "not_collected",
-        "runtime": "not_collected"
+        "runtime": "runtime_verified"
       },
       "first_observed_at": "2026-08-07T12:56:33Z",
       "gfx_support": "known",
@@ -82655,6 +82675,16 @@
           "result": "failed",
           "snapshot_observed_at": "2026-08-08T10:11:41Z",
           "verification_id": "therock:linux:stable:7.14.0:2.13.0+rocm7.14.0:0.28.0+rocm7.14.0:2.11.0.2+rocm7.14.0:cp312:gfx1201:cp312:manylinux_2_28_x86_64"
+        },
+        {
+          "error": "Looking in indexes: https://repo.amd.com/rocm/whl-multi-arch/\nERROR: Could not find a version that satisfies the requirement torch==2.13.0+rocm7.14.0 (from versions: none)\nERROR: No matching distribution found for torch==2.13.0+rocm7.14.0",
+          "gfx": "gfx1010",
+          "observed_at": "2026-08-08T13:08:56Z",
+          "platform_tag": "manylinux_2_28_x86_64",
+          "python_tag": "cp312",
+          "result": "failed",
+          "snapshot_observed_at": "2026-08-08T10:11:41Z",
+          "verification_id": "therock:linux:stable:7.14.0:2.13.0+rocm7.14.0:0.28.0+rocm7.14.0:2.11.0.2+rocm7.14.0:cp312:gfx1010:cp312:manylinux_2_28_x86_64"
         }
       ],
       "rocm_version": "7.14.0",

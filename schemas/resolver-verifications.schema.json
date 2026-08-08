@@ -37,7 +37,7 @@
           },
           "command": {"type": "array", "items": {"type": "string"}},
           "observed_at": {"type": "string", "format": "date-time"},
-          "result": {"enum": ["passed", "failed"]},
+          "result": {"enum": ["passed", "failed", "not_applicable"]},
           "exit_code": {"type": ["integer", "null"]},
           "pip_version": {"type": ["string", "null"]},
           "resolved_packages": {

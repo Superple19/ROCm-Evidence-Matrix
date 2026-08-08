@@ -46,7 +46,7 @@
                 "gfx": {"type": ["string", "null"]},
                 "python_tag": {"type": "string"},
                 "platform_tag": {"type": "string"},
-                "result": {"enum": ["passed", "failed"]},
+                "result": {"enum": ["passed", "failed", "not_applicable"]},
                 "verification_id": {"type": ["string", "null"]},
                 "observed_at": {"type": "string", "format": "date-time"}
                 ,"error": {"type": ["string", "null"]}

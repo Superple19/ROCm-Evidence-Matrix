@@ -138,6 +138,11 @@ def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None
         "error": None,
     }
 
+    if candidate.get("distribution_family") == "legacy" and candidate.get("platform") != sys.platform:
+        record["result"] = "not_applicable"
+        record["error"] = f"Legacy {candidate.get('platform')} wheels require a {candidate.get('platform')} verification host"
+        return record
+
     with tempfile.TemporaryDirectory(prefix="windows-rocm-verify-") as directory:
         root = Path(directory)
         venv.EnvBuilder(with_pip=True).create(root)
@@ -199,9 +204,12 @@ def update_history_evidence(history_path, candidate_id, result, gfx=None, python
         results.append({"gfx": gfx, "python_tag": python_tag, "platform_tag": platform_tag, "result": result, "verification_id": verification_id, "observed_at": observed_at, "error": error, "snapshot_observed_at": candidate.get("last_observed_at")})
         passed = [item for item in results if item.get("result") == "passed"]
         failed = [item for item in results if item.get("result") == "failed"]
-        evidence["resolver"] = "partial" if passed and failed else "resolver_verified" if passed else "resolver_failed"
+        not_applicable = [item for item in results if item.get("result") == "not_applicable"]
+        evidence["resolver"] = "partial" if passed and (failed or not_applicable) else "resolver_verified" if passed else "resolver_failed" if failed else "not_applicable"
         if result == "failed" and candidate.get("artifact_available"):
             evidence["artifact"] = "artifact_stale"
+        elif result == "not_applicable" and evidence.get("artifact") == "artifact_stale":
+            evidence["artifact"] = "artifact_available"
         updated = True
         break
     if updated:

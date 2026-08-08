@@ -174,7 +174,7 @@ def validate_resolver_verifications(document):
             raise ValueError(f"Invalid resolver distribution family: {record['id']}")
         if record.get("candidate_hash") is not None and len(record["candidate_hash"]) != 64:
             raise ValueError(f"Invalid resolver candidate hash: {record['id']}")
-        if record["result"] not in {"passed", "failed"}:
+        if record["result"] not in {"passed", "failed", "not_applicable"}:
             raise ValueError(f"Invalid resolver result: {record['result']}")
         if record.get("platform", "windows") not in {"windows", "linux", "macos", "unknown"}:
             raise ValueError(f"Invalid resolver platform: {record['id']}")
@@ -187,6 +187,8 @@ def validate_resolver_verifications(document):
             raise ValueError(f"Passed resolver verification lacks evidence: {record['id']}")
         if record["result"] == "failed" and record["exit_code"] == 0:
             raise ValueError(f"Failed resolver verification has a successful exit code: {record['id']}")
+        if record["result"] == "not_applicable" and record.get("exit_code") not in {None, 0}:
+            raise ValueError(f"Not-applicable resolver verification has a failed exit code: {record['id']}")
 
 
 def validate_runtime_verifications(document):
