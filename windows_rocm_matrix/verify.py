@@ -45,6 +45,14 @@ def normalized_command(candidate, gfx, python_tag=None, platform_tag=None):
     return ["python", "-m", "pip", *verification_arguments(candidate, gfx, "<report.json>", python_tag, platform_tag)]
 
 
+def default_platform_tag(candidate):
+    return {
+        "linux": "manylinux_2_28_x86_64",
+        "windows": "win_amd64",
+        "macos": "macosx_11_0_x86_64",
+    }.get(candidate.get("platform", "windows"))
+
+
 def install_arguments_for_candidate(candidate, gfx):
     if candidate.get("distribution_family", "therock") == "therock":
         return install_arguments(candidate, gfx)
@@ -104,6 +112,7 @@ def merge_verification(existing, observation):
 def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None):
     observed_at = utc_now()
     python_tag = python_tag or current_python_tag()
+    platform_tag = platform_tag or default_platform_tag(candidate)
     record = {
         "id": f"{candidate['id']}:{gfx or 'unknown'}:{python_tag}:{platform_tag or sysconfig.get_platform()}",
         "candidate_hash": candidate_hash(candidate, gfx, python_tag, platform_tag),
@@ -174,7 +183,7 @@ def write_verification(record, output_path):
     path.write_text(json.dumps(document, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
 
 
-def update_history_evidence(history_path, candidate_id, result):
+def update_history_evidence(history_path, candidate_id, result, gfx=None, python_tag=None, platform_tag=None, verification_id=None, observed_at=None):
     path = Path(history_path)
     history = json.loads(path.read_text(encoding="utf-8"))
     status = "resolver_verified" if result == "passed" else "resolver_failed"
@@ -183,7 +192,11 @@ def update_history_evidence(history_path, candidate_id, result):
         if candidate.get("id") != candidate_id:
             continue
         evidence = candidate.setdefault("evidence_status", {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"})
-        evidence["resolver"] = status
+        results = candidate.setdefault("resolver_results", [])
+        scope = (gfx, python_tag, platform_tag)
+        results[:] = [item for item in results if (item.get("gfx"), item.get("python_tag"), item.get("platform_tag")) != scope]
+        results.append({"gfx": gfx, "python_tag": python_tag, "platform_tag": platform_tag, "result": result, "verification_id": verification_id, "observed_at": observed_at or utc_now()})
+        evidence["resolver"] = "partial"
         updated = True
         break
     if updated:
@@ -226,7 +239,7 @@ def main(argv=None):
     print(f"Verifying {candidate['id']} for {args.gfx} and {python_tag}")
     record = verify_candidate(candidate, args.gfx, args.timeout, python_tag, args.platform_tag)
     write_verification(record, args.output)
-    update_history_evidence(args.history, candidate["id"], record["result"])
+    update_history_evidence(args.history, candidate["id"], record["result"], args.gfx, python_tag, record["platform_tag"], record["id"], record["observed_at"])
     print(f"Resolver verification {record['result']}; wrote {args.output}")
     if record["result"] != "passed":
         if record["error"]:

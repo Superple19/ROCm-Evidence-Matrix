@@ -69,7 +69,7 @@ def main(argv=None):
         print(f"[{index}/{len(jobs)}] Verifying {candidate['id']} for {gfx} and {python_tag}")
         record = verify_candidate(candidate, gfx, args.timeout, python_tag, platform_tag)
         write_verification(record, args.output)
-        update_history_evidence(args.history, candidate["id"], record["result"])
+        update_history_evidence(args.history, candidate["id"], record["result"], gfx, python_tag, record["platform_tag"], record["id"], record["observed_at"])
         print(f"    {record['result']}")
 
 

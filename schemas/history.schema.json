@@ -29,9 +29,25 @@
             "additionalProperties": false,
             "properties": {
               "artifact": {"enum": ["artifact_available", "not_collected"]},
-              "resolver": {"enum": ["resolver_verified", "resolver_failed", "not_collected"]},
+              "resolver": {"enum": ["resolver_verified", "resolver_failed", "partial", "not_collected"]},
               "runtime": {"enum": ["runtime_verified", "not_collected"]},
               "hardware": {"enum": ["hardware_verified", "not_collected"]}
+            }
+          },
+          "resolver_results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["gfx", "python_tag", "platform_tag", "result", "observed_at"],
+              "properties": {
+                "gfx": {"type": ["string", "null"]},
+                "python_tag": {"type": "string"},
+                "platform_tag": {"type": "string"},
+                "result": {"enum": ["passed", "failed"]},
+                "verification_id": {"type": ["string", "null"]},
+                "observed_at": {"type": "string", "format": "date-time"}
+              }
             }
           },
           "torch_version": {"type": "string"},

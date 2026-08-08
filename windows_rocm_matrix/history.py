@@ -112,6 +112,7 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
                 # HIP is a runtime-reported version; package indexes do not expose it reliably.
                 "hip_version": None,
                 "evidence_status": {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"},
+                "resolver_results": [],
                 "torch_version": torch_version,
                 "torchvision_version": vision_version,
                 "torchaudio_version": audio_version,
@@ -170,6 +171,7 @@ def migrate_history(existing):
             candidate.setdefault("platform", "windows")
             candidate.setdefault("hip_version", None)
             candidate.setdefault("evidence_status", initial_evidence_status())
+            candidate.setdefault("resolver_results", [])
             candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
             candidate["id"] = candidate_id(candidate)
             candidates.append(candidate)
@@ -182,6 +184,7 @@ def migrate_history(existing):
         candidate.setdefault("platform", "windows")
         candidate.setdefault("hip_version", None)
         candidate.setdefault("evidence_status", initial_evidence_status())
+        candidate.setdefault("resolver_results", [])
         candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
         candidate["id"] = candidate_id(candidate)
         candidates.append(candidate)

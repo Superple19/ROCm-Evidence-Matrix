@@ -78427,7 +78427,7 @@
       "evidence_status": {
         "artifact": "artifact_available",
         "hardware": "not_collected",
-        "resolver": "resolver_failed",
+        "resolver": "partial",
         "runtime": "not_collected"
       },
       "first_observed_at": "2026-08-07T17:44:06Z",
@@ -78465,6 +78465,16 @@
       "platform": "linux",
       "python_tags": [
         "cp312"
+      ],
+      "resolver_results": [
+        {
+          "gfx": "gfx1201",
+          "observed_at": "2026-08-08T12:30:29Z",
+          "platform_tag": "manylinux_2_28_x86_64",
+          "python_tag": "cp312",
+          "result": "failed",
+          "verification_id": "therock:linux:stable:7.14.0:2.13.0+rocm7.14.0:0.28.0+rocm7.14.0:2.11.0.2+rocm7.14.0:cp312:gfx1201:cp312:manylinux_2_28_x86_64"
+        }
       ],
       "rocm_version": "7.14.0",
       "source_id": "packages-stable-linux",

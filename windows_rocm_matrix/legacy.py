@@ -279,6 +279,7 @@ def build_legacy_candidates(document):
                 "rocm_version": release["release_id"],
                 "hip_version": None,
                 "evidence_status": {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"},
+                "resolver_results": [],
                 "torch_version": torch["version"],
                 "torchvision_version": vision["version"],
                 "torchaudio_version": audio["version"],

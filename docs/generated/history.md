@@ -85,7 +85,7 @@ Each row summarizes install candidates derived from official framework compatibi
 | therock | windows | nightly | historical | `7.15.0a20260626` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `7.15.0a20260626` | not observed | 8 | 27 | 27 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | windows | stable | current | `7.14.0` | not observed | 3 | 22 | 22 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | stable | current | `7.14.0` | not observed | 7 | 25 | 25 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | stable | current | `7.14.0` | not observed | 7 | 25 | 25 | artifact_available | not_collected, partial | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | windows | nightly | historical | `7.14.0a20260624` | not observed | 8 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `7.14.0a20260624` | not observed | 8 | 26 | 26 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | windows | nightly | historical | `7.14.0a20260623` | not observed | 6 | 24 | 24 | artifact_available | not_collected | not_collected | not_collected | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
