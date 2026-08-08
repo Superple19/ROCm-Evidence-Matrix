@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T17:50:53Z",
+  "generated_at": "2026-08-08T08:19:01Z",
   "releases": [
     {
       "channel": "stable",
@@ -1534,7 +1534,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 0,
       "id": "therock:7.10",
-      "last_observed_at": "2026-08-07T17:44:06Z",
+      "last_observed_at": "2026-08-08T08:19:01Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
       "platform": "windows",
@@ -1563,7 +1563,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 13,
       "id": "therock:7.11",
-      "last_observed_at": "2026-08-07T17:44:06Z",
+      "last_observed_at": "2026-08-08T08:19:01Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
       "platform": "windows",
@@ -1593,7 +1593,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 13,
       "id": "therock:7.12",
-      "last_observed_at": "2026-08-07T17:44:06Z",
+      "last_observed_at": "2026-08-08T08:19:01Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
       "platform": "windows",
@@ -1623,7 +1623,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 13,
       "id": "therock:7.13",
-      "last_observed_at": "2026-08-07T17:44:06Z",
+      "last_observed_at": "2026-08-08T08:19:01Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
       "platform": "windows",
@@ -1647,11 +1647,11 @@
     {
       "channel": "stable",
       "distribution_family": "therock",
-      "documentation_status": "archive_missing",
-      "documentation_url": null,
+      "documentation_status": "available",
+      "documentation_url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.14/SUPPORTED_GPUS.md",
       "first_observed_at": "2026-08-07T15:37:08Z",
       "framework_support_observations": 0,
-      "gpu_support_observations": 0,
+      "gpu_support_observations": 23,
       "id": "therock:7.14.0",
       "last_observed_at": "2026-08-07T17:50:53Z",
       "lifecycle": "current",
@@ -1684,7 +1684,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 23,
       "id": "therock:10.1.0",
-      "last_observed_at": "2026-08-07T17:44:06Z",
+      "last_observed_at": "2026-08-08T08:19:01Z",
       "lifecycle": "current",
       "package_artifacts": 0,
       "platform": "windows",
@@ -1779,37 +1779,37 @@
     },
     "therock-releases": {
       "id": "therock-releases",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "url": "https://api.github.com/repos/ROCm/TheRock/releases?per_page=100"
     },
     "therock-supported-gpus": {
       "id": "therock-supported-gpus",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-7.11": {
       "id": "therock-supported-gpus-7.11",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.11/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-7.12": {
       "id": "therock-supported-gpus-7.12",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.12/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-7.13": {
       "id": "therock-supported-gpus-7.13",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.13/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-7.14": {
       "id": "therock-supported-gpus-7.14",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.14/SUPPORTED_GPUS.md"
     },
     "therock-version": {
       "id": "therock-version",
-      "observed_at": "2026-08-07T17:44:06Z",
+      "observed_at": "2026-08-08T08:19:01Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/version.json"
     },
     "windows-documentation-branches": {
