@@ -40,6 +40,18 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
     torch_versions = package_versions.get("torch", {})
     torchvision_versions = package_versions.get("torchvision", {})
     torchaudio_versions = package_versions.get("torchaudio", {})
+    torchvision_by_rocm_series = {}
+    for version in torchvision_versions:
+        rocm_version = rocm_version_from_framework(version)
+        series = version_series(version)
+        if rocm_version and series:
+            torchvision_by_rocm_series.setdefault((rocm_version, series), []).append(version)
+    torchaudio_by_rocm_series = {}
+    for version in torchaudio_versions:
+        rocm_version = rocm_version_from_framework(version)
+        series = version_series(version)
+        if rocm_version and series:
+            torchaudio_by_rocm_series.setdefault((rocm_version, series), []).append(version)
     grouped = {}
 
     for gfx in gfx_targets:
@@ -56,16 +68,10 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
             if not rocm_packages_available or rule is None or rocm_version not in rocm_device or torch_version not in torch_device:
                 continue
             matching_vision = [
-                version for version in torchvision_versions
-                if rocm_version_from_framework(version) == rocm_version
-                and version_series(version) == rule["torchvision_series"]
-                and version in torchvision_device
+                version for version in torchvision_by_rocm_series.get((rocm_version, rule["torchvision_series"]), [])
+                if version in torchvision_device
             ]
-            matching_audio = [
-                version for version in torchaudio_versions
-                if rocm_version_from_framework(version) == rocm_version
-                and version_series(version) == rule["torchaudio_series"]
-            ]
+            matching_audio = torchaudio_by_rocm_series.get((rocm_version, rule["torchaudio_series"]), [])
             for vision_version in matching_vision:
                 for audio_version in matching_audio:
                     python_tags = compatible_python_tags(
@@ -246,7 +252,9 @@ def render_history(history):
         "| Distribution | Platform | Channel | Lifecycle | ROCm build | HIP build | Framework sets | Known GFX targets | Currently available GFX targets | Python tags |",
         "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
-    for (family, platform, channel, lifecycle, rocm_version), group in sorted(grouped.items(), key=lambda item: (item[0][0], item[0][1], item[0][2], version_key(item[0][4]))):
+    for (family, platform, channel, lifecycle, rocm_version), group in sorted(
+        grouped.items(), key=lambda item: version_key(item[0][4]), reverse=True
+    ):
         lines.append(
             f"| {family} | {platform} | {channel} | {lifecycle} | `{rocm_version}` | not observed | {group['sets']} | {len(group['known'])} | "
             f"{len(group['available'])} | {', '.join(f'`{tag}`' for tag in sorted(group['python']))} |"

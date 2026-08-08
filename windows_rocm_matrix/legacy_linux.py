@@ -19,7 +19,7 @@ def render_legacy_linux(document):
         "| ROCm release | Artifacts | Platform support evidence | Runtime verification |",
         "| --- | ---: | --- | --- |",
     ]
-    for release in document.get("artifact_releases", []):
+    for release in sorted(document.get("artifact_releases", []), key=lambda item: version_key(item["release_id"]), reverse=True):
         lines.append(f"| `{release['release_id']}` | {len(release['artifacts'])} | not collected | not collected |")
     lines.extend([
         "",
@@ -30,7 +30,7 @@ def render_legacy_linux(document):
         "| ROCm release | Artifacts | Source |",
         "| --- | ---: | --- |",
     ])
-    for release in document.get("artifact_releases", []):
+    for release in sorted(document.get("artifact_releases", []), key=lambda item: version_key(item["release_id"]), reverse=True):
         lines.append(f"| `{release['release_id']}` | {len(release['artifacts'])} | `{release['source_id']}` |")
     return "\n".join(lines).rstrip() + "\n"
 

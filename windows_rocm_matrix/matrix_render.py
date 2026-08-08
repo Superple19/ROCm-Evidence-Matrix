@@ -63,8 +63,12 @@ def render_compatibility_matrix(matrix):
         ]
     )
     channel_order = {"stable": 0, "nightly": 1, "staging": 2}
+    platform_order = {"windows": 0, "linux": 1, "macos": 2, "unknown": 3}
     for target in matrix["targets"]:
-        for platform, platform_data in sorted(target.get("platforms", {}).items()):
+        for platform, platform_data in sorted(
+            target.get("platforms", {}).items(),
+            key=lambda item: platform_order.get(item[0], 99),
+        ):
             channels = platform_data.get("package_channels", {})
             for channel, packages in sorted(channels.items(), key=lambda item: channel_order.get(item[0], 99)):
                 values = [

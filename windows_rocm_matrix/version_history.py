@@ -377,12 +377,12 @@ def render_version_history(document):
         "",
         "# ROCm version history",
         "",
-        "Platform support, documentation availability, and observed package or test evidence are independent fields. A missing archive is not an unsupported release.",
+        "Platform support, documentation availability, and observed package or test evidence are independent fields. The package and CI columns below refer to legacy Windows evidence; TheRock package availability is shown in the compatibility matrix. A missing archive is not an unsupported release.",
         "",
-        "| Distribution | Platform | Version | Channel | Lifecycle | Windows support | Windows package | Windows CI | Documentation | GPU observations | Framework observations | Package artifacts |",
+        "| Distribution | Platform | Version | Channel | Lifecycle | Windows support | Legacy Windows package | Legacy Windows CI | Documentation | GPU observations | Framework observations | Package artifacts |",
         "| --- | --- | --- | --- | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: |",
     ]
-    for item in document["releases"]:
+    for item in sorted(document["releases"], key=lambda item: version_key(item["version"]), reverse=True):
         windows = item.get("platform_evidence", {}).get("windows", {})
         lines.append(
             f"| {item['distribution_family']} | {item.get('platform', 'windows')} | `{item['version']}` | {item['channel']} | {item['lifecycle']} | {windows.get('support', item['windows_support'])} | "

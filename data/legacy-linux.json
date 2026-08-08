@@ -8616,7 +8616,7 @@
     }
   ],
   "distribution_family": "legacy",
-  "generated_at": "2026-08-07T17:50:53Z",
+  "generated_at": "2026-08-08T10:14:57Z",
   "platform": "linux",
   "schema_version": 1,
   "sources": {
@@ -8624,7 +8624,7 @@
       "channel": "stable",
       "distribution_family": "legacy",
       "id": "legacy-linux-manylinux-artifacts",
-      "observed_at": "2026-08-07T17:50:53Z",
+      "observed_at": "2026-08-08T10:14:57Z",
       "platform": "linux",
       "url": "https://repo.radeon.com/rocm/manylinux/"
     }

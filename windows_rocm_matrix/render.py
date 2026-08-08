@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from .simple_index import latest_version, package_names_for_target
+from .simple_index import gfx_key, latest_version, package_names_for_target
 
 
 def render_snapshots(snapshot_paths):
@@ -15,16 +15,24 @@ def render_snapshots(snapshot_paths):
         "",
         "# ROCm package availability",
         "",
-        "A package listed here was observed in an official AMD index. Versions are selected independently per package; availability does not prove a compatible set, dependency resolution, or runtime compatibility.",
+        "A package listed here was observed in an official AMD index. Versions are selected independently per package; availability does not prove a compatible set, dependency resolution, or runtime compatibility. Use the historical candidate catalog for coherent package sets.",
         "",
     ]
 
     channel_order = {"stable": 0, "nightly": 1, "staging": 2}
-    for snapshot in sorted(snapshots, key=lambda item: channel_order[item["source"]["channel"]]):
+    platform_order = {"windows": 0, "linux": 1, "macos": 2, "unknown": 3}
+    for snapshot in sorted(
+        snapshots,
+        key=lambda item: (
+            platform_order.get(item["source"].get("platform", "windows"), 99),
+            channel_order.get(item["source"]["channel"], 99),
+        ),
+    ):
         source = snapshot["source"]
+        platform = source.get("platform", "windows")
         lines.extend(
             [
-                f"## {source['channel'].title()}",
+                f"## {platform.title()} — {source['channel'].title()}",
                 "",
                 f"- Source: {source['url']}",
                 f"- Last observed: `{snapshot['last_observed_at']}`",
@@ -34,7 +42,7 @@ def render_snapshots(snapshot_paths):
             ]
         )
         packages = snapshot["packages"]
-        for target in snapshot["gfx_targets"]:
+        for target in sorted(snapshot["gfx_targets"], key=lambda item: gfx_key(item["gfx"]), reverse=True):
             names = package_names_for_target(target["gfx"])
             versions = [latest_version(packages.get(name, [])) for name in names]
             cells = [version or "—" for version in versions]

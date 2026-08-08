@@ -8,19 +8,19 @@ HIP SDK documentation, PyTorch support documentation, and repository artifacts a
 
 | ROCm release | Artifacts | Platform support evidence | Runtime verification |
 | --- | ---: | --- | --- |
-| `5.5` | 0 | documented | not collected |
-| `5.6` | 0 | documented | not collected |
-| `5.7` | 0 | documented | not collected |
-| `6.0` | 0 | documented | not collected |
-| `6.1` | 0 | documented | not collected |
-| `6.2` | 0 | documented | not collected |
-| `6.3` | 0 | documented | not collected |
-| `6.4` | 0 | documented | not collected |
-| `6.4.4` | 3 | documented | not collected |
-| `7.1` | 0 | documented | not collected |
-| `7.1.1` | 7 | not collected | not collected |
-| `7.2` | 7 | documented | not collected |
 | `7.2.1` | 7 | documented | not collected |
+| `7.2` | 7 | documented | not collected |
+| `7.1.1` | 7 | not collected | not collected |
+| `7.1` | 0 | documented | not collected |
+| `6.4.4` | 3 | documented | not collected |
+| `6.4` | 0 | documented | not collected |
+| `6.3` | 0 | documented | not collected |
+| `6.2` | 0 | documented | not collected |
+| `6.1` | 0 | documented | not collected |
+| `6.0` | 0 | documented | not collected |
+| `5.7` | 0 | documented | not collected |
+| `5.6` | 0 | documented | not collected |
+| `5.5` | 0 | documented | not collected |
 
 `documented` means that a Windows support statement or product mapping was observed. It does not establish resolver, runtime, or hardware success.
 
@@ -28,40 +28,40 @@ HIP SDK documentation, PyTorch support documentation, and repository artifacts a
 
 | ROCm series | Windows HIP SDK |
 | --- | --- |
-| `5.5` | Yes |
-| `5.6` | No |
-| `5.7` | Yes |
-| `6.0` | No |
-| `6.1` | Yes |
-| `6.2` | Yes |
-| `6.3` | No |
-| `6.4` | Yes |
 | `7.1` | Yes |
+| `6.4` | Yes |
+| `6.3` | No |
+| `6.2` | Yes |
+| `6.1` | Yes |
+| `6.0` | No |
+| `5.7` | Yes |
+| `5.6` | No |
+| `5.5` | Yes |
 
 ## Versioned HIP SDK GPU documentation
 
 | ROCm series | Products documented | Runtime supported | HIP SDK supported |
 | --- | ---: | ---: | ---: |
-| `6.1` | 23 | 21 | 14 |
-| `6.4` | 43 | 29 | 29 |
 | `7.1` | 38 | 24 | 24 |
+| `6.4` | 43 | 29 | 29 |
+| `6.1` | 23 | 21 | 14 |
 
 ## PyTorch on Windows documentation
 
 | ROCm | Product family | Torch | Python | GFX targets |
 | --- | --- | --- | --- | --- |
-| `6.4.4` | radeon | `2.8` | 3.12 | `gfx1100`, `gfx1200`, `gfx1201` |
-| `6.4.4` | ryzen | `2.8` | 3.12 | `gfx1150`, `gfx1151` |
-| `7.2` | radeon | `2.9` | 3.12 | `gfx1100`, `gfx1101`, `gfx1200`, `gfx1201` |
-| `7.2` | ryzen | `2.9` | 3.12 | `gfx1150`, `gfx1151` |
 | `7.2.1` | radeon | `2.9` | 3.12 | `gfx1100`, `gfx1101`, `gfx1200`, `gfx1201` |
 | `7.2.1` | ryzen | `2.9.1` | 3.12 | `gfx1150`, `gfx1151` |
+| `7.2` | radeon | `2.9` | 3.12 | `gfx1100`, `gfx1101`, `gfx1200`, `gfx1201` |
+| `7.2` | ryzen | `2.9` | 3.12 | `gfx1150`, `gfx1151` |
+| `6.4.4` | radeon | `2.8` | 3.12 | `gfx1100`, `gfx1200`, `gfx1201` |
+| `6.4.4` | ryzen | `2.8` | 3.12 | `gfx1150`, `gfx1151` |
 
 ## Legacy package repositories
 
 | Repository release | Artifacts | Packages |
 | --- | ---: | --- |
-| `6.4.4` | 3 | `torch`, `torchaudio`, `torchvision` |
-| `7.1.1` | 7 | `rocm`, `rocm-sdk-core`, `rocm-sdk-devel`, `rocm-sdk-libraries-custom`, `torch`, `torchaudio`, `torchvision` |
-| `7.2` | 7 | `rocm`, `rocm-sdk-core`, `rocm-sdk-devel`, `rocm-sdk-libraries-custom`, `torch`, `torchaudio`, `torchvision` |
 | `7.2.1` | 7 | `rocm`, `rocm-sdk-core`, `rocm-sdk-devel`, `rocm-sdk-libraries-custom`, `torch`, `torchaudio`, `torchvision` |
+| `7.2` | 7 | `rocm`, `rocm-sdk-core`, `rocm-sdk-devel`, `rocm-sdk-libraries-custom`, `torch`, `torchaudio`, `torchvision` |
+| `7.1.1` | 7 | `rocm`, `rocm-sdk-core`, `rocm-sdk-devel`, `rocm-sdk-libraries-custom`, `torch`, `torchaudio`, `torchvision` |
+| `6.4.4` | 3 | `torch`, `torchaudio`, `torchvision` |

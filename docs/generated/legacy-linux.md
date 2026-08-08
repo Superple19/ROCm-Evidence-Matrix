@@ -8,51 +8,51 @@ This adapter records historical Linux release indexes and artifact URLs. It does
 
 | ROCm release | Artifacts | Platform support evidence | Runtime verification |
 | --- | ---: | --- | --- |
-| `3.10` | 1 | not collected | not collected |
-| `4.0.0` | 1 | not collected | not collected |
-| `4.0.1` | 1 | not collected | not collected |
-| `4.1` | 1 | not collected | not collected |
-| `4.2` | 1 | not collected | not collected |
-| `4.5.2` | 12 | not collected | not collected |
-| `5.0.1` | 12 | not collected | not collected |
-| `5.1.1` | 12 | not collected | not collected |
-| `5.1.3` | 12 | not collected | not collected |
-| `5.2` | 18 | not collected | not collected |
-| `5.2.3` | 6 | not collected | not collected |
-| `5.3` | 4 | not collected | not collected |
-| `5.3.2` | 4 | not collected | not collected |
-| `5.4` | 4 | not collected | not collected |
-| `5.4.1` | 2 | not collected | not collected |
-| `5.5` | 6 | not collected | not collected |
-| `5.5.1` | 6 | not collected | not collected |
-| `5.6` | 8 | not collected | not collected |
-| `5.7` | 12 | not collected | not collected |
-| `6.0` | 14 | not collected | not collected |
-| `6.0.2` | 3 | not collected | not collected |
-| `6.1` | 29 | not collected | not collected |
-| `6.1.3` | 5 | not collected | not collected |
-| `6.2` | 29 | not collected | not collected |
-| `6.2.3` | 6 | not collected | not collected |
-| `6.2.4` | 72 | not collected | not collected |
-| `6.3` | 96 | not collected | not collected |
-| `6.3.1` | 98 | not collected | not collected |
-| `6.3.2` | 81 | not collected | not collected |
-| `6.3.3` | 99 | not collected | not collected |
-| `6.3.4` | 73 | not collected | not collected |
-| `6.4` | 77 | not collected | not collected |
-| `6.4.1` | 109 | not collected | not collected |
-| `6.4.2` | 82 | not collected | not collected |
-| `6.4.3` | 43 | not collected | not collected |
-| `6.4.4` | 88 | not collected | not collected |
-| `7.0` | 120 | not collected | not collected |
-| `7.0.2` | 150 | not collected | not collected |
-| `7.1` | 110 | not collected | not collected |
-| `7.1.1` | 0 | not collected | not collected |
-| `7.2` | 103 | not collected | not collected |
-| `7.2.1` | 102 | not collected | not collected |
-| `7.2.2` | 138 | not collected | not collected |
-| `7.2.3` | 111 | not collected | not collected |
 | `7.2.4` | 114 | not collected | not collected |
+| `7.2.3` | 111 | not collected | not collected |
+| `7.2.2` | 138 | not collected | not collected |
+| `7.2.1` | 102 | not collected | not collected |
+| `7.2` | 103 | not collected | not collected |
+| `7.1.1` | 0 | not collected | not collected |
+| `7.1` | 110 | not collected | not collected |
+| `7.0.2` | 150 | not collected | not collected |
+| `7.0` | 120 | not collected | not collected |
+| `6.4.4` | 88 | not collected | not collected |
+| `6.4.3` | 43 | not collected | not collected |
+| `6.4.2` | 82 | not collected | not collected |
+| `6.4.1` | 109 | not collected | not collected |
+| `6.4` | 77 | not collected | not collected |
+| `6.3.4` | 73 | not collected | not collected |
+| `6.3.3` | 99 | not collected | not collected |
+| `6.3.2` | 81 | not collected | not collected |
+| `6.3.1` | 98 | not collected | not collected |
+| `6.3` | 96 | not collected | not collected |
+| `6.2.4` | 72 | not collected | not collected |
+| `6.2.3` | 6 | not collected | not collected |
+| `6.2` | 29 | not collected | not collected |
+| `6.1.3` | 5 | not collected | not collected |
+| `6.1` | 29 | not collected | not collected |
+| `6.0.2` | 3 | not collected | not collected |
+| `6.0` | 14 | not collected | not collected |
+| `5.7` | 12 | not collected | not collected |
+| `5.6` | 8 | not collected | not collected |
+| `5.5.1` | 6 | not collected | not collected |
+| `5.5` | 6 | not collected | not collected |
+| `5.4.1` | 2 | not collected | not collected |
+| `5.4` | 4 | not collected | not collected |
+| `5.3.2` | 4 | not collected | not collected |
+| `5.3` | 4 | not collected | not collected |
+| `5.2.3` | 6 | not collected | not collected |
+| `5.2` | 18 | not collected | not collected |
+| `5.1.3` | 12 | not collected | not collected |
+| `5.1.1` | 12 | not collected | not collected |
+| `5.0.1` | 12 | not collected | not collected |
+| `4.5.2` | 12 | not collected | not collected |
+| `4.2` | 1 | not collected | not collected |
+| `4.1` | 1 | not collected | not collected |
+| `4.0.1` | 1 | not collected | not collected |
+| `4.0.0` | 1 | not collected | not collected |
+| `3.10` | 1 | not collected | not collected |
 
 `observed` artifacts confirm that files were listed at the source. Linux platform, GFX, resolver, runtime, and hardware compatibility evidence is not collected by this adapter.
 
@@ -60,48 +60,48 @@ This adapter records historical Linux release indexes and artifact URLs. It does
 
 | ROCm release | Artifacts | Source |
 | --- | ---: | --- |
-| `3.10` | 1 | `legacy-linux-manylinux-artifacts` |
-| `4.0.0` | 1 | `legacy-linux-manylinux-artifacts` |
-| `4.0.1` | 1 | `legacy-linux-manylinux-artifacts` |
-| `4.1` | 1 | `legacy-linux-manylinux-artifacts` |
-| `4.2` | 1 | `legacy-linux-manylinux-artifacts` |
-| `4.5.2` | 12 | `legacy-linux-manylinux-artifacts` |
-| `5.0.1` | 12 | `legacy-linux-manylinux-artifacts` |
-| `5.1.1` | 12 | `legacy-linux-manylinux-artifacts` |
-| `5.1.3` | 12 | `legacy-linux-manylinux-artifacts` |
-| `5.2` | 18 | `legacy-linux-manylinux-artifacts` |
-| `5.2.3` | 6 | `legacy-linux-manylinux-artifacts` |
-| `5.3` | 4 | `legacy-linux-manylinux-artifacts` |
-| `5.3.2` | 4 | `legacy-linux-manylinux-artifacts` |
-| `5.4` | 4 | `legacy-linux-manylinux-artifacts` |
-| `5.4.1` | 2 | `legacy-linux-manylinux-artifacts` |
-| `5.5` | 6 | `legacy-linux-manylinux-artifacts` |
-| `5.5.1` | 6 | `legacy-linux-manylinux-artifacts` |
-| `5.6` | 8 | `legacy-linux-manylinux-artifacts` |
-| `5.7` | 12 | `legacy-linux-manylinux-artifacts` |
-| `6.0` | 14 | `legacy-linux-manylinux-artifacts` |
-| `6.0.2` | 3 | `legacy-linux-manylinux-artifacts` |
-| `6.1` | 29 | `legacy-linux-manylinux-artifacts` |
-| `6.1.3` | 5 | `legacy-linux-manylinux-artifacts` |
-| `6.2` | 29 | `legacy-linux-manylinux-artifacts` |
-| `6.2.3` | 6 | `legacy-linux-manylinux-artifacts` |
-| `6.2.4` | 72 | `legacy-linux-manylinux-artifacts` |
-| `6.3` | 96 | `legacy-linux-manylinux-artifacts` |
-| `6.3.1` | 98 | `legacy-linux-manylinux-artifacts` |
-| `6.3.2` | 81 | `legacy-linux-manylinux-artifacts` |
-| `6.3.3` | 99 | `legacy-linux-manylinux-artifacts` |
-| `6.3.4` | 73 | `legacy-linux-manylinux-artifacts` |
-| `6.4` | 77 | `legacy-linux-manylinux-artifacts` |
-| `6.4.1` | 109 | `legacy-linux-manylinux-artifacts` |
-| `6.4.2` | 82 | `legacy-linux-manylinux-artifacts` |
-| `6.4.3` | 43 | `legacy-linux-manylinux-artifacts` |
-| `6.4.4` | 88 | `legacy-linux-manylinux-artifacts` |
-| `7.0` | 120 | `legacy-linux-manylinux-artifacts` |
-| `7.0.2` | 150 | `legacy-linux-manylinux-artifacts` |
-| `7.1` | 110 | `legacy-linux-manylinux-artifacts` |
-| `7.1.1` | 0 | `legacy-linux-manylinux-artifacts` |
-| `7.2` | 103 | `legacy-linux-manylinux-artifacts` |
-| `7.2.1` | 102 | `legacy-linux-manylinux-artifacts` |
-| `7.2.2` | 138 | `legacy-linux-manylinux-artifacts` |
-| `7.2.3` | 111 | `legacy-linux-manylinux-artifacts` |
 | `7.2.4` | 114 | `legacy-linux-manylinux-artifacts` |
+| `7.2.3` | 111 | `legacy-linux-manylinux-artifacts` |
+| `7.2.2` | 138 | `legacy-linux-manylinux-artifacts` |
+| `7.2.1` | 102 | `legacy-linux-manylinux-artifacts` |
+| `7.2` | 103 | `legacy-linux-manylinux-artifacts` |
+| `7.1.1` | 0 | `legacy-linux-manylinux-artifacts` |
+| `7.1` | 110 | `legacy-linux-manylinux-artifacts` |
+| `7.0.2` | 150 | `legacy-linux-manylinux-artifacts` |
+| `7.0` | 120 | `legacy-linux-manylinux-artifacts` |
+| `6.4.4` | 88 | `legacy-linux-manylinux-artifacts` |
+| `6.4.3` | 43 | `legacy-linux-manylinux-artifacts` |
+| `6.4.2` | 82 | `legacy-linux-manylinux-artifacts` |
+| `6.4.1` | 109 | `legacy-linux-manylinux-artifacts` |
+| `6.4` | 77 | `legacy-linux-manylinux-artifacts` |
+| `6.3.4` | 73 | `legacy-linux-manylinux-artifacts` |
+| `6.3.3` | 99 | `legacy-linux-manylinux-artifacts` |
+| `6.3.2` | 81 | `legacy-linux-manylinux-artifacts` |
+| `6.3.1` | 98 | `legacy-linux-manylinux-artifacts` |
+| `6.3` | 96 | `legacy-linux-manylinux-artifacts` |
+| `6.2.4` | 72 | `legacy-linux-manylinux-artifacts` |
+| `6.2.3` | 6 | `legacy-linux-manylinux-artifacts` |
+| `6.2` | 29 | `legacy-linux-manylinux-artifacts` |
+| `6.1.3` | 5 | `legacy-linux-manylinux-artifacts` |
+| `6.1` | 29 | `legacy-linux-manylinux-artifacts` |
+| `6.0.2` | 3 | `legacy-linux-manylinux-artifacts` |
+| `6.0` | 14 | `legacy-linux-manylinux-artifacts` |
+| `5.7` | 12 | `legacy-linux-manylinux-artifacts` |
+| `5.6` | 8 | `legacy-linux-manylinux-artifacts` |
+| `5.5.1` | 6 | `legacy-linux-manylinux-artifacts` |
+| `5.5` | 6 | `legacy-linux-manylinux-artifacts` |
+| `5.4.1` | 2 | `legacy-linux-manylinux-artifacts` |
+| `5.4` | 4 | `legacy-linux-manylinux-artifacts` |
+| `5.3.2` | 4 | `legacy-linux-manylinux-artifacts` |
+| `5.3` | 4 | `legacy-linux-manylinux-artifacts` |
+| `5.2.3` | 6 | `legacy-linux-manylinux-artifacts` |
+| `5.2` | 18 | `legacy-linux-manylinux-artifacts` |
+| `5.1.3` | 12 | `legacy-linux-manylinux-artifacts` |
+| `5.1.1` | 12 | `legacy-linux-manylinux-artifacts` |
+| `5.0.1` | 12 | `legacy-linux-manylinux-artifacts` |
+| `4.5.2` | 12 | `legacy-linux-manylinux-artifacts` |
+| `4.2` | 1 | `legacy-linux-manylinux-artifacts` |
+| `4.1` | 1 | `legacy-linux-manylinux-artifacts` |
+| `4.0.1` | 1 | `legacy-linux-manylinux-artifacts` |
+| `4.0.0` | 1 | `legacy-linux-manylinux-artifacts` |
+| `3.10` | 1 | `legacy-linux-manylinux-artifacts` |

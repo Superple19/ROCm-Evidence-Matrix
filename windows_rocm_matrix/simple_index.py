@@ -12,6 +12,17 @@ DEVICE_PACKAGE_PREFIXES = (
 )
 
 
+def gfx_key(gfx):
+    match = re.fullmatch(r"gfx(\d+)([a-z]*)", gfx.lower())
+    if not match:
+        return (-1, "", gfx.lower())
+    digits, suffix = match.groups()
+    numeric = int(digits)
+    if suffix:
+        numeric = numeric * 10 + int(suffix, 36)
+    return (numeric, gfx.lower())
+
+
 class AnchorParser(HTMLParser):
     def __init__(self):
         super().__init__()

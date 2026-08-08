@@ -1,4 +1,4 @@
-from .simple_index import latest_version, package_names_for_target
+from .simple_index import gfx_key, latest_version, package_names_for_target
 
 
 def build_compatibility_matrix(documentation, package_snapshots):
@@ -18,7 +18,7 @@ def build_compatibility_matrix(documentation, package_snapshots):
         targets.update(item["gfx"] for item in snapshot["gfx_targets"])
 
     rows = []
-    for gfx in sorted(targets):
+    for gfx in sorted(targets, key=gfx_key, reverse=True):
         platform_channels = {}
         for platform, channels_by_name in sorted(packages_by_platform.items()):
             channels = {}
