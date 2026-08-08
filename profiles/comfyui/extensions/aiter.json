@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "id": "comfyui.aiter",
+  "name": "ComfyUI AITER extension",
+  "profile_kind": "application",
+  "metadata": {
+    "domain": "extension",
+    "package_name": "aiter",
+    "core_required": false,
+    "use_case": "attention and kernel performance",
+    "status": "unverified"
+  },
+  "evidence_refs": [],
+  "constraints": [
+    {
+      "id": "aiter-package",
+      "kind": "extension",
+      "relationship": "optional",
+      "name": "AITER",
+      "value": {
+        "install_methods": ["wheel", "source"],
+        "supported_os": ["windows", "linux"],
+        "python": "candidate-specific",
+        "torch_rocm_hip_abi": "not-established",
+        "gfx": "not-established"
+      },
+      "claim_status": "unverified",
+      "evidence_refs": []
+    }
+  ]
+}

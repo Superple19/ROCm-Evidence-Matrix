@@ -14,6 +14,16 @@ class ProfileTests(unittest.TestCase):
             {"rocm-package-candidate", "torch-rocm", "rocm-channel", "supported-platform", "platform-package-layout", "python-tag", "gfx-target"},
         )
 
+    def test_comfyui_extensions_are_optional_and_not_auto_verified(self):
+        root = Path(__file__).parents[1] / "profiles" / "comfyui" / "extensions"
+        profiles = [load_profile(path) for path in sorted(root.glob("*.json"))]
+        self.assertEqual({profile["metadata"]["package_name"] for profile in profiles}, {"bitsandbytes", "aiter", "flash-attn", "sageattention", "triton"})
+        for profile in profiles:
+            constraint = profile["constraints"][0]
+            self.assertEqual(constraint["relationship"], "optional")
+            self.assertEqual(constraint["claim_status"], "unverified")
+            self.assertFalse(profile["metadata"]["core_required"])
+
     def test_supports_constraint_kinds_and_relationships(self):
         profile = {
             "schema_version": 1,

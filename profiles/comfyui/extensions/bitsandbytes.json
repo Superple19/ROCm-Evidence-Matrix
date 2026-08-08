@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "id": "comfyui.bitsandbytes",
+  "name": "ComfyUI bitsandbytes extension",
+  "profile_kind": "application",
+  "metadata": {
+    "domain": "extension",
+    "package_name": "bitsandbytes",
+    "core_required": false,
+    "use_case": "quantization-dependent nodes",
+    "status": "unverified"
+  },
+  "evidence_refs": [],
+  "constraints": [
+    {
+      "id": "bitsandbytes-package",
+      "kind": "extension",
+      "relationship": "optional",
+      "name": "bitsandbytes",
+      "value": {
+        "install_methods": ["wheel", "source"],
+        "supported_os": ["windows", "linux"],
+        "python": "candidate-specific",
+        "torch_rocm_hip_abi": "not-established",
+        "gfx": "not-established"
+      },
+      "claim_status": "unverified",
+      "evidence_refs": []
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "id": "comfyui.sageattention",
+  "name": "ComfyUI SageAttention extension",
+  "profile_kind": "application",
+  "metadata": {
+    "domain": "extension",
+    "package_name": "sageattention",
+    "core_required": false,
+    "use_case": "attention performance",
+    "status": "unverified"
+  },
+  "evidence_refs": [],
+  "constraints": [
+    {
+      "id": "sageattention-package",
+      "kind": "extension",
+      "relationship": "optional",
+      "name": "SageAttention",
+      "value": {
+        "install_methods": ["wheel", "source"],
+        "supported_os": ["windows", "linux"],
+        "python": "candidate-specific",
+        "torch_rocm_hip_abi": "not-established",
+        "gfx": "not-established"
+      },
+      "claim_status": "unverified",
+      "evidence_refs": []
+    }
+  ]
+}
