@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "id": "comfyui",
+  "name": "ComfyUI ROCm compatibility",
+  "profile_kind": "application",
+  "metadata": {
+    "domain": "generation",
+    "status": "baseline",
+    "scope": "core runtime only; extensions are separate profiles"
+  },
+  "evidence_refs": [
+    "source:packages-stable",
+    "source:packages-nightly",
+    "source:packages-stable-linux",
+    "source:packages-nightly-linux"
+  ],
+  "constraints": [
+    {
+      "id": "rocm-package-candidate",
+      "kind": "framework",
+      "relationship": "required",
+      "name": "ROCm PyTorch package candidate",
+      "value": {
+        "distribution_families": ["therock", "legacy"],
+        "channels": ["stable", "nightly", "staging"]
+      },
+      "claim_status": "documented",
+      "evidence_refs": ["source:packages-stable", "source:packages-nightly"]
+    },
+    {
+      "id": "supported-platform",
+      "kind": "runtime",
+      "relationship": "required",
+      "name": "Operating system",
+      "value": ["windows", "linux"],
+      "claim_status": "documented",
+      "evidence_refs": ["source:packages-stable", "source:packages-stable-linux"]
+    },
+    {
+      "id": "python-tag",
+      "kind": "framework",
+      "relationship": "required",
+      "name": "Python interpreter",
+      "value": {
+        "selected_from": "candidate.python_tags",
+        "requested_by": "resolver"
+      },
+      "claim_status": "documented",
+      "evidence_refs": ["source:packages-stable", "source:packages-stable-linux"]
+    },
+    {
+      "id": "gfx-target",
+      "kind": "runtime",
+      "relationship": "required",
+      "name": "AMD GFX target",
+      "value": {
+        "selected_from": "candidate.available_gfx_targets",
+        "unknown_support_is_not_auto_compatible": true
+      },
+      "claim_status": "documented",
+      "evidence_refs": ["source:packages-stable", "source:packages-nightly"]
+    }
+  ]
+}
