@@ -377,8 +377,9 @@ def render_history(history):
     grouped = {}
     for candidate in history["candidates"]:
         key = (candidate["distribution_family"], candidate.get("platform", "windows"), candidate["channel"], candidate["lifecycle"], candidate["rocm_version"])
-        group = grouped.setdefault(key, {"sets": 0, "known": set(), "available": set(), "python": set(), "evidence": {"artifact": set(), "documentation": set(), "ci": set(), "resolver": set(), "runtime": set(), "hardware": set()}})
+        group = grouped.setdefault(key, {"sets": 0, "gfx_support": set(), "known": set(), "available": set(), "python": set(), "evidence": {"artifact": set(), "documentation": set(), "ci": set(), "resolver": set(), "runtime": set(), "hardware": set()}})
         group["sets"] += 1
+        group["gfx_support"].add(candidate.get("gfx_support", "unknown"))
         group["known"].update(candidate["gfx_targets"])
         group["available"].update(candidate["available_gfx_targets"])
         group["python"].update(candidate["python_tags"])
@@ -390,16 +391,16 @@ def render_history(history):
         "",
         "# Historical package catalog",
         "",
-        "Each row summarizes install candidates derived from official framework compatibility rules and matching platform package build identifiers. CI status is GFX/platform-scoped evidence; it does not prove this exact package candidate passed. Artifact evidence does not prove resolver, runtime, or hardware compatibility.",
+        "Each row summarizes install candidates derived from official framework compatibility rules and matching platform package build identifiers. CI status is GFX/platform-scoped evidence; it does not prove this exact package candidate passed. Artifact evidence does not prove resolver, runtime, or hardware compatibility. When GFX support is unknown, artifact availability must not be interpreted as GPU support.",
         "",
-        "| Distribution | Platform | Channel | Lifecycle | ROCm build | HIP build | Framework sets | Known GFX targets | Currently available GFX targets | Artifact | Documentation | CI | Resolver | Runtime | Hardware | Python tags |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+        "| Distribution | Platform | Channel | Lifecycle | ROCm build | HIP build | Framework sets | GFX support | Known GFX targets | Currently available GFX targets | Artifact | Documentation | CI | Resolver | Runtime | Hardware | Python tags |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
     for (family, platform, channel, lifecycle, rocm_version), group in sorted(
         grouped.items(), key=lambda item: version_key(item[0][4]), reverse=True
     ):
         lines.append(
-            f"| {family} | {platform} | {channel} | {lifecycle} | `{rocm_version}` | not observed | {group['sets']} | {len(group['known'])} | "
+            f"| {family} | {platform} | {channel} | {lifecycle} | `{rocm_version}` | not observed | {group['sets']} | {', '.join(sorted(group['gfx_support']))} | {len(group['known'])} | "
             f"{len(group['available'])} | {', '.join(ordered_statuses(group['evidence']['artifact']))} | {', '.join(ordered_statuses(group['evidence']['documentation']))} | {', '.join(ordered_statuses(group['evidence']['ci']))} | {', '.join(ordered_statuses(group['evidence']['resolver']))} | "
             f"{', '.join(ordered_statuses(group['evidence']['runtime']))} | {', '.join(ordered_statuses(group['evidence']['hardware']))} | "
             f"{', '.join(f'`{tag}`' for tag in sorted(group['python']))} |"

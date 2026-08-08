@@ -20,6 +20,7 @@ class LegacyLinuxTests(unittest.TestCase):
         self.assertEqual(candidate["platform"], "linux")
         self.assertEqual(candidate["gfx_support"], "unknown")
         self.assertEqual(candidate["gfx_targets"], [])
+        self.assertEqual(set(candidate["evidence_status"]), {"artifact", "documentation", "ci", "resolver", "runtime", "hardware"})
 
     def test_resolves_linux_candidate_without_gfx_filter(self):
         candidate = {

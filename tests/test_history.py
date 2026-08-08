@@ -1,6 +1,6 @@
 import unittest
 
-from windows_rocm_matrix.history import attach_therock_ci_evidence, build_history_observations, merge_history
+from windows_rocm_matrix.history import attach_therock_ci_evidence, build_history_observations, merge_history, render_history
 from windows_rocm_matrix.resolve import install_command, resolve_candidates
 
 
@@ -143,6 +143,15 @@ class HistoryTests(unittest.TestCase):
 
         self.assertEqual(resolve_candidates(history, "gfx1201"), [])
         self.assertEqual(len(resolve_candidates(history, "gfx1201", include_failed=True)), 2)
+
+    def test_history_render_labels_unknown_gfx_support(self):
+        candidate = {
+            "distribution_family": "legacy", "platform": "linux", "channel": "stable", "lifecycle": "current",
+            "rocm_version": "7.2.4", "gfx_support": "unknown", "gfx_targets": [], "available_gfx_targets": [],
+            "python_tags": ["cp312"], "evidence_status": {"artifact": "artifact_available"},
+        }
+        document = render_history({"candidates": [candidate]})
+        self.assertIn("| legacy | linux | stable | current | `7.2.4` | not observed | 1 | unknown |", document)
 
     def test_attaches_ci_evidence_with_gfx_platform_scope(self):
         candidate = {

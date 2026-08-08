@@ -98,6 +98,13 @@ def error_summary(output):
     return "\n".join(lines[-20:]) or None
 
 
+def virtualenv_python(root, host_os=None):
+    """Return the interpreter path created by venv on the current host."""
+    host_os = host_os or os.name
+    relative = Path("Scripts") / "python.exe" if host_os == "nt" else Path("bin") / "python"
+    return Path(root) / relative
+
+
 def merge_verification(existing, observation):
     records = list((existing or {}).get("verifications", []))
     if not any(item.get("id") == observation.get("id") for item in records):
@@ -145,7 +152,7 @@ def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None
     with tempfile.TemporaryDirectory(prefix="windows-rocm-verify-") as directory:
         root = Path(directory)
         venv.EnvBuilder(with_pip=True).create(root)
-        python = root / "Scripts" / "python.exe"
+        python = virtualenv_python(root)
         pip_version = subprocess.run(
             [python, "-m", "pip", "--version"],
             check=True,

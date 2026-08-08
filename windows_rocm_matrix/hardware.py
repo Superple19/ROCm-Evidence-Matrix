@@ -5,7 +5,7 @@ import platform
 import time
 from pathlib import Path
 
-from .runtime import environment_evidence, utc_now
+from .runtime import environment_evidence, normalized_os, utc_now
 from .history import update_execution_evidence
 from .validation import validate_hardware_verifications
 
@@ -19,7 +19,7 @@ def collect_hardware(torch_module, observed_at=None, candidate_id=None, gfx=None
         "observed_at": observed_at,
         "python_version": platform.python_version(),
         "platform": platform.platform(),
-        "os": os.name,
+        "os": normalized_os(),
         "machine": platform.machine(),
         "architecture": platform.architecture()[0],
         "driver_version": os.environ.get("AMDGPU_DRIVER_VERSION") or os.environ.get("ROCM_DRIVER_VERSION"),

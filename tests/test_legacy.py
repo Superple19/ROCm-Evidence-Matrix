@@ -20,6 +20,7 @@ class LegacyWindowsTests(unittest.TestCase):
         self.assertEqual(candidates[0]["distribution_family"], "legacy")
         self.assertEqual(candidates[0]["platform"], "windows")
         self.assertEqual(len(candidates[0]["wheel_urls"]), 3)
+        self.assertEqual(set(candidates[0]["evidence_status"]), {"artifact", "documentation", "ci", "resolver", "runtime", "hardware"})
 
     def test_parses_joint_hip_sdk_releases(self):
         html = """

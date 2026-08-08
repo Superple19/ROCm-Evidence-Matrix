@@ -4,7 +4,7 @@ from pathlib import Path
 import json
 import tempfile
 
-from windows_rocm_matrix.verify import candidate_hash, default_platform_tag, install_arguments_for_candidate, merge_verification, normalized_command, resolved_packages, update_history_evidence
+from windows_rocm_matrix.verify import candidate_hash, default_platform_tag, install_arguments_for_candidate, merge_verification, normalized_command, resolved_packages, update_history_evidence, virtualenv_python
 from windows_rocm_matrix.verify_matrix import matrix_jobs
 
 
@@ -88,6 +88,10 @@ class VerificationTests(unittest.TestCase):
     def test_uses_candidate_platform_for_cross_platform_dry_run(self):
         candidate = {"id": "candidate", "platform": "linux", "source_id": "packages-stable-linux", "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0", "rocm_version": "7.14.0"}
         self.assertEqual(default_platform_tag(candidate), "manylinux_2_28_x86_64")
+
+    def test_uses_host_virtualenv_layout(self):
+        self.assertEqual(virtualenv_python("/tmp/env", "nt").as_posix(), "/tmp/env/Scripts/python.exe")
+        self.assertEqual(virtualenv_python("/tmp/env", "posix").as_posix(), "/tmp/env/bin/python")
 
     def test_records_resolver_failure_on_candidate(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -52,6 +52,8 @@ evidence.
   include their platform to avoid collisions.
 - Evidence records are append-only where their schema says so. A generated
   view may be replaced without changing the underlying observation identity.
+- Runtime and hardware records use the same normalized `os` values: `windows`,
+  `linux`, `macos`, or `unknown`.
 
 ## Compatibility policy
 

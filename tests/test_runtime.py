@@ -1,7 +1,7 @@
 import types
 import unittest
 
-from windows_rocm_matrix.runtime import collect_runtime
+from windows_rocm_matrix.runtime import collect_runtime, normalized_os
 from windows_rocm_matrix.validation import validate_runtime_verifications
 
 
@@ -18,6 +18,7 @@ class RuntimeTests(unittest.TestCase):
         )
         record = collect_runtime(torch, "2026-08-08T00:00:00Z")
         self.assertEqual(record["result"], "passed")
+        self.assertEqual(record["os"], normalized_os())
         self.assertEqual(record["devices"][0]["gcnArchName"], "gfx1201")
         validate_runtime_verifications({"schema_version": 1, "generated_at": record["observed_at"], "verifications": [record]})
 

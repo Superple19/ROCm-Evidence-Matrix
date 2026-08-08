@@ -2,7 +2,6 @@ import argparse
 import json
 import os
 import platform
-import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -18,6 +17,14 @@ def environment_evidence():
     return {name: os.environ[name] for name in ("ROCM_PATH", "HIP_PATH", "HSA_OVERRIDE_GFX_VERSION") if os.environ.get(name)}
 
 
+def normalized_os():
+    return {
+        "windows": "windows",
+        "linux": "linux",
+        "darwin": "macos",
+    }.get(platform.system().lower(), "unknown")
+
+
 def collect_runtime(torch_module, observed_at=None, candidate_id=None, gfx=None):
     observed_at = observed_at or utc_now()
     record = {
@@ -27,7 +34,7 @@ def collect_runtime(torch_module, observed_at=None, candidate_id=None, gfx=None)
         "observed_at": observed_at,
         "python_version": platform.python_version(),
         "platform": platform.platform(),
-        "os": sys.platform,
+        "os": normalized_os(),
         "machine": platform.machine(),
         "architecture": platform.architecture()[0],
         "driver_version": os.environ.get("AMDGPU_DRIVER_VERSION") or os.environ.get("ROCM_DRIVER_VERSION"),

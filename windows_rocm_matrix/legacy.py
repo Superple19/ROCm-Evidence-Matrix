@@ -4,6 +4,7 @@ from pathlib import PurePosixPath
 from urllib.parse import unquote, urlparse
 
 from .documentation import parse_html_tables
+from .history import initial_evidence_status
 from .simple_index import normalize_package_name, parse_links, version_key
 from .source_adapter import run_source_adapter
 
@@ -278,7 +279,7 @@ def build_legacy_candidates(document):
                 "channel": "stable",
                 "rocm_version": release["release_id"],
                 "hip_version": None,
-                "evidence_status": {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"},
+                "evidence_status": initial_evidence_status(),
                 "resolver_results": [],
                 "torch_version": torch["version"],
                 "torchvision_version": vision["version"],
