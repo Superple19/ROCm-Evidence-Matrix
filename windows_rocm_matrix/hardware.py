@@ -6,6 +6,7 @@ import time
 from pathlib import Path
 
 from .runtime import environment_evidence, utc_now
+from .history import update_execution_evidence
 from .validation import validate_hardware_verifications
 
 
@@ -78,6 +79,7 @@ def parse_args(argv=None):
     parser.add_argument("--output", default="data/verifications/hardware.json")
     parser.add_argument("--candidate-id")
     parser.add_argument("--gfx")
+    parser.add_argument("--history", default="data/history.json")
     return parser.parse_args(argv)
 
 
@@ -89,6 +91,8 @@ def main(argv=None):
         raise SystemExit(f"PyTorch is not installed: {error}") from error
     record = collect_hardware(torch, candidate_id=args.candidate_id, gfx=args.gfx)
     write_hardware(record, args.output)
+    if args.candidate_id:
+        update_execution_evidence(args.history, "hardware", args.candidate_id, record["result"])
     print(f"Hardware verification {record['result']}; wrote {args.output}")
     if record["result"] != "passed":
         raise SystemExit(1)

@@ -1,3 +1,4 @@
+import json
 import re
 from pathlib import Path
 
@@ -154,6 +155,18 @@ def attach_therock_documentation_evidence(history, documentation):
         status = candidate.setdefault("evidence_status", initial_evidence_status())
         status["documentation"] = "documented"
     return history
+
+
+def update_execution_evidence(history_path, kind, candidate_id, result):
+    path = Path(history_path)
+    history = json.loads(path.read_text(encoding="utf-8"))
+    status = f"{kind}_verified" if result == "passed" else f"{kind}_failed"
+    for candidate in history.get("candidates", []):
+        if candidate.get("id") == candidate_id:
+            candidate.setdefault("evidence_status", initial_evidence_status())[kind] = status
+            path.write_text(json.dumps(history, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+            return True
+    return False
 
 
 def attach_therock_ci_evidence(history, ci_document):

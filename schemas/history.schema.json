@@ -32,8 +32,8 @@
               "documentation": {"enum": ["documented", "not_applicable", "unsupported", "unknown", "not_collected"]},
               "ci": {"enum": ["ci_verified", "ci_failed", "partial", "not_collected"]},
               "resolver": {"enum": ["resolver_verified", "resolver_failed", "partial", "not_collected"]},
-              "runtime": {"enum": ["runtime_verified", "not_collected"]},
-              "hardware": {"enum": ["hardware_verified", "not_collected"]}
+              "runtime": {"enum": ["runtime_verified", "runtime_failed", "not_applicable", "not_collected"]},
+              "hardware": {"enum": ["hardware_verified", "hardware_failed", "not_applicable", "not_collected"]}
             }
           },
           "resolver_results": {
