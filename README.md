@@ -115,6 +115,8 @@ Resolver, runtime, and hardware outputs under `data/verifications/` are local ma
 
 GitHub Actions collection uses `GITHUB_TOKEN` when present. GitHub API 403/429 responses are retried with bounded backoff; if collection still fails, the previous CI executions remain in the evidence file and the failed adapter is recorded separately.
 
+Compatibility profiles use `schemas/profile.schema.json`. They keep framework, runtime, extension, and option constraints separate from core evidence, classify each constraint as `required`, `optional`, or `conflicting`, and link claims to evidence IDs. A `verified` claim must include at least one evidence reference.
+
 ## Run tests
 
 ```powershell

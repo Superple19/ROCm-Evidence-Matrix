@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/profile.schema.json",
+  "title": "ROCm application compatibility profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "name", "profile_kind", "constraints", "evidence_refs"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "name": {"type": "string", "minLength": 1},
+    "profile_kind": {"enum": ["framework", "runtime", "application"]},
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "kind", "relationship", "name", "value", "claim_status", "evidence_refs"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+          "kind": {"enum": ["framework", "runtime", "extension", "option"]},
+          "relationship": {"enum": ["required", "optional", "conflicting"]},
+          "name": {"type": "string", "minLength": 1},
+          "value": {},
+          "conditions": {"type": "object"},
+          "claim_status": {"enum": ["verified", "documented", "unverified", "conflicting"]},
+          "evidence_refs": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+        }
+      }
+    },
+    "evidence_refs": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "metadata": {"type": "object"}
+  }
+}

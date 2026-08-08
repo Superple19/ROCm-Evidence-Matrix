@@ -392,3 +392,9 @@ def validate_source_manifest(document):
             raise ValueError(f"Invalid source response hash: {response['url']}")
         if not response["observed_at"].endswith("Z"):
             raise ValueError(f"Source response observation time must be UTC: {response['url']}")
+
+
+def validate_profile(document):
+    from .profile import validate_profile as validate
+
+    return validate(document)
