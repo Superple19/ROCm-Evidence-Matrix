@@ -9,7 +9,10 @@ class ProfileTests(unittest.TestCase):
         profile = load_profile(Path(__file__).parents[1] / "profiles" / "comfyui" / "profile.json")
         self.assertEqual(profile["id"], "comfyui")
         self.assertEqual(profile["metadata"]["domain"], "generation")
-        self.assertEqual({item["id"] for item in profile["constraints"]}, {"rocm-package-candidate", "supported-platform", "python-tag", "gfx-target"})
+        self.assertEqual(
+            {item["id"] for item in profile["constraints"]},
+            {"rocm-package-candidate", "torch-rocm", "rocm-channel", "supported-platform", "platform-package-layout", "python-tag", "gfx-target"},
+        )
 
     def test_supports_constraint_kinds_and_relationships(self):
         profile = {

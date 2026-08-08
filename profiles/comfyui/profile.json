@@ -28,11 +28,54 @@
       "evidence_refs": ["source:packages-stable", "source:packages-nightly"]
     },
     {
+      "id": "torch-rocm",
+      "kind": "framework",
+      "relationship": "required",
+      "name": "PyTorch ROCm",
+      "value": {
+        "torch_series": ["2.10", "2.11", "2.12", "2.13", "2.14"],
+        "selected_from": "history.candidates",
+        "version_must_match_rocm_candidate": true
+      },
+      "claim_status": "documented",
+      "evidence_refs": ["source:packages-stable", "source:packages-nightly", "source:packages-stable-linux"]
+    },
+    {
+      "id": "rocm-channel",
+      "kind": "framework",
+      "relationship": "required",
+      "name": "ROCm package channel",
+      "value": {
+        "allowed": ["stable", "nightly", "staging"],
+        "selection": "explicit"
+      },
+      "claim_status": "documented",
+      "evidence_refs": ["source:packages-stable", "source:packages-nightly", "source:packages-staging"]
+    },
+    {
       "id": "supported-platform",
       "kind": "runtime",
       "relationship": "required",
       "name": "Operating system",
       "value": ["windows", "linux"],
+      "claim_status": "documented",
+      "evidence_refs": ["source:packages-stable", "source:packages-stable-linux"]
+    },
+    {
+      "id": "platform-package-layout",
+      "kind": "runtime",
+      "relationship": "required",
+      "name": "Platform-specific package layout",
+      "value": {
+        "windows": {
+          "artifact_source": "packages-stable",
+          "device_packages": "candidate-specific"
+        },
+        "linux": {
+          "artifact_source": "packages-stable-linux",
+          "device_packages": "candidate-specific"
+        }
+      },
       "claim_status": "documented",
       "evidence_refs": ["source:packages-stable", "source:packages-stable-linux"]
     },
