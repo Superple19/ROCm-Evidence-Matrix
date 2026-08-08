@@ -136,7 +136,24 @@ def candidate_sort_key(candidate):
 
 
 def initial_evidence_status():
-    return {"artifact": "artifact_available", "ci": "not_collected", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"}
+    return {"artifact": "artifact_available", "documentation": "not_collected", "ci": "not_collected", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"}
+
+
+def attach_therock_documentation_evidence(history, documentation):
+    statuses = documentation.get("therock_windows_status", []) if documentation else []
+    by_gfx = {}
+    for item in statuses:
+        by_gfx.setdefault(item.get("gfx"), []).append(item)
+    for candidate in history.get("candidates", []):
+        if candidate.get("distribution_family") != "therock" or candidate.get("platform") != "windows":
+            continue
+        refs = sorted({item["source_id"] for gfx in candidate.get("gfx_targets", []) for item in by_gfx.get(gfx, []) if item.get("source_id")})
+        if not refs:
+            continue
+        candidate["documentation_refs"] = refs
+        status = candidate.setdefault("evidence_status", initial_evidence_status())
+        status["documentation"] = "documented"
+    return history
 
 
 def attach_therock_ci_evidence(history, ci_document):
@@ -274,7 +291,7 @@ def render_history(history):
     grouped = {}
     for candidate in history["candidates"]:
         key = (candidate["distribution_family"], candidate.get("platform", "windows"), candidate["channel"], candidate["lifecycle"], candidate["rocm_version"])
-        group = grouped.setdefault(key, {"sets": 0, "known": set(), "available": set(), "python": set(), "evidence": {"artifact": set(), "ci": set(), "resolver": set(), "runtime": set(), "hardware": set()}})
+        group = grouped.setdefault(key, {"sets": 0, "known": set(), "available": set(), "python": set(), "evidence": {"artifact": set(), "documentation": set(), "ci": set(), "resolver": set(), "runtime": set(), "hardware": set()}})
         group["sets"] += 1
         group["known"].update(candidate["gfx_targets"])
         group["available"].update(candidate["available_gfx_targets"])
@@ -289,15 +306,15 @@ def render_history(history):
         "",
         "Each row summarizes install candidates derived from official framework compatibility rules and matching platform package build identifiers. CI status is GFX/platform-scoped evidence; it does not prove this exact package candidate passed. Artifact evidence does not prove resolver, runtime, or hardware compatibility.",
         "",
-        "| Distribution | Platform | Channel | Lifecycle | ROCm build | HIP build | Framework sets | Known GFX targets | Currently available GFX targets | Artifact | CI | Resolver | Runtime | Hardware | Python tags |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+        "| Distribution | Platform | Channel | Lifecycle | ROCm build | HIP build | Framework sets | Known GFX targets | Currently available GFX targets | Artifact | Documentation | CI | Resolver | Runtime | Hardware | Python tags |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
     for (family, platform, channel, lifecycle, rocm_version), group in sorted(
         grouped.items(), key=lambda item: version_key(item[0][4]), reverse=True
     ):
         lines.append(
             f"| {family} | {platform} | {channel} | {lifecycle} | `{rocm_version}` | not observed | {group['sets']} | {len(group['known'])} | "
-            f"{len(group['available'])} | {', '.join(sorted(group['evidence']['artifact']))} | {', '.join(sorted(group['evidence']['ci']))} | {', '.join(sorted(group['evidence']['resolver']))} | "
+            f"{len(group['available'])} | {', '.join(sorted(group['evidence']['artifact']))} | {', '.join(sorted(group['evidence']['documentation']))} | {', '.join(sorted(group['evidence']['ci']))} | {', '.join(sorted(group['evidence']['resolver']))} | "
             f"{', '.join(sorted(group['evidence']['runtime']))} | {', '.join(sorted(group['evidence']['hardware']))} | "
             f"{', '.join(f'`{tag}`' for tag in sorted(group['python']))} |"
         )
