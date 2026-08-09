@@ -123,7 +123,7 @@ A passing record establishes only `resolver_verified`. Runtime imports and physi
 
 Triton is an optional extension and is tracked in [extension history](docs/generated/extension-history.md), not multiplied into every core Torch candidate. The core resolver command installs the Torch package set only; install or verify Triton separately when the selected workflow requires it.
 
-`rocm-verify-matrix` runs the resolver across stable, nightly, and staging channels by default, available representative GFX targets, and each candidate Python tag. Use `--all-candidates --all-gfx` for the complete candidate/GFX matrix and `--resume` to skip combinations already recorded in the output evidence. The record separates the target platform from the verifier host; this is dependency-resolution evidence only and does not establish runtime or hardware support. Use `--limit` while developing and override the target wheel tag when needed:
+`rocm-verify-matrix` runs the resolver across stable, nightly, and staging channels by default, available representative GFX targets, and each candidate Python tag. Use `--all-candidates --all-gfx` for the complete candidate/GFX matrix and `--resume` to skip combinations already recorded in the output evidence. Matrix jobs reuse `.cache/pip` by default while each resolver still runs in a disposable environment; override it with `--cache-dir` when needed. The record separates the target platform from the verifier host; this is dependency-resolution evidence only and does not establish runtime or hardware support. Use `--limit` while developing and override the target wheel tag when needed:
 
 ```text
 rocm-verify-matrix --platform linux --gfx gfx1201 --python cp312 --limit 1

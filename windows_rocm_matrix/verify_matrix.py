@@ -128,6 +128,7 @@ def parse_args(argv=None):
     parser.add_argument("--platform-tag")
     parser.add_argument("--limit", type=int)
     parser.add_argument("--timeout", type=int, default=900)
+    parser.add_argument("--cache-dir", default=".cache/pip", help="Shared pip cache for matrix jobs; disposable environments remain isolated.")
     parser.add_argument("--all-candidates", action="store_true", help="Verify every matching candidate instead of one representative candidate per channel and target.")
     parser.add_argument("--all-gfx", action="store_true", help="Verify every available GFX target instead of representative targets.")
     parser.add_argument("--resume", action="store_true", help="Skip candidate/GFX/Python combinations already present in the output evidence.")
@@ -155,7 +156,7 @@ def main(argv=None):
     records = []
     for index, (candidate, gfx, python_tag, platform_tag) in enumerate(jobs, 1):
         print(f"[{index}/{len(jobs)}] Verifying {candidate['id']} for {gfx} and {python_tag}")
-        record = verify_candidate(candidate, gfx, args.timeout, python_tag, platform_tag)
+        record = verify_candidate(candidate, gfx, args.timeout, python_tag, platform_tag, args.cache_dir)
         records.append(record)
         write_verification(record, args.output)
         update_history_evidence(

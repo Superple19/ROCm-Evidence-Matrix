@@ -146,7 +146,7 @@ def merge_verification(existing, observation):
     }
 
 
-def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None):
+def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None, cache_dir=None):
     observed_at = utc_now()
     attempt_id = uuid.uuid4().hex[:12]
     python_tag = python_tag or current_python_tag()
@@ -189,7 +189,9 @@ def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None
         record["pip_version"] = pip_version
         report_path = root / "report.json"
         try:
-            environment = {**os.environ, "PIP_CACHE_DIR": str(root / "pip-cache")}
+            pip_cache = Path(cache_dir) if cache_dir else root / "pip-cache"
+            pip_cache.mkdir(parents=True, exist_ok=True)
+            environment = {**os.environ, "PIP_CACHE_DIR": str(pip_cache)}
             completed = subprocess.run(
                 [python, "-m", "pip", *verification_arguments(candidate, gfx, report_path, python_tag, platform_tag)],
                 capture_output=True,

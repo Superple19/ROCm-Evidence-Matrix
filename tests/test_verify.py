@@ -31,6 +31,7 @@ class VerificationTests(unittest.TestCase):
     def test_matrix_defaults_to_all_channels(self):
         self.assertEqual(DEFAULT_CHANNELS, ("stable", "nightly", "staging"))
         self.assertTrue(matrix_parse_args(["--resume"]).resume)
+        self.assertEqual(matrix_parse_args(["--cache-dir", "cache"]).cache_dir, "cache")
 
     def test_resume_skips_existing_candidate_hash(self):
         candidate = {"id": "candidate", "distribution_family": "therock", "platform": "windows", "source_id": "packages-stable", "rocm_version": "7.14.0", "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0"}
