@@ -5,8 +5,8 @@ from pathlib import Path
 import json
 import tempfile
 
-from windows_rocm_matrix.verify import candidate_hash, combined_process_output, default_platform_tag, error_summary, install_arguments_for_candidate, merge_verification, normalized_command, resolved_packages, update_history_evidence, virtualenv_python
-from windows_rocm_matrix.verify_matrix import DEFAULT_CHANNELS, completed_job_keys, matrix_exit_code, matrix_job_key, matrix_jobs, parse_args as matrix_parse_args
+from windows_rocm_matrix.verify import append_verification_log, candidate_hash, combined_process_output, default_platform_tag, error_summary, install_arguments_for_candidate, merge_verification, normalized_command, read_verification_log, resolved_packages, update_history_evidence, virtualenv_python
+from windows_rocm_matrix.verify_matrix import DEFAULT_CHANNELS, completed_job_keys, default_cache_dir, matrix_exit_code, matrix_job_key, matrix_jobs, parse_args as matrix_parse_args
 from windows_rocm_matrix.resolve import parse_args
 
 
@@ -51,6 +51,31 @@ class VerificationTests(unittest.TestCase):
         history = {"candidates": [{"resolver_results": [{"candidate_hash": matrix_job_key(job)[0], "gfx": "gfx1201", "python_tag": "cp312", "platform_tag": "win_amd64"}]}]}
         with tempfile.TemporaryDirectory() as directory:
             self.assertIn(matrix_job_key(job)[0], {item[0] for item in completed_job_keys(Path(directory) / "missing.json", history)})
+
+    def test_resume_reads_append_only_evidence_log(self):
+        record = {"id": "attempt", "candidate_hash": "hash", "gfx": "gfx1201", "python_tag": "cp312", "platform_tag": "win_amd64"}
+        with tempfile.TemporaryDirectory() as directory:
+            log = Path(directory) / "resolver.jsonl"
+            append_verification_log(record, log)
+            append_verification_log({**record, "id": "attempt-2"}, log)
+            self.assertEqual(len(read_verification_log(log)), 2)
+            self.assertIn(("hash", "gfx1201", "cp312", "win_amd64"), completed_job_keys(Path(directory) / "missing.json", evidence_log=log))
+
+    def test_append_only_log_ignores_incomplete_trailing_line(self):
+        with tempfile.TemporaryDirectory() as directory:
+            log = Path(directory) / "resolver.jsonl"
+            log.write_text('{"id":"complete"}\n{"id":"partial"', encoding="utf-8")
+            self.assertEqual(read_verification_log(log), [{"id": "complete"}])
+
+    def test_exhaustive_matrix_flags_require_explicit_opt_in(self):
+        from windows_rocm_matrix.verify_matrix import main as matrix_main
+
+        with self.assertRaises(SystemExit) as error:
+            matrix_main(["--all-candidates"])
+        self.assertIn("--exhaustive", str(error.exception))
+
+    def test_matrix_cache_defaults_to_host_cache(self):
+        self.assertIn("rocm-matrix", default_cache_dir())
 
     def test_matrix_includes_candidates_with_previous_failed_status(self):
         candidate = {

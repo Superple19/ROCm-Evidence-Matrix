@@ -21,3 +21,4 @@ htmlcov/
 data/verifications/runtime.json
 data/verifications/hardware.json
 data/verifications/resolver.json
+data/verifications/resolver.jsonl

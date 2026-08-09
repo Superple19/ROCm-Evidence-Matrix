@@ -136,14 +136,114 @@ def create_disposable_environment(root):
 
 
 def merge_verification(existing, observation):
+    return merge_verification_batch(existing, [observation])
+
+
+def merge_verification_batch(existing, observations):
     records = list((existing or {}).get("verifications", []))
-    if not any(item.get("id") == observation.get("id") for item in records):
-        records.append(observation)
+    known = {item.get("id") for item in records}
+    for observation in observations:
+        if observation.get("id") not in known:
+            records.append(observation)
+            known.add(observation.get("id"))
+    generated_at = (existing or {}).get("generated_at") or utc_now()
+    if observations:
+        generated_at = monotonic_generated_at(existing, max(item["observed_at"] for item in observations))
     return {
         "schema_version": 1,
-        "generated_at": monotonic_generated_at(existing, observation["observed_at"]),
+        "generated_at": generated_at,
         "verifications": sorted(records, key=lambda item: (item["observed_at"], item["id"])),
     }
+
+
+def read_verification_log(log_path):
+    path = Path(log_path)
+    if not path.exists():
+        return []
+    records = []
+    lines = path.read_text(encoding="utf-8").splitlines()
+    for index, line in enumerate(lines):
+        if line.strip():
+            try:
+                records.append(json.loads(line))
+            except json.JSONDecodeError:
+                if index != len(lines) - 1:
+                    raise
+    return records
+
+
+def append_verification_log(record, log_path):
+    path = Path(log_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8", newline="\n") as handle:
+        handle.write(json.dumps(record, sort_keys=True, separators=(",", ":")) + "\n")
+
+
+def write_json_document(document, path, validator):
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    validator(document)
+    temporary = path.with_name(f".{path.name}.{os.getpid()}.tmp")
+    temporary.write_text(json.dumps(document, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    temporary.replace(path)
+
+
+def write_history_document(history, history_path):
+    write_json_document(history, history_path, validate_history)
+
+
+def apply_history_evidence(
+    history,
+    candidate_id,
+    result,
+    gfx=None,
+    python_tag=None,
+    platform_tag=None,
+    verification_id=None,
+    observed_at=None,
+    error=None,
+    host_platform_name=None,
+    command=None,
+    exit_code=None,
+):
+    if result not in {"passed", "failed", "not_applicable"}:
+        raise ValueError(f"Invalid resolver result: {result}")
+    if not verification_id:
+        raise ValueError("Resolver evidence requires a verification ID")
+    for candidate in history.get("candidates", []):
+        if candidate.get("id") != candidate_id:
+            continue
+        evidence = candidate.setdefault("evidence_status", {"artifact": "artifact_available", "documentation": "not_collected", "ci": "not_collected", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"})
+        results = candidate.setdefault("resolver_results", [])
+        observed_at = observed_at or utc_now()
+        if any(item.get("verification_id") == verification_id for item in results):
+            return True
+        results.append(
+            {
+                "candidate_id": candidate_id,
+                "candidate_hash": candidate_hash(candidate, gfx, python_tag, platform_tag),
+                "distribution_family": candidate.get("distribution_family", "therock"),
+                "platform": candidate.get("platform", "unknown"),
+                "host_platform": host_platform_name,
+                "gfx": gfx,
+                "python_tag": python_tag,
+                "platform_tag": platform_tag,
+                "command": command,
+                "exit_code": exit_code,
+                "result": result,
+                "verification_id": verification_id,
+                "observed_at": observed_at,
+                "error": error,
+                "snapshot_observed_at": candidate.get("last_observed_at"),
+            }
+        )
+        passed = [item for item in results if item.get("result") == "passed"]
+        failed = [item for item in results if item.get("result") == "failed"]
+        not_applicable = [item for item in results if item.get("result") == "not_applicable"]
+        evidence["resolver"] = "partial" if passed and (failed or not_applicable) else "resolver_verified" if passed else "resolver_failed" if failed else "not_applicable"
+        validate_history(history)
+        return True
+    return False
 
 
 def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None, cache_dir=None):
@@ -214,13 +314,9 @@ def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None
 
 def write_verification(record, output_path):
     path = Path(output_path)
-    existing = None
-    if path.exists():
-        existing = json.loads(path.read_text(encoding="utf-8"))
+    existing = json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
     document = merge_verification(existing, record)
-    validate_resolver_verifications(document)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(document, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    write_json_document(document, path, validate_resolver_verifications)
 
 
 def update_history_evidence(
@@ -237,51 +333,24 @@ def update_history_evidence(
     command=None,
     exit_code=None,
 ):
-    if result not in {"passed", "failed", "not_applicable"}:
-        raise ValueError(f"Invalid resolver result: {result}")
-    if not verification_id:
-        raise ValueError("Resolver evidence requires a verification ID")
     path = Path(history_path)
     history = json.loads(path.read_text(encoding="utf-8"))
-    status = "resolver_verified" if result == "passed" else "resolver_failed"
-    updated = False
-    for candidate in history.get("candidates", []):
-        if candidate.get("id") != candidate_id:
-            continue
-        evidence = candidate.setdefault("evidence_status", {"artifact": "artifact_available", "documentation": "not_collected", "ci": "not_collected", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"})
-        results = candidate.setdefault("resolver_results", [])
-        observed_at = observed_at or utc_now()
-        if verification_id and any(item.get("verification_id") == verification_id for item in results):
-            updated = True
-            break
-        results.append(
-            {
-                "candidate_id": candidate_id,
-                "candidate_hash": candidate_hash(candidate, gfx, python_tag, platform_tag),
-                "distribution_family": candidate.get("distribution_family", "therock"),
-                "platform": candidate.get("platform", "unknown"),
-                "host_platform": host_platform_name,
-                "gfx": gfx,
-                "python_tag": python_tag,
-                "platform_tag": platform_tag,
-                "command": command,
-                "exit_code": exit_code,
-                "result": result,
-                "verification_id": verification_id,
-                "observed_at": observed_at,
-                "error": error,
-                "snapshot_observed_at": candidate.get("last_observed_at"),
-            }
-        )
-        passed = [item for item in results if item.get("result") == "passed"]
-        failed = [item for item in results if item.get("result") == "failed"]
-        not_applicable = [item for item in results if item.get("result") == "not_applicable"]
-        evidence["resolver"] = "partial" if passed and (failed or not_applicable) else "resolver_verified" if passed else "resolver_failed" if failed else "not_applicable"
-        updated = True
-        break
+    updated = apply_history_evidence(
+        history,
+        candidate_id,
+        result,
+        gfx,
+        python_tag,
+        platform_tag,
+        verification_id,
+        observed_at,
+        error,
+        host_platform_name,
+        command,
+        exit_code,
+    )
     if updated:
-        validate_history(history)
-        path.write_text(json.dumps(history, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+        write_history_document(history, path)
     return updated
 
 

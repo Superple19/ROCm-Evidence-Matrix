@@ -3,14 +3,38 @@
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
+import os
 from pathlib import Path
+import threading
 
 from .resolve import host_platform, resolve_candidates
-from .verify import candidate_hash, default_platform_tag, update_history_evidence, verify_candidate, write_verification
+from .validation import validate_resolver_verifications
+from .verify import (
+    append_verification_log,
+    apply_history_evidence,
+    candidate_hash,
+    default_platform_tag,
+    merge_verification_batch,
+    read_verification_log,
+    verify_candidate,
+    write_history_document,
+    write_json_document,
+)
 
 
 PREFERRED_GFX = ("gfx1201", "gfx1100", "gfx1030", "gfx90a")
 DEFAULT_CHANNELS = ("stable", "nightly", "staging")
+
+
+def default_cache_dir():
+    if os.name == "nt":
+        root = os.environ.get("LOCALAPPDATA") or (Path.home() / "AppData" / "Local")
+        return str(Path(root) / "rocm-matrix" / "pip")
+    return str(Path.home() / ".cache" / "rocm-matrix" / "pip")
+
+
+def evidence_log_path(output_path):
+    return Path(output_path).with_suffix(".jsonl")
 
 
 def platform_tag_for(platform, requested=None, candidate=None):
@@ -100,11 +124,13 @@ def matrix_job_key(job):
     return candidate_hash(candidate, gfx, python_tag, platform_tag), gfx, python_tag, platform_tag
 
 
-def completed_job_keys(output_path, history=None):
+def completed_job_keys(output_path, history=None, evidence_log=None):
     records = []
     path = Path(output_path)
     if path.exists():
         records.extend(json.loads(path.read_text(encoding="utf-8")).get("verifications", []))
+    log_path = Path(evidence_log) if evidence_log else evidence_log_path(path)
+    records.extend(read_verification_log(log_path))
     if history:
         for candidate in history.get("candidates", []):
             records.extend(candidate.get("resolver_results", []))
@@ -129,10 +155,12 @@ def parse_args(argv=None):
     parser.add_argument("--platform-tag")
     parser.add_argument("--limit", type=int)
     parser.add_argument("--timeout", type=int, default=900)
-    parser.add_argument("--cache-dir", default=".cache/pip", help="Shared pip cache for matrix jobs; disposable environments remain isolated.")
+    parser.add_argument("--cache-dir", default=default_cache_dir(), help="Persistent pip cache on the host filesystem; disposable environments remain isolated.")
+    parser.add_argument("--evidence-log", help="Append-only JSONL evidence log (defaults beside the resolver output).")
     parser.add_argument("--workers", type=int, default=1, help="Concurrent resolver subprocesses (default: 1).")
     parser.add_argument("--all-candidates", action="store_true", help="Verify every matching candidate instead of one representative candidate per channel and target.")
     parser.add_argument("--all-gfx", action="store_true", help="Verify every available GFX target instead of representative targets.")
+    parser.add_argument("--exhaustive", action="store_true", help="Explicitly allow --all-candidates and --all-gfx historical matrix runs.")
     parser.add_argument("--resume", action="store_true", help="Skip candidate/GFX/Python combinations already present in the output evidence.")
     return parser.parse_args(argv)
 
@@ -141,7 +169,29 @@ def main(argv=None):
     args = parse_args(argv)
     if args.workers < 1:
         raise SystemExit("--workers must be at least 1")
+    if (args.all_candidates or args.all_gfx) and not args.exhaustive:
+        raise SystemExit("--all-candidates/--all-gfx require explicit --exhaustive")
+    history_path = Path(args.history)
+    output_path = Path(args.output)
+    log_path = Path(args.evidence_log) if args.evidence_log else evidence_log_path(output_path)
     history = json.loads(Path(args.history).read_text(encoding="utf-8"))
+    existing_document = json.loads(output_path.read_text(encoding="utf-8")) if output_path.exists() else None
+    logged_records = read_verification_log(log_path)
+    for record in logged_records:
+        apply_history_evidence(
+            history,
+            record.get("candidate_id"),
+            record.get("result"),
+            record.get("gfx"),
+            record.get("python_tag"),
+            record.get("platform_tag"),
+            record.get("verification_id"),
+            record.get("observed_at"),
+            record.get("error"),
+            record.get("host_platform"),
+            record.get("command"),
+            record.get("exit_code"),
+        )
     channels = args.channels or list(DEFAULT_CHANNELS)
     targets = args.gfx or [None]
     jobs = []
@@ -151,24 +201,24 @@ def main(argv=None):
             jobs = jobs[: args.limit]
             break
     if args.resume:
-        completed_keys = completed_job_keys(args.output, history)
+        completed_keys = completed_job_keys(output_path, history, log_path)
         jobs = [job for job in jobs if matrix_job_key(job) not in completed_keys]
         if args.limit:
             jobs = jobs[: args.limit]
-    if not jobs:
-        raise SystemExit("No known-GFX candidates match the requested matrix")
+
     def run_job(job):
         candidate, gfx, python_tag, platform_tag = job
-        return verify_candidate(candidate, gfx, args.timeout, python_tag, platform_tag, args.cache_dir)
+        worker_cache = Path(args.cache_dir) / f"worker-{threading.get_ident()}"
+        return verify_candidate(candidate, gfx, args.timeout, python_tag, platform_tag, worker_cache)
 
     records = []
     def persist_result(index, job, record):
         candidate, gfx, python_tag, platform_tag = job
         print(f"[{index}/{len(jobs)}] Verifying {candidate['id']} for {gfx} and {python_tag}")
         records.append(record)
-        write_verification(record, args.output)
-        update_history_evidence(
-            args.history,
+        append_verification_log(record, log_path)
+        apply_history_evidence(
+            history,
             candidate["id"],
             record["result"],
             gfx,
@@ -183,6 +233,17 @@ def main(argv=None):
         )
         print(f"    {record['result']}")
 
+    def flush_results():
+        if not (existing_document or logged_records or records):
+            return
+        document = merge_verification_batch(existing_document, [*logged_records, *records])
+        write_json_document(document, output_path, validate_resolver_verifications)
+        write_history_document(history, history_path)
+
+    if not jobs:
+        flush_results()
+        raise SystemExit("No known-GFX candidates match the requested matrix")
+
     if args.workers == 1:
         for index, job in enumerate(jobs, 1):
             persist_result(index, job, run_job(job))
@@ -191,6 +252,7 @@ def main(argv=None):
             pending = {executor.submit(run_job, job): job for job in jobs}
             for index, future in enumerate(as_completed(pending), 1):
                 persist_result(index, pending[future], future.result())
+    flush_results()
     if matrix_exit_code(records):
         failed = sum(record.get("result") == "failed" for record in records)
         raise SystemExit(f"{failed} matrix verification job(s) failed")

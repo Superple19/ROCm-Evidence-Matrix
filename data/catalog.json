@@ -89,12 +89,6 @@
       "path": "data/version-history.json",
       "schema": "schemas/version-history.schema.json",
       "schema_version": 1
-    },
-    {
-      "id": "resolver_verifications",
-      "path": "data/verifications/resolver.json",
-      "schema": "schemas/resolver-verifications.schema.json",
-      "schema_version": 1
     }
   ],
   "dimensions": {
@@ -112,6 +106,6 @@
       "windows"
     ]
   },
-  "generated_at": "2026-08-09T00:57:48Z",
+  "generated_at": "2026-08-09T03:13:13Z",
   "schema_version": 1
 }
