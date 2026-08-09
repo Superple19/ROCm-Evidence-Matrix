@@ -40,6 +40,13 @@ class VerificationTests(unittest.TestCase):
             path.write_text(json.dumps({"verifications": [{"candidate_hash": matrix_job_key(job)[0], "gfx": "gfx1201", "python_tag": "cp312", "platform_tag": "win_amd64"}]}), encoding="utf-8")
             self.assertIn(matrix_job_key(job)[0], {item[0] for item in completed_job_keys(path)})
 
+    def test_resume_reads_tracked_history_evidence(self):
+        candidate = {"id": "candidate", "distribution_family": "therock", "platform": "windows", "source_id": "packages-stable", "rocm_version": "7.14.0", "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0"}
+        job = (candidate, "gfx1201", "cp312", "win_amd64")
+        history = {"candidates": [{"resolver_results": [{"candidate_hash": matrix_job_key(job)[0], "gfx": "gfx1201", "python_tag": "cp312", "platform_tag": "win_amd64"}]}]}
+        with tempfile.TemporaryDirectory() as directory:
+            self.assertIn(matrix_job_key(job)[0], {item[0] for item in completed_job_keys(Path(directory) / "missing.json", history)})
+
     def test_matrix_includes_candidates_with_previous_failed_status(self):
         candidate = {
             "id": "failed", "distribution_family": "therock", "platform": "linux", "channel": "stable", "evidence_status": {"resolver": "resolver_failed"},

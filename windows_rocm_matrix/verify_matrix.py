@@ -99,14 +99,17 @@ def matrix_job_key(job):
     return candidate_hash(candidate, gfx, python_tag, platform_tag), gfx, python_tag, platform_tag
 
 
-def completed_job_keys(output_path):
+def completed_job_keys(output_path, history=None):
+    records = []
     path = Path(output_path)
-    if not path.exists():
-        return set()
-    document = json.loads(path.read_text(encoding="utf-8"))
+    if path.exists():
+        records.extend(json.loads(path.read_text(encoding="utf-8")).get("verifications", []))
+    if history:
+        for candidate in history.get("candidates", []):
+            records.extend(candidate.get("resolver_results", []))
     return {
         (record.get("candidate_hash"), record.get("gfx"), record.get("python_tag"), record.get("platform_tag"))
-        for record in document.get("verifications", [])
+        for record in records
         if record.get("candidate_hash")
     }
 
@@ -143,7 +146,7 @@ def main(argv=None):
             jobs = jobs[: args.limit]
             break
     if args.resume:
-        completed = completed_job_keys(args.output)
+        completed = completed_job_keys(args.output, history)
         jobs = [job for job in jobs if matrix_job_key(job) not in completed]
         if args.limit:
             jobs = jobs[: args.limit]
