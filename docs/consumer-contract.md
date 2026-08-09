@@ -25,7 +25,8 @@ metadata. Do not treat artifact availability as resolver, runtime, or hardware
 compatibility.
 
 Legacy direct-wheel candidates use the same history record but include
-`wheel_urls`. Consumers must use those URLs with `--no-index`; they must not
+`wheel_urls`. Consumers must pass those URLs directly while using PyPI only for
+ordinary third-party dependencies; they must not
 apply TheRock's device-extra installation syntax to a `legacy` candidate.
 
 Some legacy Linux releases have package artifacts but no authoritative GFX

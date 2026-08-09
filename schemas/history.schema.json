@@ -44,6 +44,7 @@
               "additionalProperties": false,
               "required": ["gfx", "python_tag", "platform_tag", "result", "observed_at"],
               "properties": {
+                "candidate_hash": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
                 "gfx": {"type": ["string", "null"]},
                 "python_tag": {"type": "string"},
                 "platform_tag": {"type": "string"},

@@ -107,7 +107,7 @@ Query the historical catalog for a specific environment:
 rocm-resolve --platform windows --gfx gfx1201 --channel stable --rocm 7.13.0 --python 3.12
 ```
 
-The resolver selects the newest matching candidate by default and prints a pinned `pip` command. Add `--torch 2.9` to request a Torch series, or `--all` to list every match. Legacy candidates print direct wheel URLs with `--no-index`; TheRock candidates use their configured package index and device extras. The resolver does not install packages or claim that dependency resolution, imports, or execution have been verified.
+The resolver selects the newest matching candidate by default and prints a pinned `pip` command. Add `--torch 2.9` to request a Torch series, or `--all` to list every match. Legacy candidates print official direct wheel URLs with the PyPI index for ordinary dependencies; TheRock candidates use their configured package index and device extras. The resolver does not install packages or claim that dependency resolution, imports, or execution have been verified.
 
 ## Verify dependency resolution
 
@@ -117,13 +117,13 @@ Verify one candidate with `pip --dry-run` in a disposable virtual environment:
 rocm-verify --gfx gfx1201 --channel stable --rocm 7.14.0
 ```
 
-The result is appended to `data/verifications/resolver.json` with the exact candidate, interpreter, command, resolved packages, artifact hashes when reported by pip, timestamp, and pass or fail result. The verifier does not install or import ROCm packages. Package indexes without separate metadata may require pip to download wheel archives, and source-only metadata packages may run their build backend inside the disposable environment. Its pip cache is also contained in that environment and deleted afterward.
+The result is appended to `data/verifications/resolver.json` with the exact candidate, candidate hash, interpreter, command, resolved packages, artifact hashes when reported by pip, timestamp, and pass or fail result. The verifier does not install or import ROCm packages. Legacy candidates pin their official direct wheel URLs while resolving ordinary third-party dependencies from PyPI. Package indexes without separate metadata may require pip to download wheel archives, and source-only metadata packages may run their build backend inside the disposable environment. Its pip cache is also contained in that environment and deleted afterward.
 
 A passing record establishes only `resolver_verified`. Runtime imports and physical GPU execution require separate isolated tests and must be recorded as `runtime_verified` or `hardware_verified` evidence.
 
 Triton is an optional extension and is tracked in [extension history](docs/generated/extension-history.md), not multiplied into every core Torch candidate. The core resolver command installs the Torch package set only; install or verify Triton separately when the selected workflow requires it.
 
-For Linux TheRock candidates, `rocm-verify-matrix` runs the resolver across stable and nightly channels by default, available representative GFX targets, and each candidate Python tag. Add `--channel staging` when staging evidence is needed. Use `--limit` while developing and override the target wheel tag when needed:
+`rocm-verify-matrix` runs the resolver across stable, nightly, and staging channels by default, available representative GFX targets, and each candidate Python tag. Use `--all-candidates --all-gfx` for the complete candidate/GFX matrix and `--resume` to skip combinations already recorded in the output evidence. Run it separately on Windows and Linux hosts; legacy direct wheels are marked `not_applicable` when the host cannot verify their platform. Use `--limit` while developing and override the target wheel tag when needed:
 
 ```text
 rocm-verify-matrix --platform linux --gfx gfx1201 --python cp312 --limit 1

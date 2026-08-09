@@ -64,7 +64,7 @@ def install_arguments(candidate, gfx):
         urls = candidate.get("wheel_urls")
         if not urls:
             raise ValueError("Legacy resolver candidates must provide direct wheel_urls")
-        return ["install", "--no-index", *urls]
+        return ["install", "--index-url", "https://pypi.org/simple", *urls]
     if not gfx:
         raise ValueError("TheRock candidates require --gfx")
     source = candidate["source_id"].removeprefix("packages-")

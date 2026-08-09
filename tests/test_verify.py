@@ -6,7 +6,7 @@ import json
 import tempfile
 
 from windows_rocm_matrix.verify import candidate_hash, default_platform_tag, install_arguments_for_candidate, merge_verification, normalized_command, resolved_packages, update_history_evidence, virtualenv_python
-from windows_rocm_matrix.verify_matrix import matrix_exit_code, matrix_jobs, parse_args as matrix_parse_args
+from windows_rocm_matrix.verify_matrix import DEFAULT_CHANNELS, completed_job_keys, matrix_exit_code, matrix_job_key, matrix_jobs, parse_args as matrix_parse_args
 from windows_rocm_matrix.resolve import parse_args
 
 
@@ -17,9 +17,35 @@ class VerificationTests(unittest.TestCase):
         with patch("windows_rocm_matrix.verify_matrix.host_platform", return_value="windows"):
             self.assertEqual(matrix_parse_args([]).platform, "windows")
 
+    def test_single_verifier_supports_family_and_failed_retries(self):
+        from windows_rocm_matrix.verify import parse_args as verify_parse_args
+
+        args = verify_parse_args(["--distribution-family", "legacy", "--include-failed"])
+        self.assertEqual(args.distribution_family, "legacy")
+        self.assertTrue(args.include_failed)
+
     def test_matrix_exit_code_distinguishes_failed_and_not_applicable(self):
         self.assertEqual(matrix_exit_code([{"result": "passed"}, {"result": "not_applicable"}]), 0)
         self.assertEqual(matrix_exit_code([{"result": "not_applicable"}, {"result": "failed"}]), 1)
+
+    def test_matrix_defaults_to_all_channels(self):
+        self.assertEqual(DEFAULT_CHANNELS, ("stable", "nightly", "staging"))
+        self.assertTrue(matrix_parse_args(["--resume"]).resume)
+
+    def test_resume_skips_existing_candidate_hash(self):
+        candidate = {"id": "candidate", "distribution_family": "therock", "platform": "windows", "source_id": "packages-stable", "rocm_version": "7.14.0", "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0"}
+        job = (candidate, "gfx1201", "cp312", "win_amd64")
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "resolver.json"
+            path.write_text(json.dumps({"verifications": [{"candidate_hash": matrix_job_key(job)[0], "gfx": "gfx1201", "python_tag": "cp312", "platform_tag": "win_amd64"}]}), encoding="utf-8")
+            self.assertIn(matrix_job_key(job)[0], {item[0] for item in completed_job_keys(path)})
+
+    def test_matrix_includes_candidates_with_previous_failed_status(self):
+        candidate = {
+            "id": "failed", "distribution_family": "therock", "platform": "linux", "channel": "stable", "evidence_status": {"resolver": "resolver_failed"},
+            "available_gfx_targets": ["gfx1201"], "gfx_targets": ["gfx1201"], "python_tags": ["cp312"], "rocm_version": "7.14.0", "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
+        }
+        self.assertEqual(len(matrix_jobs({"candidates": [candidate]}, "linux", ["stable"], gfx="gfx1201", python_tag="cp312")), 1)
 
     def test_legacy_linux_matrix_verifies_without_gfx_target(self):
         candidate = {
@@ -92,7 +118,7 @@ class VerificationTests(unittest.TestCase):
 
     def test_keeps_legacy_resolver_direct_wheels_separate(self):
         candidate = {"distribution_family": "legacy", "wheel_urls": ["https://example.test/torch.whl"]}
-        self.assertEqual(install_arguments_for_candidate(candidate, "gfx1201"), ["install", "--no-index", "https://example.test/torch.whl"])
+        self.assertEqual(install_arguments_for_candidate(candidate, "gfx1201"), ["install", "--index-url", "https://pypi.org/simple", "https://example.test/torch.whl"])
 
     def test_candidate_hash_is_stable(self):
         candidate = {"id": "candidate", "source_id": "packages-stable", "torch_version": "2.12.0"}
@@ -112,6 +138,23 @@ class VerificationTests(unittest.TestCase):
         document = merge_verification({"verifications": [passed]}, failed)
         self.assertEqual([item["result"] for item in document["verifications"]], ["passed", "failed"])
 
+    def test_candidate_resolver_results_are_append_only_for_same_scope(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "history.json"
+            path.write_text(json.dumps({"schema_version": 2, "generated_at": "2026-08-08T00:00:00Z", "sources": {"packages-stable": {}}, "candidates": [{
+                "id": "candidate", "distribution_family": "therock", "platform": "linux", "lifecycle": "current", "channel": "stable",
+                "rocm_version": "7.14.0", "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
+                "python_tags": ["cp312"], "gfx_support": "known", "gfx_targets": ["gfx1201"], "available_gfx_targets": ["gfx1201"],
+                "artifact_available": True, "source_id": "packages-stable", "first_observed_at": "2026-08-08T00:00:00Z", "last_observed_at": "2026-08-08T00:00:00Z"
+            }]}), encoding="utf-8")
+            update_history_evidence(path, "candidate", "failed", "gfx1201", "cp312", "manylinux_2_28_x86_64", "attempt-a", "2026-08-08T00:00:00Z")
+            update_history_evidence(path, "candidate", "passed", "gfx1201", "cp312", "manylinux_2_28_x86_64", "attempt-b", "2026-08-08T00:01:00Z")
+            history = json.loads(path.read_text(encoding="utf-8"))
+            results = history["candidates"][0]["resolver_results"]
+            self.assertEqual([item["verification_id"] for item in results], ["attempt-a", "attempt-b"])
+            self.assertTrue(all(len(item["candidate_hash"]) == 64 for item in results))
+            self.assertEqual(history["candidates"][0]["evidence_status"]["resolver"], "partial")
+
     def test_records_resolver_failure_on_candidate(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "history.json"
@@ -126,6 +169,13 @@ class VerificationTests(unittest.TestCase):
             self.assertEqual(history["candidates"][0]["evidence_status"]["resolver"], "resolver_failed")
             self.assertEqual(history["candidates"][0]["evidence_status"]["artifact"], "artifact_available")
             self.assertEqual(history["candidates"][0]["resolver_results"][0]["gfx"], "gfx1201")
+
+    def test_status_promotion_requires_verification_id(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "history.json"
+            path.write_text(json.dumps({"schema_version": 2, "generated_at": "2026-08-08T00:00:00Z", "sources": {}, "candidates": []}), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                update_history_evidence(path, "missing", "passed")
 
     def test_not_applicable_does_not_clear_stale_artifact(self):
         with tempfile.TemporaryDirectory() as directory:

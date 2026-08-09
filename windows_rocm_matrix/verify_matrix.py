@@ -5,10 +5,11 @@ import json
 from pathlib import Path
 
 from .resolve import host_platform, resolve_candidates
-from .verify import update_history_evidence, verify_candidate, write_verification
+from .verify import candidate_hash, update_history_evidence, verify_candidate, write_verification
 
 
 PREFERRED_GFX = ("gfx1201", "gfx1100", "gfx1030", "gfx90a")
+DEFAULT_CHANNELS = ("stable", "nightly", "staging")
 
 
 def platform_tag_for(platform, requested=None):
@@ -32,7 +33,7 @@ def representative_targets(candidates, all_gfx=False):
 def matrix_jobs(history, platform, channels, gfx=None, python_tag=None, limit=None, platform_tag=None, distribution_family=None, rocm_version=None, torch_series=None, all_candidates=False, all_gfx=False):
     jobs = []
     for channel in channels:
-        candidates = resolve_candidates(history, None, platform=platform, channel=channel, rocm_version=rocm_version, torch_series=torch_series, python_tag=python_tag)
+        candidates = resolve_candidates(history, None, platform=platform, channel=channel, rocm_version=rocm_version, torch_series=torch_series, python_tag=python_tag, include_failed=True)
         candidates = [candidate for candidate in candidates if not distribution_family or candidate.get("distribution_family") == distribution_family]
         if not candidates:
             continue
@@ -84,6 +85,23 @@ def matrix_exit_code(records):
     return 1 if any(record.get("result") == "failed" for record in records) else 0
 
 
+def matrix_job_key(job):
+    candidate, gfx, python_tag, platform_tag = job
+    return candidate_hash(candidate, gfx, python_tag, platform_tag), gfx, python_tag, platform_tag
+
+
+def completed_job_keys(output_path):
+    path = Path(output_path)
+    if not path.exists():
+        return set()
+    document = json.loads(path.read_text(encoding="utf-8"))
+    return {
+        (record.get("candidate_hash"), record.get("gfx"), record.get("python_tag"), record.get("platform_tag"))
+        for record in document.get("verifications", [])
+        if record.get("candidate_hash")
+    }
+
+
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(description="Verify ROCm package candidates across a platform matrix.")
     parser.add_argument("--history", default="data/history.json")
@@ -100,20 +118,26 @@ def parse_args(argv=None):
     parser.add_argument("--timeout", type=int, default=900)
     parser.add_argument("--all-candidates", action="store_true", help="Verify every matching candidate instead of one representative candidate per channel and target.")
     parser.add_argument("--all-gfx", action="store_true", help="Verify every available GFX target instead of representative targets.")
+    parser.add_argument("--resume", action="store_true", help="Skip candidate/GFX/Python combinations already present in the output evidence.")
     return parser.parse_args(argv)
 
 
 def main(argv=None):
     args = parse_args(argv)
     history = json.loads(Path(args.history).read_text(encoding="utf-8"))
-    channels = args.channels or ["stable", "nightly"]
+    channels = args.channels or list(DEFAULT_CHANNELS)
     targets = args.gfx or [None]
     jobs = []
     for target in targets:
-        jobs.extend(matrix_jobs(history, args.platform, channels, target, args.python_tag, args.limit, args.platform_tag, args.distribution_family, args.rocm, args.torch, args.all_candidates, args.all_gfx))
-        if args.limit and len(jobs) >= args.limit:
+        jobs.extend(matrix_jobs(history, args.platform, channels, target, args.python_tag, None if args.resume else args.limit, args.platform_tag, args.distribution_family, args.rocm, args.torch, args.all_candidates, args.all_gfx))
+        if args.limit and not args.resume and len(jobs) >= args.limit:
             jobs = jobs[: args.limit]
             break
+    if args.resume:
+        completed = completed_job_keys(args.output)
+        jobs = [job for job in jobs if matrix_job_key(job) not in completed]
+        if args.limit:
+            jobs = jobs[: args.limit]
     if not jobs:
         raise SystemExit("No known-GFX candidates match the requested matrix")
     records = []

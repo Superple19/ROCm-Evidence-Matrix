@@ -61,7 +61,7 @@ def install_arguments_for_candidate(candidate, gfx):
     urls = candidate.get("wheel_urls")
     if not urls:
         raise ValueError("Legacy resolver candidates must provide direct wheel_urls")
-    return ["install", "--no-index", *urls]
+    return ["install", "--index-url", "https://pypi.org/simple", *urls]
 
 
 def candidate_hash(candidate, gfx, python_tag, platform_tag=None):
@@ -198,6 +198,10 @@ def write_verification(record, output_path):
 
 
 def update_history_evidence(history_path, candidate_id, result, gfx=None, python_tag=None, platform_tag=None, verification_id=None, observed_at=None, error=None):
+    if result not in {"passed", "failed", "not_applicable"}:
+        raise ValueError(f"Invalid resolver result: {result}")
+    if not verification_id:
+        raise ValueError("Resolver evidence requires a verification ID")
     path = Path(history_path)
     history = json.loads(path.read_text(encoding="utf-8"))
     status = "resolver_verified" if result == "passed" else "resolver_failed"
@@ -208,9 +212,11 @@ def update_history_evidence(history_path, candidate_id, result, gfx=None, python
         evidence = candidate.setdefault("evidence_status", {"artifact": "artifact_available", "documentation": "not_collected", "ci": "not_collected", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"})
         results = candidate.setdefault("resolver_results", [])
         scope = (gfx or "unknown", python_tag, platform_tag)
-        results[:] = [item for item in results if (item.get("gfx") or "unknown", item.get("python_tag"), item.get("platform_tag")) != scope]
         observed_at = observed_at or utc_now()
-        results.append({"gfx": gfx, "python_tag": python_tag, "platform_tag": platform_tag, "result": result, "verification_id": verification_id, "observed_at": observed_at, "error": error, "snapshot_observed_at": candidate.get("last_observed_at")})
+        if verification_id and any(item.get("verification_id") == verification_id for item in results):
+            updated = True
+            break
+        results.append({"candidate_hash": candidate_hash(candidate, gfx, python_tag, platform_tag), "gfx": gfx, "python_tag": python_tag, "platform_tag": platform_tag, "result": result, "verification_id": verification_id, "observed_at": observed_at, "error": error, "snapshot_observed_at": candidate.get("last_observed_at")})
         passed = [item for item in results if item.get("result") == "passed"]
         failed = [item for item in results if item.get("result") == "failed"]
         not_applicable = [item for item in results if item.get("result") == "not_applicable"]
@@ -229,12 +235,14 @@ def parse_args(argv=None):
     parser.add_argument("--output", default="data/verifications/resolver.json")
     parser.add_argument("--gfx")
     parser.add_argument("--platform", choices=("windows", "linux", "macos", "unknown"))
+    parser.add_argument("--distribution-family", choices=("therock", "legacy"))
     parser.add_argument("--python", dest="python_tag")
     parser.add_argument("--platform-tag")
     parser.add_argument("--channel", choices=("stable", "nightly", "staging"))
     parser.add_argument("--rocm")
     parser.add_argument("--torch")
     parser.add_argument("--timeout", type=int, default=900)
+    parser.add_argument("--include-failed", action="store_true", help="Allow candidates with previous resolver failures to be retried.")
     return parser.parse_args(argv)
 
 
@@ -251,7 +259,10 @@ def main(argv=None):
         rocm_version=args.rocm,
         torch_series=args.torch,
         python_tag=python_tag,
+        include_failed=args.include_failed,
     )
+    if args.distribution_family:
+        matches = [candidate for candidate in matches if candidate.get("distribution_family") == args.distribution_family]
     if not matches:
         raise SystemExit(f"No available candidate matches {args.gfx} and the current interpreter ({python_tag})")
     candidate = matches[0]
