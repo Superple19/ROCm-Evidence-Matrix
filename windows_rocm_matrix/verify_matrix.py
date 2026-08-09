@@ -1,6 +1,7 @@
 """Run resolver dry-runs for a platform/channel/GFX/Python matrix."""
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 from pathlib import Path
 
@@ -129,6 +130,7 @@ def parse_args(argv=None):
     parser.add_argument("--limit", type=int)
     parser.add_argument("--timeout", type=int, default=900)
     parser.add_argument("--cache-dir", default=".cache/pip", help="Shared pip cache for matrix jobs; disposable environments remain isolated.")
+    parser.add_argument("--workers", type=int, default=1, help="Concurrent resolver subprocesses (default: 1).")
     parser.add_argument("--all-candidates", action="store_true", help="Verify every matching candidate instead of one representative candidate per channel and target.")
     parser.add_argument("--all-gfx", action="store_true", help="Verify every available GFX target instead of representative targets.")
     parser.add_argument("--resume", action="store_true", help="Skip candidate/GFX/Python combinations already present in the output evidence.")
@@ -137,6 +139,8 @@ def parse_args(argv=None):
 
 def main(argv=None):
     args = parse_args(argv)
+    if args.workers < 1:
+        raise SystemExit("--workers must be at least 1")
     history = json.loads(Path(args.history).read_text(encoding="utf-8"))
     channels = args.channels or list(DEFAULT_CHANNELS)
     targets = args.gfx or [None]
@@ -147,16 +151,20 @@ def main(argv=None):
             jobs = jobs[: args.limit]
             break
     if args.resume:
-        completed = completed_job_keys(args.output, history)
-        jobs = [job for job in jobs if matrix_job_key(job) not in completed]
+        completed_keys = completed_job_keys(args.output, history)
+        jobs = [job for job in jobs if matrix_job_key(job) not in completed_keys]
         if args.limit:
             jobs = jobs[: args.limit]
     if not jobs:
         raise SystemExit("No known-GFX candidates match the requested matrix")
+    def run_job(job):
+        candidate, gfx, python_tag, platform_tag = job
+        return verify_candidate(candidate, gfx, args.timeout, python_tag, platform_tag, args.cache_dir)
+
     records = []
-    for index, (candidate, gfx, python_tag, platform_tag) in enumerate(jobs, 1):
+    def persist_result(index, job, record):
+        candidate, gfx, python_tag, platform_tag = job
         print(f"[{index}/{len(jobs)}] Verifying {candidate['id']} for {gfx} and {python_tag}")
-        record = verify_candidate(candidate, gfx, args.timeout, python_tag, platform_tag, args.cache_dir)
         records.append(record)
         write_verification(record, args.output)
         update_history_evidence(
@@ -174,6 +182,15 @@ def main(argv=None):
             record.get("exit_code"),
         )
         print(f"    {record['result']}")
+
+    if args.workers == 1:
+        for index, job in enumerate(jobs, 1):
+            persist_result(index, job, run_job(job))
+    else:
+        with ThreadPoolExecutor(max_workers=args.workers) as executor:
+            pending = {executor.submit(run_job, job): job for job in jobs}
+            for index, future in enumerate(as_completed(pending), 1):
+                persist_result(index, pending[future], future.result())
     if matrix_exit_code(records):
         failed = sum(record.get("result") == "failed" for record in records)
         raise SystemExit(f"{failed} matrix verification job(s) failed")

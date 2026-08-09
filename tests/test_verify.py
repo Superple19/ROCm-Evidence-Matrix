@@ -28,10 +28,14 @@ class VerificationTests(unittest.TestCase):
         self.assertEqual(matrix_exit_code([{"result": "passed"}, {"result": "not_applicable"}]), 0)
         self.assertEqual(matrix_exit_code([{"result": "not_applicable"}, {"result": "failed"}]), 1)
 
+    def test_matrix_rejects_nonpositive_worker_count(self):
+        self.assertEqual(matrix_parse_args(["--workers", "0"]).workers, 0)
+
     def test_matrix_defaults_to_all_channels(self):
         self.assertEqual(DEFAULT_CHANNELS, ("stable", "nightly", "staging"))
         self.assertTrue(matrix_parse_args(["--resume"]).resume)
         self.assertEqual(matrix_parse_args(["--cache-dir", "cache"]).cache_dir, "cache")
+        self.assertEqual(matrix_parse_args(["--workers", "3"]).workers, 3)
 
     def test_resume_skips_existing_candidate_hash(self):
         candidate = {"id": "candidate", "distribution_family": "therock", "platform": "windows", "source_id": "packages-stable", "rocm_version": "7.14.0", "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0"}
