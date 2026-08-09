@@ -34,6 +34,17 @@ def representative_targets(candidates, all_gfx=False):
 
 def matrix_jobs(history, platform, channels, gfx=None, python_tag=None, limit=None, platform_tag=None, distribution_family=None, rocm_version=None, torch_series=None, all_candidates=False, all_gfx=False):
     jobs = []
+    seen = set()
+
+    def add_job(candidate, target, tag):
+        job = (candidate, target, tag, platform_tag_for(platform, platform_tag, candidate))
+        key = matrix_job_key(job)
+        if key in seen:
+            return False
+        seen.add(key)
+        jobs.append(job)
+        return limit is not None and len(jobs) >= limit
+
     for channel in channels:
         candidates = resolve_candidates(history, None, platform=platform, channel=channel, rocm_version=rocm_version, torch_series=torch_series, python_tag=python_tag, include_failed=True)
         candidates = [candidate for candidate in candidates if not distribution_family or candidate.get("distribution_family") == distribution_family]
@@ -46,16 +57,14 @@ def matrix_jobs(history, platform, channels, gfx=None, python_tag=None, limit=No
                 for candidate in matching[:1]:
                     python_tags = [python_tag] if python_tag else candidate["python_tags"]
                     for tag in python_tags:
-                        jobs.append((candidate, target, tag, platform_tag_for(platform, platform_tag, candidate)))
-                        if limit and len(jobs) >= limit:
+                        if add_job(candidate, target, tag):
                             return jobs
             legacy_without_gfx = [candidate for candidate in candidates if candidate.get("distribution_family") == "legacy" and platform == "linux" and not candidate.get("available_gfx_targets")]
             if not gfx and legacy_without_gfx:
                 candidate = legacy_without_gfx[0]
                 python_tags = [python_tag] if python_tag else candidate["python_tags"]
                 for tag in python_tags:
-                    jobs.append((candidate, None, tag, platform_tag_for(platform, platform_tag, candidate)))
-                    if limit and len(jobs) >= limit:
+                    if add_job(candidate, None, tag):
                         return jobs
             continue
         for candidate in candidates:
@@ -64,8 +73,7 @@ def matrix_jobs(history, platform, channels, gfx=None, python_tag=None, limit=No
             if candidate.get("distribution_family") == "legacy" and platform == "linux" and not candidate.get("available_gfx_targets"):
                 python_tags = [python_tag] if python_tag else candidate["python_tags"]
                 for tag in python_tags:
-                    jobs.append((candidate, None, tag, platform_tag_for(platform, platform_tag, candidate)))
-                    if limit and len(jobs) >= limit:
+                    if add_job(candidate, None, tag):
                         return jobs
                 continue
             targets = candidate.get("available_gfx_targets", [])
@@ -77,8 +85,7 @@ def matrix_jobs(history, platform, channels, gfx=None, python_tag=None, limit=No
                     continue
                 python_tags = [python_tag] if python_tag else candidate["python_tags"]
                 for tag in python_tags:
-                    jobs.append((candidate, target, tag, platform_tag_for(platform, platform_tag, candidate)))
-                    if limit and len(jobs) >= limit:
+                    if add_job(candidate, target, tag):
                         return jobs
     return jobs
 

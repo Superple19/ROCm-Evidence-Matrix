@@ -225,6 +225,19 @@ class VerificationTests(unittest.TestCase):
         jobs = matrix_jobs({"candidates": candidates}, "linux", ["stable"])
         self.assertEqual([(job[0]["rocm_version"], job[1]) for job in jobs], [("7.14.0", "gfx1201"), ("7.14.0", "gfx1100")])
 
+    def test_matrix_deduplicates_same_package_identity_across_candidates(self):
+        candidates = []
+        for python_tags in (("cp310", "cp311"), ("cp310",)):
+            candidates.append({
+                "id": f"candidate:{','.join(python_tags)}", "platform": "linux", "channel": "nightly",
+                "distribution_family": "therock", "source_id": "packages-nightly-linux",
+                "available_gfx_targets": ["gfx1201"], "python_tags": list(python_tags),
+                "rocm_version": "7.14.0a20260527", "torch_version": "2.12.0+rocm7.14.0a20260527",
+                "torchvision_version": "0.27.0+rocm7.14.0a20260527", "torchaudio_version": "2.11.0+rocm7.14.0a20260527",
+            })
+        jobs = matrix_jobs({"candidates": candidates}, "linux", ["nightly"], gfx="gfx1201", all_candidates=True)
+        self.assertEqual([(job[2]) for job in jobs], ["cp310", "cp311"])
+
 
 if __name__ == "__main__":
     unittest.main()
