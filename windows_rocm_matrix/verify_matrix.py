@@ -155,7 +155,20 @@ def main(argv=None):
         record = verify_candidate(candidate, gfx, args.timeout, python_tag, platform_tag)
         records.append(record)
         write_verification(record, args.output)
-        update_history_evidence(args.history, candidate["id"], record["result"], gfx, python_tag, record["platform_tag"], record["id"], record["observed_at"], record.get("error"))
+        update_history_evidence(
+            args.history,
+            candidate["id"],
+            record["result"],
+            gfx,
+            python_tag,
+            record["platform_tag"],
+            record["id"],
+            record["observed_at"],
+            record.get("error"),
+            record.get("host_platform"),
+            record.get("command"),
+            record.get("exit_code"),
+        )
         print(f"    {record['result']}")
     if matrix_exit_code(records):
         failed = sum(record.get("result") == "failed" for record in records)

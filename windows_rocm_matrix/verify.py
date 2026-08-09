@@ -221,7 +221,20 @@ def write_verification(record, output_path):
     path.write_text(json.dumps(document, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
 
 
-def update_history_evidence(history_path, candidate_id, result, gfx=None, python_tag=None, platform_tag=None, verification_id=None, observed_at=None, error=None):
+def update_history_evidence(
+    history_path,
+    candidate_id,
+    result,
+    gfx=None,
+    python_tag=None,
+    platform_tag=None,
+    verification_id=None,
+    observed_at=None,
+    error=None,
+    host_platform_name=None,
+    command=None,
+    exit_code=None,
+):
     if result not in {"passed", "failed", "not_applicable"}:
         raise ValueError(f"Invalid resolver result: {result}")
     if not verification_id:
@@ -235,12 +248,29 @@ def update_history_evidence(history_path, candidate_id, result, gfx=None, python
             continue
         evidence = candidate.setdefault("evidence_status", {"artifact": "artifact_available", "documentation": "not_collected", "ci": "not_collected", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"})
         results = candidate.setdefault("resolver_results", [])
-        scope = (gfx or "unknown", python_tag, platform_tag)
         observed_at = observed_at or utc_now()
         if verification_id and any(item.get("verification_id") == verification_id for item in results):
             updated = True
             break
-        results.append({"candidate_hash": candidate_hash(candidate, gfx, python_tag, platform_tag), "gfx": gfx, "python_tag": python_tag, "platform_tag": platform_tag, "result": result, "verification_id": verification_id, "observed_at": observed_at, "error": error, "snapshot_observed_at": candidate.get("last_observed_at")})
+        results.append(
+            {
+                "candidate_id": candidate_id,
+                "candidate_hash": candidate_hash(candidate, gfx, python_tag, platform_tag),
+                "distribution_family": candidate.get("distribution_family", "therock"),
+                "platform": candidate.get("platform", "unknown"),
+                "host_platform": host_platform_name,
+                "gfx": gfx,
+                "python_tag": python_tag,
+                "platform_tag": platform_tag,
+                "command": command,
+                "exit_code": exit_code,
+                "result": result,
+                "verification_id": verification_id,
+                "observed_at": observed_at,
+                "error": error,
+                "snapshot_observed_at": candidate.get("last_observed_at"),
+            }
+        )
         passed = [item for item in results if item.get("result") == "passed"]
         failed = [item for item in results if item.get("result") == "failed"]
         not_applicable = [item for item in results if item.get("result") == "not_applicable"]
@@ -293,7 +323,20 @@ def main(argv=None):
     print(f"Verifying {candidate['id']} for {args.gfx} and {python_tag}")
     record = verify_candidate(candidate, args.gfx, args.timeout, python_tag, args.platform_tag)
     write_verification(record, args.output)
-    update_history_evidence(args.history, candidate["id"], record["result"], args.gfx, python_tag, record["platform_tag"], record["id"], record["observed_at"], record.get("error"))
+    update_history_evidence(
+        args.history,
+        candidate["id"],
+        record["result"],
+        args.gfx,
+        python_tag,
+        record["platform_tag"],
+        record["id"],
+        record["observed_at"],
+        record.get("error"),
+        record.get("host_platform"),
+        record.get("command"),
+        record.get("exit_code"),
+    )
     print(f"Resolver verification {record['result']}; wrote {args.output}")
     if record["result"] != "passed":
         if record["error"]:

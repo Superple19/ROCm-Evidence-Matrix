@@ -160,12 +160,17 @@ class VerificationTests(unittest.TestCase):
                 "python_tags": ["cp312"], "gfx_support": "known", "gfx_targets": ["gfx1201"], "available_gfx_targets": ["gfx1201"],
                 "artifact_available": True, "source_id": "packages-stable", "first_observed_at": "2026-08-08T00:00:00Z", "last_observed_at": "2026-08-08T00:00:00Z"
             }]}), encoding="utf-8")
-            update_history_evidence(path, "candidate", "failed", "gfx1201", "cp312", "manylinux_2_28_x86_64", "attempt-a", "2026-08-08T00:00:00Z")
+            update_history_evidence(path, "candidate", "failed", "gfx1201", "cp312", "manylinux_2_28_x86_64", "attempt-a", "2026-08-08T00:00:00Z", "failure", "linux", ["python", "-m", "pip", "install"], 1)
             update_history_evidence(path, "candidate", "passed", "gfx1201", "cp312", "manylinux_2_28_x86_64", "attempt-b", "2026-08-08T00:01:00Z")
             history = json.loads(path.read_text(encoding="utf-8"))
             results = history["candidates"][0]["resolver_results"]
             self.assertEqual([item["verification_id"] for item in results], ["attempt-a", "attempt-b"])
             self.assertTrue(all(len(item["candidate_hash"]) == 64 for item in results))
+            self.assertEqual(results[0]["candidate_id"], "candidate")
+            self.assertEqual(results[0]["platform"], "linux")
+            self.assertEqual(results[0]["host_platform"], "linux")
+            self.assertEqual(results[0]["command"], ["python", "-m", "pip", "install"])
+            self.assertEqual(results[0]["exit_code"], 1)
             self.assertEqual(history["candidates"][0]["evidence_status"]["resolver"], "partial")
 
     def test_records_resolver_failure_on_candidate(self):
