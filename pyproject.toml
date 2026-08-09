@@ -12,7 +12,10 @@ license = {file = "LICENSE"}
 authors = [
   {name = "Superple19"}
 ]
-dependencies = []
+dependencies = [
+  "packaging>=24",
+  "jsonschema>=4.23",
+]
 
 [project.urls]
 Repository = "https://github.com/Superple19/windows-rocm-matrix"

@@ -60,6 +60,11 @@ class HistoryTests(unittest.TestCase):
         self.assertFalse(second["candidates"][0]["artifact_available"])
         self.assertEqual(second["candidates"][0]["gfx_targets"], ["gfx1201"])
 
+    def test_generated_at_does_not_regress_during_offline_merge(self):
+        existing = {"schema_version": 2, "generated_at": "2026-08-08T14:13:02Z", "sources": {}, "candidates": []}
+        merged = merge_history(existing, [], {}, "2026-08-08T10:15:14Z", set())
+        self.assertEqual(merged["generated_at"], "2026-08-08T14:13:02Z")
+
     def test_scoped_gfx_merge_preserves_other_available_targets(self):
         observation = {
             "id": "candidate",
@@ -103,6 +108,25 @@ class HistoryTests(unittest.TestCase):
 
         self.assertEqual(by_version["10.0.0"]["lifecycle"], "historical")
         self.assertEqual(by_version["10.1.0"]["lifecycle"], "current")
+
+    def test_lifecycle_is_scoped_to_platform(self):
+        base = {
+            "distribution_family": "therock",
+            "channel": "stable",
+            "torch_version": "2.12.0",
+            "torchvision_version": "0.27.0",
+            "torchaudio_version": "2.11.0",
+            "python_tags": ["cp312"],
+            "gfx_targets": ["gfx1201"],
+            "source_id": "packages-stable",
+        }
+        observations = [
+            {**base, "id": "windows", "platform": "windows", "rocm_version": "7.14.0"},
+            {**base, "id": "linux", "platform": "linux", "rocm_version": "7.2.4"},
+        ]
+
+        history = merge_history(None, observations, {"packages-stable": {}}, "2026-08-07T00:00:00Z", {"packages-stable"})
+        self.assertEqual({item["platform"]: item["lifecycle"] for item in history["candidates"]}, {"windows": "current", "linux": "current"})
 
     def test_migrates_existing_therock_history(self):
         existing = {
@@ -206,6 +230,23 @@ class HistoryTests(unittest.TestCase):
         self.assertEqual(candidate["evidence_status"]["ci"], "ci_verified")
         self.assertEqual(candidate["ci_evidence_refs"], ["github:1"])
         self.assertEqual(candidate["ci_evidence_scope"], "gfx_platform")
+
+    def test_configured_or_non_windows_coverage_does_not_verify_candidate(self):
+        candidate = {
+            "id": "therock:stable:candidate",
+            "distribution_family": "therock",
+            "platform": "windows",
+            "lifecycle": "current",
+            "gfx_targets": ["gfx1201"],
+            "evidence_status": {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected", "ci": "not_collected"},
+        }
+        coverage_only = {"entries": [{"configured_targets": ["gfx1201"], "platform": "windows"}]}
+        attach_therock_ci_evidence({"candidates": [candidate]}, coverage_only)
+        self.assertEqual(candidate["evidence_status"]["ci"], "not_collected")
+
+        linux_execution = {"executions": [{"id": "linux:1", "platform": "linux", "targets": ["gfx1201"], "observations": [{"state": "success"}]}]}
+        attach_therock_ci_evidence({"candidates": [candidate]}, linux_execution)
+        self.assertEqual(candidate["evidence_status"]["ci"], "not_collected")
 
 
 if __name__ == "__main__":

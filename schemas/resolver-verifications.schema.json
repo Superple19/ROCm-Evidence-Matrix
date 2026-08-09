@@ -13,7 +13,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "candidate_id", "source_id", "gfx", "platform", "python_tag", "python_version", "platform_tag", "packages", "command", "observed_at", "result", "exit_code", "pip_version", "resolved_packages", "error"],
+        "required": ["id", "candidate_id", "source_id", "gfx", "python_tag", "python_version", "platform_tag", "packages", "command", "observed_at", "result", "exit_code", "pip_version", "resolved_packages", "error"],
         "properties": {
           "id": {"type": "string"},
           "candidate_id": {"type": "string"},

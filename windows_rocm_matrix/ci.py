@@ -4,6 +4,8 @@ import json
 import re
 from datetime import datetime, timezone
 
+from .source_adapter import monotonic_generated_at
+
 
 CI_STATES = {"queued", "in_progress", "success", "failure", "cancelled", "skipped", "timed_out", "unknown"}
 TEST_KINDS = {"build", "sanity", "framework", "full", "unknown"}
@@ -139,9 +141,10 @@ def _merge_execution(existing, records):
 
 def build_evidence(github_records, hud_records, existing=None, observed_at=None, failures=None):
     existing = existing or {"schema_version": 1, "generated_at": observed_at or utc_now(), "executions": [], "adapter_failures": []}
+    generated_at = observed_at or utc_now()
     document = {
         "schema_version": 1,
-        "generated_at": observed_at or utc_now(),
+        "generated_at": monotonic_generated_at(existing, generated_at),
         "executions": _merge_execution(existing, github_records + hud_records),
         "adapter_failures": list(existing.get("adapter_failures", [])),
     }

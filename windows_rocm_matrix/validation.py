@@ -71,10 +71,13 @@ def validate_framework_history(document):
             raise ValueError(f"Framework candidate lacks package evidence: {candidate['id']}")
         if not candidate["first_observed_at"].endswith("Z") or not candidate["last_observed_at"].endswith("Z"):
             raise ValueError(f"Invalid framework observation time: {candidate['id']}")
-        key = (candidate["distribution_family"], candidate["runtime_family"], candidate["channel"])
-        latest[key] = max(latest.get(key, ()), version_key(candidate["rocm_version"]))
+        key = (candidate["distribution_family"], candidate["runtime_family"], candidate["platform"], candidate["channel"])
+        current = latest.get(key)
+        version = version_key(candidate["rocm_version"])
+        if current is None or version > current:
+            latest[key] = version
     for candidate in document.get("candidates", []):
-        key = (candidate["distribution_family"], candidate["runtime_family"], candidate["channel"])
+        key = (candidate["distribution_family"], candidate["runtime_family"], candidate["platform"], candidate["channel"])
         expected = "current" if version_key(candidate["rocm_version"]) == latest[key] else "historical"
         if candidate["lifecycle"] != expected:
             raise ValueError(f"Incorrect framework lifecycle: {candidate['id']}")
@@ -101,7 +104,10 @@ def validate_extension_history(document):
         if not extension["first_observed_at"].endswith("Z") or not extension["last_observed_at"].endswith("Z"):
             raise ValueError(f"Invalid extension observation time: {extension['id']}")
         key = (extension["distribution_family"], extension["extension"], extension["platform"], extension["channel"])
-        latest[key] = max(latest.get(key, ()), version_key(extension["rocm_version"]))
+        current = latest.get(key)
+        version = version_key(extension["rocm_version"])
+        if current is None or version > current:
+            latest[key] = version
     for extension in document.get("extensions", []):
         key = (extension["distribution_family"], extension["extension"], extension["platform"], extension["channel"])
         expected = "current" if version_key(extension["rocm_version"]) == latest[key] else "historical"
@@ -248,12 +254,12 @@ def validate_history(history):
             raise ValueError(f"Artifact status disagrees with availability: {candidate['id']}")
         if not candidate["python_tags"]:
             raise ValueError(f"Missing Python tags for {candidate['id']}")
-        key = (candidate["distribution_family"], candidate["channel"])
+        key = (candidate["distribution_family"], candidate["platform"], candidate["channel"])
         version = version_key(candidate["rocm_version"])
         if key not in latest or version > latest[key]:
             latest[key] = version
     for candidate in history.get("candidates", []):
-        key = (candidate["distribution_family"], candidate["channel"])
+        key = (candidate["distribution_family"], candidate["platform"], candidate["channel"])
         expected = "current" if version_key(candidate["rocm_version"]) == latest[key] else "historical"
         if candidate["lifecycle"] != expected:
             raise ValueError(f"Incorrect lifecycle for {candidate['id']}")
@@ -463,12 +469,12 @@ def validate_version_history(document):
             raise ValueError(f"Unknown version history source: {release['id']}")
         if not release["first_observed_at"].endswith("Z") or not release["last_observed_at"].endswith("Z"):
             raise ValueError(f"Invalid version history observation time: {release['id']}")
-        family = (release["distribution_family"], release["channel"])
+        family = (release["distribution_family"], release["platform"], release["channel"])
         version = version_key(release["version"])
         if family not in latest or version > latest[family]:
             latest[family] = version
     for release in document.get("releases", []):
-        expected = "current" if version_key(release["version"]) == latest[(release["distribution_family"], release["channel"])] else "historical"
+        expected = "current" if version_key(release["version"]) == latest[(release["distribution_family"], release["platform"], release["channel"])] else "historical"
         if release["lifecycle"] != expected:
             raise ValueError(f"Incorrect version lifecycle: {release['id']}")
     seen_gpu = set()

@@ -2,7 +2,9 @@ import json
 import re
 from pathlib import Path
 
+from .ci import CI_STATES
 from .simple_index import version_key
+from .source_adapter import monotonic_generated_at
 
 
 STATUS_ORDER = {
@@ -251,10 +253,21 @@ def attach_therock_ci_evidence(history, ci_document):
         states = []
         targets = set(candidate.get("gfx_targets", []))
         for execution in executions:
-            if execution.get("platform") != "windows" or not targets.intersection(execution.get("targets", [])):
+            execution_targets = execution.get("targets")
+            observations = execution.get("observations")
+            if (
+                execution.get("platform") != "windows"
+                or not isinstance(execution.get("id"), str)
+                or not isinstance(execution_targets, list)
+                or not targets.intersection(execution_targets)
+                or not isinstance(observations, list)
+            ):
+                continue
+            execution_states = [item.get("state") for item in observations if item.get("state") in CI_STATES]
+            if not execution_states:
                 continue
             refs.append(execution["id"])
-            states.extend(item.get("state") for item in execution.get("observations", []))
+            states.extend(execution_states)
         if not refs:
             continue
         candidate["ci_evidence_refs"] = sorted(set(refs))[-3:]
@@ -374,12 +387,12 @@ def classify_lifecycle(candidates):
     for candidate in candidates:
         candidate.setdefault("platform", "windows")
         candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
-        key = (candidate["distribution_family"], candidate["channel"])
+        key = (candidate["distribution_family"], candidate["platform"], candidate["channel"])
         version = version_key(candidate["rocm_version"])
         if key not in latest or version > latest[key]:
             latest[key] = version
     for candidate in candidates:
-        key = (candidate["distribution_family"], candidate["channel"])
+        key = (candidate["distribution_family"], candidate["platform"], candidate["channel"])
         candidate["lifecycle"] = "current" if version_key(candidate["rocm_version"]) == latest[key] else "historical"
 
 
@@ -430,7 +443,7 @@ def merge_history(existing, observations, sources, observed_at, observed_source_
     merged_sources.update(sources)
     return {
         "schema_version": 2,
-        "generated_at": observed_at,
+        "generated_at": monotonic_generated_at(existing, observed_at),
         "sources": merged_sources,
         "candidates": sorted(candidates.values(), key=candidate_sort_key),
     }

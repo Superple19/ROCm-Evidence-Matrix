@@ -4,7 +4,7 @@ from urllib.parse import unquote, urlparse
 
 from .history import initial_evidence_status
 from .simple_index import parse_links, version_key
-from .source_adapter import run_source_adapter, utc_now
+from .source_adapter import monotonic_generated_at, run_source_adapter, utc_now
 from .simple_index import normalize_package_name
 
 
@@ -70,7 +70,7 @@ def collect_legacy_linux_sources(sources, fetch_text, existing=None, observed_at
         records[source["id"]] = {**source, "observed_at": observed_at}
     return {
         "schema_version": 1,
-        "generated_at": observed_at if any(result["status"] == "passed" for result in results) else existing["generated_at"],
+        "generated_at": monotonic_generated_at(existing, observed_at) if any(result["status"] == "passed" for result in results) else existing["generated_at"],
         "distribution_family": "legacy",
         "platform": "linux",
         "sources": {key: records[key] for key in sorted(records)},

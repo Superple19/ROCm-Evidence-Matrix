@@ -1,6 +1,9 @@
 import json
 from pathlib import Path
 
+from jsonschema import FormatChecker
+from jsonschema.validators import validator_for
+
 from .catalog import build_catalog
 from .extensions import render_extension_history
 from .frameworks import render_framework_history, render_sdk_components
@@ -52,10 +55,23 @@ def read_json(path):
         return json.load(handle)
 
 
+def validate_json_schema(value, schema_path):
+    schema = read_json(schema_path)
+    validator_class = validator_for(schema)
+    validator_class.check_schema(schema)
+    validator = validator_class(schema, format_checker=FormatChecker())
+    errors = sorted(validator.iter_errors(value), key=lambda error: list(error.path))
+    if errors:
+        error = errors[0]
+        location = ".".join(str(item) for item in error.path) or "$"
+        raise ValueError(f"{schema_path.name} validation failed at {location}: {error.message}")
+
+
 def validate_catalog(root):
     root = Path(root)
     catalog_path = root / "data" / "catalog.json"
     catalog = read_json(catalog_path)
+    validate_json_schema(catalog, root / "schemas" / "catalog.schema.json")
     if catalog.get("schema_version") != 1:
         raise ValueError("Unsupported catalog schema")
     expected = build_catalog(root)
@@ -73,6 +89,7 @@ def validate_catalog(root):
         if validator is None:
             raise ValueError(f"No validator registered for {schema_name}")
         value = read_json(data_path)
+        validate_json_schema(value, schema_path)
         if value.get("schema_version") != artifact["schema_version"]:
             raise ValueError(f"Schema version mismatch: {artifact['id']}")
         validator(value)
@@ -94,16 +111,29 @@ def validate_standalone_data(root):
         path = root / relative_path
         if path.exists():
             validator(read_json(path))
+            schema_name = {
+                "data/ci-coverage.json": "ci-coverage.schema.json",
+                "data/ci-evidence.json": "ci-evidence.schema.json",
+                "data/observations/source-manifest.json": "source-manifest.schema.json",
+                "data/status/legacy.json": "collection-status.schema.json",
+                "data/status/therock.json": "collection-status.schema.json",
+                "data/verifications/hardware.json": "hardware-verifications.schema.json",
+                "data/verifications/resolver.json": "resolver-verifications.schema.json",
+                "data/verifications/runtime.json": "runtime-verifications.schema.json",
+            }[relative_path]
+            validate_json_schema(read_json(path), root / "schemas" / schema_name)
 
 
 def validate_profiles(root):
     for path in sorted((Path(root) / "profiles").rglob("*.json")):
         validate_profile(read_json(path))
+        validate_json_schema(read_json(path), root / "schemas" / "profile.schema.json")
 
 
 def validate_schema_files(root):
     for path in sorted((Path(root) / "schemas").glob("*.json")):
-        read_json(path)
+        schema = read_json(path)
+        validator_for(schema).check_schema(schema)
 
 
 def validate_generated_documents(root):

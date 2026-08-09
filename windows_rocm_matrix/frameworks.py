@@ -2,6 +2,7 @@ import re
 from pathlib import Path
 
 from .simple_index import version_key
+from .source_adapter import monotonic_generated_at
 
 
 JAX_PACKAGE_RE = re.compile(r"^(jax-rocm[^-]+)-(pjrt|plugin)$")
@@ -89,14 +90,17 @@ def merge_framework_history(existing, observations, sources, observed_at):
             current["last_observed_at"] = observed_at
     latest = {}
     for item in candidates.values():
-        key = (item["distribution_family"], item["runtime_family"], item["channel"])
-        latest[key] = max(latest.get(key, ()), version_key(item["rocm_version"]))
+        key = (item["distribution_family"], item["runtime_family"], item["platform"], item["channel"])
+        current = latest.get(key)
+        version = version_key(item["rocm_version"])
+        if current is None or version > current:
+            latest[key] = version
     for item in candidates.values():
-        key = (item["distribution_family"], item["runtime_family"], item["channel"])
+        key = (item["distribution_family"], item["runtime_family"], item["platform"], item["channel"])
         item["lifecycle"] = "current" if version_key(item["rocm_version"]) == latest[key] else "historical"
     merged_sources = dict(existing.get("sources", {}))
     merged_sources.update(sources)
-    return {"schema_version": 1, "generated_at": observed_at, "sources": merged_sources, "candidates": sorted(candidates.values(), key=lambda item: (item["distribution_family"], item["runtime_family"], item["channel"], version_key(item["rocm_version"]), item["pjrt_version"], item["plugin_version"]))}
+    return {"schema_version": 1, "generated_at": monotonic_generated_at(existing, observed_at), "sources": merged_sources, "candidates": sorted(candidates.values(), key=lambda item: (item["distribution_family"], item["runtime_family"], item["channel"], version_key(item["rocm_version"]), item["pjrt_version"], item["plugin_version"]))}
 
 
 def build_sdk_components(source, packages):
@@ -131,7 +135,7 @@ def merge_sdk_components(existing, observations, observed_at):
     for item in observations:
         components[item["id"]] = {**components.get(item["id"], {}), **item, "last_observed_at": observed_at}
         components[item["id"]].setdefault("first_observed_at", observed_at)
-    return {"schema_version": 1, "generated_at": observed_at, "components": sorted(components.values(), key=lambda item: (item["distribution_family"], item["platform"], item["channel"], item["package_name"]))}
+    return {"schema_version": 1, "generated_at": monotonic_generated_at(existing, observed_at), "components": sorted(components.values(), key=lambda item: (item["distribution_family"], item["platform"], item["channel"], item["package_name"]))}
 
 
 def rebuild_auxiliary_outputs(output_dir, framework_history_path, sdk_components_path, observed_at, read_json, write_json):

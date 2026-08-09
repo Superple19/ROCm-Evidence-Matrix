@@ -38,6 +38,11 @@ class SimpleIndexTests(unittest.TestCase):
     def test_orders_prereleases_before_final_release(self):
         self.assertLess(version_key("2.14.0a0"), version_key("2.14.0"))
 
+    def test_orders_pep440_local_and_post_versions(self):
+        self.assertLess(version_key("7.14.0a20260806"), version_key("7.14.0"))
+        self.assertLess(version_key("2.12.0+rocm7.14.0"), version_key("2.12.0+rocm7.14.0.post1"))
+        self.assertGreater(version_key("2.14.0+rocm10.1.0a20260806"), version_key("2.13.0+rocm10.1.0a20260806"))
+
     def test_parses_source_distribution(self):
         html = '<a href="rocm-7.14.0.tar.gz">rocm-7.14.0.tar.gz</a>'
 

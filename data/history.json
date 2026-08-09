@@ -9290,6 +9290,120 @@
       "gfx_support": "unknown",
       "gfx_targets": [],
       "hip_version": null,
+      "id": "legacy:linux:stable:6.4.4:2.6.0+rocm6.4.4.git05ad6928:0.21.0+rocm6.4.4.git4040d51f:2.6.0+rocm6.4.4.gitd8831425:cp310",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "platform": "linux",
+      "python_tags": [
+        "cp310"
+      ],
+      "resolver_results": [],
+      "rocm_version": "6.4.4",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.6.0+rocm6.4.4.git05ad6928",
+      "torchaudio_version": "2.6.0+rocm6.4.4.gitd8831425",
+      "torchvision_version": "0.21.0+rocm6.4.4.git4040d51f",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torch-2.6.0%2Brocm6.4.4.git05ad6928-cp310-cp310-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchvision-0.21.0%2Brocm6.4.4.git4040d51f-cp310-cp310-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchaudio-2.6.0%2Brocm6.4.4.gitd8831425-cp310-cp310-linux_x86_64.whl"
+      ]
+    },
+    {
+      "artifact_available": true,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_compatibility": "verified",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
+      "id": "legacy:linux:stable:6.4.4:2.6.0+rocm6.4.4.git05ad6928:0.21.0+rocm6.4.4.git4040d51f:2.6.0+rocm6.4.4.gitd8831425:cp312",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "platform": "linux",
+      "python_tags": [
+        "cp312"
+      ],
+      "resolver_results": [],
+      "rocm_version": "6.4.4",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.6.0+rocm6.4.4.git05ad6928",
+      "torchaudio_version": "2.6.0+rocm6.4.4.gitd8831425",
+      "torchvision_version": "0.21.0+rocm6.4.4.git4040d51f",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torch-2.6.0%2Brocm6.4.4.git05ad6928-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchvision-0.21.0%2Brocm6.4.4.git4040d51f-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchaudio-2.6.0%2Brocm6.4.4.gitd8831425-cp312-cp312-linux_x86_64.whl"
+      ]
+    },
+    {
+      "artifact_available": false,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "not_collected",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-07T17:50:53Z",
+      "framework_compatibility": "incompatible",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
+      "id": "legacy:linux:stable:6.4.4:2.6.0+rocm6.4.4.git05ad6928:0.23.0+rocm6.4.4.git824e8c87:2.8.0+rocm6.4.4.git6e1c7fe9:cp312",
+      "last_observed_at": "2026-08-08T10:14:57Z",
+      "lifecycle": "historical",
+      "platform": "linux",
+      "python_tags": [
+        "cp312"
+      ],
+      "resolver_results": [],
+      "rocm_version": "6.4.4",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.6.0+rocm6.4.4.git05ad6928",
+      "torchaudio_version": "2.8.0+rocm6.4.4.git6e1c7fe9",
+      "torchvision_version": "0.23.0+rocm6.4.4.git824e8c87",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torch-2.6.0%2Brocm6.4.4.git05ad6928-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchvision-0.23.0%2Brocm6.4.4.git824e8c87-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchaudio-2.8.0%2Brocm6.4.4.git6e1c7fe9-cp312-cp312-linux_x86_64.whl"
+      ]
+    },
+    {
+      "artifact_available": true,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-07T17:50:53Z",
+      "framework_compatibility": "verified",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
       "id": "legacy:linux:stable:6.4.4:2.6.0+rocm6.4.4.git2feede28:0.21.0+rocm6.4.4.git4040d51f:2.6.0+rocm6.4.4.gitd8831425:cp310",
       "last_observed_at": "2026-08-08T10:15:14Z",
       "lifecycle": "historical",
@@ -9437,120 +9551,6 @@
         "resolver": "not_collected",
         "runtime": "not_collected"
       },
-      "first_observed_at": "2026-08-07T17:50:53Z",
-      "framework_compatibility": "verified",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
-      "id": "legacy:linux:stable:6.4.4:2.6.0+rocm6.4.4.git05ad6928:0.21.0+rocm6.4.4.git4040d51f:2.6.0+rocm6.4.4.gitd8831425:cp310",
-      "last_observed_at": "2026-08-08T10:15:14Z",
-      "lifecycle": "historical",
-      "platform": "linux",
-      "python_tags": [
-        "cp310"
-      ],
-      "resolver_results": [],
-      "rocm_version": "6.4.4",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.6.0+rocm6.4.4.git05ad6928",
-      "torchaudio_version": "2.6.0+rocm6.4.4.gitd8831425",
-      "torchvision_version": "0.21.0+rocm6.4.4.git4040d51f",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torch-2.6.0%2Brocm6.4.4.git05ad6928-cp310-cp310-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchvision-0.21.0%2Brocm6.4.4.git4040d51f-cp310-cp310-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchaudio-2.6.0%2Brocm6.4.4.gitd8831425-cp310-cp310-linux_x86_64.whl"
-      ]
-    },
-    {
-      "artifact_available": true,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "artifact_available",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_collected",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-08T10:15:14Z",
-      "framework_compatibility": "verified",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
-      "id": "legacy:linux:stable:6.4.4:2.6.0+rocm6.4.4.git05ad6928:0.21.0+rocm6.4.4.git4040d51f:2.6.0+rocm6.4.4.gitd8831425:cp312",
-      "last_observed_at": "2026-08-08T10:15:14Z",
-      "lifecycle": "historical",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "resolver_results": [],
-      "rocm_version": "6.4.4",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.6.0+rocm6.4.4.git05ad6928",
-      "torchaudio_version": "2.6.0+rocm6.4.4.gitd8831425",
-      "torchvision_version": "0.21.0+rocm6.4.4.git4040d51f",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torch-2.6.0%2Brocm6.4.4.git05ad6928-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchvision-0.21.0%2Brocm6.4.4.git4040d51f-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchaudio-2.6.0%2Brocm6.4.4.gitd8831425-cp312-cp312-linux_x86_64.whl"
-      ]
-    },
-    {
-      "artifact_available": false,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "not_collected",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_collected",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-07T17:50:53Z",
-      "framework_compatibility": "incompatible",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
-      "id": "legacy:linux:stable:6.4.4:2.6.0+rocm6.4.4.git05ad6928:0.23.0+rocm6.4.4.git824e8c87:2.8.0+rocm6.4.4.git6e1c7fe9:cp312",
-      "last_observed_at": "2026-08-08T10:14:57Z",
-      "lifecycle": "historical",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "resolver_results": [],
-      "rocm_version": "6.4.4",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.6.0+rocm6.4.4.git05ad6928",
-      "torchaudio_version": "2.8.0+rocm6.4.4.git6e1c7fe9",
-      "torchvision_version": "0.23.0+rocm6.4.4.git824e8c87",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torch-2.6.0%2Brocm6.4.4.git05ad6928-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchvision-0.23.0%2Brocm6.4.4.git824e8c87-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchaudio-2.8.0%2Brocm6.4.4.git6e1c7fe9-cp312-cp312-linux_x86_64.whl"
-      ]
-    },
-    {
-      "artifact_available": true,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "artifact_available",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_collected",
-        "runtime": "not_collected"
-      },
       "first_observed_at": "2026-08-08T10:15:14Z",
       "framework_compatibility": "verified",
       "gfx_support": "unknown",
@@ -9681,82 +9681,6 @@
       "gfx_support": "unknown",
       "gfx_targets": [],
       "hip_version": null,
-      "id": "legacy:linux:stable:6.4.4:2.8.0+rocm6.4.4.git8d1791e1:0.22.1+rocm6.4.4.git59a3e1f9:2.7.1+rocm6.4.4.git95c61b41:cp312",
-      "last_observed_at": "2026-08-08T10:15:14Z",
-      "lifecycle": "historical",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "resolver_results": [],
-      "rocm_version": "6.4.4",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.8.0+rocm6.4.4.git8d1791e1",
-      "torchaudio_version": "2.7.1+rocm6.4.4.git95c61b41",
-      "torchvision_version": "0.22.1+rocm6.4.4.git59a3e1f9",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torch-2.8.0%2Brocm6.4.4.git8d1791e1-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchvision-0.22.1%2Brocm6.4.4.git59a3e1f9-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchaudio-2.7.1%2Brocm6.4.4.git95c61b41-cp312-cp312-linux_x86_64.whl"
-      ]
-    },
-    {
-      "artifact_available": false,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "not_collected",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_collected",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-07T17:50:53Z",
-      "framework_compatibility": "incompatible",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
-      "id": "legacy:linux:stable:6.4.4:2.8.0+rocm6.4.4.git8d1791e1:0.23.0+rocm6.4.4.git824e8c87:2.8.0+rocm6.4.4.git6e1c7fe9:cp312",
-      "last_observed_at": "2026-08-08T10:14:57Z",
-      "lifecycle": "historical",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "resolver_results": [],
-      "rocm_version": "6.4.4",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.8.0+rocm6.4.4.git8d1791e1",
-      "torchaudio_version": "2.8.0+rocm6.4.4.git6e1c7fe9",
-      "torchvision_version": "0.23.0+rocm6.4.4.git824e8c87",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torch-2.8.0%2Brocm6.4.4.git8d1791e1-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchvision-0.23.0%2Brocm6.4.4.git824e8c87-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchaudio-2.8.0%2Brocm6.4.4.git6e1c7fe9-cp312-cp312-linux_x86_64.whl"
-      ]
-    },
-    {
-      "artifact_available": true,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "artifact_available",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_collected",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-08T10:15:14Z",
-      "framework_compatibility": "verified",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
       "id": "legacy:linux:stable:6.4.4:2.8.0+rocm6.4.4.git36fa4b24:0.22.1+rocm6.4.4.git59a3e1f9:2.7.1+rocm6.4.4.git95c61b41:cp312",
       "last_observed_at": "2026-08-08T10:15:14Z",
       "lifecycle": "historical",
@@ -9811,6 +9735,82 @@
       "triton_version": null,
       "wheel_urls": [
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torch-2.8.0%2Brocm6.4.4.git36fa4b24-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchvision-0.23.0%2Brocm6.4.4.git824e8c87-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchaudio-2.8.0%2Brocm6.4.4.git6e1c7fe9-cp312-cp312-linux_x86_64.whl"
+      ]
+    },
+    {
+      "artifact_available": true,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_compatibility": "verified",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
+      "id": "legacy:linux:stable:6.4.4:2.8.0+rocm6.4.4.git8d1791e1:0.22.1+rocm6.4.4.git59a3e1f9:2.7.1+rocm6.4.4.git95c61b41:cp312",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "platform": "linux",
+      "python_tags": [
+        "cp312"
+      ],
+      "resolver_results": [],
+      "rocm_version": "6.4.4",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.8.0+rocm6.4.4.git8d1791e1",
+      "torchaudio_version": "2.7.1+rocm6.4.4.git95c61b41",
+      "torchvision_version": "0.22.1+rocm6.4.4.git59a3e1f9",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torch-2.8.0%2Brocm6.4.4.git8d1791e1-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchvision-0.22.1%2Brocm6.4.4.git59a3e1f9-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchaudio-2.7.1%2Brocm6.4.4.git95c61b41-cp312-cp312-linux_x86_64.whl"
+      ]
+    },
+    {
+      "artifact_available": false,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "not_collected",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-07T17:50:53Z",
+      "framework_compatibility": "incompatible",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
+      "id": "legacy:linux:stable:6.4.4:2.8.0+rocm6.4.4.git8d1791e1:0.23.0+rocm6.4.4.git824e8c87:2.8.0+rocm6.4.4.git6e1c7fe9:cp312",
+      "last_observed_at": "2026-08-08T10:14:57Z",
+      "lifecycle": "historical",
+      "platform": "linux",
+      "python_tags": [
+        "cp312"
+      ],
+      "resolver_results": [],
+      "rocm_version": "6.4.4",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.8.0+rocm6.4.4.git8d1791e1",
+      "torchaudio_version": "2.8.0+rocm6.4.4.git6e1c7fe9",
+      "torchvision_version": "0.23.0+rocm6.4.4.git824e8c87",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torch-2.8.0%2Brocm6.4.4.git8d1791e1-cp312-cp312-linux_x86_64.whl",
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchvision-0.23.0%2Brocm6.4.4.git824e8c87-cp312-cp312-linux_x86_64.whl",
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.4/torchaudio-2.8.0%2Brocm6.4.4.git6e1c7fe9-cp312-cp312-linux_x86_64.whl"
       ]
@@ -14659,82 +14659,6 @@
       "gfx_support": "unknown",
       "gfx_targets": [],
       "hip_version": null,
-      "id": "legacy:linux:stable:7.0.2:2.8.0+rocm7.0.2.git2cd73af9:0.22.1+rocm7.0.2.git59a3e1f9:2.7.1+rocm7.0.2.git95c61b41:cp312",
-      "last_observed_at": "2026-08-08T10:15:14Z",
-      "lifecycle": "historical",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "resolver_results": [],
-      "rocm_version": "7.0.2",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.8.0+rocm7.0.2.git2cd73af9",
-      "torchaudio_version": "2.7.1+rocm7.0.2.git95c61b41",
-      "torchvision_version": "0.22.1+rocm7.0.2.git59a3e1f9",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torch-2.8.0%2Brocm7.0.2.git2cd73af9-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torchvision-0.22.1%2Brocm7.0.2.git59a3e1f9-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torchaudio-2.7.1%2Brocm7.0.2.git95c61b41-cp312-cp312-linux_x86_64.whl"
-      ]
-    },
-    {
-      "artifact_available": false,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "not_collected",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_collected",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-07T17:50:53Z",
-      "framework_compatibility": "incompatible",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
-      "id": "legacy:linux:stable:7.0.2:2.8.0+rocm7.0.2.git2cd73af9:0.24.0+rocm7.0.2.gitf52c4f1a:2.9.0+rocm7.0.2.gite3c6ee2b:cp312",
-      "last_observed_at": "2026-08-08T10:14:57Z",
-      "lifecycle": "historical",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "resolver_results": [],
-      "rocm_version": "7.0.2",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.8.0+rocm7.0.2.git2cd73af9",
-      "torchaudio_version": "2.9.0+rocm7.0.2.gite3c6ee2b",
-      "torchvision_version": "0.24.0+rocm7.0.2.gitf52c4f1a",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torch-2.8.0%2Brocm7.0.2.git2cd73af9-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torchvision-0.24.0%2Brocm7.0.2.gitf52c4f1a-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torchaudio-2.9.0%2Brocm7.0.2.gite3c6ee2b-cp312-cp312-linux_x86_64.whl"
-      ]
-    },
-    {
-      "artifact_available": true,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "artifact_available",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_collected",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-08T10:15:14Z",
-      "framework_compatibility": "verified",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
       "id": "legacy:linux:stable:7.0.2:2.8.0+rocm7.0.2.git245bf6ed:0.22.1+rocm7.0.2.git59a3e1f9:2.7.1+rocm7.0.2.git95c61b41:cp311",
       "last_observed_at": "2026-08-08T10:15:14Z",
       "lifecycle": "historical",
@@ -15039,7 +14963,7 @@
       "gfx_support": "unknown",
       "gfx_targets": [],
       "hip_version": null,
-      "id": "legacy:linux:stable:7.0.2:2.8.0+rocm7.0.2.lw.git2cd73af9:0.22.1+rocm7.0.2.git59a3e1f9:2.7.1+rocm7.0.2.git95c61b41:cp312",
+      "id": "legacy:linux:stable:7.0.2:2.8.0+rocm7.0.2.git2cd73af9:0.22.1+rocm7.0.2.git59a3e1f9:2.7.1+rocm7.0.2.git95c61b41:cp312",
       "last_observed_at": "2026-08-08T10:15:14Z",
       "lifecycle": "historical",
       "platform": "linux",
@@ -15049,12 +14973,12 @@
       "resolver_results": [],
       "rocm_version": "7.0.2",
       "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.8.0+rocm7.0.2.lw.git2cd73af9",
+      "torch_version": "2.8.0+rocm7.0.2.git2cd73af9",
       "torchaudio_version": "2.7.1+rocm7.0.2.git95c61b41",
       "torchvision_version": "0.22.1+rocm7.0.2.git59a3e1f9",
       "triton_version": null,
       "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torch-2.8.0%2Brocm7.0.2.lw.git2cd73af9-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torch-2.8.0%2Brocm7.0.2.git2cd73af9-cp312-cp312-linux_x86_64.whl",
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torchvision-0.22.1%2Brocm7.0.2.git59a3e1f9-cp312-cp312-linux_x86_64.whl",
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torchaudio-2.7.1%2Brocm7.0.2.git95c61b41-cp312-cp312-linux_x86_64.whl"
       ]
@@ -15077,7 +15001,7 @@
       "gfx_support": "unknown",
       "gfx_targets": [],
       "hip_version": null,
-      "id": "legacy:linux:stable:7.0.2:2.8.0+rocm7.0.2.lw.git2cd73af9:0.24.0+rocm7.0.2.gitf52c4f1a:2.9.0+rocm7.0.2.gite3c6ee2b:cp312",
+      "id": "legacy:linux:stable:7.0.2:2.8.0+rocm7.0.2.git2cd73af9:0.24.0+rocm7.0.2.gitf52c4f1a:2.9.0+rocm7.0.2.gite3c6ee2b:cp312",
       "last_observed_at": "2026-08-08T10:14:57Z",
       "lifecycle": "historical",
       "platform": "linux",
@@ -15087,12 +15011,12 @@
       "resolver_results": [],
       "rocm_version": "7.0.2",
       "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.8.0+rocm7.0.2.lw.git2cd73af9",
+      "torch_version": "2.8.0+rocm7.0.2.git2cd73af9",
       "torchaudio_version": "2.9.0+rocm7.0.2.gite3c6ee2b",
       "torchvision_version": "0.24.0+rocm7.0.2.gitf52c4f1a",
       "triton_version": null,
       "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torch-2.8.0%2Brocm7.0.2.lw.git2cd73af9-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torch-2.8.0%2Brocm7.0.2.git2cd73af9-cp312-cp312-linux_x86_64.whl",
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torchvision-0.24.0%2Brocm7.0.2.gitf52c4f1a-cp312-cp312-linux_x86_64.whl",
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torchaudio-2.9.0%2Brocm7.0.2.gite3c6ee2b-cp312-cp312-linux_x86_64.whl"
       ]
@@ -15397,6 +15321,82 @@
       "triton_version": null,
       "wheel_urls": [
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torch-2.8.0%2Brocm7.0.2.lw.git245bf6ed-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torchvision-0.24.0%2Brocm7.0.2.gitf52c4f1a-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torchaudio-2.9.0%2Brocm7.0.2.gite3c6ee2b-cp312-cp312-linux_x86_64.whl"
+      ]
+    },
+    {
+      "artifact_available": true,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_compatibility": "verified",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
+      "id": "legacy:linux:stable:7.0.2:2.8.0+rocm7.0.2.lw.git2cd73af9:0.22.1+rocm7.0.2.git59a3e1f9:2.7.1+rocm7.0.2.git95c61b41:cp312",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "platform": "linux",
+      "python_tags": [
+        "cp312"
+      ],
+      "resolver_results": [],
+      "rocm_version": "7.0.2",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.8.0+rocm7.0.2.lw.git2cd73af9",
+      "torchaudio_version": "2.7.1+rocm7.0.2.git95c61b41",
+      "torchvision_version": "0.22.1+rocm7.0.2.git59a3e1f9",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torch-2.8.0%2Brocm7.0.2.lw.git2cd73af9-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torchvision-0.22.1%2Brocm7.0.2.git59a3e1f9-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torchaudio-2.7.1%2Brocm7.0.2.git95c61b41-cp312-cp312-linux_x86_64.whl"
+      ]
+    },
+    {
+      "artifact_available": false,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "not_collected",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-07T17:50:53Z",
+      "framework_compatibility": "incompatible",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
+      "id": "legacy:linux:stable:7.0.2:2.8.0+rocm7.0.2.lw.git2cd73af9:0.24.0+rocm7.0.2.gitf52c4f1a:2.9.0+rocm7.0.2.gite3c6ee2b:cp312",
+      "last_observed_at": "2026-08-08T10:14:57Z",
+      "lifecycle": "historical",
+      "platform": "linux",
+      "python_tags": [
+        "cp312"
+      ],
+      "resolver_results": [],
+      "rocm_version": "7.0.2",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.8.0+rocm7.0.2.lw.git2cd73af9",
+      "torchaudio_version": "2.9.0+rocm7.0.2.gite3c6ee2b",
+      "torchvision_version": "0.24.0+rocm7.0.2.gitf52c4f1a",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torch-2.8.0%2Brocm7.0.2.lw.git2cd73af9-cp312-cp312-linux_x86_64.whl",
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torchvision-0.24.0%2Brocm7.0.2.gitf52c4f1a-cp312-cp312-linux_x86_64.whl",
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.0.2/torchaudio-2.9.0%2Brocm7.0.2.gite3c6ee2b-cp312-cp312-linux_x86_64.whl"
       ]
@@ -18908,7 +18908,7 @@
       "hip_version": null,
       "id": "legacy:stable:7.2.1:2.9.1+rocm7.2.1:0.24.1+rocm7.2.1:2.9.1+rocm7.2.1:cp312",
       "last_observed_at": "2026-08-08T10:15:14Z",
-      "lifecycle": "historical",
+      "lifecycle": "current",
       "platform": "windows",
       "python_tags": [
         "cp312"
@@ -19120,44 +19120,6 @@
       ]
     },
     {
-      "artifact_available": true,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "artifact_available",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_collected",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-07T17:50:53Z",
-      "framework_compatibility": "verified",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
-      "id": "legacy:linux:stable:7.2.1:2.10.0+rocm7.2.1.lw.gitb6dec82d:0.25.0+rocm7.2.1.git82df5f59:2.10.0+rocm7.2.1.git5047768f:cp314",
-      "last_observed_at": "2026-08-08T10:15:14Z",
-      "lifecycle": "historical",
-      "platform": "linux",
-      "python_tags": [
-        "cp314"
-      ],
-      "resolver_results": [],
-      "rocm_version": "7.2.1",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.10.0+rocm7.2.1.lw.gitb6dec82d",
-      "torchaudio_version": "2.10.0+rocm7.2.1.git5047768f",
-      "torchvision_version": "0.25.0+rocm7.2.1.git82df5f59",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.1/torch-2.10.0%2Brocm7.2.1.lw.gitb6dec82d-cp314-cp314-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.1/torchvision-0.25.0%2Brocm7.2.1.git82df5f59-cp314-cp314-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.1/torchaudio-2.10.0%2Brocm7.2.1.git5047768f-cp314-cp314-linux_x86_64.whl"
-      ]
-    },
-    {
       "artifact_available": false,
       "available_gfx_targets": [],
       "channel": "stable",
@@ -19231,6 +19193,44 @@
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.1/torch-2.10.0%2Brocm7.2.1.lw.gitb07cec22-cp312-cp312-linux_x86_64.whl",
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.1/torchvision-0.25.0%2Brocm7.2.1.git82df5f59-cp312-cp312-linux_x86_64.whl",
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.1/torchaudio-2.10.0%2Brocm7.2.1.git5047768f-cp312-cp312-linux_x86_64.whl"
+      ]
+    },
+    {
+      "artifact_available": true,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-07T17:50:53Z",
+      "framework_compatibility": "verified",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
+      "id": "legacy:linux:stable:7.2.1:2.10.0+rocm7.2.1.lw.gitb6dec82d:0.25.0+rocm7.2.1.git82df5f59:2.10.0+rocm7.2.1.git5047768f:cp314",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "platform": "linux",
+      "python_tags": [
+        "cp314"
+      ],
+      "resolver_results": [],
+      "rocm_version": "7.2.1",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.10.0+rocm7.2.1.lw.gitb6dec82d",
+      "torchaudio_version": "2.10.0+rocm7.2.1.git5047768f",
+      "torchvision_version": "0.25.0+rocm7.2.1.git82df5f59",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.1/torch-2.10.0%2Brocm7.2.1.lw.gitb6dec82d-cp314-cp314-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.1/torchvision-0.25.0%2Brocm7.2.1.git82df5f59-cp314-cp314-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.1/torchaudio-2.10.0%2Brocm7.2.1.git5047768f-cp314-cp314-linux_x86_64.whl"
       ]
     },
     {
@@ -20467,234 +20467,6 @@
       "gfx_support": "unknown",
       "gfx_targets": [],
       "hip_version": null,
-      "id": "legacy:linux:stable:7.2.2:2.9.1+rocm7.2.2.lw.git36be91cf:0.24.0+rocm7.2.2.gitb919bd0c:2.9.0+rocm7.2.2.gite3c6ee2b:cp310",
-      "last_observed_at": "2026-08-08T10:15:14Z",
-      "lifecycle": "historical",
-      "platform": "linux",
-      "python_tags": [
-        "cp310"
-      ],
-      "resolver_results": [],
-      "rocm_version": "7.2.2",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.9.1+rocm7.2.2.lw.git36be91cf",
-      "torchaudio_version": "2.9.0+rocm7.2.2.gite3c6ee2b",
-      "torchvision_version": "0.24.0+rocm7.2.2.gitb919bd0c",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torch-2.9.1%2Brocm7.2.2.lw.git36be91cf-cp310-cp310-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchvision-0.24.0%2Brocm7.2.2.gitb919bd0c-cp310-cp310-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchaudio-2.9.0%2Brocm7.2.2.gite3c6ee2b-cp310-cp310-linux_x86_64.whl"
-      ]
-    },
-    {
-      "artifact_available": false,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "not_collected",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_collected",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-07T17:50:53Z",
-      "framework_compatibility": "incompatible",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
-      "id": "legacy:linux:stable:7.2.2:2.9.1+rocm7.2.2.lw.git36be91cf:0.26.0+rocm7.2.2.git336d36e8:2.9.0+rocm7.2.2.gite3c6ee2b:cp310",
-      "last_observed_at": "2026-08-08T10:14:57Z",
-      "lifecycle": "historical",
-      "platform": "linux",
-      "python_tags": [
-        "cp310"
-      ],
-      "resolver_results": [],
-      "rocm_version": "7.2.2",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.9.1+rocm7.2.2.lw.git36be91cf",
-      "torchaudio_version": "2.9.0+rocm7.2.2.gite3c6ee2b",
-      "torchvision_version": "0.26.0+rocm7.2.2.git336d36e8",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torch-2.9.1%2Brocm7.2.2.lw.git36be91cf-cp310-cp310-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchvision-0.26.0%2Brocm7.2.2.git336d36e8-cp310-cp310-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchaudio-2.9.0%2Brocm7.2.2.gite3c6ee2b-cp310-cp310-linux_x86_64.whl"
-      ]
-    },
-    {
-      "artifact_available": true,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "artifact_available",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_collected",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-08T10:15:14Z",
-      "framework_compatibility": "verified",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
-      "id": "legacy:linux:stable:7.2.2:2.9.1+rocm7.2.2.lw.git127a149a:0.24.0+rocm7.2.2.gitb919bd0c:2.9.0+rocm7.2.2.gite3c6ee2b:cp312",
-      "last_observed_at": "2026-08-08T10:15:14Z",
-      "lifecycle": "historical",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "resolver_results": [],
-      "rocm_version": "7.2.2",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.9.1+rocm7.2.2.lw.git127a149a",
-      "torchaudio_version": "2.9.0+rocm7.2.2.gite3c6ee2b",
-      "torchvision_version": "0.24.0+rocm7.2.2.gitb919bd0c",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torch-2.9.1%2Brocm7.2.2.lw.git127a149a-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchvision-0.24.0%2Brocm7.2.2.gitb919bd0c-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchaudio-2.9.0%2Brocm7.2.2.gite3c6ee2b-cp312-cp312-linux_x86_64.whl"
-      ]
-    },
-    {
-      "artifact_available": true,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "artifact_available",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_collected",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-08T10:15:14Z",
-      "framework_compatibility": "verified",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
-      "id": "legacy:linux:stable:7.2.2:2.9.1+rocm7.2.2.lw.git127a149a:0.24.0+rocm7.2.2.gitb919bd0c:2.9.0+rocm7.2.2.gite3c6ee2b:cp313",
-      "last_observed_at": "2026-08-08T10:15:14Z",
-      "lifecycle": "historical",
-      "platform": "linux",
-      "python_tags": [
-        "cp313"
-      ],
-      "resolver_results": [],
-      "rocm_version": "7.2.2",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.9.1+rocm7.2.2.lw.git127a149a",
-      "torchaudio_version": "2.9.0+rocm7.2.2.gite3c6ee2b",
-      "torchvision_version": "0.24.0+rocm7.2.2.gitb919bd0c",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torch-2.9.1%2Brocm7.2.2.lw.git127a149a-cp313-cp313-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchvision-0.24.0%2Brocm7.2.2.gitb919bd0c-cp313-cp313-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchaudio-2.9.0%2Brocm7.2.2.gite3c6ee2b-cp313-cp313-linux_x86_64.whl"
-      ]
-    },
-    {
-      "artifact_available": false,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "not_collected",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_collected",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-07T17:50:53Z",
-      "framework_compatibility": "incompatible",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
-      "id": "legacy:linux:stable:7.2.2:2.9.1+rocm7.2.2.lw.git127a149a:0.26.0+rocm7.2.2.git336d36e8:2.9.0+rocm7.2.2.gite3c6ee2b:cp312",
-      "last_observed_at": "2026-08-08T10:14:57Z",
-      "lifecycle": "historical",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "resolver_results": [],
-      "rocm_version": "7.2.2",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.9.1+rocm7.2.2.lw.git127a149a",
-      "torchaudio_version": "2.9.0+rocm7.2.2.gite3c6ee2b",
-      "torchvision_version": "0.26.0+rocm7.2.2.git336d36e8",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torch-2.9.1%2Brocm7.2.2.lw.git127a149a-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchvision-0.26.0%2Brocm7.2.2.git336d36e8-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchaudio-2.9.0%2Brocm7.2.2.gite3c6ee2b-cp312-cp312-linux_x86_64.whl"
-      ]
-    },
-    {
-      "artifact_available": false,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "not_collected",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_collected",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-07T17:50:53Z",
-      "framework_compatibility": "incompatible",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
-      "id": "legacy:linux:stable:7.2.2:2.9.1+rocm7.2.2.lw.git127a149a:0.26.0+rocm7.2.2.git336d36e8:2.9.0+rocm7.2.2.gite3c6ee2b:cp313",
-      "last_observed_at": "2026-08-08T10:14:57Z",
-      "lifecycle": "historical",
-      "platform": "linux",
-      "python_tags": [
-        "cp313"
-      ],
-      "resolver_results": [],
-      "rocm_version": "7.2.2",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.9.1+rocm7.2.2.lw.git127a149a",
-      "torchaudio_version": "2.9.0+rocm7.2.2.gite3c6ee2b",
-      "torchvision_version": "0.26.0+rocm7.2.2.git336d36e8",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torch-2.9.1%2Brocm7.2.2.lw.git127a149a-cp313-cp313-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchvision-0.26.0%2Brocm7.2.2.git336d36e8-cp313-cp313-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchaudio-2.9.0%2Brocm7.2.2.gite3c6ee2b-cp313-cp313-linux_x86_64.whl"
-      ]
-    },
-    {
-      "artifact_available": true,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "artifact_available",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_collected",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-08T10:15:14Z",
-      "framework_compatibility": "verified",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
       "id": "legacy:linux:stable:7.2.2:2.9.1+rocm7.2.2.lw.git0084803e:0.24.0+rocm7.2.2.gitb919bd0c:2.9.0+rocm7.2.2.gite3c6ee2b:cp310",
       "last_observed_at": "2026-08-08T10:15:14Z",
       "lifecycle": "historical",
@@ -20979,6 +20751,234 @@
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torch-2.9.1%2Brocm7.2.2.lw.git0084803e-cp313-cp313-linux_x86_64.whl",
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchvision-0.26.0%2Brocm7.2.2.git336d36e8-cp313-cp313-linux_x86_64.whl",
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchaudio-2.9.0%2Brocm7.2.2.gite3c6ee2b-cp313-cp313-linux_x86_64.whl"
+      ]
+    },
+    {
+      "artifact_available": true,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_compatibility": "verified",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
+      "id": "legacy:linux:stable:7.2.2:2.9.1+rocm7.2.2.lw.git127a149a:0.24.0+rocm7.2.2.gitb919bd0c:2.9.0+rocm7.2.2.gite3c6ee2b:cp312",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "platform": "linux",
+      "python_tags": [
+        "cp312"
+      ],
+      "resolver_results": [],
+      "rocm_version": "7.2.2",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.9.1+rocm7.2.2.lw.git127a149a",
+      "torchaudio_version": "2.9.0+rocm7.2.2.gite3c6ee2b",
+      "torchvision_version": "0.24.0+rocm7.2.2.gitb919bd0c",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torch-2.9.1%2Brocm7.2.2.lw.git127a149a-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchvision-0.24.0%2Brocm7.2.2.gitb919bd0c-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchaudio-2.9.0%2Brocm7.2.2.gite3c6ee2b-cp312-cp312-linux_x86_64.whl"
+      ]
+    },
+    {
+      "artifact_available": true,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_compatibility": "verified",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
+      "id": "legacy:linux:stable:7.2.2:2.9.1+rocm7.2.2.lw.git127a149a:0.24.0+rocm7.2.2.gitb919bd0c:2.9.0+rocm7.2.2.gite3c6ee2b:cp313",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "platform": "linux",
+      "python_tags": [
+        "cp313"
+      ],
+      "resolver_results": [],
+      "rocm_version": "7.2.2",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.9.1+rocm7.2.2.lw.git127a149a",
+      "torchaudio_version": "2.9.0+rocm7.2.2.gite3c6ee2b",
+      "torchvision_version": "0.24.0+rocm7.2.2.gitb919bd0c",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torch-2.9.1%2Brocm7.2.2.lw.git127a149a-cp313-cp313-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchvision-0.24.0%2Brocm7.2.2.gitb919bd0c-cp313-cp313-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchaudio-2.9.0%2Brocm7.2.2.gite3c6ee2b-cp313-cp313-linux_x86_64.whl"
+      ]
+    },
+    {
+      "artifact_available": false,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "not_collected",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-07T17:50:53Z",
+      "framework_compatibility": "incompatible",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
+      "id": "legacy:linux:stable:7.2.2:2.9.1+rocm7.2.2.lw.git127a149a:0.26.0+rocm7.2.2.git336d36e8:2.9.0+rocm7.2.2.gite3c6ee2b:cp312",
+      "last_observed_at": "2026-08-08T10:14:57Z",
+      "lifecycle": "historical",
+      "platform": "linux",
+      "python_tags": [
+        "cp312"
+      ],
+      "resolver_results": [],
+      "rocm_version": "7.2.2",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.9.1+rocm7.2.2.lw.git127a149a",
+      "torchaudio_version": "2.9.0+rocm7.2.2.gite3c6ee2b",
+      "torchvision_version": "0.26.0+rocm7.2.2.git336d36e8",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torch-2.9.1%2Brocm7.2.2.lw.git127a149a-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchvision-0.26.0%2Brocm7.2.2.git336d36e8-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchaudio-2.9.0%2Brocm7.2.2.gite3c6ee2b-cp312-cp312-linux_x86_64.whl"
+      ]
+    },
+    {
+      "artifact_available": false,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "not_collected",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-07T17:50:53Z",
+      "framework_compatibility": "incompatible",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
+      "id": "legacy:linux:stable:7.2.2:2.9.1+rocm7.2.2.lw.git127a149a:0.26.0+rocm7.2.2.git336d36e8:2.9.0+rocm7.2.2.gite3c6ee2b:cp313",
+      "last_observed_at": "2026-08-08T10:14:57Z",
+      "lifecycle": "historical",
+      "platform": "linux",
+      "python_tags": [
+        "cp313"
+      ],
+      "resolver_results": [],
+      "rocm_version": "7.2.2",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.9.1+rocm7.2.2.lw.git127a149a",
+      "torchaudio_version": "2.9.0+rocm7.2.2.gite3c6ee2b",
+      "torchvision_version": "0.26.0+rocm7.2.2.git336d36e8",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torch-2.9.1%2Brocm7.2.2.lw.git127a149a-cp313-cp313-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchvision-0.26.0%2Brocm7.2.2.git336d36e8-cp313-cp313-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchaudio-2.9.0%2Brocm7.2.2.gite3c6ee2b-cp313-cp313-linux_x86_64.whl"
+      ]
+    },
+    {
+      "artifact_available": true,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_compatibility": "verified",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
+      "id": "legacy:linux:stable:7.2.2:2.9.1+rocm7.2.2.lw.git36be91cf:0.24.0+rocm7.2.2.gitb919bd0c:2.9.0+rocm7.2.2.gite3c6ee2b:cp310",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "platform": "linux",
+      "python_tags": [
+        "cp310"
+      ],
+      "resolver_results": [],
+      "rocm_version": "7.2.2",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.9.1+rocm7.2.2.lw.git36be91cf",
+      "torchaudio_version": "2.9.0+rocm7.2.2.gite3c6ee2b",
+      "torchvision_version": "0.24.0+rocm7.2.2.gitb919bd0c",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torch-2.9.1%2Brocm7.2.2.lw.git36be91cf-cp310-cp310-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchvision-0.24.0%2Brocm7.2.2.gitb919bd0c-cp310-cp310-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchaudio-2.9.0%2Brocm7.2.2.gite3c6ee2b-cp310-cp310-linux_x86_64.whl"
+      ]
+    },
+    {
+      "artifact_available": false,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "not_collected",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-07T17:50:53Z",
+      "framework_compatibility": "incompatible",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
+      "id": "legacy:linux:stable:7.2.2:2.9.1+rocm7.2.2.lw.git36be91cf:0.26.0+rocm7.2.2.git336d36e8:2.9.0+rocm7.2.2.gite3c6ee2b:cp310",
+      "last_observed_at": "2026-08-08T10:14:57Z",
+      "lifecycle": "historical",
+      "platform": "linux",
+      "python_tags": [
+        "cp310"
+      ],
+      "resolver_results": [],
+      "rocm_version": "7.2.2",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.9.1+rocm7.2.2.lw.git36be91cf",
+      "torchaudio_version": "2.9.0+rocm7.2.2.gite3c6ee2b",
+      "torchvision_version": "0.26.0+rocm7.2.2.git336d36e8",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torch-2.9.1%2Brocm7.2.2.lw.git36be91cf-cp310-cp310-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchvision-0.26.0%2Brocm7.2.2.git336d36e8-cp310-cp310-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.2/torchaudio-2.9.0%2Brocm7.2.2.gite3c6ee2b-cp310-cp310-linux_x86_64.whl"
       ]
     },
     {

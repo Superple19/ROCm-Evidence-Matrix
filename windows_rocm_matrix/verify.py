@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .resolve import host_platform, install_arguments, resolve_candidates
+from .source_adapter import monotonic_generated_at
 from .validation import validate_history, validate_resolver_verifications
 
 
@@ -112,7 +113,7 @@ def merge_verification(existing, observation):
         records.append(observation)
     return {
         "schema_version": 1,
-        "generated_at": observation["observed_at"],
+        "generated_at": monotonic_generated_at(existing, observation["observed_at"]),
         "verifications": sorted(records, key=lambda item: (item["observed_at"], item["id"])),
     }
 
@@ -214,8 +215,6 @@ def update_history_evidence(history_path, candidate_id, result, gfx=None, python
         failed = [item for item in results if item.get("result") == "failed"]
         not_applicable = [item for item in results if item.get("result") == "not_applicable"]
         evidence["resolver"] = "partial" if passed and (failed or not_applicable) else "resolver_verified" if passed else "resolver_failed" if failed else "not_applicable"
-        if result == "failed" and candidate.get("artifact_available"):
-            evidence["artifact"] = "artifact_stale"
         updated = True
         break
     if updated:

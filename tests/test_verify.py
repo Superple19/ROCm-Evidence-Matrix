@@ -6,7 +6,7 @@ import json
 import tempfile
 
 from windows_rocm_matrix.verify import candidate_hash, default_platform_tag, install_arguments_for_candidate, merge_verification, normalized_command, resolved_packages, update_history_evidence, virtualenv_python
-from windows_rocm_matrix.verify_matrix import matrix_jobs, parse_args as matrix_parse_args
+from windows_rocm_matrix.verify_matrix import matrix_exit_code, matrix_jobs, parse_args as matrix_parse_args
 from windows_rocm_matrix.resolve import parse_args
 
 
@@ -16,6 +16,10 @@ class VerificationTests(unittest.TestCase):
             self.assertEqual(parse_args([]).platform, "linux")
         with patch("windows_rocm_matrix.verify_matrix.host_platform", return_value="windows"):
             self.assertEqual(matrix_parse_args([]).platform, "windows")
+
+    def test_matrix_exit_code_distinguishes_failed_and_not_applicable(self):
+        self.assertEqual(matrix_exit_code([{"result": "passed"}, {"result": "not_applicable"}]), 0)
+        self.assertEqual(matrix_exit_code([{"result": "not_applicable"}, {"result": "failed"}]), 1)
 
     def test_legacy_linux_matrix_verifies_without_gfx_target(self):
         candidate = {
@@ -120,7 +124,7 @@ class VerificationTests(unittest.TestCase):
             self.assertTrue(update_history_evidence(path, "candidate", "failed", "gfx1201", "cp312", "manylinux_2_28_x86_64", "verification", "2026-08-08T00:00:00Z"))
             history = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(history["candidates"][0]["evidence_status"]["resolver"], "resolver_failed")
-            self.assertEqual(history["candidates"][0]["evidence_status"]["artifact"], "artifact_stale")
+            self.assertEqual(history["candidates"][0]["evidence_status"]["artifact"], "artifact_available")
             self.assertEqual(history["candidates"][0]["resolver_results"][0]["gfx"], "gfx1201")
 
     def test_not_applicable_does_not_clear_stale_artifact(self):
@@ -135,7 +139,7 @@ class VerificationTests(unittest.TestCase):
             update_history_evidence(path, "candidate", "failed", "gfx1201", "cp312", "manylinux_2_28_x86_64", "failed", "2026-08-08T00:00:00Z")
             update_history_evidence(path, "candidate", "not_applicable", "gfx1201", "cp312", "manylinux_2_28_x86_64", "n/a", "2026-08-08T00:01:00Z")
             history = json.loads(path.read_text(encoding="utf-8"))
-            self.assertEqual(history["candidates"][0]["evidence_status"]["artifact"], "artifact_stale")
+            self.assertEqual(history["candidates"][0]["evidence_status"]["artifact"], "artifact_available")
 
     def test_linux_matrix_selects_known_gfx_targets(self):
         history = {"candidates": [{

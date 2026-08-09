@@ -3,6 +3,7 @@ from html.parser import HTMLParser
 from pathlib import PurePosixPath
 from urllib.parse import unquote, urljoin, urlparse
 
+from packaging.version import InvalidVersion, Version
 
 PACKAGE_SEPARATOR = re.compile(r"[-_.]+")
 DEVICE_PACKAGE_PREFIXES = (
@@ -151,23 +152,10 @@ def parse_package_artifacts(html, base_url, package_name, platform="windows"):
 
 
 def version_key(version):
-    public, separator, local = version.partition("+")
-    match = re.fullmatch(r"(\d+(?:\.\d+)*)(?:(a|b|rc)(\d+))?(?:(?:\.|-)?(dev|post)(\d+))?", public)
-    if not match:
-        return ((-1,), -1, -1, (), version.lower())
-
-    release = tuple(int(part) for part in match.group(1).split("."))
-    pre_label = match.group(2)
-    pre_number = int(match.group(3) or 0)
-    phase_label = match.group(4)
-    phase_number = int(match.group(5) or 0)
-    pre_rank = {"a": 0, "b": 1, "rc": 2, None: 3}[pre_label]
-    phase_rank = {"dev": -1, None: 0, "post": 1}[phase_label]
-    local_parts = tuple(
-        (0, int(part)) if part.isdigit() else (1, part)
-        for part in re.findall(r"\d+|[a-z]+", local.lower())
-    )
-    return (release, pre_rank, pre_number, phase_rank, phase_number, local_parts)
+    try:
+        return Version(version)
+    except InvalidVersion:
+        return Version("0+invalid")
 
 
 def latest_version(artifacts):

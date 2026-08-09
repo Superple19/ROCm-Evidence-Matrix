@@ -2,6 +2,7 @@ import re
 from pathlib import Path
 
 from .simple_index import version_key
+from .source_adapter import monotonic_generated_at
 
 
 def _rocm_version(version):
@@ -86,13 +87,16 @@ def merge_extension_history(existing, observations, observed_at):
     latest = {}
     for item in records.values():
         key = (item["distribution_family"], item["extension"], item["platform"], item["channel"])
-        latest[key] = max(latest.get(key, ()), version_key(item["rocm_version"]))
+        current = latest.get(key)
+        version = version_key(item["rocm_version"])
+        if current is None or version > current:
+            latest[key] = version
     for item in records.values():
         key = (item["distribution_family"], item["extension"], item["platform"], item["channel"])
         item["lifecycle"] = "current" if version_key(item["rocm_version"]) == latest[key] else "historical"
     return {
         "schema_version": 1,
-        "generated_at": observed_at,
+        "generated_at": monotonic_generated_at(existing, observed_at),
         "sources": dict(existing.get("sources", {})),
         "extensions": sorted(records.values(), key=lambda item: (item["distribution_family"], item["extension"], item["platform"], item["channel"], version_key(item["rocm_version"]), version_key(item["version"]))),
     }

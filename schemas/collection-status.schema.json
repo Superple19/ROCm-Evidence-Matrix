@@ -15,7 +15,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["source_id", "url", "status", "observed_at", "error"],
+        "required": ["source_id", "status", "error"],
         "properties": {
           "source_id": {"type": "string"},
           "url": {"type": "string", "format": "uri"},

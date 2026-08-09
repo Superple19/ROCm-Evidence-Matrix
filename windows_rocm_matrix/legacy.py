@@ -6,7 +6,7 @@ from urllib.parse import unquote, urlparse
 from .documentation import parse_html_tables
 from .history import initial_evidence_status
 from .simple_index import normalize_package_name, parse_links, version_key
-from .source_adapter import run_source_adapter
+from .source_adapter import monotonic_generated_at, run_source_adapter
 
 
 STATUS = {"✅": "supported", "⚠️": "deprecated", "⚠": "deprecated", "❌": "unsupported"}
@@ -232,7 +232,7 @@ def collect_legacy_windows_sources(config, fetch_text, existing=None, observed_a
 
     document = {
         "schema_version": 1,
-        "generated_at": observed_at if passed else existing["generated_at"],
+        "generated_at": monotonic_generated_at(existing, observed_at) if passed else existing["generated_at"],
         "sources": {key: source_records[key] for key in sorted(source_records)},
         "hip_sdk_releases": sorted(collections["hip_sdk_releases"], key=lambda item: version_key(item["rocm_series"])),
         "hip_sdk_gpu_support": sorted(collections["hip_sdk_gpu_support"], key=lambda item: (version_key(item["rocm_series"]), item["gfx"], item["product"])),

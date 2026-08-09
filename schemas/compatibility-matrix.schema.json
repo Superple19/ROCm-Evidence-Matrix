@@ -22,7 +22,6 @@
             "type": "object",
             "additionalProperties": {
               "type": "object",
-              "required": ["release_support", "therock_status"],
               "properties": {
                 "release_support": {"type": ["object", "null"]},
                 "therock_status": {"type": ["object", "null"]}

@@ -80,6 +80,10 @@ def matrix_jobs(history, platform, channels, gfx=None, python_tag=None, limit=No
     return jobs
 
 
+def matrix_exit_code(records):
+    return 1 if any(record.get("result") == "failed" for record in records) else 0
+
+
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(description="Verify ROCm package candidates across a platform matrix.")
     parser.add_argument("--history", default="data/history.json")
@@ -112,12 +116,17 @@ def main(argv=None):
             break
     if not jobs:
         raise SystemExit("No known-GFX candidates match the requested matrix")
+    records = []
     for index, (candidate, gfx, python_tag, platform_tag) in enumerate(jobs, 1):
         print(f"[{index}/{len(jobs)}] Verifying {candidate['id']} for {gfx} and {python_tag}")
         record = verify_candidate(candidate, gfx, args.timeout, python_tag, platform_tag)
+        records.append(record)
         write_verification(record, args.output)
         update_history_evidence(args.history, candidate["id"], record["result"], gfx, python_tag, record["platform_tag"], record["id"], record["observed_at"], record.get("error"))
         print(f"    {record['result']}")
+    if matrix_exit_code(records):
+        failed = sum(record.get("result") == "failed" for record in records)
+        raise SystemExit(f"{failed} matrix verification job(s) failed")
 
 
 if __name__ == "__main__":

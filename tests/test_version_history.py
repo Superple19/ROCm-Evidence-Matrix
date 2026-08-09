@@ -127,6 +127,23 @@ class VersionHistoryTests(unittest.TestCase):
         self.assertEqual(by_id["therock:10.1.0"]["lifecycle"], "current")
         validate_version_history(history)
 
+    def test_lifecycle_is_scoped_to_platform(self):
+        history = merge_version_history(
+            None,
+            "therock",
+            [
+                release_record("therock", "7.14", OBSERVED_AT, platform="windows", channel="stable", source_ids=["source"]),
+                release_record("therock", "7.2.4", OBSERVED_AT, platform="linux", channel="stable", source_ids=["source"]),
+            ],
+            [],
+            {"source": {}},
+            OBSERVED_AT,
+        )
+        by_id = {item["id"]: item for item in history["releases"]}
+        self.assertEqual(by_id["therock:7.14"]["lifecycle"], "current")
+        self.assertEqual(by_id["therock:linux:7.2.4"]["lifecycle"], "current")
+        validate_version_history(history)
+
 
 if __name__ == "__main__":
     unittest.main()

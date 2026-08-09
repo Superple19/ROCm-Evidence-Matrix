@@ -6,7 +6,7 @@ from urllib.parse import urljoin
 
 from .documentation import parse_html_tables, parse_therock_windows_status
 from .simple_index import version_key
-from .source_adapter import run_source_adapter, utc_now
+from .source_adapter import monotonic_generated_at, run_source_adapter, utc_now
 
 
 def version_series(version):
@@ -199,12 +199,12 @@ def merge_version_history(existing, family, releases, gpu_support, sources, obse
     }
     latest = {}
     for item in records.values():
-        item_family = (item["distribution_family"], item["channel"])
+        item_family = (item["distribution_family"], item["platform"], item["channel"])
         version = version_key(item["version"])
         if item_family not in latest or version > latest[item_family]:
             latest[item_family] = version
     for item in records.values():
-            item["lifecycle"] = "current" if version_key(item["version"]) == latest[(item["distribution_family"], item["channel"])] else "historical"
+            item["lifecycle"] = "current" if version_key(item["version"]) == latest[(item["distribution_family"], item["platform"], item["channel"])] else "historical"
     updated_gpu_versions = {item["version"] for item in gpu_support}
     existing_gpu = [
         item
@@ -215,7 +215,7 @@ def merge_version_history(existing, family, releases, gpu_support, sources, obse
     merged_sources.update(sources)
     return {
         "schema_version": 1,
-        "generated_at": observed_at,
+        "generated_at": monotonic_generated_at(existing, observed_at),
         "sources": {key: merged_sources[key] for key in sorted(merged_sources)},
         "releases": sorted(records.values(), key=lambda item: (item["distribution_family"], version_key(item["version"]))),
         "therock_gpu_support": sorted(existing_gpu + gpu_support, key=lambda item: (version_key(item["version"]), item["gfx"])),

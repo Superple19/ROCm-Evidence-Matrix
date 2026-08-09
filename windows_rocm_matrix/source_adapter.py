@@ -5,6 +5,11 @@ def utc_now():
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
+def monotonic_generated_at(existing, observed_at):
+    values = [value for value in (existing.get("generated_at") if existing else None, observed_at) if value]
+    return max(values) if values else utc_now()
+
+
 def run_source_adapter(source, collect, observed_at=None):
     observed_at = observed_at or utc_now()
     try:
