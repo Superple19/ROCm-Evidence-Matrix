@@ -48,6 +48,10 @@ def normalized_command(candidate, gfx, python_tag=None, platform_tag=None):
 
 
 def default_platform_tag(candidate):
+    if candidate.get("distribution_family") == "legacy" and candidate.get("platform") == "linux":
+        urls = candidate.get("wheel_urls", [])
+        if any("linux_x86_64" in url for url in urls):
+            return "linux_x86_64"
     return {
         "linux": "manylinux_2_28_x86_64",
         "windows": "win_amd64",
@@ -96,8 +100,17 @@ def resolved_packages(report):
 
 
 def error_summary(output):
+    if isinstance(output, bytes):
+        output = output.decode(errors="replace")
     lines = [line.strip() for line in output.splitlines() if line.strip()]
     return "\n".join(lines[-20:]) or None
+
+
+def combined_process_output(*values):
+    return "\n".join(
+        value.decode(errors="replace") if isinstance(value, bytes) else (value or "")
+        for value in values
+    )
 
 
 def virtualenv_python(root, host_os=None):
@@ -105,6 +118,21 @@ def virtualenv_python(root, host_os=None):
     host_os = host_os or os.name
     relative = Path("Scripts") / "python.exe" if host_os == "nt" else Path("bin") / "python"
     return Path(root) / relative
+
+
+def create_disposable_environment(root):
+    try:
+        import ensurepip
+    except ModuleNotFoundError:
+        subprocess.run([sys.executable, "-m", "virtualenv", str(root)], check=True, capture_output=True, text=True)
+        return
+    try:
+        venv.EnvBuilder(with_pip=True).create(root)
+    except (OSError, RuntimeError, subprocess.CalledProcessError, SystemExit) as error:
+        try:
+            subprocess.run([sys.executable, "-m", "virtualenv", str(root)], check=True, capture_output=True, text=True)
+        except (OSError, subprocess.CalledProcessError) as fallback_error:
+            raise error from fallback_error
 
 
 def merge_verification(existing, observation):
@@ -131,6 +159,7 @@ def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None
         "source_id": candidate["source_id"],
         "gfx": gfx,
         "platform": candidate.get("platform", "windows"),
+        "host_platform": host_platform(),
         "python_tag": python_tag,
         "python_version": ".".join(str(part) for part in sys.version_info[:3]),
         "platform_tag": platform_tag or sysconfig.get_platform().replace("-", "_").replace(".", "_"),
@@ -147,14 +176,9 @@ def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None
         "resolved_packages": [],
         "error": None,
     }
-    if candidate.get("distribution_family") == "legacy" and candidate.get("platform") != host_platform():
-        record["result"] = "not_applicable"
-        record["error"] = f"Legacy {candidate.get('platform')} wheels require a {candidate.get('platform')} verification host"
-        return record
-
     with tempfile.TemporaryDirectory(prefix="windows-rocm-verify-") as directory:
         root = Path(directory)
-        venv.EnvBuilder(with_pip=True).create(root)
+        create_disposable_environment(root)
         python = virtualenv_python(root)
         pip_version = subprocess.run(
             [python, "-m", "pip", "--version"],
@@ -181,7 +205,7 @@ def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None
             else:
                 record["error"] = error_summary(completed.stdout + "\n" + completed.stderr)
         except subprocess.TimeoutExpired as error:
-            output = (error.stdout or "") + "\n" + (error.stderr or "")
+            output = combined_process_output(error.stdout, error.stderr)
             record["error"] = error_summary(output) or f"Resolver timed out after {timeout} seconds"
     return record
 

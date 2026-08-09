@@ -22,6 +22,7 @@
           "distribution_family": {"enum": ["therock", "legacy"]},
           "gfx": {"type": ["string", "null"], "pattern": "^gfx[0-9a-z]+$"},
           "platform": {"enum": ["windows", "linux", "macos", "unknown"]},
+          "host_platform": {"enum": ["windows", "linux", "macos", "unknown"]},
           "python_tag": {"type": "string", "pattern": "^cp[0-9]+$"},
           "python_version": {"type": "string"},
           "platform_tag": {"type": "string"},

@@ -248,7 +248,7 @@
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
-        "resolver": "not_applicable",
+        "resolver": "resolver_failed",
         "runtime": "not_collected"
       },
       "first_observed_at": "2026-08-08T10:15:14Z",
@@ -273,6 +273,39 @@
           "result": "not_applicable",
           "snapshot_observed_at": "2026-08-08T10:15:14Z",
           "verification_id": "legacy:linux:stable:7.2.4:2.10.0+rocm7.2.4.lw.git3d3aa833:0.25.0+rocm7.2.4.git82df5f59:2.10.0+rocm7.2.4.git5047768f:cp312:unknown:cp312:manylinux_2_28_x86_64:2026-08-09T00:31:54Z:e90327607442"
+        },
+        {
+          "candidate_hash": "8029396c1362f17072964a74fa61d81f2e77cac662988fe96a721de53f5e81dd",
+          "error": "ERROR: torch-2.10.0+rocm7.2.4.lw.git3d3aa833-cp312-cp312-linux_x86_64.whl is not a supported wheel on this platform.",
+          "gfx": null,
+          "observed_at": "2026-08-09T00:48:34Z",
+          "platform_tag": "manylinux_2_28_x86_64",
+          "python_tag": "cp312",
+          "result": "failed",
+          "snapshot_observed_at": "2026-08-08T10:15:14Z",
+          "verification_id": "legacy:linux:stable:7.2.4:2.10.0+rocm7.2.4.lw.git3d3aa833:0.25.0+rocm7.2.4.git82df5f59:2.10.0+rocm7.2.4.git5047768f:cp312:unknown:cp312:manylinux_2_28_x86_64:2026-08-09T00:48:34Z:a5440460f65b"
+        },
+        {
+          "candidate_hash": "8029396c1362f17072964a74fa61d81f2e77cac662988fe96a721de53f5e81dd",
+          "error": "ERROR: torch-2.10.0+rocm7.2.4.lw.git3d3aa833-cp312-cp312-linux_x86_64.whl is not a supported wheel on this platform.",
+          "gfx": null,
+          "observed_at": "2026-08-09T00:52:38Z",
+          "platform_tag": "manylinux_2_28_x86_64",
+          "python_tag": "cp312",
+          "result": "failed",
+          "snapshot_observed_at": "2026-08-08T10:15:14Z",
+          "verification_id": "legacy:linux:stable:7.2.4:2.10.0+rocm7.2.4.lw.git3d3aa833:0.25.0+rocm7.2.4.git82df5f59:2.10.0+rocm7.2.4.git5047768f:cp312:unknown:cp312:manylinux_2_28_x86_64:2026-08-09T00:52:38Z:c26e2c7ef554"
+        },
+        {
+          "candidate_hash": "8273558e70ef9fbaf1c2b715dceaf41ffc2112f5ce0809df4e43affbe07692b4",
+          "error": "Collecting torch==2.10.0+rocm7.2.4.lw.git3d3aa833\nDownloading torch-2.10.0%2Brocm7.2.4.lw.git3d3aa833-cp312-cp312-linux_x86_64.whl (1647.4 MB)",
+          "gfx": null,
+          "observed_at": "2026-08-09T00:56:25Z",
+          "platform_tag": "linux_x86_64",
+          "python_tag": "cp312",
+          "result": "failed",
+          "snapshot_observed_at": "2026-08-08T10:15:14Z",
+          "verification_id": "legacy:linux:stable:7.2.4:2.10.0+rocm7.2.4.lw.git3d3aa833:0.25.0+rocm7.2.4.git82df5f59:2.10.0+rocm7.2.4.git5047768f:cp312:unknown:cp312:linux_x86_64:2026-08-09T00:56:25Z:7fa96868853a"
         }
       ],
       "rocm_version": "7.2.4",

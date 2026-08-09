@@ -5,7 +5,7 @@ from pathlib import Path
 import json
 import tempfile
 
-from windows_rocm_matrix.verify import candidate_hash, default_platform_tag, install_arguments_for_candidate, merge_verification, normalized_command, resolved_packages, update_history_evidence, virtualenv_python
+from windows_rocm_matrix.verify import candidate_hash, combined_process_output, default_platform_tag, error_summary, install_arguments_for_candidate, merge_verification, normalized_command, resolved_packages, update_history_evidence, virtualenv_python
 from windows_rocm_matrix.verify_matrix import DEFAULT_CHANNELS, completed_job_keys, matrix_exit_code, matrix_job_key, matrix_jobs, parse_args as matrix_parse_args
 from windows_rocm_matrix.resolve import parse_args
 
@@ -109,6 +109,10 @@ class VerificationTests(unittest.TestCase):
         self.assertEqual(packages[0]["name"], "torch")
         self.assertEqual(packages[0]["sha256"], "abc")
 
+    def test_normalizes_timeout_output_bytes(self):
+        output = combined_process_output(b"first", "second")
+        self.assertEqual(error_summary(output), "first\nsecond")
+
     def test_appends_verification_evidence(self):
         record = {"id": "one", "observed_at": "2026-08-07T00:00:00Z"}
 
@@ -127,6 +131,15 @@ class VerificationTests(unittest.TestCase):
     def test_uses_candidate_platform_for_cross_platform_dry_run(self):
         candidate = {"id": "candidate", "platform": "linux", "source_id": "packages-stable-linux", "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0", "rocm_version": "7.14.0"}
         self.assertEqual(default_platform_tag(candidate), "manylinux_2_28_x86_64")
+
+    def test_cross_platform_resolver_uses_target_platform_tag(self):
+        candidate = {"id": "candidate", "distribution_family": "legacy", "platform": "linux", "source_id": "legacy-linux-artifacts", "wheel_urls": ["https://example.test/torch.whl"], "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0", "rocm_version": "7.14.0"}
+        self.assertEqual(default_platform_tag(candidate), "manylinux_2_28_x86_64")
+        command = normalized_command(candidate, None, "cp312", "manylinux_2_28_x86_64")
+        self.assertIn("manylinux_2_28_x86_64", command)
+
+        linux_wheel = {**candidate, "wheel_urls": ["https://example.test/torch-cp312-cp312-linux_x86_64.whl"]}
+        self.assertEqual(default_platform_tag(linux_wheel), "linux_x86_64")
 
     def test_uses_host_virtualenv_layout(self):
         self.assertEqual(virtualenv_python("/tmp/env", "nt").as_posix(), "/tmp/env/Scripts/python.exe")
