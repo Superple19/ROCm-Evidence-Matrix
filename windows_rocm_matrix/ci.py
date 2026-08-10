@@ -20,6 +20,27 @@ def _json(text):
     return value
 
 
+def _page_url(url, page):
+    separator = "&" if "?" in url else "?"
+    if "per_page=" not in url:
+        url = f"{url}{separator}per_page=100"
+        separator = "&"
+    return url if page == 1 else f"{url}{separator}page={page}"
+
+
+def _collect_pages(reader, url, key, max_pages=10):
+    values = []
+    for page in range(1, max_pages + 1):
+        payload = _json(reader(_page_url(url, page)))
+        page_values = payload.get(key, [])
+        if not isinstance(page_values, list):
+            raise ValueError(f"GitHub API field is not a list: {key}")
+        values.extend(page_values)
+        if len(page_values) < 100:
+            return values
+    raise ValueError(f"GitHub API pagination exceeded {max_pages} pages: {url}")
+
+
 def _state(status, conclusion):
     if status in {"queued", "in_progress"}:
         return status
@@ -155,17 +176,21 @@ def build_evidence(github_records, hud_records, existing=None, observed_at=None,
 
 
 def collect_github(source_config, reader, observed_at):
-    workflows = _json(reader(source_config["workflows"]["url"])).get("workflows", [])
+    workflows = _collect_pages(reader, source_config["workflows"]["url"], "workflows")
     records = []
     selected_workflows = [workflow for workflow in workflows if ("windows" in workflow.get("path", "").lower() or "multi_arch" in workflow.get("path", "").lower() or "pytorch" in workflow.get("path", "").lower() or "rocm_wheels" in workflow.get("path", "").lower() or "artifacts" in workflow.get("path", "").lower())]
-    for workflow in selected_workflows[:20]:
+    if len(selected_workflows) > 20:
+        raise ValueError("GitHub workflow coverage exceeded the bounded 20-workflow limit")
+    for workflow in selected_workflows:
         path = workflow.get("path", "")
         if not ("windows" in path.lower() or "multi_arch" in path.lower() or "pytorch" in path.lower() or "rocm_wheels" in path.lower() or "artifacts" in path.lower()):
             continue
         runs_url = source_config["runs_api"].format(workflow_id=workflow["id"])
-        runs = _json(reader(runs_url)).get("workflow_runs", [])
-        for run in runs[:20]:
-            jobs = _json(reader(source_config["jobs_api"].format(run_id=run["id"]))).get("jobs", [])
+        runs = _collect_pages(reader, runs_url, "workflow_runs")
+        if len(runs) > 200:
+            raise ValueError(f"GitHub workflow run coverage exceeded the bounded 200-run limit: {workflow['id']}")
+        for run in runs[:200]:
+            jobs = _collect_pages(reader, source_config["jobs_api"].format(run_id=run["id"]), "jobs")
             records.extend(_github_record(run, job, observed_at, workflow) for job in jobs if _platform(job.get("name"), job.get("labels")) == "windows")
     return records
 

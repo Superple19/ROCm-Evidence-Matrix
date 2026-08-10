@@ -19,6 +19,7 @@ from .render import write_rendered_document
 from .simple_index import discover_gfx_targets, discover_packages, latest_artifacts, package_names_for_target, parse_package_artifacts
 from .source_cache import CachedSourceReader, SourceCache
 from .source_adapter import collection_status, run_source_adapter, utc_now
+from .persistence import atomic_write_json, atomic_write_text
 from .validation import validate_ci_coverage, validate_ci_evidence, validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_history, validate_legacy_linux, validate_legacy_windows, validate_snapshot, validate_version_history
 from .version_history import collect_legacy_version_history, collect_therock_version_history, render_version_history
 
@@ -150,9 +151,7 @@ def write_snapshot(snapshot, path):
 
 
 def write_json(value, path):
-    path = Path(path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    atomic_write_json(value, path)
 
 
 def add_config_path(parser):
@@ -627,18 +626,18 @@ def render_outputs(args):
     write_compatibility_document(matrix, args.matrix_docs_output)
     legacy_path = Path(args.legacy_docs_output)
     legacy_path.parent.mkdir(parents=True, exist_ok=True)
-    legacy_path.write_text(render_legacy_windows(legacy), encoding="utf-8", newline="\n")
+    atomic_write_text(legacy_path, render_legacy_windows(legacy))
     legacy_linux = read_json(args.legacy_linux_output)
     if legacy_linux is not None:
         legacy_linux_path = Path(args.legacy_linux_docs_output)
         legacy_linux_path.parent.mkdir(parents=True, exist_ok=True)
-        legacy_linux_path.write_text(render_legacy_linux(legacy_linux), encoding="utf-8", newline="\n")
+        atomic_write_text(legacy_linux_path, render_legacy_linux(legacy_linux))
     version_history_path = Path(args.version_history_docs_output)
     version_history_path.parent.mkdir(parents=True, exist_ok=True)
-    version_history_path.write_text(render_version_history(version_history), encoding="utf-8", newline="\n")
-    Path("docs/generated/framework-history.md").write_text(render_framework_history(framework_history), encoding="utf-8", newline="\n")
-    Path("docs/generated/sdk-components.md").write_text(render_sdk_components(sdk_components), encoding="utf-8", newline="\n")
-    Path("docs/generated/extension-history.md").write_text(render_extension_history(extension_history), encoding="utf-8", newline="\n")
+    atomic_write_text(version_history_path, render_version_history(version_history))
+    atomic_write_text("docs/generated/framework-history.md", render_framework_history(framework_history))
+    atomic_write_text("docs/generated/sdk-components.md", render_sdk_components(sdk_components))
+    atomic_write_text("docs/generated/extension-history.md", render_extension_history(extension_history))
     paths = (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output, args.version_history_docs_output, "docs/generated/framework-history.md", "docs/generated/sdk-components.md", "docs/generated/extension-history.md")
     if legacy_linux is not None:
         paths += (args.legacy_linux_docs_output,)
@@ -648,9 +647,12 @@ def render_outputs(args):
 
 def build_outputs(args):
     integrate_outputs(args)
+    snapshot_paths = sorted(Path(args.output_dir).glob("*.json"))
+    snapshot_times = [read_json(path)["last_observed_at"] for path in snapshot_paths]
+    observed_at = max(snapshot_times) if snapshot_times else utc_now()
     framework_path, components_path, extension_path = auxiliary_paths(args)
-    rebuild_auxiliary_outputs(args.output_dir, framework_path, components_path, utc_now(), read_json, write_json)
-    rebuild_extension_history(args.output_dir, extension_path, utc_now(), read_json, write_json, read_json(args.history_output))
+    rebuild_auxiliary_outputs(args.output_dir, framework_path, components_path, observed_at, read_json, write_json)
+    rebuild_extension_history(args.output_dir, extension_path, observed_at, read_json, write_json, read_json(args.history_output))
     history = read_json(args.history_output)
     ci_evidence = read_json(args.ci_evidence_output)
     documentation = read_json(args.documentation_output)

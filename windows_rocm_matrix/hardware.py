@@ -5,8 +5,11 @@ import platform
 import time
 from pathlib import Path
 
+from .identity import candidate_hash, default_platform_tag, python_tag, rocm_version_from_torch
 from .runtime import environment_evidence, normalized_os, utc_now
 from .history import promote_execution_evidence
+from .persistence import atomic_write_json
+from .source_adapter import monotonic_generated_at
 from .validation import validate_hardware_verifications
 
 
@@ -26,6 +29,10 @@ def collect_hardware(torch_module, observed_at=None, candidate_id=None, gfx=None
         "environment": environment_evidence(),
         "torch_version": getattr(torch_module, "__version__", None),
         "hip_version": getattr(getattr(torch_module, "version", None), "hip", None),
+        "rocm_version": rocm_version_from_torch(getattr(torch_module, "__version__", None)),
+        "python_tag": python_tag(),
+        "platform_tag": None,
+        "candidate_hash": None,
         "operation": "2x2 float32 GPU matmul with synchronization",
         "command": "torch.ones((2, 2), device='cuda') @ torch.ones((2, 2), device='cuda'); torch.cuda.synchronize()",
         "device": None,
@@ -44,6 +51,8 @@ def collect_hardware(torch_module, observed_at=None, candidate_id=None, gfx=None
         if arch is not None:
             record["device"]["gcnArchName"] = str(arch)
             record["device"]["gfx"] = str(arch)
+            if record["gfx"] is None:
+                record["gfx"] = record["device"]["gfx"]
         started = time.perf_counter()
         left = torch_module.ones((2, 2), device="cuda", dtype=torch_module.float32)
         right = torch_module.ones((2, 2), device="cuda", dtype=torch_module.float32)
@@ -61,8 +70,14 @@ def collect_hardware(torch_module, observed_at=None, candidate_id=None, gfx=None
 
 def merge_hardware(existing, record):
     records = list((existing or {}).get("verifications", []))
-    records.append(record)
-    return {"schema_version": 1, "generated_at": record["observed_at"], "verifications": records}
+    known = {item.get("id") for item in records}
+    if record.get("id") not in known:
+        records.append(record)
+    return {
+        "schema_version": 1,
+        "generated_at": monotonic_generated_at(existing, record["observed_at"]),
+        "verifications": records,
+    }
 
 
 def write_hardware(record, output_path):
@@ -70,8 +85,7 @@ def write_hardware(record, output_path):
     existing = json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
     document = merge_hardware(existing, record)
     validate_hardware_verifications(document)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(document, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    atomic_write_json(document, path)
 
 
 def parse_args(argv=None):
@@ -92,6 +106,11 @@ def main(argv=None):
     record = collect_hardware(torch, candidate_id=args.candidate_id, gfx=args.gfx)
     promotion_errors = []
     if args.candidate_id:
+        history = json.loads(Path(args.history).read_text(encoding="utf-8"))
+        candidate = next((item for item in history.get("candidates", []) if item.get("id") == args.candidate_id), None)
+        if candidate is not None:
+            record["platform_tag"] = default_platform_tag(candidate)
+            record["candidate_hash"] = candidate_hash(candidate, record.get("gfx"), record["python_tag"], record["platform_tag"])
         matched, promotion_errors = promote_execution_evidence(args.history, "hardware", record, args.gfx)
         record["candidate_match"] = matched
         record["candidate_errors"] = promotion_errors or None

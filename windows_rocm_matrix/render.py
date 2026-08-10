@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+from .persistence import atomic_write_text
+
 from .simple_index import gfx_key, latest_version, package_names_for_target
 
 
@@ -82,5 +84,4 @@ def render_snapshots(snapshot_paths):
 
 def write_rendered_document(snapshot_paths, output_path):
     output_path = Path(output_path)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(render_snapshots(snapshot_paths), encoding="utf-8", newline="\n")
+    atomic_write_text(output_path, render_snapshots(snapshot_paths))

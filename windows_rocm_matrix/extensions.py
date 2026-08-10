@@ -83,7 +83,7 @@ def merge_extension_history(existing, observations, observed_at):
             records[item["id"]] = {**item, "first_observed_at": observed_at, "last_observed_at": observed_at}
         else:
             current.update({key: value for key, value in item.items() if key not in {"id", "first_observed_at"}})
-            current["last_observed_at"] = observed_at
+            current["last_observed_at"] = max(current.get("last_observed_at", observed_at), observed_at)
     latest = {}
     for item in records.values():
         key = (item["distribution_family"], item["extension"], item["platform"], item["channel"])

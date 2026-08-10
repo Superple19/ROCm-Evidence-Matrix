@@ -7,10 +7,12 @@ instead of assuming a fixed list of files. Regenerate it with:
 rocm-matrix catalog
 ```
 
-The catalog lists each machine-readable artifact, its schema, and its schema
-version. Consumers must reject an unknown `schema_version` or ignore fields
-they do not understand. Generated Markdown is presentation output and is not a
-stable API.
+The catalog lists each committed core artifact, standalone CI/status evidence,
+its schema, and its schema version. Local runtime, hardware, and resolver
+outputs remain machine-local evidence and are listed only when a reviewed copy
+is intentionally committed. Consumers must reject an unknown `schema_version`
+or ignore fields they do not understand. Generated Markdown is presentation
+output and is not a stable API.
 
 ## Stable dimensions
 
@@ -59,6 +61,9 @@ evidence.
   include their platform to avoid collisions.
 - Evidence records are append-only where their schema says so. A generated
   view may be replaced without changing the underlying observation identity.
+- Runtime and hardware records linked to a candidate include a candidate hash,
+  target platform tag, Python tag, Torch/ROCm identity, and observed GFX. A
+  record missing those bindings must not promote candidate status.
 - Runtime and hardware records use the same normalized `os` values: `windows`,
   `linux`, `macos`, or `unknown`.
 - Candidate `hip_version` may be `null` when package metadata does not expose

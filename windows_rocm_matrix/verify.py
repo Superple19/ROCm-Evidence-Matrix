@@ -1,5 +1,4 @@
 import argparse
-import hashlib
 import json
 import os
 import subprocess
@@ -12,6 +11,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .resolve import host_platform, install_arguments, resolve_candidates
+from .identity import candidate_hash, default_platform_tag
 from .source_adapter import monotonic_generated_at
 from .validation import validate_history, validate_resolver_verifications
 
@@ -47,18 +47,6 @@ def normalized_command(candidate, gfx, python_tag=None, platform_tag=None):
     return ["python", "-m", "pip", *verification_arguments(candidate, gfx, "<report.json>", python_tag, platform_tag)]
 
 
-def default_platform_tag(candidate):
-    if candidate.get("distribution_family") == "legacy" and candidate.get("platform") == "linux":
-        urls = candidate.get("wheel_urls", [])
-        if any("linux_x86_64" in url for url in urls):
-            return "linux_x86_64"
-    return {
-        "linux": "manylinux_2_28_x86_64",
-        "windows": "win_amd64",
-        "macos": "macosx_11_0_x86_64",
-    }.get(candidate.get("platform", "windows"))
-
-
 def install_arguments_for_candidate(candidate, gfx):
     if candidate.get("distribution_family", "therock") == "therock":
         return install_arguments(candidate, gfx)
@@ -66,19 +54,6 @@ def install_arguments_for_candidate(candidate, gfx):
     if not urls:
         raise ValueError("Legacy resolver candidates must provide direct wheel_urls")
     return ["install", "--index-url", "https://pypi.org/simple", *urls]
-
-
-def candidate_hash(candidate, gfx, python_tag, platform_tag=None):
-    identity = {
-        "distribution_family": candidate.get("distribution_family", "therock"),
-        "source_id": candidate.get("source_id"),
-        "gfx": gfx,
-        "python_tag": python_tag,
-        "platform_tag": platform_tag,
-        "packages": {name: candidate.get(name) for name in ("rocm_version", "torch_version", "torchvision_version", "torchaudio_version")},
-        "wheel_urls": sorted(candidate.get("wheel_urls", [])),
-    }
-    return hashlib.sha256(json.dumps(identity, sort_keys=True).encode("utf-8")).hexdigest()
 
 
 def resolved_packages(report):
@@ -180,12 +155,9 @@ def append_verification_log(record, log_path):
 
 
 def write_json_document(document, path, validator):
-    path = Path(path)
-    path.parent.mkdir(parents=True, exist_ok=True)
     validator(document)
-    temporary = path.with_name(f".{path.name}.{os.getpid()}.tmp")
-    temporary.write_text(json.dumps(document, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
-    temporary.replace(path)
+    from .persistence import atomic_write_json
+    atomic_write_json(document, path)
 
 
 def write_history_document(history, history_path):

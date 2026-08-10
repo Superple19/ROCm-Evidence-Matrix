@@ -5,7 +5,56 @@
   "properties": {
     "schema_version": {"const": 1},
     "generated_at": {"type": "string", "pattern": "Z$"},
-    "executions": {"type": "array"},
-    "adapter_failures": {"type": "array"}
+    "executions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "source", "platform", "targets", "test_kind", "run_attempt", "observations"],
+        "properties": {
+          "id": {"type": "string"},
+          "source": {"enum": ["github_actions", "therock_hud"]},
+          "workflow_id": {"type": ["integer", "null"]},
+          "workflow_name": {"type": ["string", "null"]},
+          "run_id": {"type": ["integer", "null"]},
+          "run_attempt": {"type": "integer", "minimum": 1},
+          "job_id": {"type": ["integer", "null"]},
+          "job_name": {"type": ["string", "null"]},
+          "head_sha": {"type": ["string", "null"]},
+          "platform": {"enum": ["windows", "linux", "unknown"]},
+          "targets": {"type": "array", "items": {"type": "string"}},
+          "test_kind": {"enum": ["build", "sanity", "framework", "full", "unknown"]},
+          "url": {"type": ["string", "null"], "format": "uri"},
+          "observations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["state", "observed_at"],
+              "properties": {
+                "state": {"enum": ["queued", "in_progress", "success", "failure", "cancelled", "skipped", "timed_out", "unknown"]},
+                "run_status": {"type": ["string", "null"]},
+                "conclusion": {"type": ["string", "null"]},
+                "created_at": {"type": ["string", "null"], "format": "date-time"},
+                "run_started_at": {"type": ["string", "null"], "format": "date-time"},
+                "started_at": {"type": ["string", "null"], "format": "date-time"},
+                "completed_at": {"type": ["string", "null"], "format": "date-time"},
+                "observed_at": {"type": "string", "format": "date-time"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "adapter_failures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["adapter", "error", "observed_at"],
+        "properties": {
+          "adapter": {"type": "string"},
+          "error": {"type": "string"},
+          "observed_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    }
   }
 }

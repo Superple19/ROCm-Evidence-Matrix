@@ -250,8 +250,10 @@ def validate_history(history):
                 raise ValueError(f"Unknown GFX support cannot have available targets: {candidate['id']}" )
         elif candidate["artifact_available"] != bool(candidate["available_gfx_targets"]):
             raise ValueError(f"Incorrect artifact availability for {candidate['id']}")
+        if candidate["artifact_available"] and evidence["artifact"] != "artifact_available":
+            raise ValueError(f"Available artifact has inconsistent evidence status: {candidate['id']}")
         if not candidate["artifact_available"] and evidence["artifact"] == "artifact_available":
-            raise ValueError(f"Artifact status disagrees with availability: {candidate['id']}")
+            raise ValueError(f"Unavailable artifact has available evidence status: {candidate['id']}")
         if not candidate["python_tags"]:
             raise ValueError(f"Missing Python tags for {candidate['id']}")
         key = (candidate["distribution_family"], candidate["platform"], candidate["channel"])
@@ -272,6 +274,9 @@ def validate_resolver_verifications(document):
         raise ValueError("Resolver verification generation time must be UTC")
     ids = set()
     for record in document.get("verifications", []):
+        required = {"id", "observed_at", "os", "result", "rocm_available", "device_count", "devices"}
+        if not required.issubset(record):
+            raise ValueError(f"Runtime verification lacks required fields: {record.get('id', 'unknown')}")
         if record["id"] in ids:
             raise ValueError(f"Duplicate resolver verification: {record['id']}")
         ids.add(record["id"])
@@ -303,6 +308,9 @@ def validate_runtime_verifications(document):
         raise ValueError("Runtime verification generation time must be UTC")
     ids = set()
     for record in document.get("verifications", []):
+        required = {"id", "observed_at", "os", "result", "rocm_available", "device_count", "devices"}
+        if not required.issubset(record):
+            raise ValueError(f"Runtime verification lacks required fields: {record.get('id', 'unknown')}")
         if record["id"] in ids:
             raise ValueError(f"Duplicate runtime verification: {record['id']}")
         ids.add(record["id"])
@@ -321,6 +329,9 @@ def validate_hardware_verifications(document):
         raise ValueError("Hardware verification generation time must be UTC")
     ids = set()
     for record in document.get("verifications", []):
+        required = {"id", "observed_at", "os", "result", "correct", "device"}
+        if not required.issubset(record):
+            raise ValueError(f"Hardware verification lacks required fields: {record.get('id', 'unknown')}")
         if record["id"] in ids:
             raise ValueError(f"Duplicate hardware verification: {record['id']}")
         ids.add(record["id"])

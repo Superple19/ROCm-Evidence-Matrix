@@ -89,6 +89,36 @@
       "path": "data/version-history.json",
       "schema": "schemas/version-history.schema.json",
       "schema_version": 1
+    },
+    {
+      "id": "ci_coverage",
+      "path": "data/ci-coverage.json",
+      "schema": "schemas/ci-coverage.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "ci_evidence",
+      "path": "data/ci-evidence.json",
+      "schema": "schemas/ci-evidence.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "source_manifest",
+      "path": "data/observations/source-manifest.json",
+      "schema": "schemas/source-manifest.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "collection_status:legacy",
+      "path": "data/status/legacy.json",
+      "schema": "schemas/collection-status.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "collection_status:therock",
+      "path": "data/status/therock.json",
+      "schema": "schemas/collection-status.schema.json",
+      "schema_version": 1
     }
   ],
   "dimensions": {
@@ -106,6 +136,6 @@
       "windows"
     ]
   },
-  "generated_at": "2026-08-09T03:13:13Z",
+  "generated_at": "2026-08-10T06:48:24Z",
   "schema_version": 1
 }

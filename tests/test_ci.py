@@ -1,6 +1,6 @@
 import unittest
 
-from windows_rocm_matrix.ci import build_evidence, parse_matrix
+from windows_rocm_matrix.ci import build_evidence, collect_github, parse_matrix
 from windows_rocm_matrix.validation import validate_ci_coverage, validate_ci_evidence
 
 
@@ -31,6 +31,28 @@ class CITests(unittest.TestCase):
         document = build_evidence([], [], existing=existing, observed_at="2026-08-08T00:01:00Z", failures=[{"adapter": "github_actions", "error": "rate limited", "observed_at": "2026-08-08T00:01:00Z"}])
         self.assertEqual([item["id"] for item in document["executions"]], ["old"])
         self.assertEqual(document["adapter_failures"][0]["adapter"], "github_actions")
+
+    def test_github_collection_reads_bounded_api_pages(self):
+        config = {
+            "workflows": {"url": "https://api.example.test/workflows?per_page=100"},
+            "runs_api": "https://api.example.test/workflows/{workflow_id}/runs?per_page=100",
+            "jobs_api": "https://api.example.test/actions/runs/{run_id}/jobs",
+        }
+
+        def reader(url):
+            if url == config["workflows"]["url"]:
+                return '{"workflows": [{"id": 1, "path": ".github/workflows/windows.yml", "name": "Windows"}]}'
+            if "workflows/1/runs" in url:
+                return '{"workflow_runs": [{"id": 2, "workflow_id": 1, "run_attempt": 1, "status": "completed", "head_sha": "' + "a" * 40 + '", "created_at": "2026-08-08T00:00:00Z"}]}'
+            if "actions/runs/2/jobs" in url:
+                return '{"jobs": [{"id": 3, "name": "Build gfx1201", "labels": ["windows"], "status": "completed", "conclusion": "success", "html_url": "https://example.test/job/3", "started_at": "2026-08-08T00:00:00Z", "completed_at": "2026-08-08T00:01:00Z"}]}'
+            if "page=2" in url:
+                return '{"workflows": [], "workflow_runs": [], "jobs": []}'
+            raise AssertionError(url)
+
+        records = collect_github(config, reader, "2026-08-08T00:02:00Z")
+        self.assertEqual(len(records), 1)
+        self.assertEqual(records[0]["targets"], ["gfx1201"])
 
 
 if __name__ == "__main__":

@@ -354,7 +354,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -462,7 +462,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "resolver_failed",
@@ -657,7 +657,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -778,7 +778,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "resolver_failed",
@@ -941,7 +941,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "resolver_failed",
@@ -25056,7 +25056,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -25665,7 +25665,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -26274,7 +26274,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -26883,7 +26883,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -27492,7 +27492,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -28279,7 +28279,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -28892,7 +28892,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -29505,7 +29505,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -30118,7 +30118,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -30731,7 +30731,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -31611,7 +31611,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -32309,7 +32309,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -33007,7 +33007,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -33705,7 +33705,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -34403,7 +34403,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -35012,7 +35012,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -35535,7 +35535,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -36056,7 +36056,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -36579,7 +36579,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -37100,7 +37100,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -37798,7 +37798,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -38496,7 +38496,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -39194,7 +39194,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -39892,7 +39892,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -40590,7 +40590,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -41377,7 +41377,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -42075,7 +42075,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -42773,7 +42773,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -43471,7 +43471,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -44169,7 +44169,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -44956,7 +44956,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -45654,7 +45654,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -46352,7 +46352,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -47050,7 +47050,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -47748,7 +47748,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -48535,7 +48535,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -49233,7 +49233,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -49931,7 +49931,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -50629,7 +50629,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -51327,7 +51327,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -52292,7 +52292,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -52901,7 +52901,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -53510,7 +53510,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -54119,7 +54119,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -54728,7 +54728,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -55426,7 +55426,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -56035,7 +56035,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -56644,7 +56644,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -57253,7 +57253,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -57862,7 +57862,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -58559,7 +58559,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -59168,7 +59168,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -59777,7 +59777,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -60386,7 +60386,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -60995,7 +60995,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -61693,7 +61693,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -62217,7 +62217,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -62741,7 +62741,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -63265,7 +63265,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -63789,7 +63789,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -64402,7 +64402,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -65011,7 +65011,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -65620,7 +65620,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -66229,7 +66229,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -66838,7 +66838,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -67536,7 +67536,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -68145,7 +68145,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -68754,7 +68754,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -69363,7 +69363,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -69972,7 +69972,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -70670,7 +70670,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -71279,7 +71279,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -71888,7 +71888,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -72497,7 +72497,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -73106,7 +73106,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -73803,7 +73803,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -73982,7 +73982,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -74161,7 +74161,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -74340,7 +74340,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -74519,7 +74519,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -74787,7 +74787,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -74966,7 +74966,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -75145,7 +75145,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -75324,7 +75324,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -75503,7 +75503,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -75771,7 +75771,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -75950,7 +75950,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -76129,7 +76129,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -76308,7 +76308,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -76487,7 +76487,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -76752,7 +76752,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -76929,7 +76929,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -77106,7 +77106,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -77284,7 +77284,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -77461,7 +77461,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -77640,7 +77640,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -77819,7 +77819,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -77998,7 +77998,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -78177,7 +78177,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -78356,7 +78356,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -78535,7 +78535,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -78713,7 +78713,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -78890,7 +78890,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -79067,7 +79067,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -79244,7 +79244,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -79421,7 +79421,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -79598,7 +79598,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -79687,7 +79687,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -79777,7 +79777,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -79867,7 +79867,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -79957,7 +79957,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -80047,7 +80047,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -80137,7 +80137,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -80850,7 +80850,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -81029,7 +81029,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -81208,7 +81208,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -81387,7 +81387,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -81566,7 +81566,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -81745,7 +81745,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -81835,7 +81835,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -81925,7 +81925,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -82015,7 +82015,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -82194,7 +82194,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -82284,7 +82284,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -82374,7 +82374,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -82553,7 +82553,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -82732,7 +82732,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -82911,7 +82911,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -83090,7 +83090,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -83269,7 +83269,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -83448,7 +83448,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -83627,7 +83627,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -83806,7 +83806,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -84163,7 +84163,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -84342,7 +84342,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -84432,7 +84432,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -84522,7 +84522,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -84701,7 +84701,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -84879,7 +84879,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -85147,7 +85147,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -85415,7 +85415,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -85505,7 +85505,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -85595,7 +85595,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -85774,7 +85774,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -85953,7 +85953,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -86220,7 +86220,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -86577,7 +86577,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -86756,7 +86756,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -86935,7 +86935,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -87114,7 +87114,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -87293,7 +87293,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -87472,7 +87472,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -87651,7 +87651,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -87830,7 +87830,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -88009,7 +88009,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -88188,7 +88188,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -88368,7 +88368,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -88549,7 +88549,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -88729,7 +88729,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -88908,7 +88908,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -89087,7 +89087,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -89266,7 +89266,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -89445,7 +89445,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -89624,7 +89624,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -89804,7 +89804,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -89985,7 +89985,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -90165,7 +90165,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -90344,7 +90344,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -90523,7 +90523,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -90702,7 +90702,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -90881,7 +90881,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -91060,7 +91060,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -91240,7 +91240,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -91421,7 +91421,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -91601,7 +91601,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -91780,7 +91780,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -91959,7 +91959,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -92138,7 +92138,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -92317,7 +92317,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -92496,7 +92496,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -92676,7 +92676,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -92857,7 +92857,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -93037,7 +93037,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -93216,7 +93216,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -93395,7 +93395,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -93574,7 +93574,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -93753,7 +93753,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -93932,7 +93932,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -94112,7 +94112,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -94293,7 +94293,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -94473,7 +94473,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -94652,7 +94652,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -94831,7 +94831,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -95010,7 +95010,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -95189,7 +95189,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -95368,7 +95368,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -95548,7 +95548,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -95729,7 +95729,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -95909,7 +95909,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -96088,7 +96088,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -96267,7 +96267,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -96446,7 +96446,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -96625,7 +96625,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -96804,7 +96804,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -96984,7 +96984,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -97165,7 +97165,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -97345,7 +97345,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -97524,7 +97524,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -97703,7 +97703,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -97882,7 +97882,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -98061,7 +98061,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -98240,7 +98240,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -98419,7 +98419,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -98600,7 +98600,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -98779,7 +98779,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -98958,7 +98958,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -99136,7 +99136,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -99314,7 +99314,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -99493,7 +99493,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -99672,7 +99672,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -99852,7 +99852,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -100033,7 +100033,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -100213,7 +100213,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -100392,7 +100392,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -100571,7 +100571,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -100750,7 +100750,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -100840,7 +100840,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -100930,7 +100930,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -101021,7 +101021,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -101113,7 +101113,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -101204,7 +101204,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -101294,7 +101294,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -101384,7 +101384,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -101474,7 +101474,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -101653,7 +101653,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -101832,7 +101832,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -101923,7 +101923,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -102104,7 +102104,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -102195,7 +102195,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -102374,7 +102374,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -102464,7 +102464,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -102554,7 +102554,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -102733,7 +102733,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -102912,7 +102912,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -103003,7 +103003,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -103184,7 +103184,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -103275,7 +103275,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -103454,7 +103454,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -103544,7 +103544,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -103634,7 +103634,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -103813,7 +103813,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -103992,7 +103992,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -104083,7 +104083,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -104264,7 +104264,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -104355,7 +104355,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -104534,7 +104534,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -104624,7 +104624,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -104714,7 +104714,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -104893,7 +104893,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -105072,7 +105072,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -105163,7 +105163,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -105344,7 +105344,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -105524,7 +105524,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -105614,7 +105614,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -105793,7 +105793,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -105972,7 +105972,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -106063,7 +106063,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -106244,7 +106244,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -106335,7 +106335,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -106514,7 +106514,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -106604,7 +106604,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -106694,7 +106694,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -106873,7 +106873,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -107052,7 +107052,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -107232,7 +107232,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -107413,7 +107413,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -107593,7 +107593,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -107772,7 +107772,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -107951,7 +107951,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -108130,7 +108130,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -108220,7 +108220,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -108310,7 +108310,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -108401,7 +108401,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -108493,7 +108493,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -108584,7 +108584,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -108674,7 +108674,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -108764,7 +108764,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -108854,7 +108854,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -110457,7 +110457,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -110636,7 +110636,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -110816,7 +110816,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -110997,7 +110997,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -111177,7 +111177,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -111356,7 +111356,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -111535,7 +111535,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -111714,7 +111714,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -111804,7 +111804,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -111894,7 +111894,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -111985,7 +111985,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -112077,7 +112077,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -112168,7 +112168,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -112258,7 +112258,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -112348,7 +112348,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -112438,7 +112438,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -112617,7 +112617,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -112797,7 +112797,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -112978,7 +112978,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -113158,7 +113158,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -113337,7 +113337,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -113516,7 +113516,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -113695,7 +113695,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -113874,7 +113874,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -114054,7 +114054,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -114235,7 +114235,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -114415,7 +114415,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -114594,7 +114594,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -114773,7 +114773,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -114952,7 +114952,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -115042,7 +115042,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -115133,7 +115133,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -115225,7 +115225,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -115316,7 +115316,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -115406,7 +115406,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -115496,7 +115496,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -115586,7 +115586,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -115765,7 +115765,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -116207,7 +116207,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -116382,7 +116382,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -116647,7 +116647,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -116827,7 +116827,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -117008,7 +117008,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -117188,7 +117188,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -117367,7 +117367,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -117546,7 +117546,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -117725,7 +117725,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -118527,7 +118527,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -118796,7 +118796,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -119066,7 +119066,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -119428,7 +119428,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -119608,7 +119608,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -119789,7 +119789,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -119969,7 +119969,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -120149,7 +120149,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -120241,7 +120241,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -120422,7 +120422,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -120514,7 +120514,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -120605,7 +120605,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -120695,7 +120695,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -120874,7 +120874,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -121054,7 +121054,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -121146,7 +121146,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -121327,7 +121327,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -121419,7 +121419,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -121510,7 +121510,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -121600,7 +121600,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -121779,7 +121779,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -121959,7 +121959,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -122051,7 +122051,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -122232,7 +122232,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -122324,7 +122324,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -122415,7 +122415,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -122505,7 +122505,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -122685,7 +122685,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -122777,7 +122777,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -122958,7 +122958,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -123052,7 +123052,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -123144,7 +123144,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -123234,7 +123234,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -123325,7 +123325,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -123506,7 +123506,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -123598,7 +123598,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -123691,7 +123691,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -123874,7 +123874,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -123968,7 +123968,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -124060,7 +124060,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -124150,7 +124150,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -124240,7 +124240,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -124331,7 +124331,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -124423,7 +124423,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -124515,7 +124515,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -124607,7 +124607,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -124788,7 +124788,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -124880,7 +124880,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -124973,7 +124973,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -125156,7 +125156,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -125250,7 +125250,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -125342,7 +125342,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -125432,7 +125432,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -125522,7 +125522,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -125613,7 +125613,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -125705,7 +125705,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -125797,7 +125797,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -125889,7 +125889,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -126070,7 +126070,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -126162,7 +126162,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -126255,7 +126255,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -126438,7 +126438,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -126532,7 +126532,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -126624,7 +126624,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -126714,7 +126714,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -126804,7 +126804,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -126895,7 +126895,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -126987,7 +126987,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -127079,7 +127079,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -127171,7 +127171,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -127263,7 +127263,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -127355,7 +127355,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -127448,7 +127448,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -127542,7 +127542,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -127636,7 +127636,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -127728,7 +127728,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -127818,7 +127818,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -127908,7 +127908,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -127999,7 +127999,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -128091,7 +128091,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -128183,7 +128183,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -128275,7 +128275,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -128456,7 +128456,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -128548,7 +128548,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -128641,7 +128641,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -128824,7 +128824,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -128918,7 +128918,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -129010,7 +129010,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -129100,7 +129100,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -129190,7 +129190,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -129281,7 +129281,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -129373,7 +129373,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -129465,7 +129465,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -129557,7 +129557,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -129738,7 +129738,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -129830,7 +129830,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -129923,7 +129923,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -130106,7 +130106,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -130200,7 +130200,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -130292,7 +130292,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -130382,7 +130382,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -130472,7 +130472,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -130563,7 +130563,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -130655,7 +130655,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -130747,7 +130747,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -130839,7 +130839,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -131020,7 +131020,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -131112,7 +131112,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -131205,7 +131205,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -131388,7 +131388,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -131482,7 +131482,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -131574,7 +131574,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -131664,7 +131664,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -131754,7 +131754,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -131845,7 +131845,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -131937,7 +131937,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -132029,7 +132029,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -132121,7 +132121,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -132302,7 +132302,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -132394,7 +132394,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -132487,7 +132487,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -132670,7 +132670,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -132764,7 +132764,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -132856,7 +132856,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -132946,7 +132946,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -133036,7 +133036,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -133127,7 +133127,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -133219,7 +133219,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -133311,7 +133311,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -133492,7 +133492,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -133673,7 +133673,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -133765,7 +133765,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -133947,7 +133947,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -134130,7 +134130,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -134224,7 +134224,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -134316,7 +134316,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -134406,7 +134406,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -134496,7 +134496,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -134678,7 +134678,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -134861,7 +134861,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -134953,7 +134953,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -135052,7 +135052,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -135140,7 +135140,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -135239,7 +135239,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -135327,7 +135327,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -135419,7 +135419,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -135518,7 +135518,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -135607,7 +135607,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -135706,7 +135706,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -135795,7 +135795,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -135888,7 +135888,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -135980,7 +135980,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -136072,7 +136072,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -136164,7 +136164,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -136264,7 +136264,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -136353,7 +136353,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -136445,7 +136445,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -136691,7 +136691,7 @@
       "channel": "stable",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -136937,7 +136937,7 @@
       "channel": "stable",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -137113,7 +137113,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -137196,7 +137196,7 @@
       "channel": "stable",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -137372,7 +137372,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -137456,7 +137456,7 @@
       "channel": "stable",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -137628,7 +137628,7 @@
       "channel": "stable",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -137711,7 +137711,7 @@
       "channel": "stable",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -137879,7 +137879,7 @@
       "channel": "stable",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -137961,7 +137961,7 @@
       "channel": "stable",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -138223,7 +138223,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -138491,7 +138491,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -138759,7 +138759,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -139027,7 +139027,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -139295,7 +139295,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -139652,7 +139652,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -139831,7 +139831,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -140010,7 +140010,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -140367,7 +140367,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -140724,7 +140724,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -140903,7 +140903,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -141082,7 +141082,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -141439,7 +141439,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -141707,7 +141707,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -142064,7 +142064,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -142332,7 +142332,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -142689,7 +142689,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -142957,7 +142957,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -143312,7 +143312,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -143491,7 +143491,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -143848,7 +143848,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -144116,7 +144116,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -144473,7 +144473,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -144741,7 +144741,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -145098,7 +145098,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -145455,7 +145455,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -145990,7 +145990,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -146347,7 +146347,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -146882,7 +146882,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -147239,7 +147239,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -148128,7 +148128,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -148223,7 +148223,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -148310,7 +148310,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -148927,7 +148927,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -149014,7 +149014,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -149631,7 +149631,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -149718,7 +149718,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",
@@ -150335,7 +150335,7 @@
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "ci_verified",
+        "ci": "partial",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -150422,7 +150422,7 @@
       "channel": "staging",
       "distribution_family": "therock",
       "evidence_status": {
-        "artifact": "not_collected",
+        "artifact": "artifact_available",
         "ci": "not_collected",
         "documentation": "not_collected",
         "hardware": "not_collected",

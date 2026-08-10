@@ -334,24 +334,6 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:7.14.0a20260522:3.7.0+git3f48d824.rocm7.14.0a20260522:cp312",
-      "last_observed_at": "2026-08-08T14:52:57Z",
-      "lifecycle": "historical",
-      "package_name": "triton",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "rocm_version": "7.14.0a20260522",
-      "source_id": "packages-nightly-linux",
-      "version": "3.7.0+git3f48d824.rocm7.14.0a20260522"
-    },
-    {
-      "artifact_available": true,
-      "channel": "nightly",
-      "distribution_family": "therock",
-      "extension": "triton",
-      "first_observed_at": "2026-08-08T14:51:49Z",
       "id": "triton:therock:linux:nightly:7.14.0a20260522:3.7.0+git34311045.rocm7.14.0a20260522:cp313",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
@@ -363,6 +345,24 @@
       "rocm_version": "7.14.0a20260522",
       "source_id": "packages-nightly-linux",
       "version": "3.7.0+git34311045.rocm7.14.0a20260522"
+    },
+    {
+      "artifact_available": true,
+      "channel": "nightly",
+      "distribution_family": "therock",
+      "extension": "triton",
+      "first_observed_at": "2026-08-08T14:51:49Z",
+      "id": "triton:therock:linux:nightly:7.14.0a20260522:3.7.0+git3f48d824.rocm7.14.0a20260522:cp312",
+      "last_observed_at": "2026-08-08T14:52:57Z",
+      "lifecycle": "historical",
+      "package_name": "triton",
+      "platform": "linux",
+      "python_tags": [
+        "cp312"
+      ],
+      "rocm_version": "7.14.0a20260522",
+      "source_id": "packages-nightly-linux",
+      "version": "3.7.0+git3f48d824.rocm7.14.0a20260522"
     },
     {
       "artifact_available": true,
@@ -472,24 +472,6 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:7.14.0a20260523:3.7.0+git6fa569d8.rocm7.14.0a20260523:cp313",
-      "last_observed_at": "2026-08-08T14:52:57Z",
-      "lifecycle": "historical",
-      "package_name": "triton",
-      "platform": "linux",
-      "python_tags": [
-        "cp313"
-      ],
-      "rocm_version": "7.14.0a20260523",
-      "source_id": "packages-nightly-linux",
-      "version": "3.7.0+git6fa569d8.rocm7.14.0a20260523"
-    },
-    {
-      "artifact_available": true,
-      "channel": "nightly",
-      "distribution_family": "therock",
-      "extension": "triton",
-      "first_observed_at": "2026-08-08T14:51:49Z",
       "id": "triton:therock:linux:nightly:7.14.0a20260523:3.7.0+git3371fa99.rocm7.14.0a20260523:cp312",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
@@ -501,6 +483,24 @@
       "rocm_version": "7.14.0a20260523",
       "source_id": "packages-nightly-linux",
       "version": "3.7.0+git3371fa99.rocm7.14.0a20260523"
+    },
+    {
+      "artifact_available": true,
+      "channel": "nightly",
+      "distribution_family": "therock",
+      "extension": "triton",
+      "first_observed_at": "2026-08-08T14:51:49Z",
+      "id": "triton:therock:linux:nightly:7.14.0a20260523:3.7.0+git6fa569d8.rocm7.14.0a20260523:cp313",
+      "last_observed_at": "2026-08-08T14:52:57Z",
+      "lifecycle": "historical",
+      "package_name": "triton",
+      "platform": "linux",
+      "python_tags": [
+        "cp313"
+      ],
+      "rocm_version": "7.14.0a20260523",
+      "source_id": "packages-nightly-linux",
+      "version": "3.7.0+git6fa569d8.rocm7.14.0a20260523"
     },
     {
       "artifact_available": true,
@@ -587,6 +587,24 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
+      "id": "triton:therock:linux:nightly:7.14.0a20260524:3.7.0+git15765116.rocm7.14.0a20260524:cp313",
+      "last_observed_at": "2026-08-08T14:52:57Z",
+      "lifecycle": "historical",
+      "package_name": "triton",
+      "platform": "linux",
+      "python_tags": [
+        "cp313"
+      ],
+      "rocm_version": "7.14.0a20260524",
+      "source_id": "packages-nightly-linux",
+      "version": "3.7.0+git15765116.rocm7.14.0a20260524"
+    },
+    {
+      "artifact_available": true,
+      "channel": "nightly",
+      "distribution_family": "therock",
+      "extension": "triton",
+      "first_observed_at": "2026-08-08T14:51:49Z",
       "id": "triton:therock:linux:nightly:7.14.0a20260524:3.7.0+git2fd29edb.rocm7.14.0a20260524:cp311",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
@@ -616,24 +634,6 @@
       "rocm_version": "7.14.0a20260524",
       "source_id": "packages-nightly-linux",
       "version": "3.7.0+git516cdbae.rocm7.14.0a20260524"
-    },
-    {
-      "artifact_available": true,
-      "channel": "nightly",
-      "distribution_family": "therock",
-      "extension": "triton",
-      "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:7.14.0a20260524:3.7.0+git15765116.rocm7.14.0a20260524:cp313",
-      "last_observed_at": "2026-08-08T14:52:57Z",
-      "lifecycle": "historical",
-      "package_name": "triton",
-      "platform": "linux",
-      "python_tags": [
-        "cp313"
-      ],
-      "rocm_version": "7.14.0a20260524",
-      "source_id": "packages-nightly-linux",
-      "version": "3.7.0+git15765116.rocm7.14.0a20260524"
     },
     {
       "artifact_available": true,
@@ -1004,24 +1004,6 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:7.14.0a20260527:3.7.0+git7bdf1b9c.rocm7.14.0a20260527:cp312",
-      "last_observed_at": "2026-08-08T14:52:57Z",
-      "lifecycle": "historical",
-      "package_name": "triton",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "rocm_version": "7.14.0a20260527",
-      "source_id": "packages-nightly-linux",
-      "version": "3.7.0+git7bdf1b9c.rocm7.14.0a20260527"
-    },
-    {
-      "artifact_available": true,
-      "channel": "nightly",
-      "distribution_family": "therock",
-      "extension": "triton",
-      "first_observed_at": "2026-08-08T14:51:49Z",
       "id": "triton:therock:linux:nightly:7.14.0a20260527:3.7.0+git781a3458.rocm7.14.0a20260527:cp311",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
@@ -1033,6 +1015,24 @@
       "rocm_version": "7.14.0a20260527",
       "source_id": "packages-nightly-linux",
       "version": "3.7.0+git781a3458.rocm7.14.0a20260527"
+    },
+    {
+      "artifact_available": true,
+      "channel": "nightly",
+      "distribution_family": "therock",
+      "extension": "triton",
+      "first_observed_at": "2026-08-08T14:51:49Z",
+      "id": "triton:therock:linux:nightly:7.14.0a20260527:3.7.0+git7bdf1b9c.rocm7.14.0a20260527:cp312",
+      "last_observed_at": "2026-08-08T14:52:57Z",
+      "lifecycle": "historical",
+      "package_name": "triton",
+      "platform": "linux",
+      "python_tags": [
+        "cp312"
+      ],
+      "rocm_version": "7.14.0a20260527",
+      "source_id": "packages-nightly-linux",
+      "version": "3.7.0+git7bdf1b9c.rocm7.14.0a20260527"
     },
     {
       "artifact_available": true,
@@ -1098,24 +1098,6 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:7.14.0a20260528:3.7.0+git5b02b851.rocm7.14.0a20260528:cp311",
-      "last_observed_at": "2026-08-08T14:52:57Z",
-      "lifecycle": "historical",
-      "package_name": "triton",
-      "platform": "linux",
-      "python_tags": [
-        "cp311"
-      ],
-      "rocm_version": "7.14.0a20260528",
-      "source_id": "packages-nightly-linux",
-      "version": "3.7.0+git5b02b851.rocm7.14.0a20260528"
-    },
-    {
-      "artifact_available": true,
-      "channel": "nightly",
-      "distribution_family": "therock",
-      "extension": "triton",
-      "first_observed_at": "2026-08-08T14:51:49Z",
       "id": "triton:therock:linux:nightly:7.14.0a20260528:3.7.0+git20beef83.rocm7.14.0a20260528:cp312",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
@@ -1145,6 +1127,24 @@
       "rocm_version": "7.14.0a20260528",
       "source_id": "packages-nightly-linux",
       "version": "3.7.0+git40211667.rocm7.14.0a20260528"
+    },
+    {
+      "artifact_available": true,
+      "channel": "nightly",
+      "distribution_family": "therock",
+      "extension": "triton",
+      "first_observed_at": "2026-08-08T14:51:49Z",
+      "id": "triton:therock:linux:nightly:7.14.0a20260528:3.7.0+git5b02b851.rocm7.14.0a20260528:cp311",
+      "last_observed_at": "2026-08-08T14:52:57Z",
+      "lifecycle": "historical",
+      "package_name": "triton",
+      "platform": "linux",
+      "python_tags": [
+        "cp311"
+      ],
+      "rocm_version": "7.14.0a20260528",
+      "source_id": "packages-nightly-linux",
+      "version": "3.7.0+git5b02b851.rocm7.14.0a20260528"
     },
     {
       "artifact_available": true,
@@ -1228,24 +1228,6 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:7.14.0a20260529:3.7.0+git52ecce84.rocm7.14.0a20260529:cp312",
-      "last_observed_at": "2026-08-08T14:52:57Z",
-      "lifecycle": "historical",
-      "package_name": "triton",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "rocm_version": "7.14.0a20260529",
-      "source_id": "packages-nightly-linux",
-      "version": "3.7.0+git52ecce84.rocm7.14.0a20260529"
-    },
-    {
-      "artifact_available": true,
-      "channel": "nightly",
-      "distribution_family": "therock",
-      "extension": "triton",
-      "first_observed_at": "2026-08-08T14:51:49Z",
       "id": "triton:therock:linux:nightly:7.14.0a20260529:3.7.0+git272a7da0.rocm7.14.0a20260529:cp314",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
@@ -1264,24 +1246,6 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:7.14.0a20260529:3.7.0+git868c5e70.rocm7.14.0a20260529:cp310",
-      "last_observed_at": "2026-08-08T14:52:57Z",
-      "lifecycle": "historical",
-      "package_name": "triton",
-      "platform": "linux",
-      "python_tags": [
-        "cp310"
-      ],
-      "rocm_version": "7.14.0a20260529",
-      "source_id": "packages-nightly-linux",
-      "version": "3.7.0+git868c5e70.rocm7.14.0a20260529"
-    },
-    {
-      "artifact_available": true,
-      "channel": "nightly",
-      "distribution_family": "therock",
-      "extension": "triton",
-      "first_observed_at": "2026-08-08T14:51:49Z",
       "id": "triton:therock:linux:nightly:7.14.0a20260529:3.7.0+git4958113d.rocm7.14.0a20260529:cp311",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
@@ -1293,6 +1257,42 @@
       "rocm_version": "7.14.0a20260529",
       "source_id": "packages-nightly-linux",
       "version": "3.7.0+git4958113d.rocm7.14.0a20260529"
+    },
+    {
+      "artifact_available": true,
+      "channel": "nightly",
+      "distribution_family": "therock",
+      "extension": "triton",
+      "first_observed_at": "2026-08-08T14:51:49Z",
+      "id": "triton:therock:linux:nightly:7.14.0a20260529:3.7.0+git52ecce84.rocm7.14.0a20260529:cp312",
+      "last_observed_at": "2026-08-08T14:52:57Z",
+      "lifecycle": "historical",
+      "package_name": "triton",
+      "platform": "linux",
+      "python_tags": [
+        "cp312"
+      ],
+      "rocm_version": "7.14.0a20260529",
+      "source_id": "packages-nightly-linux",
+      "version": "3.7.0+git52ecce84.rocm7.14.0a20260529"
+    },
+    {
+      "artifact_available": true,
+      "channel": "nightly",
+      "distribution_family": "therock",
+      "extension": "triton",
+      "first_observed_at": "2026-08-08T14:51:49Z",
+      "id": "triton:therock:linux:nightly:7.14.0a20260529:3.7.0+git868c5e70.rocm7.14.0a20260529:cp310",
+      "last_observed_at": "2026-08-08T14:52:57Z",
+      "lifecycle": "historical",
+      "package_name": "triton",
+      "platform": "linux",
+      "python_tags": [
+        "cp310"
+      ],
+      "rocm_version": "7.14.0a20260529",
+      "source_id": "packages-nightly-linux",
+      "version": "3.7.0+git868c5e70.rocm7.14.0a20260529"
     },
     {
       "artifact_available": true,
@@ -1322,24 +1322,6 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:7.14.0a20260531:3.7.0+git2b87d869.rocm7.14.0a20260531:cp312",
-      "last_observed_at": "2026-08-08T14:52:57Z",
-      "lifecycle": "historical",
-      "package_name": "triton",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "rocm_version": "7.14.0a20260531",
-      "source_id": "packages-nightly-linux",
-      "version": "3.7.0+git2b87d869.rocm7.14.0a20260531"
-    },
-    {
-      "artifact_available": true,
-      "channel": "nightly",
-      "distribution_family": "therock",
-      "extension": "triton",
-      "first_observed_at": "2026-08-08T14:51:49Z",
       "id": "triton:therock:linux:nightly:7.14.0a20260531:3.7.0+git09bcf275.rocm7.14.0a20260531:cp311",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
@@ -1351,6 +1333,24 @@
       "rocm_version": "7.14.0a20260531",
       "source_id": "packages-nightly-linux",
       "version": "3.7.0+git09bcf275.rocm7.14.0a20260531"
+    },
+    {
+      "artifact_available": true,
+      "channel": "nightly",
+      "distribution_family": "therock",
+      "extension": "triton",
+      "first_observed_at": "2026-08-08T14:51:49Z",
+      "id": "triton:therock:linux:nightly:7.14.0a20260531:3.7.0+git2b87d869.rocm7.14.0a20260531:cp312",
+      "last_observed_at": "2026-08-08T14:52:57Z",
+      "lifecycle": "historical",
+      "package_name": "triton",
+      "platform": "linux",
+      "python_tags": [
+        "cp312"
+      ],
+      "rocm_version": "7.14.0a20260531",
+      "source_id": "packages-nightly-linux",
+      "version": "3.7.0+git2b87d869.rocm7.14.0a20260531"
     },
     {
       "artifact_available": true,
@@ -1529,6 +1529,24 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
+      "id": "triton:therock:linux:nightly:7.14.0a20260602:3.7.0+git096059ad.rocm7.14.0a20260602:cp314",
+      "last_observed_at": "2026-08-08T14:52:57Z",
+      "lifecycle": "historical",
+      "package_name": "triton",
+      "platform": "linux",
+      "python_tags": [
+        "cp314"
+      ],
+      "rocm_version": "7.14.0a20260602",
+      "source_id": "packages-nightly-linux",
+      "version": "3.7.0+git096059ad.rocm7.14.0a20260602"
+    },
+    {
+      "artifact_available": true,
+      "channel": "nightly",
+      "distribution_family": "therock",
+      "extension": "triton",
+      "first_observed_at": "2026-08-08T14:51:49Z",
       "id": "triton:therock:linux:nightly:7.14.0a20260602:3.7.0+git1d564996.rocm7.14.0a20260602:cp310",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
@@ -1540,24 +1558,6 @@
       "rocm_version": "7.14.0a20260602",
       "source_id": "packages-nightly-linux",
       "version": "3.7.0+git1d564996.rocm7.14.0a20260602"
-    },
-    {
-      "artifact_available": true,
-      "channel": "nightly",
-      "distribution_family": "therock",
-      "extension": "triton",
-      "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:7.14.0a20260602:3.7.0+git6fa4d8f2.rocm7.14.0a20260602:cp312",
-      "last_observed_at": "2026-08-08T14:52:57Z",
-      "lifecycle": "historical",
-      "package_name": "triton",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "rocm_version": "7.14.0a20260602",
-      "source_id": "packages-nightly-linux",
-      "version": "3.7.0+git6fa4d8f2.rocm7.14.0a20260602"
     },
     {
       "artifact_available": true,
@@ -1583,17 +1583,17 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:7.14.0a20260602:3.7.0+git096059ad.rocm7.14.0a20260602:cp314",
+      "id": "triton:therock:linux:nightly:7.14.0a20260602:3.7.0+git6fa4d8f2.rocm7.14.0a20260602:cp312",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
       "package_name": "triton",
       "platform": "linux",
       "python_tags": [
-        "cp314"
+        "cp312"
       ],
       "rocm_version": "7.14.0a20260602",
       "source_id": "packages-nightly-linux",
-      "version": "3.7.0+git096059ad.rocm7.14.0a20260602"
+      "version": "3.7.0+git6fa4d8f2.rocm7.14.0a20260602"
     },
     {
       "artifact_available": true,
@@ -5062,7 +5062,7 @@
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
       "id": "triton:therock:linux:nightly:7.15.0a20260721:3.8.0+git4774139f.rocm7.15.0a20260721:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-08T14:58:55Z",
+      "last_observed_at": "2026-08-10T06:48:24Z",
       "lifecycle": "historical",
       "package_name": "triton",
       "platform": "linux",
@@ -5391,28 +5391,6 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:10.0.0a20260729:3.8.0+git4cff872c.rocm10.0.0a20260729:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-08T14:52:57Z",
-      "lifecycle": "historical",
-      "package_name": "triton",
-      "platform": "linux",
-      "python_tags": [
-        "cp310",
-        "cp311",
-        "cp312",
-        "cp313",
-        "cp314"
-      ],
-      "rocm_version": "10.0.0a20260729",
-      "source_id": "packages-nightly-linux",
-      "version": "3.8.0+git4cff872c.rocm10.0.0a20260729"
-    },
-    {
-      "artifact_available": true,
-      "channel": "nightly",
-      "distribution_family": "therock",
-      "extension": "triton",
-      "first_observed_at": "2026-08-08T14:51:49Z",
       "id": "triton:therock:linux:nightly:10.0.0a20260729:3.8.0+git10f6be36.rocm10.0.0a20260729:cp310,cp311,cp312,cp313,cp314",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
@@ -5435,7 +5413,7 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:10.0.0a20260730:3.8.0+git4cff872c.rocm10.0.0a20260730:cp310,cp311,cp312,cp313,cp314",
+      "id": "triton:therock:linux:nightly:10.0.0a20260729:3.8.0+git4cff872c.rocm10.0.0a20260729:cp310,cp311,cp312,cp313,cp314",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
       "package_name": "triton",
@@ -5447,9 +5425,9 @@
         "cp313",
         "cp314"
       ],
-      "rocm_version": "10.0.0a20260730",
+      "rocm_version": "10.0.0a20260729",
       "source_id": "packages-nightly-linux",
-      "version": "3.8.0+git4cff872c.rocm10.0.0a20260730"
+      "version": "3.8.0+git4cff872c.rocm10.0.0a20260729"
     },
     {
       "artifact_available": true,
@@ -5479,7 +5457,7 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:10.1.0a20260731:3.8.0+git4cff872c.rocm10.1.0a20260731:cp310,cp311,cp312,cp313,cp314",
+      "id": "triton:therock:linux:nightly:10.0.0a20260730:3.8.0+git4cff872c.rocm10.0.0a20260730:cp310,cp311,cp312,cp313,cp314",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
       "package_name": "triton",
@@ -5491,9 +5469,9 @@
         "cp313",
         "cp314"
       ],
-      "rocm_version": "10.1.0a20260731",
+      "rocm_version": "10.0.0a20260730",
       "source_id": "packages-nightly-linux",
-      "version": "3.8.0+git4cff872c.rocm10.1.0a20260731"
+      "version": "3.8.0+git4cff872c.rocm10.0.0a20260730"
     },
     {
       "artifact_available": true,
@@ -5523,7 +5501,7 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:10.1.0a20260801:3.8.0+git4cff872c.rocm10.1.0a20260801:cp310,cp311,cp312,cp313,cp314",
+      "id": "triton:therock:linux:nightly:10.1.0a20260731:3.8.0+git4cff872c.rocm10.1.0a20260731:cp310,cp311,cp312,cp313,cp314",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
       "package_name": "triton",
@@ -5535,9 +5513,9 @@
         "cp313",
         "cp314"
       ],
-      "rocm_version": "10.1.0a20260801",
+      "rocm_version": "10.1.0a20260731",
       "source_id": "packages-nightly-linux",
-      "version": "3.8.0+git4cff872c.rocm10.1.0a20260801"
+      "version": "3.8.0+git4cff872c.rocm10.1.0a20260731"
     },
     {
       "artifact_available": true,
@@ -5567,7 +5545,7 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:10.1.0a20260802:3.8.0+git4cff872c.rocm10.1.0a20260802:cp310,cp311,cp312,cp313,cp314",
+      "id": "triton:therock:linux:nightly:10.1.0a20260801:3.8.0+git4cff872c.rocm10.1.0a20260801:cp310,cp311,cp312,cp313,cp314",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
       "package_name": "triton",
@@ -5579,9 +5557,9 @@
         "cp313",
         "cp314"
       ],
-      "rocm_version": "10.1.0a20260802",
+      "rocm_version": "10.1.0a20260801",
       "source_id": "packages-nightly-linux",
-      "version": "3.8.0+git4cff872c.rocm10.1.0a20260802"
+      "version": "3.8.0+git4cff872c.rocm10.1.0a20260801"
     },
     {
       "artifact_available": true,
@@ -5611,7 +5589,7 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:10.1.0a20260803:3.8.0+git4cff872c.rocm10.1.0a20260803:cp310,cp311,cp312,cp313,cp314",
+      "id": "triton:therock:linux:nightly:10.1.0a20260802:3.8.0+git4cff872c.rocm10.1.0a20260802:cp310,cp311,cp312,cp313,cp314",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
       "package_name": "triton",
@@ -5623,9 +5601,9 @@
         "cp313",
         "cp314"
       ],
-      "rocm_version": "10.1.0a20260803",
+      "rocm_version": "10.1.0a20260802",
       "source_id": "packages-nightly-linux",
-      "version": "3.8.0+git4cff872c.rocm10.1.0a20260803"
+      "version": "3.8.0+git4cff872c.rocm10.1.0a20260802"
     },
     {
       "artifact_available": true,
@@ -5655,7 +5633,7 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:10.1.0a20260804:3.8.0+git4cff872c.rocm10.1.0a20260804:cp310,cp311,cp312,cp313,cp314",
+      "id": "triton:therock:linux:nightly:10.1.0a20260803:3.8.0+git4cff872c.rocm10.1.0a20260803:cp310,cp311,cp312,cp313,cp314",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
       "package_name": "triton",
@@ -5667,9 +5645,9 @@
         "cp313",
         "cp314"
       ],
-      "rocm_version": "10.1.0a20260804",
+      "rocm_version": "10.1.0a20260803",
       "source_id": "packages-nightly-linux",
-      "version": "3.8.0+git4cff872c.rocm10.1.0a20260804"
+      "version": "3.8.0+git4cff872c.rocm10.1.0a20260803"
     },
     {
       "artifact_available": true,
@@ -5699,7 +5677,7 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:10.1.0a20260805:3.8.0+git4cff872c.rocm10.1.0a20260805:cp310,cp311,cp312,cp313,cp314",
+      "id": "triton:therock:linux:nightly:10.1.0a20260804:3.8.0+git4cff872c.rocm10.1.0a20260804:cp310,cp311,cp312,cp313,cp314",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
       "package_name": "triton",
@@ -5711,9 +5689,9 @@
         "cp313",
         "cp314"
       ],
-      "rocm_version": "10.1.0a20260805",
+      "rocm_version": "10.1.0a20260804",
       "source_id": "packages-nightly-linux",
-      "version": "3.8.0+git4cff872c.rocm10.1.0a20260805"
+      "version": "3.8.0+git4cff872c.rocm10.1.0a20260804"
     },
     {
       "artifact_available": true,
@@ -5743,7 +5721,7 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:10.1.0a20260806:3.8.0+git4cff872c.rocm10.1.0a20260806:cp310,cp311,cp312,cp313,cp314",
+      "id": "triton:therock:linux:nightly:10.1.0a20260805:3.8.0+git4cff872c.rocm10.1.0a20260805:cp310,cp311,cp312,cp313,cp314",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "historical",
       "package_name": "triton",
@@ -5755,9 +5733,9 @@
         "cp313",
         "cp314"
       ],
-      "rocm_version": "10.1.0a20260806",
+      "rocm_version": "10.1.0a20260805",
       "source_id": "packages-nightly-linux",
-      "version": "3.8.0+git4cff872c.rocm10.1.0a20260806"
+      "version": "3.8.0+git4cff872c.rocm10.1.0a20260805"
     },
     {
       "artifact_available": true,
@@ -5787,9 +5765,9 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:10.1.0a20260807:3.8.0+git4cff872c.rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314",
+      "id": "triton:therock:linux:nightly:10.1.0a20260806:3.8.0+git4cff872c.rocm10.1.0a20260806:cp310,cp311,cp312,cp313,cp314",
       "last_observed_at": "2026-08-08T14:52:57Z",
-      "lifecycle": "current",
+      "lifecycle": "historical",
       "package_name": "triton",
       "platform": "linux",
       "python_tags": [
@@ -5799,30 +5777,9 @@
         "cp313",
         "cp314"
       ],
-      "rocm_version": "10.1.0a20260807",
+      "rocm_version": "10.1.0a20260806",
       "source_id": "packages-nightly-linux",
-      "version": "3.8.0+git4cff872c.rocm10.1.0a20260807"
-    },
-    {
-      "artifact_available": true,
-      "channel": "nightly",
-      "distribution_family": "therock",
-      "extension": "triton",
-      "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:nightly:10.1.0a20260807:3.8.0+git4cff872c.rocm10.1.0a20260807:cp310,cp311,cp312,cp314",
-      "last_observed_at": "2026-08-08T14:52:57Z",
-      "lifecycle": "current",
-      "package_name": "triton",
-      "platform": "linux",
-      "python_tags": [
-        "cp310",
-        "cp311",
-        "cp312",
-        "cp314"
-      ],
-      "rocm_version": "10.1.0a20260807",
-      "source_id": "packages-nightly-linux",
-      "version": "3.8.0+git4cff872c.rocm10.1.0a20260807"
+      "version": "3.8.0+git4cff872c.rocm10.1.0a20260806"
     },
     {
       "artifact_available": true,
@@ -5866,6 +5823,49 @@
       "rocm_version": "10.1.0a20260807",
       "source_id": "packages-nightly-linux",
       "version": "3.8.0+git10f6be36.rocm10.1.0a20260807"
+    },
+    {
+      "artifact_available": true,
+      "channel": "nightly",
+      "distribution_family": "therock",
+      "extension": "triton",
+      "first_observed_at": "2026-08-08T14:51:49Z",
+      "id": "triton:therock:linux:nightly:10.1.0a20260807:3.8.0+git4cff872c.rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314",
+      "last_observed_at": "2026-08-08T14:52:57Z",
+      "lifecycle": "current",
+      "package_name": "triton",
+      "platform": "linux",
+      "python_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp313",
+        "cp314"
+      ],
+      "rocm_version": "10.1.0a20260807",
+      "source_id": "packages-nightly-linux",
+      "version": "3.8.0+git4cff872c.rocm10.1.0a20260807"
+    },
+    {
+      "artifact_available": true,
+      "channel": "nightly",
+      "distribution_family": "therock",
+      "extension": "triton",
+      "first_observed_at": "2026-08-08T14:51:49Z",
+      "id": "triton:therock:linux:nightly:10.1.0a20260807:3.8.0+git4cff872c.rocm10.1.0a20260807:cp310,cp311,cp312,cp314",
+      "last_observed_at": "2026-08-08T14:52:57Z",
+      "lifecycle": "current",
+      "package_name": "triton",
+      "platform": "linux",
+      "python_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp314"
+      ],
+      "rocm_version": "10.1.0a20260807",
+      "source_id": "packages-nightly-linux",
+      "version": "3.8.0+git4cff872c.rocm10.1.0a20260807"
     },
     {
       "artifact_available": true,
@@ -5997,7 +5997,7 @@
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
       "id": "triton:therock:linux:stable:7.14.0:3.8.0+git4cff872c.rocm7.14.0:cp312",
-      "last_observed_at": "2026-08-08T14:58:55Z",
+      "last_observed_at": "2026-08-10T06:48:24Z",
       "lifecycle": "current",
       "package_name": "triton",
       "platform": "linux",
@@ -6681,42 +6681,6 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:staging:7.14.0a20260519:3.7.0+git7b56293a.rocm7.14.0a20260519:cp310",
-      "last_observed_at": "2026-08-08T14:52:57Z",
-      "lifecycle": "current",
-      "package_name": "triton",
-      "platform": "linux",
-      "python_tags": [
-        "cp310"
-      ],
-      "rocm_version": "7.14.0a20260519",
-      "source_id": "packages-staging-linux",
-      "version": "3.7.0+git7b56293a.rocm7.14.0a20260519"
-    },
-    {
-      "artifact_available": true,
-      "channel": "staging",
-      "distribution_family": "therock",
-      "extension": "triton",
-      "first_observed_at": "2026-08-08T14:51:49Z",
-      "id": "triton:therock:linux:staging:7.14.0a20260519:3.7.0+git8b2dc824.rocm7.14.0a20260519:cp311",
-      "last_observed_at": "2026-08-08T14:52:57Z",
-      "lifecycle": "current",
-      "package_name": "triton",
-      "platform": "linux",
-      "python_tags": [
-        "cp311"
-      ],
-      "rocm_version": "7.14.0a20260519",
-      "source_id": "packages-staging-linux",
-      "version": "3.7.0+git8b2dc824.rocm7.14.0a20260519"
-    },
-    {
-      "artifact_available": true,
-      "channel": "staging",
-      "distribution_family": "therock",
-      "extension": "triton",
-      "first_observed_at": "2026-08-08T14:51:49Z",
       "id": "triton:therock:linux:staging:7.14.0a20260519:3.7.0+git25e0bcb1.rocm7.14.0a20260519:cp314",
       "last_observed_at": "2026-08-08T14:52:57Z",
       "lifecycle": "current",
@@ -6753,8 +6717,44 @@
       "distribution_family": "therock",
       "extension": "triton",
       "first_observed_at": "2026-08-08T14:51:49Z",
+      "id": "triton:therock:linux:staging:7.14.0a20260519:3.7.0+git7b56293a.rocm7.14.0a20260519:cp310",
+      "last_observed_at": "2026-08-08T14:52:57Z",
+      "lifecycle": "current",
+      "package_name": "triton",
+      "platform": "linux",
+      "python_tags": [
+        "cp310"
+      ],
+      "rocm_version": "7.14.0a20260519",
+      "source_id": "packages-staging-linux",
+      "version": "3.7.0+git7b56293a.rocm7.14.0a20260519"
+    },
+    {
+      "artifact_available": true,
+      "channel": "staging",
+      "distribution_family": "therock",
+      "extension": "triton",
+      "first_observed_at": "2026-08-08T14:51:49Z",
+      "id": "triton:therock:linux:staging:7.14.0a20260519:3.7.0+git8b2dc824.rocm7.14.0a20260519:cp311",
+      "last_observed_at": "2026-08-08T14:52:57Z",
+      "lifecycle": "current",
+      "package_name": "triton",
+      "platform": "linux",
+      "python_tags": [
+        "cp311"
+      ],
+      "rocm_version": "7.14.0a20260519",
+      "source_id": "packages-staging-linux",
+      "version": "3.7.0+git8b2dc824.rocm7.14.0a20260519"
+    },
+    {
+      "artifact_available": true,
+      "channel": "staging",
+      "distribution_family": "therock",
+      "extension": "triton",
+      "first_observed_at": "2026-08-08T14:51:49Z",
       "id": "triton:therock:linux:staging:7.14.0a20260519:3.7.0+gitfbb43d96.rocm7.14.0a20260519:cp313",
-      "last_observed_at": "2026-08-08T14:58:55Z",
+      "last_observed_at": "2026-08-10T06:48:24Z",
       "lifecycle": "current",
       "package_name": "triton",
       "platform": "linux",
@@ -6766,7 +6766,7 @@
       "version": "3.7.0+gitfbb43d96.rocm7.14.0a20260519"
     }
   ],
-  "generated_at": "2026-08-08T14:58:55Z",
+  "generated_at": "2026-08-10T06:48:24Z",
   "schema_version": 1,
   "sources": {
     "packages-nightly": {

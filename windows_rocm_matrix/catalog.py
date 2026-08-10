@@ -2,6 +2,8 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from .persistence import atomic_write_json
+
 
 ARTIFACTS = (
     ("compatibility_matrix", "data/matrix.json", "schemas/compatibility-matrix.schema.json"),
@@ -14,6 +16,11 @@ ARTIFACTS = (
     ("legacy_windows", "data/legacy-windows.json", "schemas/legacy-windows.schema.json"),
     ("legacy_linux", "data/legacy-linux.json", "schemas/legacy-linux.schema.json"),
     ("version_history", "data/version-history.json", "schemas/version-history.schema.json"),
+    ("ci_coverage", "data/ci-coverage.json", "schemas/ci-coverage.schema.json"),
+    ("ci_evidence", "data/ci-evidence.json", "schemas/ci-evidence.schema.json"),
+    ("source_manifest", "data/observations/source-manifest.json", "schemas/source-manifest.schema.json"),
+    ("collection_status:legacy", "data/status/legacy.json", "schemas/collection-status.schema.json"),
+    ("collection_status:therock", "data/status/therock.json", "schemas/collection-status.schema.json"),
     ("resolver_verifications", "data/verifications/resolver.json", "schemas/resolver-verifications.schema.json"),
 )
 
@@ -33,6 +40,7 @@ def build_catalog(root="."):
     platforms = set()
     families = set()
     channels = set()
+    timestamps = []
     for artifact_id, relative_path, schema in ARTIFACTS:
         path = root / relative_path
         if path.is_dir():
@@ -41,7 +49,16 @@ def build_catalog(root="."):
             paths = [path] if path.exists() else []
         for item in paths:
             value = read_json(item)
+            timestamp = value.get("generated_at") or value.get("last_observed_at")
+            if timestamp:
+                timestamps.append(timestamp)
             source = value.get("source", {})
+            if value.get("distribution_family"):
+                families.add(value["distribution_family"])
+            if value.get("platform"):
+                platforms.add(value["platform"])
+            if value.get("channel"):
+                channels.add(value["channel"])
             if source.get("platform"):
                 platforms.add(source["platform"])
             if source.get("distribution_family"):
@@ -65,7 +82,7 @@ def build_catalog(root="."):
             )
     return {
         "schema_version": 1,
-        "generated_at": utc_now(),
+        "generated_at": max(timestamps) if timestamps else utc_now(),
         "dimensions": {
             "distribution_families": sorted(families),
             "platforms": sorted(platforms),
@@ -77,6 +94,5 @@ def build_catalog(root="."):
 
 def write_catalog(root=".", output="data/catalog.json"):
     path = Path(root) / output
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(build_catalog(root), indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    atomic_write_json(build_catalog(root), path)
     return path

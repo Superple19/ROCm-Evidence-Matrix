@@ -3,6 +3,8 @@ import re
 from pathlib import Path
 
 from .ci import CI_STATES
+from .identity import candidate_hash
+from .persistence import atomic_write_json, atomic_write_text
 from .simple_index import version_key
 from .source_adapter import monotonic_generated_at
 
@@ -164,6 +166,15 @@ def initial_evidence_status():
     return {"artifact": "artifact_available", "documentation": "not_collected", "ci": "not_collected", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"}
 
 
+def normalize_artifact_evidence(candidate):
+    evidence = candidate.setdefault("evidence_status", initial_evidence_status())
+    if candidate.get("artifact_available"):
+        evidence["artifact"] = "artifact_available"
+    elif evidence.get("artifact") == "artifact_available":
+        evidence["artifact"] = "artifact_stale" if candidate.get("last_observed_at") else "not_collected"
+    return candidate
+
+
 def attach_therock_documentation_evidence(history, documentation):
     statuses = documentation.get("therock_windows_status", []) if documentation else []
     by_gfx = {}
@@ -188,7 +199,8 @@ def update_execution_evidence(history_path, kind, candidate_id, result):
     for candidate in history.get("candidates", []):
         if candidate.get("id") == candidate_id:
             candidate.setdefault("evidence_status", initial_evidence_status())[kind] = status
-            path.write_text(json.dumps(history, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+            validate_history(history)
+            atomic_write_json(history, path)
             return True
     return False
 
@@ -201,6 +213,15 @@ def execution_evidence_errors(candidate, record, kind, requested_gfx=None):
         errors.append(f"platform mismatch: candidate={expected_platform}, observed={observed_platform}")
     if record.get("torch_version") and record["torch_version"] != candidate.get("torch_version"):
         errors.append(f"Torch mismatch: candidate={candidate.get('torch_version')}, observed={record['torch_version']}")
+    expected_hash = candidate_hash(candidate, record.get("gfx"), record.get("python_tag"), record.get("platform_tag"))
+    if record.get("candidate_hash") != expected_hash:
+        errors.append("candidate hash does not match the observed execution identity")
+    expected_rocm = candidate.get("rocm_version")
+    observed_rocm = record.get("rocm_version")
+    if observed_rocm != expected_rocm:
+        errors.append(f"ROCm mismatch: candidate={expected_rocm}, observed={observed_rocm}")
+    if record.get("result") == "passed" and not record.get("hip_version"):
+        errors.append("successful evidence has no observed HIP runtime version")
     if candidate.get("hip_version") and record.get("hip_version") and candidate["hip_version"] != record["hip_version"]:
         errors.append(f"HIP mismatch: candidate={candidate['hip_version']}, observed={record['hip_version']}")
 
@@ -250,7 +271,6 @@ def attach_therock_ci_evidence(history, ci_document):
         if candidate.get("distribution_family") != "therock" or candidate.get("platform") != "windows" or candidate.get("lifecycle") != "current":
             continue
         refs = []
-        states = []
         targets = set(candidate.get("gfx_targets", []))
         for execution in executions:
             execution_targets = execution.get("targets")
@@ -267,15 +287,21 @@ def attach_therock_ci_evidence(history, ci_document):
             if not execution_states:
                 continue
             refs.append(execution["id"])
-            states.extend(execution_states)
         if not refs:
             continue
         candidate["ci_evidence_refs"] = sorted(set(refs))[-3:]
         candidate["ci_evidence_scope"] = "gfx_platform"
         status = candidate.setdefault("evidence_status", initial_evidence_status())
-        if "success" in states:
+        latest_states = []
+        for execution in executions:
+            if execution.get("id") not in refs:
+                continue
+            observations = sorted(execution.get("observations", []), key=lambda item: item.get("observed_at") or "")
+            if observations:
+                latest_states.append(observations[-1].get("state"))
+        if latest_states and all(state == "success" for state in latest_states):
             status["ci"] = "ci_verified"
-        elif states and all(state in {"failure", "cancelled", "skipped", "timed_out"} for state in states):
+        elif latest_states and all(state in {"failure", "cancelled", "skipped", "timed_out"} for state in latest_states):
             status["ci"] = "ci_failed"
         else:
             status["ci"] = "partial"
@@ -324,6 +350,7 @@ def migrate_history(existing):
             if not isinstance(candidate.get("resolver_results"), list):
                 candidate["resolver_results"] = []
             candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
+            normalize_artifact_evidence(candidate)
             candidate["id"] = candidate_id(candidate)
             candidates.append(candidate)
         return {**existing, "candidates": collapse_triton_variants(candidates)}
@@ -342,6 +369,7 @@ def migrate_history(existing):
         if not isinstance(candidate.get("resolver_results"), list):
             candidate["resolver_results"] = []
         candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
+        normalize_artifact_evidence(candidate)
         candidate["id"] = candidate_id(candidate)
         candidates.append(candidate)
     return {**existing, "schema_version": 2, "candidates": collapse_triton_variants(candidates)}
@@ -488,4 +516,4 @@ def render_history(history):
 def write_history_document(history, output_path):
     path = Path(output_path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(render_history(history), encoding="utf-8", newline="\n")
+    atomic_write_text(path, render_history(history))

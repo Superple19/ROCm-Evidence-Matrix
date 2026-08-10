@@ -151,6 +151,30 @@ class SourceCacheTests(unittest.TestCase):
             self.assertEqual(reader("https://example.test/source"), "offline source")
             self.assertEqual(reader.latest_observed_at(prefixes=["https://example.test/"]), "2026-08-07T00:00:00Z")
 
+    def test_rejects_cached_body_with_wrong_hash(self):
+        digest = hashlib.sha256(b"expected").hexdigest()
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "cache").mkdir()
+            (root / "cache" / digest).write_bytes(b"tampered")
+            manifest = {
+                "schema_version": 1,
+                "generated_at": "2026-08-07T00:00:00Z",
+                "responses": [{
+                    "url": "https://example.test/source",
+                    "sha256": digest,
+                    "etag": None,
+                    "last_modified": None,
+                    "observed_at": "2026-08-07T00:00:00Z",
+                    "encoding": "utf-8",
+                }],
+            }
+            (root / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
+            reader = CachedSourceReader(root / "cache", root / "manifest.json")
+
+            with self.assertRaisesRegex(OSError, "hash mismatch"):
+                reader("https://example.test/source")
+
     def test_authenticates_and_retries_github_rate_limits(self):
         requests = []
         sleeps = []

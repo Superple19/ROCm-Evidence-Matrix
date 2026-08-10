@@ -1,5 +1,7 @@
 from pathlib import Path
 
+from .persistence import atomic_write_text
+
 
 def status_mark(value):
     return "Yes" if value else "No"
@@ -95,5 +97,4 @@ def target_platform(target, platform):
 
 def write_compatibility_document(matrix, output_path):
     path = Path(output_path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(render_compatibility_matrix(matrix), encoding="utf-8", newline="\n")
+    atomic_write_text(path, render_compatibility_matrix(matrix))

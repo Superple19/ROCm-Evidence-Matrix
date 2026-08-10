@@ -87,7 +87,7 @@ def merge_framework_history(existing, observations, sources, observed_at):
             candidates[item["id"]] = {**item, "first_observed_at": observed_at, "last_observed_at": observed_at}
         else:
             current.update({key: value for key, value in item.items() if key not in {"id", "first_observed_at"}})
-            current["last_observed_at"] = observed_at
+            current["last_observed_at"] = max(current.get("last_observed_at", observed_at), observed_at)
     latest = {}
     for item in candidates.values():
         key = (item["distribution_family"], item["runtime_family"], item["platform"], item["channel"])
@@ -133,7 +133,9 @@ def merge_sdk_components(existing, observations, observed_at):
     existing = existing or {"schema_version": 1, "generated_at": observed_at, "components": []}
     components = {item["id"]: dict(item) for item in existing.get("components", [])}
     for item in observations:
-        components[item["id"]] = {**components.get(item["id"], {}), **item, "last_observed_at": observed_at}
+        current = {**components.get(item["id"], {}), **item}
+        current["last_observed_at"] = max(current.get("last_observed_at", observed_at), observed_at)
+        components[item["id"]] = current
         components[item["id"]].setdefault("first_observed_at", observed_at)
     return {"schema_version": 1, "generated_at": monotonic_generated_at(existing, observed_at), "components": sorted(components.values(), key=lambda item: (item["distribution_family"], item["platform"], item["channel"], item["package_name"]))}
 

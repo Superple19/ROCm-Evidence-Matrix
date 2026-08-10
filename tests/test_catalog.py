@@ -28,6 +28,14 @@ class CatalogTests(unittest.TestCase):
             output = write_catalog(root)
             self.assertTrue(output.exists())
 
+    def test_catalog_generation_time_comes_from_artifacts(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "data").mkdir()
+            (root / "data" / "matrix.json").write_text(json.dumps({"schema_version": 1, "generated_at": "2026-08-08T00:00:00Z"}), encoding="utf-8")
+            catalog = build_catalog(root)
+            self.assertEqual(catalog["generated_at"], "2026-08-08T00:00:00Z")
+
 
 if __name__ == "__main__":
     unittest.main()

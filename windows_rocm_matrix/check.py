@@ -16,6 +16,7 @@ from .render import render_snapshots
 from .validation import (
     validate_ci_coverage,
     validate_ci_evidence,
+    validate_community_evidence,
     validate_compatibility_matrix,
     validate_collection_status,
     validate_documentation_snapshot,
@@ -37,6 +38,9 @@ from .version_history import render_version_history
 
 SCHEMA_VALIDATORS = {
     "compatibility-matrix.schema.json": validate_compatibility_matrix,
+    "ci-coverage.schema.json": validate_ci_coverage,
+    "ci-evidence.schema.json": validate_ci_evidence,
+    "collection-status.schema.json": validate_collection_status,
     "documentation-snapshot.schema.json": validate_documentation_snapshot,
     "extension-history.schema.json": validate_extension_history,
     "framework-history.schema.json": validate_framework_history,
@@ -44,6 +48,7 @@ SCHEMA_VALIDATORS = {
     "legacy-linux.schema.json": validate_legacy_linux,
     "legacy-windows.schema.json": validate_legacy_windows,
     "package-snapshot.schema.json": validate_snapshot,
+    "source-manifest.schema.json": validate_source_manifest,
     "resolver-verifications.schema.json": validate_resolver_verifications,
     "sdk-components.schema.json": validate_sdk_components,
     "version-history.schema.json": validate_version_history,
@@ -123,11 +128,33 @@ def validate_standalone_data(root):
             }[relative_path]
             validate_json_schema(read_json(path), root / "schemas" / schema_name)
 
+    community_schema = root / "schemas" / "community-evidence.schema.json"
+    for path in sorted((root / "contributions").glob("*.json")):
+        value = read_json(path)
+        validate_community_evidence(value)
+        validate_json_schema(value, community_schema)
+
 
 def validate_profiles(root):
+    root = Path(root)
+    history = read_json(root / "data" / "history.json")
+    source_ids = set((history or {}).get("sources", {}))
+    documentation = read_json(root / "data" / "documentation.json")
+    source_ids.update((documentation or {}).get("sources", {}))
+    for path in sorted((root / "data" / "snapshots").glob("*.json")):
+        snapshot = read_json(path)
+        source = snapshot.get("source", {})
+        if source.get("id"):
+            source_ids.add(f"packages-{source['id']}")
     for path in sorted((Path(root) / "profiles").rglob("*.json")):
-        validate_profile(read_json(path))
-        validate_json_schema(read_json(path), root / "schemas" / "profile.schema.json")
+        profile = read_json(path)
+        validate_profile(profile)
+        validate_json_schema(profile, root / "schemas" / "profile.schema.json")
+        references = set(profile.get("evidence_refs", []))
+        references.update(reference for constraint in profile.get("constraints", []) for reference in constraint.get("evidence_refs", []))
+        for reference in references:
+            if reference.startswith("source:") and reference.removeprefix("source:") not in source_ids:
+                raise ValueError(f"Profile references unknown source evidence: {reference}")
 
 
 def validate_schema_files(root):

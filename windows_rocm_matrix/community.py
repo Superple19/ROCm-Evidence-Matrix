@@ -6,6 +6,8 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+from .persistence import atomic_write_json
+from .source_adapter import monotonic_generated_at
 from .validation import validate_community_evidence
 
 
@@ -15,8 +17,8 @@ POSIX_PATH = re.compile(r"/(?:home|Users|mnt|workspace|tmp|opt|var|root|data|usr
 SECRET_VALUE = re.compile(r"(?i)(?<![A-Za-z0-9_])(?:token|api[_-]?token|secret|password|authorization|api[_-]?key)\b\s*[:=]\s*(?:bearer\s+)?[^,;\s]+")
 
 COMMON_RECORD_FIELDS = {
-    "id", "candidate_id", "gfx", "observed_at", "python_version", "os", "architecture",
-    "driver_version", "torch_version", "hip_version", "result", "error",
+    "id", "candidate_id", "candidate_hash", "gfx", "observed_at", "python_version", "python_tag", "os", "platform", "platform_tag", "architecture",
+    "driver_version", "torch_version", "rocm_version", "hip_version", "result", "error",
 }
 RUNTIME_RECORD_FIELDS = COMMON_RECORD_FIELDS | {"rocm_available", "device_count", "devices"}
 HARDWARE_RECORD_FIELDS = COMMON_RECORD_FIELDS | {"device", "elapsed_ms", "correct", "operation"}
@@ -82,7 +84,11 @@ def merge_submission(existing, submission):
     submissions = list(existing.get("submissions", []))
     if not any(item.get("content_hash") == submission["content_hash"] for item in submissions):
         submissions.append(submission)
-    document = {"schema_version": 1, "generated_at": submission["submitted_at"], "submissions": submissions}
+    document = {
+        "schema_version": 1,
+        "generated_at": monotonic_generated_at(existing, submission["submitted_at"]),
+        "submissions": submissions,
+    }
     validate_community_evidence(document)
     return document
 
@@ -91,8 +97,7 @@ def write_submission(record, evidence_kind, output_path, submitted_at=None):
     path = Path(output_path)
     existing = json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
     document = merge_submission(existing, submission_from_record(record, evidence_kind, submitted_at))
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(document, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    atomic_write_json(document, path)
     return document
 
 

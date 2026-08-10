@@ -5,7 +5,10 @@ import platform
 from datetime import datetime, timezone
 from pathlib import Path
 
+from .identity import candidate_hash, default_platform_tag, python_tag, rocm_version_from_torch
 from .history import promote_execution_evidence
+from .persistence import atomic_write_json
+from .source_adapter import monotonic_generated_at
 from .validation import validate_runtime_verifications
 
 
@@ -41,6 +44,10 @@ def collect_runtime(torch_module, observed_at=None, candidate_id=None, gfx=None)
         "environment": environment_evidence(),
         "torch_version": getattr(torch_module, "__version__", None),
         "hip_version": getattr(getattr(torch_module, "version", None), "hip", None),
+        "rocm_version": rocm_version_from_torch(getattr(torch_module, "__version__", None)),
+        "python_tag": python_tag(),
+        "platform_tag": None,
+        "candidate_hash": None,
         "rocm_available": False,
         "device_count": 0,
         "devices": [],
@@ -61,6 +68,8 @@ def collect_runtime(torch_module, observed_at=None, candidate_id=None, gfx=None)
                         device[field] = str(value) if field == "gcnArchName" else int(value)
                 if "gcnArchName" in device:
                     device["gfx"] = device["gcnArchName"]
+                    if record["gfx"] is None:
+                        record["gfx"] = device["gfx"]
                 record["devices"].append(device)
         record["result"] = "passed" if record["rocm_available"] and record["device_count"] > 0 else "failed"
         if record["result"] == "failed":
@@ -72,8 +81,14 @@ def collect_runtime(torch_module, observed_at=None, candidate_id=None, gfx=None)
 
 def merge_runtime(existing, record):
     records = list((existing or {}).get("verifications", []))
-    records.append(record)
-    return {"schema_version": 1, "generated_at": record["observed_at"], "verifications": records}
+    known = {item.get("id") for item in records}
+    if record.get("id") not in known:
+        records.append(record)
+    return {
+        "schema_version": 1,
+        "generated_at": monotonic_generated_at(existing, record["observed_at"]),
+        "verifications": records,
+    }
 
 
 def write_runtime(record, output_path):
@@ -81,8 +96,7 @@ def write_runtime(record, output_path):
     existing = json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
     document = merge_runtime(existing, record)
     validate_runtime_verifications(document)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(document, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    atomic_write_json(document, path)
 
 
 def parse_args(argv=None):
@@ -103,6 +117,11 @@ def main(argv=None):
     record = collect_runtime(torch, candidate_id=args.candidate_id, gfx=args.gfx)
     promotion_errors = []
     if args.candidate_id:
+        history = json.loads(Path(args.history).read_text(encoding="utf-8"))
+        candidate = next((item for item in history.get("candidates", []) if item.get("id") == args.candidate_id), None)
+        if candidate is not None:
+            record["platform_tag"] = default_platform_tag(candidate)
+            record["candidate_hash"] = candidate_hash(candidate, record.get("gfx"), record["python_tag"], record["platform_tag"])
         matched, promotion_errors = promote_execution_evidence(args.history, "runtime", record, args.gfx)
         record["candidate_match"] = matched
         record["candidate_errors"] = promotion_errors or None

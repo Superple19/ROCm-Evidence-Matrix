@@ -8,6 +8,7 @@ from pathlib import Path
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
+from .persistence import atomic_write_bytes, atomic_write_text
 from .validation import validate_source_manifest
 
 
@@ -44,7 +45,13 @@ class SourceCache:
         if self.github_token and url.lower().startswith("https://api.github.com/"):
             headers["Authorization"] = f"Bearer {self.github_token}"
         cached_path = self.cache_dir / previous["sha256"] if previous else None
+        cached_content = None
         if cached_path and cached_path.exists():
+            cached_content = cached_path.read_bytes()
+            if hashlib.sha256(cached_content).hexdigest() != previous["sha256"]:
+                cached_path = None
+                cached_content = None
+        if cached_path and cached_content is not None:
             if previous.get("etag"):
                 headers["If-None-Match"] = previous["etag"]
             if previous.get("last_modified"):
@@ -61,9 +68,11 @@ class SourceCache:
                 break
             except HTTPError as error:
                 if error.code == 304 and previous is not None:
-                    if not cached_path.exists():
+                    if cached_content is None:
                         raise OSError(f"Cached source response is missing: {cached_path}") from error
-                    content = cached_path.read_bytes()
+                    content = cached_content
+                    if hashlib.sha256(content).hexdigest() != previous["sha256"]:
+                        raise OSError(f"Cached source response hash mismatch: {cached_path}") from error
                     etag = error.headers.get("ETag") or previous.get("etag")
                     last_modified = error.headers.get("Last-Modified") or previous.get("last_modified")
                     encoding = previous.get("encoding", "utf-8")
@@ -83,7 +92,7 @@ class SourceCache:
         with self.lock:
             self.cache_dir.mkdir(parents=True, exist_ok=True)
             if not cache_path.exists():
-                cache_path.write_bytes(content)
+                atomic_write_bytes(cache_path, content)
             self.responses[url] = {
                 "url": url,
                 "sha256": digest,
@@ -101,8 +110,7 @@ class SourceCache:
             "responses": sorted(self.responses.values(), key=lambda response: response["url"]),
         }
         validate_source_manifest(manifest)
-        self.manifest_path.parent.mkdir(parents=True, exist_ok=True)
-        self.manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+        atomic_write_text(self.manifest_path, json.dumps(manifest, indent=2, sort_keys=True) + "\n")
         return manifest
 
 
@@ -125,7 +133,10 @@ class CachedSourceReader:
         cache_path = self.cache_dir / response["sha256"]
         if not cache_path.exists():
             raise OSError(f"Cached source response is missing: {cache_path}")
-        return cache_path.read_bytes().decode(response["encoding"], errors="replace")
+        content = cache_path.read_bytes()
+        if hashlib.sha256(content).hexdigest() != response["sha256"]:
+            raise OSError(f"Cached source response hash mismatch: {cache_path}")
+        return content.decode(response["encoding"], errors="replace")
 
     def latest_observed_at(self, urls=(), prefixes=()):
         exact_urls = set(urls)

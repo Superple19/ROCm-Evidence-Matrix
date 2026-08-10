@@ -1,6 +1,7 @@
 import unittest
 
 from windows_rocm_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, render_history
+from windows_rocm_matrix.identity import candidate_hash
 from windows_rocm_matrix.resolve import install_command, resolve_candidates
 
 
@@ -204,16 +205,34 @@ class HistoryTests(unittest.TestCase):
 
     def test_execution_evidence_requires_candidate_match(self):
         candidate = {
+            "distribution_family": "therock", "source_id": "packages-stable", "rocm_version": "7.14.0",
             "platform": "windows", "gfx_support": "known", "gfx_targets": ["gfx1201"],
             "torch_version": "2.12.0", "hip_version": None,
         }
         record = {
-            "os": "windows", "gfx": "gfx1201", "torch_version": "2.12.0", "hip_version": None,
+            "os": "windows", "gfx": "gfx1201", "torch_version": "2.12.0", "rocm_version": "7.14.0", "hip_version": "7.14.0",
+            "python_tag": "cp312", "platform_tag": "win_amd64",
             "result": "passed", "devices": [{"gfx": "gfx1201"}],
         }
+        record["candidate_hash"] = candidate_hash(candidate, "gfx1201", "cp312", "win_amd64")
         self.assertEqual(execution_evidence_errors(candidate, record, "runtime"), [])
         self.assertTrue(execution_evidence_errors(candidate, {**record, "torch_version": "2.13.0"}, "runtime"))
         self.assertTrue(execution_evidence_errors(candidate, {**record, "os": "linux"}, "runtime"))
+
+    def test_execution_evidence_rejects_rocm_or_candidate_hash_mismatch(self):
+        candidate = {
+            "distribution_family": "therock", "source_id": "packages-stable", "rocm_version": "7.14.0",
+            "platform": "windows", "gfx_support": "known", "gfx_targets": ["gfx1201"],
+            "torch_version": "2.12.0", "hip_version": "7.14.0",
+        }
+        record = {
+            "os": "windows", "gfx": "gfx1201", "torch_version": "2.12.0", "rocm_version": "7.13.0", "hip_version": "7.13.0",
+            "python_tag": "cp312", "platform_tag": "win_amd64", "result": "passed",
+            "devices": [{"gfx": "gfx1201"}], "candidate_hash": candidate_hash(candidate, "gfx1201", "cp312", "win_amd64"),
+        }
+        errors = execution_evidence_errors(candidate, record, "runtime")
+        self.assertTrue(any("ROCm mismatch" in error for error in errors))
+        self.assertFalse(any("candidate hash" in error for error in errors))
 
     def test_attaches_ci_evidence_with_gfx_platform_scope(self):
         candidate = {
@@ -248,6 +267,27 @@ class HistoryTests(unittest.TestCase):
         linux_execution = {"executions": [{"id": "linux:1", "platform": "linux", "targets": ["gfx1201"], "observations": [{"state": "success"}]}]}
         attach_therock_ci_evidence({"candidates": [candidate]}, linux_execution)
         self.assertEqual(candidate["evidence_status"]["ci"], "not_collected")
+
+    def test_ci_status_follows_latest_observation(self):
+        candidate = {
+            "id": "therock:stable:candidate",
+            "distribution_family": "therock",
+            "platform": "windows",
+            "lifecycle": "current",
+            "gfx_targets": ["gfx1201"],
+            "evidence_status": {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected", "ci": "not_collected"},
+        }
+        evidence = {"executions": [{
+            "id": "github:1",
+            "platform": "windows",
+            "targets": ["gfx1201"],
+            "observations": [
+                {"state": "success", "observed_at": "2026-08-08T00:00:00Z"},
+                {"state": "failure", "observed_at": "2026-08-08T00:01:00Z"},
+            ],
+        }]}
+        attach_therock_ci_evidence({"candidates": [candidate]}, evidence)
+        self.assertEqual(candidate["evidence_status"]["ci"], "ci_failed")
 
 
 if __name__ == "__main__":

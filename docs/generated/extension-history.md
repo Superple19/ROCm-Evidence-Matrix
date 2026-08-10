@@ -23,22 +23,22 @@ Triton is tracked separately from core Torch candidates. These artifacts are opt
 | therock | linux | nightly | historical | `7.14.0a20260522` | `3.6.0+rocm7.14.0a20260522` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `7.14.0a20260522` | `3.7.0+git0a44ee8e.rocm7.14.0a20260522` | `cp311` |
 | therock | linux | nightly | historical | `7.14.0a20260522` | `3.7.0+git0e07de9a.rocm7.14.0a20260522` | `cp310` |
-| therock | linux | nightly | historical | `7.14.0a20260522` | `3.7.0+git3f48d824.rocm7.14.0a20260522` | `cp312` |
 | therock | linux | nightly | historical | `7.14.0a20260522` | `3.7.0+git34311045.rocm7.14.0a20260522` | `cp313` |
+| therock | linux | nightly | historical | `7.14.0a20260522` | `3.7.0+git3f48d824.rocm7.14.0a20260522` | `cp312` |
 | therock | linux | nightly | historical | `7.14.0a20260522` | `3.7.0+gitdf9727df.rocm7.14.0a20260522` | `cp314` |
 | therock | linux | nightly | historical | `7.14.0a20260523` | `3.4.0+rocm7.14.0a20260523` | `cp310`, `cp311`, `cp312`, `cp313` |
 | therock | linux | nightly | historical | `7.14.0a20260523` | `3.4.0+rocm7.14.0a20260523` | `cp310`, `cp312`, `cp313` |
 | therock | linux | nightly | historical | `7.14.0a20260523` | `3.6.0+rocm7.14.0a20260523` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `7.14.0a20260523` | `3.6.0+rocm7.14.0a20260523` | `cp310`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260523` | `3.7.0+git6fa569d8.rocm7.14.0a20260523` | `cp313` |
 | therock | linux | nightly | historical | `7.14.0a20260523` | `3.7.0+git3371fa99.rocm7.14.0a20260523` | `cp312` |
+| therock | linux | nightly | historical | `7.14.0a20260523` | `3.7.0+git6fa569d8.rocm7.14.0a20260523` | `cp313` |
 | therock | linux | nightly | historical | `7.14.0a20260523` | `3.7.0+gitb7b62134.rocm7.14.0a20260523` | `cp314` |
 | therock | linux | nightly | historical | `7.14.0a20260523` | `3.7.0+gitbef939a5.rocm7.14.0a20260523` | `cp310` |
 | therock | linux | nightly | historical | `7.14.0a20260524` | `3.4.0+rocm7.14.0a20260524` | `cp310`, `cp311`, `cp312`, `cp313` |
 | therock | linux | nightly | historical | `7.14.0a20260524` | `3.6.0+rocm7.14.0a20260524` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260524` | `3.7.0+git15765116.rocm7.14.0a20260524` | `cp313` |
 | therock | linux | nightly | historical | `7.14.0a20260524` | `3.7.0+git2fd29edb.rocm7.14.0a20260524` | `cp311` |
 | therock | linux | nightly | historical | `7.14.0a20260524` | `3.7.0+git516cdbae.rocm7.14.0a20260524` | `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260524` | `3.7.0+git15765116.rocm7.14.0a20260524` | `cp313` |
 | therock | linux | nightly | historical | `7.14.0a20260524` | `3.7.0+gitb4bcc95a.rocm7.14.0a20260524` | `cp310` |
 | therock | linux | nightly | historical | `7.14.0a20260524` | `3.7.0+gitb75a3b5b.rocm7.14.0a20260524` | `cp312` |
 | therock | linux | nightly | historical | `7.14.0a20260525` | `3.4.0+rocm7.14.0a20260525` | `cp310`, `cp311`, `cp312`, `cp313` |
@@ -58,25 +58,25 @@ Triton is tracked separately from core Torch candidates. These artifacts are opt
 | therock | linux | nightly | historical | `7.14.0a20260527` | `3.4.0+rocm7.14.0a20260527` | `cp310`, `cp311`, `cp312`, `cp313` |
 | therock | linux | nightly | historical | `7.14.0a20260527` | `3.6.0+rocm7.14.0a20260527` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `7.14.0a20260527` | `3.7.0+git2fef6bb6.rocm7.14.0a20260527` | `cp310` |
-| therock | linux | nightly | historical | `7.14.0a20260527` | `3.7.0+git7bdf1b9c.rocm7.14.0a20260527` | `cp312` |
 | therock | linux | nightly | historical | `7.14.0a20260527` | `3.7.0+git781a3458.rocm7.14.0a20260527` | `cp311` |
+| therock | linux | nightly | historical | `7.14.0a20260527` | `3.7.0+git7bdf1b9c.rocm7.14.0a20260527` | `cp312` |
 | therock | linux | nightly | historical | `7.14.0a20260527` | `3.7.0+gitc795d316.rocm7.14.0a20260527` | `cp314` |
 | therock | linux | nightly | historical | `7.14.0a20260527` | `3.7.0+gite1fb9894.rocm7.14.0a20260527` | `cp313` |
 | therock | linux | nightly | historical | `7.14.0a20260528` | `3.6.0+rocm7.14.0a20260528` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260528` | `3.7.0+git5b02b851.rocm7.14.0a20260528` | `cp311` |
 | therock | linux | nightly | historical | `7.14.0a20260528` | `3.7.0+git20beef83.rocm7.14.0a20260528` | `cp312` |
 | therock | linux | nightly | historical | `7.14.0a20260528` | `3.7.0+git40211667.rocm7.14.0a20260528` | `cp313` |
+| therock | linux | nightly | historical | `7.14.0a20260528` | `3.7.0+git5b02b851.rocm7.14.0a20260528` | `cp311` |
 | therock | linux | nightly | historical | `7.14.0a20260528` | `3.7.0+gitb1af2b27.rocm7.14.0a20260528` | `cp314` |
 | therock | linux | nightly | historical | `7.14.0a20260528` | `3.7.0+gitbe24d4f5.rocm7.14.0a20260528` | `cp310` |
 | therock | linux | nightly | historical | `7.14.0a20260529` | `3.6.0+rocm7.14.0a20260529` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `7.14.0a20260529` | `3.7.0+git26df8e2b.rocm7.14.0a20260529` | `cp313` |
-| therock | linux | nightly | historical | `7.14.0a20260529` | `3.7.0+git52ecce84.rocm7.14.0a20260529` | `cp312` |
 | therock | linux | nightly | historical | `7.14.0a20260529` | `3.7.0+git272a7da0.rocm7.14.0a20260529` | `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260529` | `3.7.0+git868c5e70.rocm7.14.0a20260529` | `cp310` |
 | therock | linux | nightly | historical | `7.14.0a20260529` | `3.7.0+git4958113d.rocm7.14.0a20260529` | `cp311` |
+| therock | linux | nightly | historical | `7.14.0a20260529` | `3.7.0+git52ecce84.rocm7.14.0a20260529` | `cp312` |
+| therock | linux | nightly | historical | `7.14.0a20260529` | `3.7.0+git868c5e70.rocm7.14.0a20260529` | `cp310` |
 | therock | linux | nightly | historical | `7.14.0a20260531` | `3.6.0+rocm7.14.0a20260531` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260531` | `3.7.0+git2b87d869.rocm7.14.0a20260531` | `cp312` |
 | therock | linux | nightly | historical | `7.14.0a20260531` | `3.7.0+git09bcf275.rocm7.14.0a20260531` | `cp311` |
+| therock | linux | nightly | historical | `7.14.0a20260531` | `3.7.0+git2b87d869.rocm7.14.0a20260531` | `cp312` |
 | therock | linux | nightly | historical | `7.14.0a20260531` | `3.7.0+git89cebf39.rocm7.14.0a20260531` | `cp310` |
 | therock | linux | nightly | historical | `7.14.0a20260531` | `3.7.0+gitbc333567.rocm7.14.0a20260531` | `cp314` |
 | therock | linux | nightly | historical | `7.14.0a20260531` | `3.7.0+gite17283ae.rocm7.14.0a20260531` | `cp313` |
@@ -86,10 +86,10 @@ Triton is tracked separately from core Torch candidates. These artifacts are opt
 | therock | linux | nightly | historical | `7.14.0a20260601` | `3.7.0+gitb174b9b3.rocm7.14.0a20260601` | `cp311` |
 | therock | linux | nightly | historical | `7.14.0a20260601` | `3.7.0+gitd79f9035.rocm7.14.0a20260601` | `cp313` |
 | therock | linux | nightly | historical | `7.14.0a20260602` | `3.6.0+rocm7.14.0a20260602` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `7.14.0a20260602` | `3.7.0+git1d564996.rocm7.14.0a20260602` | `cp310` |
-| therock | linux | nightly | historical | `7.14.0a20260602` | `3.7.0+git6fa4d8f2.rocm7.14.0a20260602` | `cp312` |
-| therock | linux | nightly | historical | `7.14.0a20260602` | `3.7.0+git47e4b3c7.rocm7.14.0a20260602` | `cp311` |
 | therock | linux | nightly | historical | `7.14.0a20260602` | `3.7.0+git096059ad.rocm7.14.0a20260602` | `cp314` |
+| therock | linux | nightly | historical | `7.14.0a20260602` | `3.7.0+git1d564996.rocm7.14.0a20260602` | `cp310` |
+| therock | linux | nightly | historical | `7.14.0a20260602` | `3.7.0+git47e4b3c7.rocm7.14.0a20260602` | `cp311` |
+| therock | linux | nightly | historical | `7.14.0a20260602` | `3.7.0+git6fa4d8f2.rocm7.14.0a20260602` | `cp312` |
 | therock | linux | nightly | historical | `7.14.0a20260602` | `3.7.0+git961828f0.rocm7.14.0a20260602` | `cp313` |
 | therock | linux | nightly | historical | `7.14.0a20260603` | `3.6.0+rocm7.14.0a20260603` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `7.14.0a20260603` | `3.7.0+git2f133104.rocm7.14.0a20260603` | `cp314` |
@@ -265,28 +265,28 @@ Triton is tracked separately from core Torch candidates. These artifacts are opt
 | therock | linux | nightly | historical | `7.15.0a20260727` | `3.7.1+git5d6048aa.rocm7.15.0a20260727` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `7.15.0a20260727` | `3.8.0+git4cff872c.rocm7.15.0a20260727` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `7.15.0a20260728` | `3.8.0+git4cff872c.rocm7.15.0a20260728` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.0.0a20260729` | `3.8.0+git4cff872c.rocm10.0.0a20260729` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `10.0.0a20260729` | `3.8.0+git10f6be36.rocm10.0.0a20260729` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.0.0a20260730` | `3.8.0+git4cff872c.rocm10.0.0a20260730` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.0.0a20260729` | `3.8.0+git4cff872c.rocm10.0.0a20260729` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `10.0.0a20260730` | `3.8.0+git10f6be36.rocm10.0.0a20260730` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.1.0a20260731` | `3.8.0+git4cff872c.rocm10.1.0a20260731` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.0.0a20260730` | `3.8.0+git4cff872c.rocm10.0.0a20260730` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `10.1.0a20260731` | `3.8.0+git10f6be36.rocm10.1.0a20260731` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.1.0a20260801` | `3.8.0+git4cff872c.rocm10.1.0a20260801` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.1.0a20260731` | `3.8.0+git4cff872c.rocm10.1.0a20260731` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `10.1.0a20260801` | `3.8.0+git10f6be36.rocm10.1.0a20260801` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.1.0a20260802` | `3.8.0+git4cff872c.rocm10.1.0a20260802` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.1.0a20260801` | `3.8.0+git4cff872c.rocm10.1.0a20260801` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `10.1.0a20260802` | `3.8.0+git10f6be36.rocm10.1.0a20260802` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.1.0a20260803` | `3.8.0+git4cff872c.rocm10.1.0a20260803` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.1.0a20260802` | `3.8.0+git4cff872c.rocm10.1.0a20260802` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `10.1.0a20260803` | `3.8.0+git10f6be36.rocm10.1.0a20260803` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.1.0a20260804` | `3.8.0+git4cff872c.rocm10.1.0a20260804` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.1.0a20260803` | `3.8.0+git4cff872c.rocm10.1.0a20260803` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `10.1.0a20260804` | `3.8.0+git10f6be36.rocm10.1.0a20260804` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.1.0a20260805` | `3.8.0+git4cff872c.rocm10.1.0a20260805` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.1.0a20260804` | `3.8.0+git4cff872c.rocm10.1.0a20260804` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `10.1.0a20260805` | `3.8.0+git10f6be36.rocm10.1.0a20260805` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | historical | `10.1.0a20260806` | `3.8.0+git4cff872c.rocm10.1.0a20260806` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.1.0a20260805` | `3.8.0+git4cff872c.rocm10.1.0a20260805` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `10.1.0a20260806` | `3.8.0+git10f6be36.rocm10.1.0a20260806` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | current | `10.1.0a20260807` | `3.8.0+git4cff872c.rocm10.1.0a20260807` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | current | `10.1.0a20260807` | `3.8.0+git4cff872c.rocm10.1.0a20260807` | `cp310`, `cp311`, `cp312`, `cp314` |
+| therock | linux | nightly | historical | `10.1.0a20260806` | `3.8.0+git4cff872c.rocm10.1.0a20260806` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | current | `10.1.0a20260807` | `3.8.0+git10f6be36.rocm10.1.0a20260807` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | current | `10.1.0a20260807` | `3.8.0+git10f6be36.rocm10.1.0a20260807` | `cp310`, `cp311`, `cp312`, `cp314` |
+| therock | linux | nightly | current | `10.1.0a20260807` | `3.8.0+git4cff872c.rocm10.1.0a20260807` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | current | `10.1.0a20260807` | `3.8.0+git4cff872c.rocm10.1.0a20260807` | `cp310`, `cp311`, `cp312`, `cp314` |
 | therock | linux | stable | historical | `7.13.0` | `3.4.0+rocm7.13.0` | `cp310`, `cp311`, `cp312`, `cp313` |
 | therock | linux | stable | historical | `7.13.0` | `3.6.0+rocm7.13.0` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | stable | current | `7.14.0` | `3.6.0+rocm7.14.0` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
@@ -325,8 +325,8 @@ Triton is tracked separately from core Torch candidates. These artifacts are opt
 | therock | linux | staging | historical | `7.13.0a20260515` | `3.6.0+rocm7.13.0a20260515` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | staging | current | `7.14.0a20260519` | `3.4.0+rocm7.14.0a20260519` | `cp310`, `cp311`, `cp312`, `cp313` |
 | therock | linux | staging | current | `7.14.0a20260519` | `3.6.0+rocm7.14.0a20260519` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | staging | current | `7.14.0a20260519` | `3.7.0+git7b56293a.rocm7.14.0a20260519` | `cp310` |
-| therock | linux | staging | current | `7.14.0a20260519` | `3.7.0+git8b2dc824.rocm7.14.0a20260519` | `cp311` |
 | therock | linux | staging | current | `7.14.0a20260519` | `3.7.0+git25e0bcb1.rocm7.14.0a20260519` | `cp314` |
 | therock | linux | staging | current | `7.14.0a20260519` | `3.7.0+git52687acf.rocm7.14.0a20260519` | `cp312` |
+| therock | linux | staging | current | `7.14.0a20260519` | `3.7.0+git7b56293a.rocm7.14.0a20260519` | `cp310` |
+| therock | linux | staging | current | `7.14.0a20260519` | `3.7.0+git8b2dc824.rocm7.14.0a20260519` | `cp311` |
 | therock | linux | staging | current | `7.14.0a20260519` | `3.7.0+gitfbb43d96.rocm7.14.0a20260519` | `cp313` |

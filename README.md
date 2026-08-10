@@ -26,6 +26,7 @@ The collector reads official AMD stable, nightly, and staging sources. It:
 - Generates a Markdown availability summary from the JSON snapshots.
 
 Official documentation sources and their evidence boundaries are listed in [docs/sources.md](docs/sources.md). The data boundaries and processing layers are documented in [docs/architecture.md](docs/architecture.md), the machine-readable consumer contract is in [docs/consumer-contract.md](docs/consumer-contract.md), and the future ComfyUI Manager boundary is in [docs/manager-boundary.md](docs/manager-boundary.md). Schema changes follow [docs/schema-versioning.md](docs/schema-versioning.md).
+The latest repository audit and hardening notes are in [docs/code-audit.md](docs/code-audit.md).
 
 Current generated views:
 
@@ -48,7 +49,9 @@ py -m venv .venv
 python -m pip install --editable .
 ```
 
-The project currently has no third-party runtime dependencies. Future collector and documentation dependencies will be declared in `pyproject.toml` and installed only into `.venv`.
+Runtime dependencies are declared in `pyproject.toml` and installed only into
+the repository-local `.venv`. The collector does not install ROCm, PyTorch, or
+other target-environment packages into the project environment.
 
 ## Collect data
 
