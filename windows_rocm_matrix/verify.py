@@ -24,6 +24,10 @@ def current_python_tag():
     return f"cp{sys.version_info.major}{sys.version_info.minor}"
 
 
+def normalized_platform_tag(value):
+    return value.replace("-", "_").replace(".", "_")
+
+
 def verification_arguments(candidate, gfx, report_path, python_tag=None, platform_tag=None):
     install = install_arguments_for_candidate(candidate, gfx)
     arguments = [
@@ -36,9 +40,13 @@ def verification_arguments(candidate, gfx, report_path, python_tag=None, platfor
         str(report_path),
         *install[1:],
     ]
-    if platform_tag:
+    native_target = (
+        (not platform_tag or normalized_platform_tag(platform_tag) == normalized_platform_tag(sysconfig.get_platform()))
+        and (not python_tag or python_tag == current_python_tag())
+    )
+    if platform_tag and not native_target:
         arguments[1:1] = ["--platform", platform_tag, "--only-binary=:all:"]
-    if python_tag and platform_tag:
+    if python_tag and not native_target:
         arguments[1:1] = ["--python-version", python_tag.removeprefix("cp"), "--implementation", "cp", "--abi", python_tag]
     return arguments
 

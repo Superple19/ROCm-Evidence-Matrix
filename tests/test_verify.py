@@ -3,6 +3,8 @@ from unittest.mock import patch
 
 from pathlib import Path
 import json
+import sys
+import sysconfig
 import tempfile
 
 from windows_rocm_matrix.verify import append_verification_log, candidate_hash, combined_process_output, default_platform_tag, error_summary, install_arguments_for_candidate, merge_verification, normalized_command, read_verification_log, resolved_packages, update_history_evidence, virtualenv_python
@@ -127,6 +129,21 @@ class VerificationTests(unittest.TestCase):
         self.assertIn("--dry-run", command)
         self.assertIn("--ignore-installed", command)
         self.assertIn("torch[device-gfx1201]==2.12.0+rocm7.14.0", command)
+
+    def test_native_resolver_does_not_force_binary_only(self):
+        candidate = {
+            "source_id": "packages-stable",
+            "rocm_version": "7.14.0",
+            "torch_version": "2.12.0+rocm7.14.0",
+            "torchvision_version": "0.27.0+rocm7.14.0",
+            "torchaudio_version": "2.11.0+rocm7.14.0",
+        }
+        python_tag = f"cp{sys.version_info.major}{sys.version_info.minor}"
+        platform_tag = sysconfig.get_platform().replace("-", "_").replace(".", "_")
+        command = normalized_command(candidate, "gfx1201", python_tag, platform_tag)
+
+        self.assertNotIn("--only-binary=:all:", command)
+        self.assertNotIn("--platform", command)
 
     def test_normalizes_pip_report(self):
         report = {
