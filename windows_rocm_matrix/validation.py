@@ -274,9 +274,25 @@ def validate_resolver_verifications(document):
         raise ValueError("Resolver verification generation time must be UTC")
     ids = set()
     for record in document.get("verifications", []):
-        required = {"id", "observed_at", "os", "result", "rocm_available", "device_count", "devices"}
+        required = {
+            "id",
+            "candidate_id",
+            "source_id",
+            "gfx",
+            "python_tag",
+            "python_version",
+            "platform_tag",
+            "packages",
+            "command",
+            "observed_at",
+            "result",
+            "exit_code",
+            "pip_version",
+            "resolved_packages",
+            "error",
+        }
         if not required.issubset(record):
-            raise ValueError(f"Runtime verification lacks required fields: {record.get('id', 'unknown')}")
+            raise ValueError(f"Resolver verification lacks required fields: {record.get('id', 'unknown')}")
         if record["id"] in ids:
             raise ValueError(f"Duplicate resolver verification: {record['id']}")
         ids.add(record["id"])

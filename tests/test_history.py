@@ -1,6 +1,9 @@
 import unittest
+import json
+import tempfile
+from pathlib import Path
 
-from windows_rocm_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, render_history
+from windows_rocm_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, promote_execution_evidence, render_history
 from windows_rocm_matrix.identity import candidate_hash
 from windows_rocm_matrix.resolve import install_command, resolve_candidates
 
@@ -233,6 +236,57 @@ class HistoryTests(unittest.TestCase):
         errors = execution_evidence_errors(candidate, record, "runtime")
         self.assertTrue(any("ROCm mismatch" in error for error in errors))
         self.assertFalse(any("candidate hash" in error for error in errors))
+
+    def test_promotes_matching_runtime_evidence(self):
+        candidate = {
+            "id": "candidate",
+            "distribution_family": "therock",
+            "platform": "windows",
+            "lifecycle": "current",
+            "channel": "nightly",
+            "rocm_version": "10.1.0a20260806",
+            "torch_version": "2.14.0a0+rocm10.1.0a20260806",
+            "torchvision_version": "0.29.0a0+rocm10.1.0a20260806",
+            "torchaudio_version": "2.11.0+rocm10.1.0a20260806",
+            "hip_version": None,
+            "python_tags": ["cp312"],
+            "gfx_support": "known",
+            "gfx_targets": ["gfx1201"],
+            "available_gfx_targets": ["gfx1201"],
+            "artifact_available": True,
+            "source_id": "packages-nightly",
+            "first_observed_at": "2026-08-08T00:00:00Z",
+            "last_observed_at": "2026-08-08T00:00:00Z",
+            "evidence_status": {
+                "artifact": "artifact_available",
+                "documentation": "not_collected",
+                "ci": "not_collected",
+                "resolver": "not_collected",
+                "runtime": "not_collected",
+                "hardware": "not_collected",
+            },
+        }
+        record = {
+            "candidate_id": "candidate",
+            "os": "windows",
+            "gfx": "gfx1201",
+            "torch_version": candidate["torch_version"],
+            "rocm_version": candidate["rocm_version"],
+            "hip_version": "7.15.26312",
+            "python_tag": "cp312",
+            "platform_tag": "win_amd64",
+            "result": "passed",
+            "devices": [{"gfx": "gfx1201"}],
+        }
+        record["candidate_hash"] = candidate_hash(candidate, "gfx1201", "cp312", "win_amd64")
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "history.json"
+            path.write_text(json.dumps({"schema_version": 2, "generated_at": "2026-08-08T00:00:00Z", "sources": {"packages-nightly": {}}, "candidates": [candidate]}), encoding="utf-8")
+            promoted, errors = promote_execution_evidence(path, "runtime", {**record, "candidate_id": "candidate"})
+            self.assertTrue(promoted)
+            self.assertEqual(errors, [])
+            history = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(history["candidates"][0]["evidence_status"]["runtime"], "runtime_verified")
 
     def test_attaches_ci_evidence_with_gfx_platform_scope(self):
         candidate = {

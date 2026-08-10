@@ -7,6 +7,7 @@ from .identity import candidate_hash
 from .persistence import atomic_write_json, atomic_write_text
 from .simple_index import version_key
 from .source_adapter import monotonic_generated_at
+from .validation import validate_history
 
 
 STATUS_ORDER = {
