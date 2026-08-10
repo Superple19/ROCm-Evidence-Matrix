@@ -165,6 +165,11 @@ class VerificationTests(unittest.TestCase):
         candidate = {"id": "candidate", "source_id": "packages-stable", "torch_version": "2.12.0"}
         self.assertEqual(candidate_hash(candidate, "gfx1201", "cp312"), candidate_hash(candidate, "gfx1201", "cp312"))
 
+    def test_candidate_hash_ignores_wheel_url_order(self):
+        candidate = {"id": "candidate", "source_id": "legacy-artifacts", "torch_version": "2.12.0", "wheel_urls": ["https://example.test/b.whl", "https://example.test/a.whl"]}
+        reordered = {**candidate, "wheel_urls": list(reversed(candidate["wheel_urls"]))}
+        self.assertEqual(candidate_hash(candidate, "gfx1201", "cp312"), candidate_hash(reordered, "gfx1201", "cp312"))
+
     def test_uses_candidate_platform_for_cross_platform_dry_run(self):
         candidate = {"id": "candidate", "platform": "linux", "source_id": "packages-stable-linux", "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0", "rocm_version": "7.14.0"}
         self.assertEqual(default_platform_tag(candidate), "manylinux_2_28_x86_64")

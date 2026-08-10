@@ -2,9 +2,9 @@
 
 # ROCm version history
 
-Platform support, documentation availability, and observed package or test evidence are independent fields. The package and CI columns below refer to legacy Windows evidence; TheRock package availability is shown in the compatibility matrix. A missing archive is not an unsupported release.
+Platform support, documentation availability, and observed package or test evidence are independent fields. Platform evidence is shown for the platform in each row; legacy Windows fields remain compatibility aliases in the machine-readable record. A missing archive is not an unsupported release.
 
-| Distribution | Platform | Version | Channel | Lifecycle | Windows support | Legacy Windows package | Legacy Windows CI | Documentation | GPU observations | Framework observations | Package artifacts |
+| Distribution | Platform | Version | Channel | Lifecycle | Platform support | Package available | CI verified | Documentation | GPU observations | Framework observations | Package artifacts |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: |
 | therock | windows | `10.1.0` | nightly | current | unknown | False | None | available | 23 | 0 | 0 |
 | therock | windows | `7.14.0` | stable | current | unknown | False | None | archive_missing | 0 | 0 | 0 |

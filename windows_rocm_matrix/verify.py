@@ -76,7 +76,7 @@ def candidate_hash(candidate, gfx, python_tag, platform_tag=None):
         "python_tag": python_tag,
         "platform_tag": platform_tag,
         "packages": {name: candidate.get(name) for name in ("rocm_version", "torch_version", "torchvision_version", "torchaudio_version")},
-        "wheel_urls": candidate.get("wheel_urls", []),
+        "wheel_urls": sorted(candidate.get("wheel_urls", [])),
     }
     return hashlib.sha256(json.dumps(identity, sort_keys=True).encode("utf-8")).hexdigest()
 

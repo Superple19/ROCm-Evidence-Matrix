@@ -25,7 +25,7 @@ The collector reads official AMD stable, nightly, and staging sources. It:
 - Prepares privacy-redacted community runtime and hardware submissions without uploading them.
 - Generates a Markdown availability summary from the JSON snapshots.
 
-Official documentation sources and their evidence boundaries are listed in [docs/sources.md](docs/sources.md). The data boundaries and processing layers are documented in [docs/architecture.md](docs/architecture.md), the machine-readable consumer contract is in [docs/consumer-contract.md](docs/consumer-contract.md), and schema changes follow [docs/schema-versioning.md](docs/schema-versioning.md).
+Official documentation sources and their evidence boundaries are listed in [docs/sources.md](docs/sources.md). The data boundaries and processing layers are documented in [docs/architecture.md](docs/architecture.md), the machine-readable consumer contract is in [docs/consumer-contract.md](docs/consumer-contract.md), and the future ComfyUI Manager boundary is in [docs/manager-boundary.md](docs/manager-boundary.md). Schema changes follow [docs/schema-versioning.md](docs/schema-versioning.md).
 
 Current generated views:
 

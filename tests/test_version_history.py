@@ -144,6 +144,14 @@ class VersionHistoryTests(unittest.TestCase):
         self.assertEqual(by_id["therock:linux:7.2.4"]["lifecycle"], "current")
         validate_version_history(history)
 
+    def test_platform_evidence_is_not_forced_to_windows(self):
+        record = release_record("therock", "10.1.0", OBSERVED_AT, platform="linux", source_ids=["source"])
+        self.assertIn("linux", record["platform_evidence"])
+        self.assertNotIn("windows", record["platform_evidence"])
+        self.assertEqual(record["windows_support"], "unknown")
+        history = merge_version_history(None, "therock", [record], [], {"source": {}}, OBSERVED_AT)
+        validate_version_history(history)
+
 
 if __name__ == "__main__":
     unittest.main()

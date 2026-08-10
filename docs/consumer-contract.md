@@ -24,6 +24,12 @@ Do not infer channel from a version string or URL. Use the recorded source
 metadata. Do not treat artifact availability as resolver, runtime, or hardware
 compatibility.
 
+`artifact_available` means that the package set was observed in the latest
+collection for its source. `artifact_stale` means the candidate was observed in
+an earlier collection but was absent when that source was checked again.
+`not_collected` means that no current artifact observation exists; it is not a
+statement of support or non-support.
+
 Legacy direct-wheel candidates use the same history record but include
 `wheel_urls`. Consumers must pass those URLs directly while using PyPI only for
 ordinary third-party dependencies; they must not
@@ -55,6 +61,10 @@ evidence.
   view may be replaced without changing the underlying observation identity.
 - Runtime and hardware records use the same normalized `os` values: `windows`,
   `linux`, `macos`, or `unknown`.
+- Candidate `hip_version` may be `null` when package metadata does not expose
+  the runtime HIP build. Consumers must not infer HIP from the ROCm package
+  version; use runtime or hardware evidence when an observed HIP version is
+  required.
 
 ## Compatibility policy
 
@@ -63,7 +73,8 @@ field change keeps the schema version; a changed meaning, removed field, or
 identity change requires a new schema version and migration notes.
 
 The legacy `windows_*` version-history fields are compatibility aliases. New
-consumers should read `platform_evidence.windows` instead.
+consumers should read the evidence object under the release's `platform` key
+(for example, `platform_evidence.windows` or `platform_evidence.linux`).
 
 ## Profiles and community evidence
 

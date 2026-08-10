@@ -59,6 +59,7 @@ class HistoryTests(unittest.TestCase):
 
         self.assertFalse(second["candidates"][0]["artifact_available"])
         self.assertEqual(second["candidates"][0]["gfx_targets"], ["gfx1201"])
+        self.assertEqual(second["candidates"][0]["evidence_status"]["artifact"], "artifact_stale")
 
     def test_generated_at_does_not_regress_during_offline_merge(self):
         existing = {"schema_version": 2, "generated_at": "2026-08-08T14:13:02Z", "sources": {}, "candidates": []}

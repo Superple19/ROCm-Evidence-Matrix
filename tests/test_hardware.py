@@ -15,6 +15,12 @@ class HardwareTests(unittest.TestCase):
         self.assertFalse(record["correct"])
         validate_hardware_verifications({"schema_version": 1, "generated_at": record["observed_at"], "verifications": [record]})
 
+    def test_rejects_legacy_os_name(self):
+        record = collect_hardware(types.SimpleNamespace(__version__="2.12.0", version=types.SimpleNamespace(hip=None), cuda=types.SimpleNamespace(is_available=lambda: False, device_count=lambda: 0)), "2026-08-08T00:00:00Z")
+        record["os"] = "nt"
+        with self.assertRaisesRegex(ValueError, "operating system"):
+            validate_hardware_verifications({"schema_version": 1, "generated_at": record["observed_at"], "verifications": [record]})
+
 
 if __name__ == "__main__":
     unittest.main()

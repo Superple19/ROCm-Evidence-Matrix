@@ -117,22 +117,29 @@ def matching_release(version, releases):
 
 def release_record(family, version, observed_at, **values):
     platform = values.get("platform", "windows")
-    windows_evidence = {
+    evidence = {
         "support": values.get("windows_support", "unknown"),
         "package_available": values.get("windows_package_available", False),
         "ci_verified": values.get("windows_ci_verified"),
     }
+    platform_evidence = values.get("platform_evidence")
+    if not isinstance(platform_evidence, dict):
+        platform_evidence = {platform: evidence}
+    windows_evidence = platform_evidence.get(
+        "windows",
+        {"support": "unknown", "package_available": False, "ci_verified": None},
+    )
     return {
         "id": f"{family}:{version}" if platform == "windows" else f"{family}:{platform}:{version}",
         "distribution_family": family,
         "platform": platform,
-        "platform_evidence": {"windows": windows_evidence},
+        "platform_evidence": platform_evidence,
         "version": version,
         "channel": values.get("channel", "stable"),
         "release_date": values.get("release_date"),
-        "windows_support": values.get("windows_support", "unknown"),
-        "windows_package_available": values.get("windows_package_available", False),
-        "windows_ci_verified": values.get("windows_ci_verified"),
+        "windows_support": windows_evidence["support"],
+        "windows_package_available": windows_evidence["package_available"],
+        "windows_ci_verified": windows_evidence["ci_verified"],
         "documentation_status": values.get("documentation_status", "unknown"),
         "documentation_url": values.get("documentation_url"),
         "source_ids": sorted(set(values.get("source_ids", []))),
@@ -377,15 +384,16 @@ def render_version_history(document):
         "",
         "# ROCm version history",
         "",
-        "Platform support, documentation availability, and observed package or test evidence are independent fields. The package and CI columns below refer to legacy Windows evidence; TheRock package availability is shown in the compatibility matrix. A missing archive is not an unsupported release.",
+        "Platform support, documentation availability, and observed package or test evidence are independent fields. Platform evidence is shown for the platform in each row; legacy Windows fields remain compatibility aliases in the machine-readable record. A missing archive is not an unsupported release.",
         "",
-        "| Distribution | Platform | Version | Channel | Lifecycle | Windows support | Legacy Windows package | Legacy Windows CI | Documentation | GPU observations | Framework observations | Package artifacts |",
+        "| Distribution | Platform | Version | Channel | Lifecycle | Platform support | Package available | CI verified | Documentation | GPU observations | Framework observations | Package artifacts |",
         "| --- | --- | --- | --- | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: |",
     ]
     for item in sorted(document["releases"], key=lambda item: version_key(item["version"]), reverse=True):
-        windows = item.get("platform_evidence", {}).get("windows", {})
+        platform = item.get("platform", "unknown")
+        evidence = item.get("platform_evidence", {}).get(platform, {})
         lines.append(
-            f"| {item['distribution_family']} | {item.get('platform', 'windows')} | `{item['version']}` | {item['channel']} | {item['lifecycle']} | {windows.get('support', item['windows_support'])} | "
-            f"{windows.get('package_available', item['windows_package_available'])} | {windows.get('ci_verified', item['windows_ci_verified'])} | {item['documentation_status']} | {item['gpu_support_observations']} | {item['framework_support_observations']} | {item['package_artifacts']} |"
+            f"| {item['distribution_family']} | {platform} | `{item['version']}` | {item['channel']} | {item['lifecycle']} | {evidence.get('support', 'unknown')} | "
+            f"{evidence.get('package_available', False)} | {evidence.get('ci_verified')} | {item['documentation_status']} | {item['gpu_support_observations']} | {item['framework_support_observations']} | {item['package_artifacts']} |"
         )
     return "\n".join(lines).rstrip() + "\n"

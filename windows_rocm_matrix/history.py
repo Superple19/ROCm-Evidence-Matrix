@@ -412,7 +412,7 @@ def merge_history(existing, observations, sources, observed_at, observed_source_
                 candidate["available_gfx_targets"] = []
             evidence = candidate.setdefault("evidence_status", initial_evidence_status())
             if not candidate["artifact_available"] and evidence.get("artifact") == "artifact_available":
-                evidence["artifact"] = "not_collected"
+                evidence["artifact"] = "artifact_stale"
 
     for observation in observations:
         current = candidates.get(observation["id"])

@@ -27,6 +27,12 @@ class RuntimeTests(unittest.TestCase):
         record = collect_runtime(torch, "2026-08-08T00:00:00Z")
         self.assertEqual(record["result"], "failed")
 
+    def test_rejects_legacy_os_name(self):
+        record = collect_runtime(types.SimpleNamespace(__version__="2.12.0", version=types.SimpleNamespace(hip=None), cuda=types.SimpleNamespace(is_available=lambda: False, device_count=lambda: 0)), "2026-08-08T00:00:00Z")
+        record["os"] = "win32"
+        with self.assertRaisesRegex(ValueError, "operating system"):
+            validate_runtime_verifications({"schema_version": 1, "generated_at": record["observed_at"], "verifications": [record]})
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -306,6 +306,8 @@ def validate_runtime_verifications(document):
         if record["id"] in ids:
             raise ValueError(f"Duplicate runtime verification: {record['id']}")
         ids.add(record["id"])
+        if record.get("os") not in {"windows", "linux", "macos", "unknown"}:
+            raise ValueError(f"Invalid runtime operating system: {record['id']}")
         if record["result"] not in {"passed", "failed"} or not record.get("observed_at", "").endswith("Z"):
             raise ValueError(f"Invalid runtime verification: {record['id']}")
         if record["result"] == "passed" and (not record["rocm_available"] or record["device_count"] < 1):
@@ -322,6 +324,8 @@ def validate_hardware_verifications(document):
         if record["id"] in ids:
             raise ValueError(f"Duplicate hardware verification: {record['id']}")
         ids.add(record["id"])
+        if record.get("os") not in {"windows", "linux", "macos", "unknown"}:
+            raise ValueError(f"Invalid hardware operating system: {record['id']}")
         if record["result"] not in {"passed", "failed"} or not record.get("observed_at", "").endswith("Z"):
             raise ValueError(f"Invalid hardware verification: {record['id']}")
         if record["result"] == "passed" and (not record["correct"] or not record.get("device")):
