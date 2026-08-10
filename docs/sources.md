@@ -205,6 +205,21 @@ For an exact target such as `gfx1201`, a complete PyTorch candidate must include
 
 The package names above are an example for `gfx1201`. Collectors must substitute the detected target and must not hard-code that architecture.
 
+## ComfyUI extension artifact sources
+
+Extension collection is explicit and independent from core ROCm candidate
+collection. The configured sources in `config/sources.json` currently use the
+official PyPI JSON API for bitsandbytes, Flash Attention, AITER, SageAttention,
+and Triton. The collector preserves wheel/source filenames, versions, Python
+ABI tags, platform tags, URLs, and observation times in
+`data/extensions/snapshots/` and `data/extensions/catalog.json`.
+
+An extension artifact source establishes only `artifact_available`. It does
+not establish compatibility with a selected Torch, ROCm, HIP, GFX, or target
+runtime. The source adapter also supports explicit Simple API and GitHub
+release-asset entries for future sources; those entries must be added to the
+configuration rather than inferred from arbitrary URLs.
+
 ### Multi-architecture staging Python packages
 
 - URL: https://rocm.nightlies.amd.com/whl-staging-multi-arch/

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Superple19/rocm-evidence-matrix/schemas/extension-catalog.schema.json",
+  "title": "ROCm extension artifact catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "sources", "extensions"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "sources": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "url", "distribution_family", "platform", "channel", "observed_at"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "url": {"type": "string", "format": "uri"},
+          "distribution_family": {"enum": ["therock", "legacy", "external"]},
+          "platform": {"enum": ["windows", "linux", "macos", "unknown"]},
+          "channel": {"enum": ["stable", "nightly", "staging", "external"]},
+          "observed_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id", "extension", "package_name", "distribution_family", "platform",
+          "channel", "lifecycle", "version", "python_tags", "platform_tags",
+          "artifacts", "artifact_urls", "source_id", "artifact_available", "evidence_status",
+          "first_observed_at", "last_observed_at"
+        ],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "extension": {"type": "string", "minLength": 1},
+          "package_name": {"type": "string", "minLength": 1},
+          "distribution_family": {"enum": ["therock", "legacy", "external"]},
+          "platform": {"enum": ["windows", "linux", "macos", "unknown"]},
+          "channel": {"enum": ["stable", "nightly", "staging", "external"]},
+          "lifecycle": {"enum": ["current", "historical"]},
+          "version": {"type": "string", "minLength": 1},
+          "python_tags": {"type": "array", "items": {"type": "string"}},
+          "platform_tags": {"type": "array", "items": {"type": "string"}},
+          "artifacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["filename", "version", "python_tag", "abi_tag", "platform_tag", "url"],
+              "properties": {
+                "filename": {"type": "string", "minLength": 1},
+                "version": {"type": "string", "minLength": 1},
+                "python_tag": {"type": "string", "minLength": 1},
+                "abi_tag": {"type": "string", "minLength": 1},
+                "platform_tag": {"type": "string", "minLength": 1},
+                "url": {"type": "string", "format": "uri"}
+              }
+            }
+          },
+          "artifact_urls": {"type": "array", "items": {"type": "string", "format": "uri"}},
+          "source_id": {"type": "string", "minLength": 1},
+          "rocm_version": {"type": ["string", "null"]},
+          "torch_constraints": {"type": "array", "items": {"type": "string"}},
+          "hip_constraints": {"type": "array", "items": {"type": "string"}},
+          "gfx_targets": {"type": "array", "items": {"type": "string", "pattern": "^gfx[0-9a-z]+$"}},
+          "artifact_available": {"type": "boolean"},
+          "evidence_status": {"enum": ["artifact_available", "not_collected", "unsupported", "unknown"]},
+          "first_observed_at": {"type": "string", "format": "date-time"},
+          "last_observed_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    }
+  }
+}

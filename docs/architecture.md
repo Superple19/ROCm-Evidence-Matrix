@@ -5,7 +5,10 @@ ROCm Evidence Matrix separates evidence by two independent dimensions:
 - `distribution_family`: `therock` or `legacy`
 - `platform`: `windows`, `linux`, `macos`, or `unknown`
 - `channel`: `stable`, `nightly`, or `staging`
-- `evidence_kind`: documentation, package, CI, resolver, runtime, or hardware
+- `evidence_kind`: documentation, package, extension, CI, resolver, runtime, or hardware
+
+Extension artifact observations may use `distribution_family=external` and
+`channel=external`; they remain outside the core ROCm release dimensions.
 
 The distribution family describes how an artifact or release is produced. The
 platform describes where the artifact or observation applies. TheRock and
@@ -23,6 +26,7 @@ future Linux legacy source would remain `distribution_family=legacy` with
 source adapters
   -> cached observations (.cache/, ignored)
   -> normalized TheRock and legacy snapshots
+  -> extension artifact snapshots and catalog (data/extensions/*.json)
   -> integrated evidence and candidate catalog (data/*.json)
   -> optional verification evidence
   -> generated documentation (docs/generated/)
@@ -51,6 +55,8 @@ consumers; new platform integrations must use the grouped representation.
 - `rocm_evidence_matrix/ci.py`: TheRock CI configuration and execution evidence
 - `rocm_evidence_matrix/frameworks.py`: JAX framework and ROCm SDK component evidence
 - `rocm_evidence_matrix/extensions.py`: optional compiled-extension artifact history
+- `rocm_evidence_matrix/extension_sources.py`: explicit PyPI, Simple API, and GitHub extension artifact adapters
+- `rocm_evidence_matrix/extension_catalog.py`: append-only extension catalog/history and human-readable rendering
 - `rocm_evidence_matrix/check.py`: offline evidence and generated-document validation
 - `rocm_evidence_matrix/profile.py`: consumer profile validation and selection policy
 - `rocm_evidence_matrix/community.py`: privacy-redacted community evidence export

@@ -1,0 +1,33 @@
+{
+  "completed_at": "2026-08-10T17:45:59Z",
+  "distribution_family": "external",
+  "results": [
+    {
+      "error": null,
+      "source_id": "pypi-aiter",
+      "status": "passed"
+    },
+    {
+      "error": null,
+      "source_id": "pypi-bitsandbytes",
+      "status": "passed"
+    },
+    {
+      "error": null,
+      "source_id": "pypi-flash-attn",
+      "status": "passed"
+    },
+    {
+      "error": null,
+      "source_id": "pypi-sageattention",
+      "status": "passed"
+    },
+    {
+      "error": null,
+      "source_id": "pypi-triton",
+      "status": "passed"
+    }
+  ],
+  "schema_version": 1,
+  "started_at": "2026-08-10T17:45:59Z"
+}

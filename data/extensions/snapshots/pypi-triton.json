@@ -1,0 +1,1336 @@
+{
+  "gfx_targets": [],
+  "last_observed_at": "2026-08-10T17:45:59Z",
+  "packages": {
+    "triton": [
+      {
+        "abi_tag": "cp35m",
+        "filename": "triton-0.4.1-cp35-cp35m-manylinux2010_x86_64.whl",
+        "platform_tag": "manylinux2010_x86_64",
+        "python_tag": "cp35",
+        "url": "https://files.pythonhosted.org/packages/48/70/6f9feac84824b2c25503f7d37efa8afc0a1962887faa4f24071c3f7b678a/triton-0.4.1-cp35-cp35m-manylinux2010_x86_64.whl",
+        "version": "0.4.1"
+      },
+      {
+        "abi_tag": "cp36m",
+        "filename": "triton-0.4.1-cp36-cp36m-manylinux2010_x86_64.whl",
+        "platform_tag": "manylinux2010_x86_64",
+        "python_tag": "cp36",
+        "url": "https://files.pythonhosted.org/packages/cd/da/069554812204f3bcc6b00a344b417384cb1191cff5cc457456906f970fb4/triton-0.4.1-cp36-cp36m-manylinux2010_x86_64.whl",
+        "version": "0.4.1"
+      },
+      {
+        "abi_tag": "cp37m",
+        "filename": "triton-0.4.1-cp37-cp37m-manylinux2010_x86_64.whl",
+        "platform_tag": "manylinux2010_x86_64",
+        "python_tag": "cp37",
+        "url": "https://files.pythonhosted.org/packages/74/00/990e44a74bba0735f55780ede9c717271887e7b48e4cedb1ab72086af169/triton-0.4.1-cp37-cp37m-manylinux2010_x86_64.whl",
+        "version": "0.4.1"
+      },
+      {
+        "abi_tag": "cp38",
+        "filename": "triton-0.4.1-cp38-cp38-manylinux2010_x86_64.whl",
+        "platform_tag": "manylinux2010_x86_64",
+        "python_tag": "cp38",
+        "url": "https://files.pythonhosted.org/packages/55/ac/2e2e994bc396edb9d2a759b76a09234c8f5e9a7a4ea464ccc218ed978fc9/triton-0.4.1-cp38-cp38-manylinux2010_x86_64.whl",
+        "version": "0.4.1"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-0.4.1-cp39-cp39-manylinux2010_x86_64.whl",
+        "platform_tag": "manylinux2010_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/31/d6/45995419f74d238bdd56aadd03b9f07fd3f589e2fb89178186d356e81480/triton-0.4.1-cp39-cp39-manylinux2010_x86_64.whl",
+        "version": "0.4.1"
+      },
+      {
+        "abi_tag": "pypy36_pp73",
+        "filename": "triton-0.4.1-pp36-pypy36_pp73-manylinux2010_x86_64.whl",
+        "platform_tag": "manylinux2010_x86_64",
+        "python_tag": "pp36",
+        "url": "https://files.pythonhosted.org/packages/f5/d4/b1e379cb4bf9e883dbd5c2615145755e8ea828d8af81b92a7c915d69f87a/triton-0.4.1-pp36-pypy36_pp73-manylinux2010_x86_64.whl",
+        "version": "0.4.1"
+      },
+      {
+        "abi_tag": "pypy37_pp73",
+        "filename": "triton-0.4.1-pp37-pypy37_pp73-manylinux2010_x86_64.whl",
+        "platform_tag": "manylinux2010_x86_64",
+        "python_tag": "pp37",
+        "url": "https://files.pythonhosted.org/packages/ed/69/9cb40b1efbe2d8be7d0e4da6833d71c86fabc25afed803fd1be43065eb83/triton-0.4.1-pp37-pypy37_pp73-manylinux2010_x86_64.whl",
+        "version": "0.4.1"
+      },
+      {
+        "abi_tag": "cp35m",
+        "filename": "triton-0.4.2-cp35-cp35m-manylinux2010_x86_64.whl",
+        "platform_tag": "manylinux2010_x86_64",
+        "python_tag": "cp35",
+        "url": "https://files.pythonhosted.org/packages/ad/a0/13660887b3b6d668967fb0037197ec2de8414e0172b3a2e7b10f30f130a6/triton-0.4.2-cp35-cp35m-manylinux2010_x86_64.whl",
+        "version": "0.4.2"
+      },
+      {
+        "abi_tag": "cp36m",
+        "filename": "triton-0.4.2-cp36-cp36m-manylinux2010_x86_64.whl",
+        "platform_tag": "manylinux2010_x86_64",
+        "python_tag": "cp36",
+        "url": "https://files.pythonhosted.org/packages/67/57/21d7b63cf311c5b07c34042dfce0c67588a3dbe4bd75c87b6a7ff1873f36/triton-0.4.2-cp36-cp36m-manylinux2010_x86_64.whl",
+        "version": "0.4.2"
+      },
+      {
+        "abi_tag": "cp37m",
+        "filename": "triton-0.4.2-cp37-cp37m-manylinux2010_x86_64.whl",
+        "platform_tag": "manylinux2010_x86_64",
+        "python_tag": "cp37",
+        "url": "https://files.pythonhosted.org/packages/42/ef/02bffc6207a1a6f31508c604177505dfd6a5d90105b9a6d5d64f36a672b5/triton-0.4.2-cp37-cp37m-manylinux2010_x86_64.whl",
+        "version": "0.4.2"
+      },
+      {
+        "abi_tag": "cp38",
+        "filename": "triton-0.4.2-cp38-cp38-manylinux2010_x86_64.whl",
+        "platform_tag": "manylinux2010_x86_64",
+        "python_tag": "cp38",
+        "url": "https://files.pythonhosted.org/packages/57/9f/f4a2b74630f546c87bf526970113b288c317dcf4e8bf552d92a92a76052a/triton-0.4.2-cp38-cp38-manylinux2010_x86_64.whl",
+        "version": "0.4.2"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-0.4.2-cp39-cp39-manylinux2010_x86_64.whl",
+        "platform_tag": "manylinux2010_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/79/1a/cd79a3b3da64536e1a906069351d84d39f44aa8bf4c67183968c4e736624/triton-0.4.2-cp39-cp39-manylinux2010_x86_64.whl",
+        "version": "0.4.2"
+      },
+      {
+        "abi_tag": "pypy36_pp73",
+        "filename": "triton-0.4.2-pp36-pypy36_pp73-manylinux2010_x86_64.whl",
+        "platform_tag": "manylinux2010_x86_64",
+        "python_tag": "pp36",
+        "url": "https://files.pythonhosted.org/packages/64/21/e243c65ca2c982a1b3cc82b72fe1b4d74945e861de02220bb398edb8b276/triton-0.4.2-pp36-pypy36_pp73-manylinux2010_x86_64.whl",
+        "version": "0.4.2"
+      },
+      {
+        "abi_tag": "pypy37_pp73",
+        "filename": "triton-0.4.2-pp37-pypy37_pp73-manylinux2010_x86_64.whl",
+        "platform_tag": "manylinux2010_x86_64",
+        "python_tag": "pp37",
+        "url": "https://files.pythonhosted.org/packages/1b/33/0187fd6087e3df66cde937a3cf6981de49e8b2fefcd9323c8cc3e0b2436f/triton-0.4.2-pp37-pypy37_pp73-manylinux2010_x86_64.whl",
+        "version": "0.4.2"
+      },
+      {
+        "abi_tag": "cp36m",
+        "filename": "triton-1.0.0-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp36",
+        "url": "https://files.pythonhosted.org/packages/21/31/ff105ecf2ea6c149c5889dfce3d6e5dd4261ae6702fd8e7764519d82deea/triton-1.0.0-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.0.0"
+      },
+      {
+        "abi_tag": "cp37m",
+        "filename": "triton-1.0.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp37",
+        "url": "https://files.pythonhosted.org/packages/33/63/acecabddd9044a88f129fe08eca77b484a61b7cf6cf2935f304d64333321/triton-1.0.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.0.0"
+      },
+      {
+        "abi_tag": "cp38",
+        "filename": "triton-1.0.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp38",
+        "url": "https://files.pythonhosted.org/packages/22/c2/c1e36bc4583c0d75352a0e37355eccf210f71a592b02d6d87550a8262767/triton-1.0.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.0.0"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-1.0.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/58/41/493900350635c11ac481e3aa830da1c08c6616b360387a5c3ccacb031566/triton-1.0.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.0.0"
+      },
+      {
+        "abi_tag": "pypy37_pp73",
+        "filename": "triton-1.0.0-pp37-pypy37_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "pp37",
+        "url": "https://files.pythonhosted.org/packages/7f/40/de29eb4329337f6dfd6622736f404046749fd64fa8a937c286dc626ef6dd/triton-1.0.0-pp37-pypy37_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.0.0"
+      },
+      {
+        "abi_tag": "cp36m",
+        "filename": "triton-1.1.0-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp36",
+        "url": "https://files.pythonhosted.org/packages/37/e1/fe7f7061cb70e822085c37081728a286bf15e241795cb3cad894e509a1d0/triton-1.1.0-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.1.0"
+      },
+      {
+        "abi_tag": "cp37m",
+        "filename": "triton-1.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp37",
+        "url": "https://files.pythonhosted.org/packages/f2/93/92283e4f30f9cc9252833d9edb62557c3abcfeaa3d82e8e321965610c29f/triton-1.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.1.0"
+      },
+      {
+        "abi_tag": "cp38",
+        "filename": "triton-1.1.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp38",
+        "url": "https://files.pythonhosted.org/packages/01/f1/dbae0f424d5a2411a55f55e06e8ab58699eb3ef7ba7dbe3aa2bb33aef3c1/triton-1.1.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.1.0"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-1.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/3f/4a/de0e5167685842a93a6b6cc8f783e61a1fe57ab095401b7a9594ef23ef9c/triton-1.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.1.0"
+      },
+      {
+        "abi_tag": "pypy37_pp73",
+        "filename": "triton-1.1.0-pp37-pypy37_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "pp37",
+        "url": "https://files.pythonhosted.org/packages/dc/4e/adf41786d4a784674b6067f09e86295cbb09b710a71e1a02ff04c8c4dedc/triton-1.1.0-pp37-pypy37_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.1.0"
+      },
+      {
+        "abi_tag": "cp36m",
+        "filename": "triton-1.1.1-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp36",
+        "url": "https://files.pythonhosted.org/packages/87/c7/2364f1286b466d7224627927f1b65b224460abb69baf2aadba32bc1aa771/triton-1.1.1-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.1.1"
+      },
+      {
+        "abi_tag": "cp37m",
+        "filename": "triton-1.1.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp37",
+        "url": "https://files.pythonhosted.org/packages/d6/85/9751a7c76fe63dbe7eee3b6a80e75c8a3de6237a5f5662995bf9d09f8458/triton-1.1.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.1.1"
+      },
+      {
+        "abi_tag": "cp38",
+        "filename": "triton-1.1.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp38",
+        "url": "https://files.pythonhosted.org/packages/62/42/1b70e214444f291e1102b8d2fc00c1d3ed10abae6736288c8bd70ac714b9/triton-1.1.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.1.1"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-1.1.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/00/6e/368e473de54981c00ac06874a03aa8ffe27805c3d11f70b4c8bbe534f81f/triton-1.1.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.1.1"
+      },
+      {
+        "abi_tag": "pypy37_pp73",
+        "filename": "triton-1.1.1-pp37-pypy37_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "pp37",
+        "url": "https://files.pythonhosted.org/packages/e7/d7/b4ba54469b357cf9a7cf38d0d3f53da3d0ac9175a97749816eef9f344e74/triton-1.1.1-pp37-pypy37_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "1.1.1"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-2.0.0-1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/ca/31/ff6be541195daf77aa5c72303b2354661a69e717967d44d91eb4f3fdce32/triton-2.0.0-1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.0.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-2.0.0-1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/b7/cd/4aa0179919306f9c2e3e5308f269d20c094b2a4e2963b656e9405172763f/triton-2.0.0-1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.0.0"
+      },
+      {
+        "abi_tag": "cp36m",
+        "filename": "triton-2.0.0-1-cp36-cp36m-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp36",
+        "url": "https://files.pythonhosted.org/packages/bc/7b/2ab6496b01318708173ad32cff1af023a526e2ea716629819bf8720afe17/triton-2.0.0-1-cp36-cp36m-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.0.0"
+      },
+      {
+        "abi_tag": "cp37m",
+        "filename": "triton-2.0.0-1-cp37-cp37m-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp37",
+        "url": "https://files.pythonhosted.org/packages/b7/72/31c8a99de642b30c576281486f22aff2d9287d6214160a3a891c4b18e7b4/triton-2.0.0-1-cp37-cp37m-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.0.0"
+      },
+      {
+        "abi_tag": "cp38",
+        "filename": "triton-2.0.0-1-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp38",
+        "url": "https://files.pythonhosted.org/packages/a6/4b/28142a3c70621cb3398ac626c276268ca87af50a3fa43667a834fa5d13bf/triton-2.0.0-1-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.0.0"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-2.0.0-1-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/77/ac/28b74ec1177c730d0da8803eaff5e5025bd532bcf07cadb0fcf661abed97/triton-2.0.0-1-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.0.0"
+      },
+      {
+        "abi_tag": "pypy37_pp73",
+        "filename": "triton-2.0.0-1-pp37-pypy37_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "pp37",
+        "url": "https://files.pythonhosted.org/packages/95/2e/d40c5e21c9b58f569d993b11e2b1022d5858df2ab74238fe95d6d089edc9/triton-2.0.0-1-pp37-pypy37_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.0.0"
+      },
+      {
+        "abi_tag": "pypy38_pp73",
+        "filename": "triton-2.0.0-1-pp38-pypy38_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "pp38",
+        "url": "https://files.pythonhosted.org/packages/72/90/91059851af9ffbceb40eeabb2e2522cd8b184b005f4b4ba44f6cba081ef0/triton-2.0.0-1-pp38-pypy38_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.0.0"
+      },
+      {
+        "abi_tag": "pypy39_pp73",
+        "filename": "triton-2.0.0-1-pp39-pypy39_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "pp39",
+        "url": "https://files.pythonhosted.org/packages/d5/61/f6c3260de70c2b980702f2fde0526690de40432ebfe2f4b9e81a9007cf09/triton-2.0.0-1-pp39-pypy39_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.0.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-2.1.0-0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/4d/22/91a8af421c8a8902dde76e6ef3db01b258af16c53d81e8c0d0dc13900a9e/triton-2.1.0-0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.1.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-2.1.0-0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/5c/c1/54fffb2eb13d293d9a429fead3646752ea190de0229bcf3d591ba2481263/triton-2.1.0-0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.1.0"
+      },
+      {
+        "abi_tag": "cp37m",
+        "filename": "triton-2.1.0-0-cp37-cp37m-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp37",
+        "url": "https://files.pythonhosted.org/packages/82/59/07cbec92c358664091270b68f1fb43819042db60eb7ee7d849e538e1b070/triton-2.1.0-0-cp37-cp37m-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.1.0"
+      },
+      {
+        "abi_tag": "cp38",
+        "filename": "triton-2.1.0-0-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp38",
+        "url": "https://files.pythonhosted.org/packages/72/98/34f43ed68ee6455ea874f749a5515c0600243186301ecd83819d942ce08a/triton-2.1.0-0-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.1.0"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-2.1.0-0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/d1/5a/e5811fcc8fc6703be39eb157af6224eaa3b628a42008df93b87e23eb9731/triton-2.1.0-0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.1.0"
+      },
+      {
+        "abi_tag": "pypy37_pp73",
+        "filename": "triton-2.1.0-0-pp37-pypy37_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "pp37",
+        "url": "https://files.pythonhosted.org/packages/74/f8/2616a1d3ccd8500129baf46a2ccca2ca4b517210065f506dd0aac8bb81ef/triton-2.1.0-0-pp37-pypy37_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.1.0"
+      },
+      {
+        "abi_tag": "pypy38_pp73",
+        "filename": "triton-2.1.0-0-pp38-pypy38_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "pp38",
+        "url": "https://files.pythonhosted.org/packages/d4/75/ffd4c7a624bc2d60f7d1a4955fe69291d8bdfcd7bd49eaa90ebdc1d2fa7d/triton-2.1.0-0-pp38-pypy38_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.1.0"
+      },
+      {
+        "abi_tag": "pypy39_pp73",
+        "filename": "triton-2.1.0-0-pp39-pypy39_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "pp39",
+        "url": "https://files.pythonhosted.org/packages/03/47/55c4168f8333a852f9284a8446d15cb37b69903d47896e4aebfe9f21969d/triton-2.1.0-0-pp39-pypy39_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "2.1.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-2.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/95/05/ed974ce87fe8c8843855daa2136b3409ee1c126707ab54a8b72815c08b49/triton-2.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.2.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-2.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/bd/ac/3974caaa459bf2c3a244a84be8d17561f631f7d42af370fc311defeca2fb/triton-2.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.2.0"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-2.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/0e/49/2e1bbae4542b8f624e409540b4197e37ab22a88e8685e99debe721cc2b50/triton-2.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.2.0"
+      },
+      {
+        "abi_tag": "cp37m",
+        "filename": "triton-2.2.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp37",
+        "url": "https://files.pythonhosted.org/packages/71/56/98dc964f07c300579272296071fc7533ee4b1894000437b1e2303801e9e1/triton-2.2.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.2.0"
+      },
+      {
+        "abi_tag": "cp38",
+        "filename": "triton-2.2.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp38",
+        "url": "https://files.pythonhosted.org/packages/7f/fc/1c97813debad858dde5b84b5a8d4ea4077044a7b26e1ad8de9689af93565/triton-2.2.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.2.0"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-2.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/6a/5c/01d9f062f719581cf6e60053e1a005d666ec67dcb59630fffaa3a3e5c9d8/triton-2.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.2.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-2.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/db/ee/8d50d44ed5b63677bb387f4ee67a7dbaaded0189b320ffe82685a6827728/triton-2.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.3.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-2.3.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/3c/00/84e0006f2025260fa111ddfc66194bd1af731b3ee18e2fd611a00f290b5e/triton-2.3.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.3.0"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-2.3.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/90/2f/3e8f0ea4ef7ac6d8720a48b9b9700fd32c9909ee83b2eb1f25209ace0767/triton-2.3.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.3.0"
+      },
+      {
+        "abi_tag": "cp37m",
+        "filename": "triton-2.3.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp37",
+        "url": "https://files.pythonhosted.org/packages/2d/7f/71257dda7cff4ea68c2b78485220069e2d5eafdf38367f014ba9c4e97197/triton-2.3.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.3.0"
+      },
+      {
+        "abi_tag": "cp38",
+        "filename": "triton-2.3.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp38",
+        "url": "https://files.pythonhosted.org/packages/07/94/56da1c8082d4e1f5c8f76447a67cd857bc8f011339e69e2fffdbfc116f51/triton-2.3.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.3.0"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-2.3.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/8e/7b/8557e97f0f39992eaf390aacdf36c38a4de059caa9eda99321f7d3576d82/triton-2.3.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.3.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-2.3.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/d7/69/8a9fde07d2d27a90e16488cdfe9878e985a247b2496a4b5b1a2126042528/triton-2.3.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.3.1"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-2.3.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/64/16/956b7b9d2ed3a437a1a06792b2ae2e3c49147296ba2f4d59fcee376ded8f/triton-2.3.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.3.1"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-2.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/ea/a4/e66cbd7befaf44a84cfb367b00a0331735cd56d4b2076533dec9b0b255fe/triton-2.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.3.1"
+      },
+      {
+        "abi_tag": "cp37m",
+        "filename": "triton-2.3.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp37",
+        "url": "https://files.pythonhosted.org/packages/02/92/893b6b435c625bcc2cefb43547f6f9e0d4a12b36a75cb3b4923ff8db2885/triton-2.3.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.3.1"
+      },
+      {
+        "abi_tag": "cp38",
+        "filename": "triton-2.3.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp38",
+        "url": "https://files.pythonhosted.org/packages/d3/55/45b3882019a8d69ad73b5b2bd1714cb2d6653b39e7376b7ac5accf745760/triton-2.3.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.3.1"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-2.3.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/fe/31/a3783aaab3a75d8b622b0fa822eb3ae95063dec8e866a18d574ae64f33bd/triton-2.3.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "2.3.1"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.0.0-1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/45/27/14cc3101409b9b4b9241d2ba7deaa93535a217a211c86c4cc7151fb12181/triton-3.0.0-1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "3.0.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.0.0-1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/33/3e/a2f59384587eff6aeb7d37b6780de7fedd2214935e27520430ca9f5b7975/triton-3.0.0-1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "3.0.0"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.0.0-1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/fe/7b/7757205dee3628f75e7991021d15cd1bd0c9b044ca9affe99b50879fc0e1/triton-3.0.0-1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "3.0.0"
+      },
+      {
+        "abi_tag": "cp38",
+        "filename": "triton-3.0.0-1-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp38",
+        "url": "https://files.pythonhosted.org/packages/4d/b4/c37e2776a1390bab7e78a6d52bd525441cb3cad7260a6a00b11b0b702e7c/triton-3.0.0-1-cp38-cp38-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "3.0.0"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-3.0.0-1-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/6c/bf/55cccf57c14787ad81ee827526ddd48fd0aff0291fcc7b8c2e2bdf28da0a/triton-3.0.0-1-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "version": "3.0.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/98/29/69aa56dc0b2eb2602b553881e34243475ea2afd9699be042316842788ff5/triton-3.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "3.1.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/86/17/d9a5cf4fcf46291856d1e90762e36cbabd2a56c7265da0d1d9508c8e3943/triton-3.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "3.1.0"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/78/eb/65f5ba83c2a123f6498a3097746607e5b2f16add29e36765305e4ac7fdd8/triton-3.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "3.1.0"
+      },
+      {
+        "abi_tag": "cp38",
+        "filename": "triton-3.1.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp38",
+        "url": "https://files.pythonhosted.org/packages/15/3c/e972ac0dd0f35ba5fb7058152dd52127a225f579eba2d7527eb1ffb3891a/triton-3.1.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "3.1.0"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-3.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/c4/69/57e0fed438d547524e08bfedc587078314176ad1c15c8be904d3f03149ec/triton-3.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "3.1.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/01/65/3ffa90e158a2c82f0716eee8d26a725d241549b7d7aaf7e4f44ac03ebd89/triton-3.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "3.2.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/a7/2e/757d2280d4fefe7d33af7615124e7e298ae7b8e3bc4446cdb8e88b0f9bab/triton-3.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "3.2.0"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/06/00/59500052cb1cf8cf5316be93598946bc451f14072c6ff256904428eaf03c/triton-3.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "3.2.0"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.2.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/c7/30/37a3384d1e2e9320331baca41e835e90a3767303642c7a80d4510152cbcf/triton-3.2.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "3.2.0"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-3.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "platform_tag": "manylinux2014_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/bc/74/9f12bdedeb110242d8bb1bd621f6605e753ee0cbf73cf7f3a62b8173f190/triton-3.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "version": "3.2.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.3.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/76/04/d54d3a6d077c646624dc9461b0059e23fd5d30e0dbe67471e3654aec81f9/triton-3.3.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.3.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/3c/c5/4874a81131cc9e934d88377fbc9d24319ae1fb540f3333b4e9c696ebc607/triton-3.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.3.0"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/11/53/ce18470914ab6cfbec9384ee565d23c4d1c55f0548160b1c7b33000b11fd/triton-3.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.3.0"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/7d/74/4bf2702b65e93accaa20397b74da46fb7a0356452c1bb94dbabaf0582930/triton-3.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.3.0"
+      },
+      {
+        "abi_tag": "cp313t",
+        "filename": "triton-3.3.0-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/0a/93/f28a696fa750b9b608baa236f8225dd3290e5aff27433b06143adc025961/triton-3.3.0-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.3.0"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-3.3.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/f0/9c/315d25590fc309e2d28bb67953526238fac5d54548a16ceca992c76441bc/triton-3.3.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.3.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.3.1-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/8d/a9/549e51e9b1b2c9b854fd761a1d23df0ba2fbc60bd0c13b489ffa518cfcb7/triton-3.3.1-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.3.1"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.3.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/21/2f/3e56ea7b58f80ff68899b1dbe810ff257c9d177d288c6b0f55bf2fe4eb50/triton-3.3.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.3.1"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.3.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/24/5f/950fb373bf9c01ad4eb5a8cd5eaf32cdf9e238c02f9293557a2129b9c4ac/triton-3.3.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.3.1"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.3.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/74/1f/dfb531f90a2d367d914adfee771babbd3f1a5b26c3f5fbc458dee21daa78/triton-3.3.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.3.1"
+      },
+      {
+        "abi_tag": "cp313t",
+        "filename": "triton-3.3.1-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/28/71/bd20ffcb7a64c753dc2463489a61bf69d531f308e390ad06390268c4ea04/triton-3.3.1-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.3.1"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-3.3.1-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/6d/81/ac4d50af22f594c4cb7c84fd2ad5ba1e0c03e2a83fe3483ddd79edcd7ec7/triton-3.3.1-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.3.1"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.4.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/62/ee/0ee5f64a87eeda19bbad9bc54ae5ca5b98186ed00055281fd40fb4beb10e/triton-3.4.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.4.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.4.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/7d/39/43325b3b651d50187e591eefa22e236b2981afcebaefd4f2fc0ea99df191/triton-3.4.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.4.0"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/d0/66/b1eb52839f563623d185f0927eb3530ee4d5ffe9d377cdaf5346b306689e/triton-3.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.4.0"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/30/7b/0a685684ed5322d2af0bddefed7906674f67974aa88b0fae6e82e3b766f6/triton-3.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.4.0"
+      },
+      {
+        "abi_tag": "cp313t",
+        "filename": "triton-3.4.0-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/20/63/8cb444ad5cdb25d999b7d647abac25af0ee37d292afc009940c05b82dda0/triton-3.4.0-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.4.0"
+      },
+      {
+        "abi_tag": "cp39",
+        "filename": "triton-3.4.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp39",
+        "url": "https://files.pythonhosted.org/packages/12/34/1251beb5a3cb93f3950ebe68732752014646003ef6eb11eb5f1a37ca78cd/triton-3.4.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.4.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.5.0-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/dd/22/507b6f58a35e05e84381630b2dc2a3cee1a7a2a7eaf4cba857c638a18a24/triton-3.5.0-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.5.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.5.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/0b/eb/09e31d107a5d00eb281aa7e6635ca463e9bca86515944e399480eadb71f8/triton-3.5.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.5.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.5.0-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/79/f9/b6f60f978397c616fd8dacca2305759fe4f80d397b20ef72534803244bd5/triton-3.5.0-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.5.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.5.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/3d/78/949a04391c21956c816523678f0e5fa308eb5b1e7622d88c4e4ef5fceca0/triton-3.5.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.5.0"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.5.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/87/9b/30988039e1e84df7554fba24e6a734d2d0e847af33cabdf9b532b3c51456/triton-3.5.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.5.0"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.5.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/f5/3a/e991574f3102147b642e49637e0281e9bb7c4ba254edb2bab78247c85e01/triton-3.5.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.5.0"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.5.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/cd/85/e37f1197acb04c8f3d83851d23d5d6ed5060ef74580668b112e23fdfa203/triton-3.5.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.5.0"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.5.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/6c/29/10728de8a6e932e517c10773486b8e99f85d1b1d9dd87d9a9616e1fef4a1/triton-3.5.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.5.0"
+      },
+      {
+        "abi_tag": "cp313t",
+        "filename": "triton-3.5.0-cp313-cp313t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/b8/1d/38258f05010ac17a7b058c022911c9cae6526e149b7397134a048cf5a6c2/triton-3.5.0-cp313-cp313t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.5.0"
+      },
+      {
+        "abi_tag": "cp313t",
+        "filename": "triton-3.5.0-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/5c/38/db80e48b9220c9bce872b0f616ad0446cdf554a40b85c7865cbca99ab3c2/triton-3.5.0-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.5.0"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "triton-3.5.0-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/91/fe/8f5771d00227f4eb1ee034f218ed427102b989366d2275fe3b3c105a3921/triton-3.5.0-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.5.0"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "triton-3.5.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/ff/60/1810655d1d856c9a4fcc90ee8966d85f552d98c53a6589f95ab2cbe27bb8/triton-3.5.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.5.0"
+      },
+      {
+        "abi_tag": "cp314t",
+        "filename": "triton-3.5.0-cp314-cp314t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/78/59/99edd103958fe6e42b50b9ad8ce4f223ddf4ccf475259cf7d2b53381dc6c/triton-3.5.0-cp314-cp314t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.5.0"
+      },
+      {
+        "abi_tag": "cp314t",
+        "filename": "triton-3.5.0-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/fb/b7/1dec8433ac604c061173d0589d99217fe7bf90a70bdc375e745d044b8aad/triton-3.5.0-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.5.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.5.1-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/d9/2e/f95e673222afa2c7f0c687d8913e98fcf2589ef0b1405de76894e37fe18f/triton-3.5.1-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.5.1"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.5.1-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/fd/6e/676ab5019b4dde8b9b7bab71245102fc02778ef3df48218b298686b9ffd6/triton-3.5.1-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.5.1"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.5.1-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/dc/dc/6ce44d055f2fc2403c4ec6b3cfd3a9b25f57b7d95efadccdea91497f8e81/triton-3.5.1-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.5.1"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.5.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/b0/72/ec90c3519eaf168f22cb1757ad412f3a2add4782ad3a92861c9ad135d886/triton-3.5.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.5.1"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.5.1-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/db/53/2bcc46879910991f09c063eea07627baef2bc62fe725302ba8f46a2c1ae5/triton-3.5.1-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.5.1"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.5.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/f2/50/9a8358d3ef58162c0a415d173cfb45b67de60176e1024f71fbc4d24c0b6d/triton-3.5.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.5.1"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.5.1-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/f1/ba/805684a992ee32d486b7948d36aed2f5e3c643fc63883bf8bdca1c3f3980/triton-3.5.1-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.5.1"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.5.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/27/46/8c3bbb5b0a19313f50edcaa363b599e5a1a5ac9683ead82b9b80fe497c8d/triton-3.5.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.5.1"
+      },
+      {
+        "abi_tag": "cp313t",
+        "filename": "triton-3.5.1-cp313-cp313t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/84/1e/7df59baef41931e21159371c481c31a517ff4c2517343b62503d0cd2be99/triton-3.5.1-cp313-cp313t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.5.1"
+      },
+      {
+        "abi_tag": "cp313t",
+        "filename": "triton-3.5.1-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/37/92/e97fcc6b2c27cdb87ce5ee063d77f8f26f19f06916aa680464c8104ef0f6/triton-3.5.1-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.5.1"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "triton-3.5.1-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/14/f9/0430e879c1e63a1016cb843261528fd3187c872c3a9539132efc39514753/triton-3.5.1-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.5.1"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "triton-3.5.1-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/a4/e6/c595c35e5c50c4bc56a7bac96493dad321e9e29b953b526bbbe20f9911d0/triton-3.5.1-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.5.1"
+      },
+      {
+        "abi_tag": "cp314t",
+        "filename": "triton-3.5.1-cp314-cp314t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/41/1e/63d367c576c75919e268e4fbc33c1cb33b6dc12bb85e8bfe531c2a8bd5d3/triton-3.5.1-cp314-cp314t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.5.1"
+      },
+      {
+        "abi_tag": "cp314t",
+        "filename": "triton-3.5.1-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/16/b5/b0d3d8b901b6a04ca38df5e24c27e53afb15b93624d7fd7d658c7cd9352a/triton-3.5.1-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.5.1"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.6.0-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/44/ba/b1b04f4b291a3205d95ebd24465de0e5bf010a2df27a4e58a9b5f039d8f2/triton-3.6.0-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.6.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.6.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/8c/f7/f1c9d3424ab199ac53c2da567b859bcddbb9c9e7154805119f8bd95ec36f/triton-3.6.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.6.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.6.0-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/0f/2c/96f92f3c60387e14cc45aed49487f3486f89ea27106c1b1376913c62abe4/triton-3.6.0-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.6.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.6.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/e0/12/b05ba554d2c623bffa59922b94b0775673de251f468a9609bc9e45de95e9/triton-3.6.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.6.0"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.6.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/17/5d/08201db32823bdf77a0e2b9039540080b2e5c23a20706ddba942924ebcd6/triton-3.6.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.6.0"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.6.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/ab/a8/cdf8b3e4c98132f965f88c2313a4b493266832ad47fb52f23d14d4f86bb5/triton-3.6.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.6.0"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.6.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/3c/12/34d71b350e89a204c2c7777a9bba0dcf2f19a5bfdd70b57c4dbc5ffd7154/triton-3.6.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.6.0"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.6.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/f9/0b/37d991d8c130ce81a8728ae3c25b6e60935838e9be1b58791f5997b24a54/triton-3.6.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.6.0"
+      },
+      {
+        "abi_tag": "cp313t",
+        "filename": "triton-3.6.0-cp313-cp313t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/ce/4e/41b0c8033b503fd3cfcd12392cdd256945026a91ff02452bef40ec34bee7/triton-3.6.0-cp313-cp313t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.6.0"
+      },
+      {
+        "abi_tag": "cp313t",
+        "filename": "triton-3.6.0-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/35/f8/9c66bfc55361ec6d0e4040a0337fb5924ceb23de4648b8a81ae9d33b2b38/triton-3.6.0-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.6.0"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "triton-3.6.0-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/49/55/5ecf0dcaa0f2fbbd4420f7ef227ee3cb172e91e5fede9d0ecaddc43363b4/triton-3.6.0-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.6.0"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "triton-3.6.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/df/3d/9e7eee57b37c80cec63322c0231bb6da3cfe535a91d7a4d64896fcb89357/triton-3.6.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.6.0"
+      },
+      {
+        "abi_tag": "cp314t",
+        "filename": "triton-3.6.0-cp314-cp314t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/48/db/56ee649cab5eaff4757541325aca81f52d02d4a7cd3506776cad2451e060/triton-3.6.0-cp314-cp314t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.6.0"
+      },
+      {
+        "abi_tag": "cp314t",
+        "filename": "triton-3.6.0-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/f6/56/6113c23ff46c00aae423333eb58b3e60bdfe9179d542781955a5e1514cb3/triton-3.6.0-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.6.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.7.0-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/3e/97/dcd1f2a0f8336691bff74abc59b2ed9c69a0c0f8f65cd77109c49e05f068/triton-3.7.0-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.7.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.7.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/b2/c0/c2ac4fd2d8809b7579d4a820a0f9e5de62a9bc8a757ed4b3abf4f7ee964a/triton-3.7.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.7.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.7.0-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/b8/c1/5d842314bb6c78442cc60437928781701c6050b8d479bc2a1aed691d37ca/triton-3.7.0-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.7.0"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.7.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/13/31/8315ea5f8dd18e60970b3022e3a8b93fd37e0b784fbbef86e10c8e6e5ca1/triton-3.7.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.7.0"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.7.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/f7/13/ec05adfcd87311d532ba61e3af143e8be59fcd26675884c4682841406a20/triton-3.7.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.7.0"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.7.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/62/7b/468a576e35beef1426e0828e28e9ba9e65f5474d496f16ee126c15646324/triton-3.7.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.7.0"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.7.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/01/e1/a59a583de59b8f62c495d67c80ee3ea97d09e91ac80c4c6e76456ed8d8ac/triton-3.7.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.7.0"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.7.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/30/b1/b7507bb9815d403927c8dd51d4158ed2e11751a92dbc118a044f247b6848/triton-3.7.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.7.0"
+      },
+      {
+        "abi_tag": "cp313t",
+        "filename": "triton-3.7.0-cp313-cp313t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/a6/8f/0bea7a6a0c989315c9135a1d7fb37e41905cfb3a17cbc1f10044ebd4cc3a/triton-3.7.0-cp313-cp313t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.7.0"
+      },
+      {
+        "abi_tag": "cp313t",
+        "filename": "triton-3.7.0-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/e1/02/d96f57828d0912aec733b9bc7e0e7dbfd2c6f079a8fa433ac25cb93d1a30/triton-3.7.0-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.7.0"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "triton-3.7.0-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/40/fb/82a802dac4689f2a2fb2e69302e6a138eecc3e175bbe976ba3cfc717683a/triton-3.7.0-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.7.0"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "triton-3.7.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/8f/af/9904ec6d3c93d9b24e5ec360445bbdf758b7f00bfbeedb89cb0eb64eb8bb/triton-3.7.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.7.0"
+      },
+      {
+        "abi_tag": "cp314t",
+        "filename": "triton-3.7.0-cp314-cp314t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/a1/f9/4835a8ea746b88727d8899f4e3ccce4f9cacb38abfc3bb0a638266c53111/triton-3.7.0-cp314-cp314t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.7.0"
+      },
+      {
+        "abi_tag": "cp314t",
+        "filename": "triton-3.7.0-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/c1/68/fa86e5a39608000f645535b2c124920126327ab731f8c4fafd5b07ff8d4b/triton-3.7.0-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.7.0"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.7.1-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/ec/ea/629cc37436ca5df93ce98956d09cd2ca1498bfee8ef4972d2fe48b9f958c/triton-3.7.1-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.7.1"
+      },
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.7.1-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp310",
+        "url": "https://files.pythonhosted.org/packages/15/76/c79c34311625227a288df3e483fc5cdf3d596624cbd4b4758c4cbdc14af3/triton-3.7.1-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.7.1"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.7.1-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/7b/f9/19d842d06a08559534fa1eaab6ca551b1bcf40f06620bddec1babaa2772d/triton-3.7.1-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.7.1"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.7.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp311",
+        "url": "https://files.pythonhosted.org/packages/cd/5e/fce69606f7f240297f163e25539906732b199530d486ce67ae319877e821/triton-3.7.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.7.1"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.7.1-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/94/fa/f856e24deb462d5f18bd4b5a746957862ab9b6ee5834bda60605ec348366/triton-3.7.1-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.7.1"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.7.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp312",
+        "url": "https://files.pythonhosted.org/packages/c4/6f/fb96d15db6f36d6eae4cafb998c2e0353bf59d7c4ea1662d7497f269134a/triton-3.7.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.7.1"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.7.1-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/00/42/c5089d4d9327fcd1e862c599cc2927f39418f84dd11a84cb2ccff9d4787a/triton-3.7.1-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.7.1"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.7.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://files.pythonhosted.org/packages/07/42/2c3ac59253ae8892b6f307875263dd23dc875cdf732d3aea40d6d41fb7cb/triton-3.7.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.7.1"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "triton-3.7.1-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/40/71/e01aa7ad573883ed9456f130226babdec70b005e098c4d6226a6238e761b/triton-3.7.1-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.7.1"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "triton-3.7.1-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/a4/09/5683146fda6a2b569deb78ccfd8fbfea8bfe55f726b081c0a6bb18dd6f28/triton-3.7.1-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.7.1"
+      },
+      {
+        "abi_tag": "cp314t",
+        "filename": "triton-3.7.1-cp314-cp314t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "platform_tag": "manylinux_2_27_aarch64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/e9/f8/448220c3092019f9fdfab39ec47985968181d67da34b44f6a7f6280a5cbb/triton-3.7.1-cp314-cp314t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "version": "3.7.1"
+      },
+      {
+        "abi_tag": "cp314t",
+        "filename": "triton-3.7.1-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp314",
+        "url": "https://files.pythonhosted.org/packages/f0/ac/229b7d4589d2e5937310e72c6d46e89599d16a4a12b479ffa1499fee8eb8/triton-3.7.1-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "version": "3.7.1"
+      }
+    ]
+  },
+  "schema_version": 1,
+  "source": {
+    "channel": "external",
+    "distribution_family": "external",
+    "id": "pypi-triton",
+    "platform": "unknown",
+    "url": "https://pypi.org/pypi/triton/json"
+  }
+}

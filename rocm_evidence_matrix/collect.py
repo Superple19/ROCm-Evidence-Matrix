@@ -5,18 +5,20 @@ from urllib.request import Request, urlopen
 
 from .sources.therock import build_evidence, collect_documentation_sources, collect_github, collect_hud, collect_source, parse_matrix
 from .catalog import write_catalog
+from .extension_catalog import rebuild_extension_catalog, render_extension_catalog
+from .extension_sources import collect_extension_sources, rebuild_extension_catalog_from_sources
 from .extensions import rebuild_extension_history, render_extension_history
 from .history import attach_therock_ci_evidence, attach_therock_documentation_evidence, merge_history, migrate_history, write_history_document
 from .frameworks import rebuild_auxiliary_outputs, render_framework_history, render_sdk_components
 from .integration import build_compatibility_matrix
 from .sources.legacy_archive import build_legacy_candidates, build_legacy_linux_candidates, classify_legacy_linux_framework, collect_legacy_linux_sources, collect_legacy_version_history, collect_legacy_windows_sources, render_legacy_linux, render_legacy_windows
 from .matrix_render import write_compatibility_document
-from .paths import LEGACY_LINUX, LEGACY_LINUX_DOC, LEGACY_STATUS, LEGACY_WINDOWS, LEGACY_WINDOWS_DOC, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS
+from .paths import EXTENSION_ARTIFACT_HISTORY, EXTENSION_CATALOG, EXTENSION_SNAPSHOTS, LEGACY_LINUX, LEGACY_LINUX_DOC, LEGACY_STATUS, LEGACY_WINDOWS, LEGACY_WINDOWS_DOC, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS
 from .render import write_rendered_document
 from .source_cache import CachedSourceReader, SourceCache
 from .source_adapter import collection_status, run_source_adapter, utc_now
 from .persistence import atomic_write_json, atomic_write_text
-from .validation import validate_ci_coverage, validate_ci_evidence, validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_history, validate_legacy_linux, validate_legacy_windows, validate_snapshot, validate_version_history
+from .validation import validate_ci_coverage, validate_ci_evidence, validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_extension_catalog, validate_history, validate_legacy_linux, validate_legacy_windows, validate_snapshot, validate_version_history
 from .version_history import collect_therock_version_history, render_version_history
 
 
@@ -69,6 +71,7 @@ def add_auxiliary_paths(parser):
     parser.add_argument("--framework-history-output", default="data/framework-history.json")
     parser.add_argument("--sdk-components-output", default="data/sdk-components.json")
     parser.add_argument("--extension-history-output", default="data/extension-history.json")
+    parser.add_argument("--extension-catalog-output", default=EXTENSION_CATALOG)
 
 
 def parse_args(argv=None):
@@ -103,6 +106,16 @@ def parse_args(argv=None):
     legacy.add_argument("--status-output", default=LEGACY_STATUS)
     legacy.add_argument("--timeout", type=int, default=20)
 
+    extensions = families.add_parser("extensions", help="Collect external ComfyUI extension package artifacts.")
+    add_config_path(extensions)
+    add_cache_paths(extensions)
+    extensions.add_argument("--output-dir", default=EXTENSION_SNAPSHOTS)
+    extensions.add_argument("--catalog-output", default=EXTENSION_CATALOG)
+    extensions.add_argument("--history-output", default=EXTENSION_ARTIFACT_HISTORY)
+    extensions.add_argument("--status-output", default="data/extensions/status.json")
+    extensions.add_argument("--source", action="append", dest="sources", help="Collect only the named extension source. Repeat to select multiple sources.")
+    extensions.add_argument("--timeout", type=int, default=20)
+
     normalize_parser = commands.add_parser("normalize", help="Rebuild normalized evidence from cached source responses without network access.")
     normalizers = normalize_parser.add_subparsers(dest="family", required=True)
 
@@ -127,6 +140,14 @@ def parse_args(argv=None):
     normalize_legacy.add_argument("--legacy-linux-output", default=LEGACY_LINUX)
     normalize_legacy.add_argument("--documentation-output", default="data/documentation.json")
     normalize_legacy.add_argument("--version-history-output", default="data/version-history.json")
+
+    normalize_extensions = normalizers.add_parser("extensions", help="Normalize cached external extension sources without network access.")
+    add_config_path(normalize_extensions)
+    add_cache_paths(normalize_extensions)
+    add_auxiliary_paths(normalize_extensions)
+    normalize_extensions.add_argument("--output-dir", default=EXTENSION_SNAPSHOTS)
+    normalize_extensions.add_argument("--catalog-output", default=EXTENSION_CATALOG)
+    normalize_extensions.add_argument("--history-output", default=EXTENSION_ARTIFACT_HISTORY)
 
     integrate = commands.add_parser("integrate", help="Build the integrated matrix from normalized evidence without network access.")
     integrate.add_argument("--output-dir", default=THEROCK_SNAPSHOTS)
@@ -334,9 +355,22 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
         framework_path, components_path, extension_path = auxiliary_paths(args)
         rebuild_auxiliary_outputs(args.output_dir, framework_path, components_path, observed_at, read_json, write_json)
         rebuild_extension_history(args.output_dir, extension_path, observed_at, read_json, write_json, read_json(args.history_output))
+        extension_catalog_output = getattr(args, "extension_catalog_output", None)
+        if extension_catalog_output is None:
+            extension_catalog_output = str(Path(args.output_dir).parent / "extensions" / "catalog.json")
+        extension_catalog = rebuild_extension_catalog(
+            args.output_dir,
+            extension_catalog_output,
+            observed_at,
+            read_json,
+            extension_snapshot_dir=Path(extension_catalog_output).parent / "snapshots",
+            history_path=Path(extension_catalog_output).parent / "history.json",
+        )
+        validate_extension_catalog(extension_catalog)
         print(f"Wrote {framework_path}")
         print(f"Wrote {components_path}")
         print(f"Wrote {extension_path}")
+        print(f"Wrote {extension_catalog_output}")
 
     if status_output:
         status = write_status("therock", started_at, results, status_output)
@@ -351,6 +385,58 @@ def collect_therock(args, config):
     source_cache.write_manifest()
     print(f"Wrote {args.source_manifest}")
     return success
+
+
+def collect_extensions(args, config):
+    sources = config.get("extension_sources", [])
+    selected = set(args.sources or [])
+    unknown = selected - {source["id"] for source in sources}
+    if unknown:
+        raise SystemExit(f"Unknown extension sources: {', '.join(sorted(unknown))}")
+    sources = [source for source in sources if not selected or source["id"] in selected]
+    source_cache = SourceCache(args.cache_dir, args.source_manifest, args.timeout)
+    started_at = utc_now()
+    results = collect_extension_sources(sources, source_cache, args.output_dir, source_cache.generated_at)
+    for result in results:
+        if result["status"] == "failed":
+            print(f"Failed {result['source_id']}: {result['error']}")
+        else:
+            print(f"Collected {result['source_id']}: {result['artifact_count']} artifacts")
+    status_results = [
+        {"source_id": result["source_id"], "status": result["status"], "error": result["error"]}
+        for result in results
+    ]
+    status = write_status("external", started_at, status_results, args.status_output)
+    print(f"Wrote {args.status_output}")
+    document = rebuild_extension_catalog_from_sources(
+        args.output_dir,
+        args.catalog_output,
+        source_cache.generated_at,
+        read_json,
+        history_path=args.history_output,
+    )
+    validate_extension_catalog(document)
+    print(f"Wrote {args.catalog_output}")
+    source_cache.write_manifest()
+    print(f"Wrote {args.source_manifest}")
+    return all(result["status"] == "passed" for result in results)
+
+
+def normalize_extensions(args, config):
+    source_reader = CachedSourceReader(args.cache_dir, args.source_manifest)
+    sources = config.get("extension_sources", [])
+    urls = [source["url"] for source in sources]
+    observed_at = source_reader.latest_observed_at(urls)
+    document = rebuild_extension_catalog_from_sources(
+        args.output_dir,
+        args.catalog_output,
+        observed_at,
+        read_json,
+        history_path=args.history_output,
+    )
+    validate_extension_catalog(document)
+    print(f"Wrote {args.catalog_output}")
+    return True
 
 
 def normalize_therock(args, config):
@@ -524,6 +610,10 @@ def render_outputs(args):
     framework_history = read_json(framework_path) or {"schema_version": 1, "generated_at": history["generated_at"], "sources": {}, "candidates": []}
     sdk_components = read_json(components_path) or {"schema_version": 1, "generated_at": history["generated_at"], "components": []}
     extension_history = read_json(extension_path) or {"schema_version": 1, "generated_at": history["generated_at"], "sources": {}, "extensions": []}
+    extension_catalog_output = getattr(args, "extension_catalog_output", None)
+    if extension_catalog_output is None:
+        extension_catalog_output = str(Path(args.output_dir).parent / "extensions" / "catalog.json")
+    extension_catalog = read_json(extension_catalog_output) or {"schema_version": 1, "generated_at": history["generated_at"], "sources": {}, "extensions": []}
 
     write_rendered_document(snapshot_paths, args.docs_output)
     write_history_document(history, args.history_docs_output)
@@ -542,7 +632,9 @@ def render_outputs(args):
     atomic_write_text("docs/generated/framework-history.md", render_framework_history(framework_history))
     atomic_write_text("docs/generated/sdk-components.md", render_sdk_components(sdk_components))
     atomic_write_text("docs/generated/extension-history.md", render_extension_history(extension_history))
-    paths = (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output, args.version_history_docs_output, "docs/generated/framework-history.md", "docs/generated/sdk-components.md", "docs/generated/extension-history.md")
+    atomic_write_text("docs/generated/extension-catalog.md", render_extension_catalog(extension_catalog))
+    validate_extension_catalog(extension_catalog)
+    paths = (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output, args.version_history_docs_output, "docs/generated/framework-history.md", "docs/generated/sdk-components.md", "docs/generated/extension-history.md", "docs/generated/extension-catalog.md")
     if legacy_linux is not None:
         paths += (args.legacy_linux_docs_output,)
     for path in paths:
@@ -557,6 +649,18 @@ def build_outputs(args):
     framework_path, components_path, extension_path = auxiliary_paths(args)
     rebuild_auxiliary_outputs(args.output_dir, framework_path, components_path, observed_at, read_json, write_json)
     rebuild_extension_history(args.output_dir, extension_path, observed_at, read_json, write_json, read_json(args.history_output))
+    extension_catalog_output = getattr(args, "extension_catalog_output", None)
+    if extension_catalog_output is None:
+        extension_catalog_output = str(Path(args.output_dir).parent / "extensions" / "catalog.json")
+    extension_catalog = rebuild_extension_catalog(
+        args.output_dir,
+        extension_catalog_output,
+        observed_at,
+        read_json,
+        extension_snapshot_dir=Path(extension_catalog_output).parent / "snapshots",
+        history_path=Path(extension_catalog_output).parent / "history.json",
+    )
+    validate_extension_catalog(extension_catalog)
     history = read_json(args.history_output)
     ci_evidence = read_json(args.ci_evidence_output)
     documentation = read_json(args.documentation_output)
@@ -611,9 +715,19 @@ def main(argv=None):
         return
     config = load_config(args.config)
     if args.command == "collect":
-        success = collect_therock(args, config) if args.family == "therock" else collect_legacy(args, config)
+        if args.family == "therock":
+            success = collect_therock(args, config)
+        elif args.family == "extensions":
+            success = collect_extensions(args, config)
+        else:
+            success = collect_legacy(args, config)
     else:
-        success = normalize_therock(args, config) if args.family == "therock" else normalize_legacy(args, config)
+        if args.family == "therock":
+            success = normalize_therock(args, config)
+        elif args.family == "extensions":
+            success = normalize_extensions(args, config)
+        else:
+            success = normalize_legacy(args, config)
     if not success:
         raise SystemExit(1)
 

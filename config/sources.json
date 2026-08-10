@@ -182,5 +182,57 @@
       "channel": "stable",
       "url": "https://repo.radeon.com/rocm/manylinux/"
     }
+  ],
+  "extension_sources": [
+    {
+      "id": "pypi-bitsandbytes",
+      "extension": "bitsandbytes",
+      "package_name": "bitsandbytes",
+      "distribution_family": "external",
+      "platform": "unknown",
+      "channel": "external",
+      "source_kind": "pypi-json",
+      "url": "https://pypi.org/pypi/bitsandbytes/json"
+    },
+    {
+      "id": "pypi-flash-attn",
+      "extension": "flash-attention",
+      "package_name": "flash-attn",
+      "distribution_family": "external",
+      "platform": "unknown",
+      "channel": "external",
+      "source_kind": "pypi-json",
+      "url": "https://pypi.org/pypi/flash-attn/json"
+    },
+    {
+      "id": "pypi-aiter",
+      "extension": "aiter",
+      "package_name": "aiter",
+      "distribution_family": "external",
+      "platform": "unknown",
+      "channel": "external",
+      "source_kind": "pypi-json",
+      "url": "https://pypi.org/pypi/aiter/json"
+    },
+    {
+      "id": "pypi-sageattention",
+      "extension": "sageattention",
+      "package_name": "sageattention",
+      "distribution_family": "external",
+      "platform": "unknown",
+      "channel": "external",
+      "source_kind": "pypi-json",
+      "url": "https://pypi.org/pypi/sageattention/json"
+    },
+    {
+      "id": "pypi-triton",
+      "extension": "triton",
+      "package_name": "triton",
+      "distribution_family": "external",
+      "platform": "unknown",
+      "channel": "external",
+      "source_kind": "pypi-json",
+      "url": "https://pypi.org/pypi/triton/json"
+    }
   ]
 }

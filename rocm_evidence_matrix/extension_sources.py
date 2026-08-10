@@ -1,0 +1,170 @@
+"""Collect extension package artifacts from explicit upstream sources."""
+
+import json
+from pathlib import Path
+from urllib.parse import unquote, urlparse
+
+from packaging.utils import InvalidWheelFilename, parse_wheel_filename
+
+from .extension_catalog import extension_for_package
+from .persistence import atomic_write_json
+from .simple_index import normalize_package_name, parse_links, version_key
+from .validation import validate_extension_snapshot
+
+
+def _wheel_artifact(url, filename):
+    try:
+        name, version, build, tags = parse_wheel_filename(filename)
+    except (InvalidWheelFilename, ValueError):
+        return None
+    tag = next(iter(sorted(tags, key=str)), None)
+    if tag is None:
+        return None
+    return {
+        "filename": filename,
+        "version": str(version),
+        "python_tag": tag.interpreter,
+        "abi_tag": tag.abi,
+        "platform_tag": tag.platform,
+        "url": url,
+    }
+
+
+def _source_artifact(url, filename, package_name):
+    stem = filename[:-7] if filename.endswith(".tar.gz") else filename[:-4]
+    name, separator, version = stem.rpartition("-")
+    if not separator or normalize_package_name(name) != normalize_package_name(package_name) or not version:
+        return None
+    return {
+        "filename": filename,
+        "version": version,
+        "python_tag": "source",
+        "abi_tag": "source",
+        "platform_tag": "source",
+        "url": url,
+    }
+
+
+def _deduplicate(artifacts):
+    records = {item["url"]: item for item in artifacts if item}
+    return sorted(records.values(), key=lambda item: (version_key(item["version"]), item["filename"]))
+
+
+def parse_simple_index(html, base_url, package_name):
+    expected = normalize_package_name(package_name)
+    artifacts = []
+    for url, _ in parse_links(html, base_url):
+        filename = unquote(Path(urlparse(url).path).name)
+        if filename.endswith(".whl"):
+            artifact = _wheel_artifact(url, filename)
+            if artifact and normalize_package_name(filename.split("-", 1)[0]) == expected:
+                artifacts.append(artifact)
+        elif filename.endswith(".tar.gz"):
+            artifacts.append(_source_artifact(url, filename, package_name))
+    return _deduplicate(artifacts)
+
+
+def parse_pypi_json(document, package_name):
+    artifacts = []
+    for release_files in (document.get("releases") or {}).values():
+        for release in release_files:
+            filename = release.get("filename")
+            url = release.get("url")
+            if not filename or not url:
+                continue
+            if filename.endswith(".whl"):
+                artifacts.append(_wheel_artifact(url, filename))
+            elif filename.endswith(".tar.gz"):
+                artifacts.append(_source_artifact(url, filename, package_name))
+    return _deduplicate(artifacts)
+
+
+def parse_github_releases(document, package_name):
+    artifacts = []
+    for release in document if isinstance(document, list) else []:
+        for asset in release.get("assets", []):
+            filename = asset.get("name")
+            url = asset.get("browser_download_url")
+            if not filename or not url:
+                continue
+            if filename.endswith(".whl"):
+                artifacts.append(_wheel_artifact(url, filename))
+            elif filename.endswith(".tar.gz"):
+                artifacts.append(_source_artifact(url, filename, package_name))
+    return _deduplicate(artifacts)
+
+
+def parse_extension_source(source, body):
+    kind = source.get("source_kind", "simple-index")
+    package_name = source["package_name"]
+    if kind == "pypi-json":
+        return parse_pypi_json(json.loads(body), package_name)
+    if kind == "github-releases":
+        return parse_github_releases(json.loads(body), package_name)
+    if kind == "simple-index":
+        return parse_simple_index(body, source["url"], package_name)
+    raise ValueError(f"Unsupported extension source kind: {kind}")
+
+
+def build_extension_snapshot(source, artifacts, observed_at):
+    package_name = normalize_package_name(source["package_name"])
+    if not extension_for_package(package_name):
+        raise ValueError(f"Unsupported extension package: {package_name}")
+    snapshot_source = {
+        "id": source["id"],
+        "distribution_family": source.get("distribution_family", "external"),
+        "platform": source.get("platform", "unknown"),
+        "channel": source.get("channel", "external"),
+        "url": source["url"],
+    }
+    return {
+        "schema_version": 1,
+        "last_observed_at": observed_at,
+        "source": snapshot_source,
+        "gfx_targets": [],
+        "packages": {package_name: artifacts},
+    }
+
+
+def collect_extension_sources(sources, fetch, output_dir, observed_at):
+    output_dir = Path(output_dir)
+    results = []
+    for source in sources:
+        try:
+            body = fetch(source["url"])
+            artifacts = parse_extension_source(source, body)
+            snapshot = build_extension_snapshot(source, artifacts, observed_at)
+            validate_extension_snapshot(snapshot)
+            output_path = output_dir / f"{source['id']}.json"
+            atomic_write_json(snapshot, output_path)
+            results.append({"source_id": source["id"], "status": "passed", "error": None, "artifact_count": len(artifacts)})
+        except (OSError, ValueError, json.JSONDecodeError) as error:
+            results.append({"source_id": source["id"], "status": "failed", "error": f"{type(error).__name__}: {error}"})
+    return results
+
+
+def rebuild_extension_catalog_from_sources(snapshot_dir, catalog_path, observed_at, read_json, existing=None, history_path=None):
+    from .extension_catalog import build_extension_observations, merge_extension_catalog, merge_extension_history
+
+    observations = []
+    sources = {}
+    for path in sorted(Path(snapshot_dir).glob("*.json")):
+        snapshot = read_json(path)
+        validate_extension_snapshot(snapshot)
+        source = snapshot["source"]
+        observations.extend(build_extension_observations(snapshot, snapshot["last_observed_at"]))
+        source_id = f"packages-{source['id']}"
+        sources[source_id] = {**source, "id": source_id, "observed_at": snapshot["last_observed_at"]}
+    document = merge_extension_catalog(existing or (read_json(catalog_path) if Path(catalog_path).exists() else None), observations, observed_at)
+    document["sources"].update(sources)
+    atomic_write_json(document, catalog_path)
+    if history_path:
+        existing_history = read_json(history_path) if Path(history_path).exists() else None
+        history = merge_extension_history(existing_history, observations, observed_at)
+        history["sources"].update(sources)
+        lifecycles = {item["id"]: item["lifecycle"] for item in document["extensions"]}
+        for item in history["extensions"]:
+            if item["id"] in lifecycles:
+                item["lifecycle"] = lifecycles[item["id"]]
+        atomic_write_json(history, history_path)
+    return document

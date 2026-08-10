@@ -6,6 +6,7 @@ from jsonschema.validators import validator_for
 
 from .catalog import build_catalog
 from .extensions import render_extension_history
+from .extension_catalog import render_extension_catalog
 from .frameworks import render_framework_history, render_sdk_components
 from .history import migrate_history, render_history
 from .legacy import render_legacy_windows
@@ -22,6 +23,8 @@ from .validation import (
     validate_collection_status,
     validate_documentation_snapshot,
     validate_extension_history,
+    validate_extension_catalog,
+    validate_extension_snapshot,
     validate_framework_history,
     validate_hardware_verifications,
     validate_history,
@@ -45,6 +48,8 @@ SCHEMA_VALIDATORS = {
     "collection-status.schema.json": validate_collection_status,
     "documentation-snapshot.schema.json": validate_documentation_snapshot,
     "extension-history.schema.json": validate_extension_history,
+    "extension-catalog.schema.json": validate_extension_catalog,
+    "extension-snapshot.schema.json": validate_extension_snapshot,
     "framework-history.schema.json": validate_framework_history,
     "history.schema.json": validate_history,
     "legacy-archive-manifest.schema.json": validate_legacy_archive_manifest,
@@ -167,6 +172,7 @@ def validate_generated_documents(root):
     framework_history = read_json(data / "framework-history.json")
     sdk_components = read_json(data / "sdk-components.json")
     extension_history = read_json(data / "extension-history.json")
+    extension_catalog = read_json(data / "extensions" / "catalog.json")
     snapshots = sorted(first_existing(root, THEROCK_SNAPSHOTS).glob("*.json"))
     expected = {
         "compatibility-matrix.md": render_compatibility_matrix(matrix),
@@ -177,6 +183,7 @@ def validate_generated_documents(root):
         "package-availability.md": render_snapshots(snapshots),
         "sdk-components.md": render_sdk_components(sdk_components),
         "extension-history.md": render_extension_history(extension_history),
+        "extension-catalog.md": render_extension_catalog(extension_catalog),
         "version-history.md": render_version_history(version_history),
     }
     output_dir = root / "docs" / "generated"

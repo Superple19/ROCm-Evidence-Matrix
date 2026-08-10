@@ -24,6 +24,7 @@ The collector reads official AMD and TheRock stable, nightly, and staging source
 - Preserves legacy Windows HIP SDK release support, versioned GPU support, and pre-multi-arch Windows PyTorch artifacts as archive data.
 - Preserves legacy Linux manylinux wheel artifacts without treating them as an actively maintained resolver path.
 - Validates consumer profiles and keeps ComfyUI extension policy separate from core package evidence.
+- Collects extension package artifacts independently from PyPI, simple indexes, or explicitly configured release APIs.
 - Prepares privacy-redacted community runtime and hardware submissions without uploading them.
 - Generates a Markdown availability summary from the JSON snapshots.
 
@@ -37,6 +38,7 @@ Current generated views:
 - [Historical package candidates](docs/generated/history.md)
 - [JAX framework artifact history](docs/generated/framework-history.md)
 - [Optional extension artifact history](docs/generated/extension-history.md)
+- [Extension artifact catalog](docs/generated/extension-catalog.md)
 - [ROCm SDK component evidence](docs/generated/sdk-components.md)
 - [Legacy platform ROCm support](docs/generated/legacy/legacy-windows.md)
 - [Legacy Linux ROCm artifacts](docs/generated/legacy/legacy-linux.md)
@@ -61,6 +63,7 @@ Collect actively supported TheRock evidence, then build integrated data and docu
 
 ```powershell
 rocm-matrix collect therock
+rocm-matrix collect extensions  # Explicit PyPI/simple-index/GitHub extension artifact refresh
 rocm-matrix collect legacy  # Explicit archive refresh; not part of the active default workflow
 rocm-matrix build
 ```
@@ -69,6 +72,7 @@ Each `collect` command fetches source responses and normalizes that distribution
 
 ```powershell
 rocm-matrix normalize therock
+rocm-matrix normalize extensions
 rocm-matrix normalize legacy
 rocm-matrix integrate
 rocm-matrix render
@@ -91,6 +95,8 @@ Raw responses are stored by SHA-256 under the ignored `.cache/sources/` director
 Source adapters prefer official machine-readable data or source markup when available. Declared rendered-page fallbacks remain independently validated, and normalized source records identify the URL that succeeded and whether fallback was required.
 
 TheRock package snapshots are written to `data/therock/snapshots/` with explicit platform metadata. TheRock CI evidence is stored under `data/therock/ci/`. Legacy Windows and Linux evidence is archived under `data/legacy/archive/`. Shared documentation, version history, the append-only package catalog, and the integrated view remain under `data/` until their schemas are split. Generated Markdown is stored under `docs/generated/`, with legacy documents under `docs/generated/legacy/`.
+
+ComfyUI extension artifacts are collected separately with explicit source configuration. They are stored in `data/extensions/snapshots/` and normalized into `data/extensions/catalog.json`. The extension catalog records versions, Python and platform tags, URLs, source IDs, and observation times; it does not claim Torch/ROCm/HIP/GFX ABI compatibility. Use the catalog to show what exists, and require separate resolver or runtime evidence before allowing installation.
 
 Each collection replaces the current snapshots and merges every observed compatible package set into the history catalog. A candidate remains in the catalog if its upstream artifact later disappears, while its current availability is updated separately.
 
@@ -140,6 +146,8 @@ Each result is first appended to the local `data/verifications/resolver.jsonl` e
 A passing record establishes only `resolver_verified`. Runtime imports and physical GPU execution require separate isolated tests and must be recorded as `runtime_verified` or `hardware_verified` evidence.
 
 Triton is an optional extension and is tracked in [extension history](docs/generated/extension-history.md), not multiplied into every core Torch candidate. The core resolver command installs the Torch package set only; install or verify Triton separately when the selected workflow requires it.
+
+The extension artifact catalog also covers bitsandbytes, Flash Attention, AITER, SageAttention, and Triton when their configured upstream sources expose artifacts. An absent record means `not_collected`, not unsupported. The Manager must keep these observations separate from the ComfyUI profile's compatibility claims.
 
 `rocm-verify-matrix` is an auxiliary, opt-in batch form of `rocm-verify`. It runs the resolver across selected channels, representative GFX targets, and candidate Python tags. It is intended for controlled investigations or community evidence collection, not exhaustive historical backtesting or normal catalog generation. `--all-candidates` and `--all-gfx` require an explicit `--exhaustive` opt-in. Use `--resume` to skip combinations already recorded in the JSONL log, merged output, or tracked history. Matrix jobs reuse a host-local cache (`%LOCALAPPDATA%\rocm-matrix\pip` on Windows or `~/.cache/rocm-matrix/pip` on Linux) while each resolver still runs in a disposable environment; override it with `--cache-dir` when needed. Use `--workers` to run independent resolver subprocesses concurrently; evidence is appended by the coordinator and history is merged once per run. The record separates the target platform from the verifier host; this is dependency-resolution evidence only and does not establish runtime or hardware support. Use `--limit` while developing and override the target wheel tag when needed:
 

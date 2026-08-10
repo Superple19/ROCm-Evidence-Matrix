@@ -13,9 +13,9 @@
       "additionalProperties": false,
       "required": ["distribution_families", "platforms", "channels"],
       "properties": {
-        "distribution_families": {"type": "array", "items": {"enum": ["therock", "legacy"]}},
+        "distribution_families": {"type": "array", "items": {"enum": ["therock", "legacy", "external"]}},
         "platforms": {"type": "array", "items": {"enum": ["windows", "linux", "macos", "unknown"]}},
-        "channels": {"type": "array", "items": {"enum": ["stable", "nightly", "staging"]}}
+        "channels": {"type": "array", "items": {"enum": ["stable", "nightly", "staging", "external"]}}
       }
     },
     "artifacts": {

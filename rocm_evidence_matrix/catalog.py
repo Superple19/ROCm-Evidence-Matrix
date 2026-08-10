@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .persistence import atomic_write_json
-from .paths import LEGACY_LINUX, LEGACY_STATUS, LEGACY_WINDOWS, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS, first_existing
+from .paths import EXTENSION_ARTIFACT_HISTORY, EXTENSION_CATALOG, EXTENSION_SNAPSHOTS, LEGACY_LINUX, LEGACY_STATUS, LEGACY_WINDOWS, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS, first_existing
 
 
 ARTIFACTS = (
@@ -12,6 +12,10 @@ ARTIFACTS = (
     ("package_snapshots", THEROCK_SNAPSHOTS, "schemas/package-snapshot.schema.json"),
     ("framework_history", "data/framework-history.json", "schemas/framework-history.schema.json"),
     ("extension_history", "data/extension-history.json", "schemas/extension-history.schema.json"),
+    ("extension_catalog", EXTENSION_CATALOG, "schemas/extension-catalog.schema.json"),
+    ("extension_artifact_history", EXTENSION_ARTIFACT_HISTORY, "schemas/extension-catalog.schema.json"),
+    ("extension_snapshots", EXTENSION_SNAPSHOTS, "schemas/extension-snapshot.schema.json"),
+    ("extension_status", "data/extensions/status.json", "schemas/collection-status.schema.json"),
     ("sdk_components", "data/sdk-components.json", "schemas/sdk-components.schema.json"),
     ("documentation", "data/documentation.json", "schemas/documentation-snapshot.schema.json"),
     ("legacy_windows", LEGACY_WINDOWS, "schemas/legacy-windows.schema.json"),

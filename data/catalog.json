@@ -61,6 +61,54 @@
       "schema_version": 1
     },
     {
+      "id": "extension_catalog",
+      "path": "data/extensions/catalog.json",
+      "schema": "schemas/extension-catalog.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "extension_artifact_history",
+      "path": "data/extensions/history.json",
+      "schema": "schemas/extension-catalog.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "extension_snapshots:pypi-aiter",
+      "path": "data/extensions/snapshots/pypi-aiter.json",
+      "schema": "schemas/extension-snapshot.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "extension_snapshots:pypi-bitsandbytes",
+      "path": "data/extensions/snapshots/pypi-bitsandbytes.json",
+      "schema": "schemas/extension-snapshot.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "extension_snapshots:pypi-flash-attn",
+      "path": "data/extensions/snapshots/pypi-flash-attn.json",
+      "schema": "schemas/extension-snapshot.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "extension_snapshots:pypi-sageattention",
+      "path": "data/extensions/snapshots/pypi-sageattention.json",
+      "schema": "schemas/extension-snapshot.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "extension_snapshots:pypi-triton",
+      "path": "data/extensions/snapshots/pypi-triton.json",
+      "schema": "schemas/extension-snapshot.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "extension_status",
+      "path": "data/extensions/status.json",
+      "schema": "schemas/collection-status.schema.json",
+      "schema_version": 1
+    },
+    {
       "id": "sdk_components",
       "path": "data/sdk-components.json",
       "schema": "schemas/sdk-components.schema.json",
@@ -129,19 +177,22 @@
   ],
   "dimensions": {
     "channels": [
+      "external",
       "nightly",
       "stable",
       "staging"
     ],
     "distribution_families": [
+      "external",
       "legacy",
       "therock"
     ],
     "platforms": [
       "linux",
+      "unknown",
       "windows"
     ]
   },
-  "generated_at": "2026-08-10T06:48:24Z",
+  "generated_at": "2026-08-10T17:45:59Z",
   "schema_version": 1
 }

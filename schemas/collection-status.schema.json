@@ -7,7 +7,7 @@
   "required": ["schema_version", "distribution_family", "started_at", "completed_at", "results"],
   "properties": {
     "schema_version": {"const": 1},
-    "distribution_family": {"enum": ["therock", "legacy"]},
+    "distribution_family": {"enum": ["therock", "legacy", "external"]},
     "started_at": {"type": "string", "format": "date-time"},
     "completed_at": {"type": "string", "format": "date-time"},
     "results": {

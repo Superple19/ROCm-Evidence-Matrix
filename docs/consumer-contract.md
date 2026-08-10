@@ -8,7 +8,7 @@ Regenerate it with:
 rocm-matrix catalog
 ```
 
-The catalog lists each committed core evidence artifact, standalone CI/status evidence,
+The catalog lists each committed core evidence artifact, extension snapshots/catalog, standalone CI/status evidence,
 its schema, and its schema version. Local runtime, hardware, and resolver
 outputs remain machine-local evidence and are listed only when a reviewed copy
 is intentionally committed. Consumers must reject an unknown `schema_version`
@@ -22,6 +22,10 @@ Every package and historical candidate is classified independently by:
 - `distribution_family`: `therock` or `legacy`
 - `platform`: `windows`, `linux`, `macos`, or `unknown`
 - `channel`: `stable`, `nightly`, or `staging`
+
+Extension artifact records may additionally use `distribution_family=external`
+and `channel=external`; these dimensions describe PyPI or another explicitly
+configured upstream and are not core ROCm release channels.
 
 TheRock is the active distribution family. Consumers may use current TheRock
 records for package discovery and may optionally attach scoped verification
@@ -62,6 +66,15 @@ Optional compiled extensions use `extension_history`. Triton records in that
 artifact are not part of core Torch candidate identity and must not be treated
 as installed or compatible without separate resolver, runtime, or hardware
 evidence.
+
+`extension_catalog` and `extension_snapshots` contain observed extension package
+artifacts. Each record includes the package version, Python ABI tags, platform
+tags, artifact URLs, source ID, and observation timestamps. `artifact_available`
+only means that an upstream artifact was observed. Empty Torch/ROCm/HIP/GFX
+constraint lists do not establish ABI compatibility. A consumer should report
+`not_collected`, `artifact_available`, `resolver_verified`, and runtime/hardware
+states separately, and must not create an installation command from a profile
+without an exact artifact source and matching evidence.
 
 ## Stable identities
 

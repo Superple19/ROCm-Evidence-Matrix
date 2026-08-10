@@ -1,0 +1,40 @@
+{
+  "gfx_targets": [],
+  "last_observed_at": "2026-08-10T17:45:59Z",
+  "packages": {
+    "aiter": [
+      {
+        "abi_tag": "source",
+        "filename": "aiter-0.1.tar.gz",
+        "platform_tag": "source",
+        "python_tag": "source",
+        "url": "https://files.pythonhosted.org/packages/18/d7/8520f826f6a38e489c930321a834b45095c18092de43f5312030c6826ed0/aiter-0.1.tar.gz",
+        "version": "0.1"
+      },
+      {
+        "abi_tag": "source",
+        "filename": "aiter-0.1.2.tar.gz",
+        "platform_tag": "source",
+        "python_tag": "source",
+        "url": "https://files.pythonhosted.org/packages/60/8c/f0bb392b394415a7231b44ee96b13624e1997e3fc14a22c90ecbba86cd0c/aiter-0.1.2.tar.gz",
+        "version": "0.1.2"
+      },
+      {
+        "abi_tag": "source",
+        "filename": "aiter-0.13.20191203.tar.gz",
+        "platform_tag": "source",
+        "python_tag": "source",
+        "url": "https://files.pythonhosted.org/packages/4c/c5/efb9abdb6b4e85bb0ff0b3c2e066e813de64db18a23789c22e638a019087/aiter-0.13.20191203.tar.gz",
+        "version": "0.13.20191203"
+      }
+    ]
+  },
+  "schema_version": 1,
+  "source": {
+    "channel": "external",
+    "distribution_family": "external",
+    "id": "pypi-aiter",
+    "platform": "unknown",
+    "url": "https://pypi.org/pypi/aiter/json"
+  }
+}

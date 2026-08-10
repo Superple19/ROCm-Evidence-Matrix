@@ -115,6 +115,97 @@ def validate_extension_history(document):
             raise ValueError(f"Incorrect extension lifecycle: {extension['id']}")
 
 
+def validate_extension_catalog(document):
+    """Validate normalized extension artifact evidence and lifecycle labels."""
+
+    if document.get("schema_version") != 1 or not document.get("generated_at", "").endswith("Z"):
+        raise ValueError("Unsupported extension catalog schema")
+    sources = document.get("sources", {})
+    if not isinstance(sources, dict):
+        raise ValueError("Extension catalog sources must be an object")
+    for source_id, source in sources.items():
+        required = {"id", "url", "distribution_family", "platform", "channel", "observed_at"}
+        if set(source) != required or source.get("id") != source_id:
+            raise ValueError(f"Invalid extension catalog source: {source_id}")
+        if not source["url"].startswith("https://") or not source["observed_at"].endswith("Z"):
+            raise ValueError(f"Invalid extension catalog source metadata: {source_id}")
+    required = {
+        "id", "extension", "package_name", "distribution_family", "platform", "channel",
+        "lifecycle", "version", "python_tags", "platform_tags", "artifacts", "artifact_urls", "source_id",
+        "rocm_version", "torch_constraints", "hip_constraints", "gfx_targets", "artifact_available",
+        "evidence_status", "first_observed_at", "last_observed_at",
+    }
+    ids = set()
+    latest = {}
+    for item in document.get("extensions", []):
+        if set(item) != required:
+            raise ValueError(f"Invalid extension catalog fields: {item.get('id', 'unknown')}")
+        if item["id"] in ids:
+            raise ValueError(f"Duplicate extension catalog artifact: {item['id']}")
+        ids.add(item["id"])
+        if item["source_id"] not in sources:
+            raise ValueError(f"Unknown extension catalog source: {item['id']}")
+        if item["distribution_family"] not in {"therock", "legacy", "external"}:
+            raise ValueError(f"Invalid extension catalog family: {item['id']}")
+        if item["platform"] not in {"windows", "linux", "macos", "unknown"}:
+            raise ValueError(f"Invalid extension catalog platform: {item['id']}")
+        if item["channel"] not in {"stable", "nightly", "staging", "external"}:
+            raise ValueError(f"Invalid extension catalog channel: {item['id']}")
+        if item["lifecycle"] not in {"current", "historical"}:
+            raise ValueError(f"Invalid extension catalog lifecycle: {item['id']}")
+        if not item["python_tags"] or not item["platform_tags"] or not item["artifacts"] or not item["artifact_urls"]:
+            raise ValueError(f"Extension catalog artifact lacks wheel metadata: {item['id']}")
+        for artifact in item["artifacts"]:
+            if set(artifact) != {"filename", "version", "python_tag", "abi_tag", "platform_tag", "url"}:
+                raise ValueError(f"Invalid extension catalog wheel metadata: {item['id']}")
+            if artifact["version"] != item["version"] or not artifact["url"].startswith("https://"):
+                raise ValueError(f"Extension catalog wheel metadata disagrees with record: {item['id']}")
+        if not all(url.startswith("https://") for url in item["artifact_urls"]):
+            raise ValueError(f"Extension catalog artifact URL must use HTTPS: {item['id']}")
+        if item["artifact_available"] != (item["evidence_status"] == "artifact_available"):
+            raise ValueError(f"Extension artifact status is inconsistent: {item['id']}")
+        if not item["first_observed_at"].endswith("Z") or not item["last_observed_at"].endswith("Z"):
+            raise ValueError(f"Invalid extension catalog observation time: {item['id']}")
+        key = (item["extension"], item["package_name"], item["distribution_family"], item["platform"], item["channel"])
+        current = latest.get(key)
+        if current is None or version_key(item["version"]) > version_key(current["version"]):
+            latest[key] = item
+    for item in document.get("extensions", []):
+        key = (item["extension"], item["package_name"], item["distribution_family"], item["platform"], item["channel"])
+        expected = "current" if item["id"] == latest[key]["id"] else "historical"
+        if item["lifecycle"] != expected:
+            raise ValueError(f"Incorrect extension catalog lifecycle: {item['id']}")
+
+
+def validate_extension_snapshot(snapshot):
+    """Validate one external extension package observation."""
+
+    if snapshot.get("schema_version") != 1 or not snapshot.get("last_observed_at", "").endswith("Z"):
+        raise ValueError("Unsupported extension snapshot schema")
+    source = snapshot.get("source") or {}
+    required_source = {"id", "distribution_family", "platform", "channel", "url"}
+    if set(source) != required_source or not source["url"].startswith("https://"):
+        raise ValueError("Invalid extension snapshot source")
+    if source["distribution_family"] not in {"therock", "legacy", "external"}:
+        raise ValueError("Invalid extension snapshot distribution family")
+    if source["platform"] not in {"windows", "linux", "macos", "unknown"}:
+        raise ValueError("Invalid extension snapshot platform")
+    if source["channel"] not in {"stable", "nightly", "staging", "external"}:
+        raise ValueError("Invalid extension snapshot channel")
+    if snapshot.get("gfx_targets") != []:
+        raise ValueError("Extension snapshots cannot claim GFX targets")
+    packages = snapshot.get("packages")
+    if not isinstance(packages, dict) or not packages:
+        raise ValueError("Extension snapshot packages are required")
+    required_artifact = {"filename", "version", "python_tag", "abi_tag", "platform_tag", "url"}
+    for package_name, artifacts in packages.items():
+        if not isinstance(artifacts, list):
+            raise ValueError(f"Extension artifacts must be a list: {package_name}")
+        for artifact in artifacts:
+            if set(artifact) != required_artifact or not artifact["url"].startswith("https://"):
+                raise ValueError(f"Invalid extension artifact: {package_name}")
+
+
 def validate_sdk_components(document):
     if document.get("schema_version") != 1 or not document.get("generated_at", "").endswith("Z"):
         raise ValueError("Unsupported SDK component schema")
@@ -425,7 +516,7 @@ def validate_legacy_archive_manifest(document):
 def validate_collection_status(document):
     if document.get("schema_version") != 1:
         raise ValueError("Unsupported collection status schema")
-    if document.get("distribution_family") not in {"therock", "legacy"}:
+    if document.get("distribution_family") not in {"therock", "legacy", "external"}:
         raise ValueError("Invalid collection distribution family")
     for field in ("started_at", "completed_at"):
         if not document.get(field, "").endswith("Z"):
