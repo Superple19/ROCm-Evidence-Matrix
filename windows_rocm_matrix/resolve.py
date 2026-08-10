@@ -54,6 +54,22 @@ def resolve_candidates(history, gfx, platform=None, channel=None, rocm_version=N
     return sorted(matches, key=candidate_sort_key, reverse=True)
 
 
+def count_candidates(candidates):
+    """Count distinct candidate records without changing resolver ordering."""
+    seen = set()
+    count = 0
+    for candidate in candidates:
+        identity = candidate.get("candidate_id") or candidate.get("id")
+        if identity is None:
+            count += 1
+            continue
+        if identity in seen:
+            continue
+        seen.add(identity)
+        count += 1
+    return count
+
+
 def install_command(candidate, gfx):
     parts = ["python", "-m", "pip", *install_arguments(candidate, gfx)]
     return " ".join(f'"{part}"' if "[" in part else part for part in parts)
@@ -103,6 +119,7 @@ def parse_args(argv=None):
     parser.add_argument("--include-unavailable", action="store_true")
     parser.add_argument("--include-failed", action="store_true", help="Include candidates with failed, partial, stale, or not-applicable evidence.")
     parser.add_argument("--all", action="store_true", dest="show_all")
+    parser.add_argument("--count", action="store_true", help="Print the number of distinct matching candidates without selecting one.")
     parser.add_argument("--json", action="store_true", dest="json_output")
     return parser.parse_args(argv)
 
@@ -125,6 +142,13 @@ def main(argv=None):
         )
     except ValueError as error:
         raise SystemExit(str(error)) from error
+    if args.count:
+        count = count_candidates(matches)
+        if args.json_output:
+            print(json.dumps({"count": count}, sort_keys=True))
+        else:
+            print(f"Candidate count: {count}")
+        return
     if not matches:
         raise SystemExit("No matching package candidate found")
     selected = matches if args.show_all else matches[:1]

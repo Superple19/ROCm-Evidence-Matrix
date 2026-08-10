@@ -112,6 +112,12 @@ rocm-resolve --platform windows --gfx gfx1201 --channel stable --rocm 7.13.0 --p
 
 The resolver selects the newest matching candidate by default and prints a pinned `pip` command. Add `--torch 2.9` to request a Torch series, or `--all` to list every match. Legacy candidates print official direct wheel URLs with the PyPI index for ordinary dependencies; TheRock candidates use their configured package index and device extras. The resolver does not install packages or claim that dependency resolution, imports, or execution have been verified.
 
+Use `--count` to inspect the number of distinct candidates after applying the same filters without selecting or verifying a package:
+
+```powershell
+rocm-resolve --platform windows --gfx gfx1201 --all --include-unavailable --include-failed --count
+```
+
 ## Verify dependency resolution
 
 Verify one candidate with `pip --dry-run` in a disposable virtual environment:

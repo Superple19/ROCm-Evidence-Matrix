@@ -5,7 +5,7 @@ from pathlib import Path
 
 from windows_rocm_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, promote_execution_evidence, render_history
 from windows_rocm_matrix.identity import candidate_hash
-from windows_rocm_matrix.resolve import install_command, resolve_candidates
+from windows_rocm_matrix.resolve import count_candidates, install_command, resolve_candidates
 
 
 def artifact(package, version, python_tag="cp312"):
@@ -183,6 +183,11 @@ class HistoryTests(unittest.TestCase):
 
         self.assertEqual(matches, [candidate])
         self.assertIn('"torch[device-gfx1201]==2.12.0+rocm7.14.0"', install_command(candidate, "gfx1201"))
+
+    def test_count_candidates_deduplicates_ids(self):
+        candidates = [{"id": "one"}, {"id": "one"}, {"id": "two"}, {}]
+
+        self.assertEqual(count_candidates(candidates), 3)
 
     def test_excludes_failed_and_stale_candidates_by_default(self):
         base = {
