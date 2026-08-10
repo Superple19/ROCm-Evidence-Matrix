@@ -7,20 +7,20 @@ import sys
 import sysconfig
 import tempfile
 
-from windows_rocm_matrix.verify import append_verification_log, candidate_hash, combined_process_output, default_platform_tag, error_summary, install_arguments_for_candidate, merge_verification, normalized_command, read_verification_log, resolved_packages, update_history_evidence, virtualenv_python
-from windows_rocm_matrix.verify_matrix import DEFAULT_CHANNELS, completed_job_keys, default_cache_dir, matrix_exit_code, matrix_job_key, matrix_jobs, parse_args as matrix_parse_args
-from windows_rocm_matrix.resolve import parse_args
+from rocm_evidence_matrix.verify import append_verification_log, candidate_hash, combined_process_output, default_platform_tag, error_summary, install_arguments_for_candidate, merge_verification, normalized_command, read_verification_log, resolved_packages, update_history_evidence, virtualenv_python
+from rocm_evidence_matrix.verify_matrix import DEFAULT_CHANNELS, completed_job_keys, default_cache_dir, matrix_exit_code, matrix_job_key, matrix_jobs, parse_args as matrix_parse_args
+from rocm_evidence_matrix.resolve import parse_args
 
 
 class VerificationTests(unittest.TestCase):
     def test_resolver_defaults_to_host_platform(self):
-        with patch("windows_rocm_matrix.resolve.host_platform", return_value="linux"):
+        with patch("rocm_evidence_matrix.resolve.host_platform", return_value="linux"):
             self.assertEqual(parse_args([]).platform, "linux")
-        with patch("windows_rocm_matrix.verify_matrix.host_platform", return_value="windows"):
+        with patch("rocm_evidence_matrix.verify_matrix.host_platform", return_value="windows"):
             self.assertEqual(matrix_parse_args([]).platform, "windows")
 
     def test_single_verifier_supports_family_and_failed_retries(self):
-        from windows_rocm_matrix.verify import parse_args as verify_parse_args
+        from rocm_evidence_matrix.verify import parse_args as verify_parse_args
 
         args = verify_parse_args(["--distribution-family", "legacy", "--include-failed"])
         self.assertEqual(args.distribution_family, "legacy")
@@ -70,7 +70,7 @@ class VerificationTests(unittest.TestCase):
             self.assertEqual(read_verification_log(log), [{"id": "complete"}])
 
     def test_exhaustive_matrix_flags_require_explicit_opt_in(self):
-        from windows_rocm_matrix.verify_matrix import main as matrix_main
+        from rocm_evidence_matrix.verify_matrix import main as matrix_main
 
         with self.assertRaises(SystemExit) as error:
             matrix_main(["--all-candidates"])

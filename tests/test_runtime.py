@@ -1,8 +1,8 @@
 import types
 import unittest
 
-from windows_rocm_matrix.runtime import collect_runtime, merge_runtime, normalized_os
-from windows_rocm_matrix.validation import validate_runtime_verifications
+from rocm_evidence_matrix.runtime import collect_runtime, merge_runtime, normalized_os
+from rocm_evidence_matrix.validation import validate_runtime_verifications
 
 
 class RuntimeTests(unittest.TestCase):

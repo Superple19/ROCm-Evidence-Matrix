@@ -27,7 +27,7 @@ BASE_PACKAGES = (
 )
 
 DEVICE_ALIAS_PREFIXES = ("amd-torch-device-", "amd-torchvision-device-")
-USER_AGENT = "rocm-matrix/0.1 (+https://github.com/Superple19/windows-rocm-matrix)"
+USER_AGENT = "rocm-evidence-matrix/0.1 (+https://github.com/Superple19/rocm-evidence-matrix)"
 
 
 def fetch_text(url, timeout):

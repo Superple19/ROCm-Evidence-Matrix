@@ -1,8 +1,8 @@
 import unittest
 from pathlib import Path
 
-from windows_rocm_matrix.documentation import collect_documentation_sources, parse_compatibility_matrix, parse_framework_compatibility, parse_gpu_specifications, parse_gpu_specifications_rst, parse_pytorch_version_compatibility, parse_therock_windows_status
-from windows_rocm_matrix.validation import validate_documentation_snapshot
+from rocm_evidence_matrix.documentation import collect_documentation_sources, parse_compatibility_matrix, parse_framework_compatibility, parse_gpu_specifications, parse_gpu_specifications_rst, parse_pytorch_version_compatibility, parse_therock_windows_status
+from rocm_evidence_matrix.validation import validate_documentation_snapshot
 
 
 FIXTURES = Path(__file__).parent / "fixtures"

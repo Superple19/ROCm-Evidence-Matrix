@@ -4,11 +4,11 @@ from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 from unittest.mock import patch
 
-from windows_rocm_matrix.collect import collect_therock, collect_source, parse_args
-from windows_rocm_matrix.legacy import collect_legacy_windows_sources
-from windows_rocm_matrix.paths import LEGACY_LINUX, LEGACY_STATUS, LEGACY_WINDOWS, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS
-from windows_rocm_matrix.source_adapter import collection_status, run_source_adapter
-from windows_rocm_matrix.validation import validate_collection_status
+from rocm_evidence_matrix.collect import collect_therock, collect_source, parse_args
+from rocm_evidence_matrix.legacy import collect_legacy_windows_sources
+from rocm_evidence_matrix.paths import LEGACY_LINUX, LEGACY_STATUS, LEGACY_WINDOWS, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS
+from rocm_evidence_matrix.source_adapter import collection_status, run_source_adapter
+from rocm_evidence_matrix.validation import validate_collection_status
 
 
 class CollectionCommandTests(unittest.TestCase):
@@ -155,8 +155,8 @@ class CollectionCommandTests(unittest.TestCase):
                 gfx_targets=[],
             )
             config = {"documentation_sources": [], "artifact_sources": sources}
-            with patch("windows_rocm_matrix.collect.collect_documentation_sources", return_value=(documentation, [])), patch(
-                "windows_rocm_matrix.collect.collect_source", side_effect=package_result
+            with patch("rocm_evidence_matrix.collect.collect_documentation_sources", return_value=(documentation, [])), patch(
+                "rocm_evidence_matrix.collect.collect_source", side_effect=package_result
             ):
                 success = collect_therock(args, config)
 

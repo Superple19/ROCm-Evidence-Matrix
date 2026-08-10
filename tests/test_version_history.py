@@ -1,8 +1,8 @@
 import json
 import unittest
 
-from windows_rocm_matrix.version_history import collect_legacy_version_history, merge_version_history, parse_documentation_branches, parse_rocm_release_history, parse_therock_releases, parse_therock_version, release_record
-from windows_rocm_matrix.validation import validate_version_history
+from rocm_evidence_matrix.version_history import collect_legacy_version_history, merge_version_history, parse_documentation_branches, parse_rocm_release_history, parse_therock_releases, parse_therock_version, release_record
+from rocm_evidence_matrix.validation import validate_version_history
 
 
 OBSERVED_AT = "2026-08-08T00:00:00Z"

@@ -6,8 +6,8 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from urllib.error import HTTPError
 
-from windows_rocm_matrix.source_cache import CachedSourceReader, SourceCache
-from windows_rocm_matrix.validation import validate_source_manifest
+from rocm_evidence_matrix.source_cache import CachedSourceReader, SourceCache
+from rocm_evidence_matrix.validation import validate_source_manifest
 
 
 class Response:

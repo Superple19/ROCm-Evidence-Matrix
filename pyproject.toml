@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "rocm-matrix"
+name = "rocm-evidence-matrix"
 version = "0.1.0"
 description = "Evidence-based ROCm platform compatibility data and documentation"
 readme = "README.md"
@@ -18,22 +18,22 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Superple19/windows-rocm-matrix"
+Repository = "https://github.com/Superple19/rocm-evidence-matrix"
 
 [project.scripts]
-rocm-matrix = "windows_rocm_matrix.collect:main"
+rocm-matrix = "rocm_evidence_matrix.collect:main"
 windows-rocm-matrix = "windows_rocm_matrix.collect:main"
-rocm-resolve = "windows_rocm_matrix.verification.resolver:main"
+rocm-evidence = "rocm_evidence_matrix.community:main"
+rocm-resolve = "rocm_evidence_matrix.verification.resolver:main"
 windows-rocm-resolve = "windows_rocm_matrix.verification.resolver:main"
-rocm-verify = "windows_rocm_matrix.verify:main"
+rocm-verify = "rocm_evidence_matrix.verify:main"
 windows-rocm-verify = "windows_rocm_matrix.verify:main"
-rocm-verify-matrix = "windows_rocm_matrix.verify_matrix:main"
+rocm-verify-matrix = "rocm_evidence_matrix.verify_matrix:main"
 windows-rocm-verify-matrix = "windows_rocm_matrix.verify_matrix:main"
-rocm-runtime = "windows_rocm_matrix.verification.runtime:main"
+rocm-runtime = "rocm_evidence_matrix.verification.runtime:main"
 windows-rocm-runtime = "windows_rocm_matrix.verification.runtime:main"
-rocm-hardware = "windows_rocm_matrix.verification.hardware:main"
+rocm-hardware = "rocm_evidence_matrix.verification.hardware:main"
 windows-rocm-hardware = "windows_rocm_matrix.verification.hardware:main"
-rocm-evidence = "windows_rocm_matrix.community:main"
 
 [tool.setuptools.packages.find]
-include = ["windows_rocm_matrix*"]
+include = ["rocm_evidence_matrix*", "windows_rocm_matrix*"]

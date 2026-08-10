@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from windows_rocm_matrix.check import run_check, validate_json_schema
+from rocm_evidence_matrix.check import run_check, validate_json_schema
 
 
 class CheckCommandTests(unittest.TestCase):

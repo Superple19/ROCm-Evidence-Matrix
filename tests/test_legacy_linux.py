@@ -1,7 +1,7 @@
 import unittest
 
-from windows_rocm_matrix.legacy_linux import build_legacy_linux_candidates, classify_legacy_linux_framework
-from windows_rocm_matrix.resolve import resolve_candidates
+from rocm_evidence_matrix.legacy_linux import build_legacy_linux_candidates, classify_legacy_linux_framework
+from rocm_evidence_matrix.resolve import resolve_candidates
 
 
 class LegacyLinuxTests(unittest.TestCase):

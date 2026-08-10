@@ -1,7 +1,7 @@
 import unittest
 
-from windows_rocm_matrix.extensions import build_triton_observations, merge_extension_history, render_extension_history
-from windows_rocm_matrix.validation import validate_extension_history
+from rocm_evidence_matrix.extensions import build_triton_observations, merge_extension_history, render_extension_history
+from rocm_evidence_matrix.validation import validate_extension_history
 
 
 class ExtensionHistoryTests(unittest.TestCase):

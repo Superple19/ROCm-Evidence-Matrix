@@ -33,9 +33,9 @@ platform and distribution metadata. Integration combines independent evidence
 without promoting package availability to compatibility. Renderers only read
 normalized data and never fetch from the network.
 
-Package boundaries are exposed under `windows_rocm_matrix/sources/`,
-`windows_rocm_matrix/pipeline/`, `windows_rocm_matrix/verification/`, and
-`windows_rocm_matrix/storage/`. Existing flat module paths remain as
+Package boundaries are exposed under `rocm_evidence_matrix/sources/`,
+`rocm_evidence_matrix/pipeline/`, `rocm_evidence_matrix/verification/`, and
+`rocm_evidence_matrix/storage/`. Existing flat module paths remain as
 compatibility imports while the migration proceeds.
 
 Documentation and matrix records expose platform evidence under `platforms`.
@@ -45,21 +45,23 @@ consumers; new platform integrations must use the grouped representation.
 ## Ownership
 
 - `config/sources.json`: upstream source declarations and platform metadata
-- `windows_rocm_matrix/simple_index.py`: package index parsing
-- `windows_rocm_matrix/documentation.py`: shared GPU/framework documentation plus Windows-specific tables
-- `windows_rocm_matrix/legacy.py`: legacy Windows adapter
-- `windows_rocm_matrix/ci.py`: TheRock CI configuration and execution evidence
-- `windows_rocm_matrix/frameworks.py`: JAX framework and ROCm SDK component evidence
-- `windows_rocm_matrix/extensions.py`: optional compiled-extension artifact history
-- `windows_rocm_matrix/check.py`: offline evidence and generated-document validation
-- `windows_rocm_matrix/profile.py`: consumer profile validation and selection policy
-- `windows_rocm_matrix/community.py`: privacy-redacted community evidence export
-- `windows_rocm_matrix/integration.py`: evidence integration by exact GFX target
+- `rocm_evidence_matrix/simple_index.py`: package index parsing
+- `rocm_evidence_matrix/documentation.py`: shared GPU/framework documentation plus Windows-specific tables
+- `rocm_evidence_matrix/legacy.py`: legacy Windows adapter
+- `rocm_evidence_matrix/ci.py`: TheRock CI configuration and execution evidence
+- `rocm_evidence_matrix/frameworks.py`: JAX framework and ROCm SDK component evidence
+- `rocm_evidence_matrix/extensions.py`: optional compiled-extension artifact history
+- `rocm_evidence_matrix/check.py`: offline evidence and generated-document validation
+- `rocm_evidence_matrix/profile.py`: consumer profile validation and selection policy
+- `rocm_evidence_matrix/community.py`: privacy-redacted community evidence export
+- `rocm_evidence_matrix/integration.py`: evidence integration by exact GFX target
 - `schemas/`: contracts for each persisted evidence type
 - `data/`: committed normalized evidence and generated views
 - `docs/generated/`: rebuildable Markdown views
 - `profiles/`: application, runtime, framework, extension, and option profiles
 - `contributions/`: manually reviewed community evidence submissions
 
-The Python package keeps its historical import name for compatibility, while
-the public project and command names use `rocm-matrix`.
+The public package namespace is `rocm_evidence_matrix`. The historical
+`windows_rocm_matrix` import remains available as a compatibility namespace
+during the migration. The primary command names are `rocm-matrix` and
+`rocm-evidence`.

@@ -1,7 +1,7 @@
 import unittest
 from pathlib import Path
 
-from windows_rocm_matrix.simple_index import discover_gfx_targets, discover_packages, latest_artifacts, latest_version, parse_linux_wheels, parse_source_distributions, parse_windows_wheels, version_key
+from rocm_evidence_matrix.simple_index import discover_gfx_targets, discover_packages, latest_artifacts, latest_version, parse_linux_wheels, parse_source_distributions, parse_windows_wheels, version_key
 
 
 FIXTURES = Path(__file__).parent / "fixtures"

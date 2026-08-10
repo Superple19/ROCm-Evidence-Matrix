@@ -20,7 +20,7 @@ from .validation import validate_ci_coverage, validate_ci_evidence, validate_col
 from .version_history import collect_therock_version_history, render_version_history
 
 
-USER_AGENT = "rocm-matrix/0.1 (+https://github.com/Superple19/windows-rocm-matrix)"
+USER_AGENT = "rocm-evidence-matrix/0.1 (+https://github.com/Superple19/rocm-evidence-matrix)"
 def fetch_text(url, timeout):
     request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/vnd.github+json, application/json;q=0.9, text/html;q=0.8"})
     with urlopen(request, timeout=timeout) as response:

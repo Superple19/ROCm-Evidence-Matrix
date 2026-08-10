@@ -1,7 +1,7 @@
 import unittest
 
-from windows_rocm_matrix.frameworks import build_jax_observations, build_sdk_components, merge_framework_history, merge_sdk_components
-from windows_rocm_matrix.validation import validate_framework_history
+from rocm_evidence_matrix.frameworks import build_jax_observations, build_sdk_components, merge_framework_history, merge_sdk_components
+from rocm_evidence_matrix.validation import validate_framework_history
 
 
 class FrameworkEvidenceTests(unittest.TestCase):

@@ -1,7 +1,7 @@
 import unittest
 from pathlib import Path
 
-from windows_rocm_matrix.profile import compatible_extensions, load_profile, separate_profile_results, validate_extension_selection, validate_profile
+from rocm_evidence_matrix.profile import compatible_extensions, load_profile, separate_profile_results, validate_extension_selection, validate_profile
 
 
 class ProfileTests(unittest.TestCase):

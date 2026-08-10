@@ -3,9 +3,9 @@ import json
 import tempfile
 from pathlib import Path
 
-from windows_rocm_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, promote_execution_evidence, render_history
-from windows_rocm_matrix.identity import candidate_hash
-from windows_rocm_matrix.resolve import count_candidates, install_command, resolve_candidates
+from rocm_evidence_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, promote_execution_evidence, render_history
+from rocm_evidence_matrix.identity import candidate_hash
+from rocm_evidence_matrix.resolve import count_candidates, install_command, resolve_candidates
 
 
 def artifact(package, version, python_tag="cp312"):

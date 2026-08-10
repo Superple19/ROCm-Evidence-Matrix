@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from windows_rocm_matrix.catalog import build_catalog, write_catalog
+from rocm_evidence_matrix.catalog import build_catalog, write_catalog
 
 
 class CatalogTests(unittest.TestCase):

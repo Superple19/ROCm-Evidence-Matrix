@@ -1,6 +1,6 @@
 import unittest
 
-from windows_rocm_matrix.integration import build_compatibility_matrix
+from rocm_evidence_matrix.integration import build_compatibility_matrix
 
 
 class IntegrationTests(unittest.TestCase):

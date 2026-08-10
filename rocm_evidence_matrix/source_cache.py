@@ -12,7 +12,7 @@ from .persistence import atomic_write_bytes, atomic_write_text
 from .validation import validate_source_manifest
 
 
-USER_AGENT = "windows-rocm-matrix/0.1 (+https://github.com/Superple19/windows-rocm-matrix)"
+USER_AGENT = "rocm-evidence-matrix/0.1 (+https://github.com/Superple19/rocm-evidence-matrix)"
 
 
 def utc_now():

@@ -1,7 +1,7 @@
 import unittest
 
-from windows_rocm_matrix.ci import build_evidence, collect_github, parse_matrix
-from windows_rocm_matrix.validation import validate_ci_coverage, validate_ci_evidence
+from rocm_evidence_matrix.ci import build_evidence, collect_github, parse_matrix
+from rocm_evidence_matrix.validation import validate_ci_coverage, validate_ci_evidence
 
 
 MATRIX = """

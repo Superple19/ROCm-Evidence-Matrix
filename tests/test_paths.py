@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from windows_rocm_matrix.paths import THEROCK_SNAPSHOTS, first_existing
+from rocm_evidence_matrix.paths import THEROCK_SNAPSHOTS, first_existing
 
 
 class PathTests(unittest.TestCase):

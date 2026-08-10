@@ -1,6 +1,6 @@
 import unittest
 
-from windows_rocm_matrix.legacy import build_legacy_candidates, parse_hip_sdk_gpu_support, parse_hip_sdk_release_versions, parse_legacy_artifact, parse_pytorch_windows_support
+from rocm_evidence_matrix.legacy import build_legacy_candidates, parse_hip_sdk_gpu_support, parse_hip_sdk_release_versions, parse_legacy_artifact, parse_pytorch_windows_support
 
 
 class LegacyWindowsTests(unittest.TestCase):

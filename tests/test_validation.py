@@ -1,6 +1,6 @@
 import unittest
 
-from windows_rocm_matrix.validation import validate_legacy_windows, validate_resolver_verifications, validate_snapshot
+from rocm_evidence_matrix.validation import validate_legacy_windows, validate_resolver_verifications, validate_snapshot
 
 
 def valid_snapshot():

@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from windows_rocm_matrix.render import render_snapshots
+from rocm_evidence_matrix.render import render_snapshots
 
 
 class RenderTests(unittest.TestCase):

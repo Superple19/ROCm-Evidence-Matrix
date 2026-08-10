@@ -1,7 +1,7 @@
 import unittest
 
-from windows_rocm_matrix.community import merge_submission, submission_from_record
-from windows_rocm_matrix.validation import validate_community_evidence
+from rocm_evidence_matrix.community import merge_submission, submission_from_record
+from rocm_evidence_matrix.validation import validate_community_evidence
 
 
 class CommunityEvidenceTests(unittest.TestCase):

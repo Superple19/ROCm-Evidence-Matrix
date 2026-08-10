@@ -2,6 +2,9 @@
 
 ROCm Evidence Matrix is an unofficial, community-maintained project that collects evidence about ROCm package availability and compatibility across platforms. TheRock is the actively supported distribution family. Legacy ROCm and HIP SDK records remain available as historical archive evidence.
 
+The Python package namespace is `rocm_evidence_matrix`. The historical
+`windows_rocm_matrix` namespace remains available as a compatibility import.
+
 The repository keeps machine-readable observations separate from generated documentation. Package availability does not imply that a package resolves, imports, or works on physical hardware.
 
 ## Current scope

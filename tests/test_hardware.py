@@ -1,9 +1,9 @@
 import types
 import unittest
 
-from windows_rocm_matrix.hardware import collect_hardware, merge_hardware
-from windows_rocm_matrix.runtime import normalized_os
-from windows_rocm_matrix.validation import validate_hardware_verifications
+from rocm_evidence_matrix.hardware import collect_hardware, merge_hardware
+from rocm_evidence_matrix.runtime import normalized_os
+from rocm_evidence_matrix.validation import validate_hardware_verifications
 
 
 class HardwareTests(unittest.TestCase):
