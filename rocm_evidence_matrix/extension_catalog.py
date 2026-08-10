@@ -1,5 +1,7 @@
 """Normalize extension artifacts into an evidence-backed catalog."""
 
+import hashlib
+import json
 import re
 from pathlib import Path
 
@@ -22,6 +24,25 @@ PACKAGE_TO_EXTENSION = {
     for package in packages
 }
 _ROCM_RE = re.compile(r"(?:^|[.+-])rocm(?P<version>\d+(?:\.\d+)+(?:[a-z]+\d+)?)", re.IGNORECASE)
+_REQUIREMENT_RE = re.compile(r"^\s*([A-Za-z0-9_.-]+)\s*(.*)$")
+
+
+def extension_candidate_id(extension, version, python_tag, platform_tag, source_id, artifact_url):
+    """Return a stable identity for one exact extension artifact candidate."""
+
+    identity = {
+        "artifact_url": str(artifact_url),
+        "extension": str(extension),
+        "platform_tag": str(platform_tag),
+        "python_tag": str(python_tag),
+        "source_id": str(source_id),
+        "version": str(version),
+    }
+    digest = hashlib.sha256(
+        json.dumps(identity, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()[:16]
+    safe = lambda value: str(value).replace(":", "_")
+    return f"extension:{safe(extension)}:{safe(version)}:{safe(python_tag)}:{safe(platform_tag)}:{digest}"
 
 
 def _source_record(source, observed_at):
@@ -68,6 +89,30 @@ def _record_id(extension, source, version, python_tags, platform_tags):
     return ":".join(str(value).replace(":", "_") for value in values)
 
 
+def _requirement_values(artifacts):
+    requirements = sorted({
+        str(requirement)
+        for artifact in artifacts
+        for requirement in artifact.get("requires_dist", ())
+        if requirement
+    })
+    torch_constraints = []
+    rocm_constraints = []
+    hip_constraints = []
+    for requirement in requirements:
+        match = _REQUIREMENT_RE.match(requirement)
+        if not match:
+            continue
+        package = normalize_package_name(match.group(1))
+        if package in {"torch", "torchvision", "torchaudio"}:
+            torch_constraints.append(requirement)
+        elif package in {"rocm", "rocm-sdk", "rocm-sdk-core"}:
+            rocm_constraints.append(requirement)
+        elif package in {"hip", "hip-runtime", "hip-sdk"}:
+            hip_constraints.append(requirement)
+    return requirements, torch_constraints, rocm_constraints, hip_constraints
+
+
 def _group_artifacts(source, package_name, artifacts):
     extension = extension_for_package(package_name)
     if not extension:
@@ -79,9 +124,26 @@ def _group_artifacts(source, package_name, artifacts):
             continue
         grouped.setdefault(version, []).append(artifact)
     records = []
+    source_id = f"packages-{source['id']}"
     for version, version_artifacts in grouped.items():
-        python_tags = _python_tags(version_artifacts)
-        platform_tags = _platform_tags(version_artifacts)
+        normalized_artifacts = []
+        for artifact in version_artifacts:
+            normalized = dict(artifact)
+            normalized.setdefault("build_tag", None)
+            normalized.setdefault("requires_dist", [])
+            normalized.setdefault("sha256", None)
+            normalized["candidate_id"] = extension_candidate_id(
+                extension,
+                version,
+                normalized.get("python_tag", "unknown"),
+                normalized.get("platform_tag", "unknown"),
+                source_id,
+                normalized.get("url", ""),
+            )
+            normalized_artifacts.append(normalized)
+        requirements, torch_constraints, rocm_constraints, hip_constraints = _requirement_values(normalized_artifacts)
+        python_tags = _python_tags(normalized_artifacts)
+        platform_tags = _platform_tags(normalized_artifacts)
         records.append(
             {
                 "id": _record_id(extension, source, version, python_tags, platform_tags),
@@ -94,12 +156,16 @@ def _group_artifacts(source, package_name, artifacts):
                 "version": version,
                 "python_tags": python_tags,
                 "platform_tags": platform_tags,
-                "artifacts": sorted(version_artifacts, key=lambda artifact: artifact.get("filename", "")),
-                "artifact_urls": sorted({artifact.get("url") for artifact in version_artifacts if artifact.get("url")}),
-                "source_id": f"packages-{source['id']}",
+                "artifacts": sorted(normalized_artifacts, key=lambda artifact: artifact.get("filename", "")),
+                "artifact_urls": sorted({artifact.get("url") for artifact in normalized_artifacts if artifact.get("url")}),
+                "candidate_ids": sorted({artifact["candidate_id"] for artifact in normalized_artifacts}),
+                "source_id": source_id,
                 "rocm_version": _rocm_version(version),
-                "torch_constraints": [],
-                "hip_constraints": [],
+                "requires_dist": requirements,
+                "build_tags": sorted({artifact.get("build_tag") for artifact in normalized_artifacts if artifact.get("build_tag")}),
+                "torch_constraints": torch_constraints,
+                "rocm_constraints": rocm_constraints,
+                "hip_constraints": hip_constraints,
                 "gfx_targets": [],
                 "artifact_available": True,
                 "evidence_status": "artifact_available",
@@ -122,6 +188,40 @@ def build_extension_observations(snapshot, observed_at=None):
     return observations
 
 
+def _migrate_record(record):
+    """Backfill candidate and metadata fields on records from older schemas."""
+
+    migrated = dict(record)
+    source_id = migrated.get("source_id", "unknown")
+    artifacts = []
+    for artifact in migrated.get("artifacts", ()):
+        normalized = dict(artifact)
+        normalized.setdefault("build_tag", None)
+        normalized.setdefault("requires_dist", [])
+        normalized.setdefault("sha256", None)
+        normalized.setdefault(
+            "candidate_id",
+            extension_candidate_id(
+                migrated.get("extension", "unknown"),
+                migrated.get("version", "unknown"),
+                normalized.get("python_tag", "unknown"),
+                normalized.get("platform_tag", "unknown"),
+                source_id,
+                normalized.get("url", ""),
+            ),
+        )
+        artifacts.append(normalized)
+    migrated["artifacts"] = artifacts
+    migrated["candidate_ids"] = sorted({artifact["candidate_id"] for artifact in artifacts})
+    requirements, torch_constraints, rocm_constraints, hip_constraints = _requirement_values(artifacts)
+    migrated.setdefault("requires_dist", requirements)
+    migrated.setdefault("build_tags", sorted({artifact.get("build_tag") for artifact in artifacts if artifact.get("build_tag")}))
+    migrated.setdefault("rocm_constraints", rocm_constraints)
+    migrated.setdefault("torch_constraints", torch_constraints)
+    migrated.setdefault("hip_constraints", hip_constraints)
+    return migrated
+
+
 def merge_extension_catalog(existing, observations, observed_at):
     """Merge extension observations append-only and assign lifecycle labels."""
 
@@ -131,7 +231,7 @@ def merge_extension_catalog(existing, observations, observed_at):
         "sources": {},
         "extensions": [],
     }
-    records = {item["id"]: dict(item) for item in existing.get("extensions", [])}
+    records = {item["id"]: _migrate_record(item) for item in existing.get("extensions", [])}
     for item in observations:
         current = records.get(item["id"])
         if current is None:
@@ -177,7 +277,7 @@ def merge_extension_history(existing, observations, observed_at):
         "sources": {},
         "extensions": [],
     }
-    records = {item["id"]: dict(item) for item in existing.get("extensions", [])}
+    records = {item["id"]: _migrate_record(item) for item in existing.get("extensions", [])}
     for item in observations:
         current = records.get(item["id"])
         if current is None:
@@ -232,22 +332,23 @@ def render_extension_catalog(document):
         "",
         "> Artifact availability is not installation or runtime compatibility.",
         "",
-        "| Extension | Version | Platform | Channel | Python | Wheel platform | Lifecycle | Evidence |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- |",
+        "| Extension | Version | Platform | Channel | Python | Wheel platform | Candidate IDs | Lifecycle | Evidence |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
     for item in document.get("extensions", []):
         lines.append(
-            "| {extension} | {version} | {platform} | {channel} | {python} | {tags} | {lifecycle} | {evidence} |".format(
+            "| {extension} | {version} | {platform} | {channel} | {python} | {tags} | {candidates} | {lifecycle} | {evidence} |".format(
                 extension=item["extension"],
                 version=item["version"],
                 platform=item["platform"],
                 channel=item["channel"],
                 python=", ".join(item["python_tags"]),
                 tags=", ".join(item["platform_tags"]),
+                candidates=", ".join(item.get("candidate_ids", ())),
                 lifecycle=item["lifecycle"],
                 evidence=item["evidence_status"],
             )
         )
     if len(lines) == 6:
-        lines.append("| — | — | — | — | — | — | — | not_collected |")
+        lines.append("| — | — | — | — | — | — | — | — | not_collected |")
     return "\n".join(lines) + "\n"

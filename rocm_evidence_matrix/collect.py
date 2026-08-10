@@ -393,7 +393,7 @@ def collect_extensions(args, config):
     unknown = selected - {source["id"] for source in sources}
     if unknown:
         raise SystemExit(f"Unknown extension sources: {', '.join(sorted(unknown))}")
-    sources = [source for source in sources if not selected or source["id"] in selected]
+    sources = [source for source in sources if source.get("enabled", True) or source["id"] in selected]
     source_cache = SourceCache(args.cache_dir, args.source_manifest, args.timeout)
     started_at = utc_now()
     results = collect_extension_sources(sources, source_cache, args.output_dir, source_cache.generated_at)
@@ -425,7 +425,7 @@ def collect_extensions(args, config):
 def normalize_extensions(args, config):
     source_reader = CachedSourceReader(args.cache_dir, args.source_manifest)
     sources = config.get("extension_sources", [])
-    urls = [source["url"] for source in sources]
+    urls = [source["url"] for source in sources if source.get("enabled", True)]
     observed_at = source_reader.latest_observed_at(urls)
     document = rebuild_extension_catalog_from_sources(
         args.output_dir,

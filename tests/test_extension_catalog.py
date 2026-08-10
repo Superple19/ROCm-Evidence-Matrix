@@ -48,6 +48,8 @@ class ExtensionCatalogTests(unittest.TestCase):
         self.assertEqual(observations[0]["extension"], "triton")
         self.assertEqual(observations[0]["rocm_version"], "7.14.0")
         self.assertEqual(observations[0]["evidence_status"], "artifact_available")
+        self.assertEqual(len(observations[0]["candidate_ids"]), 1)
+        self.assertTrue(observations[0]["artifacts"][0]["candidate_id"].startswith("extension:triton:"))
 
         document = merge_extension_catalog(None, observations, OBSERVED_AT)
         document["sources"]["packages-nightly"] = {

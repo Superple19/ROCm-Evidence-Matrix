@@ -2,176 +2,176 @@
 
 > Artifact availability is not installation or runtime compatibility.
 
-| Extension | Version | Platform | Channel | Python | Wheel platform | Lifecycle | Evidence |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| aiter | 0.1 | unknown | external | source | source | historical | artifact_available |
-| aiter | 0.1.2 | unknown | external | source | source | historical | artifact_available |
-| aiter | 0.13.20191203 | unknown | external | source | source | current | artifact_available |
-| bitsandbytes | 0.31.8 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.32.0 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.32.2 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.32.3 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.33.0 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.34.0 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.35.0 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.35.2 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.35.3 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.35.4 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.36.0 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.36.0.post2 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.37.0 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.37.1 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.37.2 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.38.0 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.38.0.post1 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.38.0.post2 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.38.1 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.39.0 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.39.1 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.40.0 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.40.0.post1 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.40.0.post2 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.40.0.post3 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.40.0.post4 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.40.1 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.40.1.post1 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.40.2 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.41.0 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.41.1 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.41.2 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.41.2.post1 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.41.2.post2 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.41.3 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.41.3.post1 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.41.3.post2 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.42.0 | unknown | external | py3, source | any, source | historical | artifact_available |
-| bitsandbytes | 0.43.0 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.43.1 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.43.2 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.43.3 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.44.0 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.44.1 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.45.0 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.45.1 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.45.2 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.45.3 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.45.4 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.45.5 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.46.0 | unknown | external | py3 | manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.46.1 | unknown | external | py3 | manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.47.0 | unknown | external | py3 | manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.48.0 | unknown | external | py3 | manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.48.1 | unknown | external | py3 | manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.48.2 | unknown | external | py3 | manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.49.0 | unknown | external | py3 | macosx_14_0_arm64, manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.49.1 | unknown | external | py3 | macosx_14_0_arm64, manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.49.2 | unknown | external | py3 | macosx_14_0_arm64, manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | historical | artifact_available |
-| bitsandbytes | 0.50.0 | unknown | external | py3 | macosx_14_0_arm64, manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64, win_arm64 | current | artifact_available |
-| flash-attention | 0.2.0 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 0.2.1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 0.2.2 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 0.2.3 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 0.2.4 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 0.2.5 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 0.2.6.post1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 0.2.7 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 0.2.8 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 1.0.0 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 1.0.1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 1.0.2 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 1.0.3 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 1.0.3.post0 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 1.0.4 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 1.0.5 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 1.0.6 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 1.0.7 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 1.0.8 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 1.0.9 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.0.0.post1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.0.1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.0.2 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.0.3 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.0.4 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.0.5 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.0.6 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.0.6.post2 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.0.7 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.0.8 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.0.9 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.1.0 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.1.1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.1.2.post3 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.2.0 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.2.1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.2.2 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.2.3.post2 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.2.4 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.2.4.post1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.2.5 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.3.0 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.3.1.post1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.3.2 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.3.3 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.3.4 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.3.5 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.3.6 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.4.0.post1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.4.1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.4.2 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.4.3.post1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.5.0 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.5.1.post1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.5.2 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.5.3 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.5.4 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.5.5 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.5.6 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.5.7 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.5.8 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.5.9.post1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.6.0.post1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.6.1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.6.2 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.6.3 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.7.0.post2 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.7.1.post4 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.7.2.post1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.7.3 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.7.4.post1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.8.0.post2 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.8.1 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.8.2 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.8.3 | unknown | external | source | source | historical | artifact_available |
-| flash-attention | 2.8.3.post1 | unknown | external | source | source | current | artifact_available |
-| sageattention | 0.1.0 | unknown | external | py3, source | any, source | historical | artifact_available |
-| sageattention | 1.0.0 | unknown | external | py3, source | any, source | historical | artifact_available |
-| sageattention | 1.0.1 | unknown | external | py3, source | any, source | historical | artifact_available |
-| sageattention | 1.0.2 | unknown | external | py3, source | any, source | historical | artifact_available |
-| sageattention | 1.0.3 | unknown | external | py3, source | any, source | historical | artifact_available |
-| sageattention | 1.0.4 | unknown | external | py3, source | any, source | historical | artifact_available |
-| sageattention | 1.0.5 | unknown | external | py3, source | any, source | historical | artifact_available |
-| sageattention | 1.0.6 | unknown | external | py3, source | any, source | current | artifact_available |
-| triton | 0.4.1 | unknown | external | cp35, cp36, cp37, cp38, cp39, pp36, pp37 | manylinux2010_x86_64 | historical | artifact_available |
-| triton | 0.4.2 | unknown | external | cp35, cp36, cp37, cp38, cp39, pp36, pp37 | manylinux2010_x86_64 | historical | artifact_available |
-| triton | 1.0.0 | unknown | external | cp36, cp37, cp38, cp39, pp37 | manylinux2014_x86_64 | historical | artifact_available |
-| triton | 1.1.0 | unknown | external | cp36, cp37, cp38, cp39, pp37 | manylinux2014_x86_64 | historical | artifact_available |
-| triton | 1.1.1 | unknown | external | cp36, cp37, cp38, cp39, pp37 | manylinux2014_x86_64 | historical | artifact_available |
-| triton | 2.0.0 | unknown | external | cp310, cp311, cp36, cp37, cp38, cp39, pp37, pp38, pp39 | manylinux2014_x86_64 | historical | artifact_available |
-| triton | 2.1.0 | unknown | external | cp310, cp311, cp37, cp38, cp39, pp37, pp38, pp39 | manylinux2014_x86_64 | historical | artifact_available |
-| triton | 2.2.0 | unknown | external | cp310, cp311, cp312, cp37, cp38, cp39 | manylinux2014_x86_64 | historical | artifact_available |
-| triton | 2.3.0 | unknown | external | cp310, cp311, cp312, cp37, cp38, cp39 | manylinux2014_x86_64 | historical | artifact_available |
-| triton | 2.3.1 | unknown | external | cp310, cp311, cp312, cp37, cp38, cp39 | manylinux2014_x86_64 | historical | artifact_available |
-| triton | 3.0.0 | unknown | external | cp310, cp311, cp312, cp38, cp39 | manylinux2014_x86_64 | historical | artifact_available |
-| triton | 3.1.0 | unknown | external | cp310, cp311, cp312, cp38, cp39 | manylinux2014_x86_64 | historical | artifact_available |
-| triton | 3.2.0 | unknown | external | cp310, cp311, cp312, cp313, cp39 | manylinux2014_x86_64 | historical | artifact_available |
-| triton | 3.3.0 | unknown | external | cp310, cp311, cp312, cp313, cp39 | manylinux_2_27_x86_64 | historical | artifact_available |
-| triton | 3.3.1 | unknown | external | cp310, cp311, cp312, cp313, cp39 | manylinux_2_27_x86_64 | historical | artifact_available |
-| triton | 3.4.0 | unknown | external | cp310, cp311, cp312, cp313, cp39 | manylinux_2_27_x86_64 | historical | artifact_available |
-| triton | 3.5.0 | unknown | external | cp310, cp311, cp312, cp313, cp314 | manylinux_2_27_aarch64, manylinux_2_27_x86_64 | historical | artifact_available |
-| triton | 3.5.1 | unknown | external | cp310, cp311, cp312, cp313, cp314 | manylinux_2_27_aarch64, manylinux_2_27_x86_64 | historical | artifact_available |
-| triton | 3.6.0 | unknown | external | cp310, cp311, cp312, cp313, cp314 | manylinux_2_27_aarch64, manylinux_2_27_x86_64 | historical | artifact_available |
-| triton | 3.7.0 | unknown | external | cp310, cp311, cp312, cp313, cp314 | manylinux_2_27_aarch64, manylinux_2_27_x86_64 | historical | artifact_available |
-| triton | 3.7.1 | unknown | external | cp310, cp311, cp312, cp313, cp314 | manylinux_2_27_aarch64, manylinux_2_27_x86_64 | current | artifact_available |
-| triton | 3.8.0+git4774139f.rocm7.15.0a20260721 | linux | nightly | cp310, cp311, cp312, cp313, cp314 | linux_x86_64 | current | artifact_available |
-| triton | 3.8.0+git4cff872c.rocm7.14.0 | linux | stable | cp312 | linux_x86_64 | current | artifact_available |
-| triton | 3.7.0+gitfbb43d96.rocm7.14.0a20260519 | linux | staging | cp313 | linux_x86_64 | current | artifact_available |
+| Extension | Version | Platform | Channel | Python | Wheel platform | Candidate IDs | Lifecycle | Evidence |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| aiter | 0.1 | unknown | external | source | source | extension:aiter:0.1:source:source:8fc4769e011a71e8 | historical | artifact_available |
+| aiter | 0.1.2 | unknown | external | source | source | extension:aiter:0.1.2:source:source:9aeb6399a8cea08e | historical | artifact_available |
+| aiter | 0.13.20191203 | unknown | external | source | source | extension:aiter:0.13.20191203:source:source:d23807e309f6e7b3 | current | artifact_available |
+| bitsandbytes | 0.31.8 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.31.8:py3:any:dd941a331d2eaded, extension:bitsandbytes:0.31.8:source:source:914f4685a9c9c8a3 | historical | artifact_available |
+| bitsandbytes | 0.32.0 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.32.0:py3:any:ff6d25e6bff12881, extension:bitsandbytes:0.32.0:source:source:c5e0fa4b5e6e2f6a | historical | artifact_available |
+| bitsandbytes | 0.32.2 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.32.2:py3:any:1a2582fc7df43f1b, extension:bitsandbytes:0.32.2:source:source:42096b47893510e9 | historical | artifact_available |
+| bitsandbytes | 0.32.3 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.32.3:py3:any:7de30c137fbbdcd4, extension:bitsandbytes:0.32.3:source:source:39fb6314b18079b8 | historical | artifact_available |
+| bitsandbytes | 0.33.0 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.33.0:py3:any:1aa8a2703ed53a25, extension:bitsandbytes:0.33.0:source:source:309f8bcf6b042f02 | historical | artifact_available |
+| bitsandbytes | 0.34.0 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.34.0:py3:any:bc61208096f5c533, extension:bitsandbytes:0.34.0:source:source:926c30593cdcdc9c | historical | artifact_available |
+| bitsandbytes | 0.35.0 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.35.0:py3:any:3f6215be1b7c869a, extension:bitsandbytes:0.35.0:source:source:55e763843165f4ed | historical | artifact_available |
+| bitsandbytes | 0.35.2 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.35.2:py3:any:342727bd4277c7de, extension:bitsandbytes:0.35.2:source:source:2abce27f3d8af608 | historical | artifact_available |
+| bitsandbytes | 0.35.3 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.35.3:py3:any:c014bbfce800dfda, extension:bitsandbytes:0.35.3:source:source:6155b70fc301b1c7 | historical | artifact_available |
+| bitsandbytes | 0.35.4 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.35.4:py3:any:8a2893b937f443dc, extension:bitsandbytes:0.35.4:source:source:8ed2e5deb2caef40 | historical | artifact_available |
+| bitsandbytes | 0.36.0 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.36.0:py3:any:493e9d267db265ef, extension:bitsandbytes:0.36.0:source:source:d270d06d45a1aece | historical | artifact_available |
+| bitsandbytes | 0.36.0.post2 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.36.0.post2:py3:any:8c3a1013fd762961, extension:bitsandbytes:0.36.0.post2:source:source:6263ff4b83618938 | historical | artifact_available |
+| bitsandbytes | 0.37.0 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.37.0:py3:any:d95fc4fd0a96628d, extension:bitsandbytes:0.37.0:source:source:0732dc7058ddec2a | historical | artifact_available |
+| bitsandbytes | 0.37.1 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.37.1:py3:any:191f9bc1b1ab3f4b, extension:bitsandbytes:0.37.1:source:source:910e9bdab12a18ee | historical | artifact_available |
+| bitsandbytes | 0.37.2 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.37.2:py3:any:4d0c4642970bca56, extension:bitsandbytes:0.37.2:source:source:ad9c0bc48bc037d4 | historical | artifact_available |
+| bitsandbytes | 0.38.0 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.38.0:py3:any:b42475be70bc2823, extension:bitsandbytes:0.38.0:source:source:114345ae56923bac | historical | artifact_available |
+| bitsandbytes | 0.38.0.post1 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.38.0.post1:py3:any:5cfdba30cc069868, extension:bitsandbytes:0.38.0.post1:source:source:a0b5a67d9e0cbb45 | historical | artifact_available |
+| bitsandbytes | 0.38.0.post2 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.38.0.post2:py3:any:b315bf193497de2d, extension:bitsandbytes:0.38.0.post2:source:source:99f76652737c6cab | historical | artifact_available |
+| bitsandbytes | 0.38.1 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.38.1:py3:any:bda8501e2e4267df, extension:bitsandbytes:0.38.1:source:source:995a12e2ca611c5d | historical | artifact_available |
+| bitsandbytes | 0.39.0 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.39.0:py3:any:0d47d4efc3a0facc, extension:bitsandbytes:0.39.0:source:source:4835506c34e2e7a0 | historical | artifact_available |
+| bitsandbytes | 0.39.1 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.39.1:py3:any:74437608a8464a63, extension:bitsandbytes:0.39.1:source:source:23bc69d833224129 | historical | artifact_available |
+| bitsandbytes | 0.40.0 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.40.0:py3:any:50c813cf91223de7, extension:bitsandbytes:0.40.0:source:source:3bad14848a3d270e | historical | artifact_available |
+| bitsandbytes | 0.40.0.post1 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.40.0.post1:py3:any:d4d42c77bde25dda, extension:bitsandbytes:0.40.0.post1:source:source:d76b222b8fd3085e | historical | artifact_available |
+| bitsandbytes | 0.40.0.post2 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.40.0.post2:py3:any:23300a8af628cc6a, extension:bitsandbytes:0.40.0.post2:source:source:1bf543fb79663608 | historical | artifact_available |
+| bitsandbytes | 0.40.0.post3 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.40.0.post3:py3:any:084fbd9e6f403501, extension:bitsandbytes:0.40.0.post3:source:source:eab49b67150aa301 | historical | artifact_available |
+| bitsandbytes | 0.40.0.post4 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.40.0.post4:py3:any:e267a261232d7f81, extension:bitsandbytes:0.40.0.post4:source:source:f1e5d91ae128364d | historical | artifact_available |
+| bitsandbytes | 0.40.1 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.40.1:py3:any:8e69dd60693bf92e, extension:bitsandbytes:0.40.1:source:source:f5e1c3ae8dffa65f | historical | artifact_available |
+| bitsandbytes | 0.40.1.post1 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.40.1.post1:py3:any:e32cd63ca7b45060, extension:bitsandbytes:0.40.1.post1:source:source:05cef137c251ade5 | historical | artifact_available |
+| bitsandbytes | 0.40.2 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.40.2:py3:any:4d07984387a9c50b, extension:bitsandbytes:0.40.2:source:source:df2dbb1dcd5774c2 | historical | artifact_available |
+| bitsandbytes | 0.41.0 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.41.0:py3:any:3f0c509aabfaefd8, extension:bitsandbytes:0.41.0:source:source:4a4ac6fce37380b4 | historical | artifact_available |
+| bitsandbytes | 0.41.1 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.41.1:py3:any:916e55baa8d9b9b6, extension:bitsandbytes:0.41.1:source:source:a9fb8bd912bcbcd8 | historical | artifact_available |
+| bitsandbytes | 0.41.2 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.41.2:py3:any:d8af967c278f74b1, extension:bitsandbytes:0.41.2:source:source:f024416557cebba3 | historical | artifact_available |
+| bitsandbytes | 0.41.2.post1 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.41.2.post1:py3:any:c333ed12b381ce0d, extension:bitsandbytes:0.41.2.post1:source:source:3cf254c7915c1313 | historical | artifact_available |
+| bitsandbytes | 0.41.2.post2 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.41.2.post2:py3:any:8d0a6de9e601a841, extension:bitsandbytes:0.41.2.post2:source:source:6acb12270a0b6561 | historical | artifact_available |
+| bitsandbytes | 0.41.3 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.41.3:py3:any:b83477e01f362802, extension:bitsandbytes:0.41.3:source:source:cc0a3139f4a295ed | historical | artifact_available |
+| bitsandbytes | 0.41.3.post1 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.41.3.post1:py3:any:83ae6994c66c082f, extension:bitsandbytes:0.41.3.post1:source:source:15ec0f731b104fb5 | historical | artifact_available |
+| bitsandbytes | 0.41.3.post2 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.41.3.post2:py3:any:94d32963d21cbcdf, extension:bitsandbytes:0.41.3.post2:source:source:2775fad943224971 | historical | artifact_available |
+| bitsandbytes | 0.42.0 | unknown | external | py3, source | any, source | extension:bitsandbytes:0.42.0:py3:any:02d7c28e943e323f, extension:bitsandbytes:0.42.0:source:source:513a634d33100bf2 | historical | artifact_available |
+| bitsandbytes | 0.43.0 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.43.0:py3:manylinux_2_24_x86_64:3b885886fc99b779, extension:bitsandbytes:0.43.0:py3:win_amd64:77c941f1910f880e | historical | artifact_available |
+| bitsandbytes | 0.43.1 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.43.1:py3:manylinux_2_24_x86_64:21af9d00992b5907, extension:bitsandbytes:0.43.1:py3:win_amd64:b7adab4464d89059 | historical | artifact_available |
+| bitsandbytes | 0.43.2 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.43.2:py3:manylinux_2_24_x86_64:91b77e6249096462, extension:bitsandbytes:0.43.2:py3:win_amd64:ddf8458bdf40505e | historical | artifact_available |
+| bitsandbytes | 0.43.3 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.43.3:py3:manylinux_2_24_x86_64:6179e3a30452a04c, extension:bitsandbytes:0.43.3:py3:win_amd64:ae8d2676f51999e5 | historical | artifact_available |
+| bitsandbytes | 0.44.0 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.44.0:py3:manylinux_2_24_x86_64:866f1a389b017ff3, extension:bitsandbytes:0.44.0:py3:win_amd64:c28eacad5e49f506 | historical | artifact_available |
+| bitsandbytes | 0.44.1 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.44.1:py3:manylinux_2_24_x86_64:8fa7d7e40ae1ddb9, extension:bitsandbytes:0.44.1:py3:win_amd64:e0259f451ce36bc3 | historical | artifact_available |
+| bitsandbytes | 0.45.0 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.45.0:py3:manylinux_2_24_x86_64:c3d6faa2603bdf39, extension:bitsandbytes:0.45.0:py3:win_amd64:97de43f430141cf8 | historical | artifact_available |
+| bitsandbytes | 0.45.1 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.45.1:py3:manylinux_2_24_x86_64:e55d439418dd6083, extension:bitsandbytes:0.45.1:py3:win_amd64:a8a15eb0ae525f26 | historical | artifact_available |
+| bitsandbytes | 0.45.2 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.45.2:py3:manylinux_2_24_x86_64:37e5017c5d467db8, extension:bitsandbytes:0.45.2:py3:win_amd64:ca91432b07e2a397 | historical | artifact_available |
+| bitsandbytes | 0.45.3 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.45.3:py3:manylinux_2_24_x86_64:a50ea90477293413, extension:bitsandbytes:0.45.3:py3:win_amd64:92235f5665c77915 | historical | artifact_available |
+| bitsandbytes | 0.45.4 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.45.4:py3:manylinux_2_24_x86_64:573f5d0ddaa00e85, extension:bitsandbytes:0.45.4:py3:win_amd64:68ac523f9f921003 | historical | artifact_available |
+| bitsandbytes | 0.45.5 | unknown | external | py3 | manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.45.5:py3:manylinux_2_24_x86_64:fc00c3da2188a043, extension:bitsandbytes:0.45.5:py3:win_amd64:9e8f0f6054d9177d | historical | artifact_available |
+| bitsandbytes | 0.46.0 | unknown | external | py3 | manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.46.0:py3:manylinux_2_24_aarch64:1d1f1c8ce7e5dfe5, extension:bitsandbytes:0.46.0:py3:manylinux_2_24_x86_64:409447891a40eb60, extension:bitsandbytes:0.46.0:py3:win_amd64:528dc445851c866e | historical | artifact_available |
+| bitsandbytes | 0.46.1 | unknown | external | py3 | manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.46.1:py3:manylinux_2_24_aarch64:de236d4b1d18421b, extension:bitsandbytes:0.46.1:py3:manylinux_2_24_x86_64:15edbe1648bb03c5, extension:bitsandbytes:0.46.1:py3:win_amd64:93fbcbac9e6afbd5 | historical | artifact_available |
+| bitsandbytes | 0.47.0 | unknown | external | py3 | manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.47.0:py3:manylinux_2_24_aarch64:a5235bfad9861a11, extension:bitsandbytes:0.47.0:py3:manylinux_2_24_x86_64:0624d5f9cec9b0ca, extension:bitsandbytes:0.47.0:py3:win_amd64:e3e4fb266df9353e | historical | artifact_available |
+| bitsandbytes | 0.48.0 | unknown | external | py3 | manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.48.0:py3:manylinux_2_24_aarch64:7c6e76f27f0388d0, extension:bitsandbytes:0.48.0:py3:manylinux_2_24_x86_64:e5cebe44845ad5ad, extension:bitsandbytes:0.48.0:py3:win_amd64:05679bd6ae4c3b8c | historical | artifact_available |
+| bitsandbytes | 0.48.1 | unknown | external | py3 | manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.48.1:py3:manylinux_2_24_aarch64:27689ff7afca9598, extension:bitsandbytes:0.48.1:py3:manylinux_2_24_x86_64:9fa6196e00cdbf3f, extension:bitsandbytes:0.48.1:py3:win_amd64:c1b35f50c85c7f48 | historical | artifact_available |
+| bitsandbytes | 0.48.2 | unknown | external | py3 | manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.48.2:py3:manylinux_2_24_aarch64:6a1c5bbe28ad3883, extension:bitsandbytes:0.48.2:py3:manylinux_2_24_x86_64:4953126f10facee3, extension:bitsandbytes:0.48.2:py3:win_amd64:5d1bf6d79b182d54 | historical | artifact_available |
+| bitsandbytes | 0.49.0 | unknown | external | py3 | macosx_14_0_arm64, manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.49.0:py3:macosx_14_0_arm64:b6669da80ea944ed, extension:bitsandbytes:0.49.0:py3:manylinux_2_24_aarch64:3a82a19aaa1b3872, extension:bitsandbytes:0.49.0:py3:manylinux_2_24_x86_64:38eaa0bc9009da61, extension:bitsandbytes:0.49.0:py3:win_amd64:0daccc00da8bf784 | historical | artifact_available |
+| bitsandbytes | 0.49.1 | unknown | external | py3 | macosx_14_0_arm64, manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.49.1:py3:macosx_14_0_arm64:96155b0572f9d5ce, extension:bitsandbytes:0.49.1:py3:manylinux_2_24_aarch64:75d59cee025367a1, extension:bitsandbytes:0.49.1:py3:manylinux_2_24_x86_64:b7390aef52ca525d, extension:bitsandbytes:0.49.1:py3:win_amd64:ea40bc743524960d | historical | artifact_available |
+| bitsandbytes | 0.49.2 | unknown | external | py3 | macosx_14_0_arm64, manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64 | extension:bitsandbytes:0.49.2:py3:macosx_14_0_arm64:ca857b811dc8192d, extension:bitsandbytes:0.49.2:py3:manylinux_2_24_aarch64:7a69a0d65e642e62, extension:bitsandbytes:0.49.2:py3:manylinux_2_24_x86_64:47c0195e7ceae3d1, extension:bitsandbytes:0.49.2:py3:win_amd64:d643e225767c5621 | historical | artifact_available |
+| bitsandbytes | 0.50.0 | unknown | external | py3 | macosx_14_0_arm64, manylinux_2_24_aarch64, manylinux_2_24_x86_64, win_amd64, win_arm64 | extension:bitsandbytes:0.50.0:py3:macosx_14_0_arm64:c2f4329cc732fe4a, extension:bitsandbytes:0.50.0:py3:manylinux_2_24_aarch64:d4d1dec79780f24a, extension:bitsandbytes:0.50.0:py3:manylinux_2_24_x86_64:67ecd1a4858703b5, extension:bitsandbytes:0.50.0:py3:win_amd64:6ab621d5adf2c634, extension:bitsandbytes:0.50.0:py3:win_arm64:c4652b9c9e47841f | current | artifact_available |
+| flash-attention | 0.2.0 | unknown | external | source | source | extension:flash-attention:0.2.0:source:source:0fffa309c9522846 | historical | artifact_available |
+| flash-attention | 0.2.1 | unknown | external | source | source | extension:flash-attention:0.2.1:source:source:1fc8168db9ed69e8 | historical | artifact_available |
+| flash-attention | 0.2.2 | unknown | external | source | source | extension:flash-attention:0.2.2:source:source:572c4aa058afae44 | historical | artifact_available |
+| flash-attention | 0.2.3 | unknown | external | source | source | extension:flash-attention:0.2.3:source:source:9a38529a551cc0af | historical | artifact_available |
+| flash-attention | 0.2.4 | unknown | external | source | source | extension:flash-attention:0.2.4:source:source:94ecd50de37450e7 | historical | artifact_available |
+| flash-attention | 0.2.5 | unknown | external | source | source | extension:flash-attention:0.2.5:source:source:30b2e1ce7ecc3a03 | historical | artifact_available |
+| flash-attention | 0.2.6.post1 | unknown | external | source | source | extension:flash-attention:0.2.6.post1:source:source:0186de6c4c414cd1 | historical | artifact_available |
+| flash-attention | 0.2.7 | unknown | external | source | source | extension:flash-attention:0.2.7:source:source:1a398a0972ef397a | historical | artifact_available |
+| flash-attention | 0.2.8 | unknown | external | source | source | extension:flash-attention:0.2.8:source:source:69dbbc3e6ee4bf25 | historical | artifact_available |
+| flash-attention | 1.0.0 | unknown | external | source | source | extension:flash-attention:1.0.0:source:source:aabd484d6e6fcd06 | historical | artifact_available |
+| flash-attention | 1.0.1 | unknown | external | source | source | extension:flash-attention:1.0.1:source:source:5f497ce8c362f780 | historical | artifact_available |
+| flash-attention | 1.0.2 | unknown | external | source | source | extension:flash-attention:1.0.2:source:source:c6a0154cea0f8ef5 | historical | artifact_available |
+| flash-attention | 1.0.3 | unknown | external | source | source | extension:flash-attention:1.0.3:source:source:c8f2f7751c012dcb | historical | artifact_available |
+| flash-attention | 1.0.3.post0 | unknown | external | source | source | extension:flash-attention:1.0.3.post0:source:source:b50e5a019b2d7562 | historical | artifact_available |
+| flash-attention | 1.0.4 | unknown | external | source | source | extension:flash-attention:1.0.4:source:source:4d77638856571f45 | historical | artifact_available |
+| flash-attention | 1.0.5 | unknown | external | source | source | extension:flash-attention:1.0.5:source:source:3e2f9cb5936661d6 | historical | artifact_available |
+| flash-attention | 1.0.6 | unknown | external | source | source | extension:flash-attention:1.0.6:source:source:20f21850ba7f9693 | historical | artifact_available |
+| flash-attention | 1.0.7 | unknown | external | source | source | extension:flash-attention:1.0.7:source:source:ed1aa679ee30e48c | historical | artifact_available |
+| flash-attention | 1.0.8 | unknown | external | source | source | extension:flash-attention:1.0.8:source:source:5229f2d590198a02 | historical | artifact_available |
+| flash-attention | 1.0.9 | unknown | external | source | source | extension:flash-attention:1.0.9:source:source:989f6562c5d259c2 | historical | artifact_available |
+| flash-attention | 2.0.0.post1 | unknown | external | source | source | extension:flash-attention:2.0.0.post1:source:source:da4c05dd2c1d4a56 | historical | artifact_available |
+| flash-attention | 2.0.1 | unknown | external | source | source | extension:flash-attention:2.0.1:source:source:07f6c429f7b2d30f | historical | artifact_available |
+| flash-attention | 2.0.2 | unknown | external | source | source | extension:flash-attention:2.0.2:source:source:6be379a50d6b2cfd | historical | artifact_available |
+| flash-attention | 2.0.3 | unknown | external | source | source | extension:flash-attention:2.0.3:source:source:691477c31607a68e | historical | artifact_available |
+| flash-attention | 2.0.4 | unknown | external | source | source | extension:flash-attention:2.0.4:source:source:71733edd1e524735 | historical | artifact_available |
+| flash-attention | 2.0.5 | unknown | external | source | source | extension:flash-attention:2.0.5:source:source:17e85ee718fce87b | historical | artifact_available |
+| flash-attention | 2.0.6 | unknown | external | source | source | extension:flash-attention:2.0.6:source:source:8c470a124c730acd | historical | artifact_available |
+| flash-attention | 2.0.6.post2 | unknown | external | source | source | extension:flash-attention:2.0.6.post2:source:source:0945a2ff0fad5e41 | historical | artifact_available |
+| flash-attention | 2.0.7 | unknown | external | source | source | extension:flash-attention:2.0.7:source:source:ee026d109b1d18aa | historical | artifact_available |
+| flash-attention | 2.0.8 | unknown | external | source | source | extension:flash-attention:2.0.8:source:source:4225a23f0866d978 | historical | artifact_available |
+| flash-attention | 2.0.9 | unknown | external | source | source | extension:flash-attention:2.0.9:source:source:71e2434e79663bcf | historical | artifact_available |
+| flash-attention | 2.1.0 | unknown | external | source | source | extension:flash-attention:2.1.0:source:source:3045e6a2016eaf02 | historical | artifact_available |
+| flash-attention | 2.1.1 | unknown | external | source | source | extension:flash-attention:2.1.1:source:source:1a9ab8bb82916c79 | historical | artifact_available |
+| flash-attention | 2.1.2.post3 | unknown | external | source | source | extension:flash-attention:2.1.2.post3:source:source:e9fd2f3bcf8cc761 | historical | artifact_available |
+| flash-attention | 2.2.0 | unknown | external | source | source | extension:flash-attention:2.2.0:source:source:9a1aba13b9e639d9 | historical | artifact_available |
+| flash-attention | 2.2.1 | unknown | external | source | source | extension:flash-attention:2.2.1:source:source:d5421fac08e45724 | historical | artifact_available |
+| flash-attention | 2.2.2 | unknown | external | source | source | extension:flash-attention:2.2.2:source:source:e11a0699b0c60280 | historical | artifact_available |
+| flash-attention | 2.2.3.post2 | unknown | external | source | source | extension:flash-attention:2.2.3.post2:source:source:aa8c1099171af6de | historical | artifact_available |
+| flash-attention | 2.2.4 | unknown | external | source | source | extension:flash-attention:2.2.4:source:source:f9f34e83d971eac9 | historical | artifact_available |
+| flash-attention | 2.2.4.post1 | unknown | external | source | source | extension:flash-attention:2.2.4.post1:source:source:9d88cad15975ce63 | historical | artifact_available |
+| flash-attention | 2.2.5 | unknown | external | source | source | extension:flash-attention:2.2.5:source:source:4ad6e830b63cc6af | historical | artifact_available |
+| flash-attention | 2.3.0 | unknown | external | source | source | extension:flash-attention:2.3.0:source:source:a065064182712563 | historical | artifact_available |
+| flash-attention | 2.3.1.post1 | unknown | external | source | source | extension:flash-attention:2.3.1.post1:source:source:f6256d5b7fc4d485 | historical | artifact_available |
+| flash-attention | 2.3.2 | unknown | external | source | source | extension:flash-attention:2.3.2:source:source:4f3c466dab6ca1f0 | historical | artifact_available |
+| flash-attention | 2.3.3 | unknown | external | source | source | extension:flash-attention:2.3.3:source:source:4aa9f46148f53049 | historical | artifact_available |
+| flash-attention | 2.3.4 | unknown | external | source | source | extension:flash-attention:2.3.4:source:source:b97b0647cb46d3a4 | historical | artifact_available |
+| flash-attention | 2.3.5 | unknown | external | source | source | extension:flash-attention:2.3.5:source:source:35672e88d2cd96da | historical | artifact_available |
+| flash-attention | 2.3.6 | unknown | external | source | source | extension:flash-attention:2.3.6:source:source:af437b10d98301f0 | historical | artifact_available |
+| flash-attention | 2.4.0.post1 | unknown | external | source | source | extension:flash-attention:2.4.0.post1:source:source:328e2582329a6c09 | historical | artifact_available |
+| flash-attention | 2.4.1 | unknown | external | source | source | extension:flash-attention:2.4.1:source:source:16bbb7fb25a33d3b | historical | artifact_available |
+| flash-attention | 2.4.2 | unknown | external | source | source | extension:flash-attention:2.4.2:source:source:206c43851480d940 | historical | artifact_available |
+| flash-attention | 2.4.3.post1 | unknown | external | source | source | extension:flash-attention:2.4.3.post1:source:source:3b033d5f760ce797 | historical | artifact_available |
+| flash-attention | 2.5.0 | unknown | external | source | source | extension:flash-attention:2.5.0:source:source:38d377aab5c2b866 | historical | artifact_available |
+| flash-attention | 2.5.1.post1 | unknown | external | source | source | extension:flash-attention:2.5.1.post1:source:source:0d08c5351ca69b0c | historical | artifact_available |
+| flash-attention | 2.5.2 | unknown | external | source | source | extension:flash-attention:2.5.2:source:source:8cf8a9f13861e220 | historical | artifact_available |
+| flash-attention | 2.5.3 | unknown | external | source | source | extension:flash-attention:2.5.3:source:source:988ae313f3d94c84 | historical | artifact_available |
+| flash-attention | 2.5.4 | unknown | external | source | source | extension:flash-attention:2.5.4:source:source:c3e0239e859e3df8 | historical | artifact_available |
+| flash-attention | 2.5.5 | unknown | external | source | source | extension:flash-attention:2.5.5:source:source:09a61d43731a85c4 | historical | artifact_available |
+| flash-attention | 2.5.6 | unknown | external | source | source | extension:flash-attention:2.5.6:source:source:640afd308ff83e8b | historical | artifact_available |
+| flash-attention | 2.5.7 | unknown | external | source | source | extension:flash-attention:2.5.7:source:source:e493e0e0a28e6141 | historical | artifact_available |
+| flash-attention | 2.5.8 | unknown | external | source | source | extension:flash-attention:2.5.8:source:source:13f3c7e5af37f21f | historical | artifact_available |
+| flash-attention | 2.5.9.post1 | unknown | external | source | source | extension:flash-attention:2.5.9.post1:source:source:6d0b8d9ac9aae662 | historical | artifact_available |
+| flash-attention | 2.6.0.post1 | unknown | external | source | source | extension:flash-attention:2.6.0.post1:source:source:8d2acebbb512a270 | historical | artifact_available |
+| flash-attention | 2.6.1 | unknown | external | source | source | extension:flash-attention:2.6.1:source:source:db428a25ee978859 | historical | artifact_available |
+| flash-attention | 2.6.2 | unknown | external | source | source | extension:flash-attention:2.6.2:source:source:cffe54afe9225225 | historical | artifact_available |
+| flash-attention | 2.6.3 | unknown | external | source | source | extension:flash-attention:2.6.3:source:source:a755677c1b870a13 | historical | artifact_available |
+| flash-attention | 2.7.0.post2 | unknown | external | source | source | extension:flash-attention:2.7.0.post2:source:source:cb1bc760896fe508 | historical | artifact_available |
+| flash-attention | 2.7.1.post4 | unknown | external | source | source | extension:flash-attention:2.7.1.post4:source:source:62906ddd1e3496e4 | historical | artifact_available |
+| flash-attention | 2.7.2.post1 | unknown | external | source | source | extension:flash-attention:2.7.2.post1:source:source:daacf682a7338549 | historical | artifact_available |
+| flash-attention | 2.7.3 | unknown | external | source | source | extension:flash-attention:2.7.3:source:source:14b118bf6efad0a2 | historical | artifact_available |
+| flash-attention | 2.7.4.post1 | unknown | external | source | source | extension:flash-attention:2.7.4.post1:source:source:e772535676ac9b0d | historical | artifact_available |
+| flash-attention | 2.8.0.post2 | unknown | external | source | source | extension:flash-attention:2.8.0.post2:source:source:e6529e71152484f2 | historical | artifact_available |
+| flash-attention | 2.8.1 | unknown | external | source | source | extension:flash-attention:2.8.1:source:source:851067180c24e0f5 | historical | artifact_available |
+| flash-attention | 2.8.2 | unknown | external | source | source | extension:flash-attention:2.8.2:source:source:a6bcef7592525704 | historical | artifact_available |
+| flash-attention | 2.8.3 | unknown | external | source | source | extension:flash-attention:2.8.3:source:source:9fa418d861ba74c1 | historical | artifact_available |
+| flash-attention | 2.8.3.post1 | unknown | external | source | source | extension:flash-attention:2.8.3.post1:source:source:d83be242e7ce94d5 | current | artifact_available |
+| sageattention | 0.1.0 | unknown | external | py3, source | any, source | extension:sageattention:0.1.0:py3:any:ebff8c795fd677eb, extension:sageattention:0.1.0:source:source:948846d949a97b32 | historical | artifact_available |
+| sageattention | 1.0.0 | unknown | external | py3, source | any, source | extension:sageattention:1.0.0:py3:any:73bb31085363e50c, extension:sageattention:1.0.0:source:source:65b19fc339997e50 | historical | artifact_available |
+| sageattention | 1.0.1 | unknown | external | py3, source | any, source | extension:sageattention:1.0.1:py3:any:60b109fc5e4cf6e9, extension:sageattention:1.0.1:source:source:e5592930d379000c | historical | artifact_available |
+| sageattention | 1.0.2 | unknown | external | py3, source | any, source | extension:sageattention:1.0.2:py3:any:bf6e84a38a860a20, extension:sageattention:1.0.2:source:source:1b124916f74fe505 | historical | artifact_available |
+| sageattention | 1.0.3 | unknown | external | py3, source | any, source | extension:sageattention:1.0.3:py3:any:abd2de8017eb1652, extension:sageattention:1.0.3:source:source:f24b615efa6fa76b | historical | artifact_available |
+| sageattention | 1.0.4 | unknown | external | py3, source | any, source | extension:sageattention:1.0.4:py3:any:dd716eb5cdead850, extension:sageattention:1.0.4:source:source:7c9776556b1a45a9 | historical | artifact_available |
+| sageattention | 1.0.5 | unknown | external | py3, source | any, source | extension:sageattention:1.0.5:py3:any:82a936033c1dbf48, extension:sageattention:1.0.5:source:source:c1aa2c9aad390c86 | historical | artifact_available |
+| sageattention | 1.0.6 | unknown | external | py3, source | any, source | extension:sageattention:1.0.6:py3:any:40e9cb9c0df2e514, extension:sageattention:1.0.6:source:source:54444488b26aae10 | current | artifact_available |
+| triton | 0.4.1 | unknown | external | cp35, cp36, cp37, cp38, cp39, pp36, pp37 | manylinux2010_x86_64 | extension:triton:0.4.1:cp35:manylinux2010_x86_64:8f840bdcd1c84186, extension:triton:0.4.1:cp36:manylinux2010_x86_64:5b466a75e0670035, extension:triton:0.4.1:cp37:manylinux2010_x86_64:8575176c57424f81, extension:triton:0.4.1:cp38:manylinux2010_x86_64:2dc2e611af1a72af, extension:triton:0.4.1:cp39:manylinux2010_x86_64:1618ebf2cf4e61a9, extension:triton:0.4.1:pp36:manylinux2010_x86_64:9e1f071a4e0f5062, extension:triton:0.4.1:pp37:manylinux2010_x86_64:12891eb837d16ec4 | historical | artifact_available |
+| triton | 0.4.2 | unknown | external | cp35, cp36, cp37, cp38, cp39, pp36, pp37 | manylinux2010_x86_64 | extension:triton:0.4.2:cp35:manylinux2010_x86_64:94c11c6e26ff8ef3, extension:triton:0.4.2:cp36:manylinux2010_x86_64:fd6ab69a9587bcba, extension:triton:0.4.2:cp37:manylinux2010_x86_64:f9fa405cf4e0f54d, extension:triton:0.4.2:cp38:manylinux2010_x86_64:8d822f1335aae178, extension:triton:0.4.2:cp39:manylinux2010_x86_64:46d6033d03a44159, extension:triton:0.4.2:pp36:manylinux2010_x86_64:f214290b267f992a, extension:triton:0.4.2:pp37:manylinux2010_x86_64:4a598713a2486e57 | historical | artifact_available |
+| triton | 1.0.0 | unknown | external | cp36, cp37, cp38, cp39, pp37 | manylinux2014_x86_64 | extension:triton:1.0.0:cp36:manylinux2014_x86_64:2ba5db184858cca7, extension:triton:1.0.0:cp37:manylinux2014_x86_64:79ab9198ac9cd53f, extension:triton:1.0.0:cp38:manylinux2014_x86_64:6e47c9a86f13ed53, extension:triton:1.0.0:cp39:manylinux2014_x86_64:0d5c26ac2504a5b5, extension:triton:1.0.0:pp37:manylinux2014_x86_64:f8c9c830822f297b | historical | artifact_available |
+| triton | 1.1.0 | unknown | external | cp36, cp37, cp38, cp39, pp37 | manylinux2014_x86_64 | extension:triton:1.1.0:cp36:manylinux2014_x86_64:31f4cea5fa000a41, extension:triton:1.1.0:cp37:manylinux2014_x86_64:f9e370c42a3cee49, extension:triton:1.1.0:cp38:manylinux2014_x86_64:fa29d830af1f181e, extension:triton:1.1.0:cp39:manylinux2014_x86_64:f9d9d0e4a5eec25a, extension:triton:1.1.0:pp37:manylinux2014_x86_64:dedb4c6a4d14f5d0 | historical | artifact_available |
+| triton | 1.1.1 | unknown | external | cp36, cp37, cp38, cp39, pp37 | manylinux2014_x86_64 | extension:triton:1.1.1:cp36:manylinux2014_x86_64:32095e08247fc362, extension:triton:1.1.1:cp37:manylinux2014_x86_64:110e2e7e08763595, extension:triton:1.1.1:cp38:manylinux2014_x86_64:f3169cf10ebdb5ea, extension:triton:1.1.1:cp39:manylinux2014_x86_64:3a3866abfabb124e, extension:triton:1.1.1:pp37:manylinux2014_x86_64:eaf67a3760a0bbd0 | historical | artifact_available |
+| triton | 2.0.0 | unknown | external | cp310, cp311, cp36, cp37, cp38, cp39, pp37, pp38, pp39 | manylinux2014_x86_64 | extension:triton:2.0.0:cp310:manylinux2014_x86_64:e72cbfbc1b2cb075, extension:triton:2.0.0:cp311:manylinux2014_x86_64:eafd64c9ad32cfb0, extension:triton:2.0.0:cp36:manylinux2014_x86_64:48d7f4bf942e06e9, extension:triton:2.0.0:cp37:manylinux2014_x86_64:b38dfc44e849c02f, extension:triton:2.0.0:cp38:manylinux2014_x86_64:cee9aa04da985eb9, extension:triton:2.0.0:cp39:manylinux2014_x86_64:a4683f32df594e81, extension:triton:2.0.0:pp37:manylinux2014_x86_64:d8b07ee30bc8cb90, extension:triton:2.0.0:pp38:manylinux2014_x86_64:caff99d4fc496ad4, extension:triton:2.0.0:pp39:manylinux2014_x86_64:9a640285a97f1aec | historical | artifact_available |
+| triton | 2.1.0 | unknown | external | cp310, cp311, cp37, cp38, cp39, pp37, pp38, pp39 | manylinux2014_x86_64 | extension:triton:2.1.0:cp310:manylinux2014_x86_64:ca47f50860e0b0b8, extension:triton:2.1.0:cp311:manylinux2014_x86_64:487656c607d70216, extension:triton:2.1.0:cp37:manylinux2014_x86_64:48164b5d5032848e, extension:triton:2.1.0:cp38:manylinux2014_x86_64:9f760c10028bdd74, extension:triton:2.1.0:cp39:manylinux2014_x86_64:e621ccc996c1d3e0, extension:triton:2.1.0:pp37:manylinux2014_x86_64:b82976c9c67bd63b, extension:triton:2.1.0:pp38:manylinux2014_x86_64:1c85817edae87b08, extension:triton:2.1.0:pp39:manylinux2014_x86_64:33b2158a8540417e | historical | artifact_available |
+| triton | 2.2.0 | unknown | external | cp310, cp311, cp312, cp37, cp38, cp39 | manylinux2014_x86_64 | extension:triton:2.2.0:cp310:manylinux2014_x86_64:fb768bc3646980b1, extension:triton:2.2.0:cp311:manylinux2014_x86_64:637cd7eb0fcf7b6b, extension:triton:2.2.0:cp312:manylinux2014_x86_64:228dd3ba52008a4b, extension:triton:2.2.0:cp37:manylinux2014_x86_64:84fcac05d6d6fa1c, extension:triton:2.2.0:cp38:manylinux2014_x86_64:7bc46c98c88b5df7, extension:triton:2.2.0:cp39:manylinux2014_x86_64:3edaf6c6c87c38e3 | historical | artifact_available |
+| triton | 2.3.0 | unknown | external | cp310, cp311, cp312, cp37, cp38, cp39 | manylinux2014_x86_64 | extension:triton:2.3.0:cp310:manylinux2014_x86_64:98d5186704a9b591, extension:triton:2.3.0:cp311:manylinux2014_x86_64:7d472e88c6e72867, extension:triton:2.3.0:cp312:manylinux2014_x86_64:8e66bbaf95f004d0, extension:triton:2.3.0:cp37:manylinux2014_x86_64:f8cfa851797cbf46, extension:triton:2.3.0:cp38:manylinux2014_x86_64:23473332f7ac2236, extension:triton:2.3.0:cp39:manylinux2014_x86_64:143de557d2b61efa | historical | artifact_available |
+| triton | 2.3.1 | unknown | external | cp310, cp311, cp312, cp37, cp38, cp39 | manylinux2014_x86_64 | extension:triton:2.3.1:cp310:manylinux2014_x86_64:39b300ab38a9552e, extension:triton:2.3.1:cp311:manylinux2014_x86_64:88bdd83b869b24a0, extension:triton:2.3.1:cp312:manylinux2014_x86_64:cd2ee6c1c52e5fb8, extension:triton:2.3.1:cp37:manylinux2014_x86_64:425fc2b7ba1c0824, extension:triton:2.3.1:cp38:manylinux2014_x86_64:b7b26aef6c195d1f, extension:triton:2.3.1:cp39:manylinux2014_x86_64:11b37d083c2946e6 | historical | artifact_available |
+| triton | 3.0.0 | unknown | external | cp310, cp311, cp312, cp38, cp39 | manylinux2014_x86_64 | extension:triton:3.0.0:cp310:manylinux2014_x86_64:5fedc947ae8a2e58, extension:triton:3.0.0:cp311:manylinux2014_x86_64:c568b2143903f7ea, extension:triton:3.0.0:cp312:manylinux2014_x86_64:c655bd79342cf4c1, extension:triton:3.0.0:cp38:manylinux2014_x86_64:ab08cd431b014e4e, extension:triton:3.0.0:cp39:manylinux2014_x86_64:7f936b94aa289d14 | historical | artifact_available |
+| triton | 3.1.0 | unknown | external | cp310, cp311, cp312, cp38, cp39 | manylinux2014_x86_64 | extension:triton:3.1.0:cp310:manylinux2014_x86_64:4e4d3b45ea2b68ae, extension:triton:3.1.0:cp311:manylinux2014_x86_64:6c02e4d793ec3184, extension:triton:3.1.0:cp312:manylinux2014_x86_64:cefb1d3f358ad555, extension:triton:3.1.0:cp38:manylinux2014_x86_64:121c501692f879e9, extension:triton:3.1.0:cp39:manylinux2014_x86_64:f16b96d659916b50 | historical | artifact_available |
+| triton | 3.2.0 | unknown | external | cp310, cp311, cp312, cp313, cp39 | manylinux2014_x86_64 | extension:triton:3.2.0:cp310:manylinux2014_x86_64:ea15015392dae0b5, extension:triton:3.2.0:cp311:manylinux2014_x86_64:13ce124aefb01c41, extension:triton:3.2.0:cp312:manylinux2014_x86_64:fea4b517e5ef2028, extension:triton:3.2.0:cp313:manylinux2014_x86_64:8912ca6180db5920, extension:triton:3.2.0:cp39:manylinux2014_x86_64:4c70c83cfdb99aa2 | historical | artifact_available |
+| triton | 3.3.0 | unknown | external | cp310, cp311, cp312, cp313, cp39 | manylinux_2_27_x86_64 | extension:triton:3.3.0:cp310:manylinux_2_27_x86_64:6044581fc6f969c8, extension:triton:3.3.0:cp311:manylinux_2_27_x86_64:724f38d1024cbc64, extension:triton:3.3.0:cp312:manylinux_2_27_x86_64:fb3b8ba339aa280f, extension:triton:3.3.0:cp313:manylinux_2_27_x86_64:7ab723b4b6f05d5c, extension:triton:3.3.0:cp313:manylinux_2_27_x86_64:86d8f70cc522ad40, extension:triton:3.3.0:cp39:manylinux_2_27_x86_64:df9b68096c95dccc | historical | artifact_available |
+| triton | 3.3.1 | unknown | external | cp310, cp311, cp312, cp313, cp39 | manylinux_2_27_x86_64 | extension:triton:3.3.1:cp310:manylinux_2_27_x86_64:f7d4a9fba240c33b, extension:triton:3.3.1:cp311:manylinux_2_27_x86_64:a9586cbeb41e1d9a, extension:triton:3.3.1:cp312:manylinux_2_27_x86_64:6c549ab062275d2d, extension:triton:3.3.1:cp313:manylinux_2_27_x86_64:6bc3089b5bedc285, extension:triton:3.3.1:cp313:manylinux_2_27_x86_64:e9a30ba923e74b93, extension:triton:3.3.1:cp39:manylinux_2_27_x86_64:97cc2a4afa938171 | historical | artifact_available |
+| triton | 3.4.0 | unknown | external | cp310, cp311, cp312, cp313, cp39 | manylinux_2_27_x86_64 | extension:triton:3.4.0:cp310:manylinux_2_27_x86_64:a7efde131957938f, extension:triton:3.4.0:cp311:manylinux_2_27_x86_64:e1b469aa4f4ecff7, extension:triton:3.4.0:cp312:manylinux_2_27_x86_64:379f1f5ed26fccec, extension:triton:3.4.0:cp313:manylinux_2_27_x86_64:6e297ca12b86a902, extension:triton:3.4.0:cp313:manylinux_2_27_x86_64:be7a77efde85c6bd, extension:triton:3.4.0:cp39:manylinux_2_27_x86_64:25fa15d40e706cd2 | historical | artifact_available |
+| triton | 3.5.0 | unknown | external | cp310, cp311, cp312, cp313, cp314 | manylinux_2_27_aarch64, manylinux_2_27_x86_64 | extension:triton:3.5.0:cp310:manylinux_2_27_aarch64:a9c2f7b70b0ea6d8, extension:triton:3.5.0:cp310:manylinux_2_27_x86_64:d5309ff33c5c4ecb, extension:triton:3.5.0:cp311:manylinux_2_27_aarch64:07ad37044c55445c, extension:triton:3.5.0:cp311:manylinux_2_27_x86_64:72c025b676c83f6a, extension:triton:3.5.0:cp312:manylinux_2_27_aarch64:840af7c860ef9d0b, extension:triton:3.5.0:cp312:manylinux_2_27_x86_64:4ab2d579b6046146, extension:triton:3.5.0:cp313:manylinux_2_27_aarch64:344bb6b71ff8d11a, extension:triton:3.5.0:cp313:manylinux_2_27_aarch64:cb2e618b9e7ce4fb, extension:triton:3.5.0:cp313:manylinux_2_27_x86_64:2bf6152d5d72f920, extension:triton:3.5.0:cp313:manylinux_2_27_x86_64:90e83bc7733d1675, extension:triton:3.5.0:cp314:manylinux_2_27_aarch64:221d742b97c4ba6e, extension:triton:3.5.0:cp314:manylinux_2_27_aarch64:ecdde781ec3cb4b2, extension:triton:3.5.0:cp314:manylinux_2_27_x86_64:8f650d841adb4469, extension:triton:3.5.0:cp314:manylinux_2_27_x86_64:b7de3593a9111af8 | historical | artifact_available |
+| triton | 3.5.1 | unknown | external | cp310, cp311, cp312, cp313, cp314 | manylinux_2_27_aarch64, manylinux_2_27_x86_64 | extension:triton:3.5.1:cp310:manylinux_2_27_aarch64:4a7d2643a4beb7f7, extension:triton:3.5.1:cp310:manylinux_2_27_x86_64:594bcbe2065367b6, extension:triton:3.5.1:cp311:manylinux_2_27_aarch64:f8dc252090961fe2, extension:triton:3.5.1:cp311:manylinux_2_27_x86_64:dca4cc9da9a33b9d, extension:triton:3.5.1:cp312:manylinux_2_27_aarch64:9d4749b131e2a590, extension:triton:3.5.1:cp312:manylinux_2_27_x86_64:6834b42036cbfec3, extension:triton:3.5.1:cp313:manylinux_2_27_aarch64:6456c151166ec7c5, extension:triton:3.5.1:cp313:manylinux_2_27_aarch64:cf59cfbcf69fd3f1, extension:triton:3.5.1:cp313:manylinux_2_27_x86_64:1259ff64ac2ecb5e, extension:triton:3.5.1:cp313:manylinux_2_27_x86_64:7f3ee825b4306af4, extension:triton:3.5.1:cp314:manylinux_2_27_aarch64:62d801520d87d7f8, extension:triton:3.5.1:cp314:manylinux_2_27_aarch64:f4be2457d7f7f8aa, extension:triton:3.5.1:cp314:manylinux_2_27_x86_64:20777e11595ba2fd, extension:triton:3.5.1:cp314:manylinux_2_27_x86_64:2c4ee0c41ffcd343 | historical | artifact_available |
+| triton | 3.6.0 | unknown | external | cp310, cp311, cp312, cp313, cp314 | manylinux_2_27_aarch64, manylinux_2_27_x86_64 | extension:triton:3.6.0:cp310:manylinux_2_27_aarch64:dfdde3030dad6408, extension:triton:3.6.0:cp310:manylinux_2_27_x86_64:0a7a3ab0fd5b5ddc, extension:triton:3.6.0:cp311:manylinux_2_27_aarch64:903b8473263aa22d, extension:triton:3.6.0:cp311:manylinux_2_27_x86_64:6cb4260b1454b264, extension:triton:3.6.0:cp312:manylinux_2_27_aarch64:70d499ade65193e6, extension:triton:3.6.0:cp312:manylinux_2_27_x86_64:5b44430367ace800, extension:triton:3.6.0:cp313:manylinux_2_27_aarch64:3324fc2c00cdc25c, extension:triton:3.6.0:cp313:manylinux_2_27_aarch64:afbbffd42fe11fd9, extension:triton:3.6.0:cp313:manylinux_2_27_x86_64:ee4430a9b73fb72e, extension:triton:3.6.0:cp313:manylinux_2_27_x86_64:f39bff01529e52d3, extension:triton:3.6.0:cp314:manylinux_2_27_aarch64:d2a8c1d386ed7e35, extension:triton:3.6.0:cp314:manylinux_2_27_aarch64:ee2c554a3f274c12, extension:triton:3.6.0:cp314:manylinux_2_27_x86_64:1ab605862766f446, extension:triton:3.6.0:cp314:manylinux_2_27_x86_64:9d4cdc1a80122370 | historical | artifact_available |
+| triton | 3.7.0 | unknown | external | cp310, cp311, cp312, cp313, cp314 | manylinux_2_27_aarch64, manylinux_2_27_x86_64 | extension:triton:3.7.0:cp310:manylinux_2_27_aarch64:96cdaea7198d5811, extension:triton:3.7.0:cp310:manylinux_2_27_x86_64:0ef531cc9818f676, extension:triton:3.7.0:cp311:manylinux_2_27_aarch64:e111edd04acfbedb, extension:triton:3.7.0:cp311:manylinux_2_27_x86_64:c6d2f7d63a2ee42f, extension:triton:3.7.0:cp312:manylinux_2_27_aarch64:8650ec5ae95db127, extension:triton:3.7.0:cp312:manylinux_2_27_x86_64:22ea27e9da9a5429, extension:triton:3.7.0:cp313:manylinux_2_27_aarch64:18834e2ca53dc347, extension:triton:3.7.0:cp313:manylinux_2_27_aarch64:dd9bb320a09f78a8, extension:triton:3.7.0:cp313:manylinux_2_27_x86_64:59a27bf09869e17b, extension:triton:3.7.0:cp313:manylinux_2_27_x86_64:86e3691a14b9ea11, extension:triton:3.7.0:cp314:manylinux_2_27_aarch64:3df32c2e4c15b48d, extension:triton:3.7.0:cp314:manylinux_2_27_aarch64:cee2721f88863c40, extension:triton:3.7.0:cp314:manylinux_2_27_x86_64:2a64146bcc1a65fc, extension:triton:3.7.0:cp314:manylinux_2_27_x86_64:e845cbd5eb1af929 | historical | artifact_available |
+| triton | 3.7.1 | unknown | external | cp310, cp311, cp312, cp313, cp314 | manylinux_2_27_aarch64, manylinux_2_27_x86_64 | extension:triton:3.7.1:cp310:manylinux_2_27_aarch64:ec53c90e97487187, extension:triton:3.7.1:cp310:manylinux_2_27_x86_64:f98128e6b717d798, extension:triton:3.7.1:cp311:manylinux_2_27_aarch64:ccb8b879433e449d, extension:triton:3.7.1:cp311:manylinux_2_27_x86_64:ac597a961ef28ef2, extension:triton:3.7.1:cp312:manylinux_2_27_aarch64:8e21cd99160cbaad, extension:triton:3.7.1:cp312:manylinux_2_27_x86_64:b5eab36afcf1812d, extension:triton:3.7.1:cp313:manylinux_2_27_aarch64:c4fbdb099c5b2778, extension:triton:3.7.1:cp313:manylinux_2_27_x86_64:75ca96d86559d90f, extension:triton:3.7.1:cp314:manylinux_2_27_aarch64:84f82a2120118ab5, extension:triton:3.7.1:cp314:manylinux_2_27_aarch64:d80c6ba2cae38f11, extension:triton:3.7.1:cp314:manylinux_2_27_x86_64:a0f9052227923a6b, extension:triton:3.7.1:cp314:manylinux_2_27_x86_64:c9518db679d9826a | current | artifact_available |
+| triton | 3.8.0+git4774139f.rocm7.15.0a20260721 | linux | nightly | cp310, cp311, cp312, cp313, cp314 | linux_x86_64 | extension:triton:3.8.0+git4774139f.rocm7.15.0a20260721:cp310:linux_x86_64:acc01c232928ca14, extension:triton:3.8.0+git4774139f.rocm7.15.0a20260721:cp311:linux_x86_64:718b01e49b5658b4, extension:triton:3.8.0+git4774139f.rocm7.15.0a20260721:cp312:linux_x86_64:5ebe832c2be5f51e, extension:triton:3.8.0+git4774139f.rocm7.15.0a20260721:cp313:linux_x86_64:ffb6a637e5446442, extension:triton:3.8.0+git4774139f.rocm7.15.0a20260721:cp314:linux_x86_64:d4628ec37ddf4682 | current | artifact_available |
+| triton | 3.8.0+git4cff872c.rocm7.14.0 | linux | stable | cp312 | linux_x86_64 | extension:triton:3.8.0+git4cff872c.rocm7.14.0:cp312:linux_x86_64:56f95d8fab2c9e51 | current | artifact_available |
+| triton | 3.7.0+gitfbb43d96.rocm7.14.0a20260519 | linux | staging | cp313 | linux_x86_64 | extension:triton:3.7.0+gitfbb43d96.rocm7.14.0a20260519:cp313:linux_x86_64:b50c3a0b8a482985 | current | artifact_available |

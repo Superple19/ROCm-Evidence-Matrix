@@ -233,6 +233,28 @@
       "channel": "external",
       "source_kind": "pypi-json",
       "url": "https://pypi.org/pypi/triton/json"
+    },
+    {
+      "id": "github-aiter",
+      "extension": "aiter",
+      "package_name": "aiter",
+      "distribution_family": "external",
+      "platform": "unknown",
+      "channel": "external",
+      "source_kind": "github-releases",
+      "enabled": false,
+      "url": "https://api.github.com/repos/ROCm/aiter/releases?per_page=100"
+    },
+    {
+      "id": "github-triton",
+      "extension": "triton",
+      "package_name": "triton",
+      "distribution_family": "external",
+      "platform": "unknown",
+      "channel": "external",
+      "source_kind": "github-releases",
+      "enabled": false,
+      "url": "https://api.github.com/repos/triton-lang/triton/releases?per_page=100"
     }
   ]
 }

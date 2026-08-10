@@ -8,6 +8,10 @@ from rocm_evidence_matrix.validation import validate_extension_snapshot
 class ExtensionSourceTests(unittest.TestCase):
     def test_parses_pypi_wheels_and_source_dist(self):
         document = {
+            "info": {
+                "version": "0.48.2",
+                "requires_dist": ["torch>=2.0"],
+            },
             "releases": {
                 "0.48.2": [
                     {
@@ -18,13 +22,21 @@ class ExtensionSourceTests(unittest.TestCase):
                         "filename": "bitsandbytes-0.48.2.tar.gz",
                         "url": "https://files.example/bitsandbytes.tar.gz",
                     },
+                    {
+                        "filename": "bitsandbytes-0.48.2-1-cp312-cp312-win_amd64.whl",
+                        "url": "https://files.example/bitsandbytes-build.whl",
+                    },
                 ]
             }
         }
         artifacts = parse_pypi_json(document, "bitsandbytes")
-        self.assertEqual(len(artifacts), 2)
+        self.assertEqual(len(artifacts), 3)
         self.assertEqual(artifacts[0]["version"], "0.48.2")
         self.assertIn("cp", artifacts[0]["python_tag"])
+        self.assertEqual(artifacts[0]["requires_dist"], ["torch>=2.0"])
+        self.assertEqual(artifacts[0]["sha256"], None)
+        build = next(item for item in artifacts if "-1-cp312" in item["filename"])
+        self.assertEqual(build["build_tag"], "1")
 
     def test_parses_simple_index_without_platform_filtering(self):
         html = (

@@ -36,6 +36,9 @@
             "python_tag": {"type": "string", "minLength": 1},
             "abi_tag": {"type": "string", "minLength": 1},
             "platform_tag": {"type": "string", "minLength": 1},
+            "build_tag": {"type": ["string", "null"]},
+            "requires_dist": {"type": "array", "items": {"type": "string"}},
+            "sha256": {"type": ["string", "null"], "pattern": "^[0-9a-fA-F]{64}$"},
             "url": {"type": "string", "format": "uri"}
           }
         }

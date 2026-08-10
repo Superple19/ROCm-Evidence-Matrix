@@ -2,7 +2,7 @@
 
 import json
 from pathlib import Path
-from urllib.parse import unquote, urlparse
+from urllib.parse import unquote, urlparse, parse_qs
 
 from packaging.utils import InvalidWheelFilename, parse_wheel_filename
 
@@ -12,7 +12,13 @@ from .simple_index import normalize_package_name, parse_links, version_key
 from .validation import validate_extension_snapshot
 
 
-def _wheel_artifact(url, filename):
+def _artifact_sha256(url):
+    fragment = parse_qs(urlparse(url).fragment)
+    values = fragment.get("sha256") or ()
+    return values[0] if values else None
+
+
+def _wheel_artifact(url, filename, *, requires_dist=()):
     try:
         name, version, build, tags = parse_wheel_filename(filename)
     except (InvalidWheelFilename, ValueError):
@@ -26,11 +32,14 @@ def _wheel_artifact(url, filename):
         "python_tag": tag.interpreter,
         "abi_tag": tag.abi,
         "platform_tag": tag.platform,
+        "build_tag": ".".join(str(value) for value in build if str(value)) if build else None,
+        "requires_dist": sorted({str(value) for value in requires_dist if value}),
+        "sha256": _artifact_sha256(url),
         "url": url,
     }
 
 
-def _source_artifact(url, filename, package_name):
+def _source_artifact(url, filename, package_name, *, requires_dist=()):
     stem = filename[:-7] if filename.endswith(".tar.gz") else filename[:-4]
     name, separator, version = stem.rpartition("-")
     if not separator or normalize_package_name(name) != normalize_package_name(package_name) or not version:
@@ -41,6 +50,9 @@ def _source_artifact(url, filename, package_name):
         "python_tag": "source",
         "abi_tag": "source",
         "platform_tag": "source",
+        "build_tag": None,
+        "requires_dist": sorted({str(value) for value in requires_dist if value}),
+        "sha256": _artifact_sha256(url),
         "url": url,
     }
 
@@ -65,17 +77,28 @@ def parse_simple_index(html, base_url, package_name):
 
 
 def parse_pypi_json(document, package_name):
+    info = document.get("info") or {}
+    current_version = str(info.get("version") or "")
+    requires_dist = tuple(info.get("requires_dist") or ())
     artifacts = []
-    for release_files in (document.get("releases") or {}).values():
+    for version, release_files in (document.get("releases") or {}).items():
         for release in release_files:
             filename = release.get("filename")
             url = release.get("url")
             if not filename or not url:
                 continue
             if filename.endswith(".whl"):
-                artifacts.append(_wheel_artifact(url, filename))
+                metadata = requires_dist if str(version) == current_version else ()
+                artifact = _wheel_artifact(url, filename, requires_dist=metadata)
+                if artifact:
+                    artifact["sha256"] = release.get("digests", {}).get("sha256") or artifact.get("sha256")
+                artifacts.append(artifact)
             elif filename.endswith(".tar.gz"):
-                artifacts.append(_source_artifact(url, filename, package_name))
+                metadata = requires_dist if str(version) == current_version else ()
+                artifact = _source_artifact(url, filename, package_name, requires_dist=metadata)
+                if artifact:
+                    artifact["sha256"] = release.get("digests", {}).get("sha256") or artifact.get("sha256")
+                artifacts.append(artifact)
     return _deduplicate(artifacts)
 
 

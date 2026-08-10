@@ -131,9 +131,9 @@ def validate_extension_catalog(document):
             raise ValueError(f"Invalid extension catalog source metadata: {source_id}")
     required = {
         "id", "extension", "package_name", "distribution_family", "platform", "channel",
-        "lifecycle", "version", "python_tags", "platform_tags", "artifacts", "artifact_urls", "source_id",
+        "lifecycle", "version", "python_tags", "platform_tags", "artifacts", "artifact_urls", "candidate_ids", "source_id",
         "rocm_version", "torch_constraints", "hip_constraints", "gfx_targets", "artifact_available",
-        "evidence_status", "first_observed_at", "last_observed_at",
+        "evidence_status", "first_observed_at", "last_observed_at", "requires_dist", "build_tags", "rocm_constraints",
     }
     ids = set()
     latest = {}
@@ -156,10 +156,16 @@ def validate_extension_catalog(document):
         if not item["python_tags"] or not item["platform_tags"] or not item["artifacts"] or not item["artifact_urls"]:
             raise ValueError(f"Extension catalog artifact lacks wheel metadata: {item['id']}")
         for artifact in item["artifacts"]:
-            if set(artifact) != {"filename", "version", "python_tag", "abi_tag", "platform_tag", "url"}:
+            allowed_artifact_fields = {
+                "filename", "version", "python_tag", "abi_tag", "platform_tag", "url",
+                "candidate_id", "build_tag", "requires_dist", "sha256",
+            }
+            if set(artifact) != allowed_artifact_fields:
                 raise ValueError(f"Invalid extension catalog wheel metadata: {item['id']}")
             if artifact["version"] != item["version"] or not artifact["url"].startswith("https://"):
                 raise ValueError(f"Extension catalog wheel metadata disagrees with record: {item['id']}")
+            if artifact.get("candidate_id") not in item["candidate_ids"]:
+                raise ValueError(f"Extension candidate ID is not linked to its artifact: {item['id']}")
         if not all(url.startswith("https://") for url in item["artifact_urls"]):
             raise ValueError(f"Extension catalog artifact URL must use HTTPS: {item['id']}")
         if item["artifact_available"] != (item["evidence_status"] == "artifact_available"):
@@ -202,7 +208,8 @@ def validate_extension_snapshot(snapshot):
         if not isinstance(artifacts, list):
             raise ValueError(f"Extension artifacts must be a list: {package_name}")
         for artifact in artifacts:
-            if set(artifact) != required_artifact or not artifact["url"].startswith("https://"):
+            allowed_artifact = required_artifact | {"build_tag", "requires_dist", "sha256"}
+            if not set(artifact).issubset(allowed_artifact) or not required_artifact.issubset(artifact) or not artifact["url"].startswith("https://"):
                 raise ValueError(f"Invalid extension artifact: {package_name}")
 
 
