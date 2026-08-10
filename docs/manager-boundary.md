@@ -1,7 +1,7 @@
-# ROCm Matrix and ComfyUI ROCm Manager Boundary
+# ROCm Evidence Matrix and ComfyUI ROCm Manager Boundary
 
-This document defines the responsibility boundary between the `windows-rocm-matrix`
-repository and a separate ComfyUI ROCm Manager. The matrix repository provides
+This document defines the responsibility boundary between the ROCm Evidence
+Matrix repository and a separate ComfyUI ROCm Manager. The matrix repository provides
 shared compatibility evidence. The manager consumes that evidence to make a
 local ComfyUI environment usable.
 
@@ -10,7 +10,7 @@ local ComfyUI environment usable.
 ```text
 ROCm and TheRock sources
         ↓
-ROCm Matrix: collect → normalize → integrate → publish
+ROCm Evidence Matrix: collect → normalize → integrate → publish
         ↓ catalog, profiles, evidence references
 ComfyUI ROCm Manager: detect → select → dry-run → install → verify
 ```

@@ -61,7 +61,6 @@ consumers; new platform integrations must use the grouped representation.
 - `profiles/`: application, runtime, framework, extension, and option profiles
 - `contributions/`: manually reviewed community evidence submissions
 
-The public package namespace is `rocm_evidence_matrix`. The historical
-`windows_rocm_matrix` import remains available as a compatibility namespace
-during the migration. The primary command names are `rocm-matrix` and
-`rocm-evidence`.
+The public package namespace is `rocm_evidence_matrix`. Historical import and
+CLI aliases are documented in [legacy compatibility](legacy-compatibility.md).
+The primary command names are `rocm-matrix` and `rocm-evidence`.
