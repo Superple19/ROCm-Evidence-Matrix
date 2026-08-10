@@ -8,7 +8,7 @@ import sysconfig
 import tempfile
 
 from rocm_evidence_matrix.verify import append_verification_log, candidate_hash, combined_process_output, default_platform_tag, error_summary, install_arguments_for_candidate, merge_verification, normalized_command, read_verification_log, resolved_packages, update_history_evidence, virtualenv_python
-from rocm_evidence_matrix.verify_matrix import DEFAULT_CHANNELS, completed_job_keys, default_cache_dir, matrix_exit_code, matrix_job_key, matrix_jobs, parse_args as matrix_parse_args
+from rocm_evidence_matrix.verify_matrix import DEFAULT_CHANNELS, completed_job_keys, default_cache_dir, matrix_exit_code, matrix_job_key, matrix_jobs, parse_args as matrix_parse_args, representative_targets
 from rocm_evidence_matrix.resolve import parse_args
 
 
@@ -16,6 +16,7 @@ class VerificationTests(unittest.TestCase):
     def test_resolver_defaults_to_host_platform(self):
         with patch("rocm_evidence_matrix.resolve.host_platform", return_value="linux"):
             self.assertEqual(parse_args([]).platform, "linux")
+        self.assertEqual(parse_args(["--distribution-family", "legacy"]).distribution_family, "legacy")
         with patch("rocm_evidence_matrix.verify_matrix.host_platform", return_value="windows"):
             self.assertEqual(matrix_parse_args([]).platform, "windows")
 
@@ -288,6 +289,10 @@ class VerificationTests(unittest.TestCase):
             })
         jobs = matrix_jobs({"candidates": candidates}, "linux", ["stable"])
         self.assertEqual([(job[0]["rocm_version"], job[1]) for job in jobs], [("7.14.0", "gfx1201"), ("7.14.0", "gfx1100")])
+
+    def test_matrix_representative_gfx_is_derived_from_candidates(self):
+        candidates = [{"available_gfx_targets": ["gfx1201", "gfx1250"]}]
+        self.assertEqual(representative_targets(candidates), ["gfx1250", "gfx1201"])
 
     def test_matrix_deduplicates_same_package_identity_across_candidates(self):
         candidates = []

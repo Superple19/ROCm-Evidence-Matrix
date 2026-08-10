@@ -8,6 +8,7 @@ from pathlib import Path
 import threading
 
 from .resolve import host_platform, resolve_candidates
+from .simple_index import gfx_key
 from .validation import validate_resolver_verifications
 from .verify import (
     append_verification_log,
@@ -22,7 +23,6 @@ from .verify import (
 )
 
 
-PREFERRED_GFX = ("gfx1201", "gfx1100", "gfx1030", "gfx90a")
 DEFAULT_CHANNELS = ("stable", "nightly", "staging")
 
 
@@ -50,11 +50,14 @@ def platform_tag_for(platform, requested=None, candidate=None):
 
 
 def representative_targets(candidates, all_gfx=False):
-    targets = sorted({target for candidate in candidates for target in candidate.get("available_gfx_targets", [])}, reverse=True)
+    targets = sorted(
+        {target for candidate in candidates for target in candidate.get("available_gfx_targets", [])},
+        key=gfx_key,
+        reverse=True,
+    )
     if all_gfx:
         return targets
-    preferred = [target for target in PREFERRED_GFX if target in targets]
-    return preferred or targets[:1]
+    return targets[:4]
 
 
 def matrix_jobs(history, platform, channels, gfx=None, python_tag=None, limit=None, platform_tag=None, distribution_family=None, rocm_version=None, torch_series=None, all_candidates=False, all_gfx=False):

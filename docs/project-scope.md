@@ -1,8 +1,10 @@
 # Project Scope
 
-ROCm Evidence Matrix is a machine-readable evidence catalog for official
-ROCm/TheRock package availability and verification. It is not an AMD support
-statement, an installer, or an exhaustive historical backtesting service.
+ROCm Evidence Matrix is a machine-readable, historical evidence catalog for
+official ROCm/TheRock package availability. It integrates source observations
+into installable package candidates and keeps optional verification evidence
+separate. It is not an AMD support statement, an installer, or an exhaustive
+historical backtesting service.
 
 ## Active distribution family
 
@@ -12,8 +14,8 @@ verification cover:
 - Official stable, nightly, and staging package indexes.
 - ROCm, Torch, TorchVision, TorchAudio, SDK, and GFX-specific package links.
 - TheRock documentation, release metadata, HUD, and GitHub Actions evidence.
-- Resolver, runtime, and hardware evidence when an exact candidate binding is
-  available.
+- Optional resolver, runtime, and hardware evidence when an exact candidate
+  binding is available.
 
 ## Historical archive
 

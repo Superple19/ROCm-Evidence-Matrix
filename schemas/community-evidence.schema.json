@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/community-evidence.schema.json",
+  "$id": "https://github.com/Superple19/rocm-evidence-matrix/schemas/community-evidence.schema.json",
   "title": "Community ROCm verification evidence",
   "type": "object",
   "additionalProperties": false,

@@ -26,7 +26,7 @@ def normalize_python_tag(value):
     raise ValueError("Python must be formatted as cp312 or 3.12")
 
 
-def resolve_candidates(history, gfx, platform=None, channel=None, rocm_version=None, torch_series=None, python_tag=None, include_unavailable=False, include_failed=False):
+def resolve_candidates(history, gfx, platform=None, channel=None, rocm_version=None, torch_series=None, python_tag=None, include_unavailable=False, include_failed=False, distribution_family=None):
     python_tag = normalize_python_tag(python_tag)
     matches = []
     for candidate in history["candidates"]:
@@ -40,6 +40,8 @@ def resolve_candidates(history, gfx, platform=None, channel=None, rocm_version=N
         if gfx and gfx not in targets:
             continue
         if platform and candidate.get("platform", "windows") != platform:
+            continue
+        if distribution_family and candidate.get("distribution_family", "therock") != distribution_family:
             continue
         if channel and candidate["channel"] != channel:
             continue
@@ -112,6 +114,7 @@ def parse_args(argv=None):
     parser.add_argument("--history", default="data/history.json")
     parser.add_argument("--gfx")
     parser.add_argument("--platform", choices=("windows", "linux", "macos", "unknown"), default=host_platform())
+    parser.add_argument("--distribution-family", choices=("therock", "legacy"))
     parser.add_argument("--channel", choices=("stable", "nightly", "staging"))
     parser.add_argument("--rocm")
     parser.add_argument("--torch")
@@ -139,6 +142,7 @@ def main(argv=None):
             python_tag=args.python_tag,
             include_unavailable=args.include_unavailable,
             include_failed=args.include_failed,
+            distribution_family=args.distribution_family,
         )
     except ValueError as error:
         raise SystemExit(str(error)) from error

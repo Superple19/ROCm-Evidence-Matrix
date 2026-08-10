@@ -22,18 +22,12 @@ Repository = "https://github.com/Superple19/rocm-evidence-matrix"
 
 [project.scripts]
 rocm-matrix = "rocm_evidence_matrix.collect:main"
-windows-rocm-matrix = "windows_rocm_matrix.collect:main"
 rocm-evidence = "rocm_evidence_matrix.community:main"
 rocm-resolve = "rocm_evidence_matrix.verification.resolver:main"
-windows-rocm-resolve = "windows_rocm_matrix.verification.resolver:main"
 rocm-verify = "rocm_evidence_matrix.verify:main"
-windows-rocm-verify = "windows_rocm_matrix.verify:main"
 rocm-verify-matrix = "rocm_evidence_matrix.verify_matrix:main"
-windows-rocm-verify-matrix = "windows_rocm_matrix.verify_matrix:main"
 rocm-runtime = "rocm_evidence_matrix.verification.runtime:main"
-windows-rocm-runtime = "windows_rocm_matrix.verification.runtime:main"
 rocm-hardware = "rocm_evidence_matrix.verification.hardware:main"
-windows-rocm-hardware = "windows_rocm_matrix.verification.hardware:main"
 
 [tool.setuptools.packages.find]
-include = ["rocm_evidence_matrix*", "windows_rocm_matrix*"]
+include = ["rocm_evidence_matrix*"]

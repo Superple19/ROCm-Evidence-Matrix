@@ -256,7 +256,7 @@ def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None
         "resolved_packages": [],
         "error": None,
     }
-    with tempfile.TemporaryDirectory(prefix="windows-rocm-verify-") as directory:
+    with tempfile.TemporaryDirectory(prefix="rocm-verify-") as directory:
         root = Path(directory)
         create_disposable_environment(root)
         python = virtualenv_python(root)

@@ -6,7 +6,7 @@ from rocm_evidence_matrix.legacy import build_legacy_candidates, parse_hip_sdk_g
 class LegacyWindowsTests(unittest.TestCase):
     def test_builds_common_candidate_from_direct_wheels(self):
         document = {
-            "pytorch_windows_support": [{"rocm_version": "7.2.1", "gfx_targets": ["gfx1201"]}],
+            "pytorch_windows_support": [{"rocm_version": "7.2.1", "gfx_targets": ["gfx1201"], "source_id": "support-7.2.1"}],
             "artifact_releases": [{
                 "release_id": "7.2.1",
                 "artifacts": [
@@ -21,6 +21,43 @@ class LegacyWindowsTests(unittest.TestCase):
         self.assertEqual(candidates[0]["platform"], "windows")
         self.assertEqual(len(candidates[0]["wheel_urls"]), 3)
         self.assertEqual(set(candidates[0]["evidence_status"]), {"artifact", "documentation", "ci", "resolver", "runtime", "hardware"})
+
+    def test_maps_patch_release_to_hip_sdk_series_support(self):
+        document = {
+            "hip_sdk_gpu_support": [{"rocm_series": "7.1", "gfx": "gfx1201", "hip_sdk_status": "supported", "source_id": "gpus-7.1"}],
+            "pytorch_windows_support": [],
+            "artifact_releases": [{
+                "release_id": "7.1.1",
+                "artifacts": [
+                    {"package": "torch", "version": "2.9.0+rocmsdk20251116", "python_tag": "cp312", "filename": "torch.whl", "url": "https://example.test/torch.whl"},
+                    {"package": "torchvision", "version": "0.24.0a0+c85f008", "python_tag": "cp312", "filename": "torchvision.whl", "url": "https://example.test/torchvision.whl"},
+                    {"package": "torchaudio", "version": "2.9.0a0+1a8f621", "python_tag": "cp312", "filename": "torchaudio.whl", "url": "https://example.test/torchaudio.whl"},
+                ],
+            }],
+        }
+
+        candidates = build_legacy_candidates(document)
+
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(candidates[0]["rocm_version"], "7.1.1")
+        self.assertEqual(candidates[0]["gfx_targets"], ["gfx1201"])
+        self.assertEqual(candidates[0]["gfx_support_scope"], "series")
+        self.assertEqual(candidates[0]["gfx_support_refs"], ["gpus-7.1"])
+
+    def test_rejects_core_packages_without_a_common_python_tag(self):
+        document = {
+            "pytorch_windows_support": [{"rocm_version": "7.2.1", "gfx_targets": ["gfx1201"], "source_id": "support-7.2.1"}],
+            "artifact_releases": [{
+                "release_id": "7.2.1",
+                "artifacts": [
+                    {"package": "torch", "version": "2.9.1", "python_tag": "cp312", "filename": "torch.whl", "url": "https://example.test/torch.whl"},
+                    {"package": "torchvision", "version": "0.24.1", "python_tag": "cp311", "filename": "torchvision.whl", "url": "https://example.test/torchvision.whl"},
+                    {"package": "torchaudio", "version": "2.9.1", "python_tag": "cp312", "filename": "torchaudio.whl", "url": "https://example.test/torchaudio.whl"},
+                ],
+            }],
+        }
+
+        self.assertEqual(build_legacy_candidates(document), [])
 
     def test_parses_joint_hip_sdk_releases(self):
         html = """

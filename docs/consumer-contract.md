@@ -1,13 +1,14 @@
 # Consumer contract
 
 Third-party tools should start with [`data/catalog.json`](../data/catalog.json)
-instead of assuming a fixed list of files. Regenerate it with:
+as the evidence catalog entry point instead of assuming a fixed list of files.
+Regenerate it with:
 
 ```powershell
 rocm-matrix catalog
 ```
 
-The catalog lists each committed core artifact, standalone CI/status evidence,
+The catalog lists each committed core evidence artifact, standalone CI/status evidence,
 its schema, and its schema version. Local runtime, hardware, and resolver
 outputs remain machine-local evidence and are listed only when a reviewed copy
 is intentionally committed. Consumers must reject an unknown `schema_version`
@@ -23,9 +24,9 @@ Every package and historical candidate is classified independently by:
 - `channel`: `stable`, `nightly`, or `staging`
 
 TheRock is the active distribution family. Consumers may use current TheRock
-records for package discovery and verification workflows. Legacy records are
-retained as historical archive evidence and must not be interpreted as an
-actively maintained installation or verification path.
+records for package discovery and may optionally attach scoped verification
+workflows. Legacy records are retained as historical archive evidence and must
+not be interpreted as an actively maintained installation or verification path.
 
 Do not infer channel from a version string or URL. Use the recorded source
 metadata. Do not treat artifact availability as resolver, runtime, or hardware
@@ -46,6 +47,11 @@ Some legacy Linux releases have package artifacts but no authoritative GFX
 mapping. Those candidates use `gfx_support: "unknown"` and may be listed with
 `rocm-resolve --platform linux` without `--gfx`; they must not be presented as
 hardware-compatible for a specific GPU.
+
+Legacy Windows candidates may include `gfx_support_scope` and
+`gfx_support_refs`. A `series` scope means that a patch release was connected
+to a documented HIP SDK series rather than an exact release-specific table;
+consumers must preserve that provenance when presenting the candidate.
 
 Framework and SDK artifacts are separate machine-readable evidence. Use
 `framework_history` for JAX PJRT/plugin pairs and `sdk_components` for ROCm SDK

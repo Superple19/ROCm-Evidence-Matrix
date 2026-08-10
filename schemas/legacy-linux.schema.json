@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/legacy-linux.schema.json",
+  "$id": "https://github.com/Superple19/rocm-evidence-matrix/schemas/legacy-linux.schema.json",
   "title": "Legacy Linux ROCm evidence",
   "type": "object",
   "additionalProperties": false,

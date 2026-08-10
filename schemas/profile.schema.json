@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/profile.schema.json",
+  "$id": "https://github.com/Superple19/rocm-evidence-matrix/schemas/profile.schema.json",
   "title": "ROCm application compatibility profile",
   "type": "object",
   "additionalProperties": false,

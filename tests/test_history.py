@@ -202,6 +202,19 @@ class HistoryTests(unittest.TestCase):
         self.assertEqual(resolve_candidates(history, "gfx1201"), [])
         self.assertEqual(len(resolve_candidates(history, "gfx1201", include_failed=True)), 2)
 
+    def test_resolver_filters_distribution_family(self):
+        base = {
+            "platform": "windows", "channel": "stable", "rocm_version": "7.14.0", "torch_version": "2.12.0",
+            "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0", "python_tags": ["cp312"],
+            "gfx_targets": ["gfx1201"], "available_gfx_targets": ["gfx1201"],
+        }
+        therock = {**base, "id": "therock", "distribution_family": "therock"}
+        legacy = {**base, "id": "legacy", "distribution_family": "legacy", "wheel_urls": ["https://example.test/torch.whl"]}
+
+        matches = resolve_candidates({"candidates": [therock, legacy]}, "gfx1201", distribution_family="legacy")
+
+        self.assertEqual(matches, [legacy])
+
     def test_history_render_labels_unknown_gfx_support(self):
         candidate = {
             "distribution_family": "legacy", "platform": "linux", "channel": "stable", "lifecycle": "current",

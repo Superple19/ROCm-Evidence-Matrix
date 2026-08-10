@@ -1,168 +1,6 @@
 {
   "candidates": [
     {
-      "artifact_available": false,
-      "available_gfx_targets": [],
-      "channel": "stable",
-      "distribution_family": "legacy",
-      "evidence_status": {
-        "artifact": "not_collected",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "not_applicable",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-07T17:50:53Z",
-      "framework_compatibility": "incompatible",
-      "gfx_support": "unknown",
-      "gfx_targets": [],
-      "hip_version": null,
-      "id": "legacy:linux:stable:7.2.4:2.10.0+rocm7.2.4.lw.git3d3aa833:0.25.0+rocm7.2.4.git82df5f59:2.9.0+rocm7.2.4.gite3c6ee2b:cp312",
-      "last_observed_at": "2026-08-08T10:14:57Z",
-      "lifecycle": "current",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "resolver_results": [
-        {
-          "error": "Legacy linux wheels require a linux verification host",
-          "gfx": null,
-          "observed_at": "2026-08-08T13:12:04Z",
-          "platform_tag": "manylinux_2_28_x86_64",
-          "python_tag": "cp312",
-          "result": "not_applicable",
-          "snapshot_observed_at": "2026-08-08T10:14:57Z",
-          "verification_id": "legacy:linux:stable:7.2.4:2.10.0+rocm7.2.4.lw.git3d3aa833:0.25.0+rocm7.2.4.git82df5f59:2.9.0+rocm7.2.4.gite3c6ee2b:cp312:unknown:cp312:manylinux_2_28_x86_64"
-        }
-      ],
-      "rocm_version": "7.2.4",
-      "source_id": "legacy-linux-artifacts",
-      "torch_version": "2.10.0+rocm7.2.4.lw.git3d3aa833",
-      "torchaudio_version": "2.9.0+rocm7.2.4.gite3c6ee2b",
-      "torchvision_version": "0.25.0+rocm7.2.4.git82df5f59",
-      "triton_version": null,
-      "wheel_urls": [
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torch-2.10.0%2Brocm7.2.4.lw.git3d3aa833-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torchvision-0.25.0%2Brocm7.2.4.git82df5f59-cp312-cp312-linux_x86_64.whl",
-        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torchaudio-2.9.0%2Brocm7.2.4.gite3c6ee2b-cp312-cp312-linux_x86_64.whl"
-      ]
-    },
-    {
-      "artifact_available": true,
-      "available_gfx_targets": [
-        "gfx1010",
-        "gfx1011",
-        "gfx1012",
-        "gfx1030",
-        "gfx1031",
-        "gfx1032",
-        "gfx1033",
-        "gfx1034",
-        "gfx1035",
-        "gfx1036",
-        "gfx1100",
-        "gfx1101",
-        "gfx1102",
-        "gfx1103",
-        "gfx1150",
-        "gfx1151",
-        "gfx1152",
-        "gfx1153",
-        "gfx1200",
-        "gfx1201",
-        "gfx908",
-        "gfx90a",
-        "gfx942",
-        "gfx950"
-      ],
-      "channel": "stable",
-      "distribution_family": "therock",
-      "evidence_status": {
-        "artifact": "artifact_available",
-        "ci": "not_collected",
-        "documentation": "not_collected",
-        "hardware": "not_collected",
-        "resolver": "resolver_failed",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-08T14:01:58Z",
-      "gfx_support": "known",
-      "gfx_targets": [
-        "gfx1010",
-        "gfx1011",
-        "gfx1012",
-        "gfx1030",
-        "gfx1031",
-        "gfx1032",
-        "gfx1033",
-        "gfx1034",
-        "gfx1035",
-        "gfx1036",
-        "gfx1100",
-        "gfx1101",
-        "gfx1102",
-        "gfx1103",
-        "gfx1150",
-        "gfx1151",
-        "gfx1152",
-        "gfx1153",
-        "gfx1200",
-        "gfx1201",
-        "gfx908",
-        "gfx90a",
-        "gfx942",
-        "gfx950"
-      ],
-      "hip_version": null,
-      "id": "therock:linux:stable:7.14.0:2.13.0+rocm7.14.0:0.28.0+rocm7.14.0:2.11.0.2+rocm7.14.0:cp312",
-      "last_observed_at": "2026-08-08T14:13:02Z",
-      "lifecycle": "current",
-      "platform": "linux",
-      "python_tags": [
-        "cp312"
-      ],
-      "resolver_results": [
-        {
-          "error": "No matching distribution found for torch==2.13.0+rocm7.14.0",
-          "gfx": "gfx1201",
-          "observed_at": "2026-08-08T12:30:29Z",
-          "platform_tag": "manylinux_2_28_x86_64",
-          "python_tag": "cp312",
-          "result": "failed",
-          "snapshot_observed_at": "2026-08-08T10:11:41Z",
-          "verification_id": "therock:linux:stable:7.14.0:2.13.0+rocm7.14.0:0.28.0+rocm7.14.0:2.11.0.2+rocm7.14.0:cp312:gfx1201:cp312:manylinux_2_28_x86_64"
-        },
-        {
-          "error": "Looking in indexes: https://repo.amd.com/rocm/whl-multi-arch/\nERROR: Could not find a version that satisfies the requirement torch==2.13.0+rocm7.14.0 (from versions: none)\nERROR: No matching distribution found for torch==2.13.0+rocm7.14.0",
-          "gfx": "gfx1010",
-          "observed_at": "2026-08-08T13:08:56Z",
-          "platform_tag": "manylinux_2_28_x86_64",
-          "python_tag": "cp312",
-          "result": "failed",
-          "snapshot_observed_at": "2026-08-08T10:11:41Z",
-          "verification_id": "therock:linux:stable:7.14.0:2.13.0+rocm7.14.0:0.28.0+rocm7.14.0:2.11.0.2+rocm7.14.0:cp312:gfx1010:cp312:manylinux_2_28_x86_64"
-        },
-        {
-          "error": "Looking in indexes: https://repo.amd.com/rocm/whl-multi-arch/\nERROR: Could not find a version that satisfies the requirement torch==2.13.0+rocm7.14.0 (from versions: none)\nERROR: No matching distribution found for torch==2.13.0+rocm7.14.0",
-          "gfx": "gfx1201",
-          "observed_at": "2026-08-09T00:31:08Z",
-          "platform_tag": "manylinux_2_28_x86_64",
-          "python_tag": "cp312",
-          "result": "failed",
-          "snapshot_observed_at": "2026-08-08T14:13:02Z",
-          "verification_id": "therock:linux:stable:7.14.0:2.13.0+rocm7.14.0:0.28.0+rocm7.14.0:2.11.0.2+rocm7.14.0:cp312:gfx1201:cp312:manylinux_2_28_x86_64:2026-08-09T00:31:08Z:33cca37ff423"
-        }
-      ],
-      "rocm_version": "7.14.0",
-      "source_id": "packages-stable-linux",
-      "torch_version": "2.13.0+rocm7.14.0",
-      "torchaudio_version": "2.11.0.2+rocm7.14.0",
-      "torchvision_version": "0.28.0+rocm7.14.0",
-      "triton_version": null
-    },
-    {
       "artifact_available": true,
       "available_gfx_targets": [
         "gfx1100",
@@ -184,6 +22,11 @@
       },
       "first_observed_at": "2026-08-07T15:37:08Z",
       "gfx_support": "known",
+      "gfx_support_refs": [
+        "pytorch-windows-radeon-7.2.1",
+        "pytorch-windows-ryzen-7.2.1"
+      ],
+      "gfx_support_scope": "release",
       "gfx_targets": [
         "gfx1100",
         "gfx1101",
@@ -236,6 +79,55 @@
         "https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/torch-2.9.1%2Brocm7.2.1-cp312-cp312-win_amd64.whl",
         "https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/torchaudio-2.9.1%2Brocm7.2.1-cp312-cp312-win_amd64.whl",
         "https://repo.radeon.com/rocm/windows/rocm-rel-7.2.1/torchvision-0.24.1%2Brocm7.2.1-cp312-cp312-win_amd64.whl"
+      ]
+    },
+    {
+      "artifact_available": false,
+      "available_gfx_targets": [],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "not_collected",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_applicable",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-07T17:50:53Z",
+      "framework_compatibility": "incompatible",
+      "gfx_support": "unknown",
+      "gfx_targets": [],
+      "hip_version": null,
+      "id": "legacy:linux:stable:7.2.4:2.10.0+rocm7.2.4.lw.git3d3aa833:0.25.0+rocm7.2.4.git82df5f59:2.9.0+rocm7.2.4.gite3c6ee2b:cp312",
+      "last_observed_at": "2026-08-08T10:14:57Z",
+      "lifecycle": "current",
+      "platform": "linux",
+      "python_tags": [
+        "cp312"
+      ],
+      "resolver_results": [
+        {
+          "error": "Legacy linux wheels require a linux verification host",
+          "gfx": null,
+          "observed_at": "2026-08-08T13:12:04Z",
+          "platform_tag": "manylinux_2_28_x86_64",
+          "python_tag": "cp312",
+          "result": "not_applicable",
+          "snapshot_observed_at": "2026-08-08T10:14:57Z",
+          "verification_id": "legacy:linux:stable:7.2.4:2.10.0+rocm7.2.4.lw.git3d3aa833:0.25.0+rocm7.2.4.git82df5f59:2.9.0+rocm7.2.4.gite3c6ee2b:cp312:unknown:cp312:manylinux_2_28_x86_64"
+        }
+      ],
+      "rocm_version": "7.2.4",
+      "source_id": "legacy-linux-artifacts",
+      "torch_version": "2.10.0+rocm7.2.4.lw.git3d3aa833",
+      "torchaudio_version": "2.9.0+rocm7.2.4.gite3c6ee2b",
+      "torchvision_version": "0.25.0+rocm7.2.4.git82df5f59",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torch-2.10.0%2Brocm7.2.4.lw.git3d3aa833-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torchvision-0.25.0%2Brocm7.2.4.git82df5f59-cp312-cp312-linux_x86_64.whl",
+        "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torchaudio-2.9.0%2Brocm7.2.4.gite3c6ee2b-cp312-cp312-linux_x86_64.whl"
       ]
     },
     {
@@ -319,6 +211,170 @@
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torchvision-0.25.0%2Brocm7.2.4.git82df5f59-cp312-cp312-linux_x86_64.whl",
         "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torchaudio-2.10.0%2Brocm7.2.4.git5047768f-cp312-cp312-linux_x86_64.whl"
       ]
+    },
+    {
+      "artifact_available": true,
+      "available_gfx_targets": [
+        "gfx1010",
+        "gfx1011",
+        "gfx1012",
+        "gfx1030",
+        "gfx1031",
+        "gfx1032",
+        "gfx1033",
+        "gfx1034",
+        "gfx1035",
+        "gfx1036",
+        "gfx1100",
+        "gfx1101",
+        "gfx1102",
+        "gfx1103",
+        "gfx1150",
+        "gfx1151",
+        "gfx1152",
+        "gfx1153",
+        "gfx1200",
+        "gfx1201",
+        "gfx900",
+        "gfx906",
+        "gfx908",
+        "gfx90a",
+        "gfx90c"
+      ],
+      "channel": "nightly",
+      "ci_evidence_refs": [
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
+        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
+      ],
+      "ci_evidence_scope": "gfx_platform",
+      "distribution_family": "therock",
+      "documentation_refs": [
+        "therock-supported-gpus"
+      ],
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "partial",
+        "documentation": "documented",
+        "hardware": "not_collected",
+        "resolver": "resolver_failed",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-07T12:56:33Z",
+      "gfx_support": "known",
+      "gfx_targets": [
+        "gfx1010",
+        "gfx1011",
+        "gfx1012",
+        "gfx1030",
+        "gfx1031",
+        "gfx1032",
+        "gfx1033",
+        "gfx1034",
+        "gfx1035",
+        "gfx1036",
+        "gfx1100",
+        "gfx1101",
+        "gfx1102",
+        "gfx1103",
+        "gfx1150",
+        "gfx1151",
+        "gfx1152",
+        "gfx1153",
+        "gfx1200",
+        "gfx1201",
+        "gfx900",
+        "gfx906",
+        "gfx908",
+        "gfx90a",
+        "gfx90c"
+      ],
+      "hip_version": null,
+      "id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314",
+      "last_observed_at": "2026-08-08T14:13:02Z",
+      "lifecycle": "current",
+      "platform": "windows",
+      "python_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp313",
+        "cp314"
+      ],
+      "resolver_results": [
+        {
+          "candidate_hash": "2ce7e50fb132534b9577b17bcfeaf20652b162d8e427e2cde9ede51729f1c72a",
+          "error": "Collecting filelock (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1100]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/filelock-3.29.1-py3-none-any.whl (40 kB)\nCollecting typing-extensions>=4.10.0 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1100]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/typing_extensions-4.15.0-py3-none-any.whl (44 kB)\nCollecting setuptools>=77.0.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1100]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/setuptools-82.0.1-py3-none-any.whl (1.0 MB)\n---------------------------------------- 1.0/1.0 MB 46.5 MB/s eta 0:00:00\nCollecting sympy>=1.13.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1100]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/sympy-1.14.0-py3-none-any.whl (6.3 MB)\n---------------------------------------- 6.3/6.3 MB 55.4 MB/s eta 0:00:00\nCollecting networkx>=2.5.1 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1100]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/networkx-3.6.1-py3-none-any.whl (2.1 MB)\n---------------------------------------- 2.1/2.1 MB 58.3 MB/s eta 0:00:00\nCollecting jinja2 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1100]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/jinja2-3.1.6-py3-none-any.whl (134 kB)\nCollecting fsspec>=0.8.5 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1100]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/fsspec-2026.4.0-py3-none-any.whl (203 kB)\nINFO: pip is looking at multiple versions of torch to determine which version is compatible with other requirements. This could take a while.\nERROR: Could not find a version that satisfies the requirement rocm==10.1.0a20260807 (from torch) (from versions: none)\nERROR: No matching distribution found for rocm==10.1.0a20260807",
+          "gfx": "gfx1100",
+          "observed_at": "2026-08-09T00:40:13Z",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp311",
+          "result": "failed",
+          "snapshot_observed_at": "2026-08-08T14:13:02Z",
+          "verification_id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314:gfx1100:cp311:win_amd64:2026-08-09T00:40:13Z:3aa675e008cd"
+        },
+        {
+          "candidate_hash": "f0a3936da54d9d3b208a7a866cbdad704911cde3a326c372a1061524b705c339",
+          "error": "Collecting filelock (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/filelock-3.29.1-py3-none-any.whl (40 kB)\nCollecting typing-extensions>=4.10.0 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/typing_extensions-4.15.0-py3-none-any.whl (44 kB)\nCollecting setuptools>=77.0.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/setuptools-82.0.1-py3-none-any.whl (1.0 MB)\n---------------------------------------- 1.0/1.0 MB 46.5 MB/s eta 0:00:00\nCollecting sympy>=1.13.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/sympy-1.14.0-py3-none-any.whl (6.3 MB)\n---------------------------------------- 6.3/6.3 MB 55.4 MB/s eta 0:00:00\nCollecting networkx>=2.5.1 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/networkx-3.4.2-py3-none-any.whl (1.7 MB)\n---------------------------------------- 1.7/1.7 MB 47.1 MB/s eta 0:00:00\nCollecting jinja2 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/jinja2-3.1.6-py3-none-any.whl (134 kB)\nCollecting fsspec>=0.8.5 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/fsspec-2026.4.0-py3-none-any.whl (203 kB)\nINFO: pip is looking at multiple versions of torch to determine which version is compatible with other requirements. This could take a while.\nERROR: Could not find a version that satisfies the requirement rocm==10.1.0a20260807 (from torch) (from versions: none)\nERROR: No matching distribution found for rocm==10.1.0a20260807",
+          "gfx": "gfx1201",
+          "observed_at": "2026-08-09T01:11:26Z",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp310",
+          "result": "failed",
+          "snapshot_observed_at": "2026-08-08T14:13:02Z",
+          "verification_id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314:gfx1201:cp310:win_amd64:2026-08-09T01:11:26Z:fb7316611cf3"
+        },
+        {
+          "candidate_hash": "f60a0a3f98633674b9ed5e3d0e811ff6b0af200dfba44e360368babeecf045ff",
+          "error": "Collecting filelock (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/filelock-3.29.1-py3-none-any.whl (40 kB)\nCollecting typing-extensions>=4.10.0 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/typing_extensions-4.15.0-py3-none-any.whl (44 kB)\nCollecting setuptools>=77.0.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/setuptools-82.0.1-py3-none-any.whl (1.0 MB)\n---------------------------------------- 1.0/1.0 MB 46.5 MB/s eta 0:00:00\nCollecting sympy>=1.13.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/sympy-1.14.0-py3-none-any.whl (6.3 MB)\n---------------------------------------- 6.3/6.3 MB 55.4 MB/s eta 0:00:00\nCollecting networkx>=2.5.1 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/networkx-3.6.1-py3-none-any.whl (2.1 MB)\n---------------------------------------- 2.1/2.1 MB 56.4 MB/s eta 0:00:00\nCollecting jinja2 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/jinja2-3.1.6-py3-none-any.whl (134 kB)\nCollecting fsspec>=0.8.5 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/fsspec-2026.4.0-py3-none-any.whl (203 kB)\nINFO: pip is looking at multiple versions of torch to determine which version is compatible with other requirements. This could take a while.\nERROR: Could not find a version that satisfies the requirement rocm==10.1.0a20260807 (from torch) (from versions: none)\nERROR: No matching distribution found for rocm==10.1.0a20260807",
+          "gfx": "gfx1201",
+          "observed_at": "2026-08-09T01:11:48Z",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp311",
+          "result": "failed",
+          "snapshot_observed_at": "2026-08-08T14:13:02Z",
+          "verification_id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314:gfx1201:cp311:win_amd64:2026-08-09T01:11:48Z:fbd4a9effff2"
+        },
+        {
+          "candidate_hash": "52baef06a065bf780e403c2e1c8d16ec63e4af2109f9e04ea15eac0c65ad5fef",
+          "error": "Collecting filelock (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/filelock-3.29.1-py3-none-any.whl (40 kB)\nCollecting typing-extensions>=4.10.0 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/typing_extensions-4.15.0-py3-none-any.whl (44 kB)\nCollecting setuptools>=77.0.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/setuptools-82.0.1-py3-none-any.whl (1.0 MB)\n---------------------------------------- 1.0/1.0 MB 23.3 MB/s eta 0:00:00\nCollecting sympy>=1.13.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/sympy-1.14.0-py3-none-any.whl (6.3 MB)\n---------------------------------------- 6.3/6.3 MB 48.3 MB/s eta 0:00:00\nCollecting networkx>=2.5.1 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/networkx-3.6.1-py3-none-any.whl (2.1 MB)\n---------------------------------------- 2.1/2.1 MB 38.4 MB/s eta 0:00:00\nCollecting jinja2 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/jinja2-3.1.6-py3-none-any.whl (134 kB)\nCollecting fsspec>=0.8.5 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/fsspec-2026.4.0-py3-none-any.whl (203 kB)\nINFO: pip is looking at multiple versions of torch to determine which version is compatible with other requirements. This could take a while.\nERROR: Could not find a version that satisfies the requirement rocm==10.1.0a20260807 (from torch) (from versions: none)\nERROR: No matching distribution found for rocm==10.1.0a20260807",
+          "gfx": "gfx1201",
+          "observed_at": "2026-08-09T01:12:04Z",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp312",
+          "result": "failed",
+          "snapshot_observed_at": "2026-08-08T14:13:02Z",
+          "verification_id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314:gfx1201:cp312:win_amd64:2026-08-09T01:12:04Z:46ad6431552d"
+        },
+        {
+          "candidate_hash": "5bb628bab0344a5ed9be157b3ca3606e2349a481eac6f2ebfb3b00afc2d5550b",
+          "error": "Collecting filelock (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/filelock-3.29.1-py3-none-any.whl (40 kB)\nCollecting typing-extensions>=4.10.0 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/typing_extensions-4.15.0-py3-none-any.whl (44 kB)\nCollecting setuptools>=77.0.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/setuptools-82.0.1-py3-none-any.whl (1.0 MB)\n---------------------------------------- 1.0/1.0 MB 46.5 MB/s eta 0:00:00\nCollecting sympy>=1.13.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/sympy-1.14.0-py3-none-any.whl (6.3 MB)\n---------------------------------------- 6.3/6.3 MB 48.3 MB/s eta 0:00:00\nCollecting networkx>=2.5.1 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/networkx-3.6.1-py3-none-any.whl (2.1 MB)\n---------------------------------------- 2.1/2.1 MB 58.3 MB/s eta 0:00:00\nCollecting jinja2 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/jinja2-3.1.6-py3-none-any.whl (134 kB)\nCollecting fsspec>=0.8.5 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/fsspec-2026.4.0-py3-none-any.whl (203 kB)\nINFO: pip is looking at multiple versions of torch to determine which version is compatible with other requirements. This could take a while.\nERROR: Could not find a version that satisfies the requirement rocm==10.1.0a20260807 (from torch) (from versions: none)\nERROR: No matching distribution found for rocm==10.1.0a20260807",
+          "gfx": "gfx1201",
+          "observed_at": "2026-08-09T01:12:26Z",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp313",
+          "result": "failed",
+          "snapshot_observed_at": "2026-08-08T14:13:02Z",
+          "verification_id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314:gfx1201:cp313:win_amd64:2026-08-09T01:12:26Z:feaaa7338d46"
+        },
+        {
+          "candidate_hash": "ca911b39d804e20b4dcbb2d9f2a25c6a261883e315cc7fa5a4e0edb14b05da4f",
+          "error": "Collecting filelock (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/filelock-3.29.1-py3-none-any.whl (40 kB)\nCollecting typing-extensions>=4.10.0 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/typing_extensions-4.15.0-py3-none-any.whl (44 kB)\nCollecting setuptools>=77.0.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/setuptools-82.0.1-py3-none-any.whl (1.0 MB)\n---------------------------------------- 1.0/1.0 MB 49.6 MB/s eta 0:00:00\nCollecting sympy>=1.13.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/sympy-1.14.0-py3-none-any.whl (6.3 MB)\n---------------------------------------- 6.3/6.3 MB 48.3 MB/s eta 0:00:00\nCollecting networkx>=2.5.1 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/networkx-3.6.1-py3-none-any.whl (2.1 MB)\n---------------------------------------- 2.1/2.1 MB 58.3 MB/s eta 0:00:00\nCollecting jinja2 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/jinja2-3.1.6-py3-none-any.whl (134 kB)\nCollecting fsspec>=0.8.5 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/fsspec-2026.4.0-py3-none-any.whl (203 kB)\nINFO: pip is looking at multiple versions of torch to determine which version is compatible with other requirements. This could take a while.\nERROR: Could not find a version that satisfies the requirement rocm==10.1.0a20260807 (from torch) (from versions: none)\nERROR: No matching distribution found for rocm==10.1.0a20260807",
+          "gfx": "gfx1201",
+          "observed_at": "2026-08-09T01:12:49Z",
+          "platform_tag": "win_amd64",
+          "python_tag": "cp314",
+          "result": "failed",
+          "snapshot_observed_at": "2026-08-08T14:13:02Z",
+          "verification_id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314:gfx1201:cp314:win_amd64:2026-08-09T01:12:49Z:fd369ed1a9db"
+        }
+      ],
+      "rocm_version": "10.1.0a20260807",
+      "source_id": "packages-nightly",
+      "torch_version": "2.14.0a0+rocm10.1.0a20260807",
+      "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
+      "torchvision_version": "0.29.0a0+rocm10.1.0a20260807",
+      "triton_version": null
     },
     {
       "artifact_available": true,
@@ -647,6 +703,119 @@
         "gfx1153",
         "gfx1200",
         "gfx1201",
+        "gfx908",
+        "gfx90a",
+        "gfx942",
+        "gfx950"
+      ],
+      "channel": "stable",
+      "distribution_family": "therock",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "resolver_failed",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-08T14:01:58Z",
+      "gfx_support": "known",
+      "gfx_targets": [
+        "gfx1010",
+        "gfx1011",
+        "gfx1012",
+        "gfx1030",
+        "gfx1031",
+        "gfx1032",
+        "gfx1033",
+        "gfx1034",
+        "gfx1035",
+        "gfx1036",
+        "gfx1100",
+        "gfx1101",
+        "gfx1102",
+        "gfx1103",
+        "gfx1150",
+        "gfx1151",
+        "gfx1152",
+        "gfx1153",
+        "gfx1200",
+        "gfx1201",
+        "gfx908",
+        "gfx90a",
+        "gfx942",
+        "gfx950"
+      ],
+      "hip_version": null,
+      "id": "therock:linux:stable:7.14.0:2.13.0+rocm7.14.0:0.28.0+rocm7.14.0:2.11.0.2+rocm7.14.0:cp312",
+      "last_observed_at": "2026-08-08T14:13:02Z",
+      "lifecycle": "current",
+      "platform": "linux",
+      "python_tags": [
+        "cp312"
+      ],
+      "resolver_results": [
+        {
+          "error": "No matching distribution found for torch==2.13.0+rocm7.14.0",
+          "gfx": "gfx1201",
+          "observed_at": "2026-08-08T12:30:29Z",
+          "platform_tag": "manylinux_2_28_x86_64",
+          "python_tag": "cp312",
+          "result": "failed",
+          "snapshot_observed_at": "2026-08-08T10:11:41Z",
+          "verification_id": "therock:linux:stable:7.14.0:2.13.0+rocm7.14.0:0.28.0+rocm7.14.0:2.11.0.2+rocm7.14.0:cp312:gfx1201:cp312:manylinux_2_28_x86_64"
+        },
+        {
+          "error": "Looking in indexes: https://repo.amd.com/rocm/whl-multi-arch/\nERROR: Could not find a version that satisfies the requirement torch==2.13.0+rocm7.14.0 (from versions: none)\nERROR: No matching distribution found for torch==2.13.0+rocm7.14.0",
+          "gfx": "gfx1010",
+          "observed_at": "2026-08-08T13:08:56Z",
+          "platform_tag": "manylinux_2_28_x86_64",
+          "python_tag": "cp312",
+          "result": "failed",
+          "snapshot_observed_at": "2026-08-08T10:11:41Z",
+          "verification_id": "therock:linux:stable:7.14.0:2.13.0+rocm7.14.0:0.28.0+rocm7.14.0:2.11.0.2+rocm7.14.0:cp312:gfx1010:cp312:manylinux_2_28_x86_64"
+        },
+        {
+          "error": "Looking in indexes: https://repo.amd.com/rocm/whl-multi-arch/\nERROR: Could not find a version that satisfies the requirement torch==2.13.0+rocm7.14.0 (from versions: none)\nERROR: No matching distribution found for torch==2.13.0+rocm7.14.0",
+          "gfx": "gfx1201",
+          "observed_at": "2026-08-09T00:31:08Z",
+          "platform_tag": "manylinux_2_28_x86_64",
+          "python_tag": "cp312",
+          "result": "failed",
+          "snapshot_observed_at": "2026-08-08T14:13:02Z",
+          "verification_id": "therock:linux:stable:7.14.0:2.13.0+rocm7.14.0:0.28.0+rocm7.14.0:2.11.0.2+rocm7.14.0:cp312:gfx1201:cp312:manylinux_2_28_x86_64:2026-08-09T00:31:08Z:33cca37ff423"
+        }
+      ],
+      "rocm_version": "7.14.0",
+      "source_id": "packages-stable-linux",
+      "torch_version": "2.13.0+rocm7.14.0",
+      "torchaudio_version": "2.11.0.2+rocm7.14.0",
+      "torchvision_version": "0.28.0+rocm7.14.0",
+      "triton_version": null
+    },
+    {
+      "artifact_available": true,
+      "available_gfx_targets": [
+        "gfx1010",
+        "gfx1011",
+        "gfx1012",
+        "gfx1030",
+        "gfx1031",
+        "gfx1032",
+        "gfx1033",
+        "gfx1034",
+        "gfx1035",
+        "gfx1036",
+        "gfx1100",
+        "gfx1101",
+        "gfx1102",
+        "gfx1103",
+        "gfx1150",
+        "gfx1151",
+        "gfx1152",
+        "gfx1153",
+        "gfx1200",
+        "gfx1201",
         "gfx900",
         "gfx906",
         "gfx908",
@@ -734,170 +903,6 @@
       "torch_version": "2.12.0+rocm7.14.0a20260519",
       "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
       "torchvision_version": "0.27.0+rocm7.14.0a20260519",
-      "triton_version": null
-    },
-    {
-      "artifact_available": true,
-      "available_gfx_targets": [
-        "gfx1010",
-        "gfx1011",
-        "gfx1012",
-        "gfx1030",
-        "gfx1031",
-        "gfx1032",
-        "gfx1033",
-        "gfx1034",
-        "gfx1035",
-        "gfx1036",
-        "gfx1100",
-        "gfx1101",
-        "gfx1102",
-        "gfx1103",
-        "gfx1150",
-        "gfx1151",
-        "gfx1152",
-        "gfx1153",
-        "gfx1200",
-        "gfx1201",
-        "gfx900",
-        "gfx906",
-        "gfx908",
-        "gfx90a",
-        "gfx90c"
-      ],
-      "channel": "nightly",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
-      "distribution_family": "therock",
-      "documentation_refs": [
-        "therock-supported-gpus"
-      ],
-      "evidence_status": {
-        "artifact": "artifact_available",
-        "ci": "partial",
-        "documentation": "documented",
-        "hardware": "not_collected",
-        "resolver": "resolver_failed",
-        "runtime": "not_collected"
-      },
-      "first_observed_at": "2026-08-07T12:56:33Z",
-      "gfx_support": "known",
-      "gfx_targets": [
-        "gfx1010",
-        "gfx1011",
-        "gfx1012",
-        "gfx1030",
-        "gfx1031",
-        "gfx1032",
-        "gfx1033",
-        "gfx1034",
-        "gfx1035",
-        "gfx1036",
-        "gfx1100",
-        "gfx1101",
-        "gfx1102",
-        "gfx1103",
-        "gfx1150",
-        "gfx1151",
-        "gfx1152",
-        "gfx1153",
-        "gfx1200",
-        "gfx1201",
-        "gfx900",
-        "gfx906",
-        "gfx908",
-        "gfx90a",
-        "gfx90c"
-      ],
-      "hip_version": null,
-      "id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314",
-      "last_observed_at": "2026-08-08T14:13:02Z",
-      "lifecycle": "current",
-      "platform": "windows",
-      "python_tags": [
-        "cp310",
-        "cp311",
-        "cp312",
-        "cp313",
-        "cp314"
-      ],
-      "resolver_results": [
-        {
-          "candidate_hash": "2ce7e50fb132534b9577b17bcfeaf20652b162d8e427e2cde9ede51729f1c72a",
-          "error": "Collecting filelock (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1100]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/filelock-3.29.1-py3-none-any.whl (40 kB)\nCollecting typing-extensions>=4.10.0 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1100]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/typing_extensions-4.15.0-py3-none-any.whl (44 kB)\nCollecting setuptools>=77.0.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1100]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/setuptools-82.0.1-py3-none-any.whl (1.0 MB)\n---------------------------------------- 1.0/1.0 MB 46.5 MB/s eta 0:00:00\nCollecting sympy>=1.13.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1100]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/sympy-1.14.0-py3-none-any.whl (6.3 MB)\n---------------------------------------- 6.3/6.3 MB 55.4 MB/s eta 0:00:00\nCollecting networkx>=2.5.1 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1100]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/networkx-3.6.1-py3-none-any.whl (2.1 MB)\n---------------------------------------- 2.1/2.1 MB 58.3 MB/s eta 0:00:00\nCollecting jinja2 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1100]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/jinja2-3.1.6-py3-none-any.whl (134 kB)\nCollecting fsspec>=0.8.5 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1100]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/fsspec-2026.4.0-py3-none-any.whl (203 kB)\nINFO: pip is looking at multiple versions of torch to determine which version is compatible with other requirements. This could take a while.\nERROR: Could not find a version that satisfies the requirement rocm==10.1.0a20260807 (from torch) (from versions: none)\nERROR: No matching distribution found for rocm==10.1.0a20260807",
-          "gfx": "gfx1100",
-          "observed_at": "2026-08-09T00:40:13Z",
-          "platform_tag": "win_amd64",
-          "python_tag": "cp311",
-          "result": "failed",
-          "snapshot_observed_at": "2026-08-08T14:13:02Z",
-          "verification_id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314:gfx1100:cp311:win_amd64:2026-08-09T00:40:13Z:3aa675e008cd"
-        },
-        {
-          "candidate_hash": "f0a3936da54d9d3b208a7a866cbdad704911cde3a326c372a1061524b705c339",
-          "error": "Collecting filelock (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/filelock-3.29.1-py3-none-any.whl (40 kB)\nCollecting typing-extensions>=4.10.0 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/typing_extensions-4.15.0-py3-none-any.whl (44 kB)\nCollecting setuptools>=77.0.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/setuptools-82.0.1-py3-none-any.whl (1.0 MB)\n---------------------------------------- 1.0/1.0 MB 46.5 MB/s eta 0:00:00\nCollecting sympy>=1.13.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/sympy-1.14.0-py3-none-any.whl (6.3 MB)\n---------------------------------------- 6.3/6.3 MB 55.4 MB/s eta 0:00:00\nCollecting networkx>=2.5.1 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/networkx-3.4.2-py3-none-any.whl (1.7 MB)\n---------------------------------------- 1.7/1.7 MB 47.1 MB/s eta 0:00:00\nCollecting jinja2 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/jinja2-3.1.6-py3-none-any.whl (134 kB)\nCollecting fsspec>=0.8.5 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/fsspec-2026.4.0-py3-none-any.whl (203 kB)\nINFO: pip is looking at multiple versions of torch to determine which version is compatible with other requirements. This could take a while.\nERROR: Could not find a version that satisfies the requirement rocm==10.1.0a20260807 (from torch) (from versions: none)\nERROR: No matching distribution found for rocm==10.1.0a20260807",
-          "gfx": "gfx1201",
-          "observed_at": "2026-08-09T01:11:26Z",
-          "platform_tag": "win_amd64",
-          "python_tag": "cp310",
-          "result": "failed",
-          "snapshot_observed_at": "2026-08-08T14:13:02Z",
-          "verification_id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314:gfx1201:cp310:win_amd64:2026-08-09T01:11:26Z:fb7316611cf3"
-        },
-        {
-          "candidate_hash": "f60a0a3f98633674b9ed5e3d0e811ff6b0af200dfba44e360368babeecf045ff",
-          "error": "Collecting filelock (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/filelock-3.29.1-py3-none-any.whl (40 kB)\nCollecting typing-extensions>=4.10.0 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/typing_extensions-4.15.0-py3-none-any.whl (44 kB)\nCollecting setuptools>=77.0.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/setuptools-82.0.1-py3-none-any.whl (1.0 MB)\n---------------------------------------- 1.0/1.0 MB 46.5 MB/s eta 0:00:00\nCollecting sympy>=1.13.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/sympy-1.14.0-py3-none-any.whl (6.3 MB)\n---------------------------------------- 6.3/6.3 MB 55.4 MB/s eta 0:00:00\nCollecting networkx>=2.5.1 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/networkx-3.6.1-py3-none-any.whl (2.1 MB)\n---------------------------------------- 2.1/2.1 MB 56.4 MB/s eta 0:00:00\nCollecting jinja2 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/jinja2-3.1.6-py3-none-any.whl (134 kB)\nCollecting fsspec>=0.8.5 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/fsspec-2026.4.0-py3-none-any.whl (203 kB)\nINFO: pip is looking at multiple versions of torch to determine which version is compatible with other requirements. This could take a while.\nERROR: Could not find a version that satisfies the requirement rocm==10.1.0a20260807 (from torch) (from versions: none)\nERROR: No matching distribution found for rocm==10.1.0a20260807",
-          "gfx": "gfx1201",
-          "observed_at": "2026-08-09T01:11:48Z",
-          "platform_tag": "win_amd64",
-          "python_tag": "cp311",
-          "result": "failed",
-          "snapshot_observed_at": "2026-08-08T14:13:02Z",
-          "verification_id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314:gfx1201:cp311:win_amd64:2026-08-09T01:11:48Z:fbd4a9effff2"
-        },
-        {
-          "candidate_hash": "52baef06a065bf780e403c2e1c8d16ec63e4af2109f9e04ea15eac0c65ad5fef",
-          "error": "Collecting filelock (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/filelock-3.29.1-py3-none-any.whl (40 kB)\nCollecting typing-extensions>=4.10.0 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/typing_extensions-4.15.0-py3-none-any.whl (44 kB)\nCollecting setuptools>=77.0.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/setuptools-82.0.1-py3-none-any.whl (1.0 MB)\n---------------------------------------- 1.0/1.0 MB 23.3 MB/s eta 0:00:00\nCollecting sympy>=1.13.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/sympy-1.14.0-py3-none-any.whl (6.3 MB)\n---------------------------------------- 6.3/6.3 MB 48.3 MB/s eta 0:00:00\nCollecting networkx>=2.5.1 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/networkx-3.6.1-py3-none-any.whl (2.1 MB)\n---------------------------------------- 2.1/2.1 MB 38.4 MB/s eta 0:00:00\nCollecting jinja2 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/jinja2-3.1.6-py3-none-any.whl (134 kB)\nCollecting fsspec>=0.8.5 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/fsspec-2026.4.0-py3-none-any.whl (203 kB)\nINFO: pip is looking at multiple versions of torch to determine which version is compatible with other requirements. This could take a while.\nERROR: Could not find a version that satisfies the requirement rocm==10.1.0a20260807 (from torch) (from versions: none)\nERROR: No matching distribution found for rocm==10.1.0a20260807",
-          "gfx": "gfx1201",
-          "observed_at": "2026-08-09T01:12:04Z",
-          "platform_tag": "win_amd64",
-          "python_tag": "cp312",
-          "result": "failed",
-          "snapshot_observed_at": "2026-08-08T14:13:02Z",
-          "verification_id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314:gfx1201:cp312:win_amd64:2026-08-09T01:12:04Z:46ad6431552d"
-        },
-        {
-          "candidate_hash": "5bb628bab0344a5ed9be157b3ca3606e2349a481eac6f2ebfb3b00afc2d5550b",
-          "error": "Collecting filelock (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/filelock-3.29.1-py3-none-any.whl (40 kB)\nCollecting typing-extensions>=4.10.0 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/typing_extensions-4.15.0-py3-none-any.whl (44 kB)\nCollecting setuptools>=77.0.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/setuptools-82.0.1-py3-none-any.whl (1.0 MB)\n---------------------------------------- 1.0/1.0 MB 46.5 MB/s eta 0:00:00\nCollecting sympy>=1.13.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/sympy-1.14.0-py3-none-any.whl (6.3 MB)\n---------------------------------------- 6.3/6.3 MB 48.3 MB/s eta 0:00:00\nCollecting networkx>=2.5.1 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/networkx-3.6.1-py3-none-any.whl (2.1 MB)\n---------------------------------------- 2.1/2.1 MB 58.3 MB/s eta 0:00:00\nCollecting jinja2 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/jinja2-3.1.6-py3-none-any.whl (134 kB)\nCollecting fsspec>=0.8.5 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/fsspec-2026.4.0-py3-none-any.whl (203 kB)\nINFO: pip is looking at multiple versions of torch to determine which version is compatible with other requirements. This could take a while.\nERROR: Could not find a version that satisfies the requirement rocm==10.1.0a20260807 (from torch) (from versions: none)\nERROR: No matching distribution found for rocm==10.1.0a20260807",
-          "gfx": "gfx1201",
-          "observed_at": "2026-08-09T01:12:26Z",
-          "platform_tag": "win_amd64",
-          "python_tag": "cp313",
-          "result": "failed",
-          "snapshot_observed_at": "2026-08-08T14:13:02Z",
-          "verification_id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314:gfx1201:cp313:win_amd64:2026-08-09T01:12:26Z:feaaa7338d46"
-        },
-        {
-          "candidate_hash": "ca911b39d804e20b4dcbb2d9f2a25c6a261883e315cc7fa5a4e0edb14b05da4f",
-          "error": "Collecting filelock (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/filelock-3.29.1-py3-none-any.whl (40 kB)\nCollecting typing-extensions>=4.10.0 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/typing_extensions-4.15.0-py3-none-any.whl (44 kB)\nCollecting setuptools>=77.0.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/setuptools-82.0.1-py3-none-any.whl (1.0 MB)\n---------------------------------------- 1.0/1.0 MB 49.6 MB/s eta 0:00:00\nCollecting sympy>=1.13.3 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/sympy-1.14.0-py3-none-any.whl (6.3 MB)\n---------------------------------------- 6.3/6.3 MB 48.3 MB/s eta 0:00:00\nCollecting networkx>=2.5.1 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/networkx-3.6.1-py3-none-any.whl (2.1 MB)\n---------------------------------------- 2.1/2.1 MB 58.3 MB/s eta 0:00:00\nCollecting jinja2 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/jinja2-3.1.6-py3-none-any.whl (134 kB)\nCollecting fsspec>=0.8.5 (from torch==2.14.0a0+rocm10.1.0a20260807->torch[device-gfx1201]==2.14.0a0+rocm10.1.0a20260807)\nDownloading https://rocm.nightlies.amd.com/whl-multi-arch/fsspec-2026.4.0-py3-none-any.whl (203 kB)\nINFO: pip is looking at multiple versions of torch to determine which version is compatible with other requirements. This could take a while.\nERROR: Could not find a version that satisfies the requirement rocm==10.1.0a20260807 (from torch) (from versions: none)\nERROR: No matching distribution found for rocm==10.1.0a20260807",
-          "gfx": "gfx1201",
-          "observed_at": "2026-08-09T01:12:49Z",
-          "platform_tag": "win_amd64",
-          "python_tag": "cp314",
-          "result": "failed",
-          "snapshot_observed_at": "2026-08-08T14:13:02Z",
-          "verification_id": "therock:nightly:10.1.0a20260807:2.14.0a0+rocm10.1.0a20260807:0.29.0a0+rocm10.1.0a20260807:2.11.0+rocm10.1.0a20260807:cp310,cp311,cp312,cp313,cp314:gfx1201:cp314:win_amd64:2026-08-09T01:12:49Z:fd369ed1a9db"
-        }
-      ],
-      "rocm_version": "10.1.0a20260807",
-      "source_id": "packages-nightly",
-      "torch_version": "2.14.0a0+rocm10.1.0a20260807",
-      "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-      "torchvision_version": "0.29.0a0+rocm10.1.0a20260807",
       "triton_version": null
     },
     {
@@ -10577,6 +10582,11 @@
       },
       "first_observed_at": "2026-08-07T15:37:08Z",
       "gfx_support": "known",
+      "gfx_support_refs": [
+        "pytorch-windows-radeon-6.4.4",
+        "pytorch-windows-ryzen-6.4.4"
+      ],
+      "gfx_support_scope": "release",
       "gfx_targets": [
         "gfx1100",
         "gfx1150",
@@ -17941,6 +17951,64 @@
     },
     {
       "artifact_available": true,
+      "available_gfx_targets": [
+        "gfx1100",
+        "gfx1101",
+        "gfx1102",
+        "gfx1151",
+        "gfx1200",
+        "gfx1201"
+      ],
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "evidence_status": {
+        "artifact": "artifact_available",
+        "ci": "not_collected",
+        "documentation": "not_collected",
+        "hardware": "not_collected",
+        "resolver": "not_collected",
+        "runtime": "not_collected"
+      },
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "gfx_support": "known",
+      "gfx_support_refs": [
+        "hip-sdk-gpus-7.1"
+      ],
+      "gfx_support_scope": "series",
+      "gfx_targets": [
+        "gfx1100",
+        "gfx1101",
+        "gfx1102",
+        "gfx1151",
+        "gfx1200",
+        "gfx1201"
+      ],
+      "hip_version": null,
+      "id": "legacy:stable:7.1.1:2.9.0+rocmsdk20251116:0.24.0+rocmsdk20251116:2.9.0+rocmsdk20251116:cp312",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "platform": "windows",
+      "python_tags": [
+        "cp312"
+      ],
+      "resolver_results": [],
+      "rocm_version": "7.1.1",
+      "source_id": "legacy-artifacts",
+      "torch_version": "2.9.0+rocmsdk20251116",
+      "torchaudio_version": "2.9.0+rocmsdk20251116",
+      "torchvision_version": "0.24.0+rocmsdk20251116",
+      "triton_version": null,
+      "wheel_urls": [
+        "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/rocm_sdk_core-0.1.dev0-py3-none-win_amd64.whl",
+        "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/rocm_sdk_devel-0.1.dev0-py3-none-win_amd64.whl",
+        "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/rocm_sdk_libraries_custom-0.1.dev0-py3-none-win_amd64.whl",
+        "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/torch-2.9.0%2Brocmsdk20251116-cp312-cp312-win_amd64.whl",
+        "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/torchaudio-2.9.0%2Brocmsdk20251116-cp312-cp312-win_amd64.whl",
+        "https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/torchvision-0.24.0%2Brocmsdk20251116-cp312-cp312-win_amd64.whl"
+      ]
+    },
+    {
+      "artifact_available": true,
       "available_gfx_targets": [],
       "channel": "stable",
       "distribution_family": "legacy",
@@ -18873,6 +18941,11 @@
       },
       "first_observed_at": "2026-08-07T15:37:08Z",
       "gfx_support": "known",
+      "gfx_support_refs": [
+        "pytorch-windows-radeon-7.2",
+        "pytorch-windows-ryzen-7.2"
+      ],
+      "gfx_support_scope": "release",
       "gfx_targets": [
         "gfx1100",
         "gfx1101",
@@ -151521,6 +151594,29 @@
   "generated_at": "2026-08-08T10:15:14Z",
   "schema_version": 2,
   "sources": {
+    "hip-sdk-gpus-6.1": {
+      "id": "hip-sdk-gpus-6.1",
+      "observed_at": "2026-08-08T10:15:14Z",
+      "rocm_series": "6.1",
+      "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.1.2/reference/system-requirements.html"
+    },
+    "hip-sdk-gpus-6.4": {
+      "id": "hip-sdk-gpus-6.4",
+      "observed_at": "2026-08-08T10:15:14Z",
+      "rocm_series": "6.4",
+      "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.4.0/reference/system-requirements.html"
+    },
+    "hip-sdk-gpus-7.1": {
+      "id": "hip-sdk-gpus-7.1",
+      "observed_at": "2026-08-08T10:15:14Z",
+      "rocm_series": "7.1",
+      "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.1.1/reference/system-requirements.html"
+    },
+    "hip-sdk-release-versioning": {
+      "id": "hip-sdk-release-versioning",
+      "observed_at": "2026-08-08T10:15:14Z",
+      "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/latest/conceptual/release-versioning.html"
+    },
     "legacy-artifacts": {
       "channel": "stable",
       "distribution_family": "legacy",
@@ -151536,6 +151632,11 @@
       "observed_at": "2026-08-08T10:15:14Z",
       "platform": "linux",
       "url": "https://repo.radeon.com/rocm/manylinux/"
+    },
+    "legacy-windows-artifacts": {
+      "id": "legacy-windows-artifacts",
+      "observed_at": "2026-08-08T10:15:14Z",
+      "url": "https://repo.radeon.com/rocm/windows/"
     },
     "packages-nightly": {
       "channel": "nightly",
@@ -151584,6 +151685,42 @@
       "observed_at": "2026-08-08T14:13:02Z",
       "platform": "linux",
       "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
+    },
+    "pytorch-windows-radeon-6.4.4": {
+      "id": "pytorch-windows-radeon-6.4.4",
+      "observed_at": "2026-08-08T10:15:14Z",
+      "product_family": "radeon",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-6.4.4/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-radeon-7.2": {
+      "id": "pytorch-windows-radeon-7.2",
+      "observed_at": "2026-08-08T10:15:14Z",
+      "product_family": "radeon",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-7.2/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-radeon-7.2.1": {
+      "id": "pytorch-windows-radeon-7.2.1",
+      "observed_at": "2026-08-08T10:15:14Z",
+      "product_family": "radeon",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-ryzen-6.4.4": {
+      "id": "pytorch-windows-ryzen-6.4.4",
+      "observed_at": "2026-08-08T10:15:14Z",
+      "product_family": "ryzen",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-6.4.4/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-ryzen-7.2": {
+      "id": "pytorch-windows-ryzen-7.2",
+      "observed_at": "2026-08-08T10:15:14Z",
+      "product_family": "ryzen",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-7.2/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
+    },
+    "pytorch-windows-ryzen-7.2.1": {
+      "id": "pytorch-windows-ryzen-7.2.1",
+      "observed_at": "2026-08-08T10:15:14Z",
+      "product_family": "ryzen",
+      "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
     }
   }
 }

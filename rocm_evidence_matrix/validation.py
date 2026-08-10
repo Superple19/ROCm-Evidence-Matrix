@@ -235,6 +235,16 @@ def validate_history(history):
             raise ValueError(f"Unsupported framework compatibility state: {candidate['id']}")
         if candidate.get("gfx_support", "known") not in {"known", "unknown"}:
             raise ValueError(f"Unsupported GFX support state: {candidate['id']}")
+        support_scope = candidate.get("gfx_support_scope")
+        if support_scope not in {None, "release", "series"}:
+            raise ValueError(f"Unsupported GFX support scope: {candidate['id']}")
+        support_refs = candidate.get("gfx_support_refs", [])
+        if not isinstance(support_refs, list) or not all(isinstance(item, str) for item in support_refs):
+            raise ValueError(f"Invalid GFX support references: {candidate['id']}")
+        if support_scope and not support_refs:
+            raise ValueError(f"Scoped GFX support lacks evidence references: {candidate['id']}")
+        if any(reference not in source_ids for reference in support_refs):
+            raise ValueError(f"Unknown GFX support evidence: {candidate['id']}")
         if candidate.get("lifecycle") not in {"current", "historical"}:
             raise ValueError(f"Unsupported lifecycle: {candidate['id']}")
         evidence = candidate.get("evidence_status")

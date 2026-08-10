@@ -253,8 +253,21 @@ def collect_legacy_windows(config, fetch_text):
 def build_legacy_candidates(document):
     """Convert direct legacy wheels into the common historical candidate shape."""
     support_by_version = {}
+    support_by_series = {}
+    support_refs_by_version = {}
+    support_refs_by_series = {}
     for item in document.get("pytorch_windows_support", []):
-        support_by_version.setdefault(item["rocm_version"], set()).update(item.get("gfx_targets", []))
+        version = item["rocm_version"]
+        support_by_version.setdefault(version, set()).update(item.get("gfx_targets", []))
+        if item.get("source_id"):
+            support_refs_by_version.setdefault(version, set()).add(item["source_id"])
+    for item in document.get("hip_sdk_gpu_support", []):
+        if item.get("hip_sdk_status") != "supported":
+            continue
+        series = item["rocm_series"]
+        support_by_series.setdefault(series, set()).add(item["gfx"])
+        if item.get("source_id"):
+            support_refs_by_series.setdefault(series, set()).add(item["source_id"])
 
     candidates = []
     for release in document.get("artifact_releases", []):
@@ -263,21 +276,48 @@ def build_legacy_candidates(document):
         for artifact in artifacts:
             by_package.setdefault(artifact["package"], []).append(artifact)
         required = {"torch", "torchvision", "torchaudio"}
-        if not required.issubset(by_package) or release["release_id"] not in support_by_version:
+        release_id = release["release_id"]
+        release_series = ".".join(release_id.split(".")[:2])
+        exact_support = bool(support_by_version.get(release_id))
+        gfx_targets = support_by_version.get(release_id) or support_by_series.get(release_series)
+        support_refs = support_refs_by_version.get(release_id) or support_refs_by_series.get(release_series)
+        if not required.issubset(by_package) or not gfx_targets:
             continue
-        torch = sorted(by_package["torch"], key=lambda item: item["version"])[-1]
-        vision = sorted(by_package["torchvision"], key=lambda item: item["version"])[-1]
-        audio = sorted(by_package["torchaudio"], key=lambda item: item["version"])[-1]
-        python_tags = sorted({torch["python_tag"], vision["python_tag"], audio["python_tag"]})
-        if not all(tag.startswith("cp") for tag in python_tags):
+        latest = {
+            package: max(by_package[package], key=lambda item: version_key(item["version"]))["version"]
+            for package in required
+        }
+        package_artifacts = {
+            package: [item for item in by_package[package] if item["version"] == latest[package]]
+            for package in required
+        }
+        python_sets = [
+            {item["python_tag"] for item in artifacts if item["python_tag"].startswith("cp")}
+            for artifacts in package_artifacts.values()
+        ]
+        python_tags = sorted(set.intersection(*python_sets)) if python_sets else []
+        if not python_tags:
             continue
+        selected_artifacts = [
+            item
+            for item in artifacts
+            if (
+                item["package"] in required
+                and item["version"] == latest[item["package"]]
+                and item["python_tag"] in python_tags
+            )
+            or (item["package"] not in required and item["python_tag"] in {"py3", "source"})
+        ]
+        torch = package_artifacts["torch"][0]
+        vision = package_artifacts["torchvision"][0]
+        audio = package_artifacts["torchaudio"][0]
         candidates.append(
             {
                 "id": ":".join(("legacy", "stable", release["release_id"], torch["version"], vision["version"], audio["version"], ",".join(python_tags))),
                 "distribution_family": "legacy",
                 "platform": "windows",
                 "channel": "stable",
-                "rocm_version": release["release_id"],
+                "rocm_version": release_id,
                 "hip_version": None,
                 "evidence_status": initial_evidence_status(),
                 "resolver_results": [],
@@ -285,9 +325,11 @@ def build_legacy_candidates(document):
                 "torchvision_version": vision["version"],
                 "torchaudio_version": audio["version"],
                 "python_tags": python_tags,
-                "gfx_targets": sorted(support_by_version[release["release_id"]]),
+                "gfx_targets": sorted(gfx_targets),
+                "gfx_support_scope": "release" if exact_support else "series",
+                "gfx_support_refs": sorted(support_refs or []),
                 "source_id": "legacy-artifacts",
-                "wheel_urls": [item["url"] for item in artifacts],
+                "wheel_urls": [item["url"] for item in selected_artifacts],
             }
         )
     return candidates

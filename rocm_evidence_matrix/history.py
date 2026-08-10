@@ -465,6 +465,9 @@ def merge_history(existing, observations, sources, observed_at, observed_source_
         current["python_tags"] = observation["python_tags"]
         current["last_observed_at"] = observed_at
         current["artifact_available"] = True
+        for field in ("gfx_support_scope", "gfx_support_refs"):
+            if field in observation:
+                current[field] = observation[field]
         current["evidence_status"] = {**initial_evidence_status(), **current.get("evidence_status", {}), "artifact": "artifact_available"}
 
     classify_lifecycle(candidates.values())

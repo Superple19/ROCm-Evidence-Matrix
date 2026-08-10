@@ -389,10 +389,12 @@ def normalize_legacy_sources(args, config, source_reader, observed_at, status_ou
             "url": config["legacy_windows_sources"]["artifact_index"]["url"],
             "observed_at": observed_at,
         }
+        legacy_sources = dict(legacy.get("sources", {}))
+        legacy_sources[legacy_source["id"]] = legacy_source
         history = merge_history(
             read_json(history_path),
             legacy_candidates,
-            {"legacy-artifacts": legacy_source},
+            legacy_sources,
             observed_at,
             {"legacy-artifacts"},
         )

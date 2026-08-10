@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/history.schema.json",
+  "$id": "https://github.com/Superple19/rocm-evidence-matrix/schemas/history.schema.json",
   "title": "ROCm historical package catalog",
   "type": "object",
   "additionalProperties": false,
@@ -25,6 +25,8 @@
           "rocm_version": {"type": "string"},
           "hip_version": {"type": ["string", "null"]},
           "framework_compatibility": {"enum": ["verified", "unknown", "not_collected", "incompatible"]},
+          "gfx_support_scope": {"enum": ["release", "series"]},
+          "gfx_support_refs": {"type": "array", "items": {"type": "string"}},
           "evidence_status": {
             "type": "object",
             "additionalProperties": false,

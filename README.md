@@ -1,11 +1,10 @@
 # ROCm Evidence Matrix
 
-ROCm Evidence Matrix is an unofficial, community-maintained project that collects evidence about ROCm package availability and compatibility across platforms. TheRock is the actively supported distribution family. Legacy ROCm and HIP SDK records remain available as historical archive evidence.
+ROCm Evidence Matrix is an unofficial, community-maintained evidence catalog for ROCm package availability across platforms. It integrates official documentation, observed artifacts, and historical source observations into machine-readable package candidates. TheRock is the actively supported distribution family. Legacy ROCm and HIP SDK records remain available as historical archive evidence.
 
-The Python package namespace is `rocm_evidence_matrix`. Historical import and
-CLI aliases are documented in [legacy compatibility](docs/legacy-compatibility.md).
+The Python package namespace is `rocm_evidence_matrix`.
 
-The repository keeps machine-readable observations separate from generated documentation. Package availability does not imply that a package resolves, imports, or works on physical hardware.
+The repository keeps machine-readable observations separate from generated documentation. A candidate is an observed package combination, not an automatic compatibility claim. Package availability does not imply that a package resolves, imports, or works on physical hardware.
 
 ## Current scope
 
@@ -121,13 +120,20 @@ Use `--count` to inspect the number of distinct candidates after applying the sa
 rocm-resolve --platform windows --gfx gfx1201 --all --include-unavailable --include-failed --count
 ```
 
+Use `--distribution-family legacy` to select archive candidates explicitly;
+the legacy candidate still uses its recorded direct wheel URLs.
+
 ## Verify dependency resolution
 
-Verify one candidate with `pip --dry-run` in a disposable virtual environment:
+Optionally verify one candidate with `pip --dry-run` in a disposable virtual environment. This is environment-specific evidence, not part of the default catalog collection:
 
 ```powershell
 rocm-verify --gfx gfx1201 --channel stable --rocm 7.14.0
 ```
+
+The same verifier can run a legacy candidate with
+`--distribution-family legacy`; removing the historical package aliases does
+not remove legacy package resolution or dry-run verification.
 
 Each result is first appended to the local `data/verifications/resolver.jsonl` evidence log. At the end of a run, the log is merged into `data/verifications/resolver.json` and tracked candidate history is written once. The record includes the exact candidate, candidate hash, interpreter, command, resolved packages, artifact hashes when reported by pip, timestamp, and pass or fail result. The verifier does not install or import ROCm packages. Legacy candidates pin their official direct wheel URLs while resolving ordinary third-party dependencies from PyPI. Package indexes without separate metadata may require pip to download wheel archives, and source-only metadata packages may run their build backend inside the disposable environment.
 
@@ -135,7 +141,7 @@ A passing record establishes only `resolver_verified`. Runtime imports and physi
 
 Triton is an optional extension and is tracked in [extension history](docs/generated/extension-history.md), not multiplied into every core Torch candidate. The core resolver command installs the Torch package set only; install or verify Triton separately when the selected workflow requires it.
 
-`rocm-verify-matrix` runs the resolver across stable, nightly, and staging channels by default, available representative GFX targets, and each selected candidate Python tag. `--all-candidates` and `--all-gfx` require an explicit `--exhaustive` opt-in and are intended only for controlled investigations. Use `--resume` to skip combinations already recorded in the JSONL log, merged output, or tracked history. Matrix jobs reuse a host-local cache (`%LOCALAPPDATA%\rocm-matrix\pip` on Windows or `~/.cache/rocm-matrix/pip` on Linux) while each resolver still runs in a disposable environment; override it with `--cache-dir` when needed. Use `--workers` to run independent resolver subprocesses concurrently; evidence is appended by the coordinator and history is merged once per run. The record separates the target platform from the verifier host; this is dependency-resolution evidence only and does not establish runtime or hardware support. Use `--limit` while developing and override the target wheel tag when needed:
+`rocm-verify-matrix` is an auxiliary, opt-in batch form of `rocm-verify`. It runs the resolver across selected channels, representative GFX targets, and candidate Python tags. It is intended for controlled investigations or community evidence collection, not exhaustive historical backtesting or normal catalog generation. `--all-candidates` and `--all-gfx` require an explicit `--exhaustive` opt-in. Use `--resume` to skip combinations already recorded in the JSONL log, merged output, or tracked history. Matrix jobs reuse a host-local cache (`%LOCALAPPDATA%\rocm-matrix\pip` on Windows or `~/.cache/rocm-matrix/pip` on Linux) while each resolver still runs in a disposable environment; override it with `--cache-dir` when needed. Use `--workers` to run independent resolver subprocesses concurrently; evidence is appended by the coordinator and history is merged once per run. The record separates the target platform from the verifier host; this is dependency-resolution evidence only and does not establish runtime or hardware support. Use `--limit` while developing and override the target wheel tag when needed:
 
 ```text
 rocm-verify-matrix --platform linux --gfx gfx1201 --python cp312 --limit 1

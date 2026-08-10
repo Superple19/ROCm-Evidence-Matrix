@@ -1,6 +1,6 @@
-# Repository architecture
+# ROCm Evidence Matrix architecture
 
-ROCm Compatibility Matrix separates evidence by two independent dimensions:
+ROCm Evidence Matrix separates evidence by two independent dimensions:
 
 - `distribution_family`: `therock` or `legacy`
 - `platform`: `windows`, `linux`, `macos`, or `unknown`
@@ -22,14 +22,14 @@ future Linux legacy source would remain `distribution_family=legacy` with
 ```text
 source adapters
   -> cached observations (.cache/, ignored)
-  -> normalized TheRock snapshots (data/therock/snapshots/)
-  -> integrated evidence (data/*.json)
-  -> profiles and community submission contracts
+  -> normalized TheRock and legacy snapshots
+  -> integrated evidence and candidate catalog (data/*.json)
+  -> optional verification evidence
   -> generated documentation (docs/generated/)
 ```
 
 Source adapters own network formats and parser fallbacks. Normalization owns
-platform and distribution metadata. Integration combines independent evidence
+platform, distribution, package, and GFX metadata. Integration combines independent evidence
 without promoting package availability to compatibility. Renderers only read
 normalized data and never fetch from the network.
 
@@ -61,6 +61,7 @@ consumers; new platform integrations must use the grouped representation.
 - `profiles/`: application, runtime, framework, extension, and option profiles
 - `contributions/`: manually reviewed community evidence submissions
 
-The public package namespace is `rocm_evidence_matrix`. Historical import and
-CLI aliases are documented in [legacy compatibility](legacy-compatibility.md).
-The primary command names are `rocm-matrix` and `rocm-evidence`.
+The public package namespace is `rocm_evidence_matrix`.
+The primary command names are `rocm-matrix`, `rocm-resolve`, and `rocm-verify`.
+Batch verification and privacy-redacted evidence export remain auxiliary
+commands.

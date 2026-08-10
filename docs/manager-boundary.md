@@ -15,8 +15,9 @@ ROCm Evidence Matrix: collect → normalize → integrate → publish
 ComfyUI ROCm Manager: detect → select → dry-run → install → verify
 ```
 
-The matrix is the source of shared facts. The manager is an application-specific
-consumer and installer.
+The matrix is the source of shared evidence-backed candidates. The manager is
+an application-specific consumer and installer; it must not turn a local result
+into a universal compatibility claim.
 
 ## What the Matrix should do
 
@@ -28,7 +29,8 @@ consumer and installer.
   treating artifact availability as installation or runtime success.
 - Keep resolver, runtime, and hardware evidence as separate states.
 - Provide the common schemas and generated catalog consumed by external tools.
-- Maintain application profiles such as `profiles/comfyui/`.
+- Maintain portable application profiles such as `profiles/comfyui/` without
+  changing core package evidence.
 - Mark claims as documented, artifact-available, verified, unverified, unsupported,
   or not collected according to their evidence.
 - Preserve the distinction between `artifact_available`, `artifact_stale`, and

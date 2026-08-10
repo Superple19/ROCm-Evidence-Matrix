@@ -3,7 +3,7 @@
 ## Project Scope
 
 - Build an unofficial, community-maintained compatibility matrix for ROCm across Windows and Linux.
-- TheRock is the actively supported distribution family for collection, resolution, and runtime or hardware verification.
+- TheRock is the actively supported distribution family for collection and candidate generation. Resolver, runtime, and hardware checks are optional, scoped evidence layers.
 - Legacy ROCm and HIP SDK records are historical archive data. Preserve them, but do not expand active legacy collection or verification unless explicitly requested.
 - Keep the core dataset application-agnostic. ComfyUI, Ollama, and other consumers belong in separate framework, runtime, or application profiles.
 - Keep profile policy separate from core evidence. Profiles may describe consumers, extensions, and options, but must link claims to evidence IDs.

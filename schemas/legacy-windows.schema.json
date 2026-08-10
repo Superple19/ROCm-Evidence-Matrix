@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/legacy-windows.schema.json",
+  "$id": "https://github.com/Superple19/rocm-evidence-matrix/schemas/legacy-windows.schema.json",
   "title": "Legacy Windows ROCm evidence",
   "type": "object",
   "additionalProperties": false,

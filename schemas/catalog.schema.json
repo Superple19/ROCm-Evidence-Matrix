@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/catalog.schema.json",
+  "$id": "https://github.com/Superple19/rocm-evidence-matrix/schemas/catalog.schema.json",
   "title": "ROCm machine-readable artifact catalog",
   "type": "object",
   "additionalProperties": false,

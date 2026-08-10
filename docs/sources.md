@@ -1,6 +1,6 @@
 # Official Data Sources
 
-This document lists the primary sources used by ROCm Compatibility Matrix. It describes what each source can establish, which platform it covers, and where GPU architecture affects the result.
+This document lists the primary sources used by ROCm Evidence Matrix. It describes what each source can establish, which platform it covers, and where GPU architecture affects the result.
 
 The project is unofficial and community-maintained. A linked artifact or package is evidence of availability, not proof that it works on physical hardware.
 
