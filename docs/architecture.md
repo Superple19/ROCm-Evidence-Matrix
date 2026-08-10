@@ -33,6 +33,11 @@ platform and distribution metadata. Integration combines independent evidence
 without promoting package availability to compatibility. Renderers only read
 normalized data and never fetch from the network.
 
+Package boundaries are exposed under `windows_rocm_matrix/sources/`,
+`windows_rocm_matrix/pipeline/`, `windows_rocm_matrix/verification/`, and
+`windows_rocm_matrix/storage/`. Existing flat module paths remain as
+compatibility imports while the migration proceeds.
+
 Documentation and matrix records expose platform evidence under `platforms`.
 The current Windows fields remain as compatibility aliases for existing
 consumers; new platform integrations must use the grouped representation.
