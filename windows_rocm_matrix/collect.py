@@ -1,51 +1,26 @@
 import argparse
 import json
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
 
-from .documentation import collect_documentation_sources
-from .ci import build_evidence, collect_github, collect_hud, parse_matrix
+from .sources.therock import build_evidence, collect_documentation_sources, collect_github, collect_hud, collect_source, parse_matrix
 from .catalog import write_catalog
 from .extensions import rebuild_extension_history, render_extension_history
-from .history import attach_therock_ci_evidence, attach_therock_documentation_evidence, build_history_observations, merge_history, migrate_history, write_history_document
+from .history import attach_therock_ci_evidence, attach_therock_documentation_evidence, merge_history, migrate_history, write_history_document
 from .frameworks import rebuild_auxiliary_outputs, render_framework_history, render_sdk_components
 from .integration import build_compatibility_matrix
-from .legacy import build_legacy_candidates, collect_legacy_windows_sources, render_legacy_windows
-from .legacy_linux import build_legacy_linux_candidates, classify_legacy_linux_framework, collect_legacy_linux_sources, render_legacy_linux
+from .sources.legacy_archive import build_legacy_candidates, build_legacy_linux_candidates, classify_legacy_linux_framework, collect_legacy_linux_sources, collect_legacy_version_history, collect_legacy_windows_sources, render_legacy_linux, render_legacy_windows
 from .matrix_render import write_compatibility_document
+from .paths import LEGACY_LINUX, LEGACY_LINUX_DOC, LEGACY_STATUS, LEGACY_WINDOWS, LEGACY_WINDOWS_DOC, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS
 from .render import write_rendered_document
-from .simple_index import discover_gfx_targets, discover_packages, latest_artifacts, package_names_for_target, parse_package_artifacts
 from .source_cache import CachedSourceReader, SourceCache
 from .source_adapter import collection_status, run_source_adapter, utc_now
 from .persistence import atomic_write_json, atomic_write_text
 from .validation import validate_ci_coverage, validate_ci_evidence, validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_history, validate_legacy_linux, validate_legacy_windows, validate_snapshot, validate_version_history
-from .version_history import collect_legacy_version_history, collect_therock_version_history, render_version_history
+from .version_history import collect_therock_version_history, render_version_history
 
 
 USER_AGENT = "rocm-matrix/0.1 (+https://github.com/Superple19/windows-rocm-matrix)"
-BASE_PACKAGES = (
-    "apex",
-    "rocm",
-    "rocm-sdk-core",
-    "rocm-sdk-libraries",
-    "rocm-sdk-devel",
-    "torch",
-    "torchvision",
-    "torchaudio",
-    "triton",
-    "jax-rocm7-pjrt",
-    "jax-rocm7-plugin",
-    "jax-rocm10-pjrt",
-    "jax-rocm10-plugin",
-    "rocm-bootstrap",
-    "rocm-profiler",
-)
-
-DEVICE_ALIAS_PREFIXES = ("amd-torch-device-", "amd-torchvision-device-")
-
-
 def fetch_text(url, timeout):
     request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/vnd.github+json, application/json;q=0.9, text/html;q=0.8"})
     with urlopen(request, timeout=timeout) as response:
@@ -62,79 +37,6 @@ def memoized_reader(reader):
         return responses[url]
 
     return read
-
-
-def package_url(index_url, package_name):
-    return index_url.rstrip("/") + "/" + package_name + "/"
-
-
-def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_compatibility=(), fetch=None, observed_at=None):
-    fetch = fetch or (lambda url: fetch_text(url, timeout))
-    index_url = source["url"]
-    root_html = fetch(index_url)
-    available_packages = discover_packages(root_html, index_url)
-    available_set = set(available_packages)
-    discovered_gfx = discover_gfx_targets(available_packages)
-
-    if requested_gfx:
-        unknown = sorted(set(requested_gfx) - set(discovered_gfx))
-        if unknown:
-            raise ValueError(f"Source {source['id']} does not list requested targets: {', '.join(unknown)}")
-        gfx_targets = sorted(set(requested_gfx))
-    else:
-        gfx_targets = discovered_gfx
-
-    package_names = {name for name in BASE_PACKAGES if name in available_set}
-    alias_names = {
-        name
-        for name in available_packages
-        if any(name.startswith(prefix) for prefix in DEVICE_ALIAS_PREFIXES)
-        and (not requested_gfx or any(name.endswith(f"-{gfx}") for gfx in requested_gfx))
-    }
-    package_names.update(alias_names)
-    for gfx in gfx_targets:
-        package_names.update(name for name in package_names_for_target(gfx) if name in available_set)
-
-    all_packages = {}
-    with ThreadPoolExecutor(max_workers=workers) as executor:
-        futures = {
-            executor.submit(fetch, package_url(index_url, name)): name
-            for name in sorted(package_names)
-        }
-        for future in as_completed(futures):
-            name = futures[future]
-            html = future.result()
-            all_packages[name] = parse_package_artifacts(html, package_url(index_url, name), name, source.get("platform", "windows"))
-
-    all_packages = {name: all_packages[name] for name in sorted(all_packages)}
-    packages = {name: latest_artifacts(artifacts) for name, artifacts in all_packages.items()}
-    packages = {name: packages[name] for name in sorted(packages)}
-    target_rows = []
-    for gfx in gfx_targets:
-        required = package_names_for_target(gfx)
-        target_rows.append(
-            {
-                "gfx": gfx,
-                "device_packages": list(required),
-                "all_device_packages_available": all(packages.get(name) for name in required),
-            }
-        )
-
-    snapshot = {
-        "schema_version": 1,
-        "last_observed_at": observed_at or datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
-        "source": {**source, "platform": source.get("platform", "windows")},
-        "gfx_targets": target_rows,
-        "packages": packages,
-    }
-    history = build_history_observations(
-        source,
-        gfx_targets,
-        all_packages,
-        framework_compatibility,
-        source.get("distribution_family", "therock"),
-    ) if framework_compatibility else []
-    return snapshot, history
 
 
 def load_config(path):
@@ -179,26 +81,26 @@ def parse_args(argv=None):
     add_config_path(therock)
     add_cache_paths(therock)
     add_auxiliary_paths(therock)
-    therock.add_argument("--output-dir", default="data/snapshots")
+    therock.add_argument("--output-dir", default=THEROCK_SNAPSHOTS)
     therock.add_argument("--documentation-output", default="data/documentation.json")
     therock.add_argument("--history-output", default="data/history.json")
     therock.add_argument("--version-history-output", default="data/version-history.json")
-    therock.add_argument("--status-output", default="data/status/therock.json")
-    therock.add_argument("--ci-coverage-output", default="data/ci-coverage.json")
-    therock.add_argument("--ci-evidence-output", default="data/ci-evidence.json")
+    therock.add_argument("--status-output", default=THEROCK_STATUS)
+    therock.add_argument("--ci-coverage-output", default=THEROCK_CI_COVERAGE)
+    therock.add_argument("--ci-evidence-output", default=THEROCK_CI_EVIDENCE)
     therock.add_argument("--source", action="append", dest="sources", help="Collect only the named package source. Repeat to select multiple sources.")
     therock.add_argument("--gfx", action="append", dest="gfx_targets", default=[], help="Collect only the exact GFX target. Repeat to select multiple targets.")
     therock.add_argument("--timeout", type=int, default=20)
     therock.add_argument("--workers", type=int, default=8)
 
-    legacy = families.add_parser("legacy", help="Collect pre-TheRock Windows documentation and package repositories.")
+    legacy = families.add_parser("legacy", help="Explicitly refresh archive-only pre-TheRock evidence.")
     add_config_path(legacy)
     add_cache_paths(legacy)
-    legacy.add_argument("--legacy-output", default="data/legacy-windows.json")
-    legacy.add_argument("--legacy-linux-output", default="data/legacy-linux.json")
+    legacy.add_argument("--legacy-output", default=LEGACY_WINDOWS)
+    legacy.add_argument("--legacy-linux-output", default=LEGACY_LINUX)
     legacy.add_argument("--documentation-output", default="data/documentation.json")
     legacy.add_argument("--version-history-output", default="data/version-history.json")
-    legacy.add_argument("--status-output", default="data/status/legacy.json")
+    legacy.add_argument("--status-output", default=LEGACY_STATUS)
     legacy.add_argument("--timeout", type=int, default=20)
 
     normalize_parser = commands.add_parser("normalize", help="Rebuild normalized evidence from cached source responses without network access.")
@@ -208,58 +110,58 @@ def parse_args(argv=None):
     add_config_path(normalize_therock)
     add_cache_paths(normalize_therock)
     add_auxiliary_paths(normalize_therock)
-    normalize_therock.add_argument("--output-dir", default="data/snapshots")
+    normalize_therock.add_argument("--output-dir", default=THEROCK_SNAPSHOTS)
     normalize_therock.add_argument("--documentation-output", default="data/documentation.json")
     normalize_therock.add_argument("--history-output", default="data/history.json")
     normalize_therock.add_argument("--version-history-output", default="data/version-history.json")
     normalize_therock.add_argument("--source", action="append", dest="sources", help="Normalize only the named package source. Repeat to select multiple sources.")
     normalize_therock.add_argument("--gfx", action="append", dest="gfx_targets", default=[], help="Normalize only the exact GFX target. Repeat to select multiple targets.")
     normalize_therock.add_argument("--workers", type=int, default=8)
-    normalize_therock.add_argument("--ci-coverage-output", default="data/ci-coverage.json")
-    normalize_therock.add_argument("--ci-evidence-output", default="data/ci-evidence.json")
+    normalize_therock.add_argument("--ci-coverage-output", default=THEROCK_CI_COVERAGE)
+    normalize_therock.add_argument("--ci-evidence-output", default=THEROCK_CI_EVIDENCE)
 
-    normalize_legacy = normalizers.add_parser("legacy", help="Normalize cached pre-TheRock Windows sources.")
+    normalize_legacy = normalizers.add_parser("legacy", help="Normalize cached archive-only pre-TheRock sources.")
     add_config_path(normalize_legacy)
     add_cache_paths(normalize_legacy)
-    normalize_legacy.add_argument("--legacy-output", default="data/legacy-windows.json")
-    normalize_legacy.add_argument("--legacy-linux-output", default="data/legacy-linux.json")
+    normalize_legacy.add_argument("--legacy-output", default=LEGACY_WINDOWS)
+    normalize_legacy.add_argument("--legacy-linux-output", default=LEGACY_LINUX)
     normalize_legacy.add_argument("--documentation-output", default="data/documentation.json")
     normalize_legacy.add_argument("--version-history-output", default="data/version-history.json")
 
     integrate = commands.add_parser("integrate", help="Build the integrated matrix from normalized evidence without network access.")
-    integrate.add_argument("--output-dir", default="data/snapshots")
+    integrate.add_argument("--output-dir", default=THEROCK_SNAPSHOTS)
     integrate.add_argument("--documentation-output", default="data/documentation.json")
     integrate.add_argument("--matrix-output", default="data/matrix.json")
 
     render = commands.add_parser("render", help="Render documentation from normalized and integrated data without network access.")
-    render.add_argument("--output-dir", default="data/snapshots")
+    render.add_argument("--output-dir", default=THEROCK_SNAPSHOTS)
     render.add_argument("--history-output", default="data/history.json")
-    render.add_argument("--legacy-output", default="data/legacy-windows.json")
+    render.add_argument("--legacy-output", default=LEGACY_WINDOWS)
     render.add_argument("--version-history-output", default="data/version-history.json")
     render.add_argument("--matrix-output", default="data/matrix.json")
     render.add_argument("--docs-output", default="docs/generated/package-availability.md")
     render.add_argument("--matrix-docs-output", default="docs/generated/compatibility-matrix.md")
     render.add_argument("--history-docs-output", default="docs/generated/history.md")
-    render.add_argument("--legacy-docs-output", default="docs/generated/legacy-windows.md")
-    render.add_argument("--legacy-linux-output", default="data/legacy-linux.json")
-    render.add_argument("--legacy-linux-docs-output", default="docs/generated/legacy-linux.md")
+    render.add_argument("--legacy-docs-output", default=LEGACY_WINDOWS_DOC)
+    render.add_argument("--legacy-linux-output", default=LEGACY_LINUX)
+    render.add_argument("--legacy-linux-docs-output", default=LEGACY_LINUX_DOC)
     render.add_argument("--version-history-docs-output", default="docs/generated/version-history.md")
     add_auxiliary_paths(render)
 
     build = commands.add_parser("build", help="Build integrated JSON and Markdown from collected data without network access.")
-    build.add_argument("--output-dir", default="data/snapshots")
+    build.add_argument("--output-dir", default=THEROCK_SNAPSHOTS)
     build.add_argument("--documentation-output", default="data/documentation.json")
     build.add_argument("--history-output", default="data/history.json")
-    build.add_argument("--ci-evidence-output", default="data/ci-evidence.json")
-    build.add_argument("--legacy-output", default="data/legacy-windows.json")
+    build.add_argument("--ci-evidence-output", default=THEROCK_CI_EVIDENCE)
+    build.add_argument("--legacy-output", default=LEGACY_WINDOWS)
     build.add_argument("--version-history-output", default="data/version-history.json")
     build.add_argument("--docs-output", default="docs/generated/package-availability.md")
     build.add_argument("--matrix-output", default="data/matrix.json")
     build.add_argument("--matrix-docs-output", default="docs/generated/compatibility-matrix.md")
     build.add_argument("--history-docs-output", default="docs/generated/history.md")
-    build.add_argument("--legacy-docs-output", default="docs/generated/legacy-windows.md")
-    build.add_argument("--legacy-linux-output", default="data/legacy-linux.json")
-    build.add_argument("--legacy-linux-docs-output", default="docs/generated/legacy-linux.md")
+    build.add_argument("--legacy-docs-output", default=LEGACY_WINDOWS_DOC)
+    build.add_argument("--legacy-linux-output", default=LEGACY_LINUX)
+    build.add_argument("--legacy-linux-docs-output", default=LEGACY_LINUX_DOC)
     build.add_argument("--version-history-docs-output", default="docs/generated/version-history.md")
     add_auxiliary_paths(build)
     catalog = commands.add_parser("catalog", help="Write the machine-readable artifact catalog without network access.")
@@ -296,7 +198,7 @@ def write_status(family, started_at, results, path):
 
 
 def auxiliary_paths(args):
-    output_dir = Path(getattr(args, "output_dir", "data/snapshots"))
+    output_dir = Path(getattr(args, "output_dir", THEROCK_SNAPSHOTS))
     default_dir = output_dir.parent
     framework_path = getattr(args, "framework_history_output", None) or default_dir / "framework-history.json"
     components_path = getattr(args, "sdk_components_output", None) or default_dir / "sdk-components.json"

@@ -14,37 +14,37 @@
     },
     {
       "id": "package_snapshots:nightly-linux",
-      "path": "data/snapshots/nightly-linux.json",
+      "path": "data/therock/snapshots/nightly-linux.json",
       "schema": "schemas/package-snapshot.schema.json",
       "schema_version": 1
     },
     {
       "id": "package_snapshots:nightly",
-      "path": "data/snapshots/nightly.json",
+      "path": "data/therock/snapshots/nightly.json",
       "schema": "schemas/package-snapshot.schema.json",
       "schema_version": 1
     },
     {
       "id": "package_snapshots:stable-linux",
-      "path": "data/snapshots/stable-linux.json",
+      "path": "data/therock/snapshots/stable-linux.json",
       "schema": "schemas/package-snapshot.schema.json",
       "schema_version": 1
     },
     {
       "id": "package_snapshots:stable",
-      "path": "data/snapshots/stable.json",
+      "path": "data/therock/snapshots/stable.json",
       "schema": "schemas/package-snapshot.schema.json",
       "schema_version": 1
     },
     {
       "id": "package_snapshots:staging-linux",
-      "path": "data/snapshots/staging-linux.json",
+      "path": "data/therock/snapshots/staging-linux.json",
       "schema": "schemas/package-snapshot.schema.json",
       "schema_version": 1
     },
     {
       "id": "package_snapshots:staging",
-      "path": "data/snapshots/staging.json",
+      "path": "data/therock/snapshots/staging.json",
       "schema": "schemas/package-snapshot.schema.json",
       "schema_version": 1
     },
@@ -74,14 +74,20 @@
     },
     {
       "id": "legacy_windows",
-      "path": "data/legacy-windows.json",
+      "path": "data/legacy/archive/windows.json",
       "schema": "schemas/legacy-windows.schema.json",
       "schema_version": 1
     },
     {
       "id": "legacy_linux",
-      "path": "data/legacy-linux.json",
+      "path": "data/legacy/archive/linux.json",
       "schema": "schemas/legacy-linux.schema.json",
+      "schema_version": 1
+    },
+    {
+      "id": "legacy_archive_manifest",
+      "path": "data/legacy/archive/manifest.json",
+      "schema": "schemas/legacy-archive-manifest.schema.json",
       "schema_version": 1
     },
     {
@@ -92,13 +98,13 @@
     },
     {
       "id": "ci_coverage",
-      "path": "data/ci-coverage.json",
+      "path": "data/therock/ci/coverage.json",
       "schema": "schemas/ci-coverage.schema.json",
       "schema_version": 1
     },
     {
       "id": "ci_evidence",
-      "path": "data/ci-evidence.json",
+      "path": "data/therock/ci/evidence.json",
       "schema": "schemas/ci-evidence.schema.json",
       "schema_version": 1
     },
@@ -110,13 +116,13 @@
     },
     {
       "id": "collection_status:legacy",
-      "path": "data/status/legacy.json",
+      "path": "data/legacy/archive/status.json",
       "schema": "schemas/collection-status.schema.json",
       "schema_version": 1
     },
     {
       "id": "collection_status:therock",
-      "path": "data/status/therock.json",
+      "path": "data/therock/status.json",
       "schema": "schemas/collection-status.schema.json",
       "schema_version": 1
     }

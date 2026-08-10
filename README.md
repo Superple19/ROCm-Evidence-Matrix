@@ -1,12 +1,12 @@
-# ROCm Compatibility Matrix
+# ROCm Evidence Matrix
 
-ROCm Compatibility Matrix is an unofficial, community-maintained project that collects evidence about ROCm availability and compatibility across platforms. Windows and Linux package sources are supported through platform-specific adapters.
+ROCm Evidence Matrix is an unofficial, community-maintained project that collects evidence about ROCm package availability and compatibility across platforms. TheRock is the actively supported distribution family. Legacy ROCm and HIP SDK records remain available as historical archive evidence.
 
 The repository keeps machine-readable observations separate from generated documentation. Package availability does not imply that a package resolves, imports, or works on physical hardware.
 
 ## Current scope
 
-The collector reads official AMD stable, nightly, and staging sources. It:
+The collector reads official AMD and TheRock stable, nightly, and staging sources. It:
 
 - Discovers exact `gfx` targets from `rocm-sdk-device-{gfx}` packages.
 - Records platform-specific wheel filenames, versions, Python tags, ABI tags, platform tags, URLs, and observation times.
@@ -19,8 +19,8 @@ The collector reads official AMD stable, nightly, and staging sources. It:
 - Integrates the evidence by exact GFX target without promoting availability to compatibility.
 - Classifies each source independently by distribution family, platform, and configured channel.
 - Preserves observed package sets in an append-only historical catalog.
-- Collects legacy Windows HIP SDK release support, versioned GPU support, and pre-multi-arch Windows PyTorch artifacts.
-- Collects legacy Linux manylinux wheel artifacts without inventing GFX support.
+- Preserves legacy Windows HIP SDK release support, versioned GPU support, and pre-multi-arch Windows PyTorch artifacts as archive data.
+- Preserves legacy Linux manylinux wheel artifacts without treating them as an actively maintained resolver path.
 - Validates consumer profiles and keeps ComfyUI extension policy separate from core package evidence.
 - Prepares privacy-redacted community runtime and hardware submissions without uploading them.
 - Generates a Markdown availability summary from the JSON snapshots.
@@ -36,8 +36,8 @@ Current generated views:
 - [JAX framework artifact history](docs/generated/framework-history.md)
 - [Optional extension artifact history](docs/generated/extension-history.md)
 - [ROCm SDK component evidence](docs/generated/sdk-components.md)
-- [Legacy platform ROCm support](docs/generated/legacy-windows.md)
-- [Legacy Linux ROCm artifacts](docs/generated/legacy-linux.md)
+- [Legacy platform ROCm support](docs/generated/legacy/legacy-windows.md)
+- [Legacy Linux ROCm artifacts](docs/generated/legacy/legacy-linux.md)
 
 ## Development environment
 
@@ -55,15 +55,15 @@ other target-environment packages into the project environment.
 
 ## Collect data
 
-Collect TheRock and legacy evidence independently, then build integrated data and documentation:
+Collect actively supported TheRock evidence, then build integrated data and documentation:
 
 ```powershell
 rocm-matrix collect therock
-rocm-matrix collect legacy
+rocm-matrix collect legacy  # Explicit archive refresh; not part of the active default workflow
 rocm-matrix build
 ```
 
-Each `collect` command fetches source responses and normalizes that distribution family. After changing a parser, rebuild every downstream stage from the local cache without network access:
+Each `collect` command fetches source responses and normalizes that distribution family. TheRock collection is the active workflow; legacy collection is an explicit archive maintenance command. After changing a parser, rebuild every downstream stage from the local cache without network access:
 
 ```powershell
 rocm-matrix normalize therock
@@ -82,13 +82,13 @@ rocm-matrix check
 
 It validates every catalog artifact, profile, standalone evidence file, and generated Markdown view without making network requests.
 
-Each collection command writes its source results to `data/status/therock.json` or `data/status/legacy.json`. A failed source does not stop unrelated adapters, and its previously collected evidence is retained. The command exits unsuccessfully after all adapters finish if any source failed.
+Each collection command writes its source results to `data/therock/status.json` or `data/legacy/archive/status.json`. A failed source does not stop unrelated adapters, and its previously collected evidence is retained. The command exits unsuccessfully after all adapters finish if any source failed.
 
 Raw responses are stored by SHA-256 under the ignored `.cache/sources/` directory. `data/observations/source-manifest.json` records each URL, content hash, validator headers, encoding, and observation time. Later collections send conditional requests when an `ETag` or `Last-Modified` value is available and reuse the cached body when the source has not changed.
 
 Source adapters prefer official machine-readable data or source markup when available. Declared rendered-page fallbacks remain independently validated, and normalized source records identify the URL that succeeded and whether fallback was required.
 
-Package snapshots are written to `data/snapshots/` with explicit platform metadata. Documentation evidence is written to `data/documentation.json`, legacy Windows evidence to `data/legacy-windows.json`, legacy Linux evidence to `data/legacy-linux.json`, discovered release history to `data/version-history.json`, the append-only package catalog to `data/history.json`, and the integrated view to `data/matrix.json`. Generated Markdown is stored under `docs/generated/`.
+TheRock package snapshots are written to `data/therock/snapshots/` with explicit platform metadata. TheRock CI evidence is stored under `data/therock/ci/`. Legacy Windows and Linux evidence is archived under `data/legacy/archive/`. Shared documentation, version history, the append-only package catalog, and the integrated view remain under `data/` until their schemas are split. Generated Markdown is stored under `docs/generated/`, with legacy documents under `docs/generated/legacy/`.
 
 Each collection replaces the current snapshots and merges every observed compatible package set into the history catalog. A candidate remains in the catalog if its upstream artifact later disappears, while its current availability is updated separately.
 

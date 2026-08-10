@@ -400,6 +400,18 @@ def validate_legacy_linux(document):
                 raise ValueError(f"Artifact outside legacy Linux release index: {artifact.get('url')}")
 
 
+def validate_legacy_archive_manifest(document):
+    if document.get("schema_version") != 1 or document.get("distribution_family") != "legacy" or document.get("lifecycle") != "historical" or document.get("archive_only") is not True:
+        raise ValueError("Unsupported legacy archive manifest")
+    identifiers = set()
+    for artifact in document.get("artifacts", []):
+        if artifact.get("id") in identifiers:
+            raise ValueError(f"Duplicate legacy archive artifact: {artifact.get('id')}")
+        identifiers.add(artifact.get("id"))
+        if not artifact.get("path", "").startswith("data/legacy/archive/"):
+            raise ValueError(f"Legacy archive artifact outside archive path: {artifact.get('path')}")
+
+
 def validate_collection_status(document):
     if document.get("schema_version") != 1:
         raise ValueError("Unsupported collection status schema")

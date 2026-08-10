@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Superple19/windows-rocm-matrix/schemas/legacy-archive-manifest.schema.json",
+  "title": "Legacy ROCm archive manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "distribution_family", "lifecycle", "archive_only", "artifacts"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "distribution_family": {"const": "legacy"},
+    "lifecycle": {"const": "historical"},
+    "archive_only": {"const": true},
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "path", "schema"],
+        "properties": {
+          "id": {"type": "string"},
+          "path": {"type": "string", "pattern": "^data/legacy/archive/"},
+          "schema": {"type": "string", "pattern": "^schemas/.+\\.schema\\.json$"}
+        }
+      }
+    }
+  }
+}

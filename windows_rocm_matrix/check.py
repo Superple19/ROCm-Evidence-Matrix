@@ -11,6 +11,7 @@ from .history import migrate_history, render_history
 from .legacy import render_legacy_windows
 from .legacy_linux import render_legacy_linux
 from .matrix_render import render_compatibility_matrix
+from .paths import LEGACY_LINUX, LEGACY_LINUX_DOC, LEGACY_STATUS, LEGACY_WINDOWS, LEGACY_WINDOWS_DOC, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS, first_existing
 from .profile import validate_profile
 from .render import render_snapshots
 from .validation import (
@@ -24,6 +25,7 @@ from .validation import (
     validate_framework_history,
     validate_hardware_verifications,
     validate_history,
+    validate_legacy_archive_manifest,
     validate_legacy_linux,
     validate_legacy_windows,
     validate_resolver_verifications,
@@ -45,6 +47,7 @@ SCHEMA_VALIDATORS = {
     "extension-history.schema.json": validate_extension_history,
     "framework-history.schema.json": validate_framework_history,
     "history.schema.json": validate_history,
+    "legacy-archive-manifest.schema.json": validate_legacy_archive_manifest,
     "legacy-linux.schema.json": validate_legacy_linux,
     "legacy-windows.schema.json": validate_legacy_windows,
     "package-snapshot.schema.json": validate_snapshot,
@@ -102,30 +105,20 @@ def validate_catalog(root):
 
 def validate_standalone_data(root):
     root = Path(root)
-    validators = {
-        "data/ci-coverage.json": validate_ci_coverage,
-        "data/ci-evidence.json": validate_ci_evidence,
-        "data/observations/source-manifest.json": validate_source_manifest,
-        "data/status/legacy.json": validate_collection_status,
-        "data/status/therock.json": validate_collection_status,
-        "data/verifications/hardware.json": validate_hardware_verifications,
-        "data/verifications/resolver.json": validate_resolver_verifications,
-        "data/verifications/runtime.json": validate_runtime_verifications,
-    }
-    for relative_path, validator in validators.items():
-        path = root / relative_path
+    validators = (
+        (THEROCK_CI_COVERAGE, validate_ci_coverage, "ci-coverage.schema.json"),
+        (THEROCK_CI_EVIDENCE, validate_ci_evidence, "ci-evidence.schema.json"),
+        ("data/observations/source-manifest.json", validate_source_manifest, "source-manifest.schema.json"),
+        (LEGACY_STATUS, validate_collection_status, "collection-status.schema.json"),
+        (THEROCK_STATUS, validate_collection_status, "collection-status.schema.json"),
+        ("data/verifications/hardware.json", validate_hardware_verifications, "hardware-verifications.schema.json"),
+        ("data/verifications/resolver.json", validate_resolver_verifications, "resolver-verifications.schema.json"),
+        ("data/verifications/runtime.json", validate_runtime_verifications, "runtime-verifications.schema.json"),
+    )
+    for relative_path, validator, schema_name in validators:
+        path = first_existing(root, relative_path)
         if path.exists():
             validator(read_json(path))
-            schema_name = {
-                "data/ci-coverage.json": "ci-coverage.schema.json",
-                "data/ci-evidence.json": "ci-evidence.schema.json",
-                "data/observations/source-manifest.json": "source-manifest.schema.json",
-                "data/status/legacy.json": "collection-status.schema.json",
-                "data/status/therock.json": "collection-status.schema.json",
-                "data/verifications/hardware.json": "hardware-verifications.schema.json",
-                "data/verifications/resolver.json": "resolver-verifications.schema.json",
-                "data/verifications/runtime.json": "runtime-verifications.schema.json",
-            }[relative_path]
             validate_json_schema(read_json(path), root / "schemas" / schema_name)
 
     community_schema = root / "schemas" / "community-evidence.schema.json"
@@ -141,7 +134,7 @@ def validate_profiles(root):
     source_ids = set((history or {}).get("sources", {}))
     documentation = read_json(root / "data" / "documentation.json")
     source_ids.update((documentation or {}).get("sources", {}))
-    for path in sorted((root / "data" / "snapshots").glob("*.json")):
+    for path in sorted(first_existing(root, THEROCK_SNAPSHOTS).glob("*.json")):
         snapshot = read_json(path)
         source = snapshot.get("source", {})
         if source.get("id"):
@@ -168,26 +161,26 @@ def validate_generated_documents(root):
     data = root / "data"
     history = migrate_history(read_json(data / "history.json"))
     matrix = read_json(data / "matrix.json")
-    legacy_windows = read_json(data / "legacy-windows.json")
-    legacy_linux = read_json(data / "legacy-linux.json")
+    legacy_windows = read_json(first_existing(root, LEGACY_WINDOWS))
+    legacy_linux = read_json(first_existing(root, LEGACY_LINUX))
     version_history = read_json(data / "version-history.json")
     framework_history = read_json(data / "framework-history.json")
     sdk_components = read_json(data / "sdk-components.json")
     extension_history = read_json(data / "extension-history.json")
-    snapshots = sorted((data / "snapshots").glob("*.json"))
+    snapshots = sorted(first_existing(root, THEROCK_SNAPSHOTS).glob("*.json"))
     expected = {
         "compatibility-matrix.md": render_compatibility_matrix(matrix),
         "framework-history.md": render_framework_history(framework_history),
         "history.md": render_history(history),
-        "legacy-linux.md": render_legacy_linux(legacy_linux),
-        "legacy-windows.md": render_legacy_windows(legacy_windows),
+        LEGACY_LINUX_DOC.removeprefix("docs/generated/"): render_legacy_linux(legacy_linux),
+        LEGACY_WINDOWS_DOC.removeprefix("docs/generated/"): render_legacy_windows(legacy_windows),
         "package-availability.md": render_snapshots(snapshots),
         "sdk-components.md": render_sdk_components(sdk_components),
         "extension-history.md": render_extension_history(extension_history),
         "version-history.md": render_version_history(version_history),
     }
     output_dir = root / "docs" / "generated"
-    actual_names = {path.name for path in output_dir.glob("*.md")}
+    actual_names = {path.relative_to(output_dir).as_posix() for path in output_dir.rglob("*.md")}
     if actual_names != set(expected):
         raise ValueError("Generated document set is stale")
     for name, content in expected.items():

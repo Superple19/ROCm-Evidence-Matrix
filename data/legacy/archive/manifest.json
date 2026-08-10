@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-07T00:00:00Z",
+  "distribution_family": "legacy",
+  "lifecycle": "historical",
+  "archive_only": true,
+  "artifacts": [
+    {
+      "id": "legacy_windows",
+      "path": "data/legacy/archive/windows.json",
+      "schema": "schemas/legacy-windows.schema.json"
+    },
+    {
+      "id": "legacy_linux",
+      "path": "data/legacy/archive/linux.json",
+      "schema": "schemas/legacy-linux.schema.json"
+    }
+  ]
+}

@@ -3,24 +3,26 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .persistence import atomic_write_json
+from .paths import LEGACY_LINUX, LEGACY_STATUS, LEGACY_WINDOWS, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS, first_existing
 
 
 ARTIFACTS = (
     ("compatibility_matrix", "data/matrix.json", "schemas/compatibility-matrix.schema.json"),
     ("package_history", "data/history.json", "schemas/history.schema.json"),
-    ("package_snapshots", "data/snapshots", "schemas/package-snapshot.schema.json"),
+    ("package_snapshots", THEROCK_SNAPSHOTS, "schemas/package-snapshot.schema.json"),
     ("framework_history", "data/framework-history.json", "schemas/framework-history.schema.json"),
     ("extension_history", "data/extension-history.json", "schemas/extension-history.schema.json"),
     ("sdk_components", "data/sdk-components.json", "schemas/sdk-components.schema.json"),
     ("documentation", "data/documentation.json", "schemas/documentation-snapshot.schema.json"),
-    ("legacy_windows", "data/legacy-windows.json", "schemas/legacy-windows.schema.json"),
-    ("legacy_linux", "data/legacy-linux.json", "schemas/legacy-linux.schema.json"),
+    ("legacy_windows", LEGACY_WINDOWS, "schemas/legacy-windows.schema.json"),
+    ("legacy_linux", LEGACY_LINUX, "schemas/legacy-linux.schema.json"),
+    ("legacy_archive_manifest", "data/legacy/archive/manifest.json", "schemas/legacy-archive-manifest.schema.json"),
     ("version_history", "data/version-history.json", "schemas/version-history.schema.json"),
-    ("ci_coverage", "data/ci-coverage.json", "schemas/ci-coverage.schema.json"),
-    ("ci_evidence", "data/ci-evidence.json", "schemas/ci-evidence.schema.json"),
+    ("ci_coverage", THEROCK_CI_COVERAGE, "schemas/ci-coverage.schema.json"),
+    ("ci_evidence", THEROCK_CI_EVIDENCE, "schemas/ci-evidence.schema.json"),
     ("source_manifest", "data/observations/source-manifest.json", "schemas/source-manifest.schema.json"),
-    ("collection_status:legacy", "data/status/legacy.json", "schemas/collection-status.schema.json"),
-    ("collection_status:therock", "data/status/therock.json", "schemas/collection-status.schema.json"),
+    ("collection_status:legacy", LEGACY_STATUS, "schemas/collection-status.schema.json"),
+    ("collection_status:therock", THEROCK_STATUS, "schemas/collection-status.schema.json"),
     ("resolver_verifications", "data/verifications/resolver.json", "schemas/resolver-verifications.schema.json"),
 )
 
@@ -42,7 +44,7 @@ def build_catalog(root="."):
     channels = set()
     timestamps = []
     for artifact_id, relative_path, schema in ARTIFACTS:
-        path = root / relative_path
+        path = first_existing(root, relative_path)
         if path.is_dir():
             paths = sorted(path.glob("*.json"))
         else:

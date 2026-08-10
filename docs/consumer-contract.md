@@ -22,6 +22,11 @@ Every package and historical candidate is classified independently by:
 - `platform`: `windows`, `linux`, `macos`, or `unknown`
 - `channel`: `stable`, `nightly`, or `staging`
 
+TheRock is the active distribution family. Consumers may use current TheRock
+records for package discovery and verification workflows. Legacy records are
+retained as historical archive evidence and must not be interpreted as an
+actively maintained installation or verification path.
+
 Do not infer channel from a version string or URL. Use the recorded source
 metadata. Do not treat artifact availability as resolver, runtime, or hardware
 compatibility.

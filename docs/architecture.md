@@ -22,7 +22,7 @@ future Linux legacy source would remain `distribution_family=legacy` with
 ```text
 source adapters
   -> cached observations (.cache/, ignored)
-  -> normalized snapshots (data/snapshots/)
+  -> normalized TheRock snapshots (data/therock/snapshots/)
   -> integrated evidence (data/*.json)
   -> profiles and community submission contracts
   -> generated documentation (docs/generated/)
