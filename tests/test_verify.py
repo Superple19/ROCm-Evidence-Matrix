@@ -17,6 +17,9 @@ class VerificationTests(unittest.TestCase):
         with patch("rocm_evidence_matrix.resolve.host_platform", return_value="linux"):
             self.assertEqual(parse_args([]).platform, "linux")
         self.assertEqual(parse_args(["--distribution-family", "legacy"]).distribution_family, "legacy")
+        args = parse_args(["-c", "nightly", "--latest"])
+        self.assertEqual(args.channel, "nightly")
+        self.assertTrue(args.latest)
         with patch("rocm_evidence_matrix.verify_matrix.host_platform", return_value="windows"):
             self.assertEqual(matrix_parse_args([]).platform, "windows")
 

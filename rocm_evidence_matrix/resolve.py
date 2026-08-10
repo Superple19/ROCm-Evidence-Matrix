@@ -4,7 +4,10 @@ import platform as host_platform_module
 import re
 from pathlib import Path
 
-from .history import candidate_sort_key
+from .history import version_key
+
+
+CHANNEL_PRIORITY = {"stable": 2, "nightly": 1, "staging": 0}
 
 
 def host_platform():
@@ -53,7 +56,33 @@ def resolve_candidates(history, gfx, platform=None, channel=None, rocm_version=N
         if python_tag and python_tag not in candidate["python_tags"]:
             continue
         matches.append(candidate)
-    return sorted(matches, key=candidate_sort_key, reverse=True)
+    return sorted(matches, key=resolve_sort_key, reverse=True)
+
+
+def resolve_sort_key(candidate):
+    """Order consumer-facing results by channel safety, then newest versions."""
+    return (
+        CHANNEL_PRIORITY.get(candidate.get("channel"), -1),
+        version_key(candidate["rocm_version"]),
+        version_key(candidate["torch_version"]),
+        version_key(candidate["torchvision_version"]),
+        version_key(candidate["torchaudio_version"]),
+    )
+
+
+def latest_candidates(candidates):
+    """Keep every package set from the newest ROCm build in each channel."""
+    latest_versions = {}
+    for candidate in candidates:
+        channel = candidate.get("channel")
+        version = version_key(candidate["rocm_version"])
+        if channel not in latest_versions or version > latest_versions[channel]:
+            latest_versions[channel] = version
+    return [
+        candidate
+        for candidate in candidates
+        if version_key(candidate["rocm_version"]) == latest_versions.get(candidate.get("channel"))
+    ]
 
 
 def count_candidates(candidates):
@@ -115,12 +144,13 @@ def parse_args(argv=None):
     parser.add_argument("--gfx")
     parser.add_argument("--platform", choices=("windows", "linux", "macos", "unknown"), default=host_platform())
     parser.add_argument("--distribution-family", choices=("therock", "legacy"))
-    parser.add_argument("--channel", choices=("stable", "nightly", "staging"))
+    parser.add_argument("-c", "--channel", choices=("stable", "nightly", "staging"))
     parser.add_argument("--rocm")
     parser.add_argument("--torch")
     parser.add_argument("--python", dest="python_tag")
     parser.add_argument("--include-unavailable", action="store_true")
     parser.add_argument("--include-failed", action="store_true", help="Include candidates with failed, partial, stale, or not-applicable evidence.")
+    parser.add_argument("--latest", action="store_true", help="Keep the newest ROCm build in each matching channel.")
     parser.add_argument("--all", action="store_true", dest="show_all")
     parser.add_argument("--count", action="store_true", help="Print the number of distinct matching candidates without selecting one.")
     parser.add_argument("--json", action="store_true", dest="json_output")
@@ -144,6 +174,8 @@ def main(argv=None):
             include_failed=args.include_failed,
             distribution_family=args.distribution_family,
         )
+        if args.latest:
+            matches = latest_candidates(matches)
     except ValueError as error:
         raise SystemExit(str(error)) from error
     if args.count:
@@ -155,7 +187,7 @@ def main(argv=None):
         return
     if not matches:
         raise SystemExit("No matching package candidate found")
-    selected = matches if args.show_all else matches[:1]
+    selected = matches if args.show_all or args.latest else matches[:1]
     if args.json_output:
         print(json.dumps(selected, indent=2, sort_keys=True))
         return

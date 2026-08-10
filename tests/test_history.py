@@ -5,7 +5,7 @@ from pathlib import Path
 
 from rocm_evidence_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, promote_execution_evidence, render_history
 from rocm_evidence_matrix.identity import candidate_hash
-from rocm_evidence_matrix.resolve import count_candidates, install_command, resolve_candidates
+from rocm_evidence_matrix.resolve import count_candidates, install_command, latest_candidates, resolve_candidates
 
 
 def artifact(package, version, python_tag="cp312"):
@@ -214,6 +214,36 @@ class HistoryTests(unittest.TestCase):
         matches = resolve_candidates({"candidates": [therock, legacy]}, "gfx1201", distribution_family="legacy")
 
         self.assertEqual(matches, [legacy])
+
+    def test_resolver_orders_stable_before_nightly_and_staging(self):
+        base = {
+            "platform": "windows", "distribution_family": "therock", "rocm_version": "7.14.0",
+            "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
+            "python_tags": ["cp312"], "gfx_targets": ["gfx1201"], "available_gfx_targets": ["gfx1201"],
+        }
+        candidates = [
+            {**base, "id": "nightly", "channel": "nightly", "rocm_version": "10.1.0a20260806"},
+            {**base, "id": "staging", "channel": "staging", "rocm_version": "10.2.0a20260807"},
+            {**base, "id": "stable-old", "channel": "stable", "rocm_version": "7.13.0"},
+            {**base, "id": "stable-new", "channel": "stable", "rocm_version": "7.14.0"},
+        ]
+
+        matches = resolve_candidates({"candidates": candidates}, "gfx1201")
+
+        self.assertEqual([candidate["id"] for candidate in matches], ["stable-new", "stable-old", "nightly", "staging"])
+
+    def test_latest_keeps_all_package_sets_from_each_channel_build(self):
+        candidates = [
+            {"id": "stable-old", "channel": "stable", "rocm_version": "7.13.0"},
+            {"id": "stable-new-a", "channel": "stable", "rocm_version": "7.14.0"},
+            {"id": "stable-new-b", "channel": "stable", "rocm_version": "7.14.0"},
+            {"id": "nightly-old", "channel": "nightly", "rocm_version": "10.1.0a20260805"},
+            {"id": "nightly-new", "channel": "nightly", "rocm_version": "10.1.0a20260806"},
+        ]
+
+        latest = latest_candidates(candidates)
+
+        self.assertEqual([candidate["id"] for candidate in latest], ["stable-new-a", "stable-new-b", "nightly-new"])
 
     def test_history_render_labels_unknown_gfx_support(self):
         candidate = {
