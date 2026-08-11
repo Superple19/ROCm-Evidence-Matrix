@@ -270,6 +270,26 @@ class HistoryTests(unittest.TestCase):
         self.assertTrue(execution_evidence_errors(candidate, {**record, "torch_version": "2.13.0"}, "runtime"))
         self.assertTrue(execution_evidence_errors(candidate, {**record, "os": "linux"}, "runtime"))
 
+    def test_execution_evidence_requires_torchvision_and_torchaudio(self):
+        candidate = {
+            "distribution_family": "therock", "source_id": "packages-stable", "rocm_version": "7.14.0",
+            "platform": "windows", "gfx_support": "known", "gfx_targets": ["gfx1201"],
+            "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
+            "hip_version": "7.14.0",
+        }
+        record = {
+            "os": "windows", "gfx": "gfx1201", "torch_version": "2.12.0",
+            "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
+            "rocm_version": "7.14.0", "hip_version": "7.14.0",
+            "python_tag": "cp312", "platform_tag": "win_amd64", "result": "passed",
+            "devices": [{"gfx": "gfx1201"}],
+        }
+        record["candidate_hash"] = candidate_hash(candidate, "gfx1201", "cp312", "win_amd64")
+
+        self.assertEqual(execution_evidence_errors(candidate, record, "runtime"), [])
+        missing_audio = {key: value for key, value in record.items() if key != "torchaudio_version"}
+        self.assertTrue(any("TorchAudio mismatch" in error for error in execution_evidence_errors(candidate, missing_audio, "runtime")))
+
     def test_execution_evidence_rejects_rocm_or_candidate_hash_mismatch(self):
         candidate = {
             "distribution_family": "therock", "source_id": "packages-stable", "rocm_version": "7.14.0",
