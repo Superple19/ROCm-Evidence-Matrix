@@ -319,6 +319,8 @@ class HistoryTests(unittest.TestCase):
             "os": "windows",
             "gfx": "gfx1201",
             "torch_version": candidate["torch_version"],
+            "torchvision_version": candidate["torchvision_version"],
+            "torchaudio_version": candidate["torchaudio_version"],
             "rocm_version": candidate["rocm_version"],
             "hip_version": "7.15.26312",
             "python_tag": "cp312",

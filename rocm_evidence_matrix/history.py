@@ -214,6 +214,16 @@ def execution_evidence_errors(candidate, record, kind, requested_gfx=None):
         errors.append(f"platform mismatch: candidate={expected_platform}, observed={observed_platform}")
     if record.get("torch_version") and record["torch_version"] != candidate.get("torch_version"):
         errors.append(f"Torch mismatch: candidate={candidate.get('torch_version')}, observed={record['torch_version']}")
+    for field, label in (("torchvision_version", "TorchVision"), ("torchaudio_version", "TorchAudio")):
+        expected = candidate.get(field)
+        observed = record.get(field)
+        if expected and observed != expected:
+            errors.append(f"{label} mismatch: candidate={expected}, observed={observed}")
+    expected_python_tags = set(candidate.get("python_tags") or ())
+    if expected_python_tags and record.get("python_tag") not in expected_python_tags:
+        errors.append(
+            f"Python ABI mismatch: candidate={sorted(expected_python_tags)}, observed={record.get('python_tag')}"
+        )
     expected_hash = candidate_hash(candidate, record.get("gfx"), record.get("python_tag"), record.get("platform_tag"))
     if record.get("candidate_hash") != expected_hash:
         errors.append("candidate hash does not match the observed execution identity")

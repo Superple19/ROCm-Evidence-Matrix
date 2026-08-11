@@ -1,4 +1,5 @@
 import argparse
+from importlib import metadata
 import json
 import os
 import platform
@@ -6,7 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .identity import candidate_hash, default_platform_tag, python_tag, rocm_version_from_torch
-from .history import promote_execution_evidence
+from .history import execution_evidence_errors
 from .persistence import atomic_write_json
 from .source_adapter import monotonic_generated_at
 from .validation import validate_runtime_verifications
@@ -18,6 +19,13 @@ def utc_now():
 
 def environment_evidence():
     return {name: os.environ[name] for name in ("ROCM_PATH", "HIP_PATH", "HSA_OVERRIDE_GFX_VERSION") if os.environ.get(name)}
+
+
+def installed_package_version(name):
+    try:
+        return metadata.version(name)
+    except metadata.PackageNotFoundError:
+        return None
 
 
 def normalized_os():
@@ -43,6 +51,8 @@ def collect_runtime(torch_module, observed_at=None, candidate_id=None, gfx=None)
         "driver_version": os.environ.get("AMDGPU_DRIVER_VERSION") or os.environ.get("ROCM_DRIVER_VERSION"),
         "environment": environment_evidence(),
         "torch_version": getattr(torch_module, "__version__", None),
+        "torchvision_version": installed_package_version("torchvision"),
+        "torchaudio_version": installed_package_version("torchaudio"),
         "hip_version": getattr(getattr(torch_module, "version", None), "hip", None),
         "rocm_version": rocm_version_from_torch(getattr(torch_module, "__version__", None)),
         "python_tag": python_tag(),
@@ -89,6 +99,7 @@ def merge_runtime(existing, record):
         "generated_at": monotonic_generated_at(existing, record["observed_at"]),
         "verifications": records,
     }
+    record["evidence_id"] = record["id"]
 
 
 def write_runtime(record, output_path):
@@ -104,7 +115,11 @@ def parse_args(argv=None):
     parser.add_argument("--output", default="data/verifications/runtime.json")
     parser.add_argument("--candidate-id")
     parser.add_argument("--gfx")
-    parser.add_argument("--history", default="data/history.json")
+    parser.add_argument(
+        "--history",
+        default="data/history.json",
+        help="Read-only candidate reference; runtime never updates this file",
+    )
     return parser.parse_args(argv)
 
 
@@ -115,19 +130,21 @@ def main(argv=None):
     except ImportError as error:
         raise SystemExit(f"PyTorch is not installed: {error}") from error
     record = collect_runtime(torch, candidate_id=args.candidate_id, gfx=args.gfx)
-    promotion_errors = []
+    candidate_errors = []
     if args.candidate_id:
         history = json.loads(Path(args.history).read_text(encoding="utf-8"))
         candidate = next((item for item in history.get("candidates", []) if item.get("id") == args.candidate_id), None)
         if candidate is not None:
             record["platform_tag"] = default_platform_tag(candidate)
             record["candidate_hash"] = candidate_hash(candidate, record.get("gfx"), record["python_tag"], record["platform_tag"])
-        matched, promotion_errors = promote_execution_evidence(args.history, "runtime", record, args.gfx)
-        record["candidate_match"] = matched
-        record["candidate_errors"] = promotion_errors or None
+            candidate_errors = execution_evidence_errors(candidate, record, "runtime", args.gfx)
+        else:
+            candidate_errors = [f"unknown candidate: {args.candidate_id}"]
+        record["candidate_match"] = not candidate_errors
+        record["candidate_errors"] = candidate_errors or None
     write_runtime(record, args.output)
-    if promotion_errors:
-        raise SystemExit("Runtime evidence was not promoted: " + "; ".join(promotion_errors))
+    if candidate_errors:
+        raise SystemExit("Runtime evidence did not match the selected candidate: " + "; ".join(candidate_errors))
     print(f"Runtime verification {record['result']}; wrote {args.output}")
     if record["result"] != "passed":
         raise SystemExit(1)
