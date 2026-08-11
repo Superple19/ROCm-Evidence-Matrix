@@ -194,7 +194,7 @@
       "path": "data/legacy/archive/status.json",
       "schema": "schemas/collection-status.schema.json",
       "schema_version": 1,
-      "sha256": "84b1eb08c4a162756cae9c370a323bbaee2f91240a3df2f91aed651aa8e490f9"
+      "sha256": "1fb6a88f0d2442009d0b6558246f2f6d9c238bf6f4b24c58de3383c0e471e55d"
     },
     {
       "id": "collection_status:therock",

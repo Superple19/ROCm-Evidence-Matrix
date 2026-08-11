@@ -43,6 +43,11 @@ def read_json(path):
         return json.load(handle)
 
 
+def _canonical_artifact_bytes(path):
+    """Hash tracked UTF-8 JSON artifacts independently of checkout line endings."""
+    return path.read_bytes().replace(b"\r\n", b"\n")
+
+
 def build_catalog(root: str | Path = "."):
     root = Path(root)
     artifacts = []
@@ -87,7 +92,7 @@ def build_catalog(root: str | Path = "."):
                     "path": item.relative_to(root).as_posix(),
                     "schema": schema,
                     "schema_version": value.get("schema_version"),
-                    "sha256": hashlib.sha256(item.read_bytes()).hexdigest(),
+                    "sha256": hashlib.sha256(_canonical_artifact_bytes(item)).hexdigest(),
                 }
             )
     return {

@@ -1,3 +1,4 @@
+import hashlib
 import json
 import unittest
 from pathlib import Path
@@ -27,6 +28,19 @@ class CatalogTests(unittest.TestCase):
             (root / "data").mkdir()
             output = write_catalog(root)
             self.assertTrue(output.exists())
+
+    def test_catalog_hash_is_stable_across_checkout_line_endings(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "data").mkdir()
+            payload = b'{"schema_version": 1, "value": "line one"}\r\n'
+            (root / "data" / "matrix.json").write_bytes(payload)
+
+            catalog = build_catalog(root)
+
+            expected = hashlib.sha256(payload.replace(b"\r\n", b"\n")).hexdigest()
+            artifact = next(item for item in catalog["artifacts"] if item["id"] == "compatibility_matrix")
+            self.assertEqual(artifact["sha256"], expected)
 
     def test_catalog_generation_time_comes_from_artifacts(self):
         with TemporaryDirectory() as directory:

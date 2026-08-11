@@ -13,7 +13,9 @@ its schema, and its schema version. Local runtime, hardware, and resolver
 outputs remain machine-local evidence and are listed only when a reviewed copy
 is intentionally committed. Consumers must reject an unknown `schema_version`
 or ignore fields they do not understand. Generated Markdown is presentation
-output and is not a stable API.
+output and is not a stable API. Artifact SHA-256 values are calculated from
+UTF-8 JSON bytes with CRLF normalized to LF so Windows and Unix checkouts share
+the same integrity value.
 
 ## Stable dimensions
 
