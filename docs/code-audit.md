@@ -6,7 +6,7 @@ package availability into a compatibility guarantee.
 
 ## Baseline
 
-- 143 offline unit tests pass.
+- 156 offline unit tests pass.
 - `rocm-matrix check` validates schemas, catalog entries, standalone evidence,
   profiles, and generated documents.
 - No exhaustive historical resolver or physical-GPU backtest is performed by
@@ -45,6 +45,23 @@ execution results.
 The catalog now includes tracked CI, status, and source-manifest artifacts.
 Profiles resolve `source:<id>` references against collected source records, and
 reviewed community JSON is validated when present.
+
+The catalog also records SHA-256 digests for every tracked artifact. Consumers
+must verify those bytes before using a cached snapshot. Package candidates now
+carry TorchAudio through integration, identity, rendering, and downstream
+installation planning. CI and version-history validation are platform-aware;
+the Windows fields in version history are compatibility aliases rather than
+the canonical evidence for Linux or macOS records.
+
+Manager-side backups keep requirement files beside their metadata and verify a
+recorded digest before restore. The Manager candidate CLI defaults to exact
+installable candidates; artifact-only history remains available only through an
+explicit kind filter.
+
+The Manager's read-only `plan` path now uses the same command builder as
+`install`, so the user sees the target Python, index, and complete Torch,
+TorchVision, and TorchAudio package command before any apply step. Manager CI
+also runs the offline suite on both Linux and Windows.
 
 ## Remaining limitations
 

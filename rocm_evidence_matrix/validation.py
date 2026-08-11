@@ -551,7 +551,7 @@ def validate_ci_coverage(document):
         if entry["id"] in ids:
             raise ValueError(f"Duplicate CI coverage entry: {entry['id']}")
         ids.add(entry["id"])
-        if entry["platform"] != "windows" or not entry["configured_targets"]:
+        if entry["platform"] not in {"windows", "linux", "macos"} or not entry["configured_targets"]:
             raise ValueError(f"Invalid CI coverage entry: {entry['id']}")
         if entry["trigger"] not in {"presubmit", "postsubmit", "nightly"}:
             raise ValueError(f"Invalid CI coverage trigger: {entry['id']}")
@@ -567,7 +567,7 @@ def validate_ci_evidence(document):
         if execution["id"] in ids:
             raise ValueError(f"Duplicate CI execution: {execution['id']}")
         ids.add(execution["id"])
-        if execution["platform"] != "windows" or execution["test_kind"] not in {"build", "sanity", "framework", "full", "unknown"}:
+        if execution["platform"] not in {"windows", "linux", "macos"} or execution["test_kind"] not in {"build", "sanity", "framework", "full", "unknown"}:
             raise ValueError(f"Invalid CI execution: {execution['id']}")
         if not execution.get("run_attempt"):
             raise ValueError(f"CI execution lacks run attempt: {execution['id']}")
@@ -601,16 +601,30 @@ def validate_version_history(document):
             raise ValueError(f"Invalid version history family: {release['id']}")
         if release.get("platform") not in {"windows", "linux", "macos", "unknown"}:
             raise ValueError(f"Invalid version history platform: {release['id']}")
-        evidence = release.get("platform_evidence", {}).get("windows", {})
-        if evidence.get("support", release["windows_support"]) != release["windows_support"]:
-            raise ValueError(f"Windows support evidence mismatch: {release['id']}")
-        if evidence.get("package_available", release["windows_package_available"]) != release["windows_package_available"]:
-            raise ValueError(f"Windows package evidence mismatch: {release['id']}")
-        if evidence.get("ci_verified", release["windows_ci_verified"]) != release["windows_ci_verified"]:
-            raise ValueError(f"Windows CI evidence mismatch: {release['id']}")
+        platform_evidence = release.get("platform_evidence")
+        if not isinstance(platform_evidence, dict):
+            raise ValueError(f"Missing platform evidence: {release['id']}")
+        platform = release.get("platform")
+        evidence = platform_evidence.get(platform)
+        if platform in {"windows", "linux", "macos"}:
+            if not isinstance(evidence, dict):
+                raise ValueError(f"Missing {platform} evidence: {release['id']}")
+            if evidence.get("support") not in {"supported", "unsupported", "unknown"}:
+                raise ValueError(f"Invalid {platform} support status: {release['id']}")
+            if not isinstance(evidence.get("package_available"), bool):
+                raise ValueError(f"Invalid {platform} package status: {release['id']}")
+            if evidence.get("ci_verified") not in {True, False, None}:
+                raise ValueError(f"Invalid {platform} CI status: {release['id']}")
+        if platform == "windows":
+            if "windows_support" in release and evidence.get("support") != release["windows_support"]:
+                raise ValueError(f"Windows support evidence mismatch: {release['id']}")
+            if "windows_package_available" in release and evidence.get("package_available") != release["windows_package_available"]:
+                raise ValueError(f"Windows package evidence mismatch: {release['id']}")
+            if "windows_ci_verified" in release and evidence.get("ci_verified") != release["windows_ci_verified"]:
+                raise ValueError(f"Windows CI evidence mismatch: {release['id']}")
         if release.get("channel") not in {"stable", "nightly", "staging", "unknown"}:
             raise ValueError(f"Invalid release channel: {release['id']}")
-        if release["windows_support"] not in {"supported", "unsupported", "unknown"}:
+        if "windows_support" in release and release["windows_support"] not in {"supported", "unsupported", "unknown"}:
             raise ValueError(f"Invalid Windows support status: {release['id']}")
         if release["documentation_status"] not in {"available", "archive_missing", "unknown"}:
             raise ValueError(f"Invalid documentation status: {release['id']}")

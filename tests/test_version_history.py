@@ -149,6 +149,22 @@ class VersionHistoryTests(unittest.TestCase):
         self.assertIn("linux", record["platform_evidence"])
         self.assertNotIn("windows", record["platform_evidence"])
         self.assertEqual(record["windows_support"], "unknown")
+
+    def test_platform_record_uses_platform_specific_evidence(self):
+        record = release_record(
+            "therock",
+            "10.1.0",
+            OBSERVED_AT,
+            platform="linux",
+            linux_support="supported",
+            linux_package_available=True,
+            linux_ci_verified=True,
+            source_ids=["source"],
+        )
+        self.assertEqual(record["platform_evidence"]["linux"]["support"], "supported")
+        self.assertTrue(record["platform_evidence"]["linux"]["package_available"])
+        self.assertTrue(record["platform_evidence"]["linux"]["ci_verified"])
+        self.assertEqual(record["windows_support"], "unknown")
         history = merge_version_history(None, "therock", [record], [], {"source": {}}, OBSERVED_AT)
         validate_version_history(history)
 

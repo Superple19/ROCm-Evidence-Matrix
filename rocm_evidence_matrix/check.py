@@ -60,6 +60,7 @@ SCHEMA_VALIDATORS = {
     "resolver-verifications.schema.json": validate_resolver_verifications,
     "sdk-components.schema.json": validate_sdk_components,
     "version-history.schema.json": validate_version_history,
+    "profile.schema.json": validate_profile,
 }
 
 

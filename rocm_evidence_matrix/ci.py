@@ -90,24 +90,26 @@ def parse_matrix(source, observed_at):
             continue
         value = ast.literal_eval(node.value)
         for key, family in value.items():
-            if not isinstance(family, dict) or "windows" not in family:
+            if not isinstance(family, dict):
                 continue
-            item = family["windows"]
-            runner = item.get("test-runs-on", "")
-            entries.append({
-                "id": f"{names[name]}:{key}:windows",
-                "trigger": names[name],
-                "family_key": key,
-                "platform": "windows",
-                "family": item.get("family"),
-                "runner": runner,
-                "runner_labels": item.get("test-runs-on-labels", []),
-                "configured_targets": _targets(" ".join([str(key), str(item.get("family", "")), *item.get("fetch-gfx-targets", [])])),
-                "fetch_gfx_targets": item.get("fetch-gfx-targets", []),
-                "build_variants": item.get("build_variants", []),
-                "flags": {key: item.get(key) for key in ("bypass_tests_for_releases", "sanity_check_only_for_family", "run-full-tests-only", "nightly_check_only_for_family") if key in item},
-                "observed_at": observed_at,
-            })
+            for platform, item in family.items():
+                if platform not in {"windows", "linux", "macos"} or not isinstance(item, dict):
+                    continue
+                runner = item.get("test-runs-on", "")
+                entries.append({
+                    "id": f"{names[name]}:{key}:{platform}",
+                    "trigger": names[name],
+                    "family_key": key,
+                    "platform": platform,
+                    "family": item.get("family"),
+                    "runner": runner,
+                    "runner_labels": item.get("test-runs-on-labels", []),
+                    "configured_targets": _targets(" ".join([str(key), str(item.get("family", "")), *item.get("fetch-gfx-targets", [])])),
+                    "fetch_gfx_targets": item.get("fetch-gfx-targets", []),
+                    "build_variants": item.get("build_variants", []),
+                    "flags": {key: item.get(key) for key in ("bypass_tests_for_releases", "sanity_check_only_for_family", "run-full-tests-only", "nightly_check_only_for_family") if key in item},
+                    "observed_at": observed_at,
+                })
     return {"schema_version": 1, "source": {"id": "therock-ci-matrix", "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/build_tools/github_actions/amdgpu_family_matrix.py"}, "generated_at": observed_at, "entries": sorted(entries, key=lambda row: row["id"])}
 
 
@@ -178,12 +180,12 @@ def build_evidence(github_records, hud_records, existing=None, observed_at=None,
 def collect_github(source_config, reader, observed_at):
     workflows = _collect_pages(reader, source_config["workflows"]["url"], "workflows")
     records = []
-    selected_workflows = [workflow for workflow in workflows if ("windows" in workflow.get("path", "").lower() or "multi_arch" in workflow.get("path", "").lower() or "pytorch" in workflow.get("path", "").lower() or "rocm_wheels" in workflow.get("path", "").lower() or "artifacts" in workflow.get("path", "").lower())]
+    selected_workflows = [workflow for workflow in workflows if (any(platform in workflow.get("path", "").lower() for platform in ("windows", "linux", "macos")) or "multi_arch" in workflow.get("path", "").lower() or "pytorch" in workflow.get("path", "").lower() or "rocm_wheels" in workflow.get("path", "").lower() or "artifacts" in workflow.get("path", "").lower())]
     if len(selected_workflows) > 20:
         raise ValueError("GitHub workflow coverage exceeded the bounded 20-workflow limit")
     for workflow in selected_workflows:
         path = workflow.get("path", "")
-        if not ("windows" in path.lower() or "multi_arch" in path.lower() or "pytorch" in path.lower() or "rocm_wheels" in path.lower() or "artifacts" in path.lower()):
+        if not (any(platform in path.lower() for platform in ("windows", "linux", "macos")) or "multi_arch" in path.lower() or "pytorch" in path.lower() or "rocm_wheels" in path.lower() or "artifacts" in path.lower()):
             continue
         runs_url = source_config["runs_api"].format(workflow_id=workflow["id"])
         runs = _collect_pages(reader, runs_url, "workflow_runs")
@@ -191,7 +193,7 @@ def collect_github(source_config, reader, observed_at):
             raise ValueError(f"GitHub workflow run coverage exceeded the bounded 200-run limit: {workflow['id']}")
         for run in runs[:200]:
             jobs = _collect_pages(reader, source_config["jobs_api"].format(run_id=run["id"]), "jobs")
-            records.extend(_github_record(run, job, observed_at, workflow) for job in jobs if _platform(job.get("name"), job.get("labels")) == "windows")
+            records.extend(_github_record(run, job, observed_at, workflow) for job in jobs if _platform(job.get("name"), job.get("labels")) in {"windows", "linux", "macos"})
     return records
 
 
@@ -201,10 +203,11 @@ def collect_hud(source_config, reader, observed_at):
     for commit in payload.get("commits", []):
         for category_name, category in commit.get("categories", {}).items():
             for item in category.get("items", {}).values():
-                if not isinstance(item, dict) or "Windows" not in category_name:
+                platform = _platform(category_name)
+                if not isinstance(item, dict) or platform not in {"windows", "linux", "macos"}:
                     continue
                 url = item.get("url") or commit.get("ciUrl")
                 run_match = re.search(r"/actions/runs/(\d+)", url or "")
                 job_match = re.search(r"/job/(\d+)", url or "")
-                records.append({"id": f"hud:{url}", "source": "therock_hud", "workflow_id": None, "workflow_name": "TheRock HUD", "run_id": int(run_match.group(1)) if run_match else None, "run_attempt": 1, "job_id": int(job_match.group(1)) if job_match else None, "job_name": item.get("name", ""), "head_sha": commit.get("sha"), "platform": "windows", "targets": _targets(item.get("name", "")), "test_kind": _test_kind(item.get("name", "")), "url": url, "observations": [{"state": _state(item.get("status"), item.get("conclusion")), "run_status": item.get("status"), "conclusion": item.get("conclusion"), "created_at": commit.get("timestamp"), "run_started_at": None, "started_at": item.get("startedAt"), "completed_at": item.get("completedAt"), "observed_at": observed_at}]})
+                records.append({"id": f"hud:{url}", "source": "therock_hud", "workflow_id": None, "workflow_name": "TheRock HUD", "run_id": int(run_match.group(1)) if run_match else None, "run_attempt": 1, "job_id": int(job_match.group(1)) if job_match else None, "job_name": item.get("name", ""), "head_sha": commit.get("sha"), "platform": platform, "targets": _targets(item.get("name", "")), "test_kind": _test_kind(item.get("name", "")), "url": url, "observations": [{"state": _state(item.get("status"), item.get("conclusion")), "run_status": item.get("status"), "conclusion": item.get("conclusion"), "created_at": commit.get("timestamp"), "run_started_at": None, "started_at": item.get("startedAt"), "completed_at": item.get("completedAt"), "observed_at": observed_at}]})
     return records

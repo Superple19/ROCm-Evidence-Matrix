@@ -24,7 +24,7 @@ class CommunityEvidenceTests(unittest.TestCase):
 
     def test_redacts_secrets_paths_and_unlisted_fields(self):
         record = {
-            "observed_at": "2026-08-08T00:00:00Z", "result": "passed", "notes": "/opt/private/run.log token=abc api_token=def",
+            "observed_at": "2026-08-08T00:00:00Z", "result": "passed", "notes": "/opt/private/run.log /workspaces/alice/repo token=abc api_token=def",
             "api_token": "abc", "environment": {"ROCM_PATH": "C:\\Users\\alice\\rocm"},
             "devices": [{"gfx": "gfx1201", "name": "AMD GPU", "private_path": "C:\\Users\\alice\\x"}],
         }

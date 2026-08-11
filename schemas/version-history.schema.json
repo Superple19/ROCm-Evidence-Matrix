@@ -14,7 +14,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "distribution_family", "platform", "platform_evidence", "version", "channel", "release_date", "lifecycle", "windows_support", "windows_package_available", "windows_ci_verified", "documentation_status", "documentation_url", "source_ids", "gpu_support_observations", "framework_support_observations", "package_artifacts", "first_observed_at", "last_observed_at"],
+        "required": ["id", "distribution_family", "platform", "platform_evidence", "version", "channel", "release_date", "lifecycle", "documentation_status", "documentation_url", "source_ids", "gpu_support_observations", "framework_support_observations", "package_artifacts", "first_observed_at", "last_observed_at"],
         "properties": {
           "id": {"type": "string"},
           "distribution_family": {"enum": ["therock", "legacy"]},

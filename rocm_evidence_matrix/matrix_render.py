@@ -60,8 +60,8 @@ def render_compatibility_matrix(matrix):
             "",
             "Versions are selected independently per device package and do not establish a resolver-compatible set.",
             "",
-            "| Platform | GFX target | Channel | ROCm device | Torch device | TorchVision device | All available |",
-            "| --- | --- | --- | --- | --- | --- | --- |",
+            "| Platform | GFX target | Channel | ROCm device | Torch device | TorchVision device | TorchAudio | All available |",
+            "| --- | --- | --- | --- | --- | --- | --- | --- |",
         ]
     )
     channel_order = {"stable": 0, "nightly": 1, "staging": 2}
@@ -77,6 +77,7 @@ def render_compatibility_matrix(matrix):
                     packages["rocm_device_version"] or "—",
                     packages["torch_device_version"] or "—",
                     packages["torchvision_device_version"] or "—",
+                    packages["torchaudio_version"] or "—",
                 ]
                 lines.append(
                     f"| {platform} | `{target['gfx']}` | {channel} | {' | '.join(values)} | "

@@ -23,12 +23,13 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "path", "schema", "schema_version"],
+        "required": ["id", "path", "schema", "schema_version", "sha256"],
         "properties": {
           "id": {"type": "string"},
           "path": {"type": "string"},
           "schema": {"type": "string"},
-          "schema_version": {"type": "integer", "minimum": 1}
+          "schema_version": {"type": "integer", "minimum": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
         }
       }
     }

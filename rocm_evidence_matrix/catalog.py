@@ -1,3 +1,4 @@
+import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -28,6 +29,8 @@ ARTIFACTS = (
     ("collection_status:legacy", LEGACY_STATUS, "schemas/collection-status.schema.json"),
     ("collection_status:therock", THEROCK_STATUS, "schemas/collection-status.schema.json"),
     ("resolver_verifications", "data/verifications/resolver.json", "schemas/resolver-verifications.schema.json"),
+    ("comfyui_profile", "profiles/comfyui/profile.json", "schemas/profile.schema.json"),
+    ("comfyui_extension_profiles", "profiles/comfyui/extensions", "schemas/profile.schema.json"),
 )
 
 
@@ -84,6 +87,7 @@ def build_catalog(root="."):
                     "path": item.relative_to(root).as_posix(),
                     "schema": schema,
                     "schema_version": value.get("schema_version"),
+                    "sha256": hashlib.sha256(item.read_bytes()).hexdigest(),
                 }
             )
     return {

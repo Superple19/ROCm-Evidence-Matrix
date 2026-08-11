@@ -117,10 +117,13 @@ def matching_release(version, releases):
 
 def release_record(family, version, observed_at, **values):
     platform = values.get("platform", "windows")
+    support_key = f"{platform}_support" if platform in {"windows", "linux", "macos"} else "windows_support"
+    package_key = f"{platform}_package_available" if platform in {"windows", "linux", "macos"} else "windows_package_available"
+    ci_key = f"{platform}_ci_verified" if platform in {"windows", "linux", "macos"} else "windows_ci_verified"
     evidence = {
-        "support": values.get("windows_support", "unknown"),
-        "package_available": values.get("windows_package_available", False),
-        "ci_verified": values.get("windows_ci_verified"),
+        "support": values.get(support_key, "unknown"),
+        "package_available": values.get(package_key, False),
+        "ci_verified": values.get(ci_key),
     }
     platform_evidence = values.get("platform_evidence")
     if not isinstance(platform_evidence, dict):

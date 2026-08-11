@@ -1,4 +1,16 @@
+import re
+
 from .simple_index import gfx_key, latest_version, package_names_for_target
+
+
+def _rocm_build(version):
+    match = re.search(r"(?:rocm|rocmsdk)([0-9]+(?:\.[0-9]+)+(?:[a-z]+[0-9]+)?)", str(version or ""), re.IGNORECASE)
+    return match.group(1) if match else None
+
+
+def _latest_framework_version(artifacts, rocm_version):
+    matching = [item for item in artifacts if _rocm_build(item.get("version")) == rocm_version]
+    return latest_version(matching or artifacts)
 
 
 def build_compatibility_matrix(documentation, package_snapshots):
@@ -32,6 +44,10 @@ def build_compatibility_matrix(documentation, package_snapshots):
                     "rocm_device_version": latest_version(snapshot["packages"].get(names[0], [])),
                     "torch_device_version": latest_version(snapshot["packages"].get(names[1], [])),
                     "torchvision_device_version": latest_version(snapshot["packages"].get(names[2], [])),
+                    "torchaudio_version": _latest_framework_version(
+                        snapshot["packages"].get("torchaudio", []),
+                        latest_version(snapshot["packages"].get(names[0], [])),
+                    ),
                     "source_id": f"packages-{snapshot['source']['id']}",
                 }
             platform_channels[platform] = channels

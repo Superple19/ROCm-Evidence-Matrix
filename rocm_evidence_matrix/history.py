@@ -269,7 +269,7 @@ def promote_execution_evidence(history_path, kind, record, requested_gfx=None):
 def attach_therock_ci_evidence(history, ci_document):
     executions = ci_document.get("executions", []) if ci_document else []
     for candidate in history.get("candidates", []):
-        if candidate.get("distribution_family") != "therock" or candidate.get("platform") != "windows" or candidate.get("lifecycle") != "current":
+        if candidate.get("distribution_family") != "therock" or candidate.get("lifecycle") != "current":
             continue
         refs = []
         targets = set(candidate.get("gfx_targets", []))
@@ -277,7 +277,7 @@ def attach_therock_ci_evidence(history, ci_document):
             execution_targets = execution.get("targets")
             observations = execution.get("observations")
             if (
-                execution.get("platform") != "windows"
+                execution.get("platform") != candidate.get("platform")
                 or not isinstance(execution.get("id"), str)
                 or not isinstance(execution_targets, list)
                 or not targets.intersection(execution_targets)

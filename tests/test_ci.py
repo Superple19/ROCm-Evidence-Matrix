@@ -54,6 +54,26 @@ class CITests(unittest.TestCase):
         self.assertEqual(len(records), 1)
         self.assertEqual(records[0]["targets"], ["gfx1201"])
 
+    def test_github_collection_keeps_linux_jobs(self):
+        config = {
+            "workflows": {"url": "https://api.example.test/workflows?per_page=100"},
+            "runs_api": "https://api.example.test/workflows/{workflow_id}/runs?per_page=100",
+            "jobs_api": "https://api.example.test/actions/runs/{run_id}/jobs",
+        }
+
+        def reader(url):
+            if url == config["workflows"]["url"]:
+                return '{"workflows": [{"id": 1, "path": ".github/workflows/linux.yml", "name": "Linux"}]}'
+            if "workflows/1/runs" in url:
+                return '{"workflow_runs": [{"id": 2, "workflow_id": 1, "run_attempt": 1, "status": "completed", "head_sha": "' + "a" * 40 + '", "created_at": "2026-08-08T00:00:00Z"}]}'
+            if "actions/runs/2/jobs" in url:
+                return '{"jobs": [{"id": 3, "name": "Build gfx90a", "labels": ["ubuntu-latest"], "status": "completed", "conclusion": "success"}]}'
+            raise AssertionError(url)
+
+        records = collect_github(config, reader, "2026-08-08T00:02:00Z")
+        self.assertEqual(len(records), 1)
+        self.assertEqual(records[0]["platform"], "linux")
+
 
 if __name__ == "__main__":
     unittest.main()

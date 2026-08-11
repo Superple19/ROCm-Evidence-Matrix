@@ -13,7 +13,7 @@ from .validation import validate_community_evidence
 
 SENSITIVE_KEYS = {"username", "user", "hostname", "computer_name", "cwd", "home", "home_dir", "path", "command_path"}
 WINDOWS_PATH = re.compile(r"[A-Za-z]:\\(?:[^\\\"']+\\?)*[^\s\"']*")
-POSIX_PATH = re.compile(r"/(?:home|Users|mnt|workspace|tmp|opt|var|root|data|usr|etc|run)/[^\s\"']+")
+POSIX_PATH = re.compile(r"/(?:home|Users|mnt|workspace|workspaces|tmp|opt|var|root|data|usr|etc|run|projects|repos|srv|app)/[^\s\"']+")
 SECRET_VALUE = re.compile(r"(?i)(?<![A-Za-z0-9_])(?:token|api[_-]?token|secret|password|authorization|api[_-]?key)\b\s*[:=]\s*(?:bearer\s+)?[^,;\s]+")
 
 COMMON_RECORD_FIELDS = {
