@@ -1,6 +1,6 @@
 import unittest
 
-from rocm_evidence_matrix.ci import build_evidence, collect_github, parse_matrix
+from rocm_evidence_matrix.ci import CICollectionError, build_evidence, collect_github, parse_matrix
 from rocm_evidence_matrix.validation import validate_ci_coverage, validate_ci_evidence
 
 
@@ -73,6 +73,28 @@ class CITests(unittest.TestCase):
         records = collect_github(config, reader, "2026-08-08T00:02:00Z")
         self.assertEqual(len(records), 1)
         self.assertEqual(records[0]["platform"], "linux")
+
+    def test_github_pagination_failure_exposes_truncation_details(self):
+        config = {
+            "workflows": {"url": "https://api.example.test/workflows?per_page=100"},
+            "runs_api": "https://api.example.test/workflows/{workflow_id}/runs?per_page=100",
+            "jobs_api": "https://api.example.test/actions/runs/{run_id}/jobs",
+        }
+
+        def reader(url):
+            if url == config["workflows"]["url"]:
+                return '{"workflows": [{"id": 1, "path": ".github/workflows/linux.yml", "name": "Linux"}]}'
+            if "workflows/1/runs" in url:
+                return '{"workflow_runs": [' + ",".join(
+                    '{"id": %d, "workflow_id": 1, "run_attempt": 1}' % index
+                    for index in range(100)
+                ) + ']}'
+            raise AssertionError(url)
+
+        with self.assertRaises(CICollectionError) as context:
+            collect_github(config, reader, "2026-08-08T00:02:00Z")
+        self.assertEqual(context.exception.details["reason"], "pagination_limit")
+        self.assertTrue(context.exception.details["truncated"])
 
 
 if __name__ == "__main__":

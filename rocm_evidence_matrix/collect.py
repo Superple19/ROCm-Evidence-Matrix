@@ -343,8 +343,10 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
                 ci_results.append({"source_id": ci_config["workflows"]["id"] if adapter_name == "github_actions" else ci_config["hud"]["id"], "status": "passed", "error": None})
             except Exception as error:
                 failure = {"adapter": adapter_name, "error": str(error), "observed_at": observed_at}
+                if getattr(error, "details", None):
+                    failure["details"] = error.details
                 failures.append(failure)
-                ci_results.append({"source_id": ci_config["workflows"]["id"] if adapter_name == "github_actions" else ci_config["hud"]["id"], "status": "failed", "error": str(error)})
+                ci_results.append({"source_id": ci_config["workflows"]["id"] if adapter_name == "github_actions" else ci_config["hud"]["id"], "status": "failed", "error": str(error), **({"details": error.details} if getattr(error, "details", None) else {})})
                 print(f"Failed {adapter_name}: {error}")
         evidence = build_evidence(records, [], existing=read_json(args.ci_evidence_output), observed_at=observed_at, failures=failures)
         validate_ci_evidence(evidence)

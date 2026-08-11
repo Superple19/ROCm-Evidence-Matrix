@@ -619,6 +619,13 @@ def validate_ci_evidence(document):
     for failure in document.get("adapter_failures", []):
         if not failure.get("adapter") or not failure.get("observed_at", "").endswith("Z"):
             raise ValueError("Invalid CI adapter failure")
+        details = failure.get("details") or {}
+        if details.get("pages_fetched", 0) < 0 or details.get("items_fetched", 0) < 0:
+            raise ValueError("Invalid CI adapter pagination details")
+        if details.get("max_pages") is not None and details["max_pages"] < 1:
+            raise ValueError("Invalid CI adapter page limit")
+        if details.get("reason") not in {None, "page_fetch_failed", "invalid_payload", "pagination_limit"}:
+            raise ValueError("Invalid CI adapter failure reason")
 
 
 def validate_version_history(document):

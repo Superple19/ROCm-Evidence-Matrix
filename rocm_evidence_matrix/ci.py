@@ -10,6 +10,22 @@ CI_STATES = {"queued", "in_progress", "success", "failure", "cancelled", "skippe
 TEST_KINDS = {"build", "sanity", "framework", "full", "unknown"}
 
 
+class CICollectionError(RuntimeError):
+    """Raised when a bounded GitHub collection cannot produce complete evidence."""
+
+    def __init__(self, message, *, url, key, pages_fetched, items_fetched, max_pages, reason):
+        super().__init__(message)
+        self.details = {
+            "url": url,
+            "key": key,
+            "pages_fetched": pages_fetched,
+            "items_fetched": items_fetched,
+            "max_pages": max_pages,
+            "truncated": reason == "pagination_limit",
+            "reason": reason,
+        }
+
+
 def utc_now():
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
@@ -30,14 +46,52 @@ def _page_url(url, page):
 def _collect_pages(reader, url, key, max_pages=10):
     values = []
     for page in range(1, max_pages + 1):
-        payload = _json(reader(_page_url(url, page)))
+        page_url = _page_url(url, page)
+        try:
+            payload = _json(reader(page_url))
+        except Exception as error:
+            raise CICollectionError(
+                f"GitHub API page fetch failed after {page - 1} pages: {url}: {error}",
+                url=url,
+                key=key,
+                pages_fetched=page - 1,
+                items_fetched=len(values),
+                max_pages=max_pages,
+                reason="page_fetch_failed",
+            ) from error
+        if not isinstance(payload, dict):
+            raise CICollectionError(
+                f"GitHub API response is not an object: {page_url}",
+                url=url,
+                key=key,
+                pages_fetched=page - 1,
+                items_fetched=len(values),
+                max_pages=max_pages,
+                reason="invalid_payload",
+            )
         page_values = payload.get(key, [])
         if not isinstance(page_values, list):
-            raise ValueError(f"GitHub API field is not a list: {key}")
+            raise CICollectionError(
+                f"GitHub API field is not a list: {key}",
+                url=url,
+                key=key,
+                pages_fetched=page - 1,
+                items_fetched=len(values),
+                max_pages=max_pages,
+                reason="invalid_payload",
+            )
         values.extend(page_values)
         if len(page_values) < 100:
             return values
-    raise ValueError(f"GitHub API pagination exceeded {max_pages} pages: {url}")
+    raise CICollectionError(
+        f"GitHub API pagination exceeded {max_pages} pages: {url}",
+        url=url,
+        key=key,
+        pages_fetched=max_pages,
+        items_fetched=len(values),
+        max_pages=max_pages,
+        reason="pagination_limit",
+    )
 
 
 def _state(status, conclusion):
@@ -183,7 +237,15 @@ def collect_github(source_config, reader, observed_at):
     records = []
     selected_workflows = [workflow for workflow in workflows if (any(platform in workflow.get("path", "").lower() for platform in ("windows", "linux", "macos")) or "multi_arch" in workflow.get("path", "").lower() or "pytorch" in workflow.get("path", "").lower() or "rocm_wheels" in workflow.get("path", "").lower() or "artifacts" in workflow.get("path", "").lower())]
     if len(selected_workflows) > 20:
-        raise ValueError("GitHub workflow coverage exceeded the bounded 20-workflow limit")
+        raise CICollectionError(
+            "GitHub workflow coverage exceeded the bounded 20-workflow limit",
+            url=source_config["workflows"]["url"],
+            key="workflows",
+            pages_fetched=1,
+            items_fetched=len(selected_workflows),
+            max_pages=20,
+            reason="pagination_limit",
+        )
     for workflow in selected_workflows:
         path = workflow.get("path", "")
         if not (any(platform in path.lower() for platform in ("windows", "linux", "macos")) or "multi_arch" in path.lower() or "pytorch" in path.lower() or "rocm_wheels" in path.lower() or "artifacts" in path.lower()):
@@ -191,7 +253,15 @@ def collect_github(source_config, reader, observed_at):
         runs_url = source_config["runs_api"].format(workflow_id=workflow["id"])
         runs = _collect_pages(reader, runs_url, "workflow_runs")
         if len(runs) > 200:
-            raise ValueError(f"GitHub workflow run coverage exceeded the bounded 200-run limit: {workflow['id']}")
+            raise CICollectionError(
+                f"GitHub workflow run coverage exceeded the bounded 200-run limit: {workflow['id']}",
+                url=runs_url,
+                key="workflow_runs",
+                pages_fetched=1,
+                items_fetched=len(runs),
+                max_pages=200,
+                reason="pagination_limit",
+            )
         for run in runs[:200]:
             jobs = _collect_pages(reader, source_config["jobs_api"].format(run_id=run["id"]), "jobs")
             records.extend(_github_record(run, job, observed_at, workflow) for job in jobs if _platform(job.get("name"), job.get("labels")) in {"windows", "linux", "macos"})

@@ -26,6 +26,8 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+              "url": {"type": "string", "format": "uri"},
+              "key": {"type": "string"},
               "pages_fetched": {"type": "integer", "minimum": 0},
               "items_fetched": {"type": "integer", "minimum": 0},
               "max_pages": {"type": "integer", "minimum": 1},
