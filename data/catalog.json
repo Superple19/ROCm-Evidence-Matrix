@@ -138,7 +138,7 @@
       "path": "data/documentation.json",
       "schema": "schemas/documentation-snapshot.schema.json",
       "schema_version": 1,
-      "sha256": "1798048aec636f70c01d90352851ec4dbe2d55a7dafae88f2cb9e2555e6f8745"
+      "sha256": "53b0feae5f36b9137836300277924f06653e2022f0bf08aa3b5d90cd407ac356"
     },
     {
       "id": "legacy_windows",
@@ -166,7 +166,7 @@
       "path": "data/version-history.json",
       "schema": "schemas/version-history.schema.json",
       "schema_version": 1,
-      "sha256": "a0fdfec884289f1aae949b0db74761a648423435365e2af41d5a69a3c40165ff"
+      "sha256": "e3380f6aac9bcf413f920cc53425bd86e532afa53f874f86ab7c182f7dcb1dbe"
     },
     {
       "id": "ci_coverage",

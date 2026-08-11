@@ -24,22 +24,26 @@
             "additionalProperties": {
               "type": "object",
               "additionalProperties": false,
-              "required": ["support", "package_available", "ci_verified"],
+              "required": ["support", "package_available", "ci_verified", "documentation_status", "documentation_url"],
               "properties": {
                 "support": {"enum": ["supported", "unsupported", "unknown"]},
                 "package_available": {"type": "boolean"},
-                "ci_verified": {"type": ["boolean", "null"]}
+                "ci_verified": {"type": ["boolean", "null"]},
+                "documentation_status": {"enum": ["available", "archive_missing", "unknown", "not_collected"]},
+                "documentation_url": {"type": ["string", "null"], "format": "uri"}
               }
             },
             "properties": {
               "windows": {
                 "type": "object",
                 "additionalProperties": false,
-                "required": ["support", "package_available", "ci_verified"],
+                "required": ["support", "package_available", "ci_verified", "documentation_status", "documentation_url"],
                 "properties": {
                   "support": {"enum": ["supported", "unsupported", "unknown"]},
                   "package_available": {"type": "boolean"},
-                  "ci_verified": {"type": ["boolean", "null"]}
+                  "ci_verified": {"type": ["boolean", "null"]},
+                  "documentation_status": {"enum": ["available", "archive_missing", "unknown", "not_collected"]},
+                  "documentation_url": {"type": ["string", "null"], "format": "uri"}
                 }
               }
             }
@@ -51,7 +55,7 @@
           "windows_support": {"enum": ["supported", "unsupported", "unknown"]},
           "windows_package_available": {"type": "boolean"},
           "windows_ci_verified": {"type": ["boolean", "null"]},
-          "documentation_status": {"enum": ["available", "archive_missing", "unknown"]},
+          "documentation_status": {"enum": ["available", "archive_missing", "unknown", "not_collected"]},
           "documentation_url": {"type": ["string", "null"], "format": "uri"},
           "source_ids": {"type": "array", "items": {"type": "string"}},
           "gpu_support_observations": {"type": "integer", "minimum": 0},

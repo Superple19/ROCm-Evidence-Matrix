@@ -15,8 +15,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -44,8 +53,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -73,8 +91,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -102,8 +129,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -131,8 +167,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -160,8 +205,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -189,8 +243,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -218,8 +281,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -247,8 +319,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -276,8 +357,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -305,8 +395,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -334,8 +433,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -363,8 +471,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -392,8 +509,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -421,8 +547,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -450,8 +585,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -479,8 +623,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "supported"
         }
@@ -509,8 +662,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "supported"
         }
@@ -539,8 +701,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unsupported"
         }
@@ -569,8 +740,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unsupported"
         }
@@ -599,8 +779,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "supported"
         }
@@ -629,8 +818,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "supported"
         }
@@ -659,8 +857,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.0.0/",
           "package_available": false,
           "support": "unsupported"
         }
@@ -689,8 +896,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.0.2/",
           "package_available": false,
           "support": "unsupported"
         }
@@ -719,8 +935,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.1.0/",
           "package_available": false,
           "support": "supported"
         }
@@ -750,8 +975,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.1.1/",
           "package_available": false,
           "support": "supported"
         }
@@ -781,8 +1015,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.1.2/",
           "package_available": false,
           "support": "supported"
         }
@@ -812,8 +1055,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.1.5/",
           "package_available": false,
           "support": "supported"
         }
@@ -843,8 +1095,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.2.0/",
           "package_available": false,
           "support": "supported"
         }
@@ -873,8 +1134,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.2.1/",
           "package_available": false,
           "support": "supported"
         }
@@ -903,8 +1173,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.2.2/",
           "package_available": false,
           "support": "supported"
         }
@@ -933,8 +1212,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.2.4/",
           "package_available": false,
           "support": "supported"
         }
@@ -963,8 +1251,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.3.0/",
           "package_available": false,
           "support": "unsupported"
         }
@@ -993,8 +1290,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.3.1/",
           "package_available": false,
           "support": "unsupported"
         }
@@ -1023,8 +1329,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.3.2/",
           "package_available": false,
           "support": "unsupported"
         }
@@ -1053,8 +1368,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.3.3/",
           "package_available": false,
           "support": "unsupported"
         }
@@ -1083,8 +1407,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.4.0/",
           "package_available": false,
           "support": "supported"
         }
@@ -1114,8 +1447,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.4.1/",
           "package_available": false,
           "support": "supported"
         }
@@ -1145,8 +1487,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.4.2/",
           "package_available": false,
           "support": "supported"
         }
@@ -1176,8 +1527,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.4.2/",
           "package_available": false,
           "support": "supported"
         }
@@ -1207,8 +1567,17 @@
       "package_artifacts": 3,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.4.2/",
           "package_available": true,
           "support": "supported"
         }
@@ -1241,8 +1610,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -1270,8 +1648,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -1299,8 +1686,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -1328,8 +1724,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.1.1/",
           "package_available": false,
           "support": "supported"
         }
@@ -1359,8 +1764,17 @@
       "package_artifacts": 7,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.1.1/",
           "package_available": true,
           "support": "supported"
         }
@@ -1391,8 +1805,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.2/",
           "package_available": false,
           "support": "unknown"
         }
@@ -1420,8 +1843,17 @@
       "package_artifacts": 7,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.2/",
           "package_available": true,
           "support": "unknown"
         }
@@ -1452,8 +1884,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.2/",
           "package_available": false,
           "support": "unknown"
         }
@@ -1481,8 +1922,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.2/",
           "package_available": false,
           "support": "unknown"
         }
@@ -1510,8 +1960,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.2/",
           "package_available": false,
           "support": "unknown"
         }
@@ -1539,8 +1998,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.10/SUPPORTED_GPUS.md",
           "package_available": false,
           "support": "unknown"
         }
@@ -1568,8 +2036,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.11/SUPPORTED_GPUS.md",
           "package_available": false,
           "support": "unknown"
         }
@@ -1598,8 +2075,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.12/SUPPORTED_GPUS.md",
           "package_available": false,
           "support": "unknown"
         }
@@ -1628,8 +2114,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.13/SUPPORTED_GPUS.md",
           "package_available": false,
           "support": "unknown"
         }
@@ -1658,8 +2153,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "archive_missing",
+          "documentation_url": null,
           "package_available": false,
           "support": "unknown"
         }
@@ -1689,8 +2193,17 @@
       "package_artifacts": 0,
       "platform": "windows",
       "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
         "windows": {
           "ci_verified": null,
+          "documentation_status": "available",
+          "documentation_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md",
           "package_available": false,
           "support": "unknown"
         }

@@ -124,10 +124,33 @@ def release_record(family, version, observed_at, **values):
         "support": values.get(support_key, "unknown"),
         "package_available": values.get(package_key, False),
         "ci_verified": values.get(ci_key),
+        "documentation_status": values.get(
+            f"{platform}_documentation_status",
+            values.get("documentation_status", "unknown") if platform == "windows" else "not_collected",
+        ),
+        "documentation_url": values.get(
+            f"{platform}_documentation_url",
+            values.get("documentation_url") if platform == "windows" else None,
+        ),
     }
     platform_evidence = values.get("platform_evidence")
     if not isinstance(platform_evidence, dict):
         platform_evidence = {platform: evidence}
+    else:
+        platform_evidence = {key: dict(item) for key, item in platform_evidence.items()}
+        platform_evidence[platform] = {**evidence, **platform_evidence.get(platform, {})}
+    empty_evidence = {
+        "support": "unknown",
+        "package_available": False,
+        "ci_verified": None,
+        "documentation_status": "not_collected",
+        "documentation_url": None,
+    }
+    for evidence_platform in ("windows", "linux"):
+        platform_evidence[evidence_platform] = {
+            **empty_evidence,
+            **platform_evidence.get(evidence_platform, {}),
+        }
     windows_evidence = platform_evidence.get(
         "windows",
         {"support": "unknown", "package_available": False, "ci_verified": None},
@@ -143,8 +166,8 @@ def release_record(family, version, observed_at, **values):
         "windows_support": windows_evidence["support"],
         "windows_package_available": windows_evidence["package_available"],
         "windows_ci_verified": windows_evidence["ci_verified"],
-        "documentation_status": values.get("documentation_status", "unknown"),
-        "documentation_url": values.get("documentation_url"),
+        "documentation_status": evidence["documentation_status"],
+        "documentation_url": evidence["documentation_url"],
         "source_ids": sorted(set(values.get("source_ids", []))),
         "gpu_support_observations": values.get("gpu_support_observations", 0),
         "framework_support_observations": values.get("framework_support_observations", 0),
@@ -166,8 +189,33 @@ def merge_version_history(existing, family, releases, gpu_support, sources, obse
                 "support": item.get("windows_support", "unknown"),
                 "package_available": item.get("windows_package_available", False),
                 "ci_verified": item.get("windows_ci_verified"),
+                "documentation_status": item.get("documentation_status", "unknown"),
+                "documentation_url": item.get("documentation_url"),
             }},
         )
+        empty_evidence = {
+            "support": "unknown",
+            "package_available": False,
+            "ci_verified": None,
+            "documentation_status": "not_collected",
+            "documentation_url": None,
+        }
+        for evidence_platform in ("windows", "linux"):
+            evidence_record = {
+                **empty_evidence,
+                **item["platform_evidence"].get(evidence_platform, {}),
+            }
+            if "documentation_status" not in item["platform_evidence"].get(evidence_platform, {}):
+                evidence_record["documentation_status"] = (
+                    item.get("documentation_status", "unknown")
+                    if evidence_platform == item.get("platform")
+                    else "not_collected"
+                )
+            if "documentation_url" not in item["platform_evidence"].get(evidence_platform, {}):
+                evidence_record["documentation_url"] = (
+                    item.get("documentation_url") if evidence_platform == item.get("platform") else None
+                )
+            item["platform_evidence"][evidence_platform] = evidence_record
         item.setdefault("channel", "nightly" if item["distribution_family"] == "therock" and item["version"] == "10.1.0" else "stable")
         item.setdefault("windows_package_available", item.get("package_artifacts", 0) > 0)
         item.setdefault("windows_ci_verified", None)

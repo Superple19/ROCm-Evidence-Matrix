@@ -147,7 +147,8 @@ class VersionHistoryTests(unittest.TestCase):
     def test_platform_evidence_is_not_forced_to_windows(self):
         record = release_record("therock", "10.1.0", OBSERVED_AT, platform="linux", source_ids=["source"])
         self.assertIn("linux", record["platform_evidence"])
-        self.assertNotIn("windows", record["platform_evidence"])
+        self.assertIn("windows", record["platform_evidence"])
+        self.assertEqual(record["platform_evidence"]["linux"]["documentation_status"], "not_collected")
         self.assertEqual(record["windows_support"], "unknown")
 
     def test_platform_record_uses_platform_specific_evidence(self):

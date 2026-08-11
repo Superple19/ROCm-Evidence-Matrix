@@ -277,6 +277,8 @@ def validate_documentation_snapshot(snapshot):
         if not item["windows_versions"]:
             raise ValueError(f"Missing Windows version for {item['gfx']}")
     platforms = snapshot.get("platforms", {})
+    if not isinstance(platforms, dict) or not all(platform in platforms for platform in ("windows", "linux")):
+        raise ValueError("Documentation snapshot must keep Windows and Linux platform evidence separate")
     windows = platforms.get("windows", {})
     if windows.get("release_support", snapshot["windows_release_support"]) != snapshot["windows_release_support"]:
         raise ValueError("Windows release support must match the platform evidence group")
@@ -658,6 +660,14 @@ def validate_version_history(document):
                 raise ValueError(f"Invalid {platform} package status: {release['id']}")
             if evidence.get("ci_verified") not in {True, False, None}:
                 raise ValueError(f"Invalid {platform} CI status: {release['id']}")
+        for evidence_platform in ("windows", "linux"):
+            platform_record = platform_evidence.get(evidence_platform)
+            if not isinstance(platform_record, dict):
+                raise ValueError(f"Missing {evidence_platform} evidence: {release['id']}")
+            if platform_record.get("documentation_status") not in {"available", "archive_missing", "unknown", "not_collected"}:
+                raise ValueError(f"Invalid {evidence_platform} documentation status: {release['id']}")
+            if platform_record.get("documentation_status") == "available" and not platform_record.get("documentation_url"):
+                raise ValueError(f"Available {evidence_platform} documentation has no URL: {release['id']}")
         if platform == "windows":
             if not isinstance(evidence, dict):
                 raise ValueError(f"Missing windows evidence: {release['id']}")
@@ -671,7 +681,7 @@ def validate_version_history(document):
             raise ValueError(f"Invalid release channel: {release['id']}")
         if "windows_support" in release and release["windows_support"] not in {"supported", "unsupported", "unknown"}:
             raise ValueError(f"Invalid Windows support status: {release['id']}")
-        if release["documentation_status"] not in {"available", "archive_missing", "unknown"}:
+        if release["documentation_status"] not in {"available", "archive_missing", "unknown", "not_collected"}:
             raise ValueError(f"Invalid documentation status: {release['id']}")
         if release["documentation_status"] == "available" and not release["documentation_url"]:
             raise ValueError(f"Available documentation has no URL: {release['id']}")

@@ -356,7 +356,10 @@ def collect_documentation_sources(sources, fetch_text, existing=None, observed_a
         "last_observed_at": utc_now(),
         "sources": {},
         "products": [],
-        "platforms": {"windows": {"release_support": [], "therock_status": []}},
+        "platforms": {
+            "windows": {"release_support": [], "therock_status": []},
+            "linux": {"release_support": [], "therock_status": []},
+        },
         "windows_release_support": [],
         "therock_windows_status": [],
         "framework_compatibility": [],
@@ -436,7 +439,11 @@ def collect_documentation_sources(sources, fetch_text, existing=None, observed_a
             "windows": {
                 "release_support": sorted(collections["windows_release_support"], key=lambda item: item["gfx"]),
                 "therock_status": sorted(collections["therock_windows_status"], key=lambda item: item["gfx"]),
-            }
+            },
+            "linux": {
+                "release_support": [],
+                "therock_status": [],
+            },
         },
         "windows_release_support": sorted(collections["windows_release_support"], key=lambda item: item["gfx"]),
         "therock_windows_status": sorted(collections["therock_windows_status"], key=lambda item: item["gfx"]),

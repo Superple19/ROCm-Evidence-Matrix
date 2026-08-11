@@ -40,6 +40,7 @@
     },
     "platforms": {
       "type": "object",
+      "required": ["windows", "linux"],
       "additionalProperties": {
         "type": "object",
         "additionalProperties": false,

@@ -49,6 +49,8 @@ class DocumentationTests(unittest.TestCase):
         self.assertTrue(document["sources"][source["id"]]["fallback_used"])
         self.assertEqual(document["sources"][source["id"]]["preferred_url"], source["url"])
         self.assertIn("windows", document["platforms"])
+        self.assertIn("linux", document["platforms"])
+        self.assertEqual(document["platforms"]["linux"]["release_support"], [])
         validate_documentation_snapshot(document)
 
     def test_prefers_rst_gpu_specifications(self):
