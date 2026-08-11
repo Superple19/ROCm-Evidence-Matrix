@@ -3,7 +3,7 @@ import json
 import tempfile
 from pathlib import Path
 
-from rocm_evidence_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, promote_execution_evidence, render_history
+from rocm_evidence_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, promote_execution_evidence, render_history, update_execution_evidence
 from rocm_evidence_matrix.identity import candidate_hash
 from rocm_evidence_matrix.resolve import count_candidates, install_command, latest_candidates, resolve_candidates
 
@@ -352,11 +352,31 @@ class HistoryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "history.json"
             path.write_text(json.dumps({"schema_version": 2, "generated_at": "2026-08-08T00:00:00Z", "sources": {"packages-nightly": {}}, "candidates": [candidate]}), encoding="utf-8")
-            promoted, errors = promote_execution_evidence(path, "runtime", {**record, "candidate_id": "candidate"})
+            promoted, errors = promote_execution_evidence(
+                path, "runtime", {**record, "candidate_id": "candidate"}, reviewed=True
+            )
             self.assertTrue(promoted)
             self.assertEqual(errors, [])
             history = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(history["candidates"][0]["evidence_status"]["runtime"], "runtime_verified")
+
+    def test_execution_evidence_is_not_promoted_without_review(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "history.json"
+            path.write_text(json.dumps({"schema_version": 2, "candidates": [{"id": "candidate"}]}), encoding="utf-8")
+            promoted, errors = promote_execution_evidence(
+                path, "runtime", {"candidate_id": "candidate", "result": "passed"}
+            )
+            self.assertFalse(promoted)
+            self.assertIn("explicit review", errors[0])
+            self.assertNotIn("evidence_status", json.loads(path.read_text(encoding="utf-8"))["candidates"][0])
+
+    def test_direct_execution_update_requires_review(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "history.json"
+            path.write_text(json.dumps({"schema_version": 2, "candidates": [{"id": "candidate"}]}), encoding="utf-8")
+            self.assertFalse(update_execution_evidence(path, "runtime", "candidate", "passed"))
+            self.assertNotIn("evidence_status", json.loads(path.read_text(encoding="utf-8"))["candidates"][0])
 
     def test_attaches_ci_evidence_with_gfx_platform_scope(self):
         candidate = {

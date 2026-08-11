@@ -193,7 +193,15 @@ def attach_therock_documentation_evidence(history, documentation):
     return history
 
 
-def update_execution_evidence(history_path, kind, candidate_id, result):
+def update_execution_evidence(history_path, kind, candidate_id, result, *, reviewed=False):
+    """Apply reviewed execution status to shared history.
+
+    Runtime and hardware commands intentionally write local evidence only. A
+    maintainer must opt into this shared-history mutation explicitly.
+    """
+
+    if not reviewed:
+        return False
     path = Path(history_path)
     history = json.loads(path.read_text(encoding="utf-8"))
     status = f"{kind}_verified" if result == "passed" else f"{kind}_failed"
@@ -263,7 +271,11 @@ def execution_evidence_errors(candidate, record, kind, requested_gfx=None):
     return errors
 
 
-def promote_execution_evidence(history_path, kind, record, requested_gfx=None):
+def promote_execution_evidence(history_path, kind, record, requested_gfx=None, *, reviewed=False):
+    """Promote one exact execution record after explicit maintainer review."""
+
+    if not reviewed:
+        return False, ["shared history promotion requires explicit review"]
     path = Path(history_path)
     history = json.loads(path.read_text(encoding="utf-8"))
     candidate_id = record.get("candidate_id")
@@ -273,7 +285,7 @@ def promote_execution_evidence(history_path, kind, record, requested_gfx=None):
     errors = execution_evidence_errors(candidate, record, kind, requested_gfx)
     if errors:
         return False, errors
-    return update_execution_evidence(path, kind, candidate_id, record["result"]), []
+    return update_execution_evidence(path, kind, candidate_id, record["result"], reviewed=True), []
 
 
 def attach_therock_ci_evidence(history, ci_document):
