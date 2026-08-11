@@ -87,13 +87,8 @@ def render_compatibility_matrix(matrix):
 
 
 def target_platform(target, platform):
-    return target.get("platforms", {}).get(
-        platform,
-        {
-            "release_support": target.get("windows_release_support"),
-            "therock_status": target.get("therock_windows_status"),
-        },
-    )
+    platform_data = target.get("platforms", {}).get(platform)
+    return platform_data if isinstance(platform_data, dict) else {}
 
 
 def write_compatibility_document(matrix, output_path):
