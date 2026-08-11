@@ -13,12 +13,14 @@ from .validation import validate_extension_snapshot
 
 
 class GitHubPaginationError(ValueError):
-    def __init__(self, message, *, pages_fetched, items_fetched, truncated):
+    def __init__(self, message, *, pages_fetched, items_fetched, max_pages, reason):
         super().__init__(message)
         self.details = {
             "pages_fetched": pages_fetched,
             "items_fetched": items_fetched,
-            "truncated": truncated,
+            "max_pages": max_pages,
+            "truncated": True,
+            "reason": reason,
         }
 
 
@@ -51,29 +53,32 @@ def _collect_github_release_pages(source, fetch):
                 f"GitHub release page {page} failed for {source['id']}: {error}",
                 pages_fetched=pages_fetched,
                 items_fetched=len(releases),
-                truncated=True,
+                max_pages=max_pages,
+                reason="page_fetch_failed",
             ) from error
         if not isinstance(payload, list):
             raise GitHubPaginationError(
                 f"GitHub releases response is not a list: {source['id']}",
                 pages_fetched=pages_fetched,
                 items_fetched=len(releases),
-                truncated=True,
+                max_pages=max_pages,
+                reason="invalid_payload",
             )
         pages_fetched += 1
         releases.extend(payload)
         if len(payload) < page_size:
-            return releases, _pagination_details(pages_fetched, len(releases), False, cache_metadata)
+            return releases, _pagination_details(pages_fetched, len(releases), max_pages, False, cache_metadata)
     raise GitHubPaginationError(
         f"GitHub release pagination exceeded {max_pages} pages: {source['url']}",
         pages_fetched=pages_fetched,
         items_fetched=len(releases),
-        truncated=True,
+        max_pages=max_pages,
+        reason="pagination_limit",
     )
 
 
-def _pagination_details(pages_fetched, items_fetched, truncated, cache_metadata=()):
-    details = {"pages_fetched": pages_fetched, "items_fetched": items_fetched, "truncated": truncated}
+def _pagination_details(pages_fetched, items_fetched, max_pages, truncated, cache_metadata=()):
+    details = {"pages_fetched": pages_fetched, "items_fetched": items_fetched, "max_pages": max_pages, "truncated": truncated}
     statuses = {item.get("source_status") for item in cache_metadata if item.get("source_status")}
     if statuses:
         details["source_status"] = "revalidated" if statuses == {"revalidated"} else "fresh"

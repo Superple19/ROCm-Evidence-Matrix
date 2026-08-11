@@ -144,6 +144,8 @@ class ExtensionSourceTests(unittest.TestCase):
             )
         self.assertEqual(results[0]["status"], "failed")
         self.assertTrue(results[0]["details"]["truncated"])
+        self.assertEqual(results[0]["details"]["reason"], "pagination_limit")
+        self.assertEqual(results[0]["details"]["max_pages"], 1)
         self.assertIn("exceeded 1 pages", results[0]["error"])
 
 

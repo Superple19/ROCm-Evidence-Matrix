@@ -28,7 +28,9 @@
             "properties": {
               "pages_fetched": {"type": "integer", "minimum": 0},
               "items_fetched": {"type": "integer", "minimum": 0},
+              "max_pages": {"type": "integer", "minimum": 1},
               "truncated": {"type": "boolean"},
+              "reason": {"enum": ["page_fetch_failed", "invalid_payload", "pagination_limit"]},
               "source_status": {"enum": ["fresh", "revalidated", "cached", "not_cached"]},
               "cache_age_seconds": {"type": ["integer", "null"], "minimum": 0}
             }

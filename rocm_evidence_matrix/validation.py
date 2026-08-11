@@ -555,6 +555,10 @@ def validate_collection_status(document):
         details = result.get("details") or {}
         if details.get("pages_fetched", 0) < 0 or details.get("items_fetched", 0) < 0:
             raise ValueError(f"Invalid collection pagination details: {result['source_id']}")
+        if details.get("max_pages") is not None and details["max_pages"] < 1:
+            raise ValueError(f"Invalid collection page limit: {result['source_id']}")
+        if details.get("reason") not in {None, "page_fetch_failed", "invalid_payload", "pagination_limit"}:
+            raise ValueError(f"Invalid collection failure reason: {result['source_id']}")
         if details.get("source_status") not in {None, "fresh", "revalidated", "cached", "not_cached"}:
             raise ValueError(f"Invalid collection source status: {result['source_id']}")
         if details.get("cache_age_seconds") is not None and details["cache_age_seconds"] < 0:

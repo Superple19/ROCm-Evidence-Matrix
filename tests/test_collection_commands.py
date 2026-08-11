@@ -89,7 +89,7 @@ class CollectionCommandTests(unittest.TestCase):
                 "source_id": "github-aiter",
                 "status": "failed",
                 "error": "pagination limit",
-                "details": {"pages_fetched": 10, "items_fetched": 1000, "truncated": True, "source_status": "revalidated", "cache_age_seconds": 3600},
+                "details": {"pages_fetched": 10, "items_fetched": 1000, "max_pages": 10, "truncated": True, "reason": "pagination_limit", "source_status": "revalidated", "cache_age_seconds": 3600},
             }],
         )
         validate_collection_status(status)
