@@ -5,7 +5,7 @@ import threading
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, TypedDict
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
@@ -14,6 +14,15 @@ from .validation import validate_source_manifest
 
 
 USER_AGENT = "rocm-evidence-matrix/0.1 (+https://github.com/Superple19/rocm-evidence-matrix)"
+
+
+class SourceResponse(TypedDict):
+    url: str
+    sha256: str
+    etag: str | None
+    last_modified: str | None
+    observed_at: str
+    encoding: str
 
 
 def utc_now():
@@ -43,7 +52,7 @@ class SourceCache:
         self.github_retries = github_retries
         self.generated_at = observed_at()
         self.lock = threading.Lock()
-        self.responses: dict[str, dict[str, Any]] = {}
+        self.responses: dict[str, SourceResponse] = {}
         self.last_results: dict[str, dict[str, Any]] = {}
         if self.manifest_path.exists():
             with self.manifest_path.open(encoding="utf-8") as handle:
@@ -66,10 +75,13 @@ class SourceCache:
                 cached_path = None
                 cached_content = None
         if cached_path and cached_content is not None:
-            if previous is not None and previous.get("etag"):
-                headers["If-None-Match"] = previous["etag"]
-            if previous is not None and previous.get("last_modified"):
-                headers["If-Modified-Since"] = previous["last_modified"]
+            if previous is not None:
+                etag = previous["etag"]
+                last_modified = previous["last_modified"]
+                if etag:
+                    headers["If-None-Match"] = etag
+                if last_modified:
+                    headers["If-Modified-Since"] = last_modified
 
         request = Request(url, headers=headers)
         cache_status = "fresh"

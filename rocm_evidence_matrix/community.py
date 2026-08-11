@@ -5,7 +5,7 @@ import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, TypedDict
 
 from .persistence import atomic_write_json
 from .source_adapter import monotonic_generated_at
@@ -24,6 +24,19 @@ COMMON_RECORD_FIELDS = {
 RUNTIME_RECORD_FIELDS = COMMON_RECORD_FIELDS | {"rocm_available", "device_count", "devices"}
 HARDWARE_RECORD_FIELDS = COMMON_RECORD_FIELDS | {"device", "elapsed_ms", "correct", "operation"}
 DEVICE_FIELDS = {"index", "name", "gcnArchName", "gfx", "multi_processor_count", "total_memory"}
+
+
+class CommunitySubmission(TypedDict):
+    id: str
+    content_hash: str
+    evidence_kind: str
+    source: str
+    provenance: str
+    observed_at: str
+    submitted_at: str
+    result: str
+    record: dict[str, Any]
+    privacy_redacted: bool
 
 
 def utc_now():
@@ -60,7 +73,7 @@ def _allowed_record(record: dict[str, Any], evidence_kind: str) -> dict[str, Any
     return redacted
 
 
-def submission_from_record(record, evidence_kind, submitted_at=None):
+def submission_from_record(record, evidence_kind, submitted_at=None) -> CommunitySubmission:
     if evidence_kind not in {"runtime", "hardware"}:
         raise ValueError("Community evidence kind must be runtime or hardware")
     submitted_at = submitted_at or utc_now()
