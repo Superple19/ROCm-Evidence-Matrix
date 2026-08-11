@@ -132,8 +132,20 @@ class CollectionCommandTests(unittest.TestCase):
             "framework_compatibility": [],
         }
         sources = [
-            {"id": "stable", "channel": "stable", "url": "https://example.test/stable/"},
-            {"id": "nightly", "channel": "nightly", "url": "https://example.test/nightly/"},
+            {
+                "id": "stable",
+                "distribution_family": "therock",
+                "channel": "stable",
+                "platform": "windows",
+                "url": "https://example.test/stable/",
+            },
+            {
+                "id": "nightly",
+                "distribution_family": "therock",
+                "channel": "nightly",
+                "platform": "windows",
+                "url": "https://example.test/nightly/",
+            },
         ]
 
         def package_result(source, **_kwargs):

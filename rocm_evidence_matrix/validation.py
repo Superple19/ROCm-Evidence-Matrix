@@ -10,11 +10,13 @@ def validate_snapshot(snapshot):
         raise ValueError("last_observed_at must be a UTC timestamp")
 
     source = snapshot.get("source")
-    if not isinstance(source, dict) or not {"id", "channel", "url"}.issubset(source):
-        raise ValueError("source must contain id, channel, and url")
+    required_source_fields = {"id", "distribution_family", "channel", "url", "platform"}
+    if not isinstance(source, dict) or not required_source_fields.issubset(source):
+        raise ValueError("source must contain id, distribution_family, channel, url, and platform")
     if source.get("distribution_family", "therock") not in {"therock", "legacy"}:
         raise ValueError(f"Unsupported distribution family: {source.get('distribution_family')}")
-    if source.get("platform", "windows") not in {"windows", "linux", "macos", "unknown"}:
+    platform = source["platform"]
+    if platform not in {"windows", "linux", "macos", "unknown"}:
         raise ValueError(f"Unsupported platform: {source.get('platform')}")
     if source["channel"] not in {"stable", "nightly", "staging"}:
         raise ValueError(f"Unsupported channel: {source['channel']}")
@@ -34,8 +36,18 @@ def validate_snapshot(snapshot):
             required = {"filename", "version", "python_tag", "abi_tag", "platform_tag", "url"}
             if set(artifact) != required:
                 raise ValueError(f"Invalid artifact fields for {package_name}")
-            if source.get("platform", "windows") == "windows" and not (artifact["platform_tag"].startswith("win") or artifact["platform_tag"] in {"any", "source"}):
+            platform_tag = artifact["platform_tag"]
+            if platform == "windows" and not (platform_tag.startswith("win") or platform_tag in {"any", "source"}):
                 raise ValueError(f"Artifact is not applicable to Windows: {package_name}")
+            if platform == "linux" and not (
+                platform_tag.startswith(("linux", "manylinux", "musllinux"))
+                or platform_tag in {"any", "source"}
+            ):
+                raise ValueError(f"Artifact is not applicable to Linux: {package_name}")
+            if platform in {"macos", "unknown"} and platform_tag not in {"any", "source"}:
+                raise ValueError(
+                    f"Platform-specific artifact cannot be classified for {platform}: {package_name}"
+                )
             if not artifact["url"].startswith("https://"):
                 raise ValueError(f"Artifact URL must use HTTPS: {package_name}")
 

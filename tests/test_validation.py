@@ -21,7 +21,13 @@ def valid_snapshot():
     return {
         "schema_version": 1,
         "last_observed_at": "2026-08-07T00:00:00Z",
-        "source": {"id": "nightly", "channel": "nightly", "url": "https://example.test/"},
+        "source": {
+            "id": "nightly",
+            "distribution_family": "therock",
+            "channel": "nightly",
+            "url": "https://example.test/",
+            "platform": "windows",
+        },
         "gfx_targets": [
             {
                 "gfx": "gfx1201",
@@ -60,6 +66,20 @@ class ValidationTests(unittest.TestCase):
 
     def test_accepts_valid_snapshot(self):
         validate_snapshot(valid_snapshot())
+
+    def test_rejects_snapshot_without_platform(self):
+        snapshot = valid_snapshot()
+        snapshot["source"].pop("platform")
+
+        with self.assertRaisesRegex(ValueError, "platform"):
+            validate_snapshot(snapshot)
+
+    def test_rejects_linux_snapshot_with_windows_wheel(self):
+        snapshot = valid_snapshot()
+        snapshot["source"]["platform"] = "linux"
+
+        with self.assertRaisesRegex(ValueError, "not applicable to Linux"):
+            validate_snapshot(snapshot)
 
     def test_rejects_incorrect_availability(self):
         snapshot = valid_snapshot()

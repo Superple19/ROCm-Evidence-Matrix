@@ -13,7 +13,12 @@ class IntegrationTests(unittest.TestCase):
         }
         package_snapshot = {
             "last_observed_at": "2026-08-07T00:00:00Z",
-            "source": {"id": "nightly", "channel": "nightly", "url": "https://example.test/packages"},
+            "source": {
+                "id": "nightly",
+                "channel": "nightly",
+                "platform": "windows",
+                "url": "https://example.test/packages",
+            },
             "gfx_targets": [{"gfx": "gfx1201", "all_device_packages_available": False}],
             "packages": {},
         }
@@ -26,6 +31,18 @@ class IntegrationTests(unittest.TestCase):
         self.assertFalse(target["package_channels"]["nightly"]["all_device_packages_available"])
         self.assertIsNone(target["package_channels"]["nightly"]["torch_device_version"])
         self.assertEqual(matrix["generated_at"], "2026-08-07T00:00:00Z")
+
+    def test_rejects_snapshot_without_platform(self):
+        documentation = {"sources": {}, "products": []}
+        snapshot = {
+            "last_observed_at": "2026-08-07T00:00:00Z",
+            "source": {"id": "missing-platform", "channel": "stable", "url": "https://example.test/packages"},
+            "gfx_targets": [],
+            "packages": {},
+        }
+
+        with self.assertRaisesRegex(ValueError, "platform"):
+            build_compatibility_matrix(documentation, [snapshot])
 
     def test_keeps_package_channels_separate_by_platform(self):
         documentation = {

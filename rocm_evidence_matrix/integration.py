@@ -23,7 +23,10 @@ def build_compatibility_matrix(documentation, package_snapshots):
     packages_by_platform = {}
     for snapshot in package_snapshots:
         source = snapshot["source"]
-        packages_by_platform.setdefault(source.get("platform", "windows"), {})[source["channel"]] = snapshot
+        platform = source.get("platform")
+        if platform not in {"windows", "linux", "macos", "unknown"}:
+            raise ValueError(f"Package snapshot has no supported platform: {source.get('id', 'unknown')}")
+        packages_by_platform.setdefault(platform, {})[source["channel"]] = snapshot
 
     targets = set(products_by_gfx) | set(release_by_gfx) | set(therock_by_gfx)
     for snapshot in package_snapshots:
