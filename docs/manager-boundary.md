@@ -78,8 +78,9 @@ into a universal compatibility claim.
   requirements.
 - Do not make performance recommendations look like required compatibility fixes.
 - Do not change ComfyUI source code to work around an installer decision.
-- Do not upload local paths, tokens, environment details, or hardware results
-  without an explicit user action and a defined evidence format.
+- Keep local paths, tokens, environment details, and hardware results local.
+  The Matrix and Manager provide no upload, telemetry, community intake, or
+  maintainer review path.
 - Do not mix Ollama, llama.cpp, or other native LLM runtime requirements into the
   Torch package resolver.
 
@@ -111,9 +112,9 @@ Install or restore decision
 ```
 
 `artifact_available`, `resolver_verified`, `runtime_verified`, and
-`hardware_verified` remain distinct. A Manager result may be stored locally and
-may later be shared as an explicitly identified observation, but it must not
-rewrite the shared historical record automatically.
+`hardware_verified` remain distinct. A Manager result is local-only by default
+and may later be shared as an explicitly identified observation only through a
+local export; it must not rewrite the shared historical record automatically.
 
 Package candidates may have `hip_version: null` because HIP is often exposed by
 the installed runtime rather than by the package index. The Manager must not

@@ -72,6 +72,12 @@
 - Generated files must identify their generator and must not be edited manually.
 - `rocm-evidence` prepares a local, reviewable community submission; collection and evidence export must never upload credentials or results automatically.
 
+## Windows subprocess encoding
+
+- When running Python subprocesses on Windows, force UTF-8 output with `python -X utf8` or `PYTHONIOENCODING=utf-8`.
+- Do not infer file corruption from mojibake in external-process output or from the display column of `Format-Hex`.
+- Validate file bytes and decoding separately with an explicit UTF-8 reader before changing a file.
+
 ## Engineering Style
 
 - Keep changes small, direct, and easy to audit.

@@ -60,15 +60,15 @@ integrations must use the grouped representation.
 - `rocm_evidence_matrix/extension_catalog.py`: append-only extension catalog/history and human-readable rendering
 - `rocm_evidence_matrix/check.py`: offline evidence and generated-document validation
 - `rocm_evidence_matrix/profile.py`: consumer profile validation and selection policy
-- `rocm_evidence_matrix/community.py`: privacy-redacted community evidence export
+- `rocm_evidence_matrix/community.py`: privacy-redacted local diagnostic export
 - `rocm_evidence_matrix/integration.py`: evidence integration by exact GFX target
 - `schemas/`: contracts for each persisted evidence type
 - `data/`: committed normalized evidence and generated views
 - `docs/generated/`: rebuildable Markdown views
 - `profiles/`: application, runtime, framework, extension, and option profiles
-- `contributions/`: manually reviewed community evidence submissions
+- `contributions/`: local diagnostic export format documentation; not an intake directory
 
 The public package namespace is `rocm_evidence_matrix`.
 The primary command names are `rocm-matrix`, `rocm-resolve`, and `rocm-verify`.
-Batch verification and privacy-redacted evidence export remain auxiliary
-commands.
+Batch verification and privacy-redacted local diagnostic export remain auxiliary
+commands. The repository does not accept or review user-submitted records.

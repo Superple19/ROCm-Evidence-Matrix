@@ -25,8 +25,19 @@ The collector reads official AMD and TheRock stable, nightly, and staging source
 - Preserves legacy Linux manylinux wheel artifacts without treating them as an actively maintained resolver path.
 - Validates consumer profiles and keeps ComfyUI extension policy separate from core package evidence.
 - Collects extension package artifacts independently from PyPI, simple indexes, or explicitly configured release APIs.
-- Prepares privacy-redacted community runtime and hardware submissions without uploading them.
+- Prepares privacy-redacted local runtime and hardware diagnostic reports without uploading them.
 - Generates a Markdown availability summary from the JSON snapshots.
+
+## Privacy and sharing boundary
+
+The Matrix collector reads only the public upstream sources explicitly listed
+in its configuration. It does not inspect a user's machine, run probes on a
+user's GPU, collect telemetry, or receive local runtime results automatically.
+Runtime and hardware commands operate on a user-selected local environment and
+write results locally. `rocm-evidence` only prepares a redacted local
+diagnostic JSON file. There is no upload client, submission endpoint, community
+intake, or maintainer review workflow, and the report is never added to the
+shared catalog automatically.
 
 Official documentation sources and their evidence boundaries are listed in [docs/sources.md](docs/sources.md). The data boundaries and processing layers are documented in [docs/architecture.md](docs/architecture.md), the machine-readable consumer contract is in [docs/consumer-contract.md](docs/consumer-contract.md), and the future ComfyUI Manager boundary is in [docs/manager-boundary.md](docs/manager-boundary.md). Schema changes follow [docs/schema-versioning.md](docs/schema-versioning.md).
 The latest repository audit and hardening notes are in [docs/code-audit.md](docs/code-audit.md).
@@ -149,7 +160,7 @@ Triton is an optional extension and is tracked in [extension history](docs/gener
 
 The extension artifact catalog also covers bitsandbytes, Flash Attention, AITER, SageAttention, and Triton when their configured upstream sources expose artifacts. An absent record means `not_collected`, not unsupported. The Manager must keep these observations separate from the ComfyUI profile's compatibility claims.
 
-`rocm-verify-matrix` is an auxiliary, opt-in batch form of `rocm-verify`. It runs the resolver across selected channels, representative GFX targets, and candidate Python tags. It is intended for controlled investigations or community evidence collection, not exhaustive historical backtesting or normal catalog generation. `--all-candidates` and `--all-gfx` require an explicit `--exhaustive` opt-in. Use `--resume` to skip combinations already recorded in the JSONL log, merged output, or tracked history. Matrix jobs reuse a host-local cache (`%LOCALAPPDATA%\rocm-matrix\pip` on Windows or `~/.cache/rocm-matrix/pip` on Linux) while each resolver still runs in a disposable environment; override it with `--cache-dir` when needed. Use `--workers` to run independent resolver subprocesses concurrently; evidence is appended by the coordinator and history is merged once per run. The record separates the target platform from the verifier host; this is dependency-resolution evidence only and does not establish runtime or hardware support. Use `--limit` while developing and override the target wheel tag when needed:
+`rocm-verify-matrix` is an auxiliary, opt-in batch form of `rocm-verify`. It runs the resolver across selected channels, representative GFX targets, and candidate Python tags. It is intended for controlled investigations, not exhaustive historical backtesting or normal catalog generation. `--all-candidates` and `--all-gfx` require an explicit `--exhaustive` opt-in. Use `--resume` to skip combinations already recorded in the JSONL log, merged output, or tracked history. Matrix jobs reuse a host-local cache (`%LOCALAPPDATA%\rocm-matrix\pip` on Windows or `~/.cache/rocm-matrix/pip` on Linux) while each resolver still runs in a disposable environment; override it with `--cache-dir` when needed. Use `--workers` to run independent resolver subprocesses concurrently; evidence is appended by the coordinator and history is merged once per run. The record separates the target platform from the verifier host; this is dependency-resolution evidence only and does not establish runtime or hardware support. Use `--limit` while developing and override the target wheel tag when needed:
 
 ```text
 rocm-verify-matrix --platform linux --gfx gfx1201 --python cp312 --limit 1
@@ -164,7 +175,7 @@ rocm-matrix runtime --candidate-id <candidate-id> --gfx gfx1201
 rocm-matrix hardware --candidate-id <candidate-id> --gfx gfx1201
 ```
 
-Both commands append timestamped records locally. Use `rocm-evidence` to create a privacy-redacted submission for manual review; no evidence is uploaded automatically.
+Both commands append timestamped records locally. Use `rocm-evidence` only to create a privacy-redacted local diagnostic report; no evidence is uploaded, submitted, or added to the shared catalog automatically.
 
 GitHub Actions collection uses `GITHUB_TOKEN` when present. GitHub API 403/429 responses are retried with bounded backoff; if collection still fails, the previous CI executions remain in the evidence file and the failed adapter is recorded separately.
 
@@ -172,7 +183,7 @@ Compatibility profiles use `schemas/profile.schema.json`. They keep framework, r
 
 The current ComfyUI profile is under `profiles/comfyui/`. Its extension profiles
 are optional and remain unverified until explicit resolver, runtime, or hardware
-evidence is linked. Prepare a manually reviewed community submission with:
+evidence is linked. Prepare a local diagnostic report with:
 
 ```text
 rocm-evidence --input data/verifications/runtime.json --kind runtime
@@ -180,7 +191,7 @@ rocm-evidence --input data/verifications/hardware.json --kind hardware
 ```
 
 The command redacts local identity and paths, adds a content hash, and writes
-no network requests. Community evidence is self-reported and never replaces
+no network requests. The report is for local inspection only and never replaces
 official or hardware verification evidence.
 
 ## Run tests

@@ -102,10 +102,10 @@ def write_submission(record, evidence_kind, output_path, submitted_at=None):
 
 
 def parse_args(argv=None):
-    parser = argparse.ArgumentParser(description="Prepare privacy-redacted community ROCm evidence for review.")
+    parser = argparse.ArgumentParser(description="Prepare a privacy-redacted local ROCm diagnostic report.")
     parser.add_argument("--input", required=True)
     parser.add_argument("--kind", choices=("runtime", "hardware"), required=True)
-    parser.add_argument("--output", default="contributions/community-evidence.json")
+    parser.add_argument("--output", default="data/verifications/local-evidence.json")
     return parser.parse_args(argv)
 
 
@@ -115,7 +115,7 @@ def main(argv=None):
     if "verifications" in record:
         record = record["verifications"][-1]
     document = write_submission(record, args.kind, args.output)
-    print(f"Prepared {len(document['submissions'])} community submission(s) in {args.output}")
+    print(f"Prepared {len(document['submissions'])} local diagnostic record(s) in {args.output}")
 
 
 if __name__ == "__main__":

@@ -105,7 +105,7 @@ The legacy `windows_*` version-history fields are compatibility aliases. New
 consumers should read the evidence object under the release's `platform` key
 (for example, `platform_evidence.windows` or `platform_evidence.linux`).
 
-## Profiles and community evidence
+## Profiles and local diagnostic reports
 
 Profiles under `profiles/` are policy consumed by applications; they do not
 modify core package or platform evidence. Validate them against
@@ -119,7 +119,9 @@ runtime, or hardware evidence is explicitly linked. Consumers must not present
 an unverified extension as compatible automatically, and extension failures
 must remain separate from the ComfyUI core result.
 
-Community submissions use `schemas/community-evidence.schema.json`. They are
-`source=community` and `provenance=self-reported`, not official AMD support.
-Prepare them with `rocm-evidence`, review the redaction, and submit them
-manually; the command performs no upload.
+The local diagnostic export format uses `schemas/community-evidence.schema.json`.
+Records are `source=community` and `provenance=self-reported`, not official AMD
+support. `rocm-evidence` prepares the file locally; the Matrix and Manager have
+no upload, telemetry, background reporting, community intake, or maintainer
+review workflow. These records are never added to the shared catalog
+automatically.

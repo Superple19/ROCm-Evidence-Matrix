@@ -44,7 +44,8 @@ execution results.
 
 The catalog now includes tracked CI, status, and source-manifest artifacts.
 Profiles resolve `source:<id>` references against collected source records, and
-reviewed community JSON is validated when present.
+local diagnostic JSON is validated when present. The repository has no
+community intake or maintainer review workflow.
 
 The catalog also records SHA-256 digests for every tracked artifact. Consumers
 must verify those bytes before using a cached snapshot. Package candidates now

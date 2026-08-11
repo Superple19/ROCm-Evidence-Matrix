@@ -263,13 +263,16 @@ Sources establish different facts and must not be collapsed into a single compat
 
 Every collected observation should retain its source URL and `last_observed_at` timestamp. Historical records should retain their original URLs and exact version strings even after a source stops publishing the artifact.
 
-## Profiles and community observations
+## Profiles and local diagnostic observations
 
 Consumer profiles are maintained separately from upstream source authority.
 `profiles/comfyui/` currently describes ComfyUI core and extension policy;
 profile claims remain documented or unverified until linked to stronger evidence.
 
-Runtime and hardware results generated on a user's physical machine are
-community observations, not official support claims. `rocm-evidence` creates a
-privacy-redacted, hashed submission with `source=community` and
-`provenance=self-reported`. Users must review and submit it manually.
+Runtime and hardware results generated on a user's physical machine are local
+diagnostics, not official support claims. `rocm-evidence` can create a
+privacy-redacted, hashed report with `source=community` and
+`provenance=self-reported` locally. The command does not upload, transmit, or
+contact a submission service. The Matrix does not operate a community intake or
+review workflow, and these reports are never added to the shared catalog
+automatically.
