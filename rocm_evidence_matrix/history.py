@@ -208,6 +208,8 @@ def update_execution_evidence(history_path, kind, candidate_id, result, *, recor
     candidate = next((item for item in history.get("candidates", []) if item.get("id") == candidate_id), None)
     if candidate is None or record.get("candidate_id") != candidate_id or record.get("result") != result:
         return False
+    if execution_platform_identity_errors(candidate, record):
+        return False
     if execution_evidence_errors(candidate, record, kind, requested_gfx):
         return False
     candidate.setdefault("evidence_status", initial_evidence_status())[kind] = status
@@ -281,6 +283,27 @@ def execution_evidence_errors(candidate, record, kind, requested_gfx=None):
     return errors
 
 
+def execution_platform_identity_errors(candidate, record):
+    """Validate the normalized target and verifier host platform fields."""
+
+    expected = candidate.get("platform")
+    target = record.get("platform")
+    host = record.get("host_platform")
+    normalized_os = record.get("os")
+    errors = []
+    if target not in {"windows", "linux"}:
+        errors.append(f"execution has no supported target platform identity: {target}")
+    elif target != expected:
+        errors.append(f"target platform mismatch: candidate={expected}, observed={target}")
+    if host not in {"windows", "linux"}:
+        errors.append(f"execution has no supported host platform identity: {host}")
+    if normalized_os not in {"windows", "linux"}:
+        errors.append(f"execution has no supported normalized OS identity: {normalized_os}")
+    if target != host or host != normalized_os:
+        errors.append(f"execution platform fields disagree: platform={target}, host={host}, os={normalized_os}")
+    return errors
+
+
 def promote_execution_evidence(history_path, kind, record, requested_gfx=None, *, reviewed=False):
     """Promote one exact execution record after explicit maintainer review."""
 
@@ -292,6 +315,9 @@ def promote_execution_evidence(history_path, kind, record, requested_gfx=None, *
     candidate = next((item for item in history.get("candidates", []) if item.get("id") == candidate_id), None)
     if candidate is None:
         return False, [f"unknown candidate: {candidate_id}"]
+    identity_errors = execution_platform_identity_errors(candidate, record)
+    if identity_errors:
+        return False, identity_errors
     errors = execution_evidence_errors(candidate, record, kind, requested_gfx)
     if errors:
         return False, errors

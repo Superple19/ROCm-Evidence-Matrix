@@ -359,6 +359,8 @@ class HistoryTests(unittest.TestCase):
         }
         record = {
             "candidate_id": "candidate",
+            "platform": "windows",
+            "host_platform": "windows",
             "os": "windows",
             "gfx": "gfx1201",
             "torch_version": candidate["torch_version"],
@@ -382,6 +384,29 @@ class HistoryTests(unittest.TestCase):
             self.assertEqual(errors, [])
             history = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(history["candidates"][0]["evidence_status"]["runtime"], "runtime_verified")
+
+    def test_execution_promotion_rejects_disagreeing_platform_fields(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "history.json"
+            candidate = {
+                "id": "candidate", "platform": "windows", "distribution_family": "therock",
+                "channel": "stable", "rocm_version": "7.14.0", "torch_version": "2.12.0",
+                "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0", "python_tags": ["cp312"],
+                "gfx_support": "known", "gfx_targets": ["gfx1201"], "available_gfx_targets": ["gfx1201"],
+                "artifact_available": True, "source_id": "source", "first_observed_at": "2026-08-08T00:00:00Z",
+                "last_observed_at": "2026-08-08T00:00:00Z",
+            }
+            path.write_text(json.dumps({"schema_version": 2, "candidates": [candidate]}), encoding="utf-8")
+            record = {
+                "candidate_id": "candidate", "platform": "linux", "host_platform": "windows", "os": "windows",
+                "gfx": "gfx1201", "python_tag": "cp312", "platform_tag": "win_amd64", "result": "passed",
+                "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
+                "rocm_version": "7.14.0", "hip_version": "7.14.0", "devices": [{"gfx": "gfx1201"}],
+            }
+            record["candidate_hash"] = candidate_hash(candidate, "gfx1201", "cp312", "win_amd64")
+            promoted, errors = promote_execution_evidence(path, "runtime", record, reviewed=True)
+            self.assertFalse(promoted)
+            self.assertTrue(any("platform" in error for error in errors))
 
     def test_execution_evidence_is_not_promoted_without_review(self):
         with tempfile.TemporaryDirectory() as directory:
