@@ -1,12 +1,12 @@
 # Code Audit and Hardening
 
-This report records the full-repository audit performed on 2026-08-10. The
+This report records the full-repository audit performed on 2026-08-11. The
 project remains an unofficial evidence collector; the audit does not turn
 package availability into a compatibility guarantee.
 
 ## Baseline
 
-- 177 offline unit tests pass.
+- 179 offline unit tests pass.
 - `rocm-matrix check` validates schemas, catalog entries, standalone evidence,
   profiles, and generated documents.
 - No exhaustive historical resolver or physical-GPU backtest is performed by
@@ -65,6 +65,17 @@ The Manager's read-only `plan` path now uses the same command builder as
 `install`, so the user sees the target Python, index, and complete Torch,
 TorchVision, and TorchAudio package command before any apply step. Manager CI
 also runs the offline suite on both Linux and Windows.
+
+### Follow-up audit
+
+- The current offline suite contains 179 tests. Pyright reports no code errors;
+  its only remaining warnings are optional Torch imports used by local probes.
+- Current collected TheRock CI executions are Windows-only because the local
+  GitHub API collection run had no `GITHUB_TOKEN` and retained bounded 403
+  failures. Linux CI evidence remains `not_collected` rather than inferred.
+- The current local runtime and hardware records are one Windows `gfx1201`
+  environment. They are ignored local evidence and do not establish support
+  for Linux, other GFX targets, or other Python environments.
 
 ## Remaining limitations
 

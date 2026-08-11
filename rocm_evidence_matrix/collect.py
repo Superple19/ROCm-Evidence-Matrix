@@ -24,6 +24,13 @@ from .version_history import collect_therock_version_history, render_version_his
 
 
 USER_AGENT = "rocm-evidence-matrix/0.1 (+https://github.com/Superple19/rocm-evidence-matrix)"
+
+
+def _error_details(error):
+    details = getattr(error, "details", None)
+    return details if isinstance(details, dict) else None
+
+
 def fetch_text(url, timeout):
     request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/vnd.github+json, application/json;q=0.9, text/html;q=0.8"})
     with urlopen(request, timeout=timeout) as response:
@@ -342,11 +349,12 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
                 records.extend(adapter())
                 ci_results.append({"source_id": ci_config["workflows"]["id"] if adapter_name == "github_actions" else ci_config["hud"]["id"], "status": "passed", "error": None})
             except Exception as error:
+                details = _error_details(error)
                 failure = {"adapter": adapter_name, "error": str(error), "observed_at": observed_at}
-                if getattr(error, "details", None):
-                    failure["details"] = error.details
+                if details:
+                    failure["details"] = details
                 failures.append(failure)
-                ci_results.append({"source_id": ci_config["workflows"]["id"] if adapter_name == "github_actions" else ci_config["hud"]["id"], "status": "failed", "error": str(error), **({"details": error.details} if getattr(error, "details", None) else {})})
+                ci_results.append({"source_id": ci_config["workflows"]["id"] if adapter_name == "github_actions" else ci_config["hud"]["id"], "status": "failed", "error": str(error), **({"details": details} if details else {})})
                 print(f"Failed {adapter_name}: {error}")
         evidence = build_evidence(records, [], existing=read_json(args.ci_evidence_output), observed_at=observed_at, failures=failures)
         validate_ci_evidence(evidence)
