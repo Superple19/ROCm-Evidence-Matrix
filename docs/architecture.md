@@ -43,8 +43,9 @@ Package boundaries are exposed under `rocm_evidence_matrix/sources/`,
 compatibility imports while the migration proceeds.
 
 Documentation and matrix records expose platform evidence under `platforms`.
-The current Windows fields remain as compatibility aliases for existing
-consumers; new platform integrations must use the grouped representation.
+The current Windows fields remain optional compatibility aliases for existing
+consumers; Linux-only and other platform-only targets omit them. New platform
+integrations must use the grouped representation.
 
 ## Ownership
 
