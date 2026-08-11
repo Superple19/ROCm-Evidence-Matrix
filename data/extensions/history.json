@@ -1,6 +1,9 @@
 {
   "extensions": [
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/18/d7/8520f826f6a38e489c930321a834b45095c18092de43f5312030c6826ed0/aiter-0.1.tar.gz"
@@ -49,6 +52,9 @@
       "version": "0.1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/60/8c/f0bb392b394415a7231b44ee96b13624e1997e3fc14a22c90ecbba86cd0c/aiter-0.1.2.tar.gz"
@@ -97,6 +103,9 @@
       "version": "0.1.2"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/4c/c5/efb9abdb6b4e85bb0ff0b3c2e066e813de64db18a23789c22e638a019087/aiter-0.13.20191203.tar.gz"
@@ -145,6 +154,10 @@
       "version": "0.13.20191203"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/0a/7c/278790ce1d2ec01c7ffda802f17c31509205c92f49bd0a9ddf4a42ba2ac8/bitsandbytes-0.31.8-py3-none-any.whl",
@@ -209,6 +222,10 @@
       "version": "0.31.8"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/87/13/fb20848ee843f9fa4f27e37ab0682c4108391c508ddd18b5d49d467b9c84/bitsandbytes-0.32.0-py3-none-any.whl",
@@ -273,6 +290,10 @@
       "version": "0.32.0"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/bc/f6/c5de9bfc83f060e98c1eb2197d0044e0b90be23a4bba270ac339f5e65c10/bitsandbytes-0.32.2.tar.gz",
@@ -337,6 +358,10 @@
       "version": "0.32.2"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/a0/8b/021b289c50a42cae26b02fda6060828f955ac622bbbd270f39317272e08c/bitsandbytes-0.32.3-py3-none-any.whl",
@@ -401,6 +426,10 @@
       "version": "0.32.3"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/9c/1f/ff2c7ba854512cc3308a91109975af48d62d17ff229da2c357bac2a88d76/bitsandbytes-0.33.0.tar.gz",
@@ -465,6 +494,10 @@
       "version": "0.33.0"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/a4/f4/35578ebc87e54c4ea9ec976982118321c5618a9e14a34a1626e1e951fbb9/bitsandbytes-0.34.0-py3-none-any.whl",
@@ -529,6 +562,10 @@
       "version": "0.34.0"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/38/2e/abf707518d853f0fab8b6f95fe16c0c0674d6e9de0b001b0e2e53e97333b/bitsandbytes-0.35.0.tar.gz",
@@ -593,6 +630,10 @@
       "version": "0.35.0"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/d8/45/118c241eb1b11473e8891503f4d3658cfabfebdf93cb5d9e64bf407db92d/bitsandbytes-0.35.2-py3-none-any.whl",
@@ -657,6 +698,10 @@
       "version": "0.35.2"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/65/13/dedb2c8dd57ac5b039dbdff1aeea0687a70b75bbc8dbbd76ae3c8fc1cc34/bitsandbytes-0.35.3.tar.gz",
@@ -721,6 +766,10 @@
       "version": "0.35.3"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/d4/82/5067d044f7c1c7ddd4f285bfeb062ce3a60f7e39e2a2968df5a06a237b24/bitsandbytes-0.35.4-py3-none-any.whl",
@@ -785,6 +834,10 @@
       "version": "0.35.4"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/37/30/50b62590900ae91421848c476c59a84bc2ed435d146c24e731a4749f891a/bitsandbytes-0.36.0-py3-none-any.whl",
@@ -849,6 +902,10 @@
       "version": "0.36.0"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/4a/c9/c21c7cdde50387030adf3d0b48b3b4ba676f642e5a860cc971add0ae5c4c/bitsandbytes-0.36.0.post2.tar.gz",
@@ -913,6 +970,10 @@
       "version": "0.36.0.post2"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/04/31/e529ef947339eae9e2b66f4cfdc6ecbe7584c0111b0b9468b6a56e9d79e6/bitsandbytes-0.37.0-py3-none-any.whl",
@@ -977,6 +1038,10 @@
       "version": "0.37.0"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/67/01/5d48d435a9256ee3938b0d4cba359c979971f47e3cac4a90e58f69ca6e05/bitsandbytes-0.37.1.tar.gz",
@@ -1041,6 +1106,10 @@
       "version": "0.37.1"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/32/5f/f9e60c4718e13eb00a7afaa760c715b3fe9b0a7d04e98e1055c2f119fb86/bitsandbytes-0.37.2-py3-none-any.whl",
@@ -1105,6 +1174,10 @@
       "version": "0.37.2"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/01/44/219db4e591687f0de9f554c4328f78473c0f44d2e782a90faa5a64842ae3/bitsandbytes-0.38.0-py3-none-any.whl",
@@ -1169,6 +1242,10 @@
       "version": "0.38.0"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/66/1f/c8ec64253fb9cbd8c160734bba66ebcf8c657436bc0158d6e98cd2bb7e35/bitsandbytes-0.38.0.post1.tar.gz",
@@ -1233,6 +1310,10 @@
       "version": "0.38.0.post1"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/84/72/332dc116ec5aabcba3b084147586344dbdcb2e157adc1d82718f0107ee0e/bitsandbytes-0.38.0.post2.tar.gz",
@@ -1297,6 +1378,10 @@
       "version": "0.38.0.post2"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/0d/95/04de4035b1874026cadb9219aafb890e14fc6f3702a67618a144c66ec710/bitsandbytes-0.38.1-py3-none-any.whl",
@@ -1361,6 +1446,10 @@
       "version": "0.38.1"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/01/0c/30d90e42e7de06e3c366c6825c1a08512da112a2e5afff573b94ebcd2caf/bitsandbytes-0.39.0.tar.gz",
@@ -1425,6 +1514,10 @@
       "version": "0.39.0"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/d2/74/aed8c1c53cdd0689c9ce1801c65b6a2a0f76d0083add16da9263f2fe568d/bitsandbytes-0.39.1.tar.gz",
@@ -1489,6 +1582,10 @@
       "version": "0.39.1"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/37/c1/9f8dc47192cde389e1f472abbec068df504029308749ffacb7d32a748253/bitsandbytes-0.40.0.tar.gz",
@@ -1553,6 +1650,10 @@
       "version": "0.40.0"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/0a/bc/79c0303d461095f4c7c9c12a6e95b4b9d52471c61955b345f8c8cbb263d7/bitsandbytes-0.40.0.post1-py3-none-any.whl",
@@ -1617,6 +1718,10 @@
       "version": "0.40.0.post1"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/2c/e7/1172bb054ada346ccb0da67890612b822ed1352a1ab06b1f4990a1885c9e/bitsandbytes-0.40.0.post2.tar.gz",
@@ -1681,6 +1786,10 @@
       "version": "0.40.0.post2"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/0f/4f/0f30c26c1ce9344d21d92f398833ec1c4c6a6a241a296b08dd35ccaafe93/bitsandbytes-0.40.0.post3-py3-none-any.whl",
@@ -1745,6 +1854,10 @@
       "version": "0.40.0.post3"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/0f/4d/757ce6449a9e0d266900f7c7fb780cc4b1cb78dc48b54d8ddc9e1b8b8020/bitsandbytes-0.40.0.post4.tar.gz",
@@ -1809,6 +1922,10 @@
       "version": "0.40.0.post4"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/1c/47/215f71907f7c48cb7d8ce821c858b09cfa759f64c1e5fa85cef96493dfb3/bitsandbytes-0.40.1.tar.gz",
@@ -1873,6 +1990,10 @@
       "version": "0.40.1"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/e5/66/24709e338106bd979756d0300737ad60fad4a784e8d521ce374c2f2b3bd8/bitsandbytes-0.40.1.post1-py3-none-any.whl",
@@ -1937,6 +2058,10 @@
       "version": "0.40.1.post1"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/01/c5/a86fc4359561d76c35c658ca6a1765bbbaac2202f5f1e2af910339365afb/bitsandbytes-0.40.2.tar.gz",
@@ -2001,6 +2126,10 @@
       "version": "0.40.2"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/84/65/05cb06d964862f209dbec1caae62c22467f586751c2b4774d488391f0c29/bitsandbytes-0.41.0.tar.gz",
@@ -2065,6 +2194,10 @@
       "version": "0.41.0"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/1e/2c/af22cd797fc368a9f098ed03015730e6568b884fe67f9940793d944a4b7b/bitsandbytes-0.41.1-py3-none-any.whl",
@@ -2129,6 +2262,10 @@
       "version": "0.41.1"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/58/ee/62611e54f1acfa30d13715894f2d44f7aa275d586fb45887bcbc3cd14166/bitsandbytes-0.41.2.tar.gz",
@@ -2193,6 +2330,10 @@
       "version": "0.41.2"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/2a/f5/8a330e123d5891899e7d685f66537bfa63e6e0c960f26949c6f2f48de7c1/bitsandbytes-0.41.2.post1.tar.gz",
@@ -2257,6 +2398,10 @@
       "version": "0.41.2.post1"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/89/d0/4eb789e585bfe5aa201fb3afdfe435dd4713dfaed7e55e6e947359fa07a8/bitsandbytes-0.41.2.post2.tar.gz",
@@ -2321,6 +2466,10 @@
       "version": "0.41.2.post2"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/1b/db/1a3c0d3542484806c273e8027a328b12be69c1042bb9e134efe93ddf9b50/bitsandbytes-0.41.3-py3-none-any.whl",
@@ -2385,6 +2534,10 @@
       "version": "0.41.3"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/4c/67/b1b0fe832511d597bbb764761eb6f262a2cf30dab55303bdb5cf464b9695/bitsandbytes-0.41.3.post1-py3-none-any.whl",
@@ -2449,6 +2602,10 @@
       "version": "0.41.3.post1"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/5d/91/9dd8074a004ed403f7200534479ea17fc35562fe61c6baa9885a180505d1/bitsandbytes-0.41.3.post2.tar.gz",
@@ -2513,6 +2670,10 @@
       "version": "0.41.3.post2"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/95/a4/ee1a5c53a622ff6e68378e6f9f76f43ad8cadf440da53bb3bcc0bde30eb1/bitsandbytes-0.42.0.tar.gz",
@@ -2577,6 +2738,9 @@
       "version": "0.42.0"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/db/5b/ce65d93d7bb60fb07e5253f8f4c2da79d0329386188374a25b0ace74aae4/bitsandbytes-0.43.0-py3-none-win_amd64.whl",
@@ -2640,6 +2804,9 @@
       "version": "0.43.0"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/2f/a4/d8c8c1f69ceb3afdc285d62c65bec8d46900d70e81c9a8b24883001e23f8/bitsandbytes-0.43.1-py3-none-manylinux_2_24_x86_64.whl",
@@ -2703,6 +2870,9 @@
       "version": "0.43.1"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/72/e5/06ed351cdf8d1d5bf7eb86729e4e3669c6844654354aef3b1bc9da66d0bb/bitsandbytes-0.43.2-py3-none-manylinux_2_24_x86_64.whl",
@@ -2766,6 +2936,9 @@
       "version": "0.43.2"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/9f/73/92084a26c983854078113cee7ff8b3b444a0528788c4c5b512f94fa4a535/bitsandbytes-0.43.3-py3-none-win_amd64.whl",
@@ -2829,6 +3002,9 @@
       "version": "0.43.3"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/6d/d4/bff9d0bbe899a35749bc66eb83bda0345aa2b91621b1b3400ed58810c0d7/bitsandbytes-0.44.0-py3-none-win_amd64.whl",
@@ -2892,6 +3068,9 @@
       "version": "0.44.0"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/5f/f5/11bddebb5addc0a005b0c1cecc6e4c6e4055ad7b860bdcbf6374e12a51f5/bitsandbytes-0.44.1-py3-none-win_amd64.whl",
@@ -2955,6 +3134,9 @@
       "version": "0.44.1"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/1e/90/a2bbb9b5f997b9c9aa9c15ee4adf553ee71053bb942f89fd48d920a1aa9d/bitsandbytes-0.45.0-py3-none-win_amd64.whl",
@@ -3018,6 +3200,9 @@
       "version": "0.45.0"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/e4/26/0897c35865a6d7a04b05af5d59558484fda14fa26e5ec922a3bb8d3e0d18/bitsandbytes-0.45.1-py3-none-manylinux_2_24_x86_64.whl",
@@ -3081,6 +3266,9 @@
       "version": "0.45.1"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/cb/33/550bcfe84f08ee20f3bcc1b129dcadaf7f2d1a065ce9812476fc7be2874a/bitsandbytes-0.45.2-py3-none-win_amd64.whl",
@@ -3144,6 +3332,9 @@
       "version": "0.45.2"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/20/0f/3a5f062c0ed2252ed128ff028b36d2a46a763a2919b00f12ca5274493ff3/bitsandbytes-0.45.3-py3-none-manylinux_2_24_x86_64.whl",
@@ -3207,6 +3398,9 @@
       "version": "0.45.3"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/3c/c7/36f41619278a67a51e00d7890c3542195295467453ec74ec23dc5940b265/bitsandbytes-0.45.4-py3-none-manylinux_2_24_x86_64.whl",
@@ -3270,6 +3464,9 @@
       "version": "0.45.4"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/07/b7/cb5ce4d1a382cf53c19ef06c5fc29e85f5e129b4da6527dd207d90a5b8ad/bitsandbytes-0.45.5-py3-none-manylinux_2_24_x86_64.whl",
@@ -3333,6 +3530,9 @@
       "version": "0.45.5"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/70/39/aa68b7bd28b091a96795be18810b2325ce9263ba8db087f6f196a663f03a/bitsandbytes-0.46.0-py3-none-manylinux_2_24_aarch64.whl",
@@ -3411,6 +3611,9 @@
       "version": "0.46.0"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/6b/1e/c26dbcb46cebb49fa6b17ff888966e6d8f306078b095a5df801a583549d0/bitsandbytes-0.46.1-py3-none-manylinux_2_24_x86_64.whl",
@@ -3489,6 +3692,9 @@
       "version": "0.46.1"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/18/a9/e07a227f1cd6562844cea2f05ee576b0991a9a91f45965c06034178ba0f6/bitsandbytes-0.47.0-py3-none-win_amd64.whl",
@@ -3567,6 +3773,9 @@
       "version": "0.47.0"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/1d/a4/77c4aafcdf986754dd962aad16258b7493c6fb3ce1c69da4275df3cf3d3a/bitsandbytes-0.48.0-py3-none-win_amd64.whl",
@@ -3645,6 +3854,9 @@
       "version": "0.48.0"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/05/46/339ab9a33fa0964b07a7a0e8b13ec02687f03c8e9b03164edfb8688ce08f/bitsandbytes-0.48.1-py3-none-win_amd64.whl",
@@ -3723,6 +3935,9 @@
       "version": "0.48.1"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/17/2d/309b3ba276d1fe5f3db4fb5e0a6926d10654656cdbfe49881aa95f4cfcc2/bitsandbytes-0.48.2-py3-none-win_amd64.whl",
@@ -3801,6 +4016,9 @@
       "version": "0.48.2"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/69/76/bc6460b1618322258e7d251cd0c9d11d98d5232bb37cd507451e40127f8e/bitsandbytes-0.49.0-py3-none-win_amd64.whl",
@@ -3894,6 +4112,9 @@
       "version": "0.49.0"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/11/dd/5820e09213a3f7c0ee5aff20fce8b362ce935f9dd9958827274de4eaeec6/bitsandbytes-0.49.1-py3-none-manylinux_2_24_aarch64.whl",
@@ -3987,6 +4208,9 @@
       "version": "0.49.1"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/19/57/3443d6f183436fbdaf5000aac332c4d5ddb056665d459244a5608e98ae92/bitsandbytes-0.49.2-py3-none-manylinux_2_24_x86_64.whl",
@@ -4080,6 +4304,9 @@
       "version": "0.49.2"
     },
     {
+      "abi_tags": [
+        "none"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/22/08/9501f4fc830448a6862bd5313df94a7dd1ae678f4f81087b96569d4a6f8b/bitsandbytes-0.50.0-py3-none-manylinux_2_24_x86_64.whl",
@@ -4188,6 +4415,9 @@
       "version": "0.50.0"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/76/b2/296d07c9eae70b8b8e71938ebb753e052286947c59c4d9f75d12e8941afc/flash_attn-0.2.0.tar.gz"
@@ -4236,6 +4466,9 @@
       "version": "0.2.0"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/f3/6a/4c0bfde34ed78d5d4e1f23917f8405cd7e2cc5560827d3fb023e88b2c6fa/flash_attn-0.2.1.tar.gz"
@@ -4284,6 +4517,9 @@
       "version": "0.2.1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/4a/96/2ad062b5ff5cfe64c2c557cfef54eaefc49831301fdae2cc6a34b2a169f0/flash_attn-0.2.2.tar.gz"
@@ -4332,6 +4568,9 @@
       "version": "0.2.2"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/db/64/de6ecd80b6658d8008772e41838822828e714c8faa52fc8c19db8c4ca8cd/flash_attn-0.2.3.tar.gz"
@@ -4380,6 +4619,9 @@
       "version": "0.2.3"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/07/79/fa7825f1a64aa7ba88299ba3aa5148f45eef748e9fb6d862c73bbf0769b0/flash_attn-0.2.4.tar.gz"
@@ -4428,6 +4670,9 @@
       "version": "0.2.4"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/8d/29/c476efe31ea15d574fa952ff935d879dd2e40d2c0afc13fe5e4d54ca8de9/flash_attn-0.2.5.tar.gz"
@@ -4476,6 +4721,9 @@
       "version": "0.2.5"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/a0/d5/eaeea25b49a3e3d746c87e2f9b44045ed65c928829c7a9ac855b513fde3a/flash_attn-0.2.6.post1.tar.gz"
@@ -4524,6 +4772,9 @@
       "version": "0.2.6.post1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/86/84/db179a480ae31b1093d07ce44452d2a0d8bdf98fd45985f2b68a42e2a364/flash_attn-0.2.7.tar.gz"
@@ -4572,6 +4823,9 @@
       "version": "0.2.7"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/07/ca/2d8a5fc64b0b4bcc1b98b1ff7f37d8a0661234bc74e94bac5f67551896f8/flash_attn-0.2.8.tar.gz"
@@ -4620,6 +4874,9 @@
       "version": "0.2.8"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/1d/a3/c0c75c46b9277c57e085bae24000d9914254952f77a4129776b4f412817a/flash_attn-1.0.0.tar.gz"
@@ -4668,6 +4925,9 @@
       "version": "1.0.0"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/da/91/deec91e54d7876b73c5ad37004fa0d7cd6eb1e816b355252f0b7fdfe8d51/flash_attn-1.0.1.tar.gz"
@@ -4716,6 +4976,9 @@
       "version": "1.0.1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/b2/e9/2d689d1fe3585c0167265eed3239f4e26bb4f2c691037a960724a919cde2/flash_attn-1.0.2.tar.gz"
@@ -4764,6 +5027,9 @@
       "version": "1.0.2"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/39/17/e85eac59710421e1bc01eb93a12d37867f3a03c96cfb375997cc18f235b4/flash_attn-1.0.3.tar.gz"
@@ -4812,6 +5078,9 @@
       "version": "1.0.3"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/e6/ae/7bb436c59cf87da603f16f5dee5beeadd18b2b2331e49db012ac34e617ff/flash_attn-1.0.3.post0.tar.gz"
@@ -4860,6 +5129,9 @@
       "version": "1.0.3.post0"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/25/0f/80f16a741e328342ed4e9b3c010ec87f0ef939a71154b7b8bd22d70a0bb8/flash_attn-1.0.4.tar.gz"
@@ -4908,6 +5180,9 @@
       "version": "1.0.4"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/f0/b1/5e8d517b76f6efce8ba2a47f8b4e7e463a3ea0c1b3677c738fb819888369/flash_attn-1.0.5.tar.gz"
@@ -4956,6 +5231,9 @@
       "version": "1.0.5"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/59/12/b17409e6abbf4d2b450842be6f83842c83611af90f8009f4924c1e2211ed/flash_attn-1.0.6.tar.gz"
@@ -5004,6 +5282,9 @@
       "version": "1.0.6"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/14/61/3d89d15877e8c4bfa7aba4a23a01905123ce4b59a068b136f44d118bb5eb/flash_attn-1.0.7.tar.gz"
@@ -5052,6 +5333,9 @@
       "version": "1.0.7"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/2b/8f/4f33f2c0538980a0c21fb9fc79288b8a553cba5328d6e7923d3af1630842/flash_attn-1.0.8.tar.gz"
@@ -5100,6 +5384,9 @@
       "version": "1.0.8"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/96/9c/0550790c1f94bb223abd67cdeaece462c0ac56b5cf2cf84080a593e57987/flash_attn-1.0.9.tar.gz"
@@ -5148,6 +5435,9 @@
       "version": "1.0.9"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/a4/52/868536dd609c42071c2b9aeda8ceb11cf7186508ff568021beaa7dab09a8/flash_attn-2.0.0.post1.tar.gz"
@@ -5196,6 +5486,9 @@
       "version": "2.0.0.post1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/8a/fc/2aaa1def50b35e29abf44fbdfbb301aeb34b02e7e9724cac2eb95d5b22f4/flash_attn-2.0.1.tar.gz"
@@ -5244,6 +5537,9 @@
       "version": "2.0.1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/98/58/da22da6184dca61d2c2f372bb6b261b2d09fae2aff7e4180748a94e8183b/flash_attn-2.0.2.tar.gz"
@@ -5292,6 +5588,9 @@
       "version": "2.0.2"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/25/3d/c3aac97d522c41efb3140a2b2a66f12809e6282727ec61687837da9c13cc/flash_attn-2.0.3.tar.gz"
@@ -5340,6 +5639,9 @@
       "version": "2.0.3"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/81/29/7b1efb88be914d74d984848fb6cf3afcb7777f9120a989954d988bd37382/flash_attn-2.0.4.tar.gz"
@@ -5388,6 +5690,9 @@
       "version": "2.0.4"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/53/84/c81d5ed33dedc7a963f1d7260302b90912fe634735989703dce74e8646ab/flash_attn-2.0.5.tar.gz"
@@ -5436,6 +5741,9 @@
       "version": "2.0.5"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/76/8d/354f4691676267243587bb8f672ca85ee3a7877fdb252ca700be533f07dd/flash_attn-2.0.6.tar.gz"
@@ -5484,6 +5792,9 @@
       "version": "2.0.6"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/58/81/e48445d7dda2db0c8e05669f24de2b2cdd78569da52f4f757a7c3d71630f/flash_attn-2.0.6.post2.tar.gz"
@@ -5532,6 +5843,9 @@
       "version": "2.0.6.post2"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/05/da/f9efbfd9d8e0997c43297ab400eed067647580f5d33cef1dc911738cd641/flash_attn-2.0.7.tar.gz"
@@ -5580,6 +5894,9 @@
       "version": "2.0.7"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/89/6f/5871a94c3752a605b3491fa53ea79eebdd7504d3cedbd44b57c9fe0c0830/flash_attn-2.0.8.tar.gz"
@@ -5628,6 +5945,9 @@
       "version": "2.0.8"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/c3/b7/2d2e1280f12ef4c18cadcda1557f8fbd5a78af72d6b07dbdb4154086daf1/flash_attn-2.0.9.tar.gz"
@@ -5676,6 +5996,9 @@
       "version": "2.0.9"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/1f/6b/0e855eacf133ed50c69c47007b053f6f5d7d246f2a7e70a029835db6327a/flash_attn-2.1.0.tar.gz"
@@ -5724,6 +6047,9 @@
       "version": "2.1.0"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/fb/2e/050d6778e547c6b5e00e828eb14d37361f472f28fdf351bfa8ce0c4c0f86/flash_attn-2.1.1.tar.gz"
@@ -5772,6 +6098,9 @@
       "version": "2.1.1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/e1/4f/a1af29578bbfad861b1a6a6149bd3c5bec8819274f6e176e5cda49350438/flash_attn-2.1.2.post3.tar.gz"
@@ -5820,6 +6149,9 @@
       "version": "2.1.2.post3"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/42/5a/0ffb8271ad4a09b16da2cf84f5d4133346332100cf312ee1fb61f404ea20/flash_attn-2.2.0.tar.gz"
@@ -5868,6 +6200,9 @@
       "version": "2.2.0"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/58/85/87a593a7cca09963ed2e126b0ae5ff604c4a13040966ecc8a6f6966b6521/flash_attn-2.2.1.tar.gz"
@@ -5916,6 +6251,9 @@
       "version": "2.2.1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/35/e0/1c5a45aadf04b30bbdf482a9ccb57aadef2bc2d0ce4d2df8a5545de1406d/flash_attn-2.2.2.tar.gz"
@@ -5964,6 +6302,9 @@
       "version": "2.2.2"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/06/e9/63bb6ff4bf0daa9d7c5a8313dcb609cddd1d14262bc17856195230938ff7/flash_attn-2.2.3.post2.tar.gz"
@@ -6012,6 +6353,9 @@
       "version": "2.2.3.post2"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/d6/d2/e4c141a71850228e6a3eb079ebe2284fe9630870bfc44d649703377622f8/flash_attn-2.2.4.tar.gz"
@@ -6060,6 +6404,9 @@
       "version": "2.2.4"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/98/37/7ffb02e256a651a512d7c04e649cb224bdf308affa7738297d8ce064d439/flash_attn-2.2.4.post1.tar.gz"
@@ -6108,6 +6455,9 @@
       "version": "2.2.4.post1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/e6/f6/362df2a546a8fa6b19e490786641849844b0192c47aac7337549db0871ef/flash_attn-2.2.5.tar.gz"
@@ -6156,6 +6506,9 @@
       "version": "2.2.5"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/94/0d/29750f4dc66fc5345eb26cc1206a8fe70b73da76be1c175e1928151f7ff5/flash_attn-2.3.0.tar.gz"
@@ -6204,6 +6557,9 @@
       "version": "2.3.0"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/99/dd/1a676d8ff943482e1f39dbed29648f48931227ab135271afed0de63cf8f2/flash_attn-2.3.1.post1.tar.gz"
@@ -6252,6 +6608,9 @@
       "version": "2.3.1.post1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/92/7e/b3441b15faf8404bac4e1fd0f0a9562b154392a3e93e53676cbe565b9139/flash_attn-2.3.2.tar.gz"
@@ -6300,6 +6659,9 @@
       "version": "2.3.2"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/fa/d5/8285a20ed850824c9c0917dff851571f0b18402db8a52c20b7486d4d70d7/flash_attn-2.3.3.tar.gz"
@@ -6348,6 +6710,9 @@
       "version": "2.3.3"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/f0/98/f8a51e5239e54694767d3a9c73c1f53e7ac07c55e29611a21c607b35acb0/flash_attn-2.3.4.tar.gz"
@@ -6396,6 +6761,9 @@
       "version": "2.3.4"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/26/19/a8883f2bb5f915355581e1c715126c792c59bc2de619f151dcf858ea7caf/flash_attn-2.3.5.tar.gz"
@@ -6444,6 +6812,9 @@
       "version": "2.3.5"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/3c/49/95b86adfc0d90676dcb07fcbef47c71997e6e7c9e71fda51598a962d9148/flash_attn-2.3.6.tar.gz"
@@ -6492,6 +6863,9 @@
       "version": "2.3.6"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/f5/83/a9630a1954b90bba3d0e78bc8e089f3dbda763d98c80a2c42c9bae7a8fd3/flash_attn-2.4.0.post1.tar.gz"
@@ -6540,6 +6914,9 @@
       "version": "2.4.0.post1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/c9/96/9a9b1366d9c4e7b463d04a11a49a55ba6c541226c7288cc907ac819ea726/flash_attn-2.4.1.tar.gz"
@@ -6588,6 +6965,9 @@
       "version": "2.4.1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/4e/2f/a8d5495cd020e70474095107f0519a11fdff81a2a6cc15755feb1e19b027/flash_attn-2.4.2.tar.gz"
@@ -6636,6 +7016,9 @@
       "version": "2.4.2"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/92/95/b6c58e6747917f6f49c7555dd4a6eb39d31015f43c9300c45a3920006a6e/flash_attn-2.4.3.post1.tar.gz"
@@ -6684,6 +7067,9 @@
       "version": "2.4.3.post1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/9a/af/cab63e9729610f8ed2959bef8829d97d0c7b032ffe8ad349e461b42bd265/flash_attn-2.5.0.tar.gz"
@@ -6732,6 +7118,9 @@
       "version": "2.5.0"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/aa/08/307abdfc467390f61c2dd478ad5eaf377b6bc04ab44a17744b4c56207c88/flash_attn-2.5.1.post1.tar.gz"
@@ -6780,6 +7169,9 @@
       "version": "2.5.1.post1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/fc/ed/f106dfd805c71769c3c4c201541cc7c69c0f0facf6ed05d98e16fad7c6cc/flash_attn-2.5.2.tar.gz"
@@ -6828,6 +7220,9 @@
       "version": "2.5.2"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/b9/ec/953adfbd9d95b0e9385d3946b81c0446ae723f70fafcb0b5c40e10f5d7f2/flash_attn-2.5.3.tar.gz"
@@ -6876,6 +7271,9 @@
       "version": "2.5.3"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/4e/7b/b42299ad0edf4d185c883dcf83d4f31bf577e8e86f20e70b8ea8ebc0d75d/flash_attn-2.5.4.tar.gz"
@@ -6924,6 +7322,9 @@
       "version": "2.5.4"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/3b/ff/33a4ccc778c56d2ab9845b5ea09ab15d368ac39fa945f0bd2bd2724e18e8/flash_attn-2.5.5.tar.gz"
@@ -6972,6 +7373,9 @@
       "version": "2.5.5"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/85/52/9834eb88dd8a8be13b5399a32f23a79f0a307d9708f92e2b4778afaae0d4/flash_attn-2.5.6.tar.gz"
@@ -7020,6 +7424,9 @@
       "version": "2.5.6"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/21/cb/33a1f833ac4742c8adba063715bf769831f96d99dbbbb4be1b197b637872/flash_attn-2.5.7.tar.gz"
@@ -7068,6 +7475,9 @@
       "version": "2.5.7"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/72/94/06f618bb338ec7203b48ac542e73087362b7750f9c568b13d213a3f181bb/flash_attn-2.5.8.tar.gz"
@@ -7116,6 +7526,9 @@
       "version": "2.5.8"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/14/cd/53cbd9bd45e9bf1002f0c4de488e549501d085f4318c906807a0e50164cd/flash_attn-2.5.9.post1.tar.gz"
@@ -7164,6 +7577,9 @@
       "version": "2.5.9.post1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/67/e6/064aadb58fbcd5fc6281809ec75f32abc38b2fd9152ae7e40557f0f8a199/flash_attn-2.6.0.post1.tar.gz"
@@ -7212,6 +7628,9 @@
       "version": "2.6.0.post1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/d2/bb/9d159e09a8ea838cb8128963000efcb31e90dba0951083d3eca099d3b2d7/flash_attn-2.6.1.tar.gz"
@@ -7260,6 +7679,9 @@
       "version": "2.6.1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/b0/b2/09c651d7980a68f1dd55d6180d99b0605957911cca0c305f10b3fb72a36b/flash_attn-2.6.2.tar.gz"
@@ -7308,6 +7730,9 @@
       "version": "2.6.2"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/cd/1e/21321670cd3c2f225026d9fd89272cae661529238850e79f48ccf2f9e4e3/flash_attn-2.6.3.tar.gz"
@@ -7356,6 +7781,9 @@
       "version": "2.6.3"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/40/2c/90bf7f2b4800708e3a8a62694c935283b492384a0a791cfefbedd9138e1b/flash_attn-2.7.0.post2.tar.gz"
@@ -7404,6 +7832,9 @@
       "version": "2.7.0.post2"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/64/e2/8b14ec787d0d4bbfd9aac1e041a1f135e74e9b3883f0e3bb828c547dcf4a/flash_attn-2.7.1.post4.tar.gz"
@@ -7452,6 +7883,9 @@
       "version": "2.7.1.post4"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/83/29/48df18cb51902a7cb7a0ee13327bb2cf50b6ba24bd2e8283d0a9538dde52/flash_attn-2.7.2.post1.tar.gz"
@@ -7500,6 +7934,9 @@
       "version": "2.7.2.post1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/81/f5/59b0727da8c041c0e5eb9feba068e27c88b2cead0e03083c5c6d444d004b/flash_attn-2.7.3.tar.gz"
@@ -7548,6 +7985,9 @@
       "version": "2.7.3"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/11/34/9bf60e736ed7bbe15055ac2dab48ec67d9dbd088d2b4ae318fd77190ab4e/flash_attn-2.7.4.post1.tar.gz"
@@ -7596,6 +8036,9 @@
       "version": "2.7.4.post1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/32/5c/c7610beeb2fc0e70d0c09a93490bb2d07fb6c8fa1f80ef9617b0cd556d76/flash_attn-2.8.0.post2.tar.gz"
@@ -7644,6 +8087,9 @@
       "version": "2.8.0.post2"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/e8/6d/7066d160bdffa2f9da29a8c3957f266b17a03ca0b3bdc8fdae86d9881fe7/flash_attn-2.8.1.tar.gz"
@@ -7692,6 +8138,9 @@
       "version": "2.8.1"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/63/91/91bcbd7424877fa8da4e7cc04b8a777247a33037b9c1fd976a5ad426c047/flash_attn-2.8.2.tar.gz"
@@ -7740,6 +8189,9 @@
       "version": "2.8.2"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/3b/b2/8d76c41ad7974ee264754709c22963447f7f8134613fd9ce80984ed0dab7/flash_attn-2.8.3.tar.gz"
@@ -7788,6 +8240,9 @@
       "version": "2.8.3"
     },
     {
+      "abi_tags": [
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/01/7a/92a46e7cd6bbb4d7b2855a457c3b855df54a97af5656d98fc92e58e61065/flash_attn-2.8.3.post1.tar.gz"
@@ -7836,6 +8291,10 @@
       "version": "2.8.3.post1"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/5a/97/a4a6cf99319b859e590c7c3cb773e829f3a86717bda70bdf71eb069653ee/sageattention-0.1.0.tar.gz",
@@ -7900,6 +8359,10 @@
       "version": "0.1.0"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/6d/7a/72dcd61c9e57eb24e0e9c9fd2bd5e622b1a8cd2e4e6cede0f2376fce56e6/sageattention-1.0.0.tar.gz",
@@ -7964,6 +8427,10 @@
       "version": "1.0.0"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/0e/5d/09021b1886534df456d0e8a7dc67f66e4773fd6f4d41598d159c9c0941f6/sageattention-1.0.1.tar.gz",
@@ -8028,6 +8495,10 @@
       "version": "1.0.1"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/00/0f/0564de49e61fc70e844b70e84eed326d3b9ccd1c8097e4a4067055c7edd7/sageattention-1.0.2.tar.gz",
@@ -8092,6 +8563,10 @@
       "version": "1.0.2"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/c7/5a/6a8b8c3d8571b055ffce2832c97bb62b15e1cd6ee813bbbeab30d34167e3/sageattention-1.0.3-py3-none-any.whl",
@@ -8156,6 +8631,10 @@
       "version": "1.0.3"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/8b/2b/67456109ffee08eff645406e6724195f36a687a2b5865b55a107b6f9af96/sageattention-1.0.4.tar.gz",
@@ -8220,6 +8699,10 @@
       "version": "1.0.4"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/98/6b/ac1a0d37ac7eaa715b03923d4595f1899f5ce57760dc11ea13186c18e96f/sageattention-1.0.5.tar.gz",
@@ -8284,6 +8767,10 @@
       "version": "1.0.5"
     },
     {
+      "abi_tags": [
+        "none",
+        "source"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/53/06/f7b47adb766bcb38b3f88763374a3e8dffea05ee9b556bc24dbcbd60fd29/sageattention-1.0.6-py3-none-any.whl",
@@ -8348,6 +8835,15 @@
       "version": "1.0.6"
     },
     {
+      "abi_tags": [
+        "cp35m",
+        "cp36m",
+        "cp37m",
+        "cp38",
+        "cp39",
+        "pypy36_pp73",
+        "pypy37_pp73"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/31/d6/45995419f74d238bdd56aadd03b9f07fd3f589e2fb89178186d356e81480/triton-0.4.1-cp39-cp39-manylinux2010_x86_64.whl",
@@ -8486,6 +8982,15 @@
       "version": "0.4.1"
     },
     {
+      "abi_tags": [
+        "cp35m",
+        "cp36m",
+        "cp37m",
+        "cp38",
+        "cp39",
+        "pypy36_pp73",
+        "pypy37_pp73"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/1b/33/0187fd6087e3df66cde937a3cf6981de49e8b2fefcd9323c8cc3e0b2436f/triton-0.4.2-pp37-pypy37_pp73-manylinux2010_x86_64.whl",
@@ -8624,6 +9129,13 @@
       "version": "0.4.2"
     },
     {
+      "abi_tags": [
+        "cp36m",
+        "cp37m",
+        "cp38",
+        "cp39",
+        "pypy37_pp73"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/21/31/ff105ecf2ea6c149c5889dfce3d6e5dd4261ae6702fd8e7764519d82deea/triton-1.0.0-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
@@ -8732,6 +9244,13 @@
       "version": "1.0.0"
     },
     {
+      "abi_tags": [
+        "cp36m",
+        "cp37m",
+        "cp38",
+        "cp39",
+        "pypy37_pp73"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/01/f1/dbae0f424d5a2411a55f55e06e8ab58699eb3ef7ba7dbe3aa2bb33aef3c1/triton-1.1.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
@@ -8840,6 +9359,13 @@
       "version": "1.1.0"
     },
     {
+      "abi_tags": [
+        "cp36m",
+        "cp37m",
+        "cp38",
+        "cp39",
+        "pypy37_pp73"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/00/6e/368e473de54981c00ac06874a03aa8ffe27805c3d11f70b4c8bbe534f81f/triton-1.1.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
@@ -8948,6 +9474,17 @@
       "version": "1.1.1"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp36m",
+        "cp37m",
+        "cp38",
+        "cp39",
+        "pypy37_pp73",
+        "pypy38_pp73",
+        "pypy39_pp73"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/72/90/91059851af9ffbceb40eeabb2e2522cd8b184b005f4b4ba44f6cba081ef0/triton-2.0.0-1-pp38-pypy38_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
@@ -9116,6 +9653,16 @@
       "version": "2.0.0"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp37m",
+        "cp38",
+        "cp39",
+        "pypy37_pp73",
+        "pypy38_pp73",
+        "pypy39_pp73"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/03/47/55c4168f8333a852f9284a8446d15cb37b69903d47896e4aebfe9f21969d/triton-2.1.0-0-pp39-pypy39_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
@@ -9269,6 +9816,14 @@
       "version": "2.1.0"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp37m",
+        "cp38",
+        "cp39"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/0e/49/2e1bbae4542b8f624e409540b4197e37ab22a88e8685e99debe721cc2b50/triton-2.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
@@ -9392,6 +9947,14 @@
       "version": "2.2.0"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp37m",
+        "cp38",
+        "cp39"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/07/94/56da1c8082d4e1f5c8f76447a67cd857bc8f011339e69e2fffdbfc116f51/triton-2.3.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
@@ -9515,6 +10078,14 @@
       "version": "2.3.0"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp37m",
+        "cp38",
+        "cp39"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/02/92/893b6b435c625bcc2cefb43547f6f9e0d4a12b36a75cb3b4923ff8db2885/triton-2.3.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
@@ -9638,6 +10209,13 @@
       "version": "2.3.1"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp38",
+        "cp39"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/33/3e/a2f59384587eff6aeb7d37b6780de7fedd2214935e27520430ca9f5b7975/triton-3.0.0-1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
@@ -9746,6 +10324,13 @@
       "version": "3.0.0"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp38",
+        "cp39"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/15/3c/e972ac0dd0f35ba5fb7058152dd52127a225f579eba2d7527eb1ffb3891a/triton-3.1.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
@@ -9854,6 +10439,13 @@
       "version": "3.1.0"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp313",
+        "cp39"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/01/65/3ffa90e158a2c82f0716eee8d26a725d241549b7d7aaf7e4f44ac03ebd89/triton-3.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
@@ -9962,6 +10554,14 @@
       "version": "3.2.0"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp313",
+        "cp313t",
+        "cp39"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/0a/93/f28a696fa750b9b608baa236f8225dd3290e5aff27433b06143adc025961/triton-3.3.0-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
@@ -10084,6 +10684,14 @@
       "version": "3.3.0"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp313",
+        "cp313t",
+        "cp39"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/21/2f/3e56ea7b58f80ff68899b1dbe810ff257c9d177d288c6b0f55bf2fe4eb50/triton-3.3.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
@@ -10206,6 +10814,14 @@
       "version": "3.3.1"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp313",
+        "cp313t",
+        "cp39"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/12/34/1251beb5a3cb93f3950ebe68732752014646003ef6eb11eb5f1a37ca78cd/triton-3.4.0-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
@@ -10328,6 +10944,15 @@
       "version": "3.4.0"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp313",
+        "cp313t",
+        "cp314",
+        "cp314t"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/0b/eb/09e31d107a5d00eb281aa7e6635ca463e9bca86515944e399480eadb71f8/triton-3.5.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
@@ -10563,6 +11188,15 @@
       "version": "3.5.0"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp313",
+        "cp313t",
+        "cp314",
+        "cp314t"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/14/f9/0430e879c1e63a1016cb843261528fd3187c872c3a9539132efc39514753/triton-3.5.1-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
@@ -10798,6 +11432,15 @@
       "version": "3.5.1"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp313",
+        "cp313t",
+        "cp314",
+        "cp314t"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/0f/2c/96f92f3c60387e14cc45aed49487f3486f89ea27106c1b1376913c62abe4/triton-3.6.0-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
@@ -11033,6 +11676,15 @@
       "version": "3.6.0"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp313",
+        "cp313t",
+        "cp314",
+        "cp314t"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/01/e1/a59a583de59b8f62c495d67c80ee3ea97d09e91ac80c4c6e76456ed8d8ac/triton-3.7.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
@@ -11268,6 +11920,9 @@
       "version": "3.7.0"
     },
     {
+      "abi_tags": [
+        "cp313"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://rocm.nightlies.amd.com/whl-staging-multi-arch/triton-3.7.0%2Bgitfbb43d96.rocm7.14.0a20260519-cp313-cp313-linux_x86_64.whl"
@@ -11316,6 +11971,14 @@
       "version": "3.7.0+gitfbb43d96.rocm7.14.0a20260519"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp313",
+        "cp314",
+        "cp314t"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://files.pythonhosted.org/packages/00/42/c5089d4d9327fcd1e862c599cc2927f39418f84dd11a84cb2ccff9d4787a/triton-3.7.1-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
@@ -11523,6 +12186,13 @@
       "version": "3.7.1"
     },
     {
+      "abi_tags": [
+        "cp310",
+        "cp311",
+        "cp312",
+        "cp313",
+        "cp314"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://rocm.nightlies.amd.com/whl-multi-arch/triton-3.8.0%2Bgit4774139f.rocm7.15.0a20260721-cp310-cp310-linux_x86_64.whl",
@@ -11631,6 +12301,9 @@
       "version": "3.8.0+git4774139f.rocm7.15.0a20260721"
     },
     {
+      "abi_tags": [
+        "cp312"
+      ],
       "artifact_available": true,
       "artifact_urls": [
         "https://repo.amd.com/rocm/whl-multi-arch/triton-3.8.0%2Bgit4cff872c.rocm7.14.0-cp312-cp312-linux_x86_64.whl"

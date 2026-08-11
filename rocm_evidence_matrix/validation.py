@@ -131,7 +131,7 @@ def validate_extension_catalog(document):
             raise ValueError(f"Invalid extension catalog source metadata: {source_id}")
     required = {
         "id", "extension", "package_name", "distribution_family", "platform", "channel",
-        "lifecycle", "version", "python_tags", "platform_tags", "artifacts", "artifact_urls", "candidate_ids", "source_id",
+        "lifecycle", "version", "python_tags", "abi_tags", "platform_tags", "artifacts", "artifact_urls", "candidate_ids", "source_id",
         "rocm_version", "torch_constraints", "hip_constraints", "gfx_targets", "artifact_available",
         "evidence_status", "first_observed_at", "last_observed_at", "requires_dist", "build_tags", "rocm_constraints",
     }
@@ -153,8 +153,10 @@ def validate_extension_catalog(document):
             raise ValueError(f"Invalid extension catalog channel: {item['id']}")
         if item["lifecycle"] not in {"current", "historical"}:
             raise ValueError(f"Invalid extension catalog lifecycle: {item['id']}")
-        if not item["python_tags"] or not item["platform_tags"] or not item["artifacts"] or not item["artifact_urls"]:
+        if not item["python_tags"] or not item["abi_tags"] or not item["platform_tags"] or not item["artifacts"] or not item["artifact_urls"]:
             raise ValueError(f"Extension catalog artifact lacks wheel metadata: {item['id']}")
+        if sorted(set(item["abi_tags"])) != sorted({artifact.get("abi_tag", "unknown") for artifact in item["artifacts"]}):
+            raise ValueError(f"Extension catalog ABI metadata disagrees with artifacts: {item['id']}")
         for artifact in item["artifacts"]:
             allowed_artifact_fields = {
                 "filename", "version", "python_tag", "abi_tag", "platform_tag", "url",

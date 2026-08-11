@@ -75,14 +75,14 @@
       "path": "data/extensions/catalog.json",
       "schema": "schemas/extension-catalog.schema.json",
       "schema_version": 1,
-      "sha256": "b36cb231eb4ef63401c6ff5f33a7f8851ab4b68e11d8abf5b730868732855c4d"
+      "sha256": "3a32c3b831e2ecbdbc50dff25490387be942300c73e1cf56903dc3d498af3d17"
     },
     {
       "id": "extension_artifact_history",
       "path": "data/extensions/history.json",
       "schema": "schemas/extension-catalog.schema.json",
       "schema_version": 1,
-      "sha256": "6582ccd48cc7dd2b1037ee8c4c5517b7f311d8008c7fecb7422d74842ca58e75"
+      "sha256": "b4be8ddc02a501fa43f79d21c0aa31cc2575faaba63d0bc36c17bb7dfb1c443e"
     },
     {
       "id": "extension_snapshots:pypi-aiter",

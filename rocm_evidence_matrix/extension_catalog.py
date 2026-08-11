@@ -27,11 +27,12 @@ _ROCM_RE = re.compile(r"(?:^|[.+-])rocm(?P<version>\d+(?:\.\d+)+(?:[a-z]+\d+)?)"
 _REQUIREMENT_RE = re.compile(r"^\s*([A-Za-z0-9_.-]+)\s*(.*)$")
 
 
-def extension_candidate_id(extension, version, python_tag, platform_tag, source_id, artifact_url):
+def extension_candidate_id(extension, version, python_tag, platform_tag, source_id, artifact_url, abi_tag="unknown"):
     """Return a stable identity for one exact extension artifact candidate."""
 
     identity = {
         "artifact_url": str(artifact_url),
+        "abi_tag": str(abi_tag),
         "extension": str(extension),
         "platform_tag": str(platform_tag),
         "python_tag": str(python_tag),
@@ -73,6 +74,10 @@ def _platform_tags(artifacts):
 
 def _python_tags(artifacts):
     return sorted({artifact.get("python_tag", "unknown") for artifact in artifacts})
+
+
+def _abi_tags(artifacts):
+    return sorted({artifact.get("abi_tag", "unknown") for artifact in artifacts})
 
 
 def _record_id(extension, source, version, python_tags, platform_tags):
@@ -139,10 +144,12 @@ def _group_artifacts(source, package_name, artifacts):
                 normalized.get("platform_tag", "unknown"),
                 source_id,
                 normalized.get("url", ""),
+                normalized.get("abi_tag", "unknown"),
             )
             normalized_artifacts.append(normalized)
         requirements, torch_constraints, rocm_constraints, hip_constraints = _requirement_values(normalized_artifacts)
         python_tags = _python_tags(normalized_artifacts)
+        abi_tags = _abi_tags(normalized_artifacts)
         platform_tags = _platform_tags(normalized_artifacts)
         records.append(
             {
@@ -155,6 +162,7 @@ def _group_artifacts(source, package_name, artifacts):
                 "lifecycle": "historical",
                 "version": version,
                 "python_tags": python_tags,
+                "abi_tags": abi_tags,
                 "platform_tags": platform_tags,
                 "artifacts": sorted(normalized_artifacts, key=lambda artifact: artifact.get("filename", "")),
                 "artifact_urls": sorted({artifact.get("url") for artifact in normalized_artifacts if artifact.get("url")}),
@@ -208,11 +216,13 @@ def _migrate_record(record):
                 normalized.get("platform_tag", "unknown"),
                 source_id,
                 normalized.get("url", ""),
+                normalized.get("abi_tag", "unknown"),
             ),
         )
         artifacts.append(normalized)
     migrated["artifacts"] = artifacts
     migrated["candidate_ids"] = sorted({artifact["candidate_id"] for artifact in artifacts})
+    migrated.setdefault("abi_tags", _abi_tags(artifacts))
     requirements, torch_constraints, rocm_constraints, hip_constraints = _requirement_values(artifacts)
     migrated.setdefault("requires_dist", requirements)
     migrated.setdefault("build_tags", sorted({artifact.get("build_tag") for artifact in artifacts if artifact.get("build_tag")}))
@@ -332,8 +342,8 @@ def render_extension_catalog(document):
         "",
         "> Artifact availability is not installation or runtime compatibility.",
         "",
-        "| Extension | Version | Platform | Channel | Python | Wheel platform | Candidate IDs | Lifecycle | Evidence |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+        "| Extension | Version | Platform | Channel | Python | ABI | Wheel platform | Candidate IDs | Lifecycle | Evidence |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
     for item in document.get("extensions", []):
         lines.append(
@@ -343,6 +353,7 @@ def render_extension_catalog(document):
                 platform=item["platform"],
                 channel=item["channel"],
                 python=", ".join(item["python_tags"]),
+                abi=", ".join(item.get("abi_tags", ())),
                 tags=", ".join(item["platform_tags"]),
                 candidates=", ".join(item.get("candidate_ids", ())),
                 lifecycle=item["lifecycle"],
@@ -350,5 +361,5 @@ def render_extension_catalog(document):
             )
         )
     if len(lines) == 6:
-        lines.append("| — | — | — | — | — | — | — | — | not_collected |")
+        lines.append("| — | — | — | — | — | — | — | — | — | not_collected |")
     return "\n".join(lines) + "\n"
