@@ -411,7 +411,7 @@ def collect_extensions(args, config):
         }
         for result in results
     ]
-    status = write_status("external", started_at, status_results, args.status_output)
+    write_status("external", started_at, status_results, args.status_output)
     print(f"Wrote {args.status_output}")
     document = rebuild_extension_catalog_from_sources(
         args.output_dir,

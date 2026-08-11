@@ -136,7 +136,7 @@ class CollectionCommandTests(unittest.TestCase):
             {"id": "nightly", "channel": "nightly", "url": "https://example.test/nightly/"},
         ]
 
-        def package_result(source, **kwargs):
+        def package_result(source, **_kwargs):
             if source["id"] == "stable":
                 raise OSError("offline")
             return (

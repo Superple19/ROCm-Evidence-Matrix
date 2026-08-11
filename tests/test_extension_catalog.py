@@ -1,6 +1,11 @@
 import unittest
 
-from rocm_evidence_matrix.extension_catalog import build_extension_observations, merge_extension_catalog, merge_extension_history
+from rocm_evidence_matrix.extension_catalog import (
+    build_extension_observations,
+    merge_extension_catalog,
+    merge_extension_history,
+    render_extension_catalog,
+)
 from rocm_evidence_matrix.validation import validate_extension_catalog
 
 
@@ -118,6 +123,20 @@ class ExtensionCatalogTests(unittest.TestCase):
         history = merge_extension_history(history, [observe("3.6.0")], "2026-08-09T00:00:00Z")
         self.assertEqual({item["version"] for item in history["extensions"]}, {"3.5.0", "3.6.0"})
         self.assertEqual(history["generated_at"], "2026-08-09T00:00:00Z")
+
+    def test_render_includes_abi_column_and_value(self):
+        item = build_extension_observations(snapshot({"triton": [{
+            "filename": "triton-3.6.0-cp312-cp312-win_amd64.whl",
+            "version": "3.6.0",
+            "python_tag": "cp312",
+            "abi_tag": "cp312",
+            "platform_tag": "win_amd64",
+            "url": "https://example.test/triton.whl",
+        }]}))[0]
+        document = merge_extension_catalog(None, [item], OBSERVED_AT)
+        rendered = render_extension_catalog(document)
+        self.assertIn("| Extension | Version | Platform | Channel | Python | ABI | Wheel platform |", rendered)
+        self.assertIn("| triton | 3.6.0 | windows | nightly | cp312 | cp312 | win_amd64 |", rendered)
 
 
 if __name__ == "__main__":

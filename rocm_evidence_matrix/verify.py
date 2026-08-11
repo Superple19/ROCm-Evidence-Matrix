@@ -1,4 +1,5 @@
 import argparse
+import importlib.util
 import json
 import os
 import subprocess
@@ -104,9 +105,7 @@ def virtualenv_python(root, host_os=None):
 
 
 def create_disposable_environment(root):
-    try:
-        import ensurepip
-    except ModuleNotFoundError:
+    if importlib.util.find_spec("ensurepip") is None:
         subprocess.run([sys.executable, "-m", "virtualenv", str(root)], check=True, capture_output=True, text=True)
         return
     try:

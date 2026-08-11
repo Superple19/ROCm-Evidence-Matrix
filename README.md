@@ -68,6 +68,34 @@ Runtime dependencies are declared in `pyproject.toml` and installed only into
 the repository-local `.venv`. The collector does not install ROCm, PyTorch, or
 other target-environment packages into the project environment.
 
+## Development quality checks
+
+Install the optional development tools when working on Python code:
+
+```powershell
+python -m pip install --editable ".[dev]"
+```
+
+Run the required lint check and the advisory analyses separately:
+
+```powershell
+ruff check .
+ruff format --check .
+pyright
+deptry .
+vulture rocm_evidence_matrix tests --min-confidence 100
+```
+
+`ruff check` is the required CI lint gate. Formatting, type checking,
+dependency analysis, and dead-code analysis are initially advisory. Do not
+run `ruff format --fix` across the repository as part of a functional change;
+formatting cleanup must be reviewed as a separate diff. Vulture findings may
+be false positives for CLI entry points, dynamic adapters, and data-driven
+imports, so they require manual review before deleting code. These tools are
+development-only and are not installed for users who install the runtime
+package without the `dev` extra. Import Linter and `uv` are intentionally not
+part of this snapshot; they can be added later without changing runtime code.
+
 ## Collect data
 
 Collect actively supported TheRock evidence, then build integrated data and documentation:

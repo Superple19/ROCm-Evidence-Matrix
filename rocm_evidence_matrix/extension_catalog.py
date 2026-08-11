@@ -42,7 +42,8 @@ def extension_candidate_id(extension, version, python_tag, platform_tag, source_
     digest = hashlib.sha256(
         json.dumps(identity, sort_keys=True, separators=(",", ":")).encode("utf-8")
     ).hexdigest()[:16]
-    safe = lambda value: str(value).replace(":", "_")
+    def safe(value):
+        return str(value).replace(":", "_")
     return f"extension:{safe(extension)}:{safe(version)}:{safe(python_tag)}:{safe(platform_tag)}:{digest}"
 
 
@@ -347,7 +348,7 @@ def render_extension_catalog(document):
     ]
     for item in document.get("extensions", []):
         lines.append(
-            "| {extension} | {version} | {platform} | {channel} | {python} | {tags} | {candidates} | {lifecycle} | {evidence} |".format(
+            "| {extension} | {version} | {platform} | {channel} | {python} | {abi} | {tags} | {candidates} | {lifecycle} | {evidence} |".format(
                 extension=item["extension"],
                 version=item["version"],
                 platform=item["platform"],
