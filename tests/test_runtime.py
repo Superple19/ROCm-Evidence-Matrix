@@ -18,6 +18,7 @@ class RuntimeTests(unittest.TestCase):
         )
         record = collect_runtime(torch, "2026-08-08T00:00:00Z")
         self.assertEqual(record["result"], "passed")
+        self.assertEqual(record["evidence_id"], record["id"])
         self.assertEqual(record["os"], normalized_os())
         self.assertEqual(record["devices"][0]["gcnArchName"], "gfx1201")
         validate_runtime_verifications({"schema_version": 1, "generated_at": record["observed_at"], "verifications": [record]})

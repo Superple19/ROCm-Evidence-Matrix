@@ -40,6 +40,7 @@ def collect_runtime(torch_module, observed_at=None, candidate_id=None, gfx=None)
     observed_at = observed_at or utc_now()
     record = {
         "id": f"runtime:{candidate_id or 'unlinked'}:{observed_at}",
+        "evidence_id": f"runtime:{candidate_id or 'unlinked'}:{observed_at}",
         "candidate_id": candidate_id,
         "gfx": gfx,
         "observed_at": observed_at,
@@ -99,7 +100,6 @@ def merge_runtime(existing, record):
         "generated_at": monotonic_generated_at(existing, record["observed_at"]),
         "verifications": records,
     }
-    record["evidence_id"] = record["id"]
 
 
 def write_runtime(record, output_path):
