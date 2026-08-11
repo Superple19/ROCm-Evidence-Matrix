@@ -6,7 +6,7 @@ package availability into a compatibility guarantee.
 
 ## Baseline
 
-- 163 offline unit tests pass.
+- 173 offline unit tests pass.
 - `rocm-matrix check` validates schemas, catalog entries, standalone evidence,
   profiles, and generated documents.
 - No exhaustive historical resolver or physical-GPU backtest is performed by
@@ -75,6 +75,9 @@ also runs the offline suite on both Linux and Windows.
   exact package-build proof unless a consumer adds that binding.
 - Historical releases with missing archives remain distinct from explicit
   unsupported claims.
+- Linux documentation, CI execution, and local runtime or hardware evidence
+  may remain `not_collected`; package or wheel availability never fills those
+  gaps by inference.
 - Legacy patch-release candidates preserve whether their GFX evidence came from
   an exact release table or a documented HIP SDK series fallback.
 - The repository does not provide an installer UI or perform exhaustive matrix

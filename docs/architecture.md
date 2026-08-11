@@ -17,7 +17,7 @@ remain separate from legacy Windows HIP SDK evidence.
 
 These dimensions are independent. For example, a nightly wheel is identified
 by its configured source channel, not by parsing a version string, and a
-future Linux legacy source would remain `distribution_family=legacy` with
+legacy Linux package observation remains `distribution_family=legacy` with
 `platform=linux`.
 
 ## Data flow
@@ -52,7 +52,7 @@ integrations must use the grouped representation.
 - `config/sources.json`: upstream source declarations and platform metadata
 - `rocm_evidence_matrix/simple_index.py`: package index parsing
 - `rocm_evidence_matrix/documentation.py`: shared GPU/framework documentation plus Windows-specific tables
-- `rocm_evidence_matrix/legacy.py`: legacy Windows adapter
+- `rocm_evidence_matrix/legacy.py` and `legacy_linux.py`: legacy platform adapters
 - `rocm_evidence_matrix/ci.py`: TheRock CI configuration and execution evidence
 - `rocm_evidence_matrix/frameworks.py`: JAX framework and ROCm SDK component evidence
 - `rocm_evidence_matrix/extensions.py`: optional compiled-extension artifact history

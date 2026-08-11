@@ -17,6 +17,10 @@ verification cover:
 - Optional resolver, runtime, and hardware evidence when an exact candidate
   binding is available.
 
+Platform coverage is source-scoped. A Linux package observation does not imply
+that the corresponding Linux documentation, CI execution, runtime, or hardware
+evidence has been collected.
+
 ## Historical archive
 
 Legacy ROCm and HIP SDK records remain part of the repository because they are
