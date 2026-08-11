@@ -193,32 +193,38 @@ def attach_therock_documentation_evidence(history, documentation):
     return history
 
 
-def update_execution_evidence(history_path, kind, candidate_id, result, *, reviewed=False):
+def update_execution_evidence(history_path, kind, candidate_id, result, *, record=None, requested_gfx=None, reviewed=False):
     """Apply reviewed execution status to shared history.
 
     Runtime and hardware commands intentionally write local evidence only. A
     maintainer must opt into this shared-history mutation explicitly.
     """
 
-    if not reviewed:
+    if not reviewed or not isinstance(record, dict):
         return False
     path = Path(history_path)
     history = json.loads(path.read_text(encoding="utf-8"))
     status = f"{kind}_verified" if result == "passed" else f"{kind}_failed"
-    for candidate in history.get("candidates", []):
-        if candidate.get("id") == candidate_id:
-            candidate.setdefault("evidence_status", initial_evidence_status())[kind] = status
-            validate_history(history)
-            atomic_write_json(history, path)
-            return True
-    return False
+    candidate = next((item for item in history.get("candidates", []) if item.get("id") == candidate_id), None)
+    if candidate is None or record.get("candidate_id") != candidate_id or record.get("result") != result:
+        return False
+    if execution_evidence_errors(candidate, record, kind, requested_gfx):
+        return False
+    candidate.setdefault("evidence_status", initial_evidence_status())[kind] = status
+    validate_history(history)
+    atomic_write_json(history, path)
+    return True
 
 
 def execution_evidence_errors(candidate, record, kind, requested_gfx=None):
     errors = []
-    expected_platform = candidate.get("platform", "windows")
+    expected_platform = candidate.get("platform")
+    if expected_platform not in {"windows", "linux"}:
+        errors.append(f"candidate has no supported platform identity: {expected_platform}")
     observed_platform = record.get("os")
-    if observed_platform and expected_platform not in {"unknown", observed_platform}:
+    if observed_platform not in {"windows", "linux"}:
+        errors.append(f"execution has no supported platform identity: {observed_platform}")
+    elif expected_platform != observed_platform:
         errors.append(f"platform mismatch: candidate={expected_platform}, observed={observed_platform}")
     if record.get("torch_version") and record["torch_version"] != candidate.get("torch_version"):
         errors.append(f"Torch mismatch: candidate={candidate.get('torch_version')}, observed={record['torch_version']}")
@@ -228,10 +234,14 @@ def execution_evidence_errors(candidate, record, kind, requested_gfx=None):
         if expected and observed != expected:
             errors.append(f"{label} mismatch: candidate={expected}, observed={observed}")
     expected_python_tags = set(candidate.get("python_tags") or ())
-    if expected_python_tags and record.get("python_tag") not in expected_python_tags:
+    if not record.get("python_tag"):
+        errors.append("execution has no Python ABI identity")
+    elif expected_python_tags and record["python_tag"] not in expected_python_tags:
         errors.append(
             f"Python ABI mismatch: candidate={sorted(expected_python_tags)}, observed={record.get('python_tag')}"
         )
+    if not record.get("platform_tag"):
+        errors.append("execution has no platform tag identity")
     expected_hash = candidate_hash(candidate, record.get("gfx"), record.get("python_tag"), record.get("platform_tag"))
     if record.get("candidate_hash") != expected_hash:
         errors.append("candidate hash does not match the observed execution identity")
@@ -285,7 +295,15 @@ def promote_execution_evidence(history_path, kind, record, requested_gfx=None, *
     errors = execution_evidence_errors(candidate, record, kind, requested_gfx)
     if errors:
         return False, errors
-    return update_execution_evidence(path, kind, candidate_id, record["result"], reviewed=True), []
+    return update_execution_evidence(
+        path,
+        kind,
+        candidate_id,
+        record["result"],
+        record=record,
+        requested_gfx=requested_gfx,
+        reviewed=True,
+    ), []
 
 
 def attach_therock_ci_evidence(history, ci_document):

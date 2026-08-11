@@ -378,6 +378,27 @@ class HistoryTests(unittest.TestCase):
             self.assertFalse(update_execution_evidence(path, "runtime", "candidate", "passed"))
             self.assertNotIn("evidence_status", json.loads(path.read_text(encoding="utf-8"))["candidates"][0])
 
+    def test_reviewed_direct_update_requires_exact_execution_record(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "history.json"
+            path.write_text(json.dumps({"schema_version": 2, "candidates": [{"id": "candidate"}]}), encoding="utf-8")
+            self.assertFalse(update_execution_evidence(path, "runtime", "candidate", "passed", reviewed=True))
+            self.assertNotIn("evidence_status", json.loads(path.read_text(encoding="utf-8"))["candidates"][0])
+
+    def test_execution_promotion_requires_platform_tag_identity(self):
+        candidate = {
+            "distribution_family": "therock", "source_id": "packages-stable", "rocm_version": "7.14.0",
+            "platform": "windows", "gfx_support": "known", "gfx_targets": ["gfx1201"],
+            "torch_version": "2.12.0", "hip_version": "7.14.0",
+        }
+        record = {
+            "os": "windows", "gfx": "gfx1201", "torch_version": "2.12.0", "rocm_version": "7.14.0",
+            "hip_version": "7.14.0", "python_tag": "cp312", "result": "passed",
+            "devices": [{"gfx": "gfx1201"}],
+        }
+        record["candidate_hash"] = candidate_hash(candidate, "gfx1201", "cp312", None)
+        self.assertTrue(any("platform tag" in error for error in execution_evidence_errors(candidate, record, "runtime")))
+
     def test_attaches_ci_evidence_with_gfx_platform_scope(self):
         candidate = {
             "id": "therock:stable:candidate",
