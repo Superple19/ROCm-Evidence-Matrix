@@ -640,6 +640,8 @@ def validate_version_history(document):
             if evidence.get("ci_verified") not in {True, False, None}:
                 raise ValueError(f"Invalid {platform} CI status: {release['id']}")
         if platform == "windows":
+            if not isinstance(evidence, dict):
+                raise ValueError(f"Missing windows evidence: {release['id']}")
             if "windows_support" in release and evidence.get("support") != release["windows_support"]:
                 raise ValueError(f"Windows support evidence mismatch: {release['id']}")
             if "windows_package_available" in release and evidence.get("package_available") != release["windows_package_available"]:

@@ -81,7 +81,7 @@ def validate_json_schema(value, schema_path):
         raise ValueError(f"{schema_path.name} validation failed at {location}: {error.message}")
 
 
-def validate_catalog(root):
+def validate_catalog(root: str | Path):
     root = Path(root)
     catalog_path = root / "data" / "catalog.json"
     catalog = read_json(catalog_path)

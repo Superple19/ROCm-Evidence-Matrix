@@ -52,7 +52,6 @@ jobs:
         continue-on-error: true
         run: ruff format --check .
       - name: Pyright type check
-        continue-on-error: true
         run: pyright
       - name: Dependency audit
         continue-on-error: true

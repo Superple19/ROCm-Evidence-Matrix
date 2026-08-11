@@ -1,6 +1,7 @@
 import argparse
 import json
 from pathlib import Path
+from typing import Any
 from urllib.request import Request, urlopen
 
 from .sources.therock import build_evidence, collect_documentation_sources, collect_github, collect_hud, collect_source, parse_matrix
@@ -203,12 +204,19 @@ def parse_args(argv=None):
     return parser.parse_args(argv)
 
 
-def read_json(path):
+def read_json(path) -> dict[str, Any] | None:
     path = Path(path)
     if not path.exists():
         return None
     with path.open(encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def read_required_json(path) -> dict[str, Any]:
+    value = read_json(path)
+    if not isinstance(value, dict):
+        raise ValueError(f"Expected a JSON object at {path}")
+    return value
 
 
 def write_status(family, started_at, results, path):
@@ -296,7 +304,7 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
         print(f"Wrote {snapshot_path}")
 
     if successful_sources:
-        package_snapshots = [read_json(path) for path in sorted(output_dir.glob("*.json"))]
+        package_snapshots = [read_required_json(path) for path in sorted(output_dir.glob("*.json"))]
         existing_history = read_json(args.history_output)
         package_sources = {
             f"packages-{snapshot['source']['id']}": {**snapshot["source"], "distribution_family": "therock", "observed_at": snapshot["last_observed_at"]}
@@ -649,7 +657,7 @@ def render_outputs(args):
 def build_outputs(args):
     integrate_outputs(args)
     snapshot_paths = sorted(Path(args.output_dir).glob("*.json"))
-    snapshot_times = [read_json(path)["last_observed_at"] for path in snapshot_paths]
+    snapshot_times = [read_required_json(path)["last_observed_at"] for path in snapshot_paths]
     observed_at = max(snapshot_times) if snapshot_times else utc_now()
     framework_path, components_path, extension_path = auxiliary_paths(args)
     rebuild_auxiliary_outputs(args.output_dir, framework_path, components_path, observed_at, read_json, write_json)

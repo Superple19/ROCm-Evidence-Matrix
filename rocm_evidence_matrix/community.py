@@ -5,6 +5,7 @@ import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 from .persistence import atomic_write_json
 from .source_adapter import monotonic_generated_at
@@ -42,7 +43,7 @@ def _redact(value, key=None):
     return value
 
 
-def _allowed_record(record, evidence_kind):
+def _allowed_record(record: dict[str, Any], evidence_kind: str) -> dict[str, Any]:
     fields = RUNTIME_RECORD_FIELDS if evidence_kind == "runtime" else HARDWARE_RECORD_FIELDS
     clean = {name: record[name] for name in fields if name in record}
     if "devices" in clean:
@@ -53,7 +54,10 @@ def _allowed_record(record, evidence_kind):
         ]
     if "device" in clean and isinstance(clean["device"], dict):
         clean["device"] = {name: _redact(value, name) for name, value in clean["device"].items() if name in DEVICE_FIELDS}
-    return _redact(clean)
+    redacted = _redact(clean)
+    if not isinstance(redacted, dict):
+        raise ValueError("Redacted community evidence record must be an object")
+    return redacted
 
 
 def submission_from_record(record, evidence_kind, submitted_at=None):

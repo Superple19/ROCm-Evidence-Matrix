@@ -43,7 +43,7 @@ def read_json(path):
         return json.load(handle)
 
 
-def build_catalog(root="."):
+def build_catalog(root: str | Path = "."):
     root = Path(root)
     artifacts = []
     platforms = set()
@@ -102,7 +102,7 @@ def build_catalog(root="."):
     }
 
 
-def write_catalog(root=".", output="data/catalog.json"):
+def write_catalog(root: str | Path = ".", output: str | Path = "data/catalog.json"):
     path = Path(root) / output
     atomic_write_json(build_catalog(root), path)
     return path

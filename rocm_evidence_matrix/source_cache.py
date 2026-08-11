@@ -5,6 +5,7 @@ import threading
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
@@ -42,8 +43,8 @@ class SourceCache:
         self.github_retries = github_retries
         self.generated_at = observed_at()
         self.lock = threading.Lock()
-        self.responses = {}
-        self.last_results = {}
+        self.responses: dict[str, dict[str, Any]] = {}
+        self.last_results: dict[str, dict[str, Any]] = {}
         if self.manifest_path.exists():
             with self.manifest_path.open(encoding="utf-8") as handle:
                 manifest = json.load(handle)
@@ -56,17 +57,18 @@ class SourceCache:
         headers = {"User-Agent": USER_AGENT, "Accept": "application/vnd.github+json, application/json;q=0.9, text/html;q=0.8"}
         if self.github_token and url.lower().startswith("https://api.github.com/"):
             headers["Authorization"] = f"Bearer {self.github_token}"
-        cached_path = self.cache_dir / previous["sha256"] if previous else None
+        previous_sha256 = previous.get("sha256") if previous else None
+        cached_path = self.cache_dir / previous_sha256 if previous_sha256 else None
         cached_content = None
         if cached_path and cached_path.exists():
             cached_content = cached_path.read_bytes()
-            if hashlib.sha256(cached_content).hexdigest() != previous["sha256"]:
+            if hashlib.sha256(cached_content).hexdigest() != previous_sha256:
                 cached_path = None
                 cached_content = None
         if cached_path and cached_content is not None:
-            if previous.get("etag"):
+            if previous is not None and previous.get("etag"):
                 headers["If-None-Match"] = previous["etag"]
-            if previous.get("last_modified"):
+            if previous is not None and previous.get("last_modified"):
                 headers["If-Modified-Since"] = previous["last_modified"]
 
         request = Request(url, headers=headers)

@@ -86,8 +86,10 @@ deptry .
 vulture rocm_evidence_matrix tests --min-confidence 100
 ```
 
-`ruff check` is the required CI lint gate. Formatting, type checking,
-dependency analysis, and dead-code analysis are initially advisory. Do not
+`ruff check` and `pyright` are required CI gates. Pyright stays in basic mode;
+the only remaining Matrix warnings are for optional Torch imports used by
+target-environment probes. Formatting, dependency analysis, and dead-code
+analysis remain advisory. Do not
 run `ruff format --fix` across the repository as part of a functional change;
 formatting cleanup must be reviewed as a separate diff. Vulture findings may
 be false positives for CLI entry points, dynamic adapters, and data-driven

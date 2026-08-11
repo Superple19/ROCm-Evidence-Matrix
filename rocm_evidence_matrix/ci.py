@@ -87,6 +87,8 @@ def parse_matrix(source, observed_at):
         name = next((item.id for item in targets if isinstance(item, ast.Name) and item.id in names), None)
         if not name:
             continue
+        if node.value is None:
+            continue
         value = ast.literal_eval(node.value)
         for key, family in value.items():
             if not isinstance(family, dict):

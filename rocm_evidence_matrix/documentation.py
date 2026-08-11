@@ -30,12 +30,22 @@ class StructuredTableParser(HTMLParser):
 
     def handle_endtag(self, tag):
         if tag in {"th", "td"} and self._cell is not None:
-            self._cell["text"] = " ".join("".join(self._cell["text"]).split())
-            self._row["cells"].append(self._cell)
+            cell = self._cell
+            row = self._row
+            if row is None:
+                self._cell = None
+                return
+            cell["text"] = " ".join("".join(cell["text"]).split())
+            row["cells"].append(cell)
             self._cell = None
         elif tag == "tr" and self._row is not None:
-            if self._row["cells"]:
-                self._table["rows"].append(self._row)
+            row = self._row
+            table = self._table
+            if table is None:
+                self._row = None
+                return
+            if row["cells"]:
+                table["rows"].append(row)
             self._row = None
         elif tag == "table" and self._table is not None:
             self.tables.append(self._table)
