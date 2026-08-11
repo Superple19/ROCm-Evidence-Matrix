@@ -79,6 +79,7 @@ class SourceCacheTests(unittest.TestCase):
             self.assertEqual(calls[0].get_header("If-none-match"), '"revision-1"')
             self.assertEqual(calls[0].get_header("If-modified-since"), "Fri, 07 Aug 2026 00:00:00 GMT")
             self.assertEqual(second.write_manifest()["responses"][0]["observed_at"], "2026-08-08T00:00:00Z")
+            self.assertEqual(second.metadata("https://example.test/source"), {"source_status": "revalidated", "cache_age_seconds": 86400})
 
     def test_deduplicates_identical_content_from_different_urls(self):
         with TemporaryDirectory() as directory:

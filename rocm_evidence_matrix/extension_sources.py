@@ -2,7 +2,7 @@
 
 import json
 from pathlib import Path
-from urllib.parse import unquote, urlparse, parse_qs
+from urllib.parse import parse_qs, parse_qsl, unquote, urlencode, urlparse, urlunparse
 
 from packaging.utils import InvalidWheelFilename, parse_wheel_filename
 
@@ -10,6 +10,77 @@ from .extension_catalog import extension_for_package
 from .persistence import atomic_write_json
 from .simple_index import normalize_package_name, parse_links, version_key
 from .validation import validate_extension_snapshot
+
+
+class GitHubPaginationError(ValueError):
+    def __init__(self, message, *, pages_fetched, items_fetched, truncated):
+        super().__init__(message)
+        self.details = {
+            "pages_fetched": pages_fetched,
+            "items_fetched": items_fetched,
+            "truncated": truncated,
+        }
+
+
+def _github_page_url(url, page, page_size):
+    parsed = urlparse(url)
+    query = [(key, value) for key, value in parse_qsl(parsed.query, keep_blank_values=True) if key not in {"page", "per_page"}]
+    query.extend((("per_page", str(page_size)), ("page", str(page))))
+    return urlunparse(parsed._replace(query=urlencode(query)))
+
+
+def _collect_github_release_pages(source, fetch):
+    options = source.get("pagination") or {}
+    page_size = int(options.get("page_size", 100))
+    max_pages = int(options.get("max_pages", 10))
+    if not 1 <= page_size <= 100:
+        raise ValueError(f"GitHub page_size must be between 1 and 100: {source['id']}")
+    if not 1 <= max_pages <= 100:
+        raise ValueError(f"GitHub max_pages must be between 1 and 100: {source['id']}")
+    releases = []
+    pages_fetched = 0
+    cache_metadata = []
+    for page in range(1, max_pages + 1):
+        page_url = _github_page_url(source["url"], page, page_size)
+        try:
+            payload = json.loads(fetch(page_url))
+            if hasattr(fetch, "metadata"):
+                cache_metadata.append(fetch.metadata(page_url))
+        except (OSError, ValueError, json.JSONDecodeError) as error:
+            raise GitHubPaginationError(
+                f"GitHub release page {page} failed for {source['id']}: {error}",
+                pages_fetched=pages_fetched,
+                items_fetched=len(releases),
+                truncated=True,
+            ) from error
+        if not isinstance(payload, list):
+            raise GitHubPaginationError(
+                f"GitHub releases response is not a list: {source['id']}",
+                pages_fetched=pages_fetched,
+                items_fetched=len(releases),
+                truncated=True,
+            )
+        pages_fetched += 1
+        releases.extend(payload)
+        if len(payload) < page_size:
+            return releases, _pagination_details(pages_fetched, len(releases), False, cache_metadata)
+    raise GitHubPaginationError(
+        f"GitHub release pagination exceeded {max_pages} pages: {source['url']}",
+        pages_fetched=pages_fetched,
+        items_fetched=len(releases),
+        truncated=True,
+    )
+
+
+def _pagination_details(pages_fetched, items_fetched, truncated, cache_metadata=()):
+    details = {"pages_fetched": pages_fetched, "items_fetched": items_fetched, "truncated": truncated}
+    statuses = {item.get("source_status") for item in cache_metadata if item.get("source_status")}
+    if statuses:
+        details["source_status"] = "revalidated" if statuses == {"revalidated"} else "fresh"
+    ages = [item.get("cache_age_seconds") for item in cache_metadata if item.get("cache_age_seconds") is not None]
+    if ages:
+        details["cache_age_seconds"] = max(ages)
+    return details
 
 
 def _artifact_sha256(url):
@@ -153,16 +224,27 @@ def collect_extension_sources(sources, fetch, output_dir, observed_at):
     output_dir = Path(output_dir)
     results = []
     for source in sources:
+        details = {}
         try:
-            body = fetch(source["url"])
-            artifacts = parse_extension_source(source, body)
+            if source.get("source_kind") == "github-releases":
+                releases, pagination = _collect_github_release_pages(source, fetch)
+                details.update(pagination)
+                artifacts = parse_github_releases(releases, source["package_name"])
+            else:
+                body = fetch(source["url"])
+                artifacts = parse_extension_source(source, body)
+            if hasattr(fetch, "metadata"):
+                details.update(fetch.metadata(source["url"]))
             snapshot = build_extension_snapshot(source, artifacts, observed_at)
             validate_extension_snapshot(snapshot)
             output_path = output_dir / f"{source['id']}.json"
             atomic_write_json(snapshot, output_path)
-            results.append({"source_id": source["id"], "status": "passed", "error": None, "artifact_count": len(artifacts)})
+            results.append({"source_id": source["id"], "status": "passed", "error": None, "artifact_count": len(artifacts), "details": details})
+        except GitHubPaginationError as error:
+            details.update(error.details)
+            results.append({"source_id": source["id"], "status": "failed", "error": f"{type(error).__name__}: {error}", "details": details})
         except (OSError, ValueError, json.JSONDecodeError) as error:
-            results.append({"source_id": source["id"], "status": "failed", "error": f"{type(error).__name__}: {error}"})
+            results.append({"source_id": source["id"], "status": "failed", "error": f"{type(error).__name__}: {error}", "details": details})
     return results
 
 

@@ -81,6 +81,19 @@ class CollectionCommandTests(unittest.TestCase):
         status = collection_status("therock", "2026-08-07T00:00:00Z", [failed, passed])
         validate_collection_status(status)
 
+    def test_collection_status_preserves_pagination_details(self):
+        status = collection_status(
+            "external",
+            "2026-08-07T00:00:00Z",
+            [{
+                "source_id": "github-aiter",
+                "status": "failed",
+                "error": "pagination limit",
+                "details": {"pages_fetched": 10, "items_fetched": 1000, "truncated": True, "source_status": "revalidated", "cache_age_seconds": 3600},
+            }],
+        )
+        validate_collection_status(status)
+
     def test_legacy_failure_retains_previous_source_evidence(self):
         config = {
             "hip_sdk_release_versions": {"id": "versions", "url": "https://example.test/versions"},

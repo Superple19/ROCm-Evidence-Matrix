@@ -19,6 +19,17 @@ def utc_now():
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
+def _age_seconds(observed_at, checked_at):
+    if not observed_at or not checked_at:
+        return None
+    try:
+        observed = datetime.fromisoformat(observed_at.replace("Z", "+00:00"))
+        checked = datetime.fromisoformat(checked_at.replace("Z", "+00:00"))
+    except (AttributeError, ValueError):
+        return None
+    return max(0, int((checked - observed).total_seconds()))
+
+
 class SourceCache:
     def __init__(self, cache_dir, manifest_path, timeout, opener=urlopen, observed_at=utc_now, github_token=None, sleep=time.sleep, github_retries=3):
         self.cache_dir = Path(cache_dir)
@@ -32,6 +43,7 @@ class SourceCache:
         self.generated_at = observed_at()
         self.lock = threading.Lock()
         self.responses = {}
+        self.last_results = {}
         if self.manifest_path.exists():
             with self.manifest_path.open(encoding="utf-8") as handle:
                 manifest = json.load(handle)
@@ -58,6 +70,8 @@ class SourceCache:
                 headers["If-Modified-Since"] = previous["last_modified"]
 
         request = Request(url, headers=headers)
+        cache_status = "fresh"
+        previous_observed_at = previous.get("observed_at") if previous else None
         for attempt in range(self.github_retries + 1):
             try:
                 with self.opener(request, timeout=self.timeout) as response:
@@ -76,6 +90,7 @@ class SourceCache:
                     etag = error.headers.get("ETag") or previous.get("etag")
                     last_modified = error.headers.get("Last-Modified") or previous.get("last_modified")
                     encoding = previous.get("encoding", "utf-8")
+                    cache_status = "revalidated"
                     break
                 rate_limited = url.lower().startswith("https://api.github.com/") and error.code in {403, 429}
                 if not rate_limited or attempt >= self.github_retries:
@@ -101,7 +116,25 @@ class SourceCache:
                 "observed_at": self.observed_at(),
                 "encoding": encoding,
             }
+            checked_at = self.observed_at()
+            self.last_results[url] = {
+                "source_status": cache_status,
+                "cache_age_seconds": _age_seconds(previous_observed_at, checked_at) if cache_status == "revalidated" else 0,
+            }
         return content.decode(encoding, errors="replace")
+
+    def metadata(self, url):
+        """Return operational status for the most recent read of *url*."""
+        result = self.last_results.get(url)
+        if result is not None:
+            return dict(result)
+        response = self.responses.get(url)
+        if response is None:
+            return {"source_status": "not_cached", "cache_age_seconds": None}
+        return {
+            "source_status": "cached",
+            "cache_age_seconds": _age_seconds(response.get("observed_at"), self.observed_at()),
+        }
 
     def write_manifest(self):
         manifest = {

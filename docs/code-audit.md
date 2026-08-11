@@ -6,7 +6,7 @@ package availability into a compatibility guarantee.
 
 ## Baseline
 
-- 158 offline unit tests pass.
+- 163 offline unit tests pass.
 - `rocm-matrix check` validates schemas, catalog entries, standalone evidence,
   profiles, and generated documents.
 - No exhaustive historical resolver or physical-GPU backtest is performed by
@@ -37,8 +37,10 @@ monotonic generation times and does not append duplicate record identities.
 
 ### CI and catalog coverage
 
-GitHub Actions collection uses bounded pagination and fails explicitly when a
-configured limit is exceeded. CI promotion follows the latest observed state
+GitHub Actions and optional GitHub release collection use bounded pagination
+and fail explicitly when a configured limit is exceeded. Collection status
+records page counts, truncation, source status, and cache age when available.
+CI promotion follows the latest observed state
 for each execution attempt; configured coverage remains separate from observed
 execution results.
 

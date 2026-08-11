@@ -403,7 +403,12 @@ def collect_extensions(args, config):
         else:
             print(f"Collected {result['source_id']}: {result['artifact_count']} artifacts")
     status_results = [
-        {"source_id": result["source_id"], "status": result["status"], "error": result["error"]}
+        {
+            "source_id": result["source_id"],
+            "status": result["status"],
+            "error": result["error"],
+            **({"details": result["details"]} if result.get("details") else {}),
+        }
         for result in results
     ]
     status = write_status("external", started_at, status_results, args.status_output)

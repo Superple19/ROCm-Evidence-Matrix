@@ -552,6 +552,13 @@ def validate_collection_status(document):
             raise ValueError(f"Passed source has an error: {result['source_id']}")
         if result["status"] == "failed" and not result["error"]:
             raise ValueError(f"Failed source lacks an error: {result['source_id']}")
+        details = result.get("details") or {}
+        if details.get("pages_fetched", 0) < 0 or details.get("items_fetched", 0) < 0:
+            raise ValueError(f"Invalid collection pagination details: {result['source_id']}")
+        if details.get("source_status") not in {None, "fresh", "revalidated", "cached", "not_cached"}:
+            raise ValueError(f"Invalid collection source status: {result['source_id']}")
+        if details.get("cache_age_seconds") is not None and details["cache_age_seconds"] < 0:
+            raise ValueError(f"Invalid collection cache age: {result['source_id']}")
 
 
 def validate_ci_coverage(document):

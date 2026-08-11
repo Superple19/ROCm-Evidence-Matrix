@@ -1,7 +1,9 @@
 import json
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
 
-from rocm_evidence_matrix.extension_sources import build_extension_snapshot, parse_extension_source, parse_github_releases, parse_pypi_json, parse_simple_index
+from rocm_evidence_matrix.extension_sources import build_extension_snapshot, collect_extension_sources, parse_extension_source, parse_github_releases, parse_pypi_json, parse_simple_index
 from rocm_evidence_matrix.validation import validate_extension_snapshot
 
 
@@ -87,6 +89,62 @@ class ExtensionSourceTests(unittest.TestCase):
         snapshot["packages"]["bitsandbytes"][0]["url"] = "file:///bitsandbytes.whl"
         with self.assertRaises(ValueError):
             validate_extension_snapshot(snapshot)
+
+    def test_github_release_sources_fetch_bounded_pages_and_record_metadata(self):
+        calls = []
+
+        class Reader:
+            def __call__(self, url):
+                calls.append(url)
+                if url.endswith("page=1"):
+                    return json.dumps([{"id": 1, "assets": [{"name": "aiter-0.1.0-cp312-cp312-win_amd64.whl", "browser_download_url": "https://files.example/aiter-0.1.0.whl"}]}])
+                if url.endswith("page=2"):
+                    return "[]"
+                raise AssertionError(url)
+
+            def metadata(self, url):
+                return {"source_status": "revalidated", "cache_age_seconds": 12}
+
+        with TemporaryDirectory() as directory:
+            results = collect_extension_sources(
+                [{
+                    "id": "github-aiter",
+                    "package_name": "aiter",
+                    "url": "https://api.github.com/repos/ROCm/aiter/releases?per_page=100",
+                    "source_kind": "github-releases",
+                    "pagination": {"page_size": 1, "max_pages": 10},
+                }],
+                Reader(),
+                Path(directory),
+                "2026-08-10T00:00:00Z",
+            )
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(results[0]["status"], "passed")
+        self.assertEqual(results[0]["details"]["pages_fetched"], 2)
+        self.assertEqual(results[0]["details"]["source_status"], "revalidated")
+        self.assertEqual(results[0]["details"]["cache_age_seconds"], 12)
+
+    def test_github_release_pagination_failure_is_explicit(self):
+        class Reader:
+            def __call__(self, url):
+                return json.dumps([{}])
+
+        with TemporaryDirectory() as directory:
+            results = collect_extension_sources(
+                [{
+                    "id": "github-aiter",
+                    "package_name": "aiter",
+                    "url": "https://api.github.com/repos/ROCm/aiter/releases",
+                    "source_kind": "github-releases",
+                    "pagination": {"page_size": 1, "max_pages": 1},
+                }],
+                Reader(),
+                Path(directory),
+                "2026-08-10T00:00:00Z",
+            )
+        self.assertEqual(results[0]["status"], "failed")
+        self.assertTrue(results[0]["details"]["truncated"])
+        self.assertIn("exceeded 1 pages", results[0]["error"])
 
 
 if __name__ == "__main__":

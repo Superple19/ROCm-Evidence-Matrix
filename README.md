@@ -177,7 +177,7 @@ rocm-matrix hardware --candidate-id <candidate-id> --gfx gfx1201
 
 Both commands append timestamped records locally. Use `rocm-evidence` only to create a privacy-redacted local diagnostic report; no evidence is uploaded, submitted, or added to the shared catalog automatically.
 
-GitHub Actions collection uses `GITHUB_TOKEN` when present. GitHub API 403/429 responses are retried with bounded backoff; if collection still fails, the previous CI executions remain in the evidence file and the failed adapter is recorded separately.
+GitHub Actions collection uses `GITHUB_TOKEN` when present. GitHub API 403/429 responses are retried with bounded backoff; if collection still fails, the previous CI executions remain in the evidence file and the failed adapter is recorded separately. Optional GitHub release sources use bounded pagination and expose page counts, truncation, source status, and cache age in collection status; a page-limit hit is never treated as a complete artifact snapshot.
 
 Compatibility profiles use `schemas/profile.schema.json`. They keep framework, runtime, extension, and option constraints separate from core evidence, classify each constraint as `required`, `optional`, or `conflicting`, and link claims to evidence IDs. A `verified` claim must include at least one evidence reference.
 

@@ -21,7 +21,18 @@
           "url": {"type": "string", "format": "uri"},
           "status": {"enum": ["passed", "failed"]},
           "observed_at": {"type": "string", "format": "date-time"},
-          "error": {"type": ["string", "null"]}
+          "error": {"type": ["string", "null"]},
+          "details": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "pages_fetched": {"type": "integer", "minimum": 0},
+              "items_fetched": {"type": "integer", "minimum": 0},
+              "truncated": {"type": "boolean"},
+              "source_status": {"enum": ["fresh", "revalidated", "cached", "not_cached"]},
+              "cache_age_seconds": {"type": ["integer", "null"], "minimum": 0}
+            }
+          }
         }
       }
     }

@@ -119,6 +119,12 @@ AMD's Python package repositories currently return the standardized HTML Simple 
 - Authentication: optional `GITHUB_TOKEN` environment variable
 - Behavior: 403/429 responses use bounded backoff; a failed adapter is recorded
   and prior evidence remains preserved.
+- Pagination: GitHub release adapters fetch at most 10 pages of 100 items by
+  default. A page-limit hit or partial page failure is recorded as a failed,
+  truncated source result rather than being presented as a complete snapshot.
+- Collection status includes the fetched page/item counts, truncation flag,
+  source status (`fresh` or `revalidated`), and cache age when conditional
+  requests reuse a prior response.
 - Credentials are never stored in source manifests or committed data.
 - Evidence: `documented` or `artifact_available`, depending on the recorded claim.
 - Notes: The collector uses the official GitHub Releases API and reads tagged `SUPPORTED_GPUS.md` files to preserve versioned readiness observations. A release whose tagged support document is absent is recorded as `archive_missing`, not unsupported.

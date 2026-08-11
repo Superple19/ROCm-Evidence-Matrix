@@ -243,6 +243,7 @@
       "channel": "external",
       "source_kind": "github-releases",
       "enabled": false,
+      "pagination": {"page_size": 100, "max_pages": 10},
       "url": "https://api.github.com/repos/ROCm/aiter/releases?per_page=100"
     },
     {
@@ -254,6 +255,7 @@
       "channel": "external",
       "source_kind": "github-releases",
       "enabled": false,
+      "pagination": {"page_size": 100, "max_pages": 10},
       "url": "https://api.github.com/repos/triton-lang/triton/releases?per_page=100"
     }
   ]
