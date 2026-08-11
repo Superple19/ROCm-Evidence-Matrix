@@ -116,14 +116,16 @@ def matching_release(version, releases):
 
 
 def release_record(family, version, observed_at, **values):
-    platform = values.get("platform", "windows")
-    support_key = f"{platform}_support" if platform in {"windows", "linux", "macos"} else "windows_support"
-    package_key = f"{platform}_package_available" if platform in {"windows", "linux", "macos"} else "windows_package_available"
-    ci_key = f"{platform}_ci_verified" if platform in {"windows", "linux", "macos"} else "windows_ci_verified"
+    platform = values.get("platform")
+    if platform not in {"windows", "linux", "macos", "unknown"}:
+        raise ValueError("Version history release requires an explicit platform")
+    support_key = f"{platform}_support" if platform != "unknown" else None
+    package_key = f"{platform}_package_available" if platform != "unknown" else None
+    ci_key = f"{platform}_ci_verified" if platform != "unknown" else None
     evidence = {
-        "support": values.get(support_key, "unknown"),
-        "package_available": values.get(package_key, False),
-        "ci_verified": values.get(ci_key),
+        "support": values.get(support_key, "unknown") if support_key else "unknown",
+        "package_available": values.get(package_key, False) if package_key else False,
+        "ci_verified": values.get(ci_key) if ci_key else None,
         "documentation_status": values.get(
             f"{platform}_documentation_status",
             values.get("documentation_status", "unknown") if platform == "windows" else "not_collected",
@@ -182,7 +184,7 @@ def merge_version_history(existing, family, releases, gpu_support, sources, obse
     records = {}
     for item in existing.get("releases", []):
         item = dict(item)
-        item.setdefault("platform", "windows")
+        item.setdefault("platform", "unknown")
         item.setdefault(
             "platform_evidence",
             {"windows": {
@@ -328,6 +330,7 @@ def collect_therock_version_history(config, fetch_text, current_status, existing
                 "therock",
                 release["version"],
                 observed_at,
+                platform="windows",
                 release_date=release["release_date"],
                 channel="stable",
                 documentation_status=documentation_status,
@@ -344,6 +347,7 @@ def collect_therock_version_history(config, fetch_text, current_status, existing
                 "therock",
                 current["version"],
                 observed_at,
+                platform="windows",
                 documentation_status="available",
                 documentation_url=current_source["url"],
                 source_ids=[current["source_id"], current_source["id"]],
@@ -410,6 +414,7 @@ def collect_legacy_version_history(config, fetch_text, legacy, existing=None, ob
                 family,
                 version,
                 observed_at,
+                platform="windows",
                 release_date=release["release_date"] if release else None,
                 channel="stable",
                 windows_support="supported" if support is True else "unsupported" if support is False else "unknown",

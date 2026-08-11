@@ -26,12 +26,12 @@ def render_snapshots(snapshot_paths):
     for snapshot in sorted(
         snapshots,
         key=lambda item: (
-            platform_order.get(item["source"].get("platform", "windows"), 99),
+            platform_order.get(item["source"].get("platform", "unknown"), 99),
             channel_order.get(item["source"]["channel"], 99),
         ),
     ):
         source = snapshot["source"]
-        platform = source.get("platform", "windows")
+        platform = source.get("platform", "unknown")
         lines.extend(
             [
                 f"## {platform.title()} — {source['channel'].title()}",

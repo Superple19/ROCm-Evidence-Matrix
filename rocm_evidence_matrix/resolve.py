@@ -42,7 +42,7 @@ def resolve_candidates(history, gfx, platform=None, channel=None, rocm_version=N
         targets = candidate["gfx_targets"] if include_unavailable else candidate["available_gfx_targets"]
         if gfx and gfx not in targets:
             continue
-        if platform and candidate.get("platform", "windows") != platform:
+        if platform and candidate.get("platform") != platform:
             continue
         if distribution_family and candidate.get("distribution_family", "therock") != distribution_family:
             continue

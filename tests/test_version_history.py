@@ -9,6 +9,10 @@ OBSERVED_AT = "2026-08-08T00:00:00Z"
 
 
 class VersionHistoryTests(unittest.TestCase):
+    def test_release_record_requires_explicit_platform(self):
+        with self.assertRaisesRegex(ValueError, "explicit platform"):
+            release_record("therock", "7.14", OBSERVED_AT, source_ids=["source"])
+
     def test_discovers_official_rocm_release_links(self):
         html = """
         <table><tr><th>Version</th><th>Release date</th></tr>
@@ -95,8 +99,8 @@ class VersionHistoryTests(unittest.TestCase):
         self.assertEqual([item["version"] for item in history["releases"]], ["7.2.2", "7.2.4"])
 
     def test_derives_lifecycle_without_changing_distribution_family(self):
-        older = release_record("therock", "7.14", OBSERVED_AT, source_ids=["source"])
-        newer = release_record("therock", "10.1.0", OBSERVED_AT, source_ids=["source"])
+        older = release_record("therock", "7.14", OBSERVED_AT, platform="windows", source_ids=["source"])
+        newer = release_record("therock", "10.1.0", OBSERVED_AT, platform="windows", source_ids=["source"])
         history = merge_version_history(None, "therock", [older, newer], [], {"source": {}}, OBSERVED_AT)
         by_version = {item["version"]: item for item in history["releases"]}
 
@@ -109,7 +113,7 @@ class VersionHistoryTests(unittest.TestCase):
         history = merge_version_history(
             None,
             "legacy",
-            [release_record("legacy", "7.2.4", OBSERVED_AT, channel="stable", source_ids=["source"])],
+            [release_record("legacy", "7.2.4", OBSERVED_AT, platform="windows", channel="stable", source_ids=["source"])],
             [],
             {"source": {}},
             OBSERVED_AT,
@@ -117,7 +121,7 @@ class VersionHistoryTests(unittest.TestCase):
         history = merge_version_history(
             history,
             "therock",
-            [release_record("therock", "10.1.0", OBSERVED_AT, channel="nightly", source_ids=["source"])],
+            [release_record("therock", "10.1.0", OBSERVED_AT, platform="windows", channel="nightly", source_ids=["source"])],
             [],
             {"source": {}},
             OBSERVED_AT,

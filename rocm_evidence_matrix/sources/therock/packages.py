@@ -43,6 +43,9 @@ def package_url(index_url, package_name):
 
 def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_compatibility=(), fetch=None, observed_at=None):
     """Collect one TheRock package index and build its normalized observations."""
+    platform = source.get("platform")
+    if platform not in {"windows", "linux"}:
+        raise ValueError(f"Source {source.get('id', 'unknown')} requires an explicit Windows or Linux platform")
     fetch = fetch or (lambda url: fetch_text(url, timeout))
     index_url = source["url"]
     root_html = fetch(index_url)
@@ -78,7 +81,7 @@ def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_co
         for future in as_completed(futures):
             name = futures[future]
             html = future.result()
-            all_packages[name] = parse_package_artifacts(html, package_url(index_url, name), name, source.get("platform", "windows"))
+            all_packages[name] = parse_package_artifacts(html, package_url(index_url, name), name, platform)
 
     all_packages = {name: all_packages[name] for name in sorted(all_packages)}
     packages = {name: latest_artifacts(artifacts) for name, artifacts in all_packages.items()}
@@ -97,7 +100,7 @@ def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_co
     snapshot = {
         "schema_version": 1,
         "last_observed_at": observed_at or datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
-        "source": {**source, "platform": source.get("platform", "windows")},
+        "source": {**source, "platform": platform},
         "gfx_targets": target_rows,
         "packages": packages,
     }

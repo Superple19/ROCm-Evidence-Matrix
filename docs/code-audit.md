@@ -6,7 +6,7 @@ package availability into a compatibility guarantee.
 
 ## Baseline
 
-- 173 offline unit tests pass.
+- 177 offline unit tests pass.
 - `rocm-matrix check` validates schemas, catalog entries, standalone evidence,
   profiles, and generated documents.
 - No exhaustive historical resolver or physical-GPU backtest is performed by

@@ -20,6 +20,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(record["result"], "passed")
         self.assertEqual(record["evidence_id"], record["id"])
         self.assertEqual(record["os"], normalized_os())
+        self.assertEqual(record["platform"], record["host_platform"])
         self.assertEqual(record["devices"][0]["gcnArchName"], "gfx1201")
         validate_runtime_verifications({"schema_version": 1, "generated_at": record["observed_at"], "verifications": [record]})
 
@@ -32,6 +33,12 @@ class RuntimeTests(unittest.TestCase):
         record = collect_runtime(types.SimpleNamespace(__version__="2.12.0", version=types.SimpleNamespace(hip=None), cuda=types.SimpleNamespace(is_available=lambda: False, device_count=lambda: 0)), "2026-08-08T00:00:00Z")
         record["os"] = "win32"
         with self.assertRaisesRegex(ValueError, "operating system"):
+            validate_runtime_verifications({"schema_version": 1, "generated_at": record["observed_at"], "verifications": [record]})
+
+    def test_rejects_inconsistent_host_platform(self):
+        record = collect_runtime(types.SimpleNamespace(__version__="2.12.0", version=types.SimpleNamespace(hip=None), cuda=types.SimpleNamespace(is_available=lambda: False, device_count=lambda: 0)), "2026-08-08T00:00:00Z")
+        record["host_platform"] = "linux" if record["platform"] != "linux" else "windows"
+        with self.assertRaisesRegex(ValueError, "platform identity"):
             validate_runtime_verifications({"schema_version": 1, "generated_at": record["observed_at"], "verifications": [record]})
 
     def test_merge_deduplicates_ids_and_keeps_generated_time_monotonic(self):

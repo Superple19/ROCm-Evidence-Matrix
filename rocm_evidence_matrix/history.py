@@ -120,7 +120,7 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
         rocm_version, torch_version, vision_version, audio_version, python_tags = key
         candidate_id = candidate_id_for(
             distribution_family,
-            source.get("platform", "windows"),
+            source.get("platform", "unknown"),
             source["channel"],
             rocm_version,
             torch_version,
@@ -132,7 +132,7 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
             {
                 "id": candidate_id,
                 "distribution_family": distribution_family,
-                "platform": source.get("platform", "windows"),
+                "platform": source.get("platform", "unknown"),
                 "gfx_support": "known",
                 "channel": source["channel"],
                 "rocm_version": rocm_version,
@@ -362,7 +362,7 @@ def candidate_id_for(distribution_family, platform, channel, rocm_version, torch
 def candidate_id(candidate):
     return candidate_id_for(
         candidate["distribution_family"],
-        candidate.get("platform", "windows"),
+        candidate.get("platform", "unknown"),
         candidate["channel"],
         candidate["rocm_version"],
         candidate["torch_version"],
@@ -381,7 +381,7 @@ def migrate_history(existing):
         candidates = []
         for item in existing.get("candidates", []):
             candidate = {**item}
-            candidate.setdefault("platform", "windows")
+            candidate.setdefault("platform", "unknown")
             candidate.setdefault("hip_version", None)
             candidate.setdefault("triton_version", None)
             if not isinstance(candidate.get("evidence_status"), dict):
@@ -400,7 +400,7 @@ def migrate_history(existing):
     candidates = []
     for item in existing.get("candidates", []):
         candidate = {**item, "distribution_family": "therock"}
-        candidate.setdefault("platform", "windows")
+        candidate.setdefault("platform", "unknown")
         candidate.setdefault("hip_version", None)
         candidate.setdefault("triton_version", None)
         if not isinstance(candidate.get("evidence_status"), dict):
@@ -454,7 +454,7 @@ def collapse_triton_variants(candidates):
 def classify_lifecycle(candidates):
     latest = {}
     for candidate in candidates:
-        candidate.setdefault("platform", "windows")
+        candidate.setdefault("platform", "unknown")
         candidate.setdefault("gfx_support", "known" if candidate.get("gfx_targets") else "unknown")
         key = (candidate["distribution_family"], candidate["platform"], candidate["channel"])
         version = version_key(candidate["rocm_version"])
@@ -524,7 +524,7 @@ def merge_history(existing, observations, sources, observed_at, observed_source_
 def render_history(history):
     grouped = {}
     for candidate in history["candidates"]:
-        key = (candidate["distribution_family"], candidate.get("platform", "windows"), candidate["channel"], candidate["lifecycle"], candidate["rocm_version"])
+        key = (candidate["distribution_family"], candidate.get("platform", "unknown"), candidate["channel"], candidate["lifecycle"], candidate["rocm_version"])
         group = grouped.setdefault(key, {"sets": 0, "gfx_support": set(), "framework": set(), "known": set(), "available": set(), "python": set(), "evidence": {"artifact": set(), "documentation": set(), "ci": set(), "resolver": set(), "runtime": set(), "hardware": set()}})
         group["sets"] += 1
         group["gfx_support"].add(candidate.get("gfx_support", "unknown"))

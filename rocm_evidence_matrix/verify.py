@@ -237,7 +237,7 @@ def verify_candidate(candidate, gfx, timeout, python_tag=None, platform_tag=None
         "distribution_family": candidate.get("distribution_family", "therock"),
         "source_id": candidate["source_id"],
         "gfx": gfx,
-        "platform": candidate.get("platform", "windows"),
+        "platform": candidate.get("platform", "unknown"),
         "host_platform": host_platform(),
         "python_tag": python_tag,
         "python_version": ".".join(str(part) for part in sys.version_info[:3]),

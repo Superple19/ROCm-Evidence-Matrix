@@ -413,6 +413,8 @@ def validate_resolver_verifications(document):
             "id",
             "candidate_id",
             "source_id",
+            "platform",
+            "host_platform",
             "gfx",
             "python_tag",
             "python_version",
@@ -437,8 +439,10 @@ def validate_resolver_verifications(document):
             raise ValueError(f"Invalid resolver candidate hash: {record['id']}")
         if record["result"] not in {"passed", "failed", "not_applicable"}:
             raise ValueError(f"Invalid resolver result: {record['result']}")
-        if record.get("platform", "windows") not in {"windows", "linux", "macos", "unknown"}:
+        if record.get("platform") not in {"windows", "linux", "macos", "unknown"}:
             raise ValueError(f"Invalid resolver platform: {record['id']}")
+        if record.get("host_platform") not in {"windows", "linux", "macos", "unknown"}:
+            raise ValueError(f"Invalid resolver host platform: {record['id']}")
         gfx = record.get("gfx")
         if gfx is not None and not gfx.startswith("gfx"):
             raise ValueError(f"Invalid resolver GFX: {record['id']}")
@@ -459,7 +463,7 @@ def validate_runtime_verifications(document):
         raise ValueError("Runtime verification generation time must be UTC")
     ids = set()
     for record in document.get("verifications", []):
-        required = {"id", "observed_at", "os", "result", "rocm_available", "device_count", "devices"}
+        required = {"id", "observed_at", "platform", "host_platform", "os", "result", "rocm_available", "device_count", "devices"}
         if not required.issubset(record):
             raise ValueError(f"Runtime verification lacks required fields: {record.get('id', 'unknown')}")
         if record["id"] in ids:
@@ -467,6 +471,8 @@ def validate_runtime_verifications(document):
         ids.add(record["id"])
         if record.get("os") not in {"windows", "linux", "macos", "unknown"}:
             raise ValueError(f"Invalid runtime operating system: {record['id']}")
+        if record.get("platform") != record.get("host_platform") or record.get("host_platform") not in {"windows", "linux", "macos", "unknown"}:
+            raise ValueError(f"Runtime platform identity is inconsistent: {record['id']}")
         if record["result"] not in {"passed", "failed"} or not record.get("observed_at", "").endswith("Z"):
             raise ValueError(f"Invalid runtime verification: {record['id']}")
         if record["result"] == "passed" and (not record["rocm_available"] or record["device_count"] < 1):
@@ -480,7 +486,7 @@ def validate_hardware_verifications(document):
         raise ValueError("Hardware verification generation time must be UTC")
     ids = set()
     for record in document.get("verifications", []):
-        required = {"id", "observed_at", "os", "result", "correct", "device"}
+        required = {"id", "observed_at", "platform", "host_platform", "os", "result", "correct", "device"}
         if not required.issubset(record):
             raise ValueError(f"Hardware verification lacks required fields: {record.get('id', 'unknown')}")
         if record["id"] in ids:
@@ -488,6 +494,8 @@ def validate_hardware_verifications(document):
         ids.add(record["id"])
         if record.get("os") not in {"windows", "linux", "macos", "unknown"}:
             raise ValueError(f"Invalid hardware operating system: {record['id']}")
+        if record.get("platform") != record.get("host_platform") or record.get("host_platform") not in {"windows", "linux", "macos", "unknown"}:
+            raise ValueError(f"Hardware platform identity is inconsistent: {record['id']}")
         if record["result"] not in {"passed", "failed"} or not record.get("observed_at", "").endswith("Z"):
             raise ValueError(f"Invalid hardware verification: {record['id']}")
         if record["result"] == "passed" and (not record["correct"] or not record.get("device")):

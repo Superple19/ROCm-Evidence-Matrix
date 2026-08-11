@@ -38,6 +38,7 @@ def normalized_os():
 
 def collect_runtime(torch_module, observed_at=None, candidate_id=None, gfx=None):
     observed_at = observed_at or utc_now()
+    host = normalized_os()
     record = {
         "id": f"runtime:{candidate_id or 'unlinked'}:{observed_at}",
         "evidence_id": f"runtime:{candidate_id or 'unlinked'}:{observed_at}",
@@ -45,8 +46,10 @@ def collect_runtime(torch_module, observed_at=None, candidate_id=None, gfx=None)
         "gfx": gfx,
         "observed_at": observed_at,
         "python_version": platform.python_version(),
-        "platform": platform.platform(),
-        "os": normalized_os(),
+        "platform": host,
+        "host_platform": host,
+        "platform_detail": platform.platform(),
+        "os": host,
         "machine": platform.machine(),
         "architecture": platform.architecture()[0],
         "driver_version": os.environ.get("AMDGPU_DRIVER_VERSION") or os.environ.get("ROCM_DRIVER_VERSION"),

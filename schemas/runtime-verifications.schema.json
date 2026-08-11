@@ -9,7 +9,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "observed_at", "os", "result", "rocm_available", "device_count", "devices"],
+        "required": ["id", "observed_at", "platform", "host_platform", "os", "result", "rocm_available", "device_count", "devices"],
         "properties": {
           "id": {"type": "string"},
           "candidate_id": {"type": ["string", "null"]},
@@ -19,6 +19,8 @@
           "python_version": {"type": ["string", "null"]},
           "python_tag": {"type": ["string", "null"]},
           "platform": {"type": ["string", "null"]},
+          "host_platform": {"enum": ["windows", "linux", "macos", "unknown"]},
+          "platform_detail": {"type": ["string", "null"]},
           "platform_tag": {"type": ["string", "null"]},
           "os": {"enum": ["windows", "linux", "macos", "unknown"]},
           "machine": {"type": ["string", "null"]},

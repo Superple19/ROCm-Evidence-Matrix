@@ -18,7 +18,7 @@ def default_platform_tag(candidate):
         "linux": "manylinux_2_28_x86_64",
         "windows": "win_amd64",
         "macos": "macosx_11_0_x86_64",
-    }.get(candidate.get("platform", "windows"))
+    }.get(candidate.get("platform"))
 
 
 def candidate_hash(candidate, gfx, python_tag_value, platform_tag=None):

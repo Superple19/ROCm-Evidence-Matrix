@@ -143,7 +143,7 @@ def parse_source_distributions(html, base_url, package_name):
     return sorted(artifacts, key=lambda item: (version_key(item["version"]), item["filename"]))
 
 
-def parse_package_artifacts(html, base_url, package_name, platform="windows"):
+def parse_package_artifacts(html, base_url, package_name, platform):
     wheels = parse_linux_wheels(html, base_url, package_name) if platform == "linux" else parse_windows_wheels(html, base_url, package_name)
     return sorted(
         wheels + parse_source_distributions(html, base_url, package_name),

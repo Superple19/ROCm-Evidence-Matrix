@@ -28,11 +28,11 @@ def build_triton_observations(source, packages):
             continue
         observations.append(
             {
-                "id": ":".join(("triton", source.get("distribution_family", "therock"), source.get("platform", "windows"), source["channel"], rocm_version, version, ",".join(tags))),
+                "id": ":".join(("triton", source.get("distribution_family", "therock"), source.get("platform", "unknown"), source["channel"], rocm_version, version, ",".join(tags))),
                 "distribution_family": source.get("distribution_family", "therock"),
                 "extension": "triton",
                 "package_name": "triton",
-                "platform": source.get("platform", "windows"),
+                "platform": source.get("platform", "unknown"),
                 "channel": source["channel"],
                 "rocm_version": rocm_version,
                 "version": version,
@@ -58,11 +58,11 @@ def build_triton_observations_from_history(history):
             continue
         observations.append(
             {
-                "id": ":".join(("triton", candidate.get("distribution_family", "therock"), candidate.get("platform", "windows"), candidate["channel"], rocm_version, version, ",".join(tags))),
+                "id": ":".join(("triton", candidate.get("distribution_family", "therock"), candidate.get("platform", "unknown"), candidate["channel"], rocm_version, version, ",".join(tags))),
                 "distribution_family": candidate.get("distribution_family", "therock"),
                 "extension": "triton",
                 "package_name": "triton",
-                "platform": candidate.get("platform", "windows"),
+                "platform": candidate.get("platform", "unknown"),
                 "channel": candidate["channel"],
                 "rocm_version": rocm_version,
                 "version": version,

@@ -55,7 +55,7 @@ def build_jax_observations(source, packages):
                     tags = _compatible_jax_tags(pjrt_tags, plugin_tags)
                     if not tags:
                         continue
-                    platform = source.get("platform", "windows")
+                    platform = source.get("platform", "unknown")
                     fields = ["jax", family, platform, source["channel"], rocm_version, pjrt_version, plugin_version, ",".join(tags)]
                     observations.append(
                         {
@@ -115,7 +115,7 @@ def build_sdk_components(source, packages):
             {
                 "id": f"{source['id']}:{package_name}",
                 "distribution_family": source.get("distribution_family", "therock"),
-                "platform": source.get("platform", "windows"),
+                "platform": source.get("platform", "unknown"),
                 "channel": source["channel"],
                 "package_name": package_name,
                 "component_kind": "device-package" if gfx else "sdk-component",

@@ -3,7 +3,7 @@ import json
 import tempfile
 from pathlib import Path
 
-from rocm_evidence_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, promote_execution_evidence, render_history, update_execution_evidence
+from rocm_evidence_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, migrate_history, promote_execution_evidence, render_history, update_execution_evidence
 from rocm_evidence_matrix.identity import candidate_hash
 from rocm_evidence_matrix.resolve import count_candidates, install_command, latest_candidates, resolve_candidates
 
@@ -162,6 +162,29 @@ class HistoryTests(unittest.TestCase):
         self.assertEqual(history["candidates"][0]["distribution_family"], "therock")
         self.assertEqual(history["candidates"][0]["lifecycle"], "current")
         self.assertTrue(history["candidates"][0]["id"].startswith("therock:"))
+
+    def test_missing_platform_migrates_to_unknown_not_windows(self):
+        history = migrate_history({
+            "schema_version": 2,
+            "sources": {},
+            "candidates": [{
+                "id": "candidate",
+                "distribution_family": "therock",
+                "channel": "stable",
+                "rocm_version": "7.14.0",
+                "torch_version": "2.12.0",
+                "torchvision_version": "0.27.0",
+                "torchaudio_version": "2.11.0",
+                "python_tags": ["cp312"],
+                "gfx_targets": [],
+                "available_gfx_targets": [],
+                "artifact_available": False,
+                "first_observed_at": "2026-08-08T00:00:00Z",
+                "last_observed_at": "2026-08-08T00:00:00Z",
+                "source_id": "source",
+            }],
+        })
+        self.assertEqual(history["candidates"][0]["platform"], "unknown")
 
     def test_resolves_and_formats_install_command(self):
         candidate = {
