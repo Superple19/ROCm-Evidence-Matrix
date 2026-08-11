@@ -51,6 +51,26 @@ class IntegrationTests(unittest.TestCase):
         self.assertEqual(target["platforms"]["windows"]["package_channels"]["stable"]["rocm_device_version"], "7.14.0")
         self.assertEqual(target["platforms"]["linux"]["package_channels"]["stable"]["rocm_device_version"], "7.2.4")
 
+    def test_linux_only_target_does_not_invent_windows_aliases(self):
+        documentation = {"sources": {}, "products": []}
+        snapshot = {
+            "last_observed_at": "2026-08-07T00:00:00Z",
+            "source": {"id": "stable-linux", "channel": "stable", "platform": "linux", "url": "https://example.test/packages"},
+            "gfx_targets": [{"gfx": "gfx1100", "all_device_packages_available": True}],
+            "packages": {
+                "rocm-sdk-device-gfx1100": [{"version": "7.2.4"}],
+                "amd-torch-device-gfx1100": [{"version": "2.0+rocm7.2.4"}],
+                "amd-torchvision-device-gfx1100": [{"version": "0.1+rocm7.2.4"}],
+            },
+        }
+
+        target = build_compatibility_matrix(documentation, [snapshot])["targets"][0]
+
+        self.assertNotIn("windows_release_support", target)
+        self.assertNotIn("therock_windows_status", target)
+        self.assertNotIn("package_channels", target)
+        self.assertEqual(set(target["platforms"]), {"linux"})
+
 
 if __name__ == "__main__":
     unittest.main()

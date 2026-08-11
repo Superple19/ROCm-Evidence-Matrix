@@ -1,6 +1,7 @@
 import unittest
 
 from rocm_evidence_matrix.validation import validate_legacy_windows, validate_resolver_verifications, validate_snapshot
+from rocm_evidence_matrix.validation import validate_compatibility_matrix
 
 
 def valid_snapshot():
@@ -33,6 +34,30 @@ def valid_snapshot():
 
 
 class ValidationTests(unittest.TestCase):
+    def test_linux_only_compatibility_matrix_does_not_require_windows_aliases(self):
+        matrix = {
+            "schema_version": 1,
+            "generated_at": "2026-08-08T00:00:00Z",
+            "sources": {"packages-stable-linux": {"id": "packages-stable-linux"}},
+            "targets": [
+                {
+                    "gfx": "gfx1100",
+                    "products": [],
+                    "platforms": {
+                        "linux": {
+                            "package_channels": {
+                                "stable": {
+                                    "source_id": "packages-stable-linux",
+                                }
+                            }
+                        }
+                    },
+                }
+            ],
+        }
+
+        validate_compatibility_matrix(matrix)
+
     def test_accepts_valid_snapshot(self):
         validate_snapshot(valid_snapshot())
 

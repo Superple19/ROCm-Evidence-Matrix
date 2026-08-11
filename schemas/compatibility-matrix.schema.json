@@ -14,7 +14,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["gfx", "products", "platforms", "windows_release_support", "therock_windows_status", "package_channels"],
+        "required": ["gfx", "products", "platforms"],
         "properties": {
           "gfx": {"type": "string", "pattern": "^gfx[0-9a-z]+$"},
           "products": {"type": "array", "items": {"type": "string"}},

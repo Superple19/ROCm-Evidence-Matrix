@@ -283,19 +283,30 @@ def validate_compatibility_matrix(matrix):
             raise ValueError("Compatibility matrix targets must have unique GFX identifiers")
         seen.add(gfx)
         platforms = target.get("platforms", {})
+        if not isinstance(platforms, dict):
+            raise ValueError(f"Compatibility matrix platforms must be an object for {gfx}")
         windows = platforms.get("windows", {})
         support = target.get("windows_release_support")
         status = target.get("therock_windows_status")
-        if windows.get("release_support", support) != support or windows.get("therock_status", status) != status:
+        if not isinstance(windows, dict):
+            raise ValueError(f"Windows platform evidence must be an object for {gfx}")
+        if support is not None and windows.get("release_support") != support:
+            raise ValueError(f"Windows platform evidence does not match legacy matrix fields for {gfx}")
+        if status is not None and windows.get("therock_status") != status:
             raise ValueError(f"Windows platform evidence does not match legacy matrix fields for {gfx}")
         if support and support["source_id"] not in source_ids:
             raise ValueError(f"Unknown release support source for {gfx}")
         if status and status["source_id"] not in source_ids:
             raise ValueError(f"Unknown TheRock source for {gfx}")
-        for packages in target.get("package_channels", {}).values():
+        legacy_channels = target.get("package_channels", {})
+        if not isinstance(legacy_channels, dict):
+            raise ValueError(f"Legacy package channels must be an object for {gfx}")
+        for packages in legacy_channels.values():
             if packages["source_id"] not in source_ids:
                 raise ValueError(f"Unknown package source for {gfx}")
         for platform, platform_data in platforms.items():
+            if not isinstance(platform_data, dict):
+                raise ValueError(f"Invalid {platform} platform evidence for {gfx}")
             for packages in platform_data.get("package_channels", {}).values():
                 if packages["source_id"] not in source_ids:
                     raise ValueError(f"Unknown {platform} package source for {gfx}")

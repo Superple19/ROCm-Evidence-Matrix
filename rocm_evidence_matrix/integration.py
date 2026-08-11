@@ -52,27 +52,30 @@ def build_compatibility_matrix(documentation, package_snapshots):
                 }
             platform_channels[platform] = channels
         windows_channels = platform_channels.get("windows", {})
-        rows.append(
-            {
-                "gfx": gfx,
-                "products": sorted(products_by_gfx.get(gfx, [])),
-                "platforms": {
-                    "windows": {
-                        "release_support": release_by_gfx.get(gfx),
-                        "therock_status": therock_by_gfx.get(gfx),
-                        "package_channels": windows_channels,
-                    },
-                    **{
-                        platform: {"package_channels": channels}
-                        for platform, channels in platform_channels.items()
-                        if platform != "windows"
-                    },
-                },
-                "windows_release_support": release_by_gfx.get(gfx),
-                "therock_windows_status": therock_by_gfx.get(gfx),
-                "package_channels": windows_channels,
-            }
-        )
+        platform_evidence = {
+            platform: {"package_channels": channels}
+            for platform, channels in platform_channels.items()
+        }
+        row = {
+            "gfx": gfx,
+            "products": sorted(products_by_gfx.get(gfx, [])),
+            "platforms": platform_evidence,
+        }
+        if "windows" in platform_channels:
+            platform_evidence["windows"].update(
+                {
+                    "release_support": release_by_gfx.get(gfx),
+                    "therock_status": therock_by_gfx.get(gfx),
+                }
+            )
+            row.update(
+                {
+                    "windows_release_support": release_by_gfx.get(gfx),
+                    "therock_windows_status": therock_by_gfx.get(gfx),
+                    "package_channels": windows_channels,
+                }
+            )
+        rows.append(row)
 
     sources = dict(documentation["sources"])
     for snapshot in package_snapshots:
