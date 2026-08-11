@@ -70,7 +70,7 @@
 - Hardware verification must report the exact machine, driver, GPU, package set, command, and result.
 - Public community submissions must redact usernames, hostnames, tokens, and absolute paths while retaining reproducibility-relevant environment fields.
 - Generated files must identify their generator and must not be edited manually.
-- `rocm-evidence` prepares a local, reviewable community submission; collection and evidence export must never upload credentials or results automatically.
+- `rocm-evidence` prepares a local diagnostic report for user review; collection and evidence export must never upload credentials or results automatically.
 
 ## Windows subprocess encoding
 
