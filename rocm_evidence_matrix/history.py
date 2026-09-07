@@ -375,6 +375,16 @@ def attach_therock_ci_evidence(history, ci_document):
     return history
 
 
+def clear_therock_ci_evidence(history):
+    for candidate in history.get("candidates", []):
+        if candidate.get("distribution_family") != "therock":
+            continue
+        candidate.pop("ci_evidence_refs", None)
+        candidate.pop("ci_evidence_scope", None)
+        candidate.setdefault("evidence_status", initial_evidence_status())["ci"] = "not_collected"
+    return history
+
+
 def candidate_id_for(distribution_family, platform, channel, rocm_version, torch_version, torchvision_version, torchaudio_version, python_tags, triton_version=None):
     fields = [distribution_family]
     if platform != "windows":

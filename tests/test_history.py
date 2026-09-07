@@ -3,7 +3,7 @@ import json
 import tempfile
 from pathlib import Path
 
-from rocm_evidence_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, migrate_history, promote_execution_evidence, render_history, update_execution_evidence
+from rocm_evidence_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, clear_therock_ci_evidence, execution_evidence_errors, merge_history, migrate_history, promote_execution_evidence, render_history, update_execution_evidence
 from rocm_evidence_matrix.identity import candidate_hash
 from rocm_evidence_matrix.resolve import count_candidates, install_command, latest_candidates, resolve_candidates
 
@@ -501,6 +501,24 @@ class HistoryTests(unittest.TestCase):
         }]}
         attach_therock_ci_evidence({"candidates": [candidate]}, evidence)
         self.assertEqual(candidate["evidence_status"]["ci"], "ci_failed")
+
+    def test_clears_stale_ci_evidence(self):
+        candidates = [
+            {
+                "distribution_family": "therock",
+                "evidence_status": {"ci": "partial"},
+                "ci_evidence_refs": ["github:1"],
+                "ci_evidence_scope": "gfx_platform",
+            },
+            {"distribution_family": "legacy", "evidence_status": {"ci": "not_collected"}},
+        ]
+
+        clear_therock_ci_evidence({"candidates": candidates})
+
+        self.assertEqual(candidates[0]["evidence_status"]["ci"], "not_collected")
+        self.assertNotIn("ci_evidence_refs", candidates[0])
+        self.assertNotIn("ci_evidence_scope", candidates[0])
+        self.assertEqual(candidates[1]["evidence_status"]["ci"], "not_collected")
 
 
 if __name__ == "__main__":

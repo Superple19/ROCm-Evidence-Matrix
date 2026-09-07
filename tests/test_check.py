@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from rocm_evidence_matrix.check import run_check, validate_json_schema
+from rocm_evidence_matrix.check import run_check, validate_catalog, validate_json_schema
 
 
 class CheckCommandTests(unittest.TestCase):
@@ -17,6 +17,9 @@ class CheckCommandTests(unittest.TestCase):
             path.write_text(json.dumps({"schema_version": 1, "generated_at": "2026-08-07T00:00:00Z", "unexpected": True}), encoding="utf-8")
             with self.assertRaises(ValueError):
                 validate_json_schema(json.loads(path.read_text(encoding="utf-8")), root / "schemas" / "source-manifest.schema.json")
+
+    def test_committed_catalog_has_required_unique_artifacts(self):
+        validate_catalog(Path(__file__).resolve().parents[1])
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@ from pathlib import Path
 from jsonschema import FormatChecker
 from jsonschema.validators import validator_for
 
-from .catalog import build_catalog
+from .catalog import REQUIRED_ARTIFACT_IDS, build_catalog
 from .extensions import render_extension_history
 from .extension_catalog import render_extension_catalog
 from .frameworks import render_framework_history, render_sdk_components
@@ -12,12 +12,10 @@ from .history import migrate_history, render_history
 from .legacy import render_legacy_windows
 from .legacy_linux import render_legacy_linux
 from .matrix_render import render_compatibility_matrix
-from .paths import LEGACY_LINUX, LEGACY_LINUX_DOC, LEGACY_STATUS, LEGACY_WINDOWS, LEGACY_WINDOWS_DOC, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS, first_existing
+from .paths import LEGACY_LINUX, LEGACY_LINUX_DOC, LEGACY_STATUS, LEGACY_WINDOWS, LEGACY_WINDOWS_DOC, THEROCK_SNAPSHOTS, THEROCK_STATUS, first_existing
 from .profile import validate_profile
 from .render import render_snapshots
 from .validation import (
-    validate_ci_coverage,
-    validate_ci_evidence,
     validate_community_evidence,
     validate_compatibility_matrix,
     validate_collection_status,
@@ -43,8 +41,6 @@ from .version_history import render_version_history
 
 SCHEMA_VALIDATORS = {
     "compatibility-matrix.schema.json": validate_compatibility_matrix,
-    "ci-coverage.schema.json": validate_ci_coverage,
-    "ci-evidence.schema.json": validate_ci_evidence,
     "collection-status.schema.json": validate_collection_status,
     "documentation-snapshot.schema.json": validate_documentation_snapshot,
     "extension-history.schema.json": validate_extension_history,
@@ -88,6 +84,17 @@ def validate_catalog(root: str | Path):
     validate_json_schema(catalog, root / "schemas" / "catalog.schema.json")
     if catalog.get("schema_version") != 1:
         raise ValueError("Unsupported catalog schema")
+    artifact_ids = [artifact["id"] for artifact in catalog["artifacts"]]
+    artifact_paths = [artifact["path"] for artifact in catalog["artifacts"]]
+    if not artifact_ids:
+        raise ValueError("Catalog has no artifacts")
+    if len(artifact_ids) != len(set(artifact_ids)):
+        raise ValueError("Catalog contains duplicate artifact IDs")
+    if len(artifact_paths) != len(set(artifact_paths)):
+        raise ValueError("Catalog contains duplicate artifact paths")
+    missing = sorted(REQUIRED_ARTIFACT_IDS - set(artifact_ids))
+    if missing:
+        raise ValueError(f"Catalog is missing required artifacts: {', '.join(missing)}")
     expected = build_catalog(root)
     if catalog.get("artifacts") != expected["artifacts"]:
         raise ValueError("Catalog artifacts are stale; run rocm-matrix catalog")
@@ -112,8 +119,6 @@ def validate_catalog(root: str | Path):
 def validate_standalone_data(root):
     root = Path(root)
     validators = (
-        (THEROCK_CI_COVERAGE, validate_ci_coverage, "ci-coverage.schema.json"),
-        (THEROCK_CI_EVIDENCE, validate_ci_evidence, "ci-evidence.schema.json"),
         ("data/observations/source-manifest.json", validate_source_manifest, "source-manifest.schema.json"),
         (LEGACY_STATUS, validate_collection_status, "collection-status.schema.json"),
         (THEROCK_STATUS, validate_collection_status, "collection-status.schema.json"),

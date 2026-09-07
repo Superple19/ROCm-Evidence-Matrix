@@ -242,19 +242,13 @@
         "gfx90c"
       ],
       "channel": "nightly",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "resolver_failed",
@@ -506,19 +500,13 @@
         "gfx90a"
       ],
       "channel": "stable",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "resolver_failed",
@@ -934,19 +922,13 @@
         "gfx90a"
       ],
       "channel": "staging",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "resolver_failed",
@@ -135113,19 +135095,13 @@
         "gfx90a"
       ],
       "channel": "nightly",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -135300,19 +135276,13 @@
         "gfx90a"
       ],
       "channel": "nightly",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -135579,19 +135549,13 @@
         "gfx90a"
       ],
       "channel": "nightly",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -135767,19 +135731,13 @@
         "gfx90a"
       ],
       "channel": "nightly",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -136325,19 +136283,13 @@
         "gfx90c"
       ],
       "channel": "nightly",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -137174,19 +137126,13 @@
         "gfx90a"
       ],
       "channel": "stable",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -137433,19 +137379,13 @@
         "gfx90a"
       ],
       "channel": "stable",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -148189,19 +148129,13 @@
         "gfx90a"
       ],
       "channel": "staging",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -148284,19 +148218,13 @@
         "gfx90a"
       ],
       "channel": "staging",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -148988,19 +148916,13 @@
         "gfx90a"
       ],
       "channel": "staging",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -149692,19 +149614,13 @@
         "gfx90a"
       ],
       "channel": "staging",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",
@@ -150396,19 +150312,13 @@
         "gfx90a"
       ],
       "channel": "staging",
-      "ci_evidence_refs": [
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277884",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277896",
-        "hud:https://github.com/ROCm/TheRock/actions/runs/31257713957/job/93105277900"
-      ],
-      "ci_evidence_scope": "gfx_platform",
       "distribution_family": "therock",
       "documentation_refs": [
         "therock-supported-gpus"
       ],
       "evidence_status": {
         "artifact": "artifact_available",
-        "ci": "partial",
+        "ci": "not_collected",
         "documentation": "documented",
         "hardware": "not_collected",
         "resolver": "not_collected",

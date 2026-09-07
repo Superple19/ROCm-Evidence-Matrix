@@ -4,7 +4,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .persistence import atomic_write_json
-from .paths import EXTENSION_ARTIFACT_HISTORY, EXTENSION_CATALOG, EXTENSION_SNAPSHOTS, LEGACY_LINUX, LEGACY_STATUS, LEGACY_WINDOWS, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS, first_existing
+from .paths import EXTENSION_ARTIFACT_HISTORY, EXTENSION_CATALOG, EXTENSION_SNAPSHOTS, LEGACY_LINUX, LEGACY_STATUS, LEGACY_WINDOWS, THEROCK_SNAPSHOTS, THEROCK_STATUS, first_existing
+
+
+REQUIRED_ARTIFACT_IDS = frozenset({"compatibility_matrix", "package_history", "extension_catalog", "comfyui_profile"})
 
 
 ARTIFACTS = (
@@ -23,8 +26,6 @@ ARTIFACTS = (
     ("legacy_linux", LEGACY_LINUX, "schemas/legacy-linux.schema.json"),
     ("legacy_archive_manifest", "data/legacy/archive/manifest.json", "schemas/legacy-archive-manifest.schema.json"),
     ("version_history", "data/version-history.json", "schemas/version-history.schema.json"),
-    ("ci_coverage", THEROCK_CI_COVERAGE, "schemas/ci-coverage.schema.json"),
-    ("ci_evidence", THEROCK_CI_EVIDENCE, "schemas/ci-evidence.schema.json"),
     ("source_manifest", "data/observations/source-manifest.json", "schemas/source-manifest.schema.json"),
     ("collection_status:legacy", LEGACY_STATUS, "schemas/collection-status.schema.json"),
     ("collection_status:therock", THEROCK_STATUS, "schemas/collection-status.schema.json"),

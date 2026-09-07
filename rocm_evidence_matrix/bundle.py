@@ -14,16 +14,12 @@ from pathlib import Path, PurePosixPath
 from jsonschema import FormatChecker
 from jsonschema.validators import validator_for
 
+from .catalog import REQUIRED_ARTIFACT_IDS as REQUIRED_CATALOG_ARTIFACT_IDS
+
 
 BUNDLE_MANIFEST_SCHEMA = "schemas/catalog-bundle.schema.json"
 CONTRACT_VERSION = 1
-REQUIRED_ARTIFACT_IDS = {
-    "catalog",
-    "compatibility_matrix",
-    "package_history",
-    "extension_catalog",
-    "comfyui_profile",
-}
+REQUIRED_ARTIFACT_IDS = {"catalog", *REQUIRED_CATALOG_ARTIFACT_IDS}
 _COMMIT_RE = re.compile(r"^[0-9a-f]{40}$")
 _BUNDLE_VERSION_RE = re.compile(r"^\d{4}\.\d{2}\.\d{2}$")
 

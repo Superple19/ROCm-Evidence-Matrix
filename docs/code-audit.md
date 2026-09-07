@@ -44,8 +44,8 @@ CI promotion follows the latest observed state
 for each execution attempt; configured coverage remains separate from observed
 execution results.
 
-The catalog now includes tracked CI, status, and source-manifest artifacts.
-Profiles resolve `source:<id>` references against collected source records, and
+The catalog includes tracked status and source-manifest artifacts; stale upstream
+CI polling snapshots are intentionally excluded from the active bundle. Profiles resolve `source:<id>` references against collected source records, and
 local diagnostic JSON is validated when present. The repository has no
 community intake or maintainer review workflow.
 

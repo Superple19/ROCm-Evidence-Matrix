@@ -12,7 +12,7 @@
       "path": "data/history.json",
       "schema": "schemas/history.schema.json",
       "schema_version": 2,
-      "sha256": "b8544349e88b87ba60fb21f4361b249022f13d871b80e494eb8929aad2c60666"
+      "sha256": "136f2d01dc6fab1a2700c38c9f25bc4513d621713ee1a14826592364b8b7cf42"
     },
     {
       "id": "package_snapshots:nightly-linux",
@@ -167,20 +167,6 @@
       "schema": "schemas/version-history.schema.json",
       "schema_version": 1,
       "sha256": "e3380f6aac9bcf413f920cc53425bd86e532afa53f874f86ab7c182f7dcb1dbe"
-    },
-    {
-      "id": "ci_coverage",
-      "path": "data/therock/ci/coverage.json",
-      "schema": "schemas/ci-coverage.schema.json",
-      "schema_version": 1,
-      "sha256": "f638f93074409db5cb5bff8a28d94c17aad2316f752e1c4bc8e409c287567295"
-    },
-    {
-      "id": "ci_evidence",
-      "path": "data/therock/ci/evidence.json",
-      "schema": "schemas/ci-evidence.schema.json",
-      "schema_version": 1,
-      "sha256": "624974e8b66acf7a502d5588d0c5d7041cdc108d871dbe0155fa2872fcede914"
     },
     {
       "id": "source_manifest",

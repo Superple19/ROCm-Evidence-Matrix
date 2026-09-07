@@ -8,8 +8,9 @@ Regenerate it with:
 rocm-matrix catalog
 ```
 
-The catalog lists each committed core evidence artifact, extension snapshots/catalog, standalone CI/status evidence,
-its schema, and its schema version. Local runtime, hardware, and resolver
+The catalog lists each committed core evidence artifact, extension snapshots/catalog,
+collection status, and source-manifest evidence with its schema and schema version.
+Upstream CI polling snapshots are not part of the active catalog bundle. Local runtime, hardware, and resolver
 outputs remain machine-local evidence and are listed only when a reviewed copy
 is intentionally committed. Consumers must reject an unknown `schema_version`
 or ignore fields they do not understand. Generated Markdown is presentation

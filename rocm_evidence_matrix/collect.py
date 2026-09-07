@@ -10,7 +10,7 @@ from .catalog import write_catalog
 from .extension_catalog import rebuild_extension_catalog, render_extension_catalog
 from .extension_sources import collect_extension_sources, rebuild_extension_catalog_from_sources
 from .extensions import rebuild_extension_history, render_extension_history
-from .history import attach_therock_ci_evidence, attach_therock_documentation_evidence, merge_history, migrate_history, write_history_document
+from .history import attach_therock_ci_evidence, attach_therock_documentation_evidence, clear_therock_ci_evidence, merge_history, migrate_history, write_history_document
 from .frameworks import rebuild_auxiliary_outputs, render_framework_history, render_sdk_components
 from .integration import build_compatibility_matrix
 from .sources.legacy_archive import build_legacy_candidates, build_legacy_linux_candidates, classify_legacy_linux_framework, collect_legacy_linux_sources, collect_legacy_version_history, collect_legacy_windows_sources, render_legacy_linux, render_legacy_windows
@@ -697,14 +697,12 @@ def build_outputs(args):
     )
     validate_extension_catalog(extension_catalog)
     history = read_json(args.history_output)
-    ci_evidence = read_json(args.ci_evidence_output)
     documentation = read_json(args.documentation_output)
     if history is not None:
         history = migrate_history(history)
+        clear_therock_ci_evidence(history)
     if history is not None and documentation is not None:
         attach_therock_documentation_evidence(history, documentation)
-    if history is not None and ci_evidence is not None:
-        attach_therock_ci_evidence(history, ci_evidence)
     if history is not None:
         validate_history(history)
         write_json(history, args.history_output)
