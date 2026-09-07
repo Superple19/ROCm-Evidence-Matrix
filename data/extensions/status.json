@@ -1,33 +1,53 @@
 {
-  "completed_at": "2026-08-10T18:32:51Z",
+  "completed_at": "2026-09-07T21:24:50Z",
   "distribution_family": "external",
   "results": [
     {
+      "details": {
+        "cache_age_seconds": 0,
+        "source_status": "fresh"
+      },
       "error": null,
       "source_id": "pypi-aiter",
       "status": "passed"
     },
     {
+      "details": {
+        "cache_age_seconds": 0,
+        "source_status": "fresh"
+      },
       "error": null,
       "source_id": "pypi-bitsandbytes",
       "status": "passed"
     },
     {
+      "details": {
+        "cache_age_seconds": 0,
+        "source_status": "fresh"
+      },
       "error": null,
       "source_id": "pypi-flash-attn",
       "status": "passed"
     },
     {
+      "details": {
+        "cache_age_seconds": 0,
+        "source_status": "fresh"
+      },
       "error": null,
       "source_id": "pypi-sageattention",
       "status": "passed"
     },
     {
+      "details": {
+        "cache_age_seconds": 0,
+        "source_status": "fresh"
+      },
       "error": null,
       "source_id": "pypi-triton",
       "status": "passed"
     }
   ],
   "schema_version": 1,
-  "started_at": "2026-08-10T18:32:51Z"
+  "started_at": "2026-09-07T21:24:48Z"
 }

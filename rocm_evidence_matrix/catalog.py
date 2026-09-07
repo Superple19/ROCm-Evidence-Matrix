@@ -24,7 +24,6 @@ ARTIFACTS = (
     ("documentation", "data/documentation.json", "schemas/documentation-snapshot.schema.json"),
     ("legacy_windows", LEGACY_WINDOWS, "schemas/legacy-windows.schema.json"),
     ("legacy_linux", LEGACY_LINUX, "schemas/legacy-linux.schema.json"),
-    ("legacy_archive_manifest", "data/legacy/archive/manifest.json", "schemas/legacy-archive-manifest.schema.json"),
     ("version_history", "data/version-history.json", "schemas/version-history.schema.json"),
     ("source_manifest", "data/observations/source-manifest.json", "schemas/source-manifest.schema.json"),
     ("collection_status:legacy", LEGACY_STATUS, "schemas/collection-status.schema.json"),

@@ -6,6 +6,6 @@ These are package artifacts observed in official indexes. They do not prove reso
 
 | Distribution | Platform | Channel | Lifecycle | ROCm | PJRT | Plugin | Python tags |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| therock | linux | nightly | current | `10.1.0a20260807` | `0.11.0+rocm10.1.0a20260807` | `0.11.0+rocm10.1.0a20260807` | `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | current | `10.1.0a20260822` | `0.11.1+rocm10.1.0a20260822` | `0.11.1+rocm10.1.0a20260822` | `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | current | `7.15.0a20260728` | `0.10.2+rocm7.15.0a20260728` | `0.10.2+rocm7.15.0a20260728` | `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | stable | current | `7.14.0` | `0.10.0+rocm7.14.0` | `0.10.0+rocm7.14.0` | `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | stable | current | `7.14.1` | `0.10.0+rocm7.14.1` | `0.10.0+rocm7.14.1` | `cp311`, `cp312`, `cp313`, `cp314` |

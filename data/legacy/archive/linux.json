@@ -8170,6 +8170,10 @@
           "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/apex-1.10.0%2Brocm7.2.4.git751f5dd5-cp313-cp313-linux_x86_64.whl"
         },
         {
+          "filename": "apex-1.11.0+rocm7.2.4.gitc0f56f7e-cp312-cp312-linux_x86_64.whl",
+          "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/apex-1.11.0%2Brocm7.2.4.gitc0f56f7e-cp312-cp312-linux_x86_64.whl"
+        },
+        {
           "filename": "apex-1.7.0+rocm7.2.4.git215398d0-cp310-cp310-linux_x86_64.whl",
           "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/apex-1.7.0%2Brocm7.2.4.git215398d0-cp310-cp310-linux_x86_64.whl"
         },
@@ -8334,6 +8338,10 @@
           "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torch-2.10.0%2Brocm7.2.4.lw.git3d3aa833-cp313-cp313-linux_x86_64.whl"
         },
         {
+          "filename": "torch-2.11.0+rocm7.2.4.lw.git5fbd98f3-cp312-cp312-linux_x86_64.whl",
+          "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torch-2.11.0%2Brocm7.2.4.lw.git5fbd98f3-cp312-cp312-linux_x86_64.whl"
+        },
+        {
           "filename": "torch-2.7.1+rocm7.2.4.lw.git1dab218d-cp310-cp310-linux_x86_64.whl",
           "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torch-2.7.1%2Brocm7.2.4.lw.git1dab218d-cp310-cp310-linux_x86_64.whl"
         },
@@ -8370,6 +8378,22 @@
           "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torch-2.8.0%2Brocm7.2.4.lw.git6bea3e0b-cp313-cp313-linux_x86_64.whl"
         },
         {
+          "filename": "torch-2.8.0+rocm7.2.4.lw.gitd618db82-cp310-cp310-linux_x86_64.whl",
+          "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torch-2.8.0%2Brocm7.2.4.lw.gitd618db82-cp310-cp310-linux_x86_64.whl"
+        },
+        {
+          "filename": "torch-2.8.0+rocm7.2.4.lw.gitd618db82-cp311-cp311-linux_x86_64.whl",
+          "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torch-2.8.0%2Brocm7.2.4.lw.gitd618db82-cp311-cp311-linux_x86_64.whl"
+        },
+        {
+          "filename": "torch-2.8.0+rocm7.2.4.lw.gitd618db82-cp312-cp312-linux_x86_64.whl",
+          "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torch-2.8.0%2Brocm7.2.4.lw.gitd618db82-cp312-cp312-linux_x86_64.whl"
+        },
+        {
+          "filename": "torch-2.8.0+rocm7.2.4.lw.gitd618db82-cp313-cp313-linux_x86_64.whl",
+          "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torch-2.8.0%2Brocm7.2.4.lw.gitd618db82-cp313-cp313-linux_x86_64.whl"
+        },
+        {
           "filename": "torch-2.9.1+rocm7.2.4.lw.git39497456-cp310-cp310-linux_x86_64.whl",
           "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torch-2.9.1%2Brocm7.2.4.lw.git39497456-cp310-cp310-linux_x86_64.whl"
         },
@@ -8400,6 +8424,10 @@
         {
           "filename": "torchaudio-2.10.0+rocm7.2.4.git5047768f-cp313-cp313-linux_x86_64.whl",
           "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torchaudio-2.10.0%2Brocm7.2.4.git5047768f-cp313-cp313-linux_x86_64.whl"
+        },
+        {
+          "filename": "torchaudio-2.11.0+rocm7.2.4.git143129b5-cp312-cp312-linux_x86_64.whl",
+          "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torchaudio-2.11.0%2Brocm7.2.4.git143129b5-cp312-cp312-linux_x86_64.whl"
         },
         {
           "filename": "torchaudio-2.7.1+rocm7.2.4.git95c61b41-cp310-cp310-linux_x86_64.whl",
@@ -8514,6 +8542,10 @@
           "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torchvision-0.25.0%2Brocm7.2.4.git82df5f59-cp313-cp313-linux_x86_64.whl"
         },
         {
+          "filename": "torchvision-0.26.0+rocm7.2.4.git3d50b215-cp312-cp312-linux_x86_64.whl",
+          "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/torchvision-0.26.0%2Brocm7.2.4.git3d50b215-cp312-cp312-linux_x86_64.whl"
+        },
+        {
           "filename": "transformer_engine-2.6.0-py3-none-any.whl",
           "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/transformer_engine-2.6.0-py3-none-any.whl"
         },
@@ -8598,6 +8630,10 @@
           "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/triton-3.6.0%2Brocm7.2.4.git4ed88892-cp313-cp313-linux_x86_64.whl"
         },
         {
+          "filename": "triton-3.7.0+rocm7.2.4.gitb4e20bbe-cp312-cp312-linux_x86_64.whl",
+          "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/triton-3.7.0%2Brocm7.2.4.gitb4e20bbe-cp312-cp312-linux_x86_64.whl"
+        },
+        {
           "filename": "xformers-0.0.32+db55a2f5.d20260521-cp39-abi3-linux_x86_64.whl",
           "url": "https://repo.radeon.com/rocm/manylinux/rocm-rel-7.2.4/xformers-0.0.32%2Bdb55a2f5.d20260521-cp39-abi3-linux_x86_64.whl"
         },
@@ -8616,7 +8652,7 @@
     }
   ],
   "distribution_family": "legacy",
-  "generated_at": "2026-08-08T10:15:14Z",
+  "generated_at": "2026-09-07T21:23:27Z",
   "platform": "linux",
   "schema_version": 1,
   "sources": {
@@ -8624,7 +8660,7 @@
       "channel": "stable",
       "distribution_family": "legacy",
       "id": "legacy-linux-manylinux-artifacts",
-      "observed_at": "2026-08-08T10:15:14Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "platform": "linux",
       "url": "https://repo.radeon.com/rocm/manylinux/"
     }

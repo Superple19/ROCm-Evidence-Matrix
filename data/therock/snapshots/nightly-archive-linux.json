@@ -1,0 +1,3421 @@
+{
+  "gfx_targets": [
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1010",
+        "amd-torch-device-gfx1010",
+        "amd-torchvision-device-gfx1010"
+      ],
+      "gfx": "gfx1010"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1011",
+        "amd-torch-device-gfx1011",
+        "amd-torchvision-device-gfx1011"
+      ],
+      "gfx": "gfx1011"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1012",
+        "amd-torch-device-gfx1012",
+        "amd-torchvision-device-gfx1012"
+      ],
+      "gfx": "gfx1012"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1030",
+        "amd-torch-device-gfx1030",
+        "amd-torchvision-device-gfx1030"
+      ],
+      "gfx": "gfx1030"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1031",
+        "amd-torch-device-gfx1031",
+        "amd-torchvision-device-gfx1031"
+      ],
+      "gfx": "gfx1031"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1032",
+        "amd-torch-device-gfx1032",
+        "amd-torchvision-device-gfx1032"
+      ],
+      "gfx": "gfx1032"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1033",
+        "amd-torch-device-gfx1033",
+        "amd-torchvision-device-gfx1033"
+      ],
+      "gfx": "gfx1033"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1034",
+        "amd-torch-device-gfx1034",
+        "amd-torchvision-device-gfx1034"
+      ],
+      "gfx": "gfx1034"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1035",
+        "amd-torch-device-gfx1035",
+        "amd-torchvision-device-gfx1035"
+      ],
+      "gfx": "gfx1035"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1036",
+        "amd-torch-device-gfx1036",
+        "amd-torchvision-device-gfx1036"
+      ],
+      "gfx": "gfx1036"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1100",
+        "amd-torch-device-gfx1100",
+        "amd-torchvision-device-gfx1100"
+      ],
+      "gfx": "gfx1100"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1101",
+        "amd-torch-device-gfx1101",
+        "amd-torchvision-device-gfx1101"
+      ],
+      "gfx": "gfx1101"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1102",
+        "amd-torch-device-gfx1102",
+        "amd-torchvision-device-gfx1102"
+      ],
+      "gfx": "gfx1102"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1103",
+        "amd-torch-device-gfx1103",
+        "amd-torchvision-device-gfx1103"
+      ],
+      "gfx": "gfx1103"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1150",
+        "amd-torch-device-gfx1150",
+        "amd-torchvision-device-gfx1150"
+      ],
+      "gfx": "gfx1150"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1151",
+        "amd-torch-device-gfx1151",
+        "amd-torchvision-device-gfx1151"
+      ],
+      "gfx": "gfx1151"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1152",
+        "amd-torch-device-gfx1152",
+        "amd-torchvision-device-gfx1152"
+      ],
+      "gfx": "gfx1152"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1153",
+        "amd-torch-device-gfx1153",
+        "amd-torchvision-device-gfx1153"
+      ],
+      "gfx": "gfx1153"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1200",
+        "amd-torch-device-gfx1200",
+        "amd-torchvision-device-gfx1200"
+      ],
+      "gfx": "gfx1200"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1201",
+        "amd-torch-device-gfx1201",
+        "amd-torchvision-device-gfx1201"
+      ],
+      "gfx": "gfx1201"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx1250",
+        "amd-torch-device-gfx1250",
+        "amd-torchvision-device-gfx1250"
+      ],
+      "gfx": "gfx1250"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx900",
+        "amd-torch-device-gfx900",
+        "amd-torchvision-device-gfx900"
+      ],
+      "gfx": "gfx900"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx906",
+        "amd-torch-device-gfx906",
+        "amd-torchvision-device-gfx906"
+      ],
+      "gfx": "gfx906"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx908",
+        "amd-torch-device-gfx908",
+        "amd-torchvision-device-gfx908"
+      ],
+      "gfx": "gfx908"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx90a",
+        "amd-torch-device-gfx90a",
+        "amd-torchvision-device-gfx90a"
+      ],
+      "gfx": "gfx90a"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx90c",
+        "amd-torch-device-gfx90c",
+        "amd-torchvision-device-gfx90c"
+      ],
+      "gfx": "gfx90c"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx942",
+        "amd-torch-device-gfx942",
+        "amd-torchvision-device-gfx942"
+      ],
+      "gfx": "gfx942"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "rocm-sdk-device-gfx950",
+        "amd-torch-device-gfx950",
+        "amd-torchvision-device-gfx950"
+      ],
+      "gfx": "gfx950"
+    }
+  ],
+  "last_observed_at": "2026-09-07T21:24:14Z",
+  "packages": {
+    "amd-torch-device-gfx1010": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1010-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1010-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1010-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1010-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1010-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1010-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1010-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1010-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1010-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1010-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1011": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1011-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1011-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1011-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1011-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1011-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1011-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1011-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1011-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1011-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1011-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1012": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1012-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1012-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1012-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1012-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1012-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1012-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1012-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1012-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1012-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1012-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1030": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1030-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1030-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1030-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1030-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1030-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1030-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1030-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1030-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1030-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1030-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1031": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1031-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1031-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1031-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1031-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1031-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1031-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1031-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1031-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1031-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1031-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1032": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1032-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1032-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1032-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1032-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1032-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1032-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1032-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1032-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1032-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1032-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1033": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1033-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1033-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1033-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1033-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1033-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1033-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1033-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1033-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1033-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1033-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1034": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1034-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1034-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1034-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1034-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1034-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1034-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1034-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1034-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1034-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1034-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1035": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1035-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1035-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1035-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1035-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1035-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1035-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1035-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1035-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1035-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1035-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1036": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1036-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1036-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1036-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1036-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1036-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1036-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1036-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1036-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1036-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1036-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx11": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx11-2.12.0+rocm7.15.0a20260710-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx11-2.12.0%2Brocm7.15.0a20260710-cp310-cp310-linux_x86_64.whl",
+        "version": "2.12.0+rocm7.15.0a20260710"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx11-2.12.0+rocm7.15.0a20260710-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx11-2.12.0%2Brocm7.15.0a20260710-cp311-cp311-linux_x86_64.whl",
+        "version": "2.12.0+rocm7.15.0a20260710"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx11-2.12.0+rocm7.15.0a20260710-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx11-2.12.0%2Brocm7.15.0a20260710-cp312-cp312-linux_x86_64.whl",
+        "version": "2.12.0+rocm7.15.0a20260710"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx11-2.12.0+rocm7.15.0a20260710-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx11-2.12.0%2Brocm7.15.0a20260710-cp313-cp313-linux_x86_64.whl",
+        "version": "2.12.0+rocm7.15.0a20260710"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx11-2.12.0+rocm7.15.0a20260710-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx11-2.12.0%2Brocm7.15.0a20260710-cp314-cp314-linux_x86_64.whl",
+        "version": "2.12.0+rocm7.15.0a20260710"
+      }
+    ],
+    "amd-torch-device-gfx1100": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1100-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1100-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1100-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1100-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1100-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1100-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1100-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1100-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1100-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1100-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1101": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1101-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1101-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1101-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1101-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1101-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1101-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1101-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1101-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1101-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1101-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1102": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1102-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1102-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1102-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1102-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1102-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1102-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1102-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1102-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1102-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1102-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1103": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1103-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1103-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1103-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1103-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1103-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1103-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1103-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1103-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1103-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1103-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx110x": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx110x-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx110x-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx110x-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx110x-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx110x-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx110x-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx110x-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx110x-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx110x-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx110x-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1150": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1150-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1150-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1150-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1150-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1150-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1150-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1150-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1150-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1150-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1150-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1151": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1151-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1151-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1151-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1151-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1151-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1151-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1151-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1151-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1151-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1151-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1152": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1152-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1152-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1152-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1152-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1152-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1152-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1152-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1152-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1152-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1152-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1153": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1153-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1153-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1153-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1153-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1153-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1153-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1153-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1153-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1153-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1153-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx115x": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx115x-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx115x-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx115x-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx115x-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx115x-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx115x-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx115x-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx115x-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx115x-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx115x-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx12-0": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx12_0-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx12_0-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx12_0-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx12_0-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx12_0-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx12_0-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx12_0-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx12_0-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx12_0-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx12_0-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1200": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1200-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1200-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1200-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1200-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1200-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1200-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1200-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1200-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1200-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1200-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1201": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1201-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1201-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1201-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1201-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1201-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1201-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1201-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1201-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1201-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1201-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx1250": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx1250-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1250-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx1250-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1250-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx1250-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1250-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx1250-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1250-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx1250-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx1250-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx900": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx900-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx900-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx900-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx900-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx900-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx900-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx900-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx900-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx900-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx900-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx906": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx906-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx906-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx906-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx906-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx906-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx906-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx906-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx906-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx906-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx906-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx908": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx908-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx908-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx908-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx908-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx908-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx908-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx908-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx908-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx908-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx908-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx90a": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx90a-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx90a-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx90a-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx90a-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx90a-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx90a-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx90a-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx90a-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx90a-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx90a-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx90c": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx90c-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx90c-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx90c-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx90c-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx90c-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx90c-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx90c-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx90c-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx90c-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx90c-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx942": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx942-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx942-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx942-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx942-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx942-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx942-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx942-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx942-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx942-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx942-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torch-device-gfx950": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torch_device_gfx950-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx950-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torch_device_gfx950-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx950-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torch_device_gfx950-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx950-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torch_device_gfx950-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx950-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torch_device_gfx950-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torch_device_gfx950-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1010": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1010-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1010-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1010-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1010-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1010-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1010-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1010-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1010-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1010-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1010-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1011": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1011-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1011-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1011-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1011-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1011-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1011-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1011-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1011-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1011-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1011-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1012": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1012-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1012-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1012-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1012-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1012-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1012-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1012-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1012-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1012-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1012-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1030": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1030-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1030-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1030-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1030-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1030-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1030-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1030-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1030-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1030-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1030-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1031": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1031-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1031-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1031-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1031-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1031-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1031-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1031-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1031-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1031-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1031-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1032": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1032-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1032-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1032-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1032-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1032-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1032-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1032-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1032-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1032-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1032-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1033": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1033-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1033-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1033-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1033-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1033-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1033-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1033-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1033-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1033-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1033-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1034": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1034-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1034-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1034-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1034-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1034-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1034-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1034-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1034-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1034-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1034-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1035": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1035-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1035-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1035-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1035-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1035-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1035-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1035-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1035-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1035-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1035-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1036": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1036-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1036-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1036-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1036-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1036-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1036-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1036-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1036-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1036-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1036-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1100": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1100-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1100-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1100-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1100-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1100-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1100-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1100-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1100-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1100-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1100-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1101": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1101-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1101-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1101-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1101-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1101-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1101-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1101-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1101-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1101-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1101-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1102": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1102-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1102-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1102-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1102-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1102-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1102-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1102-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1102-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1102-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1102-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1103": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1103-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1103-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1103-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1103-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1103-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1103-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1103-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1103-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1103-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1103-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1150": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1150-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1150-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1150-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1150-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1150-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1150-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1150-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1150-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1150-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1150-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1151": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1151-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1151-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1151-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1151-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1151-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1151-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1151-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1151-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1151-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1151-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1152": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1152-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1152-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1152-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1152-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1152-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1152-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1152-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1152-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1152-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1152-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1153": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1153-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1153-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1153-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1153-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1153-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1153-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1153-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1153-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1153-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1153-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1200": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1200-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1200-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1200-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1200-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1200-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1200-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1200-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1200-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1200-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1200-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1201": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1201-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1201-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1201-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1201-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1201-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1201-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1201-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1201-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1201-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1201-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx1250": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx1250-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1250-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx1250-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1250-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx1250-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1250-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx1250-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1250-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx1250-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx1250-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx900": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx900-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx900-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx900-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx900-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx900-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx900-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx900-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx900-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx900-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx900-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx906": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx906-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx906-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx906-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx906-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx906-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx906-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx906-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx906-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx906-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx906-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx908": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx908-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx908-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx908-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx908-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx908-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx908-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx908-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx908-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx908-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx908-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx90a": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx90a-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx90a-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx90a-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx90a-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx90a-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx90a-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx90a-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx90a-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx90a-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx90a-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx90c": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx90c-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx90c-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx90c-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx90c-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx90c-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx90c-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx90c-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx90c-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx90c-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx90c-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx942": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx942-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx942-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx942-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx942-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx942-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx942-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx942-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx942-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx942-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx942-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "amd-torchvision-device-gfx950": [
+      {
+        "abi_tag": "cp310",
+        "filename": "amd_torchvision_device_gfx950-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx950-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "amd_torchvision_device_gfx950-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx950-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "amd_torchvision_device_gfx950-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx950-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "amd_torchvision_device_gfx950-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx950-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "amd_torchvision_device_gfx950-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/amd_torchvision_device_gfx950-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "apex": [
+      {
+        "abi_tag": "cp310",
+        "filename": "apex-1.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/apex-1.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "1.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "apex-1.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/apex-1.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "1.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "apex-1.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/apex-1.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "1.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "apex-1.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/apex-1.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "1.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "apex-1.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/apex-1.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "1.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "jax-rocm10-pjrt": [
+      {
+        "abi_tag": "none",
+        "filename": "jax_rocm10_pjrt-0.11.1+rocm10.1.0a20260822-py3-none-manylinux_2_27_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/jax_rocm10_pjrt-0.11.1%2Brocm10.1.0a20260822-py3-none-manylinux_2_27_x86_64.whl",
+        "version": "0.11.1+rocm10.1.0a20260822"
+      }
+    ],
+    "jax-rocm10-plugin": [
+      {
+        "abi_tag": "cp312",
+        "filename": "jax_rocm10_plugin-0.11.1+rocm10.1.0a20260822-cp312-cp312-manylinux_2_27_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/jax_rocm10_plugin-0.11.1%2Brocm10.1.0a20260822-cp312-cp312-manylinux_2_27_x86_64.whl",
+        "version": "0.11.1+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "jax_rocm10_plugin-0.11.1+rocm10.1.0a20260822-cp313-cp313-manylinux_2_27_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/jax_rocm10_plugin-0.11.1%2Brocm10.1.0a20260822-cp313-cp313-manylinux_2_27_x86_64.whl",
+        "version": "0.11.1+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "jax_rocm10_plugin-0.11.1+rocm10.1.0a20260822-cp314-cp314-manylinux_2_27_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/jax_rocm10_plugin-0.11.1%2Brocm10.1.0a20260822-cp314-cp314-manylinux_2_27_x86_64.whl",
+        "version": "0.11.1+rocm10.1.0a20260822"
+      }
+    ],
+    "jax-rocm7-pjrt": [
+      {
+        "abi_tag": "none",
+        "filename": "jax_rocm7_pjrt-0.10.2+rocm7.15.0a20260728-py3-none-manylinux_2_27_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/jax_rocm7_pjrt-0.10.2%2Brocm7.15.0a20260728-py3-none-manylinux_2_27_x86_64.whl",
+        "version": "0.10.2+rocm7.15.0a20260728"
+      }
+    ],
+    "jax-rocm7-plugin": [
+      {
+        "abi_tag": "cp311",
+        "filename": "jax_rocm7_plugin-0.10.2+rocm7.15.0a20260728-cp311-cp311-manylinux_2_27_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/jax_rocm7_plugin-0.10.2%2Brocm7.15.0a20260728-cp311-cp311-manylinux_2_27_x86_64.whl",
+        "version": "0.10.2+rocm7.15.0a20260728"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "jax_rocm7_plugin-0.10.2+rocm7.15.0a20260728-cp312-cp312-manylinux_2_27_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/jax_rocm7_plugin-0.10.2%2Brocm7.15.0a20260728-cp312-cp312-manylinux_2_27_x86_64.whl",
+        "version": "0.10.2+rocm7.15.0a20260728"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "jax_rocm7_plugin-0.10.2+rocm7.15.0a20260728-cp313-cp313-manylinux_2_27_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/jax_rocm7_plugin-0.10.2%2Brocm7.15.0a20260728-cp313-cp313-manylinux_2_27_x86_64.whl",
+        "version": "0.10.2+rocm7.15.0a20260728"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "jax_rocm7_plugin-0.10.2+rocm7.15.0a20260728-cp314-cp314-manylinux_2_27_x86_64.whl",
+        "platform_tag": "manylinux_2_27_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/jax_rocm7_plugin-0.10.2%2Brocm7.15.0a20260728-cp314-cp314-manylinux_2_27_x86_64.whl",
+        "version": "0.10.2+rocm7.15.0a20260728"
+      }
+    ],
+    "rocm": [
+      {
+        "abi_tag": "source",
+        "filename": "rocm-10.1.0a20260822.tar.gz",
+        "platform_tag": "source",
+        "python_tag": "source",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm-10.1.0a20260822.tar.gz",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-bootstrap": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_bootstrap-0.1.0-py3-none-any.whl",
+        "platform_tag": "any",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_bootstrap-0.1.0-py3-none-any.whl",
+        "version": "0.1.0"
+      }
+    ],
+    "rocm-profiler": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_profiler-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_profiler-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-core": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_core-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_core-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-devel": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_devel-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_devel-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1010": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1010-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1010-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1011": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1011-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1011-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1012": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1012-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1012-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1030": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1030-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1030-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1031": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1031-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1031-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1032": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1032-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1032-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1033": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1033-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1033-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1034": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1034-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1034-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1035": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1035-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1035-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1036": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1036-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1036-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1100": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1100-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1100-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1101": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1101-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1101-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1102": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1102-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1102-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1103": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1103-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1103-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1150": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1150-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1150-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1151": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1151-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1151-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1152": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1152-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1152-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1153": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1153-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1153-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1200": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1200-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1200-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1201": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1201-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1201-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx1250": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx1250-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx1250-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx900": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx900-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx900-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx906": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx906-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx906-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx908": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx908-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx908-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx90a": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx90a-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx90a-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx90c": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx90c-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx90c-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx942": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx942-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx942-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-device-gfx950": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_device_gfx950-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_device_gfx950-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "rocm-sdk-libraries": [
+      {
+        "abi_tag": "none",
+        "filename": "rocm_sdk_libraries-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "py3",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/rocm_sdk_libraries-10.1.0a20260822-py3-none-linux_x86_64.whl",
+        "version": "10.1.0a20260822"
+      }
+    ],
+    "torch": [
+      {
+        "abi_tag": "cp310",
+        "filename": "torch-2.15.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torch-2.15.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "torch-2.15.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torch-2.15.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "torch-2.15.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torch-2.15.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "torch-2.15.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torch-2.15.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "torch-2.15.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torch-2.15.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.15.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "torchaudio": [
+      {
+        "abi_tag": "cp310",
+        "filename": "torchaudio-2.11.0.3+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torchaudio-2.11.0.3%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "2.11.0.3+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "torchaudio-2.11.0.3+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torchaudio-2.11.0.3%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "2.11.0.3+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "torchaudio-2.11.0.3+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torchaudio-2.11.0.3%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "2.11.0.3+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "torchaudio-2.11.0.3+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torchaudio-2.11.0.3%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "2.11.0.3+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "torchaudio-2.11.0.3+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torchaudio-2.11.0.3%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "2.11.0.3+rocm10.1.0a20260822"
+      }
+    ],
+    "torchvision": [
+      {
+        "abi_tag": "cp310",
+        "filename": "torchvision-0.30.0a0+rocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torchvision-0.30.0a0%2Brocm10.1.0a20260822-cp310-cp310-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "torchvision-0.30.0a0+rocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torchvision-0.30.0a0%2Brocm10.1.0a20260822-cp311-cp311-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "torchvision-0.30.0a0+rocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torchvision-0.30.0a0%2Brocm10.1.0a20260822-cp312-cp312-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "torchvision-0.30.0a0+rocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torchvision-0.30.0a0%2Brocm10.1.0a20260822-cp313-cp313-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "torchvision-0.30.0a0+rocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/torchvision-0.30.0a0%2Brocm10.1.0a20260822-cp314-cp314-linux_x86_64.whl",
+        "version": "0.30.0a0+rocm10.1.0a20260822"
+      }
+    ],
+    "triton": [
+      {
+        "abi_tag": "cp310",
+        "filename": "triton-3.8.0+gitdf3f91dd.rocm10.1.0a20260820-cp310-cp310-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp310",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/triton-3.8.0%2Bgitdf3f91dd.rocm10.1.0a20260820-cp310-cp310-linux_x86_64.whl",
+        "version": "3.8.0+gitdf3f91dd.rocm10.1.0a20260820"
+      },
+      {
+        "abi_tag": "cp311",
+        "filename": "triton-3.8.0+gitdf3f91dd.rocm10.1.0a20260820-cp311-cp311-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp311",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/triton-3.8.0%2Bgitdf3f91dd.rocm10.1.0a20260820-cp311-cp311-linux_x86_64.whl",
+        "version": "3.8.0+gitdf3f91dd.rocm10.1.0a20260820"
+      },
+      {
+        "abi_tag": "cp312",
+        "filename": "triton-3.8.0+gitdf3f91dd.rocm10.1.0a20260820-cp312-cp312-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp312",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/triton-3.8.0%2Bgitdf3f91dd.rocm10.1.0a20260820-cp312-cp312-linux_x86_64.whl",
+        "version": "3.8.0+gitdf3f91dd.rocm10.1.0a20260820"
+      },
+      {
+        "abi_tag": "cp313",
+        "filename": "triton-3.8.0+gitdf3f91dd.rocm10.1.0a20260820-cp313-cp313-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp313",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/triton-3.8.0%2Bgitdf3f91dd.rocm10.1.0a20260820-cp313-cp313-linux_x86_64.whl",
+        "version": "3.8.0+gitdf3f91dd.rocm10.1.0a20260820"
+      },
+      {
+        "abi_tag": "cp314",
+        "filename": "triton-3.8.0+gitdf3f91dd.rocm10.1.0a20260820-cp314-cp314-linux_x86_64.whl",
+        "platform_tag": "linux_x86_64",
+        "python_tag": "cp314",
+        "url": "https://rocm.nightlies.amd.com/whl-multi-arch/triton-3.8.0%2Bgitdf3f91dd.rocm10.1.0a20260820-cp314-cp314-linux_x86_64.whl",
+        "version": "3.8.0+gitdf3f91dd.rocm10.1.0a20260820"
+      }
+    ]
+  },
+  "schema_version": 1,
+  "source": {
+    "channel": "nightly",
+    "distribution_family": "therock",
+    "enabled": false,
+    "historical": true,
+    "id": "nightly-archive-linux",
+    "layout": "whl-multi-arch",
+    "platform": "linux",
+    "stream": "nightly",
+    "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
+  }
+}
