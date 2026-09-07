@@ -57,7 +57,7 @@ def _pagination_details(url, key, pages_fetched, items_fetched, max_pages, trunc
     return details
 
 
-def _collect_pages(reader, url, key, max_pages=10, allow_truncated=False, page_size=100):
+def _collect_pages(reader, url, key, max_pages=10, allow_truncated=False):
     values = []
     for page in range(1, max_pages + 1):
         page_url = _page_url(url, page)
@@ -95,7 +95,7 @@ def _collect_pages(reader, url, key, max_pages=10, allow_truncated=False, page_s
                 reason="invalid_payload",
             )
         values.extend(page_values)
-        if len(page_values) < page_size:
+        if len(page_values) < 100:
             if allow_truncated:
                 return values, _pagination_details(url, key, page, len(values), max_pages, False)
             return values
@@ -265,9 +265,6 @@ def collect_github(source_config, reader, observed_at, pagination_details=None):
             max_pages=max_selected_workflows,
             reason="pagination_limit",
         )
-    run_page_size = int(source_config["workflows"].get("run_page_size", 100))
-    if not 1 <= run_page_size <= 100:
-        raise ValueError("GitHub run_page_size must be between 1 and 100")
     max_run_pages = int(source_config["workflows"].get("max_run_pages", 2))
     if not 1 <= max_run_pages <= 100:
         raise ValueError("GitHub max_run_pages must be between 1 and 100")
@@ -276,7 +273,7 @@ def collect_github(source_config, reader, observed_at, pagination_details=None):
         if not (any(platform in path.lower() for platform in ("windows", "linux", "macos")) or "multi_arch" in path.lower() or "pytorch" in path.lower() or "rocm_wheels" in path.lower() or "artifacts" in path.lower()):
             continue
         runs_url = source_config["runs_api"].format(workflow_id=workflow["id"])
-        runs, details = _collect_pages(reader, runs_url, "workflow_runs", max_pages=max_run_pages, allow_truncated=True, page_size=run_page_size)
+        runs, details = _collect_pages(reader, runs_url, "workflow_runs", max_pages=max_run_pages, allow_truncated=True)
         if pagination_details is not None:
             pagination_details.append(details)
         for run in runs:
