@@ -114,8 +114,8 @@ class CITests(unittest.TestCase):
 
     def test_github_collection_records_recent_run_truncation(self):
         config = {
-            "workflows": {"url": "https://api.example.test/workflows?per_page=100", "max_run_pages": 2},
-            "runs_api": "https://api.example.test/workflows/{workflow_id}/runs?per_page=100",
+            "workflows": {"url": "https://api.example.test/workflows?per_page=2", "run_page_size": 2, "max_run_pages": 1},
+            "runs_api": "https://api.example.test/workflows/{workflow_id}/runs?per_page=2",
             "jobs_api": "https://api.example.test/actions/runs/{run_id}/jobs",
         }
 
@@ -125,7 +125,7 @@ class CITests(unittest.TestCase):
             if "workflows/1/runs" in url:
                 return '{"workflow_runs": [' + ",".join(
                     '{"id": %d, "workflow_id": 1, "run_attempt": 1}' % index
-                    for index in range(100)
+                    for index in range(2)
                 ) + ']}'
             if "actions/runs/" in url:
                 return '{"jobs": []}'
@@ -133,8 +133,8 @@ class CITests(unittest.TestCase):
 
         pagination = []
         self.assertEqual(collect_github(config, reader, "2026-08-08T00:02:00Z", pagination), [])
-        self.assertEqual(pagination[0]["items_fetched"], 200)
-        self.assertEqual(pagination[0]["max_pages"], 2)
+        self.assertEqual(pagination[0]["items_fetched"], 2)
+        self.assertEqual(pagination[0]["max_pages"], 1)
         self.assertEqual(pagination[0]["reason"], "pagination_limit")
         self.assertTrue(pagination[0]["truncated"])
 

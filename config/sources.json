@@ -107,9 +107,10 @@
         "id": "therock-github-workflows",
         "url": "https://api.github.com/repos/ROCm/TheRock/actions/workflows?per_page=100",
         "max_selected_workflows": 50,
-        "max_run_pages": 2
+        "run_page_size": 20,
+        "max_run_pages": 1
       },
-      "runs_api": "https://api.github.com/repos/ROCm/TheRock/actions/workflows/{workflow_id}/runs?per_page=100",
+      "runs_api": "https://api.github.com/repos/ROCm/TheRock/actions/workflows/{workflow_id}/runs?per_page=20",
       "jobs_api": "https://api.github.com/repos/ROCm/TheRock/actions/runs/{run_id}/jobs?per_page=100",
       "hud": {
         "id": "therock-hud-ci",
