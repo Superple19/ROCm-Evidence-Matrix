@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "0 17 * * *"
   workflow_dispatch:
+    inputs:
+      publish:
+        description: "Commit generated data and publish a Release asset"
+        required: false
+        default: true
+        type: boolean
 
 permissions:
   contents: write
@@ -18,6 +24,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GH_TOKEN: ${{ github.token }}
+      PUBLISH: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || inputs.publish == true || inputs.publish == 'true') }}
 
     steps:
       - uses: actions/checkout@v4
@@ -77,6 +84,9 @@ jobs:
       - name: Build generated outputs
         run: uv run --locked rocm-matrix build
 
+      - name: Rebuild artifact catalog
+        run: uv run --locked rocm-matrix catalog --output data/catalog.json
+
       - name: Validate semantic contract
         run: uv run --locked rocm-matrix check
 
@@ -130,7 +140,7 @@ jobs:
           set -euo pipefail
           bundle_version="$(date -u +%Y.%m.%d)"
           release_tag="catalog-${bundle_version}"
-          if gh release view "$release_tag" >/dev/null 2>&1; then
+          if [[ "${PUBLISH}" == "true" ]] && gh release view "$release_tag" >/dev/null 2>&1; then
             echo "Release already exists for bundle version ${bundle_version}" >&2
             exit 1
           fi
@@ -140,7 +150,7 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: Commit generated data
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' && env.PUBLISH == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -174,7 +184,7 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: Publish GitHub Release asset
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' && env.PUBLISH == 'true'
         run: |
           gh release create "${{ steps.bundle.outputs.release_tag }}" \
             "${{ steps.bundle.outputs.output }}" \

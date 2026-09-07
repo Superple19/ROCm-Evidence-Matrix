@@ -99,14 +99,14 @@
   },
   "ci_sources": {
     "therock": {
+      "enabled": false,
       "matrix": {
         "id": "therock-ci-matrix",
         "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/build_tools/github_actions/amdgpu_family_matrix.py"
       },
       "workflows": {
         "id": "therock-github-workflows",
-        "url": "https://api.github.com/repos/ROCm/TheRock/actions/workflows?per_page=100",
-        "max_selected_workflows": 50
+        "url": "https://api.github.com/repos/ROCm/TheRock/actions/workflows?per_page=100"
       },
       "runs_api": "https://api.github.com/repos/ROCm/TheRock/actions/workflows/{workflow_id}/runs?per_page=100",
       "jobs_api": "https://api.github.com/repos/ROCm/TheRock/actions/runs/{run_id}/jobs?per_page=100",

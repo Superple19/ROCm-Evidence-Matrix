@@ -340,6 +340,8 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
         print(f"Wrote {args.history_output}")
 
     ci_config = config.get("ci_sources", {}).get("therock")
+    if ci_config and not ci_config.get("enabled", True):
+        ci_config = None
     if ci_config:
         ci_results = []
         coverage = None
