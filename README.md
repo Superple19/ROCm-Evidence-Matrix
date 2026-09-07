@@ -162,7 +162,7 @@ Source adapters prefer official machine-readable data or source markup when avai
 
 TheRock package snapshots are written to `data/therock/snapshots/` with explicit platform metadata. Legacy Windows and Linux evidence is archived under `data/legacy/archive/`. Shared documentation, version history, the live package catalog, and the integrated view remain under `data/`. Generated Markdown is stored under `docs/generated/`, with legacy documents under `docs/generated/legacy/`.
 
-ComfyUI extension artifacts are collected separately with explicit source configuration. They are stored in `data/extensions/snapshots/` and normalized into `data/extensions/catalog.json`. Each exact wheel or source artifact receives a deterministic extension candidate ID and records its build tag, dependency metadata, SHA-256 when the upstream provides one, URL, source ID, and observation time. The catalog does not claim Torch/ROCm/HIP/GFX ABI compatibility. Use it to show what exists, and require separate resolver or runtime evidence before allowing installation. Optional GitHub release adapters are disabled by default and must be selected explicitly.
+ComfyUI extension artifacts are collected separately with explicit source configuration. They are stored in `data/extensions/snapshots/` and normalized into `data/extensions/catalog.json`. Each exact wheel or source artifact receives a deterministic extension candidate ID and records its build tag, dependency metadata, SHA-256 when the upstream provides one, URL, source ID, and observation time. The catalog does not claim Torch/ROCm/HIP/GFX ABI compatibility. Manager must perform any installation or runtime validation separately. Optional GitHub release adapters are disabled by default and must be selected explicitly.
 
 Each collection replaces the current snapshots and merges every observed compatible package set into the history catalog. A candidate remains in the catalog if its upstream artifact later disappears, while its current availability is updated separately.
 
@@ -176,65 +176,19 @@ Limit collection to one or more channels or GPU targets when developing a parser
 uv run rocm-matrix collect therock --source nightly --gfx gfx1201 --output-dir .tmp/snapshots
 ```
 
-## Resolve a package candidate
+## Consumer boundary
 
-Query the historical catalog for a specific environment:
-
-```powershell
-uv run rocm-resolve --platform windows --gfx gfx1201 --channel stable --rocm 7.13.0 --python 3.12
-```
-
-The resolver selects the newest matching candidate by default and prints a pinned `pip` command. Add `--torch 2.9` to request a Torch series, or `--all` to list every match. Legacy candidates print official direct wheel URLs with the PyPI index for ordinary dependencies; TheRock candidates use their configured package index and device extras. The resolver does not install packages or claim that dependency resolution, imports, or execution have been verified.
-
-Use `--count` to inspect the number of distinct candidates after applying the same filters without selecting or verifying a package:
-
-```powershell
-uv run rocm-resolve --platform windows --gfx gfx1201 --all --include-unavailable --include-failed --count
-```
-
-Use `--distribution-family legacy` to select archive candidates explicitly;
-the legacy candidate still uses its recorded direct wheel URLs.
-
-## Verify dependency resolution
-
-Optionally verify one candidate with `pip --dry-run` in a disposable virtual environment. This is environment-specific evidence, not part of the default catalog collection:
-
-```powershell
-uv run rocm-verify --gfx gfx1201 --channel stable --rocm 7.14.0
-```
-
-The same verifier can run a legacy candidate with
-`--distribution-family legacy`; removing the historical package aliases does
-not remove legacy package resolution or dry-run verification.
-
-Each result is first appended to the local `data/verifications/resolver.jsonl` evidence log. At the end of a run, the log is merged into `data/verifications/resolver.json` and tracked candidate history is written once. The record includes the exact candidate, candidate hash, interpreter, command, resolved packages, artifact hashes when reported by pip, timestamp, and pass or fail result. The verifier does not install or import ROCm packages. Legacy candidates pin their official direct wheel URLs while resolving ordinary third-party dependencies from PyPI. Package indexes without separate metadata may require pip to download wheel archives, and source-only metadata packages may run their build backend inside the disposable environment.
-
-A passing record establishes only `resolver_verified`. Runtime imports and physical GPU execution require separate isolated tests and must be recorded as `runtime_verified` or `hardware_verified` evidence.
-
-Triton is an optional extension and is tracked in [extension history](docs/generated/extension-history.md), not multiplied into every core Torch candidate. The core resolver command installs the Torch package set only; install or verify Triton separately when the selected workflow requires it.
+Matrix only collects and publishes upstream package evidence. Candidate
+selection, pip dry-runs, installation, runtime checks, and physical GPU checks
+belong to the separate Manager project.
 
 The extension artifact catalog also covers bitsandbytes, Flash Attention, AITER, SageAttention, and Triton when their configured upstream sources expose artifacts. An absent record means `not_collected`, not unsupported. The Manager must keep these observations separate from the ComfyUI profile's compatibility claims.
-
-`rocm-verify-matrix` is an auxiliary, opt-in batch form of `rocm-verify`. It runs the resolver across selected channels, representative GFX targets, and candidate Python tags. It is intended for controlled investigations, not exhaustive historical backtesting or normal catalog generation. `--all-candidates` and `--all-gfx` require an explicit `--exhaustive` opt-in. Use `--resume` to skip combinations already recorded in the JSONL log, merged output, or tracked history. Matrix jobs reuse a host-local cache (`%LOCALAPPDATA%\rocm-matrix\pip` on Windows or `~/.cache/rocm-matrix/pip` on Linux) while each resolver still runs in a disposable environment; override it with `--cache-dir` when needed. Use `--workers` to run independent resolver subprocesses concurrently; evidence is appended by the coordinator and history is merged once per run. The record separates the target platform from the verifier host; this is dependency-resolution evidence only and does not establish runtime or hardware support. Use `--limit` while developing and override the target wheel tag when needed:
-
-```text
-uv run rocm-verify-matrix --platform linux --gfx gfx1201 --python cp312 --limit 1
-```
-
-Resolver, runtime, and hardware outputs under `data/verifications/` are local machine evidence and are ignored by Git.
-
-Collect local runtime and hardware evidence against an exact candidate when the matching environment is available:
-
-```powershell
-uv run rocm-matrix runtime --candidate-id <candidate-id> --gfx gfx1201
-uv run rocm-matrix hardware --candidate-id <candidate-id> --gfx gfx1201
-```
 
 Compatibility profiles use `schemas/profile.schema.json`. They keep framework, runtime, extension, and option constraints separate from core evidence, classify each constraint as `required`, `optional`, or `conflicting`, and link claims to evidence IDs. A `verified` claim must include at least one evidence reference.
 
 The current ComfyUI profile is under `profiles/comfyui/`. Its extension profiles
-are optional and remain unverified until explicit resolver, runtime, or hardware
-evidence is linked. Local diagnostics are outside the published Matrix catalog.
+are optional policy inputs for Manager. Local diagnostics are outside the
+published Matrix catalog.
 
 ## Run tests
 

@@ -9,8 +9,8 @@ package availability into a compatibility guarantee.
 - 179 offline unit tests pass.
 - `rocm-matrix check` validates schemas, catalog entries, standalone evidence,
   profiles, and generated documents.
-- No exhaustive historical resolver or physical-GPU backtest is performed by
-  default.
+- Matrix does not run resolver, runtime, or physical-GPU checks; those belong
+  to Manager.
 
 ## Findings addressed
 
@@ -19,11 +19,6 @@ package availability into a compatibility guarantee.
 Historical candidates could report `artifact_available: true` while their
 artifact evidence status was `not_collected`. History migration now normalizes
 that contradiction and validation rejects new contradictions.
-
-Runtime and hardware promotion now requires a candidate hash, target platform
-tag, Python tag, observed GFX, exact Torch version, and an observable ROCm
-version. HIP is retained as a separate runtime field and successful evidence
-without an observed HIP version is not promoted.
 
 ### Persistence and source integrity
 
@@ -62,15 +57,9 @@ also runs the offline suite on both Linux and Windows.
 
 - The current offline suite contains 181 tests. Pyright reports no code errors;
   its only remaining warnings are optional Torch imports used by local probes.
-- The current local runtime and hardware records are one Windows `gfx1201`
-  environment. They are ignored local evidence and do not establish support
-  for Linux, other GFX targets, or other Python environments.
 
 ## Remaining limitations
 
-- Resolver results still prove dependency resolution only; they do not prove
-  imports or physical GPU execution.
-- Runtime and hardware evidence is local by default and remains ignored by Git.
 - Historical releases with missing archives remain distinct from explicit
   unsupported claims.
 - Linux documentation and local runtime or hardware evidence

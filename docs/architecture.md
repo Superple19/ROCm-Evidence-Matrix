@@ -5,7 +5,7 @@ ROCm Evidence Matrix separates evidence by two independent dimensions:
 - `distribution_family`: `therock` or `legacy`
 - `platform`: `windows`, `linux`, `macos`, or `unknown`
 - `channel`: `stable`, `nightly`, or `staging`
-- `evidence_kind`: documentation, package, extension, resolver, runtime, or hardware
+- `evidence_kind`: documentation, package, or extension
 
 Extension artifact observations may use `distribution_family=external` and
 `channel=external`; they remain outside the core ROCm release dimensions.
@@ -34,7 +34,7 @@ source adapters
   -> normalized TheRock and legacy snapshots
   -> extension artifact snapshots and catalog (data/extensions/*.json)
   -> integrated evidence and candidate catalog (data/*.json)
-  -> optional local verification evidence
+  -> immutable catalog bundle
   -> generated documentation (docs/generated/)
 ```
 
@@ -70,5 +70,5 @@ integrations must use the grouped representation.
 - `profiles/`: application, runtime, framework, extension, and option profiles
 
 The public package namespace is `rocm_evidence_matrix`.
-The primary command is `rocm-matrix`; resolver and local diagnostic commands are
-auxiliary and are not part of the catalog publisher.
+The primary and only Matrix command is `rocm-matrix`. Candidate execution and
+local diagnostics belong to Manager.

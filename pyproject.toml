@@ -58,11 +58,6 @@ Repository = "https://github.com/Superple19/rocm-evidence-matrix"
 
 [project.scripts]
 rocm-matrix = "rocm_evidence_matrix.collect:main"
-rocm-resolve = "rocm_evidence_matrix.resolve:main"
-rocm-verify = "rocm_evidence_matrix.verify:main"
-rocm-verify-matrix = "rocm_evidence_matrix.verify_matrix:main"
-rocm-runtime = "rocm_evidence_matrix.runtime:main"
-rocm-hardware = "rocm_evidence_matrix.hardware:main"
 
 [tool.setuptools.packages.find]
 include = ["rocm_evidence_matrix*"]

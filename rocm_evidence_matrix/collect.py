@@ -198,16 +198,6 @@ def parse_args(argv=None):
     verify.add_argument("bundle_path")
     check = commands.add_parser("check", help="Validate committed evidence and generated documentation without network access.")
     check.add_argument("--root", default=".")
-    runtime = commands.add_parser("runtime", help="Record ROCm runtime evidence from the current Python environment.")
-    runtime.add_argument("--output", default="data/verifications/runtime.json")
-    runtime.add_argument("--candidate-id")
-    runtime.add_argument("--gfx")
-    runtime.add_argument("--history", default="data/history.json")
-    hardware = commands.add_parser("hardware", help="Run a reproducible ROCm GPU tensor smoke test.")
-    hardware.add_argument("--output", default="data/verifications/hardware.json")
-    hardware.add_argument("--candidate-id")
-    hardware.add_argument("--gfx")
-    hardware.add_argument("--history", default="data/history.json")
     return parser.parse_args(argv)
 
 
@@ -679,24 +669,6 @@ def build_outputs(args):
 
 def main(argv=None):
     args = parse_args(argv)
-    if args.command == "runtime":
-        from .runtime import main as runtime_main
-        runtime_args = ["--output", args.output, "--history", args.history]
-        if args.candidate_id:
-            runtime_args += ["--candidate-id", args.candidate_id]
-        if args.gfx:
-            runtime_args += ["--gfx", args.gfx]
-        runtime_main(runtime_args)
-        return
-    if args.command == "hardware":
-        from .hardware import main as hardware_main
-        hardware_args = ["--output", args.output, "--history", args.history]
-        if args.candidate_id:
-            hardware_args += ["--candidate-id", args.candidate_id]
-        if args.gfx:
-            hardware_args += ["--gfx", args.gfx]
-        hardware_main(hardware_args)
-        return
     if args.command == "build":
         build_outputs(args)
         return

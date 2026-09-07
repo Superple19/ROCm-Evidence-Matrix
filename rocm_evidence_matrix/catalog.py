@@ -29,7 +29,6 @@ ARTIFACTS = (
     ("source_manifest", "data/observations/source-manifest.json", "schemas/source-manifest.schema.json"),
     ("collection_status:legacy", LEGACY_STATUS, "schemas/collection-status.schema.json"),
     ("collection_status:therock", THEROCK_STATUS, "schemas/collection-status.schema.json"),
-    ("resolver_verifications", "data/verifications/resolver.json", "schemas/resolver-verifications.schema.json"),
     ("comfyui_profile", "profiles/comfyui/profile.json", "schemas/profile.schema.json"),
     ("comfyui_extension_profiles", "profiles/comfyui/extensions", "schemas/profile.schema.json"),
 )

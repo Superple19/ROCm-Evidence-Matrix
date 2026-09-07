@@ -10,9 +10,8 @@ rocm-matrix catalog
 
 The catalog lists each committed core evidence artifact, extension snapshots/catalog,
 collection status, and source-manifest evidence with its schema and schema version.
-Upstream CI polling snapshots are not part of the active catalog bundle. Local runtime, hardware, and resolver
-outputs remain machine-local evidence and are listed only when a reviewed copy
-is intentionally committed. Consumers must reject an unknown `schema_version`
+Upstream CI polling snapshots and Manager-local runtime, hardware, and resolver
+outputs are not part of the Matrix catalog. Consumers must reject an unknown `schema_version`
 or ignore fields they do not understand. Generated Markdown is presentation
 output and is not a stable API. Artifact SHA-256 values are calculated from
 UTF-8 JSON bytes with CRLF normalized to LF so Windows and Unix checkouts share
@@ -31,8 +30,8 @@ and `channel=external`; these dimensions describe PyPI or another explicitly
 configured upstream and are not core ROCm release channels.
 
 TheRock is the active distribution family. Consumers may use current TheRock
-records for package discovery and may optionally attach scoped verification
-workflows. Legacy records are retained as historical archive evidence and must
+records for package discovery; Manager may attach local execution results
+separately. Legacy records are retained as historical archive evidence and must
 not be interpreted as an actively maintained installation or verification path.
 
 Do not infer channel from a version string or URL. Use the recorded source
@@ -51,9 +50,8 @@ ordinary third-party dependencies; they must not
 apply TheRock's device-extra installation syntax to a `legacy` candidate.
 
 Some legacy Linux releases have package artifacts but no authoritative GFX
-mapping. Those candidates use `gfx_support: "unknown"` and may be listed with
-`rocm-resolve --platform linux` without `--gfx`; they must not be presented as
-hardware-compatible for a specific GPU.
+mapping. Those candidates use `gfx_support: "unknown"` and must not be
+presented as hardware-compatible for a specific GPU.
 
 Legacy Windows candidates may include `gfx_support_scope` and
 `gfx_support_refs`. A `series` scope means that a patch release was connected

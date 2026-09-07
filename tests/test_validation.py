@@ -1,6 +1,6 @@
 import unittest
 
-from rocm_evidence_matrix.validation import validate_legacy_windows, validate_resolver_verifications, validate_snapshot
+from rocm_evidence_matrix.validation import validate_legacy_windows, validate_snapshot
 from rocm_evidence_matrix.validation import validate_compatibility_matrix
 
 
@@ -117,33 +117,6 @@ class ValidationTests(unittest.TestCase):
 
         with self.assertRaisesRegex(ValueError, "outside legacy release index"):
             validate_legacy_windows(document)
-
-    def test_accepts_resolver_record_without_runtime_fields(self):
-        validate_resolver_verifications({
-            "schema_version": 1,
-            "generated_at": "2026-08-07T00:00:00Z",
-            "verifications": [{
-                "id": "resolver:one",
-                "candidate_id": "candidate",
-                "source_id": "packages-nightly",
-                "candidate_hash": "a" * 64,
-                "distribution_family": "therock",
-                "gfx": "gfx1201",
-                "platform": "windows",
-                "host_platform": "windows",
-                "python_tag": "cp312",
-                "python_version": "3.12.10",
-                "platform_tag": "win_amd64",
-                "packages": {"torch": "2.14.0", "torchvision": "0.29.0", "torchaudio": "2.11.0"},
-                "command": ["python", "-m", "pip", "install"],
-                "observed_at": "2026-08-07T00:00:00Z",
-                "result": "failed",
-                "exit_code": 1,
-                "pip_version": "25.0.1",
-                "resolved_packages": [],
-                "error": "No matching distribution found",
-            }],
-        })
 
 
 if __name__ == "__main__":

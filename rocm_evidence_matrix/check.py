@@ -23,13 +23,10 @@ from .validation import (
     validate_extension_catalog,
     validate_extension_snapshot,
     validate_framework_history,
-    validate_hardware_verifications,
     validate_history,
     validate_legacy_archive_manifest,
     validate_legacy_linux,
     validate_legacy_windows,
-    validate_resolver_verifications,
-    validate_runtime_verifications,
     validate_sdk_components,
     validate_snapshot,
     validate_source_manifest,
@@ -52,7 +49,6 @@ SCHEMA_VALIDATORS = {
     "legacy-windows.schema.json": validate_legacy_windows,
     "package-snapshot.schema.json": validate_snapshot,
     "source-manifest.schema.json": validate_source_manifest,
-    "resolver-verifications.schema.json": validate_resolver_verifications,
     "sdk-components.schema.json": validate_sdk_components,
     "version-history.schema.json": validate_version_history,
     "profile.schema.json": validate_profile,
@@ -121,9 +117,6 @@ def validate_standalone_data(root):
         ("data/observations/source-manifest.json", validate_source_manifest, "source-manifest.schema.json"),
         (LEGACY_STATUS, validate_collection_status, "collection-status.schema.json"),
         (THEROCK_STATUS, validate_collection_status, "collection-status.schema.json"),
-        ("data/verifications/hardware.json", validate_hardware_verifications, "hardware-verifications.schema.json"),
-        ("data/verifications/resolver.json", validate_resolver_verifications, "resolver-verifications.schema.json"),
-        ("data/verifications/runtime.json", validate_runtime_verifications, "runtime-verifications.schema.json"),
     )
     for relative_path, validator, schema_name in validators:
         path = first_existing(root, relative_path)
