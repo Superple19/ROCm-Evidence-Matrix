@@ -10,6 +10,8 @@ SUBJECT = re.compile(rf"^(?:{COMMIT_TYPES})(?:\([^\)]+\))?: \S.*$")
 
 
 def validate_message(text: str) -> str | None:
+    if "\\n" in text or "\\r" in text:
+        return "commit message must use real line breaks, not escaped \\n or \\r"
     lines = [line for line in text.splitlines() if not line.startswith("#")]
     while lines and not lines[-1].strip():
         lines.pop()
