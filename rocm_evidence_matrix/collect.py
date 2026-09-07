@@ -5,31 +5,26 @@ from typing import Any
 from urllib.request import Request, urlopen
 
 from .bundle import build_bundle, verify_bundle
-from .sources.therock import build_evidence, collect_documentation_sources, collect_github, collect_hud, collect_source, parse_matrix
+from .sources.therock import collect_documentation_sources, collect_source
 from .catalog import write_catalog
 from .extension_catalog import rebuild_extension_catalog, render_extension_catalog
 from .extension_sources import collect_extension_sources, rebuild_extension_catalog_from_sources
 from .extensions import rebuild_extension_history, render_extension_history
-from .history import attach_therock_ci_evidence, attach_therock_documentation_evidence, clear_therock_ci_evidence, merge_history, migrate_history, write_history_document
+from .history import attach_therock_documentation_evidence, merge_history, migrate_history, write_history_document
 from .frameworks import rebuild_auxiliary_outputs, render_framework_history, render_sdk_components
 from .integration import build_compatibility_matrix
 from .sources.legacy_archive import build_legacy_candidates, build_legacy_linux_candidates, classify_legacy_linux_framework, collect_legacy_linux_sources, collect_legacy_version_history, collect_legacy_windows_sources, render_legacy_linux, render_legacy_windows
 from .matrix_render import write_compatibility_document
-from .paths import EXTENSION_ARTIFACT_HISTORY, EXTENSION_CATALOG, EXTENSION_SNAPSHOTS, LEGACY_LINUX, LEGACY_LINUX_DOC, LEGACY_STATUS, LEGACY_WINDOWS, LEGACY_WINDOWS_DOC, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS
+from .paths import EXTENSION_ARTIFACT_HISTORY, EXTENSION_CATALOG, EXTENSION_SNAPSHOTS, LEGACY_LINUX, LEGACY_LINUX_DOC, LEGACY_STATUS, LEGACY_WINDOWS, LEGACY_WINDOWS_DOC, THEROCK_SNAPSHOTS, THEROCK_STATUS
 from .render import write_rendered_document
 from .source_cache import CachedSourceReader, SourceCache
 from .source_adapter import collection_status, run_source_adapter, utc_now
 from .persistence import atomic_write_json, atomic_write_text
-from .validation import validate_ci_coverage, validate_ci_evidence, validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_extension_catalog, validate_history, validate_legacy_linux, validate_legacy_windows, validate_snapshot, validate_version_history
+from .validation import validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_extension_catalog, validate_history, validate_legacy_linux, validate_legacy_windows, validate_snapshot, validate_version_history
 from .version_history import collect_therock_version_history, render_version_history
 
 
 USER_AGENT = "rocm-evidence-matrix/0.1 (+https://github.com/Superple19/rocm-evidence-matrix)"
-
-
-def _error_details(error):
-    details = getattr(error, "details", None)
-    return details if isinstance(details, dict) else None
 
 
 def fetch_text(url, timeout):
@@ -98,8 +93,6 @@ def parse_args(argv=None):
     therock.add_argument("--history-output", default="data/history.json")
     therock.add_argument("--version-history-output", default="data/version-history.json")
     therock.add_argument("--status-output", default=THEROCK_STATUS)
-    therock.add_argument("--ci-coverage-output", default=THEROCK_CI_COVERAGE)
-    therock.add_argument("--ci-evidence-output", default=THEROCK_CI_EVIDENCE)
     therock.add_argument("--source", action="append", dest="sources", help="Collect only the named package source. Repeat to select multiple sources.")
     therock.add_argument("--gfx", action="append", dest="gfx_targets", default=[], help="Collect only the exact GFX target. Repeat to select multiple targets.")
     therock.add_argument("--timeout", type=int, default=20)
@@ -139,8 +132,6 @@ def parse_args(argv=None):
     normalize_therock.add_argument("--source", action="append", dest="sources", help="Normalize only the named package source. Repeat to select multiple sources.")
     normalize_therock.add_argument("--gfx", action="append", dest="gfx_targets", default=[], help="Normalize only the exact GFX target. Repeat to select multiple targets.")
     normalize_therock.add_argument("--workers", type=int, default=8)
-    normalize_therock.add_argument("--ci-coverage-output", default=THEROCK_CI_COVERAGE)
-    normalize_therock.add_argument("--ci-evidence-output", default=THEROCK_CI_EVIDENCE)
 
     normalize_legacy = normalizers.add_parser("legacy", help="Normalize cached archive-only pre-TheRock sources.")
     add_config_path(normalize_legacy)
@@ -182,7 +173,6 @@ def parse_args(argv=None):
     build.add_argument("--output-dir", default=THEROCK_SNAPSHOTS)
     build.add_argument("--documentation-output", default="data/documentation.json")
     build.add_argument("--history-output", default="data/history.json")
-    build.add_argument("--ci-evidence-output", default=THEROCK_CI_EVIDENCE)
     build.add_argument("--legacy-output", default=LEGACY_WINDOWS)
     build.add_argument("--version-history-output", default="data/version-history.json")
     build.add_argument("--docs-output", default="docs/generated/package-availability.md")
@@ -347,48 +337,6 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
         validate_history(history)
         write_json(history, args.history_output)
         print(f"Wrote {args.history_output}")
-
-    ci_config = config.get("ci_sources", {}).get("therock")
-    if ci_config and not ci_config.get("enabled", True):
-        ci_config = None
-    if ci_config:
-        ci_results = []
-        coverage = None
-        try:
-            coverage = parse_matrix(source_reader(ci_config["matrix"]["url"]), observed_at)
-            validate_ci_coverage(coverage)
-            write_json(coverage, args.ci_coverage_output)
-            print(f"Wrote {args.ci_coverage_output}")
-            ci_results.append({"source_id": ci_config["matrix"]["id"], "status": "passed", "error": None})
-        except Exception as error:
-            ci_results.append({"source_id": ci_config["matrix"]["id"], "status": "failed", "error": str(error)})
-            print(f"Failed {ci_config['matrix']['id']}: {error}")
-        records = []
-        failures = []
-        for adapter_name, adapter in (("github_actions", lambda: collect_github(ci_config, source_reader, observed_at)), ("hud", lambda: collect_hud(ci_config["hud"], source_reader, observed_at))):
-            try:
-                records.extend(adapter())
-                ci_results.append({"source_id": ci_config["workflows"]["id"] if adapter_name == "github_actions" else ci_config["hud"]["id"], "status": "passed", "error": None})
-            except Exception as error:
-                details = _error_details(error)
-                failure = {"adapter": adapter_name, "error": str(error), "observed_at": observed_at}
-                if details:
-                    failure["details"] = details
-                failures.append(failure)
-                ci_results.append({"source_id": ci_config["workflows"]["id"] if adapter_name == "github_actions" else ci_config["hud"]["id"], "status": "failed", "error": str(error), **({"details": details} if details else {})})
-                print(f"Failed {adapter_name}: {error}")
-        evidence = build_evidence(records, [], existing=read_json(args.ci_evidence_output), observed_at=observed_at, failures=failures)
-        validate_ci_evidence(evidence)
-        write_json(evidence, args.ci_evidence_output)
-        print(f"Wrote {args.ci_evidence_output}")
-        history = read_json(args.history_output)
-        if history is not None:
-            attach_therock_documentation_evidence(history, documentation)
-            attach_therock_ci_evidence(history, evidence)
-            validate_history(history)
-            write_json(history, args.history_output)
-        print(f"Updated {args.history_output} with CI evidence")
-        results.extend(ci_results)
 
     if successful_sources:
         framework_path, components_path, extension_path = auxiliary_paths(args)
@@ -720,7 +668,6 @@ def build_outputs(args):
     documentation = read_json(args.documentation_output)
     if history is not None:
         history = migrate_history(history)
-        clear_therock_ci_evidence(history)
     if history is not None and documentation is not None:
         attach_therock_documentation_evidence(history, documentation)
     if history is not None:

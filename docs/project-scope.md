@@ -11,15 +11,13 @@ historical backtesting service.
 TheRock is the actively supported distribution family. Active collection and
 verification cover:
 
-- Official stable, nightly, and staging package indexes.
+- Official stable and nightly package indexes, plus explicit legacy archive refreshes.
 - ROCm, Torch, TorchVision, TorchAudio, SDK, and GFX-specific package links.
-- TheRock documentation, release metadata, HUD, and GitHub Actions evidence.
-- Optional resolver, runtime, and hardware evidence when an exact candidate
-  binding is available.
+- TheRock documentation and release metadata.
 
 Platform coverage is source-scoped. A Linux package observation does not imply
-that the corresponding Linux documentation, CI execution, runtime, or hardware
-evidence has been collected.
+that the corresponding Linux documentation, runtime, or hardware evidence has
+been collected.
 
 ## Historical archive
 

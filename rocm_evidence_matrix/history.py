@@ -2,7 +2,6 @@ import json
 import re
 from pathlib import Path
 
-from .ci import CI_STATES
 from .identity import candidate_hash
 from .persistence import atomic_write_json, atomic_write_text
 from .simple_index import version_key
@@ -330,59 +329,6 @@ def promote_execution_evidence(history_path, kind, record, requested_gfx=None, *
         requested_gfx=requested_gfx,
         reviewed=True,
     ), []
-
-
-def attach_therock_ci_evidence(history, ci_document):
-    executions = ci_document.get("executions", []) if ci_document else []
-    for candidate in history.get("candidates", []):
-        if candidate.get("distribution_family") != "therock" or candidate.get("lifecycle") != "current":
-            continue
-        refs = []
-        targets = set(candidate.get("gfx_targets", []))
-        for execution in executions:
-            execution_targets = execution.get("targets")
-            observations = execution.get("observations")
-            if (
-                execution.get("platform") != candidate.get("platform")
-                or not isinstance(execution.get("id"), str)
-                or not isinstance(execution_targets, list)
-                or not targets.intersection(execution_targets)
-                or not isinstance(observations, list)
-            ):
-                continue
-            execution_states = [item.get("state") for item in observations if item.get("state") in CI_STATES]
-            if not execution_states:
-                continue
-            refs.append(execution["id"])
-        if not refs:
-            continue
-        candidate["ci_evidence_refs"] = sorted(set(refs))[-3:]
-        candidate["ci_evidence_scope"] = "gfx_platform"
-        status = candidate.setdefault("evidence_status", initial_evidence_status())
-        latest_states = []
-        for execution in executions:
-            if execution.get("id") not in refs:
-                continue
-            observations = sorted(execution.get("observations", []), key=lambda item: item.get("observed_at") or "")
-            if observations:
-                latest_states.append(observations[-1].get("state"))
-        if latest_states and all(state == "success" for state in latest_states):
-            status["ci"] = "ci_verified"
-        elif latest_states and all(state in {"failure", "cancelled", "skipped", "timed_out"} for state in latest_states):
-            status["ci"] = "ci_failed"
-        else:
-            status["ci"] = "partial"
-    return history
-
-
-def clear_therock_ci_evidence(history):
-    for candidate in history.get("candidates", []):
-        if candidate.get("distribution_family") != "therock":
-            continue
-        candidate.pop("ci_evidence_refs", None)
-        candidate.pop("ci_evidence_scope", None)
-        candidate.setdefault("evidence_status", initial_evidence_status())["ci"] = "not_collected"
-    return history
 
 
 def candidate_id_for(distribution_family, platform, channel, rocm_version, torch_version, torchvision_version, torchaudio_version, python_tags, triton_version=None):

@@ -162,7 +162,7 @@ Raw responses are stored by SHA-256 under the ignored `.cache/sources/` director
 
 Source adapters prefer official machine-readable data or source markup when available. Declared rendered-page fallbacks remain independently validated, and normalized source records identify the URL that succeeded and whether fallback was required.
 
-TheRock package snapshots are written to `data/therock/snapshots/` with explicit platform metadata. The optional CI adapter is not part of the active catalog bundle; current CI status remains `not_collected` unless independently verified by a consumer. Legacy Windows and Linux evidence is archived under `data/legacy/archive/`. Shared documentation, version history, the append-only package catalog, and the integrated view remain under `data/` until their schemas are split. Generated Markdown is stored under `docs/generated/`, with legacy documents under `docs/generated/legacy/`.
+TheRock package snapshots are written to `data/therock/snapshots/` with explicit platform metadata. Legacy Windows and Linux evidence is archived under `data/legacy/archive/`. Shared documentation, version history, the live package catalog, and the integrated view remain under `data/`. Generated Markdown is stored under `docs/generated/`, with legacy documents under `docs/generated/legacy/`.
 
 ComfyUI extension artifacts are collected separately with explicit source configuration. They are stored in `data/extensions/snapshots/` and normalized into `data/extensions/catalog.json`. Each exact wheel or source artifact receives a deterministic extension candidate ID and records its build tag, dependency metadata, SHA-256 when the upstream provides one, URL, source ID, and observation time. The catalog does not claim Torch/ROCm/HIP/GFX ABI compatibility. Use it to show what exists, and require separate resolver or runtime evidence before allowing installation. Optional GitHub release adapters are disabled by default and must be selected explicitly.
 
@@ -233,8 +233,6 @@ uv run rocm-matrix hardware --candidate-id <candidate-id> --gfx gfx1201
 ```
 
 Both commands append timestamped records locally. Use `rocm-evidence` only to create a privacy-redacted local diagnostic report; no evidence is uploaded, submitted, or added to the shared catalog automatically.
-
-GitHub Actions collection uses `GITHUB_TOKEN` when present. GitHub API 403/429 responses are retried with bounded backoff; if collection still fails, the previous CI executions remain in the evidence file and the failed adapter is recorded separately. Optional GitHub release sources use bounded pagination and expose page counts, truncation, source status, and cache age in collection status; a page-limit hit is never treated as a complete artifact snapshot.
 
 Compatibility profiles use `schemas/profile.schema.json`. They keep framework, runtime, extension, and option constraints separate from core evidence, classify each constraint as `required`, `optional`, or `conflicting`, and link claims to evidence IDs. A `verified` claim must include at least one evidence reference.
 

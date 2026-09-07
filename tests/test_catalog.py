@@ -50,20 +50,6 @@ class CatalogTests(unittest.TestCase):
             catalog = build_catalog(root)
             self.assertEqual(catalog["generated_at"], "2026-08-08T00:00:00Z")
 
-    def test_catalog_excludes_ci_snapshots(self):
-        with TemporaryDirectory() as directory:
-            root = Path(directory)
-            ci = root / "data" / "therock" / "ci"
-            ci.mkdir(parents=True)
-            payload = json.dumps({"schema_version": 1})
-            (ci / "coverage.json").write_text(payload, encoding="utf-8")
-            (ci / "evidence.json").write_text(payload, encoding="utf-8")
-
-            ids = {item["id"] for item in build_catalog(root)["artifacts"]}
-
-            self.assertNotIn("ci_coverage", ids)
-            self.assertNotIn("ci_evidence", ids)
-
     def test_catalog_excludes_disabled_package_snapshots(self):
         with TemporaryDirectory() as directory:
             root = Path(directory)

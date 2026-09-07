@@ -4,8 +4,6 @@ from pathlib import Path
 
 
 THEROCK_SNAPSHOTS = "data/therock/snapshots"
-THEROCK_CI_COVERAGE = "data/therock/ci/coverage.json"
-THEROCK_CI_EVIDENCE = "data/therock/ci/evidence.json"
 THEROCK_STATUS = "data/therock/status.json"
 EXTENSION_CATALOG = "data/extensions/catalog.json"
 EXTENSION_ARTIFACT_HISTORY = "data/extensions/history.json"
@@ -21,8 +19,6 @@ LEGACY_LINUX_DOC = f"{LEGACY_DOCS_DIR}/legacy-linux.md"
 
 FALLBACK_PATHS = {
     THEROCK_SNAPSHOTS: ("data/snapshots",),
-    THEROCK_CI_COVERAGE: ("data/ci-coverage.json",),
-    THEROCK_CI_EVIDENCE: ("data/ci-evidence.json",),
     THEROCK_STATUS: ("data/status/therock.json",),
     LEGACY_WINDOWS: ("data/legacy-windows.json",),
     LEGACY_LINUX: ("data/legacy-linux.json",),

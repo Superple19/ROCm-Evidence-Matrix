@@ -35,24 +35,16 @@ evidence.
 Runtime, hardware, community, framework, SDK, and extension evidence preserves
 monotonic generation times and does not append duplicate record identities.
 
-### CI and catalog coverage
+### Catalog coverage
 
-GitHub Actions and optional GitHub release collection use bounded pagination
-and fail explicitly when a configured limit is exceeded. Collection status
-records page counts, truncation, source status, and cache age when available.
-CI promotion follows the latest observed state
-for each execution attempt; configured coverage remains separate from observed
-execution results.
-
-The catalog includes tracked status and source-manifest artifacts; stale upstream
-CI polling snapshots are intentionally excluded from the active bundle. Profiles resolve `source:<id>` references against collected source records, and
-local diagnostic JSON is validated when present. The repository has no
-community intake or maintainer review workflow.
+The catalog contains package snapshots, normalized candidates, source metadata,
+profiles, and bundle schemas. CI polling and local machine diagnostics are not
+part of the Matrix collection pipeline.
 
 The catalog also records SHA-256 digests for every tracked artifact. Consumers
 must verify those bytes before using a cached snapshot. Package candidates now
 carry TorchAudio through integration, identity, rendering, and downstream
-installation planning. CI and version-history validation are platform-aware;
+installation planning. Version-history validation is platform-aware;
 the Windows fields in version history are compatibility aliases rather than
 the canonical evidence for Linux or macOS records.
 
@@ -68,11 +60,8 @@ also runs the offline suite on both Linux and Windows.
 
 ### Follow-up audit
 
-- The current offline suite contains 179 tests. Pyright reports no code errors;
+- The current offline suite contains 181 tests. Pyright reports no code errors;
   its only remaining warnings are optional Torch imports used by local probes.
-- Current collected TheRock CI executions are Windows-only because the local
-  GitHub API collection run had no `GITHUB_TOKEN` and retained bounded 403
-  failures. Linux CI evidence remains `not_collected` rather than inferred.
 - The current local runtime and hardware records are one Windows `gfx1201`
   environment. They are ignored local evidence and do not establish support
   for Linux, other GFX targets, or other Python environments.
@@ -82,11 +71,9 @@ also runs the offline suite on both Linux and Windows.
 - Resolver results still prove dependency resolution only; they do not prove
   imports or physical GPU execution.
 - Runtime and hardware evidence is local by default and remains ignored by Git.
-- CI evidence is intentionally scoped to GFX/platform execution and is not an
-  exact package-build proof unless a consumer adds that binding.
 - Historical releases with missing archives remain distinct from explicit
   unsupported claims.
-- Linux documentation, CI execution, and local runtime or hardware evidence
+- Linux documentation and local runtime or hardware evidence
   may remain `not_collected`; package or wheel availability never fills those
   gaps by inference.
 - Legacy patch-release candidates preserve whether their GFX evidence came from

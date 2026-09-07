@@ -3,7 +3,7 @@ import json
 import tempfile
 from pathlib import Path
 
-from rocm_evidence_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, clear_therock_ci_evidence, execution_evidence_errors, merge_history, migrate_history, promote_execution_evidence, render_history, update_execution_evidence
+from rocm_evidence_matrix.history import build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, migrate_history, promote_execution_evidence, render_history, update_execution_evidence
 from rocm_evidence_matrix.identity import candidate_hash
 from rocm_evidence_matrix.resolve import count_candidates, install_command, latest_candidates, resolve_candidates
 
@@ -478,79 +478,6 @@ class HistoryTests(unittest.TestCase):
         }
         record["candidate_hash"] = candidate_hash(candidate, "gfx1201", "cp312", None)
         self.assertTrue(any("platform tag" in error for error in execution_evidence_errors(candidate, record, "runtime")))
-
-    def test_attaches_ci_evidence_with_gfx_platform_scope(self):
-        candidate = {
-            "id": "therock:stable:candidate",
-            "distribution_family": "therock",
-            "platform": "windows",
-            "lifecycle": "current",
-            "gfx_targets": ["gfx1201"],
-            "evidence_status": {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"},
-        }
-        evidence = {"executions": [{"id": "github:1", "platform": "windows", "targets": ["gfx1201"], "observations": [{"state": "success"}]}]}
-
-        attach_therock_ci_evidence({"candidates": [candidate]}, evidence)
-
-        self.assertEqual(candidate["evidence_status"]["ci"], "ci_verified")
-        self.assertEqual(candidate["ci_evidence_refs"], ["github:1"])
-        self.assertEqual(candidate["ci_evidence_scope"], "gfx_platform")
-
-    def test_configured_or_non_windows_coverage_does_not_verify_candidate(self):
-        candidate = {
-            "id": "therock:stable:candidate",
-            "distribution_family": "therock",
-            "platform": "windows",
-            "lifecycle": "current",
-            "gfx_targets": ["gfx1201"],
-            "evidence_status": {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected", "ci": "not_collected"},
-        }
-        coverage_only = {"entries": [{"configured_targets": ["gfx1201"], "platform": "windows"}]}
-        attach_therock_ci_evidence({"candidates": [candidate]}, coverage_only)
-        self.assertEqual(candidate["evidence_status"]["ci"], "not_collected")
-
-        linux_execution = {"executions": [{"id": "linux:1", "platform": "linux", "targets": ["gfx1201"], "observations": [{"state": "success"}]}]}
-        attach_therock_ci_evidence({"candidates": [candidate]}, linux_execution)
-        self.assertEqual(candidate["evidence_status"]["ci"], "not_collected")
-
-    def test_ci_status_follows_latest_observation(self):
-        candidate = {
-            "id": "therock:stable:candidate",
-            "distribution_family": "therock",
-            "platform": "windows",
-            "lifecycle": "current",
-            "gfx_targets": ["gfx1201"],
-            "evidence_status": {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected", "ci": "not_collected"},
-        }
-        evidence = {"executions": [{
-            "id": "github:1",
-            "platform": "windows",
-            "targets": ["gfx1201"],
-            "observations": [
-                {"state": "success", "observed_at": "2026-08-08T00:00:00Z"},
-                {"state": "failure", "observed_at": "2026-08-08T00:01:00Z"},
-            ],
-        }]}
-        attach_therock_ci_evidence({"candidates": [candidate]}, evidence)
-        self.assertEqual(candidate["evidence_status"]["ci"], "ci_failed")
-
-    def test_clears_stale_ci_evidence(self):
-        candidates = [
-            {
-                "distribution_family": "therock",
-                "evidence_status": {"ci": "partial"},
-                "ci_evidence_refs": ["github:1"],
-                "ci_evidence_scope": "gfx_platform",
-            },
-            {"distribution_family": "legacy", "evidence_status": {"ci": "not_collected"}},
-        ]
-
-        clear_therock_ci_evidence({"candidates": candidates})
-
-        self.assertEqual(candidates[0]["evidence_status"]["ci"], "not_collected")
-        self.assertNotIn("ci_evidence_refs", candidates[0])
-        self.assertNotIn("ci_evidence_scope", candidates[0])
-        self.assertEqual(candidates[1]["evidence_status"]["ci"], "not_collected")
 
 
 if __name__ == "__main__":
