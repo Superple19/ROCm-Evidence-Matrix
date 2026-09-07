@@ -32,6 +32,20 @@ def _error_details(error):
     return details if isinstance(details, dict) else None
 
 
+def _aggregate_pagination_details(details):
+    if not details:
+        return None
+    summary = {
+        "pages_fetched": sum(item["pages_fetched"] for item in details),
+        "items_fetched": sum(item["items_fetched"] for item in details),
+        "max_pages": max(item["max_pages"] for item in details),
+        "truncated": any(item["truncated"] for item in details),
+    }
+    if summary["truncated"]:
+        summary["reason"] = "pagination_limit"
+    return summary
+
+
 def fetch_text(url, timeout):
     request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/vnd.github+json, application/json;q=0.9, text/html;q=0.8"})
     with urlopen(request, timeout=timeout) as response:
@@ -354,10 +368,16 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
             print(f"Failed {ci_config['matrix']['id']}: {error}")
         records = []
         failures = []
-        for adapter_name, adapter in (("github_actions", lambda: collect_github(ci_config, source_reader, observed_at)), ("hud", lambda: collect_hud(ci_config["hud"], source_reader, observed_at))):
+        github_pagination = []
+        for adapter_name, adapter in (("github_actions", lambda: collect_github(ci_config, source_reader, observed_at, github_pagination)), ("hud", lambda: collect_hud(ci_config["hud"], source_reader, observed_at))):
             try:
                 records.extend(adapter())
-                ci_results.append({"source_id": ci_config["workflows"]["id"] if adapter_name == "github_actions" else ci_config["hud"]["id"], "status": "passed", "error": None})
+                result = {"source_id": ci_config["workflows"]["id"] if adapter_name == "github_actions" else ci_config["hud"]["id"], "status": "passed", "error": None}
+                if adapter_name == "github_actions":
+                    details = _aggregate_pagination_details(github_pagination)
+                    if details:
+                        result["details"] = details
+                ci_results.append(result)
             except Exception as error:
                 details = _error_details(error)
                 failure = {"adapter": adapter_name, "error": str(error), "observed_at": observed_at}
