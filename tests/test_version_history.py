@@ -79,7 +79,7 @@ class VersionHistoryTests(unittest.TestCase):
         self.assertTrue(all(result["status"] == "passed" for result in results))
         validate_version_history(history)
 
-    def test_preserves_release_only_patch_versions(self):
+    def test_does_not_assign_family_from_release_table_alone(self):
         config = {
             "rocm_releases": {"id": "releases", "url": "https://example.test/releases"},
             "documentation_branches": {"id": "branches", "url": "https://example.test/branches"},
@@ -96,7 +96,7 @@ class VersionHistoryTests(unittest.TestCase):
             "https://example.test/branches": "[]",
         }
         history, _ = collect_legacy_version_history(config, pages.__getitem__, legacy, observed_at=OBSERVED_AT)
-        self.assertEqual([item["version"] for item in history["releases"]], ["7.2.2", "7.2.4"])
+        self.assertEqual(history["releases"], [])
 
     def test_includes_linux_artifact_evidence_separately(self):
         config = {

@@ -166,7 +166,7 @@
       "path": "data/version-history.json",
       "schema": "schemas/version-history.schema.json",
       "schema_version": 1,
-      "sha256": "1c48f8168b50724097de368e83ec1f57d241095da1cc032adb510ed54a55af6d"
+      "sha256": "b2b8fdaa9611a807229260121f62c600563f6b1c2d57b38571a05b27e97ac39f"
     },
     {
       "id": "source_manifest",
