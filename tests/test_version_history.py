@@ -98,6 +98,40 @@ class VersionHistoryTests(unittest.TestCase):
         history, _ = collect_legacy_version_history(config, pages.__getitem__, legacy, observed_at=OBSERVED_AT)
         self.assertEqual([item["version"] for item in history["releases"]], ["7.2.2", "7.2.4"])
 
+    def test_includes_linux_artifact_evidence_separately(self):
+        config = {
+            "rocm_releases": {"id": "releases", "url": "https://example.test/releases"},
+            "documentation_branches": {"id": "branches", "url": "https://example.test/branches"},
+        }
+        legacy = {
+            "sources": {},
+            "hip_sdk_releases": [],
+            "hip_sdk_gpu_support": [],
+            "pytorch_windows_support": [],
+            "artifact_releases": [],
+        }
+        legacy_linux = {
+            "sources": {"linux-artifacts": {"id": "linux-artifacts"}},
+            "artifact_releases": [{
+                "release_id": "5.7.1",
+                "source_id": "linux-artifacts",
+                "artifacts": [{"filename": "torch-1.13.1+rocm5.7.1-cp39-cp39-linux_x86_64.whl", "url": "https://example.test/torch.whl"}],
+            }],
+        }
+        pages = {
+            "https://example.test/releases": "<table><tr><th>Version</th><th>Release date</th></tr><tr><td>5.7.1</td><td>October 13, 2023</td></tr></table>",
+            "https://example.test/branches": "[]",
+        }
+
+        history, _ = collect_legacy_version_history(config, pages.__getitem__, legacy, observed_at=OBSERVED_AT, legacy_linux=legacy_linux)
+        record = next(item for item in history["releases"] if item["id"] == "legacy:linux:5.7.1")
+
+        self.assertEqual(record["platform"], "linux")
+        self.assertEqual(record["package_artifacts"], 1)
+        self.assertTrue(record["platform_evidence"]["linux"]["package_available"])
+        self.assertFalse(record["platform_evidence"]["windows"]["package_available"])
+        validate_version_history(history)
+
     def test_derives_lifecycle_without_changing_distribution_family(self):
         older = release_record("therock", "7.14", OBSERVED_AT, platform="windows", source_ids=["source"])
         newer = release_record("therock", "10.1.0", OBSERVED_AT, platform="windows", source_ids=["source"])
@@ -146,6 +180,24 @@ class VersionHistoryTests(unittest.TestCase):
         by_id = {item["id"]: item for item in history["releases"]}
         self.assertEqual(by_id["therock:7.14"]["lifecycle"], "current")
         self.assertEqual(by_id["therock:linux:7.2.4"]["lifecycle"], "current")
+        validate_version_history(history)
+
+    def test_platform_merge_does_not_mix_package_artifacts(self):
+        history = merge_version_history(
+            None,
+            "legacy",
+            [
+                release_record("legacy", "5.7.1", OBSERVED_AT, platform="windows", package_artifacts=0, source_ids=["windows"]),
+                release_record("legacy", "5.7.1", OBSERVED_AT, platform="linux", package_artifacts=12, linux_package_available=True, source_ids=["linux"]),
+            ],
+            [],
+            {"windows": {}, "linux": {}},
+            OBSERVED_AT,
+        )
+        by_id = {item["id"]: item for item in history["releases"]}
+
+        self.assertEqual(by_id["legacy:5.7.1"]["package_artifacts"], 0)
+        self.assertEqual(by_id["legacy:linux:5.7.1"]["package_artifacts"], 12)
         validate_version_history(history)
 
     def test_platform_evidence_is_not_forced_to_windows(self):

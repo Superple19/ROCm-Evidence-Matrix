@@ -4,6 +4,234 @@
     {
       "channel": "stable",
       "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:3.10",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 1,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": null,
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts"
+      ],
+      "version": "3.10",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:4.0.0",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 1,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": null,
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts"
+      ],
+      "version": "4.0.0",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:4.0.1",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 1,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": null,
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts"
+      ],
+      "version": "4.0.1",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:4.1",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 1,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": null,
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts"
+      ],
+      "version": "4.1",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:4.2",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 1,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": null,
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts"
+      ],
+      "version": "4.2",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:4.5.2",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 12,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": null,
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts"
+      ],
+      "version": "4.5.2",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
       "documentation_status": "archive_missing",
       "documentation_url": null,
       "first_observed_at": "2026-08-07T15:37:08Z",
@@ -70,6 +298,45 @@
       },
       "release_date": "2022-02-16",
       "source_ids": [
+        "rocm-release-history"
+      ],
+      "version": "5.0.1",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:5.0.1",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 12,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2022-02-16",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
         "rocm-release-history"
       ],
       "version": "5.0.1",
@@ -194,6 +461,45 @@
     {
       "channel": "stable",
       "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:5.1.1",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 12,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2022-04-08",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "5.1.1",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
       "documentation_status": "archive_missing",
       "documentation_url": null,
       "first_observed_at": "2026-08-07T15:37:08Z",
@@ -222,6 +528,45 @@
       },
       "release_date": "2022-05-20",
       "source_ids": [
+        "rocm-release-history"
+      ],
+      "version": "5.1.3",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:5.1.3",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 12,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2022-05-20",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
         "rocm-release-history"
       ],
       "version": "5.1.3",
@@ -346,6 +691,45 @@
     {
       "channel": "stable",
       "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:5.2.3",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 18,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2022-08-18",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "5.2.3",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
       "documentation_status": "archive_missing",
       "documentation_url": null,
       "first_observed_at": "2026-08-07T15:37:08Z",
@@ -412,6 +796,45 @@
       },
       "release_date": "2022-11-09",
       "source_ids": [
+        "rocm-release-history"
+      ],
+      "version": "5.3.2",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:5.3.2",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 4,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2022-11-09",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
         "rocm-release-history"
       ],
       "version": "5.3.2",
@@ -526,6 +949,45 @@
       },
       "release_date": "2022-12-15",
       "source_ids": [
+        "rocm-release-history"
+      ],
+      "version": "5.4.1",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:5.4.1",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 4,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2022-12-15",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
         "rocm-release-history"
       ],
       "version": "5.4.1",
@@ -690,6 +1152,45 @@
     {
       "channel": "stable",
       "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:5.5.1",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 6,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2023-05-24",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "5.5.1",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
       "documentation_status": "archive_missing",
       "documentation_url": null,
       "first_observed_at": "2026-08-07T15:37:08Z",
@@ -725,6 +1226,45 @@
       "windows_ci_verified": null,
       "windows_package_available": false,
       "windows_support": "unsupported"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:5.6",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 8,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2023-08-29",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "5.6",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
     },
     {
       "channel": "stable",
@@ -803,6 +1343,45 @@
       "windows_ci_verified": null,
       "windows_package_available": false,
       "windows_support": "supported"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:5.7",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 12,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2023-10-13",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "5.7",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
     },
     {
       "channel": "stable",
@@ -924,6 +1503,45 @@
     {
       "channel": "stable",
       "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:6.0.2",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 14,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2024-01-31",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "6.0.2",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
       "documentation_status": "available",
       "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.1.0/",
       "first_observed_at": "2026-08-07T15:37:08Z",
@@ -1040,6 +1658,45 @@
       "windows_ci_verified": null,
       "windows_package_available": false,
       "windows_support": "supported"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:6.1.3",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 29,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2025-03-13",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "6.1.3",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
     },
     {
       "channel": "stable",
@@ -1201,6 +1858,45 @@
     {
       "channel": "stable",
       "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:6.2.3",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 6,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2024-11-06",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "6.2.3",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
       "documentation_status": "available",
       "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.2.4/",
       "first_observed_at": "2026-08-07T15:37:08Z",
@@ -1236,6 +1932,45 @@
       "windows_ci_verified": null,
       "windows_package_available": false,
       "windows_support": "supported"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:6.2.4",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 72,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2024-11-06",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "6.2.4",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
     },
     {
       "channel": "stable",
@@ -1318,6 +2053,45 @@
     {
       "channel": "stable",
       "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:6.3.1",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 98,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2024-12-20",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "6.3.1",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
       "documentation_status": "available",
       "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.3.2/",
       "first_observed_at": "2026-08-07T15:37:08Z",
@@ -1357,6 +2131,45 @@
     {
       "channel": "stable",
       "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:6.3.2",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 81,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2025-01-28",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "6.3.2",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
       "documentation_status": "available",
       "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.3.3/",
       "first_observed_at": "2026-08-07T15:37:08Z",
@@ -1392,6 +2205,84 @@
       "windows_ci_verified": null,
       "windows_package_available": false,
       "windows_support": "unsupported"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:6.3.3",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 99,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2025-02-19",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "6.3.3",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:6.3.4",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 96,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2025-02-19",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "6.3.4",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
     },
     {
       "channel": "stable",
@@ -1476,6 +2367,45 @@
     {
       "channel": "stable",
       "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:6.4.1",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 109,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2025-05-21",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "6.4.1",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
       "documentation_status": "available",
       "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.4.2/",
       "first_observed_at": "2026-08-07T15:37:08Z",
@@ -1512,6 +2442,45 @@
       "windows_ci_verified": null,
       "windows_package_available": false,
       "windows_support": "supported"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:6.4.2",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 82,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2025-07-21",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "6.4.2",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
     },
     {
       "channel": "stable",
@@ -1556,6 +2525,45 @@
     {
       "channel": "stable",
       "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:6.4.3",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 43,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2025-08-07",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "6.4.3",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
       "documentation_status": "available",
       "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.4.2/",
       "first_observed_at": "2026-08-07T15:37:04Z",
@@ -1595,6 +2603,45 @@
       "windows_ci_verified": null,
       "windows_package_available": true,
       "windows_support": "supported"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:6.4.4",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 88,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2025-08-07",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "6.4.4",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
     },
     {
       "channel": "stable",
@@ -1713,6 +2760,45 @@
     {
       "channel": "stable",
       "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:7.0.2",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 150,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2025-10-10",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "7.0.2",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
       "documentation_status": "available",
       "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.1.1/",
       "first_observed_at": "2026-08-07T15:37:08Z",
@@ -1790,6 +2876,45 @@
       "windows_ci_verified": null,
       "windows_package_available": true,
       "windows_support": "supported"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:7.1.1",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 110,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2025-11-26",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "7.1.1",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
     },
     {
       "channel": "stable",
@@ -1873,6 +2998,45 @@
     {
       "channel": "stable",
       "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:7.2.1",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 102,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2026-03-25",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "7.2.1",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
       "documentation_status": "available",
       "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.2/",
       "first_observed_at": "2026-08-07T15:37:08Z",
@@ -1901,6 +3065,45 @@
       },
       "release_date": "2026-04-14",
       "source_ids": [
+        "rocm-release-history"
+      ],
+      "version": "7.2.2",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:7.2.2",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 138,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2026-04-14",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
         "rocm-release-history"
       ],
       "version": "7.2.2",
@@ -1949,6 +3152,45 @@
     {
       "channel": "stable",
       "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:7.2.3",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "historical",
+      "package_artifacts": 111,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2026-05-04",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
+        "rocm-release-history"
+      ],
+      "version": "7.2.3",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
       "documentation_status": "available",
       "documentation_url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.2/",
       "first_observed_at": "2026-08-07T15:37:08Z",
@@ -1977,6 +3219,45 @@
       },
       "release_date": "2026-05-29",
       "source_ids": [
+        "rocm-release-history"
+      ],
+      "version": "7.2.4",
+      "windows_ci_verified": null,
+      "windows_package_available": false,
+      "windows_support": "unknown"
+    },
+    {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "documentation_status": "not_collected",
+      "documentation_url": null,
+      "first_observed_at": "2026-08-08T10:15:14Z",
+      "framework_support_observations": 0,
+      "gpu_support_observations": 0,
+      "id": "legacy:linux:7.2.4",
+      "last_observed_at": "2026-08-08T10:15:14Z",
+      "lifecycle": "current",
+      "package_artifacts": 114,
+      "platform": "linux",
+      "platform_evidence": {
+        "linux": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": true,
+          "support": "unknown"
+        },
+        "windows": {
+          "ci_verified": null,
+          "documentation_status": "not_collected",
+          "documentation_url": null,
+          "package_available": false,
+          "support": "unknown"
+        }
+      },
+      "release_date": "2026-05-29",
+      "source_ids": [
+        "legacy-linux-manylinux-artifacts",
         "rocm-release-history"
       ],
       "version": "7.2.4",
@@ -2243,6 +3524,14 @@
       "id": "hip-sdk-release-versioning",
       "observed_at": "2026-08-08T10:15:14Z",
       "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/latest/conceptual/release-versioning.html"
+    },
+    "legacy-linux-manylinux-artifacts": {
+      "channel": "stable",
+      "distribution_family": "legacy",
+      "id": "legacy-linux-manylinux-artifacts",
+      "observed_at": "2026-08-08T10:15:14Z",
+      "platform": "linux",
+      "url": "https://repo.radeon.com/rocm/manylinux/"
     },
     "legacy-windows-artifacts": {
       "id": "legacy-windows-artifacts",

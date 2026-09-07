@@ -525,6 +525,7 @@ def normalize_legacy_sources(args, config, source_reader, observed_at, status_ou
     for result in results:
         if result["status"] == "failed":
             print(f"Failed {result['source_id']}: {result['error']}")
+    legacy_linux = None
     linux_sources = config.get("legacy_linux_sources", [])
     if linux_sources:
         documentation = read_json(getattr(args, "documentation_output", "data/documentation.json")) or {}
@@ -571,6 +572,7 @@ def normalize_legacy_sources(args, config, source_reader, observed_at, status_ou
             legacy,
             existing=read_json(version_history_path),
             observed_at=observed_at,
+            legacy_linux=legacy_linux,
         )
         results.extend(version_results)
         if any(result["status"] == "passed" for result in version_results):
