@@ -1,0 +1,190 @@
+name: publish catalog bundle
+
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: catalog-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+        with:
+          version: "0.12.10"
+          python-version: "3.12"
+
+      - name: Install project
+        run: uv sync --locked
+
+      - name: Capture semantic baseline
+        id: baseline
+        shell: bash
+        run: |
+          uv run --locked python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          VOLATILE_KEYS = {
+              "cache_age_seconds",
+              "checked_at",
+              "fetched_at",
+              "generated_at",
+              "last_observed_at",
+              "observed_at",
+              "source_status",
+              "started_at",
+          }
+
+          def scrub(value):
+              if isinstance(value, dict):
+                  return {key: scrub(item) for key, item in value.items() if key not in VOLATILE_KEYS}
+              if isinstance(value, list):
+                  return [scrub(item) for item in value]
+              return value
+
+          digest = hashlib.sha256()
+          paths = sorted(Path("data").rglob("*.json")) + sorted(Path("profiles").rglob("*.json"))
+          for path in paths:
+              digest.update(path.as_posix().encode("utf-8"))
+              digest.update(json.dumps(scrub(json.loads(path.read_text(encoding="utf-8"))), sort_keys=True, separators=(",", ":")).encode("utf-8"))
+          Path(os.environ["GITHUB_OUTPUT"]).write_text(f"fingerprint={digest.hexdigest()}\n", encoding="utf-8")
+          PY
+
+      - name: Collect active evidence
+        run: |
+          set -euo pipefail
+          uv run --locked rocm-matrix collect therock
+          uv run --locked rocm-matrix collect extensions
+
+      - name: Build generated outputs
+        run: uv run --locked rocm-matrix build
+
+      - name: Validate semantic contract
+        run: uv run --locked rocm-matrix check
+
+      - name: Detect semantic changes
+        id: changes
+        shell: bash
+        run: |
+          uv run --locked python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          VOLATILE_KEYS = {
+              "cache_age_seconds",
+              "checked_at",
+              "fetched_at",
+              "generated_at",
+              "last_observed_at",
+              "observed_at",
+              "source_status",
+              "started_at",
+          }
+
+          def scrub(value):
+              if isinstance(value, dict):
+                  return {key: scrub(item) for key, item in value.items() if key not in VOLATILE_KEYS}
+              if isinstance(value, list):
+                  return [scrub(item) for item in value]
+              return value
+
+          digest = hashlib.sha256()
+          paths = sorted(Path("data").rglob("*.json")) + sorted(Path("profiles").rglob("*.json"))
+          for path in paths:
+              digest.update(path.as_posix().encode("utf-8"))
+              digest.update(json.dumps(scrub(json.loads(path.read_text(encoding="utf-8"))), sort_keys=True, separators=(",", ":")).encode("utf-8"))
+          current = digest.hexdigest()
+          before = os.environ["BASELINE_FINGERPRINT"]
+          Path(os.environ["GITHUB_OUTPUT"]).write_text(f"changed={'true' if current != before else 'false'}\nfingerprint={current}\n", encoding="utf-8")
+          print(f"semantic fingerprint: {current}")
+          print(f"semantic change: {current != before}")
+          PY
+        env:
+          BASELINE_FINGERPRINT: ${{ steps.baseline.outputs.fingerprint }}
+
+      - name: Prepare release version
+        if: steps.changes.outputs.changed == 'true'
+        id: release
+        shell: bash
+        run: |
+          set -euo pipefail
+          bundle_version="$(date -u +%Y.%m.%d)"
+          release_tag="catalog-${bundle_version}"
+          if gh release view "$release_tag" >/dev/null 2>&1; then
+            echo "Release already exists for bundle version ${bundle_version}" >&2
+            exit 1
+          fi
+          {
+            echo "bundle_version=$bundle_version"
+            echo "release_tag=$release_tag"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Commit generated data
+        if: steps.changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data docs/generated profiles
+          git diff --cached --quiet && exit 0
+          git commit -m "data: refresh Matrix catalog"
+          git push origin HEAD:main
+
+      - name: Build and verify release bundle
+        if: steps.changes.outputs.changed == 'true'
+        id: bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          bundle_version="${{ steps.release.outputs.bundle_version }}"
+          release_tag="${{ steps.release.outputs.release_tag }}"
+          output="dist/rocm-matrix-catalog-${bundle_version}.zip"
+          matrix_commit="$(git rev-parse HEAD)"
+          uv run --locked rocm-matrix bundle \
+            --output "$output" \
+            --bundle-version "$bundle_version" \
+            --matrix-commit "$matrix_commit"
+          uv run --locked rocm-matrix verify-bundle "$output"
+          {
+            echo "bundle_version=$bundle_version"
+            echo "release_tag=$release_tag"
+            echo "output=$output"
+            echo "matrix_commit=$matrix_commit"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Publish GitHub Release asset
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          gh release create "${{ steps.bundle.outputs.release_tag }}" \
+            "${{ steps.bundle.outputs.output }}" \
+            --target "${{ steps.bundle.outputs.matrix_commit }}" \
+            --title "ROCm Matrix catalog ${{ steps.bundle.outputs.bundle_version }}" \
+            --notes "Validated immutable Matrix catalog bundle for ${{ steps.bundle.outputs.bundle_version }}."
+
+      - name: Upload bundle artifact
+        if: steps.changes.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: rocm-matrix-catalog-${{ steps.bundle.outputs.bundle_version }}
+          path: ${{ steps.bundle.outputs.output }}
