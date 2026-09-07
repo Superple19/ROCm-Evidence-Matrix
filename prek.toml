@@ -1,0 +1,15 @@
+minimum_prek_version = "0.5.2"
+default_install_hook_types = ["commit-msg"]
+
+[[repos]]
+repo = "local"
+hooks = [
+  {
+    id = "commit-message-format",
+    name = "validate commit message",
+    entry = "python -X utf8 scripts/check_commit_message.py",
+    language = "system",
+    stages = ["commit-msg"],
+    pass_filenames = true,
+  },
+]

@@ -76,6 +76,15 @@ Install the optional development tools when working on Python code:
 python -m pip install --editable ".[dev]"
 ```
 
+Install the `prek` commit-message hook once per checkout:
+
+```powershell
+.\.venv\Scripts\prek.exe install --force
+```
+
+Commit messages require a Conventional Commit subject, one blank separator
+line, and consecutive `-` body bullets.
+
 Run the required lint check and the advisory analyses separately:
 
 ```powershell
