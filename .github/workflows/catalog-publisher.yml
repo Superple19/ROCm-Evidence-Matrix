@@ -84,6 +84,9 @@ jobs:
       - name: Build generated outputs
         run: uv run --locked rocm-matrix build
 
+      - name: Rebuild artifact catalog
+        run: uv run --locked rocm-matrix catalog --output data/catalog.json
+
       - name: Validate semantic contract
         run: uv run --locked rocm-matrix check
 
