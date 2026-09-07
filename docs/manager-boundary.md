@@ -17,7 +17,22 @@ ComfyUI ROCm Manager: detect → select → dry-run → install → verify
 
 The matrix is the source of shared evidence-backed candidates. The manager is
 an application-specific consumer and installer; it must not turn a local result
-into a universal compatibility claim.
+into a universal compatibility claim or read a moving `main` branch directly.
+
+## Catalog bundle contract
+
+The Matrix bundle contains `manifest.json`, `data/catalog.json`, generated
+evidence, ComfyUI profiles, and the schemas required to validate them. The
+manifest pins `contract_version`, the full Matrix commit, generation time,
+manager compatibility, and a SHA-256 digest for every artifact. A Manager
+consumer must verify the manifest and every digest before using the embedded
+catalog.
+
+`contract_version` is the bundle contract boundary. An unsupported version,
+missing artifact, path traversal entry, or digest mismatch must be rejected
+explicitly. The existing `--catalog` path remains the offline escape hatch for
+an already extracted `data/catalog.json`; release and mirror URLs are selected
+by the Manager in a later consumer implementation.
 
 ## What the Matrix should do
 
@@ -28,7 +43,8 @@ into a universal compatibility claim.
 - Publish stable, nightly, staging, and historical candidates without silently
   treating artifact availability as installation or runtime success.
 - Keep resolver, runtime, and hardware evidence as separate states.
-- Provide the common schemas and generated catalog consumed by external tools.
+- Provide immutable catalog bundles containing the schemas and generated catalog
+  consumed by external tools.
 - Maintain portable application profiles such as `profiles/comfyui/` without
   changing core package evidence.
 - Mark claims as documented, artifact-available, verified, unverified, unsupported,
