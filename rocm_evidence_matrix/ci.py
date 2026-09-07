@@ -43,21 +43,7 @@ def _page_url(url, page):
     return url if page == 1 else f"{url}{separator}page={page}"
 
 
-def _pagination_details(url, key, pages_fetched, items_fetched, max_pages, truncated):
-    details = {
-        "url": url,
-        "key": key,
-        "pages_fetched": pages_fetched,
-        "items_fetched": items_fetched,
-        "max_pages": max_pages,
-        "truncated": truncated,
-    }
-    if truncated:
-        details["reason"] = "pagination_limit"
-    return details
-
-
-def _collect_pages(reader, url, key, max_pages=10, allow_truncated=False):
+def _collect_pages(reader, url, key, max_pages=10):
     values = []
     for page in range(1, max_pages + 1):
         page_url = _page_url(url, page)
@@ -96,11 +82,7 @@ def _collect_pages(reader, url, key, max_pages=10, allow_truncated=False):
             )
         values.extend(page_values)
         if len(page_values) < 100:
-            if allow_truncated:
-                return values, _pagination_details(url, key, page, len(values), max_pages, False)
             return values
-    if allow_truncated:
-        return values, _pagination_details(url, key, max_pages, len(values), max_pages, True)
     raise CICollectionError(
         f"GitHub API pagination exceeded {max_pages} pages: {url}",
         url=url,
@@ -250,7 +232,7 @@ def build_evidence(github_records, hud_records, existing=None, observed_at=None,
     return document
 
 
-def collect_github(source_config, reader, observed_at, pagination_details=None):
+def collect_github(source_config, reader, observed_at):
     workflows = _collect_pages(reader, source_config["workflows"]["url"], "workflows")
     records = []
     selected_workflows = [workflow for workflow in workflows if (any(platform in workflow.get("path", "").lower() for platform in ("windows", "linux", "macos")) or "multi_arch" in workflow.get("path", "").lower() or "pytorch" in workflow.get("path", "").lower() or "rocm_wheels" in workflow.get("path", "").lower() or "artifacts" in workflow.get("path", "").lower())]
@@ -265,18 +247,23 @@ def collect_github(source_config, reader, observed_at, pagination_details=None):
             max_pages=max_selected_workflows,
             reason="pagination_limit",
         )
-    max_run_pages = int(source_config["workflows"].get("max_run_pages", 2))
-    if not 1 <= max_run_pages <= 100:
-        raise ValueError("GitHub max_run_pages must be between 1 and 100")
     for workflow in selected_workflows:
         path = workflow.get("path", "")
         if not (any(platform in path.lower() for platform in ("windows", "linux", "macos")) or "multi_arch" in path.lower() or "pytorch" in path.lower() or "rocm_wheels" in path.lower() or "artifacts" in path.lower()):
             continue
         runs_url = source_config["runs_api"].format(workflow_id=workflow["id"])
-        runs, details = _collect_pages(reader, runs_url, "workflow_runs", max_pages=max_run_pages, allow_truncated=True)
-        if pagination_details is not None:
-            pagination_details.append(details)
-        for run in runs:
+        runs = _collect_pages(reader, runs_url, "workflow_runs")
+        if len(runs) > 200:
+            raise CICollectionError(
+                f"GitHub workflow run coverage exceeded the bounded 200-run limit: {workflow['id']}",
+                url=runs_url,
+                key="workflow_runs",
+                pages_fetched=1,
+                items_fetched=len(runs),
+                max_pages=200,
+                reason="pagination_limit",
+            )
+        for run in runs[:200]:
             jobs = _collect_pages(reader, source_config["jobs_api"].format(run_id=run["id"]), "jobs")
             records.extend(_github_record(run, job, observed_at, workflow) for job in jobs if _platform(job.get("name"), job.get("labels")) in {"windows", "linux", "macos"})
     return records
