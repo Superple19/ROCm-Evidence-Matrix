@@ -150,9 +150,20 @@ class CollectionCommandTests(unittest.TestCase):
                 "platform": "windows",
                 "url": "https://example.test/nightly/",
             },
+            {
+                "id": "staging",
+                "distribution_family": "therock",
+                "channel": "staging",
+                "platform": "windows",
+                "url": "https://example.test/staging/",
+                "enabled": False,
+            },
         ]
 
+        seen_sources = []
+
         def package_result(source, **_kwargs):
+            seen_sources.append(source["id"])
             if source["id"] == "stable":
                 raise OSError("offline")
             return (
@@ -192,6 +203,8 @@ class CollectionCommandTests(unittest.TestCase):
             self.assertFalse(success)
             self.assertFalse((root / "snapshots" / "stable.json").exists())
             self.assertTrue((root / "snapshots" / "nightly.json").exists())
+            self.assertEqual(seen_sources, ["stable", "nightly"])
+            self.assertFalse((root / "snapshots" / "staging.json").exists())
             self.assertEqual(archive_path.read_text(encoding="utf-8"), "archive-sentinel")
 
 

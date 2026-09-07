@@ -287,7 +287,11 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
             print(f"Wrote {version_history_path}")
 
     selected = set(args.sources or [])
-    sources = [source for source in config["artifact_sources"] if not selected or source["id"] in selected]
+    sources = [
+        source
+        for source in config["artifact_sources"]
+        if (not selected or source["id"] in selected) and (source.get("enabled", True) or source["id"] in selected)
+    ]
     missing = selected - {source["id"] for source in sources}
     if missing:
         raise SystemExit(f"Unknown sources: {', '.join(sorted(missing))}")
@@ -478,7 +482,11 @@ def normalize_therock(args, config):
     source_reader = CachedSourceReader(args.cache_dir, args.source_manifest)
     documentation_urls = [source["url"] for source in config["documentation_sources"]]
     selected = set(args.sources or [])
-    artifact_prefixes = [source["url"] for source in config["artifact_sources"] if not selected or source["id"] in selected]
+    artifact_prefixes = [
+        source["url"]
+        for source in config["artifact_sources"]
+        if (not selected or source["id"] in selected) and (source.get("enabled", True) or source["id"] in selected)
+    ]
     version_sources = config.get("version_history_sources", {}).get("therock")
     if version_sources:
         documentation_urls.extend((version_sources["releases"]["url"], version_sources["version"]["url"]))

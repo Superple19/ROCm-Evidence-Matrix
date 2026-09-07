@@ -20,6 +20,12 @@ by its configured source channel, not by parsing a version string, and a
 legacy Linux package observation remains `distribution_family=legacy` with
 `platform=linux`.
 
+TheRock source configuration also records the stream host and repository
+layout separately. `stream` identifies Stable, Nightly, Staging, or Dev;
+`layout` identifies `whl-next` or `whl-multi-arch`; and `historical` marks
+disabled archive sources that may be selected explicitly for backfill. The
+layout name is not a release channel.
+
 ## Data flow
 
 ```text

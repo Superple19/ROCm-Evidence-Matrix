@@ -6,42 +6,110 @@
       "distribution_family": "therock",
       "channel": "stable",
       "platform": "windows",
-      "url": "https://repo.amd.com/rocm/whl-multi-arch/"
+      "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/",
+      "stream": "stable",
+      "layout": "whl-next",
+      "retention": "forever"
     },
     {
       "id": "nightly",
       "distribution_family": "therock",
       "channel": "nightly",
       "platform": "windows",
-      "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
+      "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/",
+      "stream": "nightly",
+      "layout": "whl-next",
+      "retention": "rolling",
+      "retention_limit": 120,
+      "historical_fallback": "nightly-archive"
     },
     {
       "id": "staging",
       "distribution_family": "therock",
       "channel": "staging",
       "platform": "windows",
-      "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
+      "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/",
+      "stream": "staging",
+      "layout": "whl-multi-arch",
+      "historical": true,
+      "enabled": false
     },
     {
       "id": "stable-linux",
       "distribution_family": "therock",
       "channel": "stable",
       "platform": "linux",
-      "url": "https://repo.amd.com/rocm/whl-multi-arch/"
+      "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/",
+      "stream": "stable",
+      "layout": "whl-next",
+      "retention": "forever"
     },
     {
       "id": "nightly-linux",
       "distribution_family": "therock",
       "channel": "nightly",
       "platform": "linux",
-      "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
+      "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/",
+      "stream": "nightly",
+      "layout": "whl-next",
+      "retention": "rolling",
+      "retention_limit": 120,
+      "historical_fallback": "nightly-archive-linux"
     },
     {
       "id": "staging-linux",
       "distribution_family": "therock",
       "channel": "staging",
       "platform": "linux",
-      "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
+      "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/",
+      "stream": "staging",
+      "layout": "whl-multi-arch",
+      "historical": true,
+      "enabled": false
+    },
+    {
+      "id": "stable-archive",
+      "distribution_family": "therock",
+      "channel": "stable",
+      "platform": "windows",
+      "url": "https://repo.amd.com/rocm/whl-multi-arch/",
+      "stream": "stable",
+      "layout": "whl-multi-arch",
+      "historical": true,
+      "enabled": false
+    },
+    {
+      "id": "stable-archive-linux",
+      "distribution_family": "therock",
+      "channel": "stable",
+      "platform": "linux",
+      "url": "https://repo.amd.com/rocm/whl-multi-arch/",
+      "stream": "stable",
+      "layout": "whl-multi-arch",
+      "historical": true,
+      "enabled": false
+    },
+    {
+      "id": "nightly-archive",
+      "distribution_family": "therock",
+      "channel": "nightly",
+      "platform": "windows",
+      "url": "https://rocm.nightlies.amd.com/whl-multi-arch/",
+      "stream": "nightly",
+      "layout": "whl-multi-arch",
+      "historical": true,
+      "enabled": false
+    },
+    {
+      "id": "nightly-archive-linux",
+      "distribution_family": "therock",
+      "channel": "nightly",
+      "platform": "linux",
+      "url": "https://rocm.nightlies.amd.com/whl-multi-arch/",
+      "stream": "nightly",
+      "layout": "whl-multi-arch",
+      "historical": true,
+      "enabled": false
     }
   ],
   "documentation_sources": [
