@@ -56,30 +56,31 @@ Current generated views:
 
 ## Development environment
 
-Create and activate a repository-local virtual environment before running project commands:
+Install `uv`, then synchronize the repository environment from `pyproject.toml`
+and the committed `uv.lock`:
 
 ```powershell
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --editable .
+uv sync
+uv run rocm-matrix --help
 ```
 
-Runtime dependencies are declared in `pyproject.toml` and installed only into
-the repository-local `.venv`. The collector does not install ROCm, PyTorch, or
-other target-environment packages into the project environment.
+For Python development and the full quality toolset:
+
+```powershell
+uv sync --extra dev
+```
+
+`uv` manages the repository-local `.venv` and keeps dependency resolution in
+`uv.lock`. The collector does not install ROCm, PyTorch, or other
+target-environment packages into the project environment.
 
 ## Development quality checks
 
-Install the optional development tools when working on Python code:
+Install and enable the `prek` commit-message hook once per checkout:
 
 ```powershell
-python -m pip install --editable ".[dev]"
-```
-
-Install the `prek` commit-message hook once per checkout:
-
-```powershell
-.\.venv\Scripts\prek.exe install --force
+uv sync --extra dev
+uv run prek install --force
 ```
 
 Commit messages require a Conventional Commit subject, one blank separator
@@ -88,11 +89,11 @@ line, and consecutive `-` body bullets.
 Run the required lint check and the advisory analyses separately:
 
 ```powershell
-ruff check .
-ruff format --check .
-pyright
-deptry .
-vulture rocm_evidence_matrix tests --min-confidence 100
+uv run ruff check .
+uv run ruff format --check .
+uv run pyright
+uv run deptry .
+uv run vulture rocm_evidence_matrix tests --min-confidence 100
 ```
 
 `ruff check` and `pyright` are required CI gates. Pyright stays in basic mode;
@@ -104,28 +105,28 @@ formatting cleanup must be reviewed as a separate diff. Vulture findings may
 be false positives for CLI entry points, dynamic adapters, and data-driven
 imports, so they require manual review before deleting code. These tools are
 development-only and are not installed for users who install the runtime
-package without the `dev` extra. Import Linter and `uv` are intentionally not
-part of this snapshot; they can be added later without changing runtime code.
+package without the `dev` extra. Import Linter remains intentionally deferred;
+it can be added later without changing runtime code.
 
 ## Collect data
 
 Collect actively supported TheRock evidence, then build integrated data and documentation:
 
 ```powershell
-rocm-matrix collect therock
-rocm-matrix collect extensions  # Explicit PyPI/simple-index/GitHub extension artifact refresh
-rocm-matrix collect legacy  # Explicit archive refresh; not part of the active default workflow
-rocm-matrix build
+uv run rocm-matrix collect therock
+uv run rocm-matrix collect extensions  # Explicit PyPI/simple-index/GitHub extension artifact refresh
+uv run rocm-matrix collect legacy  # Explicit archive refresh; not part of the active default workflow
+uv run rocm-matrix build
 ```
 
 Each `collect` command fetches source responses and normalizes that distribution family. TheRock collection is the active workflow; legacy collection is an explicit archive maintenance command. After changing a parser, rebuild every downstream stage from the local cache without network access:
 
 ```powershell
-rocm-matrix normalize therock
-rocm-matrix normalize extensions
-rocm-matrix normalize legacy
-rocm-matrix integrate
-rocm-matrix render
+uv run rocm-matrix normalize therock
+uv run rocm-matrix normalize extensions
+uv run rocm-matrix normalize legacy
+uv run rocm-matrix integrate
+uv run rocm-matrix render
 ```
 
 `integrate` writes the machine-readable matrix, while `render` writes Markdown from normalized and integrated data. `build` remains a convenience command that runs both stages.
@@ -133,7 +134,7 @@ rocm-matrix render
 Run the offline quality gate after collection or parser changes:
 
 ```powershell
-rocm-matrix check
+uv run rocm-matrix check
 ```
 
 It validates every catalog artifact, profile, standalone evidence file, and generated Markdown view without making network requests.
@@ -157,7 +158,7 @@ Version discovery combines TheRock releases and `version.json` with the official
 Limit collection to one or more channels or GPU targets when developing a parser:
 
 ```powershell
-rocm-matrix collect therock --source nightly --gfx gfx1201 --output-dir .tmp/snapshots
+uv run rocm-matrix collect therock --source nightly --gfx gfx1201 --output-dir .tmp/snapshots
 ```
 
 ## Resolve a package candidate
@@ -165,7 +166,7 @@ rocm-matrix collect therock --source nightly --gfx gfx1201 --output-dir .tmp/sna
 Query the historical catalog for a specific environment:
 
 ```powershell
-rocm-resolve --platform windows --gfx gfx1201 --channel stable --rocm 7.13.0 --python 3.12
+uv run rocm-resolve --platform windows --gfx gfx1201 --channel stable --rocm 7.13.0 --python 3.12
 ```
 
 The resolver selects the newest matching candidate by default and prints a pinned `pip` command. Add `--torch 2.9` to request a Torch series, or `--all` to list every match. Legacy candidates print official direct wheel URLs with the PyPI index for ordinary dependencies; TheRock candidates use their configured package index and device extras. The resolver does not install packages or claim that dependency resolution, imports, or execution have been verified.
@@ -173,7 +174,7 @@ The resolver selects the newest matching candidate by default and prints a pinne
 Use `--count` to inspect the number of distinct candidates after applying the same filters without selecting or verifying a package:
 
 ```powershell
-rocm-resolve --platform windows --gfx gfx1201 --all --include-unavailable --include-failed --count
+uv run rocm-resolve --platform windows --gfx gfx1201 --all --include-unavailable --include-failed --count
 ```
 
 Use `--distribution-family legacy` to select archive candidates explicitly;
@@ -184,7 +185,7 @@ the legacy candidate still uses its recorded direct wheel URLs.
 Optionally verify one candidate with `pip --dry-run` in a disposable virtual environment. This is environment-specific evidence, not part of the default catalog collection:
 
 ```powershell
-rocm-verify --gfx gfx1201 --channel stable --rocm 7.14.0
+uv run rocm-verify --gfx gfx1201 --channel stable --rocm 7.14.0
 ```
 
 The same verifier can run a legacy candidate with
@@ -202,7 +203,7 @@ The extension artifact catalog also covers bitsandbytes, Flash Attention, AITER,
 `rocm-verify-matrix` is an auxiliary, opt-in batch form of `rocm-verify`. It runs the resolver across selected channels, representative GFX targets, and candidate Python tags. It is intended for controlled investigations, not exhaustive historical backtesting or normal catalog generation. `--all-candidates` and `--all-gfx` require an explicit `--exhaustive` opt-in. Use `--resume` to skip combinations already recorded in the JSONL log, merged output, or tracked history. Matrix jobs reuse a host-local cache (`%LOCALAPPDATA%\rocm-matrix\pip` on Windows or `~/.cache/rocm-matrix/pip` on Linux) while each resolver still runs in a disposable environment; override it with `--cache-dir` when needed. Use `--workers` to run independent resolver subprocesses concurrently; evidence is appended by the coordinator and history is merged once per run. The record separates the target platform from the verifier host; this is dependency-resolution evidence only and does not establish runtime or hardware support. Use `--limit` while developing and override the target wheel tag when needed:
 
 ```text
-rocm-verify-matrix --platform linux --gfx gfx1201 --python cp312 --limit 1
+uv run rocm-verify-matrix --platform linux --gfx gfx1201 --python cp312 --limit 1
 ```
 
 Resolver, runtime, and hardware outputs under `data/verifications/` are local machine evidence and are ignored by Git.
@@ -210,8 +211,8 @@ Resolver, runtime, and hardware outputs under `data/verifications/` are local ma
 Collect local runtime and hardware evidence against an exact candidate when the matching environment is available:
 
 ```powershell
-rocm-matrix runtime --candidate-id <candidate-id> --gfx gfx1201
-rocm-matrix hardware --candidate-id <candidate-id> --gfx gfx1201
+uv run rocm-matrix runtime --candidate-id <candidate-id> --gfx gfx1201
+uv run rocm-matrix hardware --candidate-id <candidate-id> --gfx gfx1201
 ```
 
 Both commands append timestamped records locally. Use `rocm-evidence` only to create a privacy-redacted local diagnostic report; no evidence is uploaded, submitted, or added to the shared catalog automatically.
@@ -225,8 +226,8 @@ are optional and remain unverified until explicit resolver, runtime, or hardware
 evidence is linked. Prepare a local diagnostic report with:
 
 ```text
-rocm-evidence --input data/verifications/runtime.json --kind runtime
-rocm-evidence --input data/verifications/hardware.json --kind hardware
+uv run rocm-evidence --input data/verifications/runtime.json --kind runtime
+uv run rocm-evidence --input data/verifications/hardware.json --kind hardware
 ```
 
 The command redacts local identity and paths, adds a content hash, and writes
@@ -236,5 +237,5 @@ official or hardware verification evidence.
 ## Run tests
 
 ```powershell
-python -m unittest discover -s tests -v
+uv run python -m unittest discover -s tests -v
 ```
