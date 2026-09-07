@@ -12809,7 +12809,7 @@
       "gfx_targets": [],
       "hip_constraints": [],
       "id": "extension:triton:therock:linux:nightly:3.8.0+gitc01b6774.rocm10.1.0a20260907:cp310,cp311,cp312,cp313,cp314:linux_x86_64",
-      "last_observed_at": "2026-09-07T21:22:58Z",
+      "last_observed_at": "2026-09-07T21:36:06Z",
       "lifecycle": "historical",
       "package_name": "triton",
       "platform": "linux",
@@ -13039,7 +13039,7 @@
       "gfx_targets": [],
       "hip_constraints": [],
       "id": "extension:triton:therock:linux:stable:3.8.0+git4cff872c.rocm10.0.0:cp310,cp311,cp312,cp313,cp314:linux_x86_64",
-      "last_observed_at": "2026-09-07T21:22:58Z",
+      "last_observed_at": "2026-09-07T21:36:06Z",
       "lifecycle": "historical",
       "package_name": "triton",
       "platform": "linux",
@@ -13176,14 +13176,14 @@
       "version": "3.8.0+git4cff872c.rocm7.14.1"
     }
   ],
-  "generated_at": "2026-09-07T21:24:48Z",
+  "generated_at": "2026-09-07T21:36:06Z",
   "schema_version": 1,
   "sources": {
     "packages-nightly": {
       "channel": "nightly",
       "distribution_family": "therock",
       "id": "packages-nightly",
-      "observed_at": "2026-09-07T21:22:58Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "platform": "windows",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/"
     },
@@ -13207,7 +13207,7 @@
       "channel": "nightly",
       "distribution_family": "therock",
       "id": "packages-nightly-linux",
-      "observed_at": "2026-09-07T21:22:58Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "platform": "linux",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/"
     },
@@ -13255,7 +13255,7 @@
       "channel": "stable",
       "distribution_family": "therock",
       "id": "packages-stable",
-      "observed_at": "2026-09-07T21:22:58Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "platform": "windows",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/"
     },
@@ -13279,7 +13279,7 @@
       "channel": "stable",
       "distribution_family": "therock",
       "id": "packages-stable-linux",
-      "observed_at": "2026-09-07T21:22:58Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "platform": "linux",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/"
     }

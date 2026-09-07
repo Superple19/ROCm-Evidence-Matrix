@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 
 from .persistence import atomic_write_text
-from .simple_index import version_key
+from .simple_index import package_names_for_target, version_key
 from .source_adapter import monotonic_generated_at
 
 
@@ -79,6 +79,7 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
     grouped = {}
 
     for gfx in gfx_targets:
+        device_names = package_names_for_target(gfx, package_versions)
         rocm_device = package_versions.get(f"rocm-sdk-device-{gfx}", {})
         torch_device = package_versions.get(f"amd-torch-device-{gfx}", {})
         torchvision_device = package_versions.get(f"amd-torchvision-device-{gfx}", {})
@@ -86,10 +87,21 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
             rocm_version = rocm_version_from_framework(torch_version)
             rule = compatibility.get(version_series(torch_version))
             required_rocm_packages = ("rocm", "rocm-sdk-core", "rocm-sdk-libraries")
-            rocm_packages_available = rocm_version is not None and all(
+            legacy_rocm_packages_available = rocm_version is not None and all(
                 rocm_version in package_versions.get(name, {}) for name in required_rocm_packages
             )
-            if not rocm_packages_available or rule is None or rocm_version not in rocm_device or torch_version not in torch_device:
+            current_device_packages_available = {
+                f"amd-torch-device-{gfx}",
+                f"amd-torchvision-device-{gfx}",
+            }.issubset(device_names)
+            rocm_packages_available = legacy_rocm_packages_available or (
+                source.get("layout") == "whl-next" and current_device_packages_available
+            )
+            device_version_available = (
+                torch_version in torch_device
+                and torch_version in package_versions.get(f"amd-torch-device-{gfx}", {})
+            )
+            if not rocm_packages_available or rule is None or not device_version_available:
                 continue
             matching_vision = [
                 version for version in torchvision_by_rocm_series.get((rocm_version, rule["torchvision_series"]), [])

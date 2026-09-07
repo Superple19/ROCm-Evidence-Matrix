@@ -41,6 +41,27 @@ class HistoryTests(unittest.TestCase):
         self.assertEqual(len(candidates), 1)
         self.assertEqual(candidates[0]["python_tags"], ["cp312"])
 
+    def test_builds_whl_next_candidate_without_sdk_device_packages(self):
+        version = "10.1.0a20260907"
+        packages = {
+            "torch": [artifact("torch", f"2.15.0a0+rocm{version}")],
+            "torchvision": [artifact("torchvision", f"0.30.0a0+rocm{version}")],
+            "torchaudio": [artifact("torchaudio", f"2.11.0.3+rocm{version}")],
+            "amd-torch-device-gfx1201": [artifact("amd-torch-device-gfx1201", f"2.15.0a0+rocm{version}")],
+            "amd-torchvision-device-gfx1201": [artifact("amd-torchvision-device-gfx1201", f"0.30.0a0+rocm{version}")],
+        }
+
+        candidates = build_history_observations(
+            {"id": "nightly", "channel": "nightly", "platform": "windows", "layout": "whl-next"},
+            ["gfx1201"],
+            packages,
+            [{"torch_series": "2.15", "torchvision_series": "0.30", "torchaudio_series": "2.11"}],
+            "therock",
+        )
+
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(candidates[0]["rocm_version"], version)
+
     def test_rolling_source_replaces_previous_candidates(self):
         old = {
             "id": "old-nightly",

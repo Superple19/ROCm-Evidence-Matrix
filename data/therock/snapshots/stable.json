@@ -1,6 +1,207 @@
 {
-  "gfx_targets": [],
-  "last_observed_at": "2026-09-07T21:22:58Z",
+  "gfx_targets": [
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx908",
+        "amd-torchvision-device-gfx908"
+      ],
+      "gfx": "gfx908"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx90a",
+        "amd-torchvision-device-gfx90a"
+      ],
+      "gfx": "gfx90a"
+    },
+    {
+      "all_device_packages_available": false,
+      "device_packages": [
+        "amd-torch-device-gfx942",
+        "amd-torchvision-device-gfx942"
+      ],
+      "gfx": "gfx942"
+    },
+    {
+      "all_device_packages_available": false,
+      "device_packages": [
+        "amd-torch-device-gfx950",
+        "amd-torchvision-device-gfx950"
+      ],
+      "gfx": "gfx950"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1010",
+        "amd-torchvision-device-gfx1010"
+      ],
+      "gfx": "gfx1010"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1011",
+        "amd-torchvision-device-gfx1011"
+      ],
+      "gfx": "gfx1011"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1012",
+        "amd-torchvision-device-gfx1012"
+      ],
+      "gfx": "gfx1012"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1030",
+        "amd-torchvision-device-gfx1030"
+      ],
+      "gfx": "gfx1030"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1031",
+        "amd-torchvision-device-gfx1031"
+      ],
+      "gfx": "gfx1031"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1032",
+        "amd-torchvision-device-gfx1032"
+      ],
+      "gfx": "gfx1032"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1033",
+        "amd-torchvision-device-gfx1033"
+      ],
+      "gfx": "gfx1033"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1034",
+        "amd-torchvision-device-gfx1034"
+      ],
+      "gfx": "gfx1034"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1035",
+        "amd-torchvision-device-gfx1035"
+      ],
+      "gfx": "gfx1035"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1036",
+        "amd-torchvision-device-gfx1036"
+      ],
+      "gfx": "gfx1036"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1100",
+        "amd-torchvision-device-gfx1100"
+      ],
+      "gfx": "gfx1100"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1101",
+        "amd-torchvision-device-gfx1101"
+      ],
+      "gfx": "gfx1101"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1102",
+        "amd-torchvision-device-gfx1102"
+      ],
+      "gfx": "gfx1102"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1103",
+        "amd-torchvision-device-gfx1103"
+      ],
+      "gfx": "gfx1103"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1150",
+        "amd-torchvision-device-gfx1150"
+      ],
+      "gfx": "gfx1150"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1151",
+        "amd-torchvision-device-gfx1151"
+      ],
+      "gfx": "gfx1151"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1152",
+        "amd-torchvision-device-gfx1152"
+      ],
+      "gfx": "gfx1152"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1153",
+        "amd-torchvision-device-gfx1153"
+      ],
+      "gfx": "gfx1153"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1200",
+        "amd-torchvision-device-gfx1200"
+      ],
+      "gfx": "gfx1200"
+    },
+    {
+      "all_device_packages_available": true,
+      "device_packages": [
+        "amd-torch-device-gfx1201",
+        "amd-torchvision-device-gfx1201"
+      ],
+      "gfx": "gfx1201"
+    },
+    {
+      "all_device_packages_available": false,
+      "device_packages": [
+        "amd-torch-device-gfx1250",
+        "amd-torchvision-device-gfx1250"
+      ],
+      "gfx": "gfx1250"
+    }
+  ],
+  "last_observed_at": "2026-09-07T21:36:06Z",
   "packages": {
     "amd-torch-device-gfx1010": [
       {

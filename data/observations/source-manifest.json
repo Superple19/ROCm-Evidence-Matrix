@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-07T21:24:48Z",
+  "generated_at": "2026-09-07T21:36:06Z",
   "responses": [
     {
       "encoding": "utf-8",
       "etag": "W/\"e0708b9dd1ec94ff8df87f024504144a55a9a2fef801908f6cf5bd3228efc298\"",
       "last_modified": null,
-      "observed_at": "2026-09-07T21:24:14Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "sha256": "7cd73cf3f9b085c0c5927b12c80d881aede60fe69d86ec201f5ece6869e5605a",
       "url": "https://api.github.com/repos/ROCm/TheRock/releases?per_page=100"
     },
@@ -21,7 +21,7 @@
       "encoding": "utf-8",
       "etag": "\"04a583cf803479dbb558d2f37e1c455c\"",
       "last_modified": "Thu, 27 Aug 2026 12:24:36 GMT",
-      "observed_at": "2026-09-07T21:23:09Z",
+      "observed_at": "2026-09-07T21:36:13Z",
       "sha256": "8184b4b54c5f58d22ffb12ac13d861ad301436ee87cbb38d5d2162d426388e1f",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/"
     },
@@ -29,7 +29,7 @@
       "encoding": "utf-8",
       "etag": "\"96bff19c790d66501609ddee2e59c90f\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:17 GMT",
-      "observed_at": "2026-09-07T21:23:10Z",
+      "observed_at": "2026-09-07T21:36:13Z",
       "sha256": "f3e69d0efea473ed4a0fa4867b483dd72f2cc7f787c0e9d28e36f482994bf135",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1010/"
     },
@@ -37,7 +37,7 @@
       "encoding": "utf-8",
       "etag": "\"35445b3235c208ae930c460418e639b6\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:17 GMT",
-      "observed_at": "2026-09-07T21:23:10Z",
+      "observed_at": "2026-09-07T21:36:14Z",
       "sha256": "47c0c1f09ca21c626a9e5ef805667ae0e4be4685d010a10d9f61ca90fc75ec14",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1011/"
     },
@@ -45,7 +45,7 @@
       "encoding": "utf-8",
       "etag": "\"84f28aa1f8e26d0fc2fd9852aec3d168\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:18 GMT",
-      "observed_at": "2026-09-07T21:23:10Z",
+      "observed_at": "2026-09-07T21:36:14Z",
       "sha256": "7116adb856204e976ec9c0d6c0011f0c7c2bac74eb06e346e89a683efab932fb",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1012/"
     },
@@ -53,7 +53,7 @@
       "encoding": "utf-8",
       "etag": "\"534112b71aa191596cabfe1793b06fd6\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:33 GMT",
-      "observed_at": "2026-09-07T21:23:10Z",
+      "observed_at": "2026-09-07T21:36:13Z",
       "sha256": "c5a1396655c0b959c655b06283a30c6018ca9fcd1a1cf7c256cce6bf0dd8e235",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1030/"
     },
@@ -61,7 +61,7 @@
       "encoding": "utf-8",
       "etag": "\"afd988cacccb00e509f310c1f32a90f3\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:33 GMT",
-      "observed_at": "2026-09-07T21:23:10Z",
+      "observed_at": "2026-09-07T21:36:14Z",
       "sha256": "5bd0b8d307fed61dcfb5aff22aeb8bb7583ef09205d7cba71c378e15062d5665",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1031/"
     },
@@ -69,7 +69,7 @@
       "encoding": "utf-8",
       "etag": "\"11003b7400e99bf2ed75efdec3c98b51\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:48 GMT",
-      "observed_at": "2026-09-07T21:23:10Z",
+      "observed_at": "2026-09-07T21:36:13Z",
       "sha256": "1b63a83543b1216aed39f332c01c4cc154d2b6f6bd2fd774ddeb03dd3824c043",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1032/"
     },
@@ -77,7 +77,7 @@
       "encoding": "utf-8",
       "etag": "\"c1f6b31250b0719eb7818610f9f0756d\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:48 GMT",
-      "observed_at": "2026-09-07T21:23:10Z",
+      "observed_at": "2026-09-07T21:36:13Z",
       "sha256": "c3746c27de0bc872f1bb947108e13ba2174e5c53ffc805fff0d6478fdd03464c",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1033/"
     },
@@ -85,7 +85,7 @@
       "encoding": "utf-8",
       "etag": "\"2394d097d5ccb6fb759f62405d3a696d\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:03 GMT",
-      "observed_at": "2026-09-07T21:23:10Z",
+      "observed_at": "2026-09-07T21:36:14Z",
       "sha256": "8c145f2d5330ed9dc14f7fcae8dd40d5553a8ea361fbcd39b21d0b0fc5a5d719",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1034/"
     },
@@ -93,7 +93,7 @@
       "encoding": "utf-8",
       "etag": "\"e4f04ea20e81fe74e6293549ac16bf84\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:27 GMT",
-      "observed_at": "2026-09-07T21:23:11Z",
+      "observed_at": "2026-09-07T21:36:14Z",
       "sha256": "40607294c625a6b9dcf94c6c621b1da83873dc79f4c66f8d09b4d76e86f30016",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1035/"
     },
@@ -101,7 +101,7 @@
       "encoding": "utf-8",
       "etag": "\"4102714c6b7dc543c4bae09000cbc2d6\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:47 GMT",
-      "observed_at": "2026-09-07T21:23:11Z",
+      "observed_at": "2026-09-07T21:36:14Z",
       "sha256": "e37b7adc503cc6f6f371bee83f7e15654f086c60593d82aa3a24192c0bd4bb9a",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1036/"
     },
@@ -109,7 +109,7 @@
       "encoding": "utf-8",
       "etag": "\"051284a36411054e1309c8e1a69a1325\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:30 GMT",
-      "observed_at": "2026-09-07T21:23:11Z",
+      "observed_at": "2026-09-07T21:36:14Z",
       "sha256": "e5a11c5e56c74f2c00ab7d00927f23a8d5e483a9bea3f9cb31ee36a47053638e",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1100/"
     },
@@ -117,7 +117,7 @@
       "encoding": "utf-8",
       "etag": "\"ee8727eacf3b71b942f8e955eff14fa9\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:33 GMT",
-      "observed_at": "2026-09-07T21:23:11Z",
+      "observed_at": "2026-09-07T21:36:14Z",
       "sha256": "87cd48d16379393cde1822acfe4a9c53305586fac9c75ec8b25cd98d2032498c",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1101/"
     },
@@ -125,7 +125,7 @@
       "encoding": "utf-8",
       "etag": "\"5550d74156eeb28620d736488ede21b6\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:48 GMT",
-      "observed_at": "2026-09-07T21:23:11Z",
+      "observed_at": "2026-09-07T21:36:14Z",
       "sha256": "77b7d9904c20c987b8c483b6302a2f962f6a5ad562e2ee83484b1929b4c31abf",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1102/"
     },
@@ -133,7 +133,7 @@
       "encoding": "utf-8",
       "etag": "\"decc90288dafbeabffa7c4cbda20e622\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:50 GMT",
-      "observed_at": "2026-09-07T21:23:11Z",
+      "observed_at": "2026-09-07T21:36:14Z",
       "sha256": "7d08a549e98a9fe0fda24cd1bd079cd8642a3cebfda1ee61926d8aac4c9e51c3",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1103/"
     },
@@ -141,7 +141,7 @@
       "encoding": "utf-8",
       "etag": "\"54a2a7bca50932f470a42def235c69b0\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:26 GMT",
-      "observed_at": "2026-09-07T21:23:11Z",
+      "observed_at": "2026-09-07T21:36:14Z",
       "sha256": "f452f81cf9c66c20264b3e3dae256f1d12d1ef3e246b1ba01bfa7536a7390a1d",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx110x/"
     },
@@ -149,7 +149,7 @@
       "encoding": "utf-8",
       "etag": "\"00e361535ea54d5b647af5c6e3c05319\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:44 GMT",
-      "observed_at": "2026-09-07T21:23:11Z",
+      "observed_at": "2026-09-07T21:36:14Z",
       "sha256": "af25d962a2994d87f017f7852b3abeab4da32526b242761d54f1171a9648ccd5",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1150/"
     },
@@ -157,7 +157,7 @@
       "encoding": "utf-8",
       "etag": "\"0467f271773fd5032ee3ff9602bd23c8\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:03 GMT",
-      "observed_at": "2026-09-07T21:23:12Z",
+      "observed_at": "2026-09-07T21:36:15Z",
       "sha256": "5b757ebbdf961a42870b6b75975f15210f1e14d72639f28a5d904fda3792a794",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1151/"
     },
@@ -165,7 +165,7 @@
       "encoding": "utf-8",
       "etag": "\"d243a62609eecfc634c4b2f0ebff060d\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:02 GMT",
-      "observed_at": "2026-09-07T21:23:12Z",
+      "observed_at": "2026-09-07T21:36:15Z",
       "sha256": "52fb4729ea362564747207c3faca24352b6abdffe2ba7f12d008e8c766955f16",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1152/"
     },
@@ -173,7 +173,7 @@
       "encoding": "utf-8",
       "etag": "\"0ad8ad97823698eed774a24e383dd947\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:33 GMT",
-      "observed_at": "2026-09-07T21:23:12Z",
+      "observed_at": "2026-09-07T21:36:15Z",
       "sha256": "98f19bc3ab8c5f39514608a8df0609ea0eec022dee4541a40f54731c1d7060e6",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1153/"
     },
@@ -181,7 +181,7 @@
       "encoding": "utf-8",
       "etag": "\"cdbc243ce2b2ce995571f5379cbdbbcb\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:58 GMT",
-      "observed_at": "2026-09-07T21:23:12Z",
+      "observed_at": "2026-09-07T21:36:15Z",
       "sha256": "83f410807e8a88ccb2b5ae367d32422e81d95dd1c8f205cf55b4fd89bd73acd7",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx115x/"
     },
@@ -189,7 +189,7 @@
       "encoding": "utf-8",
       "etag": "\"e0daafaffb690062bb818cc4d8c171ae\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:02 GMT",
-      "observed_at": "2026-09-07T21:23:12Z",
+      "observed_at": "2026-09-07T21:36:15Z",
       "sha256": "b4a9007d40d79a45fe9e4822f38f9779a836618dd6833ef649e89e0a912d5b2d",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx12-0/"
     },
@@ -197,7 +197,7 @@
       "encoding": "utf-8",
       "etag": "\"ca3a743e25ecef2c850aaa4d19083123\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:14 GMT",
-      "observed_at": "2026-09-07T21:23:12Z",
+      "observed_at": "2026-09-07T21:36:15Z",
       "sha256": "19ab3a8f56983795e59c6ceb23a459abce60b4113eb399722c91c1658f211c0c",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1200/"
     },
@@ -205,7 +205,7 @@
       "encoding": "utf-8",
       "etag": "\"fbf90dea201131f492590afeeb5ffa6e\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:18 GMT",
-      "observed_at": "2026-09-07T21:23:12Z",
+      "observed_at": "2026-09-07T21:36:15Z",
       "sha256": "d73d68d1f4f284f10f47d6aefe4bc45a0e402b15cab2deadaac9415a52dadf3b",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1201/"
     },
@@ -213,7 +213,7 @@
       "encoding": "utf-8",
       "etag": "\"e8efcb3067c291fe5f42fd5d4c06cdea\"",
       "last_modified": "Mon, 07 Sep 2026 03:55:20 GMT",
-      "observed_at": "2026-09-07T21:23:12Z",
+      "observed_at": "2026-09-07T21:36:15Z",
       "sha256": "bee62961f4cb7986ab5911835002f8e1ca9e607370be9ca866c54111713a3bb3",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1250/"
     },
@@ -221,7 +221,7 @@
       "encoding": "utf-8",
       "etag": "\"39a7945897b3da7566d9d2f756dd192c\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:00 GMT",
-      "observed_at": "2026-09-07T21:23:13Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "81efe49efa264f45fcf15577067913abd653d7616c4e3e8c69fcecac8380d40f",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx900/"
     },
@@ -229,7 +229,7 @@
       "encoding": "utf-8",
       "etag": "\"37f00a6fb5dc59abafe7b0745c579133\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:33 GMT",
-      "observed_at": "2026-09-07T21:23:13Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "64db9b64d7373f1e1995908d23e15d1a252b57a444686fcdb62734f9e5f59af0",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx906/"
     },
@@ -237,7 +237,7 @@
       "encoding": "utf-8",
       "etag": "\"f87fd88704cdae82d86a301cd2f86a0d\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:19 GMT",
-      "observed_at": "2026-09-07T21:23:13Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "fc7a3aa25edead1eeacf4eb0892dbb5af68c1100d20741ff13516b4a03a07ba3",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx908/"
     },
@@ -245,7 +245,7 @@
       "encoding": "utf-8",
       "etag": "\"81a7e45be2d679d9aed809bde9ac2352\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:04 GMT",
-      "observed_at": "2026-09-07T21:23:13Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "12c6aded69aa0d089299dd064edecf3209c94f6a51bd5ac7d8b066446daa1ec2",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx90a/"
     },
@@ -253,7 +253,7 @@
       "encoding": "utf-8",
       "etag": "\"d9eac23b23f7b1e7635dc43c57785382\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:26 GMT",
-      "observed_at": "2026-09-07T21:23:13Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "ceb6c0d970f10a01de08fa2631f28d944eebb68c6067278e366ee3651b4af223",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx90c/"
     },
@@ -261,7 +261,7 @@
       "encoding": "utf-8",
       "etag": "\"b193f99769008bed8a499be3e33dfd58\"",
       "last_modified": "Mon, 07 Sep 2026 03:55:19 GMT",
-      "observed_at": "2026-09-07T21:23:13Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "6fac733d6ad0a640dd2eb0453fbae837e3ff7de28575669be2375ad787a92562",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx942/"
     },
@@ -269,7 +269,7 @@
       "encoding": "utf-8",
       "etag": "\"c8fb9ffbcbd9ca9fe8d345b260dd2b83\"",
       "last_modified": "Mon, 07 Sep 2026 03:55:40 GMT",
-      "observed_at": "2026-09-07T21:23:13Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "e6fc687d685078680e41181d11e22b1c13de294e750df2315ea8fb0712516803",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx950/"
     },
@@ -277,7 +277,7 @@
       "encoding": "utf-8",
       "etag": "\"09679d5248d1ef7d9c4468b1f57e624b\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:20 GMT",
-      "observed_at": "2026-09-07T21:23:13Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "5fb182ab4c71d5ee3bbab98e9ffe0f5f5f0e2faec15827b743a6cb7a5615ca21",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1010/"
     },
@@ -285,7 +285,7 @@
       "encoding": "utf-8",
       "etag": "\"0ff10798ff204c446cd24999f691c57e\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:13 GMT",
-      "observed_at": "2026-09-07T21:23:14Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "115c85cd8a9e7c909e478a3d030c93f6decadd57d3a4c02d14a36301c8a4771d",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1011/"
     },
@@ -293,7 +293,7 @@
       "encoding": "utf-8",
       "etag": "\"b3bf87b9bbce2f285cca93e3e6917703\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:47 GMT",
-      "observed_at": "2026-09-07T21:23:14Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "70d783eef3f13fbab62646aaa1f0b58ff00b34642106cc74a76656d35b107ab3",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1012/"
     },
@@ -301,7 +301,7 @@
       "encoding": "utf-8",
       "etag": "\"2377e98f467ed3e671ca39e65cb666df\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:17 GMT",
-      "observed_at": "2026-09-07T21:23:14Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "8ad903549e0e2c03f44fce358b1fc2390d84769f2a88cb6a282e2ecd049e2d18",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1030/"
     },
@@ -309,7 +309,7 @@
       "encoding": "utf-8",
       "etag": "\"b13c5ccee43ec2e878c9776b6907c0bd\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:41 GMT",
-      "observed_at": "2026-09-07T21:23:14Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "6a5a2ca4125d0e2f4fbb5f1f42cceb806eaceeb91a1013aa1d29ee614178d771",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1031/"
     },
@@ -317,7 +317,7 @@
       "encoding": "utf-8",
       "etag": "\"6ecccba14501a225a43bec510e49f9be\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:25 GMT",
-      "observed_at": "2026-09-07T21:23:14Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "e709f7b9f42b046172997431ebab570f19f8bdee339c990b930adaef14e11550",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1032/"
     },
@@ -325,7 +325,7 @@
       "encoding": "utf-8",
       "etag": "\"61e7de51292484fbe7d20243d6435b40\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:57 GMT",
-      "observed_at": "2026-09-07T21:23:14Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "bf5059abb6e1d5e4aa2004fa0bce4810f1bbaaf7f818f528bc56d67c705e2e98",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1033/"
     },
@@ -333,7 +333,7 @@
       "encoding": "utf-8",
       "etag": "\"53c505d14c522a6b253f936c5362fcc5\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:27 GMT",
-      "observed_at": "2026-09-07T21:23:14Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "d313abacbf38c6f12df5d5fa3b7565761e2f07107edb82fd5eac7d78b74351a2",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1034/"
     },
@@ -341,7 +341,7 @@
       "encoding": "utf-8",
       "etag": "\"2b0814bc7db4813b794413170577627a\"",
       "last_modified": "Mon, 07 Sep 2026 06:13:02 GMT",
-      "observed_at": "2026-09-07T21:23:14Z",
+      "observed_at": "2026-09-07T21:36:16Z",
       "sha256": "913db17b1434217b00bab5819e8cca34355e951002897217f8d166fd5fa1cb6c",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1035/"
     },
@@ -349,7 +349,7 @@
       "encoding": "utf-8",
       "etag": "\"165f4e8eeaac9d2742f2eb37529e1e8d\"",
       "last_modified": "Mon, 07 Sep 2026 06:13:18 GMT",
-      "observed_at": "2026-09-07T21:23:15Z",
+      "observed_at": "2026-09-07T21:36:17Z",
       "sha256": "d277f7350f167140270aeeb299e2f6e068442b357ad8db98e07780568296981d",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1036/"
     },
@@ -357,7 +357,7 @@
       "encoding": "utf-8",
       "etag": "\"06182b7dbc69fdd90f9ee564ef699c9a\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:03 GMT",
-      "observed_at": "2026-09-07T21:23:15Z",
+      "observed_at": "2026-09-07T21:36:17Z",
       "sha256": "5cdf965013c4f1cce0a22e6b906e6419d8a3b1327bb7d77d02467c668368873c",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1100/"
     },
@@ -365,7 +365,7 @@
       "encoding": "utf-8",
       "etag": "\"d1a6264d22d3c565d952108b27c3a739\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:31 GMT",
-      "observed_at": "2026-09-07T21:23:15Z",
+      "observed_at": "2026-09-07T21:36:17Z",
       "sha256": "4331ce9c11c46e3cb1f69d2074e975a196f312aad62c5aa1b6c881da664bcce1",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1101/"
     },
@@ -373,7 +373,7 @@
       "encoding": "utf-8",
       "etag": "\"68c9be7fcb6f4cfdcbbee1fb0b96ff1a\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:37 GMT",
-      "observed_at": "2026-09-07T21:23:15Z",
+      "observed_at": "2026-09-07T21:36:17Z",
       "sha256": "c945333518ea89586d7d1fbf4e7b6210df4f073650167077f9365b8562c17b85",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1102/"
     },
@@ -381,7 +381,7 @@
       "encoding": "utf-8",
       "etag": "\"c128991748f80e5b893d8524a64d28a1\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:45 GMT",
-      "observed_at": "2026-09-07T21:23:15Z",
+      "observed_at": "2026-09-07T21:36:17Z",
       "sha256": "d3b76c49da6069ae259e3424b2bdcbfd2c1ecc913ddb19764b6ecbc52f07756c",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1103/"
     },
@@ -389,7 +389,7 @@
       "encoding": "utf-8",
       "etag": "\"f3b17827b42e733abe04841046d79742\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:58 GMT",
-      "observed_at": "2026-09-07T21:23:15Z",
+      "observed_at": "2026-09-07T21:36:17Z",
       "sha256": "01bec57e491706a9e461309f50325af3bbdc17eb9e7621d3afc24427043d53d3",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1150/"
     },
@@ -397,7 +397,7 @@
       "encoding": "utf-8",
       "etag": "\"d1068668275502277acc4a44a31215cb\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:58 GMT",
-      "observed_at": "2026-09-07T21:23:15Z",
+      "observed_at": "2026-09-07T21:36:17Z",
       "sha256": "a5a66c307e328a0568e84de19bdd550d514c4d827f9a75bfea7d5538f8cc9685",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1151/"
     },
@@ -405,7 +405,7 @@
       "encoding": "utf-8",
       "etag": "\"626e56be861328f8280cd82b3a00a636\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:13 GMT",
-      "observed_at": "2026-09-07T21:23:15Z",
+      "observed_at": "2026-09-07T21:36:17Z",
       "sha256": "e64e7472979ca2108a6de30cbefcf0d39b19a4b2ceb323858e04b3755819746f",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1152/"
     },
@@ -413,7 +413,7 @@
       "encoding": "utf-8",
       "etag": "\"28da3af3fcaf5ef5e6d3e5a8ee5625d2\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:42 GMT",
-      "observed_at": "2026-09-07T21:23:16Z",
+      "observed_at": "2026-09-07T21:36:17Z",
       "sha256": "f1c730006e4ce30e27b8452986f24f428610633cb8a85e766b7d5a8d83ef7990",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1153/"
     },
@@ -421,7 +421,7 @@
       "encoding": "utf-8",
       "etag": "\"bf2f6943c5e06c34c025c863119d11a7\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:32 GMT",
-      "observed_at": "2026-09-07T21:23:16Z",
+      "observed_at": "2026-09-07T21:36:17Z",
       "sha256": "7ec593ef4c7605a53e0af0f39b8894cbe1729ac4dac56b10237f2016e44193be",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1200/"
     },
@@ -429,7 +429,7 @@
       "encoding": "utf-8",
       "etag": "\"863b74e4cf63528b53d5e86d439783a6\"",
       "last_modified": "Mon, 07 Sep 2026 06:13:33 GMT",
-      "observed_at": "2026-09-07T21:23:16Z",
+      "observed_at": "2026-09-07T21:36:18Z",
       "sha256": "fdc4f71f39c921d7d284128a0dab53fe3d11a7d6e49b62ce4f8362a3c1d382c0",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1201/"
     },
@@ -437,7 +437,7 @@
       "encoding": "utf-8",
       "etag": "\"55a807e969e183de7860e1384de6b3c1\"",
       "last_modified": "Mon, 07 Sep 2026 03:55:19 GMT",
-      "observed_at": "2026-09-07T21:23:16Z",
+      "observed_at": "2026-09-07T21:36:18Z",
       "sha256": "ac0392b930f97aeb1cf6f3155619e5e5431cb62a9a5e16a985b73d526f6ddafc",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1250/"
     },
@@ -445,7 +445,7 @@
       "encoding": "utf-8",
       "etag": "\"1a800419f8deefab7d6088007620526e\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:56 GMT",
-      "observed_at": "2026-09-07T21:23:16Z",
+      "observed_at": "2026-09-07T21:36:18Z",
       "sha256": "d1c8be5e27fa239a02b5b11896884d802e39787eb5cfc7e85ac4f88146af0a1b",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx900/"
     },
@@ -453,7 +453,7 @@
       "encoding": "utf-8",
       "etag": "\"bda9edd3b9363afdba1a9b76d27c94d2\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:55 GMT",
-      "observed_at": "2026-09-07T21:23:16Z",
+      "observed_at": "2026-09-07T21:36:18Z",
       "sha256": "cf1aa800f82634e5a3fb97b06a9886c87abbd3299fce5876ef7263990054bd73",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx906/"
     },
@@ -461,7 +461,7 @@
       "encoding": "utf-8",
       "etag": "\"e1ab5de7cb8958d6169ac152045ca3f4\"",
       "last_modified": "Mon, 07 Sep 2026 06:13:00 GMT",
-      "observed_at": "2026-09-07T21:23:16Z",
+      "observed_at": "2026-09-07T21:36:18Z",
       "sha256": "57bdc171c779b0ba88962e6d985c3fed9cc85ae3841eafb288af188ab4cf99df",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx908/"
     },
@@ -469,7 +469,7 @@
       "encoding": "utf-8",
       "etag": "\"af74039abb9ba1a1c808a8503f3b29d9\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:18 GMT",
-      "observed_at": "2026-09-07T21:23:16Z",
+      "observed_at": "2026-09-07T21:36:18Z",
       "sha256": "89d40e19678751588bf257cfdc9d299d0b2a5760d66f9f09426299a2d199af02",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx90a/"
     },
@@ -477,7 +477,7 @@
       "encoding": "utf-8",
       "etag": "\"8b5eae427be06af0eeb03d819287e732\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:33 GMT",
-      "observed_at": "2026-09-07T21:23:17Z",
+      "observed_at": "2026-09-07T21:36:18Z",
       "sha256": "24e6253841d08500bd07ead7914f2b935047991cef4a3a62519171f54afec1e6",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx90c/"
     },
@@ -485,7 +485,7 @@
       "encoding": "utf-8",
       "etag": "\"c4df4909d0c91529a269cf25f5a3d503\"",
       "last_modified": "Mon, 07 Sep 2026 03:55:19 GMT",
-      "observed_at": "2026-09-07T21:23:17Z",
+      "observed_at": "2026-09-07T21:36:18Z",
       "sha256": "b0ae35d3c932fd4299319ffa266fcc64a3ea4bb1fa56b3d9db48d09021891779",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx942/"
     },
@@ -493,7 +493,7 @@
       "encoding": "utf-8",
       "etag": "\"71d702212a47fcabf583689bf9b74906\"",
       "last_modified": "Mon, 07 Sep 2026 03:55:19 GMT",
-      "observed_at": "2026-09-07T21:23:17Z",
+      "observed_at": "2026-09-07T21:36:18Z",
       "sha256": "f344f53191ce899adf6cb564cb922a1629d487089f4703bb4016422e950664a8",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx950/"
     },
@@ -501,7 +501,7 @@
       "encoding": "utf-8",
       "etag": "\"7c2466d6e15652917599ad97dd774b84\"",
       "last_modified": "Mon, 07 Sep 2026 03:55:19 GMT",
-      "observed_at": "2026-09-07T21:23:17Z",
+      "observed_at": "2026-09-07T21:36:18Z",
       "sha256": "851d018cae1da4b9a124be0a81652f95c9ed511a94cad8a7ee44e012b268dae3",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/apex/"
     },
@@ -509,7 +509,7 @@
       "encoding": "utf-8",
       "etag": "\"14f2dbc910702a68eaa862eb8b4000d0\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:19 GMT",
-      "observed_at": "2026-09-07T21:23:17Z",
+      "observed_at": "2026-09-07T21:36:18Z",
       "sha256": "088efab8612027e2e135c4ec7043917a687598442e0147006b1b3e9dbe83de34",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/torch/"
     },
@@ -517,7 +517,7 @@
       "encoding": "utf-8",
       "etag": "\"dc1b00040b2e66809ce7d1411206d9fa\"",
       "last_modified": "Mon, 07 Sep 2026 06:11:49 GMT",
-      "observed_at": "2026-09-07T21:23:17Z",
+      "observed_at": "2026-09-07T21:36:18Z",
       "sha256": "c063d99dbdd833a5e3dcda9ecfe8b36fb955d5a4b519de9bacd49c2ef35132fc",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/torchaudio/"
     },
@@ -525,7 +525,7 @@
       "encoding": "utf-8",
       "etag": "\"c2c3a40d66c4aa503b79182a41ba16ad\"",
       "last_modified": "Mon, 07 Sep 2026 06:12:04 GMT",
-      "observed_at": "2026-09-07T21:23:17Z",
+      "observed_at": "2026-09-07T21:36:18Z",
       "sha256": "754708d24b4bc8ba65f3c8ef29c9b3bb533c7171798d3696f6f1d989253a6b26",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/torchvision/"
     },
@@ -533,7 +533,7 @@
       "encoding": "utf-8",
       "etag": "\"c434ccc8c05e56fffe4f7d02c2c35242\"",
       "last_modified": "Mon, 07 Sep 2026 03:55:18 GMT",
-      "observed_at": "2026-09-07T21:23:17Z",
+      "observed_at": "2026-09-07T21:36:18Z",
       "sha256": "ccf78a0196f5bb53524fe9261cf6c6a77701e44d40ac7d8eb4f92ec5b67db9ea",
       "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/triton/"
     },
@@ -581,7 +581,7 @@
       "encoding": "utf-8",
       "etag": "\"28fba877d19cf509f6f8af11a9a2c2732f8d57e4dd036b12dfad8098bf6899b1\"",
       "last_modified": null,
-      "observed_at": "2026-09-07T21:24:14Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "sha256": "cff1b483b508664aa7d27f778ce9100356f3f032c6bb2b0621b222bcf96ac95b",
       "url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst"
     },
@@ -589,7 +589,7 @@
       "encoding": "utf-8",
       "etag": "\"6f6414972003450466fe0fe6eb30715ead2612d132fc21fa879f2e90665c7b43\"",
       "last_modified": null,
-      "observed_at": "2026-09-07T21:24:14Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "sha256": "99112f39fab9748b5365a88ae5cdf72ab41f16f3faf8b416203120d73817cbfc",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
     },
@@ -597,7 +597,7 @@
       "encoding": "utf-8",
       "etag": "\"fa9e27db68db83c8684f50ef95657ea90050d88657bc64c1ef0041ac8646dba5\"",
       "last_modified": null,
-      "observed_at": "2026-09-07T21:24:14Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "sha256": "52497e563fe0dffa150297d349f8dac066a1651aa3386b18a8f6b64621fc9f2a",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     },
@@ -605,7 +605,7 @@
       "encoding": "utf-8",
       "etag": "\"b8aff74b9b7e2dff5d9a7b63fa0c350c9f955b7ab4783fee8e8ee7b538e05ffb\"",
       "last_modified": null,
-      "observed_at": "2026-09-07T21:24:14Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "sha256": "fbb95a92b3ace6954ae813408b10683959edf16795128d48893a65c0ce7851ae",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/version.json"
     },
@@ -613,7 +613,7 @@
       "encoding": "utf-8",
       "etag": "\"ca77741a6e47893224576f8cde4acd239305c788bf83b746aebc00ce923f79fb\"",
       "last_modified": null,
-      "observed_at": "2026-09-07T21:24:15Z",
+      "observed_at": "2026-09-07T21:36:07Z",
       "sha256": "1dbd4f6c337261930ff34c5076ad80b3699f231f4778ac245f2a9ea7b6a08837",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-10.0/SUPPORTED_GPUS.md"
     },
@@ -621,7 +621,7 @@
       "encoding": "utf-8",
       "etag": "\"801be983d9a36b511b693cd4fed28ca9d4d7f325bd9a8e413387918a543af0e3\"",
       "last_modified": null,
-      "observed_at": "2026-09-07T21:24:15Z",
+      "observed_at": "2026-09-07T21:36:07Z",
       "sha256": "629c23231bb26782f5e18e4b21f7b380d35c4a57d9fd14b01d94aa9ed7bc0a6b",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.11/SUPPORTED_GPUS.md"
     },
@@ -629,7 +629,7 @@
       "encoding": "utf-8",
       "etag": "\"22d6a2b025376fed0e43367fa0384ee11b74c637b0f45d0b4a592c928689129b\"",
       "last_modified": null,
-      "observed_at": "2026-09-07T21:24:15Z",
+      "observed_at": "2026-09-07T21:36:07Z",
       "sha256": "1fd51ba1e4f5e5e69a8a13a5e3185c8eb6b3c4562d5c05df62abfb1ab95a81fa",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.12/SUPPORTED_GPUS.md"
     },
@@ -637,7 +637,7 @@
       "encoding": "utf-8",
       "etag": "\"22d6a2b025376fed0e43367fa0384ee11b74c637b0f45d0b4a592c928689129b\"",
       "last_modified": null,
-      "observed_at": "2026-09-07T21:24:15Z",
+      "observed_at": "2026-09-07T21:36:07Z",
       "sha256": "1fd51ba1e4f5e5e69a8a13a5e3185c8eb6b3c4562d5c05df62abfb1ab95a81fa",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.13/SUPPORTED_GPUS.md"
     },
@@ -645,7 +645,7 @@
       "encoding": "utf-8",
       "etag": "\"4b8334bf3338d7529444766fd7fe1ac6d5f2b11b492181c83919424d3aa97e00\"",
       "last_modified": null,
-      "observed_at": "2026-09-07T21:24:15Z",
+      "observed_at": "2026-09-07T21:36:07Z",
       "sha256": "d1059465ca3db8074ae2b0ba5bbe6a13dc444da931f50cf9ce31300da6b5aacf",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.14.1/SUPPORTED_GPUS.md"
     },
@@ -653,7 +653,7 @@
       "encoding": "utf-8",
       "etag": "\"4b8334bf3338d7529444766fd7fe1ac6d5f2b11b492181c83919424d3aa97e00\"",
       "last_modified": null,
-      "observed_at": "2026-09-07T21:24:15Z",
+      "observed_at": "2026-09-07T21:36:07Z",
       "sha256": "d1059465ca3db8074ae2b0ba5bbe6a13dc444da931f50cf9ce31300da6b5aacf",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.14/SUPPORTED_GPUS.md"
     },
@@ -661,7 +661,7 @@
       "encoding": "utf-8",
       "etag": "\"11d2d9f7d776d8a749129ad30fe3bedfca4017e74a7bb280088bb4c79dbf26b6\"",
       "last_modified": null,
-      "observed_at": "2026-09-07T21:24:14Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "sha256": "5cdec7856899d620b2312a0608db187c3c1ec44475f39d976d1fe18a3bc293bd",
       "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     },
@@ -1845,7 +1845,7 @@
       "encoding": "utf-8",
       "etag": "\"ddc5d92027a004421fe7b6a9858da7f8\"",
       "last_modified": "Wed, 02 Sep 2026 16:19:58 GMT",
-      "observed_at": "2026-09-07T21:24:14Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "sha256": "dba48a2b401b0d9fdd734eb046f98d6bb6b04f158f2e636a21bec6d56fa31f13",
       "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
     },
@@ -2773,7 +2773,7 @@
       "encoding": "utf-8",
       "etag": "\"bed8bcd528f2c824596f4e9628c5fe7c\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:03Z",
+      "observed_at": "2026-09-07T21:36:08Z",
       "sha256": "390d7d2789139d60a74e34e3b21a0006af62b71fd00dd9c2c4411574936ff973",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/"
     },
@@ -2781,7 +2781,7 @@
       "encoding": "utf-8",
       "etag": "\"92d4d66f08bc670913a01b200240d1d9\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:03Z",
+      "observed_at": "2026-09-07T21:36:08Z",
       "sha256": "8081282b31b680d46e9d33f039e0f71cb9baa6e4b53f0855a97eeec0ec14cfd7",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1010/"
     },
@@ -2789,7 +2789,7 @@
       "encoding": "utf-8",
       "etag": "\"f2bafdd384d3bad7d50ec185f7c8ef8c\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:05 GMT",
-      "observed_at": "2026-09-07T21:23:03Z",
+      "observed_at": "2026-09-07T21:36:08Z",
       "sha256": "e7bd0c1337b484189e867318438b2e57bd76fd580a52b64faf1b2e75f59cf54b",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1011/"
     },
@@ -2797,7 +2797,7 @@
       "encoding": "utf-8",
       "etag": "\"3584c2f597c72571616aaa492978483a\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:05 GMT",
-      "observed_at": "2026-09-07T21:23:03Z",
+      "observed_at": "2026-09-07T21:36:08Z",
       "sha256": "21f7b3eae4ae4e5aeddad9f3e8ac3ac281bdc6d8d0a4f573610755198985d40c",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1012/"
     },
@@ -2805,7 +2805,7 @@
       "encoding": "utf-8",
       "etag": "\"0a13a89e665962085269b576f0269494\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:05 GMT",
-      "observed_at": "2026-09-07T21:23:03Z",
+      "observed_at": "2026-09-07T21:36:08Z",
       "sha256": "c2adf1dcab2fc4c70d975601b33c5e27a650af8d8807a616f65b3e0d34667ee1",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1030/"
     },
@@ -2813,7 +2813,7 @@
       "encoding": "utf-8",
       "etag": "\"5cd1534b513c6d3cfda00109e915c8b5\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:03Z",
+      "observed_at": "2026-09-07T21:36:08Z",
       "sha256": "8aa3c090b23f503d6695d5d4f09618cc3b36a4e3442e109698a8839e6ba05840",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1031/"
     },
@@ -2821,7 +2821,7 @@
       "encoding": "utf-8",
       "etag": "\"fe27a67c5a91aaf8de42fb01ba6b8689\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:05 GMT",
-      "observed_at": "2026-09-07T21:23:03Z",
+      "observed_at": "2026-09-07T21:36:08Z",
       "sha256": "732e5ad685b51aef495d096aa7d5fa577ad2449bfdfbb58fd2eee97371a7af28",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1032/"
     },
@@ -2829,7 +2829,7 @@
       "encoding": "utf-8",
       "etag": "\"e671c3fc4ce8891605772f43ab9a82e4\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:05 GMT",
-      "observed_at": "2026-09-07T21:23:03Z",
+      "observed_at": "2026-09-07T21:36:08Z",
       "sha256": "d6463675b19f12767afbef465f14d0780a9f64b98b7e4b9c87b7c8d334a613da",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1033/"
     },
@@ -2837,7 +2837,7 @@
       "encoding": "utf-8",
       "etag": "\"2d0b30f9fe74d7c415ed338b820f33bd\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:05 GMT",
-      "observed_at": "2026-09-07T21:23:03Z",
+      "observed_at": "2026-09-07T21:36:08Z",
       "sha256": "6d19a4a3caaec7a9a18b2b27c8e25ef0dc8c343cc831be8bd37c05f3a2982f0e",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1034/"
     },
@@ -2845,7 +2845,7 @@
       "encoding": "utf-8",
       "etag": "\"83c40954a45fffd8d3f9cd5ec65eae5f\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:05 GMT",
-      "observed_at": "2026-09-07T21:23:04Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "2cf8435c4e35e15089044b50e82cd9dd2d7fbc821340cc3e9a1894100a75a242",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1035/"
     },
@@ -2853,7 +2853,7 @@
       "encoding": "utf-8",
       "etag": "\"3466199e13a430dc524ba3a488c110e0\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:05 GMT",
-      "observed_at": "2026-09-07T21:23:04Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "96b771853c044154dd295f06f7f9758ccf233a299276b34498e2783f8535129b",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1036/"
     },
@@ -2861,7 +2861,7 @@
       "encoding": "utf-8",
       "etag": "\"716bf323883829b669aacab6ceb72408\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:05 GMT",
-      "observed_at": "2026-09-07T21:23:04Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "b6efab969ee4b8a2f3cc34f98140a75ff2bdd1d664c29c508ac55f45ed72bd70",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1100/"
     },
@@ -2869,7 +2869,7 @@
       "encoding": "utf-8",
       "etag": "\"307b7bb10aa51c0da91c68b3a8d7134b\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:05 GMT",
-      "observed_at": "2026-09-07T21:23:04Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "8dbab99524261619e773c951e1885be2054ae1cbd18694cfa7f043699afb4651",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1101/"
     },
@@ -2877,7 +2877,7 @@
       "encoding": "utf-8",
       "etag": "\"a1dc86a4cdb9a7f48c3487d830c83df5\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:04Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "323d66a3d46ca44818697ee349901179323325227e9abe6a13582d1cab9ac6d2",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1102/"
     },
@@ -2885,7 +2885,7 @@
       "encoding": "utf-8",
       "etag": "\"8f9c20643c07beae7319332409eb30f4\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:05 GMT",
-      "observed_at": "2026-09-07T21:23:04Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "68117d398ab9ed17bb0d6f38cad2261726a1e2cc08287d66a9969b4879128958",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1103/"
     },
@@ -2893,7 +2893,7 @@
       "encoding": "utf-8",
       "etag": "\"f59ce246d304756e7b3f2454f769eda1\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:04Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "37b611dc132d4c9533d471ee3563eb06787958eba16242a898f431e28e7f7989",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx110x/"
     },
@@ -2901,7 +2901,7 @@
       "encoding": "utf-8",
       "etag": "\"3868483affb3e30b79dcde6a8bbe7be8\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:04Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "441d6bf578e998a5367781169ff2fc3a45468eedd19da05f702ec3d1704fc181",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1150/"
     },
@@ -2909,7 +2909,7 @@
       "encoding": "utf-8",
       "etag": "\"1351b551fa7b1d4141d7c80cd09d3508\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:05 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "ee6915071e0552ca9d90e0e38c1d444561d4a0899d8359000d76f670612b6f28",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1151/"
     },
@@ -2917,7 +2917,7 @@
       "encoding": "utf-8",
       "etag": "\"a6205fd2dcf908ab4f6bb9a0bbf16690\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "6abc1136701aa0ce6240b21e182c56ac77c9d536443b0e40d91753bfe9e11005",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1152/"
     },
@@ -2925,7 +2925,7 @@
       "encoding": "utf-8",
       "etag": "\"712de4e6581ed1ebd389b0eacf47a7ff\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "1a16df10dc28b2160cdfd0e1f6e1e4b377062450915c650f4e0d12ce106f708a",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1153/"
     },
@@ -2933,7 +2933,7 @@
       "encoding": "utf-8",
       "etag": "\"b55cb2cfc2e30da36ffe77b9cf8feaa0\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "33e5480e0764e12ea52895547df7cd1a53c7dd4e59fee1a4db1f37528b3d0639",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx115x/"
     },
@@ -2941,7 +2941,7 @@
       "encoding": "utf-8",
       "etag": "\"def700aeb638d43ef4888abd8ac102cd\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "c0847ba445952eb6801702fe3c73a480e9363c909858a989d8557b3ca837a2bd",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx12-0/"
     },
@@ -2949,7 +2949,7 @@
       "encoding": "utf-8",
       "etag": "\"a4fe1f3937e1c77fb8818276913c6a99\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "30e6cc52e9604f3b84ae322d927835e1fd68160a266b17d650936fb683fcd2af",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1200/"
     },
@@ -2957,7 +2957,7 @@
       "encoding": "utf-8",
       "etag": "\"645bdceccf60d7b46d82d01936f08f14\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:09Z",
       "sha256": "2faff4a32037741aaaf7b6d4c4181f361595f83357e77d4827353e865ac96c73",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1201/"
     },
@@ -2965,7 +2965,7 @@
       "encoding": "utf-8",
       "etag": "\"a0b677eeb1aaa383b01b7342c41ae260\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:10Z",
       "sha256": "4bc6a715e9ee3a2f2683de1d7abaed5e3528498450f4d90758e537ed13f2d8a1",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx1250/"
     },
@@ -2973,7 +2973,7 @@
       "encoding": "utf-8",
       "etag": "\"25d701394b7126d5532685b20f87cc86\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:10Z",
       "sha256": "90781bc31264b4bfd21de24ced93f4369bb93e5adc8d70997a85e76f0d498ee9",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx908/"
     },
@@ -2981,7 +2981,7 @@
       "encoding": "utf-8",
       "etag": "\"45fb18dcfb2b924d3ce02d428483f5c4\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:10Z",
       "sha256": "3216d69212aef4d84a4bb53c0763ecce3e4cb2679ef3a4f9089e784fbc39cf20",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx90a/"
     },
@@ -2989,7 +2989,7 @@
       "encoding": "utf-8",
       "etag": "\"1e65ca26b50a6975f721094b77e9ee1c\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:10Z",
       "sha256": "b5a38b1da5e92a4f2d38d2df3e0711dd5d7f5fd376bfcfb86001a97c9f90a160",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx942/"
     },
@@ -2997,7 +2997,7 @@
       "encoding": "utf-8",
       "etag": "\"7808e5ba6fea51b1e91d884ef89b5f36\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:06 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:10Z",
       "sha256": "d0923ec7243c5d7788fa3fe25fad114c26e0e100a6dab47d3bbf58edb1dc9f79",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torch-device-gfx950/"
     },
@@ -3005,7 +3005,7 @@
       "encoding": "utf-8",
       "etag": "\"5d7dda4dde28897881d664337318b2cb\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:10Z",
       "sha256": "e9c8c5f51c0e68fca905d1d61464f6b79d94838b4fffc550f7a5ccd44b9dad06",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1010/"
     },
@@ -3013,7 +3013,7 @@
       "encoding": "utf-8",
       "etag": "\"368699db31521b894d933aab7de4336a\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:10Z",
       "sha256": "29d4521c8726a2f679fa8da7a4c773eca2b0ba4f7676b33a58ea40e285c0bd54",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1011/"
     },
@@ -3021,7 +3021,7 @@
       "encoding": "utf-8",
       "etag": "\"e771130f685d30669acb6b501bb436ec\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:10Z",
       "sha256": "f667ad4bd4933af7a55160a37b38d006cef0e196d89a4dd073325ff5ad27d781",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1012/"
     },
@@ -3029,7 +3029,7 @@
       "encoding": "utf-8",
       "etag": "\"821d767f97a030a75ba2652adf8741ba\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:05Z",
+      "observed_at": "2026-09-07T21:36:10Z",
       "sha256": "19c18ccdd70c24533b91ad139843b74c2a1e3b802b93b0fbc491ebc0de73156f",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1030/"
     },
@@ -3037,7 +3037,7 @@
       "encoding": "utf-8",
       "etag": "\"503313a116d8558515cca742944d5cde\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:06Z",
+      "observed_at": "2026-09-07T21:36:10Z",
       "sha256": "d716ad4e48955f6604340532a22cacbcfd8339d006723f831973867c361adb5f",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1031/"
     },
@@ -3045,7 +3045,7 @@
       "encoding": "utf-8",
       "etag": "\"955d85f7f111c28e79446a0bfb6d2115\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:06Z",
+      "observed_at": "2026-09-07T21:36:10Z",
       "sha256": "0c8998f8dfdaee1b641e2d689e6f0125ea5dde16b7ccebd43cae924ab6ffa106",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1032/"
     },
@@ -3053,7 +3053,7 @@
       "encoding": "utf-8",
       "etag": "\"aa3ad6b5c156a6c40fb6b5622d6adae7\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:06Z",
+      "observed_at": "2026-09-07T21:36:11Z",
       "sha256": "8ead6e202a840e586447f14db29b900b02507877f3b059cd9707700079d52e1e",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1033/"
     },
@@ -3061,7 +3061,7 @@
       "encoding": "utf-8",
       "etag": "\"c43d229a8bd0d86aa0e1ef01105cdf74\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:06Z",
+      "observed_at": "2026-09-07T21:36:10Z",
       "sha256": "a5befe3a9be3b6c9986a3ac817e167de8d966a602b2d2012df089f97499f376e",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1034/"
     },
@@ -3069,7 +3069,7 @@
       "encoding": "utf-8",
       "etag": "\"7005b501e506758f861973030f7b5b6a\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:06Z",
+      "observed_at": "2026-09-07T21:36:11Z",
       "sha256": "ec54a576c8406eb2a47d65ac5a3f265751407f3260ee5108c7c2bb72b50025dd",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1035/"
     },
@@ -3077,7 +3077,7 @@
       "encoding": "utf-8",
       "etag": "\"bab4872d85196440b7a987063573d9d8\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:06Z",
+      "observed_at": "2026-09-07T21:36:11Z",
       "sha256": "6c93f4bf4fd9e25ab532b7939bb62bbf9d13f841b0629b0a74df9ad8723efefd",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1036/"
     },
@@ -3085,7 +3085,7 @@
       "encoding": "utf-8",
       "etag": "\"6a2e43dd428e051a8b7c0f69ec839bcf\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:06Z",
+      "observed_at": "2026-09-07T21:36:11Z",
       "sha256": "a4e7493ece18901102617ffbaa003c3be672776fb2b12b3f25132a543ac7f2fe",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1100/"
     },
@@ -3093,7 +3093,7 @@
       "encoding": "utf-8",
       "etag": "\"f412ace16ce0b6ec742dfaee12e91f8e\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:06Z",
+      "observed_at": "2026-09-07T21:36:11Z",
       "sha256": "09233d40f55c56519775e41da78d207ca59969f8ee1fbc5cfa19dde9bafdbb38",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1101/"
     },
@@ -3101,7 +3101,7 @@
       "encoding": "utf-8",
       "etag": "\"9152851e15edc4a3b94f36ee7d1fe99d\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:11Z",
       "sha256": "e3bcb4f60991f5302dd627e86ff83bd7c174515018e3088f555392ff8874a9ad",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1102/"
     },
@@ -3109,7 +3109,7 @@
       "encoding": "utf-8",
       "etag": "\"24edaa663d418feab9c6988dd9061a7e\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:11Z",
       "sha256": "d28953cc3aa9bbb84c78af36926e5d26ec041cbaabd28cdb6b283d0e6097dd66",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1103/"
     },
@@ -3117,7 +3117,7 @@
       "encoding": "utf-8",
       "etag": "\"cfc785de6e726b556ecd85092fa39bfa\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:11Z",
       "sha256": "6e17df01c966612311d2cd4f52fcb78c14d13e72caa5585db16aef4592caac64",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1150/"
     },
@@ -3125,7 +3125,7 @@
       "encoding": "utf-8",
       "etag": "\"3723f95c171231b7464442ceca5f0110\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:11Z",
       "sha256": "4b8f7e750762750329427a009f1b6dd0073eaf64214ba1e018eb7f380977a37c",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1151/"
     },
@@ -3133,7 +3133,7 @@
       "encoding": "utf-8",
       "etag": "\"2f80f9576866eacceeaa67c4d8ea70d1\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:11Z",
       "sha256": "19593643a7bc449734ee76f1fba0f7d981f1c28f46cd59c5e794dd327eb06786",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1152/"
     },
@@ -3141,7 +3141,7 @@
       "encoding": "utf-8",
       "etag": "\"2b7362bd802ce7cf6718039a65bca3ab\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:11Z",
       "sha256": "6299fcc993127befb75ca08e872b88a2d59f485a9ead004b8606390d6e05ca55",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1153/"
     },
@@ -3149,7 +3149,7 @@
       "encoding": "utf-8",
       "etag": "\"5a7960ca54ea3b9b9f81aa85403c83a5\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:11Z",
       "sha256": "24607aa8bc2a059cc78081b8b05e1e9a49e583249edabd0c781b892cc236cb26",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1200/"
     },
@@ -3157,7 +3157,7 @@
       "encoding": "utf-8",
       "etag": "\"b04b9f06951e456027f589a7d4d2cc82\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:11Z",
       "sha256": "43970295d9a92449a9cbcb29462f09403895906f729d954289ac003e2fc98d58",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1201/"
     },
@@ -3165,7 +3165,7 @@
       "encoding": "utf-8",
       "etag": "\"68e6760e22531f4b745c47626fa32642\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:12Z",
       "sha256": "728770de3d23a902bf1b7003e2329522716e5c13a79932164b145f24bd969c6e",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx1250/"
     },
@@ -3173,7 +3173,7 @@
       "encoding": "utf-8",
       "etag": "\"a506212ffe0a128e16ee14fce12f61b6\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:12Z",
       "sha256": "bc1aae25f2e6e51dd7ffaf1b4285f325672b3b1d19aaae289d72ea92f5a42967",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx908/"
     },
@@ -3181,7 +3181,7 @@
       "encoding": "utf-8",
       "etag": "\"d5d5a001542cd1eca573a8f25f9bf786\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:12Z",
       "sha256": "296961cfe0d4aa548b0aa85c82e3f46d33585a59510d394a9791f13b5249bed9",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx90a/"
     },
@@ -3189,7 +3189,7 @@
       "encoding": "utf-8",
       "etag": "\"f24d1c594ca7cf534d90f139869a7712\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:12Z",
       "sha256": "de602059676f5452de244fd1836b0d01988f29bc411e64721db4b1d602773f42",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx942/"
     },
@@ -3197,7 +3197,7 @@
       "encoding": "utf-8",
       "etag": "\"3862372def5ba6a2cd3e42471f3c604f\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:12Z",
       "sha256": "773052ac289e4933aa9f530624057f3c48c4dce173cb2f73daad0afdf95d636e",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/amd-torchvision-device-gfx950/"
     },
@@ -3205,7 +3205,7 @@
       "encoding": "utf-8",
       "etag": "\"4ceeaa251f95c94f76e1aea30d7cd270\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:12Z",
       "sha256": "81846c76d17d936bac59ccf24f7b585529c62c01a36a3c73f1e1e3a21690b082",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/apex/"
     },
@@ -3213,7 +3213,7 @@
       "encoding": "utf-8",
       "etag": "\"e51bb948a885c2c49a369a0d95bd31a2\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:12Z",
       "sha256": "a8641e52437ac99ce417902c96a39cb52de281b844578b548b7ff7f59e473157",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/torch/"
     },
@@ -3221,7 +3221,7 @@
       "encoding": "utf-8",
       "etag": "\"3de3aa832e0e130a21726d04d568a200\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:07Z",
+      "observed_at": "2026-09-07T21:36:12Z",
       "sha256": "6fe77152033838a300f853ad02875cb68b2f785eb69ae957431e853c19e47011",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/torchaudio/"
     },
@@ -3229,7 +3229,7 @@
       "encoding": "utf-8",
       "etag": "\"b4a66accfb2c1c86050b5abe5d586afe\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:08Z",
+      "observed_at": "2026-09-07T21:36:12Z",
       "sha256": "d27fd685081cc309e6ccf0752d8be31c848946bec301e0aab6d665733331d276",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/torchvision/"
     },
@@ -3237,7 +3237,7 @@
       "encoding": "utf-8",
       "etag": "\"71404b085ce16ccfa13eb64df8726fc7\"",
       "last_modified": "Wed, 26 Aug 2026 11:57:07 GMT",
-      "observed_at": "2026-09-07T21:23:08Z",
+      "observed_at": "2026-09-07T21:36:12Z",
       "sha256": "4f088304085eb38d792c1286cc3041845c3d6c523f9198ae0bda0ffcd0cb4b20",
       "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/triton/"
     }

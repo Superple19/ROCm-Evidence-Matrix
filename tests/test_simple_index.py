@@ -22,6 +22,15 @@ class SimpleIndexTests(unittest.TestCase):
         self.assertIn("amd-torch-device-gfx110x", packages)
         self.assertEqual(discover_gfx_targets(packages), ["gfx1201"])
 
+    def test_discovers_current_whl_next_target_from_torch_device_packages(self):
+        packages = {
+            "amd-torch-device-gfx1201",
+            "amd-torchvision-device-gfx1201",
+            "amd-torch-device-gfx12-0",
+        }
+
+        self.assertEqual(discover_gfx_targets(packages), ["gfx1201"])
+
     def test_parses_only_matching_windows_wheels(self):
         html = (FIXTURES / "package-index.html").read_text(encoding="utf-8")
         artifacts = parse_windows_wheels(

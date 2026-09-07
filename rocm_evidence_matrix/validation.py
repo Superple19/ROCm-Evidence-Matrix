@@ -55,7 +55,9 @@ def validate_snapshot(snapshot):
     if not isinstance(gfx_targets, list):
         raise ValueError("gfx_targets must be a list")
     for target in gfx_targets:
-        expected_names = list(package_names_for_target(target["gfx"]))
+        expected_names = list(package_names_for_target(target["gfx"], packages))
+        if len(expected_names) < 2:
+            raise ValueError(f"Missing device packages for {target['gfx']}")
         if target["device_packages"] != expected_names:
             raise ValueError(f"Unexpected device package names for {target['gfx']}")
         expected_available = all(packages.get(name) for name in expected_names)

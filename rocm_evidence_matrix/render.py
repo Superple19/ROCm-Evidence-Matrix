@@ -45,8 +45,15 @@ def render_snapshots(snapshot_paths):
         )
         packages = snapshot["packages"]
         for target in sorted(snapshot["gfx_targets"], key=lambda item: gfx_key(item["gfx"]), reverse=True):
-            names = package_names_for_target(target["gfx"])
-            versions = [latest_version(packages.get(name, [])) for name in names]
+            names = target.get("device_packages") or package_names_for_target(target["gfx"])
+            rocm_name = next((name for name in names if name.startswith("rocm-sdk-device-")), None)
+            torch_name = next((name for name in names if name.startswith("amd-torch-device-")), None)
+            vision_name = next((name for name in names if name.startswith("amd-torchvision-device-")), None)
+            versions = [
+                latest_version(packages.get(rocm_name, [])) if rocm_name else None,
+                latest_version(packages.get(torch_name, [])) if torch_name else None,
+                latest_version(packages.get(vision_name, [])) if vision_name else None,
+            ]
             cells = [version or "—" for version in versions]
             available = "Yes" if target["all_device_packages_available"] else "No"
             lines.append(f"| `{target['gfx']}` | {' | '.join(cells)} | {available} |")
@@ -56,7 +63,7 @@ def render_snapshots(snapshot_paths):
         target_package_names = {
             package_name
             for target in snapshot["gfx_targets"]
-            for package_name in package_names_for_target(target["gfx"])
+            for package_name in (target.get("device_packages") or package_names_for_target(target["gfx"]))
         }
         additional = [
             (name, artifacts)
