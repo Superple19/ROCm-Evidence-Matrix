@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any
 from urllib.request import Request, urlopen
 
+from .bundle import build_bundle, verify_bundle
 from .sources.therock import build_evidence, collect_documentation_sources, collect_github, collect_hud, collect_source, parse_matrix
 from .catalog import write_catalog
 from .extension_catalog import rebuild_extension_catalog, render_extension_catalog
@@ -196,6 +197,15 @@ def parse_args(argv=None):
     catalog = commands.add_parser("catalog", help="Write the machine-readable artifact catalog without network access.")
     catalog.add_argument("--root", default=".")
     catalog.add_argument("--output", default="data/catalog.json")
+    bundle = commands.add_parser("bundle", help="Build a deterministic immutable catalog bundle without network access.")
+    bundle.add_argument("--root", default=".")
+    bundle.add_argument("--output", required=True)
+    bundle.add_argument("--bundle-version")
+    bundle.add_argument("--matrix-commit")
+    bundle.add_argument("--generated-at")
+    bundle.add_argument("--manager-min", default="0.1.0")
+    verify = commands.add_parser("verify-bundle", help="Verify a catalog bundle manifest, paths, and artifact digests.")
+    verify.add_argument("bundle_path")
     check = commands.add_parser("check", help="Validate committed evidence and generated documentation without network access.")
     check.add_argument("--root", default=".")
     runtime = commands.add_parser("runtime", help="Record ROCm runtime evidence from the current Python environment.")
@@ -725,6 +735,15 @@ def main(argv=None):
         return
     if args.command == "catalog":
         print(f"Wrote {write_catalog(args.root, args.output)}")
+        return
+    if args.command == "bundle":
+        print(
+            f"Wrote {build_bundle(args.root, args.output, bundle_version=args.bundle_version, matrix_commit=args.matrix_commit, generated_at=args.generated_at, manager_min=args.manager_min)}"
+        )
+        return
+    if args.command == "verify-bundle":
+        manifest = verify_bundle(args.bundle_path)
+        print(f"BUNDLE VERIFIED: {manifest['bundle_version']} contract {manifest['contract_version']}")
         return
     if args.command == "check":
         from .check import run_check

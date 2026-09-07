@@ -52,6 +52,8 @@ class CollectionCommandTests(unittest.TestCase):
         render = parse_args(["render"])
         build = parse_args(["build"])
         check = parse_args(["check"])
+        bundle = parse_args(["bundle", "--output", "dist/catalog.zip"])
+        verify_bundle = parse_args(["verify-bundle", "dist/catalog.zip"])
 
         self.assertEqual((therock.command, therock.family), ("collect", "therock"))
         self.assertEqual((legacy.command, legacy.family), ("collect", "legacy"))
@@ -64,6 +66,8 @@ class CollectionCommandTests(unittest.TestCase):
         self.assertEqual(render.command, "render")
         self.assertEqual(build.command, "build")
         self.assertEqual(check.command, "check")
+        self.assertEqual(bundle.command, "bundle")
+        self.assertEqual(verify_bundle.command, "verify-bundle")
 
     def test_source_failure_does_not_stop_next_adapter(self):
         failed_source = {"id": "failed", "url": "https://example.test/failed"}

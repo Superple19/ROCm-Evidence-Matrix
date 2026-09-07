@@ -39,7 +39,7 @@ diagnostic JSON file. There is no upload client, submission endpoint, community
 intake, or maintainer review workflow, and the report is never added to the
 shared catalog automatically.
 
-Official documentation sources and their evidence boundaries are listed in [docs/sources.md](docs/sources.md). The data boundaries and processing layers are documented in [docs/architecture.md](docs/architecture.md), the machine-readable consumer contract is in [docs/consumer-contract.md](docs/consumer-contract.md), and the future ComfyUI Manager boundary is in [docs/manager-boundary.md](docs/manager-boundary.md). Schema changes follow [docs/schema-versioning.md](docs/schema-versioning.md).
+Official documentation sources and their evidence boundaries are listed in [docs/sources.md](docs/sources.md). The data boundaries and processing layers are documented in [docs/architecture.md](docs/architecture.md), the machine-readable consumer contract is in [docs/consumer-contract.md](docs/consumer-contract.md), and the ComfyUI Manager boundary is in [docs/manager-boundary.md](docs/manager-boundary.md). Schema changes follow [docs/schema-versioning.md](docs/schema-versioning.md).
 The latest repository audit and hardening notes are in [docs/code-audit.md](docs/code-audit.md).
 
 Current generated views:
@@ -73,6 +73,23 @@ uv sync --extra dev
 `uv` manages the repository-local `.venv` and keeps dependency resolution in
 `uv.lock`. The collector does not install ROCm, PyTorch, or other
 target-environment packages into the project environment.
+
+## Immutable catalog bundles
+
+Build and verify the versioned catalog bundle used by external consumers:
+
+```powershell
+uv run --locked rocm-matrix bundle `
+  --output dist/rocm-matrix-catalog-2026.09.07.zip `
+  --bundle-version 2026.09.07
+uv run --locked rocm-matrix verify-bundle `
+  dist/rocm-matrix-catalog-2026.09.07.zip
+```
+
+The bundle contains the catalog, generated evidence, application profiles, and
+schemas. Its manifest records the Matrix commit, contract version, manager
+compatibility, and SHA-256 for every artifact. Consumers should select a
+specific bundle rather than treating the `main` branch as a data API.
 
 ## Development quality checks
 

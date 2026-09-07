@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Superple19/ROCm-Evidence-Matrix/schemas/catalog-bundle.schema.json",
+  "title": "ROCm catalog bundle manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "bundle_version",
+    "contract_version",
+    "matrix_commit",
+    "generated_at",
+    "artifacts",
+    "manager_compatibility"
+  ],
+  "properties": {
+    "bundle_version": {
+      "type": "string",
+      "pattern": "^[0-9]{4}\\.[0-9]{2}\\.[0-9]{2}$"
+    },
+    "contract_version": {
+      "const": 1
+    },
+    "matrix_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "path", "schema_version", "sha256"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "schema_version": {"type": "integer", "minimum": 1},
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "manager_compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min"],
+      "properties": {
+        "min": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

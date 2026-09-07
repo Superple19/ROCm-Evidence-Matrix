@@ -62,3 +62,32 @@ jobs:
       - name: Dead-code audit
         continue-on-error: true
         run: uv run --locked vulture rocm_evidence_matrix tests --min-confidence 100
+
+  catalog-bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+        with:
+          version: "0.12.10"
+          python-version: "3.12"
+      - name: Install project
+        run: uv sync --locked
+      - name: Validate source artifacts
+        run: uv run --locked rocm-matrix check
+      - name: Build and verify catalog bundle
+        id: bundle
+        shell: bash
+        run: |
+          bundle_version="$(date -u +%Y.%m.%d)"
+          output="dist/rocm-matrix-catalog-${bundle_version}.zip"
+          uv run --locked rocm-matrix bundle \
+            --output "$output" \
+            --bundle-version "$bundle_version" \
+            --matrix-commit "$GITHUB_SHA"
+          uv run --locked rocm-matrix verify-bundle "$output"
+          echo "output=$output" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rocm-matrix-catalog-${{ github.sha }}
+          path: ${{ steps.bundle.outputs.output }}
