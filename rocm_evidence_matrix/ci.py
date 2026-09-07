@@ -236,14 +236,15 @@ def collect_github(source_config, reader, observed_at):
     workflows = _collect_pages(reader, source_config["workflows"]["url"], "workflows")
     records = []
     selected_workflows = [workflow for workflow in workflows if (any(platform in workflow.get("path", "").lower() for platform in ("windows", "linux", "macos")) or "multi_arch" in workflow.get("path", "").lower() or "pytorch" in workflow.get("path", "").lower() or "rocm_wheels" in workflow.get("path", "").lower() or "artifacts" in workflow.get("path", "").lower())]
-    if len(selected_workflows) > 20:
+    max_selected_workflows = source_config["workflows"].get("max_selected_workflows", 20)
+    if len(selected_workflows) > max_selected_workflows:
         raise CICollectionError(
-            "GitHub workflow coverage exceeded the bounded 20-workflow limit",
+            f"GitHub workflow coverage exceeded the bounded {max_selected_workflows}-workflow limit",
             url=source_config["workflows"]["url"],
             key="workflows",
             pages_fetched=1,
             items_fetched=len(selected_workflows),
-            max_pages=20,
+            max_pages=max_selected_workflows,
             reason="pagination_limit",
         )
     for workflow in selected_workflows:

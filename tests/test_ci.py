@@ -1,3 +1,4 @@
+import json
 import unittest
 
 from rocm_evidence_matrix.ci import CICollectionError, build_evidence, collect_github, parse_matrix
@@ -73,6 +74,43 @@ class CITests(unittest.TestCase):
         records = collect_github(config, reader, "2026-08-08T00:02:00Z")
         self.assertEqual(len(records), 1)
         self.assertEqual(records[0]["platform"], "linux")
+
+    def test_github_collection_allows_configured_workflow_budget(self):
+        config = {
+            "workflows": {"url": "https://api.example.test/workflows?per_page=100", "max_selected_workflows": 50},
+            "runs_api": "https://api.example.test/workflows/{workflow_id}/runs?per_page=100",
+            "jobs_api": "https://api.example.test/actions/runs/{run_id}/jobs",
+        }
+        workflows = [{"id": index, "path": f".github/workflows/linux-{index}.yml"} for index in range(50)]
+
+        def reader(url):
+            if url == config["workflows"]["url"]:
+                return json.dumps({"workflows": workflows})
+            if "/workflows/" in url:
+                return json.dumps({"workflow_runs": []})
+            raise AssertionError(url)
+
+        self.assertEqual(collect_github(config, reader, "2026-08-08T00:02:00Z"), [])
+
+    def test_github_collection_rejects_workflows_over_configured_budget(self):
+        config = {
+            "workflows": {"url": "https://api.example.test/workflows?per_page=100", "max_selected_workflows": 50},
+            "runs_api": "https://api.example.test/workflows/{workflow_id}/runs?per_page=100",
+            "jobs_api": "https://api.example.test/actions/runs/{run_id}/jobs",
+        }
+        workflows = [{"id": index, "path": f".github/workflows/linux-{index}.yml"} for index in range(51)]
+
+        def reader(url):
+            if url == config["workflows"]["url"]:
+                return json.dumps({"workflows": workflows})
+            raise AssertionError(url)
+
+        with self.assertRaises(CICollectionError) as context:
+            collect_github(config, reader, "2026-08-08T00:02:00Z")
+        self.assertIn("50-workflow", str(context.exception))
+        self.assertEqual(context.exception.details["items_fetched"], 51)
+        self.assertEqual(context.exception.details["max_pages"], 50)
+        self.assertTrue(context.exception.details["truncated"])
 
     def test_github_pagination_failure_exposes_truncation_details(self):
         config = {
