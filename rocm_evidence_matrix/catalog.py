@@ -64,6 +64,8 @@ def build_catalog(root: str | Path = "."):
             paths = [path] if path.exists() else []
         for item in paths:
             value = read_json(item)
+            if path.is_dir() and value.get("source", {}).get("enabled", True) is False:
+                continue
             timestamp = value.get("generated_at") or value.get("last_observed_at")
             if timestamp:
                 timestamps.append(timestamp)

@@ -148,6 +148,8 @@ def validate_profiles(root):
     for path in sorted(first_existing(root, THEROCK_SNAPSHOTS).glob("*.json")):
         snapshot = read_json(path)
         source = snapshot.get("source", {})
+        if source.get("enabled", True) is False:
+            continue
         if source.get("id"):
             source_ids.add(f"packages-{source['id']}")
     for path in sorted((Path(root) / "profiles").rglob("*.json")):
@@ -179,7 +181,10 @@ def validate_generated_documents(root):
     sdk_components = read_json(data / "sdk-components.json")
     extension_history = read_json(data / "extension-history.json")
     extension_catalog = read_json(data / "extensions" / "catalog.json")
-    snapshots = sorted(first_existing(root, THEROCK_SNAPSHOTS).glob("*.json"))
+    snapshots = []
+    for path in sorted(first_existing(root, THEROCK_SNAPSHOTS).glob("*.json")):
+        if read_json(path).get("source", {}).get("enabled", True) is not False:
+            snapshots.append(path)
     expected = {
         "compatibility-matrix.md": render_compatibility_matrix(matrix),
         "framework-history.md": render_framework_history(framework_history),

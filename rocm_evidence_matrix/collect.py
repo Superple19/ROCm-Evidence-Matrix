@@ -338,6 +338,11 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
             max(snapshot["last_observed_at"] for snapshot in package_snapshots),
             {f"packages-{source['id']}" for source in successful_sources},
             args.gfx_targets,
+            {
+                f"packages-{source['id']}"
+                for source in successful_sources
+                if source.get("retention") == "rolling"
+            },
         )
         validate_history(history)
         write_json(history, args.history_output)
@@ -616,7 +621,12 @@ def normalize_legacy(args, config):
 
 
 def load_package_snapshots(output_dir):
-    snapshot_paths = sorted(Path(output_dir).glob("*.json"))
+    snapshot_paths = []
+    for path in sorted(Path(output_dir).glob("*.json")):
+        snapshot = read_json(path)
+        if snapshot.get("source", {}).get("enabled", True) is False:
+            continue
+        snapshot_paths.append(path)
     if not snapshot_paths:
         raise SystemExit("Package snapshots are required")
     package_snapshots = [read_json(path) for path in snapshot_paths]
@@ -688,7 +698,7 @@ def render_outputs(args):
 
 def build_outputs(args):
     integrate_outputs(args)
-    snapshot_paths = sorted(Path(args.output_dir).glob("*.json"))
+    snapshot_paths, _ = load_package_snapshots(args.output_dir)
     snapshot_times = [read_required_json(path)["last_observed_at"] for path in snapshot_paths]
     observed_at = max(snapshot_times) if snapshot_times else utc_now()
     framework_path, components_path, extension_path = auxiliary_paths(args)

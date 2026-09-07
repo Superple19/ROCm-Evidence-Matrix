@@ -34,12 +34,6 @@ extend-exclude = [".venv", ".cache", "data", "snapshots", "docs/generated"]
 [tool.ruff.lint]
 select = ["E4", "E7", "E9", "F"]
 
-[tool.ruff.lint.per-file-ignores]
-"rocm_evidence_matrix/storage/cache.py" = ["F403"]
-"rocm_evidence_matrix/verification/hardware.py" = ["F403"]
-"rocm_evidence_matrix/verification/resolver.py" = ["F403"]
-"rocm_evidence_matrix/verification/runtime.py" = ["F403"]
-
 [tool.pyright]
 include = ["rocm_evidence_matrix"]
 exclude = ["tests", "data", "docs/generated", ".venv"]
@@ -65,11 +59,11 @@ Repository = "https://github.com/Superple19/rocm-evidence-matrix"
 [project.scripts]
 rocm-matrix = "rocm_evidence_matrix.collect:main"
 rocm-evidence = "rocm_evidence_matrix.community:main"
-rocm-resolve = "rocm_evidence_matrix.verification.resolver:main"
+rocm-resolve = "rocm_evidence_matrix.resolve:main"
 rocm-verify = "rocm_evidence_matrix.verify:main"
 rocm-verify-matrix = "rocm_evidence_matrix.verify_matrix:main"
-rocm-runtime = "rocm_evidence_matrix.verification.runtime:main"
-rocm-hardware = "rocm_evidence_matrix.verification.hardware:main"
+rocm-runtime = "rocm_evidence_matrix.runtime:main"
+rocm-hardware = "rocm_evidence_matrix.hardware:main"
 
 [tool.setuptools.packages.find]
 include = ["rocm_evidence_matrix*"]

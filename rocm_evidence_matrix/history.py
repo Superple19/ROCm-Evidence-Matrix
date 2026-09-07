@@ -501,10 +501,23 @@ def classify_lifecycle(candidates):
         candidate["lifecycle"] = "current" if version_key(candidate["rocm_version"]) == latest[key] else "historical"
 
 
-def merge_history(existing, observations, sources, observed_at, observed_source_ids, observed_gfx_targets=None):
+def merge_history(
+    existing,
+    observations,
+    sources,
+    observed_at,
+    observed_source_ids,
+    observed_gfx_targets=None,
+    replace_source_ids=None,
+):
     existing = migrate_history(existing)
     candidates = {item["id"]: dict(item) for item in existing["candidates"]}
     gfx_scope = set(observed_gfx_targets or ())
+    if not gfx_scope:
+        replace_source_ids = set(replace_source_ids or ())
+        for candidate_id in list(candidates):
+            if candidates[candidate_id]["source_id"] in replace_source_ids:
+                del candidates[candidate_id]
     for candidate in candidates.values():
         if candidate["source_id"] in observed_source_ids:
             if gfx_scope and candidate.get("gfx_support") == "known":

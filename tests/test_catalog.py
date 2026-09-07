@@ -64,6 +64,25 @@ class CatalogTests(unittest.TestCase):
             self.assertNotIn("ci_coverage", ids)
             self.assertNotIn("ci_evidence", ids)
 
+    def test_catalog_excludes_disabled_package_snapshots(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            snapshots = root / "data" / "therock" / "snapshots"
+            snapshots.mkdir(parents=True)
+            (snapshots / "stable.json").write_text(
+                json.dumps({"schema_version": 1, "source": {"id": "stable", "enabled": True}}),
+                encoding="utf-8",
+            )
+            (snapshots / "archive.json").write_text(
+                json.dumps({"schema_version": 1, "source": {"id": "archive", "enabled": False}}),
+                encoding="utf-8",
+            )
+
+            ids = {item["id"] for item in build_catalog(root)["artifacts"]}
+
+            self.assertIn("package_snapshots:stable", ids)
+            self.assertNotIn("package_snapshots:archive", ids)
+
 
 if __name__ == "__main__":
     unittest.main()

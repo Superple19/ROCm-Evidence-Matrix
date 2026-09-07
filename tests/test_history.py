@@ -65,6 +65,38 @@ class HistoryTests(unittest.TestCase):
         self.assertEqual(second["candidates"][0]["gfx_targets"], ["gfx1201"])
         self.assertEqual(second["candidates"][0]["evidence_status"]["artifact"], "artifact_stale")
 
+    def test_rolling_source_replaces_previous_candidates(self):
+        old = {
+            "id": "old-nightly",
+            "distribution_family": "therock",
+            "channel": "nightly",
+            "rocm_version": "10.1.0a20260807",
+            "torch_version": "2.14.0a0+rocm10.1.0a20260807",
+            "torchvision_version": "0.29.0a0+rocm10.1.0a20260807",
+            "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
+            "python_tags": ["cp312"],
+            "gfx_targets": ["gfx1201"],
+            "source_id": "packages-nightly",
+        }
+        new = {**old, "id": "new-nightly", "rocm_version": "10.1.0a20260808"}
+        history = merge_history(
+            None,
+            [old],
+            {"packages-nightly": {}},
+            "2026-08-07T00:00:00Z",
+            {"packages-nightly"},
+        )
+        history = merge_history(
+            history,
+            [new],
+            {"packages-nightly": {}},
+            "2026-08-08T00:00:00Z",
+            {"packages-nightly"},
+            replace_source_ids={"packages-nightly"},
+        )
+
+        self.assertEqual([item["id"] for item in history["candidates"]], ["new-nightly"])
+
     def test_generated_at_does_not_regress_during_offline_merge(self):
         existing = {"schema_version": 2, "generated_at": "2026-08-08T14:13:02Z", "sources": {}, "candidates": []}
         merged = merge_history(existing, [], {}, "2026-08-08T10:15:14Z", set())
