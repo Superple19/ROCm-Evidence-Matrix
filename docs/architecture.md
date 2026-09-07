@@ -68,7 +68,6 @@ integrations must use the grouped representation.
 - `data/`: committed normalized evidence and generated views
 - `docs/generated/`: rebuildable Markdown views
 - `profiles/`: application, runtime, framework, extension, and option profiles
-- `contributions/`: local diagnostic export format documentation; not an intake directory
 
 The public package namespace is `rocm_evidence_matrix`.
 The primary command is `rocm-matrix`; resolver and local diagnostic commands are

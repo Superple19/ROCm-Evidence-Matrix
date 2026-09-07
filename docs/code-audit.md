@@ -32,7 +32,7 @@ Cached source bodies are hash-checked both for offline reads and conditional
 HTTP `304` responses. A tampered cache fails closed instead of becoming source
 evidence.
 
-Runtime, hardware, community, framework, SDK, and extension evidence preserves
+Runtime, hardware, framework, SDK, and extension evidence preserves
 monotonic generation times and does not append duplicate record identities.
 
 ### Catalog coverage

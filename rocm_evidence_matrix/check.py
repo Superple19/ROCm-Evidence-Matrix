@@ -16,7 +16,6 @@ from .paths import LEGACY_LINUX, LEGACY_LINUX_DOC, LEGACY_STATUS, LEGACY_WINDOWS
 from .profile import validate_profile
 from .render import render_snapshots
 from .validation import (
-    validate_community_evidence,
     validate_compatibility_matrix,
     validate_collection_status,
     validate_documentation_snapshot,
@@ -131,13 +130,6 @@ def validate_standalone_data(root):
         if path.exists():
             validator(read_json(path))
             validate_json_schema(read_json(path), root / "schemas" / schema_name)
-
-    community_schema = root / "schemas" / "community-evidence.schema.json"
-    for path in sorted((root / "contributions").glob("*.json")):
-        value = read_json(path)
-        validate_community_evidence(value)
-        validate_json_schema(value, community_schema)
-
 
 def validate_profiles(root):
     root = Path(root)

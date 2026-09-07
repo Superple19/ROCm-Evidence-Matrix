@@ -122,9 +122,6 @@ runtime, or hardware evidence is explicitly linked. Consumers must not present
 an unverified extension as compatible automatically, and extension failures
 must remain separate from the ComfyUI core result.
 
-The local diagnostic export format uses `schemas/community-evidence.schema.json`.
-Records are `source=community` and `provenance=self-reported`, not official AMD
-support. `rocm-evidence` prepares the file locally; the Matrix and Manager have
-no upload, telemetry, background reporting, community intake, or maintainer
-review workflow. These records are never added to the shared catalog
-automatically.
+Local runtime and hardware diagnostics are outside the published Matrix
+catalog. They are not uploaded, transmitted, or treated as official AMD
+support evidence.
