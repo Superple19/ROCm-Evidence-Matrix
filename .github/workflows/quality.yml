@@ -9,53 +9,56 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc9fc9a30d # v10.0.1
         with:
+          version: "0.12.10"
           python-version: "3.12"
       - name: Install project
-        run: python -m pip install --editable .
+        run: uv sync --locked
       - name: Run tests
-        run: python -m unittest discover -s tests -v
+        run: uv run --locked python -m unittest discover -s tests -v
       - name: Compile sources
-        run: python -m compileall -q rocm_evidence_matrix
+        run: uv run --locked python -m compileall -q rocm_evidence_matrix
       - name: Validate committed evidence and generated views
-        run: rocm-matrix check
+        run: uv run --locked rocm-matrix check
 
   windows-offline-quality:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc9fc9a30d # v10.0.1
         with:
+          version: "0.12.10"
           python-version: "3.12"
       - name: Install project
-        run: python -m pip install --editable .
+        run: uv sync --locked
       - name: Run tests
-        run: python -m unittest discover -s tests -v
+        run: uv run --locked python -m unittest discover -s tests -v
       - name: Compile sources
-        run: python -m compileall -q rocm_evidence_matrix
+        run: uv run --locked python -m compileall -q rocm_evidence_matrix
       - name: Validate committed evidence and generated views
-        run: rocm-matrix check
+        run: uv run --locked rocm-matrix check
 
   static-analysis:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc9fc9a30d # v10.0.1
         with:
+          version: "0.12.10"
           python-version: "3.12"
       - name: Install project and development tools
-        run: python -m pip install --editable ".[dev]"
+        run: uv sync --locked --extra dev
       - name: Ruff lint
-        run: ruff check .
+        run: uv run --locked ruff check .
       - name: Ruff format check
         continue-on-error: true
-        run: ruff format --check .
+        run: uv run --locked ruff format --check .
       - name: Pyright type check
-        run: pyright
+        run: uv run --locked pyright
       - name: Dependency audit
         continue-on-error: true
-        run: deptry .
+        run: uv run --locked deptry .
       - name: Dead-code audit
         continue-on-error: true
-        run: vulture rocm_evidence_matrix tests --min-confidence 100
+        run: uv run --locked vulture rocm_evidence_matrix tests --min-confidence 100

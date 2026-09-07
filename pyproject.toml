@@ -56,6 +56,9 @@ optional_dependencies_dev_groups = ["dev"]
 [tool.deptry.per_rule_ignores]
 DEP001 = ["torch"]
 
+[tool.uv]
+required-version = ">=0.12.10,<0.13"
+
 [project.urls]
 Repository = "https://github.com/Superple19/rocm-evidence-matrix"
 
