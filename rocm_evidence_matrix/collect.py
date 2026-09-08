@@ -553,7 +553,7 @@ def normalize_legacy(args, config):
 def load_package_snapshots(output_dir):
     snapshot_paths = []
     for path in sorted(Path(output_dir).glob("*.json")):
-        snapshot = read_json(path)
+        snapshot = read_required_json(path)
         if snapshot.get("source", {}).get("enabled", True) is False:
             continue
         snapshot_paths.append(path)
