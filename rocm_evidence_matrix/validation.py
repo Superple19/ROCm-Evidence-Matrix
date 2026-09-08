@@ -55,44 +55,14 @@ def validate_snapshot(snapshot):
     if not isinstance(gfx_targets, list):
         raise ValueError("gfx_targets must be a list")
     for target in gfx_targets:
-        expected_names = list(package_names_for_target(target["gfx"]))
+        expected_names = list(package_names_for_target(target["gfx"], packages))
+        if len(expected_names) < 2:
+            raise ValueError(f"Missing device packages for {target['gfx']}")
         if target["device_packages"] != expected_names:
             raise ValueError(f"Unexpected device package names for {target['gfx']}")
         expected_available = all(packages.get(name) for name in expected_names)
         if target["all_device_packages_available"] != expected_available:
             raise ValueError(f"Incorrect device package availability for {target['gfx']}")
-
-
-def validate_framework_history(document):
-    if document.get("schema_version") != 1 or not document.get("generated_at", "").endswith("Z"):
-        raise ValueError("Unsupported framework history schema")
-    ids = set()
-    latest = {}
-    required = {"id", "distribution_family", "framework", "runtime_family", "platform", "channel", "lifecycle", "rocm_version", "pjrt_package", "pjrt_version", "plugin_package", "plugin_version", "python_tags", "artifact_available", "source_id", "first_observed_at", "last_observed_at"}
-    for candidate in document.get("candidates", []):
-        if set(candidate) != required:
-            raise ValueError(f"Invalid framework candidate fields: {candidate.get('id', 'unknown')}")
-        if candidate["id"] in ids:
-            raise ValueError(f"Duplicate framework candidate: {candidate['id']}")
-        ids.add(candidate["id"])
-        if candidate["distribution_family"] not in {"therock", "legacy"} or candidate["platform"] not in {"windows", "linux", "macos", "unknown"}:
-            raise ValueError(f"Invalid framework candidate dimensions: {candidate['id']}")
-        if candidate["channel"] not in {"stable", "nightly", "staging"} or candidate["lifecycle"] not in {"current", "historical"}:
-            raise ValueError(f"Invalid framework candidate lifecycle: {candidate['id']}")
-        if not candidate["python_tags"] or not candidate["source_id"]:
-            raise ValueError(f"Framework candidate lacks package evidence: {candidate['id']}")
-        if not candidate["first_observed_at"].endswith("Z") or not candidate["last_observed_at"].endswith("Z"):
-            raise ValueError(f"Invalid framework observation time: {candidate['id']}")
-        key = (candidate["distribution_family"], candidate["runtime_family"], candidate["platform"], candidate["channel"])
-        current = latest.get(key)
-        version = version_key(candidate["rocm_version"])
-        if current is None or version > current:
-            latest[key] = version
-    for candidate in document.get("candidates", []):
-        key = (candidate["distribution_family"], candidate["runtime_family"], candidate["platform"], candidate["channel"])
-        expected = "current" if version_key(candidate["rocm_version"]) == latest[key] else "historical"
-        if candidate["lifecycle"] != expected:
-            raise ValueError(f"Incorrect framework lifecycle: {candidate['id']}")
 
 
 def validate_extension_history(document):
@@ -225,29 +195,6 @@ def validate_extension_snapshot(snapshot):
             allowed_artifact = required_artifact | {"build_tag", "requires_dist", "sha256"}
             if not set(artifact).issubset(allowed_artifact) or not required_artifact.issubset(artifact) or not artifact["url"].startswith("https://"):
                 raise ValueError(f"Invalid extension artifact: {package_name}")
-
-
-def validate_sdk_components(document):
-    if document.get("schema_version") != 1 or not document.get("generated_at", "").endswith("Z"):
-        raise ValueError("Unsupported SDK component schema")
-    ids = set()
-    required = {"id", "distribution_family", "platform", "channel", "package_name", "component_kind", "versions", "python_tags", "artifact_available", "source_id", "first_observed_at", "last_observed_at"}
-    for component in document.get("components", []):
-        if not required.issubset(component):
-            raise ValueError(f"Invalid SDK component fields: {component.get('id', 'unknown')}")
-        if component["id"] in ids:
-            raise ValueError(f"Duplicate SDK component: {component['id']}")
-        ids.add(component["id"])
-        if component["distribution_family"] not in {"therock", "legacy"} or component["platform"] not in {"windows", "linux", "macos", "unknown"}:
-            raise ValueError(f"Invalid SDK component dimensions: {component['id']}")
-        if component["channel"] not in {"stable", "nightly", "staging"} or component["component_kind"] not in {"sdk-component", "device-package"}:
-            raise ValueError(f"Invalid SDK component classification: {component['id']}")
-        if not isinstance(component["versions"], list) or not isinstance(component["python_tags"], list):
-            raise ValueError(f"Invalid SDK component lists: {component['id']}")
-        if component["artifact_available"] != bool(component["versions"]):
-            raise ValueError(f"SDK component availability disagrees with versions: {component['id']}")
-        if not component["first_observed_at"].endswith("Z") or not component["last_observed_at"].endswith("Z"):
-            raise ValueError(f"Invalid SDK component observation time: {component['id']}")
 
 
 def validate_documentation_snapshot(snapshot):
@@ -402,106 +349,6 @@ def validate_history(history):
             raise ValueError(f"Incorrect lifecycle for {candidate['id']}")
 
 
-def validate_resolver_verifications(document):
-    if document.get("schema_version") != 1:
-        raise ValueError("Unsupported resolver verification schema")
-    if not document.get("generated_at", "").endswith("Z"):
-        raise ValueError("Resolver verification generation time must be UTC")
-    ids = set()
-    for record in document.get("verifications", []):
-        required = {
-            "id",
-            "candidate_id",
-            "source_id",
-            "platform",
-            "host_platform",
-            "gfx",
-            "python_tag",
-            "python_version",
-            "platform_tag",
-            "packages",
-            "command",
-            "observed_at",
-            "result",
-            "exit_code",
-            "pip_version",
-            "resolved_packages",
-            "error",
-        }
-        if not required.issubset(record):
-            raise ValueError(f"Resolver verification lacks required fields: {record.get('id', 'unknown')}")
-        if record["id"] in ids:
-            raise ValueError(f"Duplicate resolver verification: {record['id']}")
-        ids.add(record["id"])
-        if record.get("distribution_family") not in {None, "therock", "legacy"}:
-            raise ValueError(f"Invalid resolver distribution family: {record['id']}")
-        if record.get("candidate_hash") is not None and len(record["candidate_hash"]) != 64:
-            raise ValueError(f"Invalid resolver candidate hash: {record['id']}")
-        if record["result"] not in {"passed", "failed", "not_applicable"}:
-            raise ValueError(f"Invalid resolver result: {record['result']}")
-        if record.get("platform") not in {"windows", "linux", "macos", "unknown"}:
-            raise ValueError(f"Invalid resolver platform: {record['id']}")
-        if record.get("host_platform") not in {"windows", "linux", "macos", "unknown"}:
-            raise ValueError(f"Invalid resolver host platform: {record['id']}")
-        gfx = record.get("gfx")
-        if gfx is not None and not gfx.startswith("gfx"):
-            raise ValueError(f"Invalid resolver GFX: {record['id']}")
-        if not record["python_tag"].startswith("cp"):
-            raise ValueError(f"Invalid resolver environment: {record['id']}")
-        if record["result"] == "passed" and (record["exit_code"] != 0 or not record["resolved_packages"]):
-            raise ValueError(f"Passed resolver verification lacks evidence: {record['id']}")
-        if record["result"] == "failed" and record["exit_code"] == 0:
-            raise ValueError(f"Failed resolver verification has a successful exit code: {record['id']}")
-        if record["result"] == "not_applicable" and record.get("exit_code") not in {None, 0}:
-            raise ValueError(f"Not-applicable resolver verification has a failed exit code: {record['id']}")
-
-
-def validate_runtime_verifications(document):
-    if document.get("schema_version") != 1:
-        raise ValueError("Unsupported runtime verification schema")
-    if not document.get("generated_at", "").endswith("Z"):
-        raise ValueError("Runtime verification generation time must be UTC")
-    ids = set()
-    for record in document.get("verifications", []):
-        required = {"id", "observed_at", "platform", "host_platform", "os", "result", "rocm_available", "device_count", "devices"}
-        if not required.issubset(record):
-            raise ValueError(f"Runtime verification lacks required fields: {record.get('id', 'unknown')}")
-        if record["id"] in ids:
-            raise ValueError(f"Duplicate runtime verification: {record['id']}")
-        ids.add(record["id"])
-        if record.get("os") not in {"windows", "linux", "macos", "unknown"}:
-            raise ValueError(f"Invalid runtime operating system: {record['id']}")
-        if record.get("platform") != record.get("host_platform") or record.get("host_platform") not in {"windows", "linux", "macos", "unknown"}:
-            raise ValueError(f"Runtime platform identity is inconsistent: {record['id']}")
-        if record["result"] not in {"passed", "failed"} or not record.get("observed_at", "").endswith("Z"):
-            raise ValueError(f"Invalid runtime verification: {record['id']}")
-        if record["result"] == "passed" and (not record["rocm_available"] or record["device_count"] < 1):
-            raise ValueError(f"Passed runtime verification lacks a device: {record['id']}")
-
-
-def validate_hardware_verifications(document):
-    if document.get("schema_version") != 1:
-        raise ValueError("Unsupported hardware verification schema")
-    if not document.get("generated_at", "").endswith("Z"):
-        raise ValueError("Hardware verification generation time must be UTC")
-    ids = set()
-    for record in document.get("verifications", []):
-        required = {"id", "observed_at", "platform", "host_platform", "os", "result", "correct", "device"}
-        if not required.issubset(record):
-            raise ValueError(f"Hardware verification lacks required fields: {record.get('id', 'unknown')}")
-        if record["id"] in ids:
-            raise ValueError(f"Duplicate hardware verification: {record['id']}")
-        ids.add(record["id"])
-        if record.get("os") not in {"windows", "linux", "macos", "unknown"}:
-            raise ValueError(f"Invalid hardware operating system: {record['id']}")
-        if record.get("platform") != record.get("host_platform") or record.get("host_platform") not in {"windows", "linux", "macos", "unknown"}:
-            raise ValueError(f"Hardware platform identity is inconsistent: {record['id']}")
-        if record["result"] not in {"passed", "failed"} or not record.get("observed_at", "").endswith("Z"):
-            raise ValueError(f"Invalid hardware verification: {record['id']}")
-        if record["result"] == "passed" and (not record["correct"] or not record.get("device")):
-            raise ValueError(f"Passed hardware verification lacks correctness evidence: {record['id']}")
-
-
 def validate_legacy_windows(document):
     if document.get("schema_version") != 1:
         raise ValueError("Unsupported legacy Windows schema")
@@ -543,18 +390,6 @@ def validate_legacy_linux(document):
                 raise ValueError(f"Artifact outside legacy Linux release index: {artifact.get('url')}")
 
 
-def validate_legacy_archive_manifest(document):
-    if document.get("schema_version") != 1 or document.get("distribution_family") != "legacy" or document.get("lifecycle") != "historical" or document.get("archive_only") is not True:
-        raise ValueError("Unsupported legacy archive manifest")
-    identifiers = set()
-    for artifact in document.get("artifacts", []):
-        if artifact.get("id") in identifiers:
-            raise ValueError(f"Duplicate legacy archive artifact: {artifact.get('id')}")
-        identifiers.add(artifact.get("id"))
-        if not artifact.get("path", "").startswith("data/legacy/archive/"):
-            raise ValueError(f"Legacy archive artifact outside archive path: {artifact.get('path')}")
-
-
 def validate_collection_status(document):
     if document.get("schema_version") != 1:
         raise ValueError("Unsupported collection status schema")
@@ -585,57 +420,6 @@ def validate_collection_status(document):
             raise ValueError(f"Invalid collection source status: {result['source_id']}")
         if details.get("cache_age_seconds") is not None and details["cache_age_seconds"] < 0:
             raise ValueError(f"Invalid collection cache age: {result['source_id']}")
-
-
-def validate_ci_coverage(document):
-    if document.get("schema_version") != 1 or document.get("source", {}).get("id") != "therock-ci-matrix":
-        raise ValueError("Unsupported TheRock CI coverage schema")
-    if not document.get("generated_at", "").endswith("Z"):
-        raise ValueError("CI coverage generation time must be UTC")
-    ids = set()
-    for entry in document.get("entries", []):
-        if entry["id"] in ids:
-            raise ValueError(f"Duplicate CI coverage entry: {entry['id']}")
-        ids.add(entry["id"])
-        if entry["platform"] not in {"windows", "linux", "macos"} or not entry["configured_targets"]:
-            raise ValueError(f"Invalid CI coverage entry: {entry['id']}")
-        if entry["trigger"] not in {"presubmit", "postsubmit", "nightly"}:
-            raise ValueError(f"Invalid CI coverage trigger: {entry['id']}")
-
-
-def validate_ci_evidence(document):
-    if document.get("schema_version") != 1:
-        raise ValueError("Unsupported CI evidence schema")
-    if not document.get("generated_at", "").endswith("Z"):
-        raise ValueError("CI evidence generation time must be UTC")
-    ids = set()
-    for execution in document.get("executions", []):
-        if execution["id"] in ids:
-            raise ValueError(f"Duplicate CI execution: {execution['id']}")
-        ids.add(execution["id"])
-        if execution["platform"] not in {"windows", "linux", "macos"} or execution["test_kind"] not in {"build", "sanity", "framework", "full", "unknown"}:
-            raise ValueError(f"Invalid CI execution: {execution['id']}")
-        if not execution.get("run_attempt"):
-            raise ValueError(f"CI execution lacks run attempt: {execution['id']}")
-        seen = set()
-        for observation in execution.get("observations", []):
-            state = observation.get("state")
-            if state not in {"queued", "in_progress", "success", "failure", "cancelled", "skipped", "timed_out", "unknown"}:
-                raise ValueError(f"Invalid CI execution state: {execution['id']}")
-            key = (state, observation.get("conclusion"), observation.get("started_at"), observation.get("completed_at"), observation.get("run_status"))
-            if key in seen:
-                raise ValueError(f"Duplicate CI observation: {execution['id']}")
-            seen.add(key)
-    for failure in document.get("adapter_failures", []):
-        if not failure.get("adapter") or not failure.get("observed_at", "").endswith("Z"):
-            raise ValueError("Invalid CI adapter failure")
-        details = failure.get("details") or {}
-        if details.get("pages_fetched", 0) < 0 or details.get("items_fetched", 0) < 0:
-            raise ValueError("Invalid CI adapter pagination details")
-        if details.get("max_pages") is not None and details["max_pages"] < 1:
-            raise ValueError("Invalid CI adapter page limit")
-        if details.get("reason") not in {None, "page_fetch_failed", "invalid_payload", "pagination_limit"}:
-            raise ValueError("Invalid CI adapter failure reason")
 
 
 def validate_version_history(document):
@@ -737,22 +521,3 @@ def validate_profile(document):
     from .profile import validate_profile as validate
 
     return validate(document)
-
-
-def validate_community_evidence(document):
-    if document.get("schema_version") != 1 or not document.get("generated_at", "").endswith("Z"):
-        raise ValueError("Unsupported community evidence schema")
-    hashes = set()
-    for submission in document.get("submissions", []):
-        if submission.get("content_hash") in hashes:
-            raise ValueError(f"Duplicate community evidence: {submission.get('id')}")
-        hashes.add(submission.get("content_hash"))
-        if submission.get("source") != "community" or submission.get("provenance") != "self-reported":
-            raise ValueError(f"Invalid community evidence provenance: {submission.get('id')}")
-        if submission.get("evidence_kind") not in {"runtime", "hardware"} or submission.get("result") not in {"passed", "failed"}:
-            raise ValueError(f"Invalid community evidence: {submission.get('id')}")
-        if submission.get("privacy_redacted") is not True:
-            raise ValueError(f"Community evidence is not privacy redacted: {submission.get('id')}")
-        for field in ("observed_at", "submitted_at"):
-            if not submission.get(field, "").endswith("Z"):
-                raise ValueError(f"Community evidence {field} must be UTC: {submission.get('id')}")

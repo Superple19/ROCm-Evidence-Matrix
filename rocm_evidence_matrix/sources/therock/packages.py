@@ -18,12 +18,6 @@ BASE_PACKAGES = (
     "torchvision",
     "torchaudio",
     "triton",
-    "jax-rocm7-pjrt",
-    "jax-rocm7-plugin",
-    "jax-rocm10-pjrt",
-    "jax-rocm10-plugin",
-    "rocm-bootstrap",
-    "rocm-profiler",
 )
 
 DEVICE_ALIAS_PREFIXES = ("amd-torch-device-", "amd-torchvision-device-")
@@ -88,7 +82,7 @@ def collect_source(source, timeout=20, workers=8, requested_gfx=(), framework_co
     packages = {name: packages[name] for name in sorted(packages)}
     target_rows = []
     for gfx in gfx_targets:
-        required = package_names_for_target(gfx)
+        required = package_names_for_target(gfx, available_set)
         target_rows.append(
             {
                 "gfx": gfx,

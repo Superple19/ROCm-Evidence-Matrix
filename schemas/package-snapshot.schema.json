@@ -28,7 +28,14 @@
         "distribution_family": {"enum": ["therock", "legacy"]},
         "channel": {"enum": ["stable", "nightly", "staging"]},
         "url": {"type": "string", "format": "uri"},
-        "platform": {"enum": ["windows", "linux", "macos", "unknown"]}
+        "platform": {"enum": ["windows", "linux", "macos", "unknown"]},
+        "stream": {"enum": ["stable", "nightly", "staging", "dev"]},
+        "layout": {"enum": ["whl-next", "whl-multi-arch"]},
+        "historical": {"type": "boolean"},
+        "enabled": {"type": "boolean"},
+        "retention": {"enum": ["forever", "rolling"]},
+        "retention_limit": {"type": "integer", "minimum": 1},
+        "historical_fallback": {"type": "string", "minLength": 1}
       }
     },
     "gfx_targets": {
@@ -41,7 +48,7 @@
           "gfx": {"type": "string", "pattern": "^gfx[0-9a-z]+$"},
           "device_packages": {
             "type": "array",
-            "minItems": 3,
+            "minItems": 2,
             "maxItems": 3,
             "items": {"type": "string", "minLength": 1}
           },

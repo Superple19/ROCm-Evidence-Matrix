@@ -14,12 +14,6 @@ def version_series(version):
     return match.group(1) if match else None
 
 
-def is_therock_version(version):
-    """TheRock replaced the legacy Windows release line starting with 7.10."""
-    parts = version.split(".")
-    return len(parts) >= 2 and (int(parts[0]) > 7 or (int(parts[0]) == 7 and int(parts[1]) >= 10))
-
-
 def parse_release_date(value):
     for pattern in ("%B %d, %Y", "%b %d, %Y"):
         try:
@@ -232,14 +226,14 @@ def merge_version_history(existing, family, releases, gpu_support, sources, obse
         if family == "therock":
             records.pop(f"legacy:{release['version']}", None)
     exact_records = {
-        version_series(item["version"]): item
+        (item.get("platform"), version_series(item["version"])): item
         for item in records.values()
         if item.get("distribution_family") == family and len(item["version"].split(".")) >= 3
     }
     for key, item in list(records.items()):
         if item.get("distribution_family") != family or len(item["version"].split(".")) != 2:
             continue
-        exact = exact_records.get(version_series(item["version"]))
+        exact = exact_records.get((item.get("platform"), version_series(item["version"])))
         if exact:
             exact["source_ids"] = sorted(set(exact["source_ids"]) | set(item["source_ids"]))
             for field in ("gpu_support_observations", "framework_support_observations", "package_artifacts"):
@@ -248,14 +242,14 @@ def merge_version_history(existing, family, releases, gpu_support, sources, obse
                 exact["documentation_status"] = item["documentation_status"]
                 exact["documentation_url"] = item["documentation_url"]
             records.pop(key, None)
-    exact_versions = {release["version"] for release in releases}
-    exact_series = {version_series(version) for version in exact_versions}
+    exact_versions = {(release.get("platform"), release["version"]) for release in releases}
+    exact_series = {(release.get("platform"), version_series(release["version"])) for release in releases}
     records = {
         key: item
         for key, item in records.items()
         if item.get("distribution_family") != family
-        or item["version"] not in exact_series
-        or item["version"] in exact_versions
+        or (item.get("platform"), item["version"]) not in exact_series
+        or (item.get("platform"), item["version"]) in exact_versions
     }
     latest = {}
     for item in records.values():
@@ -359,10 +353,12 @@ def collect_therock_version_history(config, fetch_text, current_status, existing
     return merge_version_history(existing, "therock", records, gpu_support, source_records, observed_at), results
 
 
-def collect_legacy_version_history(config, fetch_text, legacy, existing=None, observed_at=None):
+def collect_legacy_version_history(config, fetch_text, legacy, existing=None, observed_at=None, legacy_linux=None):
     observed_at = observed_at or utc_now()
     results = []
     source_records = dict(legacy["sources"])
+    legacy_linux = legacy_linux or {}
+    source_records.update(legacy_linux.get("sources", {}))
 
     def collect(source, parser):
         value, result = run_source_adapter(source, lambda: parser(fetch_text(source["url"]), source["url"], source["id"]), observed_at)
@@ -380,16 +376,19 @@ def collect_legacy_version_history(config, fetch_text, legacy, existing=None, ob
         source_records[branches_source["id"]] = {**branches_source, "observed_at": observed_at}
     releases_by_version = {item["version"]: item for item in release_history}
     support_by_series = {item["rocm_series"]: item["windows_support"] for item in legacy["hip_sdk_releases"]}
-    versions = set(support_by_series)
-    versions.update(item["rocm_series"] for item in legacy["hip_sdk_gpu_support"])
-    versions.update(item["rocm_version"] for item in legacy["pytorch_windows_support"])
-    versions.update(item["release_id"] for item in legacy["artifact_releases"])
-    # Preserve every official release-table row, including patch releases that
-    # have no separate Windows support or package observation.
-    versions.update(item["version"] for item in release_history)
-    # A support source may identify a series (for example ``7.2``) while the
-    # release table contains its exact patch releases. Keep the exact rows and
-    # avoid presenting the series alias as a second release.
+    series_evidence = set(support_by_series)
+    series_evidence.update(item["rocm_series"] for item in legacy["hip_sdk_gpu_support"])
+    exact_evidence = {item["rocm_version"] for item in legacy["pytorch_windows_support"]}
+    exact_evidence.update(item["release_id"] for item in legacy["artifact_releases"])
+    versions = series_evidence | exact_evidence
+    versions.update(
+        item["version"]
+        for item in release_history
+        if version_series(item["version"]) in series_evidence or item["version"] in exact_evidence
+    )
+    # A legacy evidence source may identify a series while the release table
+    # contains exact patch rows. Keep those rows, but never create a family
+    # record from the generic release table alone.
     exact_series = {version_series(item["version"]) for item in release_history}
     versions = {version for version in versions if version not in exact_series or version in releases_by_version}
     records = []
@@ -408,10 +407,9 @@ def collect_legacy_version_history(config, fetch_text, legacy, existing=None, ob
         source_ids.extend(item["source_id"] for item in legacy["hip_sdk_gpu_support"] if item["rocm_series"] == series)
         source_ids.extend(item["source_id"] for item in legacy["pytorch_windows_support"] if item["rocm_version"] == version)
         source_ids.extend(item["source_id"] for item in legacy["artifact_releases"] if item["release_id"] == version)
-        family = "therock" if release and is_therock_version(version) else "legacy"
         records.append(
             release_record(
-                family,
+                "legacy",
                 version,
                 observed_at,
                 platform="windows",
@@ -427,11 +425,40 @@ def collect_legacy_version_history(config, fetch_text, legacy, existing=None, ob
                 windows_package_available=package_count > 0,
             )
         )
-    history = merge_version_history(existing, "legacy", [item for item in records if item["distribution_family"] == "legacy"], [], source_records, observed_at)
-    therock_records = [item for item in records if item["distribution_family"] == "therock"]
-    if therock_records:
-        history = merge_version_history(history, "therock", therock_records, [], source_records, observed_at)
-    return history, results
+    existing = existing or {"schema_version": 1, "sources": {}, "releases": [], "therock_gpu_support": []}
+    existing_releases = [
+        item
+        for item in existing.get("releases", [])
+        if item.get("distribution_family") != "legacy"
+        or any(source_id != config["rocm_releases"]["id"] for source_id in item.get("source_ids", []))
+    ]
+    existing_for_merge = {**existing, "releases": existing_releases}
+    windows_records = records
+    linux_records = []
+    linux_artifacts = {
+        item["release_id"]: item
+        for item in legacy_linux.get("artifact_releases", [])
+    }
+    for version, artifact_release in sorted(linux_artifacts.items(), key=lambda item: version_key(item[0])):
+        release = releases_by_version.get(version) or matching_release(version, release_history)
+        package_count = len(artifact_release.get("artifacts", []))
+        source_ids = [artifact_release.get("source_id")]
+        if release:
+            source_ids.append(release["source_id"])
+        linux_records.append(
+            release_record(
+                "legacy",
+                version,
+                observed_at,
+                platform="linux",
+                release_date=release["release_date"] if release else None,
+                channel="stable",
+                source_ids=sorted(source_id for source_id in source_ids if source_id),
+                package_artifacts=package_count,
+                linux_package_available=package_count > 0,
+            )
+        )
+    return merge_version_history(existing_for_merge, "legacy", windows_records + linux_records, [], source_records, observed_at), results
 
 
 def render_version_history(document):

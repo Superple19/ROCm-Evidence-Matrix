@@ -70,12 +70,19 @@ def discover_packages(html, base_url):
 
 
 def discover_gfx_targets(package_names):
-    prefix = "rocm-sdk-device-"
-    return sorted(name[len(prefix):] for name in package_names if name.startswith(prefix))
+    names = set(package_names)
+    sdk_targets = {name.removeprefix("rocm-sdk-device-") for name in names if name.startswith("rocm-sdk-device-")}
+    torch_targets = {name.removeprefix("amd-torch-device-") for name in names if name.startswith("amd-torch-device-")}
+    vision_targets = {name.removeprefix("amd-torchvision-device-") for name in names if name.startswith("amd-torchvision-device-")}
+    return sorted(sdk_targets | (torch_targets & vision_targets), key=gfx_key)
 
 
-def package_names_for_target(gfx):
-    return tuple(prefix + gfx for prefix in DEVICE_PACKAGE_PREFIXES)
+def package_names_for_target(gfx, package_names=None):
+    names = tuple(prefix + gfx for prefix in DEVICE_PACKAGE_PREFIXES)
+    if package_names is None:
+        return names
+    available = set(package_names)
+    return tuple(name for name in names if name in available)
 
 
 def parse_windows_wheels(html, base_url, package_name):

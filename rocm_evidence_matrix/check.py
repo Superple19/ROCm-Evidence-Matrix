@@ -4,36 +4,26 @@ from pathlib import Path
 from jsonschema import FormatChecker
 from jsonschema.validators import validator_for
 
-from .catalog import build_catalog
+from .catalog import REQUIRED_ARTIFACT_IDS, build_catalog
 from .extensions import render_extension_history
 from .extension_catalog import render_extension_catalog
-from .frameworks import render_framework_history, render_sdk_components
 from .history import migrate_history, render_history
 from .legacy import render_legacy_windows
 from .legacy_linux import render_legacy_linux
 from .matrix_render import render_compatibility_matrix
-from .paths import LEGACY_LINUX, LEGACY_LINUX_DOC, LEGACY_STATUS, LEGACY_WINDOWS, LEGACY_WINDOWS_DOC, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS, first_existing
+from .paths import LEGACY_LINUX, LEGACY_LINUX_DOC, LEGACY_STATUS, LEGACY_WINDOWS, LEGACY_WINDOWS_DOC, THEROCK_SNAPSHOTS, THEROCK_STATUS, first_existing
 from .profile import validate_profile
 from .render import render_snapshots
 from .validation import (
-    validate_ci_coverage,
-    validate_ci_evidence,
-    validate_community_evidence,
     validate_compatibility_matrix,
     validate_collection_status,
     validate_documentation_snapshot,
     validate_extension_history,
     validate_extension_catalog,
     validate_extension_snapshot,
-    validate_framework_history,
-    validate_hardware_verifications,
     validate_history,
-    validate_legacy_archive_manifest,
     validate_legacy_linux,
     validate_legacy_windows,
-    validate_resolver_verifications,
-    validate_runtime_verifications,
-    validate_sdk_components,
     validate_snapshot,
     validate_source_manifest,
     validate_version_history,
@@ -43,22 +33,16 @@ from .version_history import render_version_history
 
 SCHEMA_VALIDATORS = {
     "compatibility-matrix.schema.json": validate_compatibility_matrix,
-    "ci-coverage.schema.json": validate_ci_coverage,
-    "ci-evidence.schema.json": validate_ci_evidence,
     "collection-status.schema.json": validate_collection_status,
     "documentation-snapshot.schema.json": validate_documentation_snapshot,
     "extension-history.schema.json": validate_extension_history,
     "extension-catalog.schema.json": validate_extension_catalog,
     "extension-snapshot.schema.json": validate_extension_snapshot,
-    "framework-history.schema.json": validate_framework_history,
     "history.schema.json": validate_history,
-    "legacy-archive-manifest.schema.json": validate_legacy_archive_manifest,
     "legacy-linux.schema.json": validate_legacy_linux,
     "legacy-windows.schema.json": validate_legacy_windows,
     "package-snapshot.schema.json": validate_snapshot,
     "source-manifest.schema.json": validate_source_manifest,
-    "resolver-verifications.schema.json": validate_resolver_verifications,
-    "sdk-components.schema.json": validate_sdk_components,
     "version-history.schema.json": validate_version_history,
     "profile.schema.json": validate_profile,
 }
@@ -88,6 +72,17 @@ def validate_catalog(root: str | Path):
     validate_json_schema(catalog, root / "schemas" / "catalog.schema.json")
     if catalog.get("schema_version") != 1:
         raise ValueError("Unsupported catalog schema")
+    artifact_ids = [artifact["id"] for artifact in catalog["artifacts"]]
+    artifact_paths = [artifact["path"] for artifact in catalog["artifacts"]]
+    if not artifact_ids:
+        raise ValueError("Catalog has no artifacts")
+    if len(artifact_ids) != len(set(artifact_ids)):
+        raise ValueError("Catalog contains duplicate artifact IDs")
+    if len(artifact_paths) != len(set(artifact_paths)):
+        raise ValueError("Catalog contains duplicate artifact paths")
+    missing = sorted(REQUIRED_ARTIFACT_IDS - set(artifact_ids))
+    if missing:
+        raise ValueError(f"Catalog is missing required artifacts: {', '.join(missing)}")
     expected = build_catalog(root)
     if catalog.get("artifacts") != expected["artifacts"]:
         raise ValueError("Catalog artifacts are stale; run rocm-matrix catalog")
@@ -112,27 +107,15 @@ def validate_catalog(root: str | Path):
 def validate_standalone_data(root):
     root = Path(root)
     validators = (
-        (THEROCK_CI_COVERAGE, validate_ci_coverage, "ci-coverage.schema.json"),
-        (THEROCK_CI_EVIDENCE, validate_ci_evidence, "ci-evidence.schema.json"),
         ("data/observations/source-manifest.json", validate_source_manifest, "source-manifest.schema.json"),
         (LEGACY_STATUS, validate_collection_status, "collection-status.schema.json"),
         (THEROCK_STATUS, validate_collection_status, "collection-status.schema.json"),
-        ("data/verifications/hardware.json", validate_hardware_verifications, "hardware-verifications.schema.json"),
-        ("data/verifications/resolver.json", validate_resolver_verifications, "resolver-verifications.schema.json"),
-        ("data/verifications/runtime.json", validate_runtime_verifications, "runtime-verifications.schema.json"),
     )
     for relative_path, validator, schema_name in validators:
         path = first_existing(root, relative_path)
         if path.exists():
             validator(read_json(path))
             validate_json_schema(read_json(path), root / "schemas" / schema_name)
-
-    community_schema = root / "schemas" / "community-evidence.schema.json"
-    for path in sorted((root / "contributions").glob("*.json")):
-        value = read_json(path)
-        validate_community_evidence(value)
-        validate_json_schema(value, community_schema)
-
 
 def validate_profiles(root):
     root = Path(root)
@@ -143,6 +126,8 @@ def validate_profiles(root):
     for path in sorted(first_existing(root, THEROCK_SNAPSHOTS).glob("*.json")):
         snapshot = read_json(path)
         source = snapshot.get("source", {})
+        if source.get("enabled", True) is False:
+            continue
         if source.get("id"):
             source_ids.add(f"packages-{source['id']}")
     for path in sorted((Path(root) / "profiles").rglob("*.json")):
@@ -170,19 +155,18 @@ def validate_generated_documents(root):
     legacy_windows = read_json(first_existing(root, LEGACY_WINDOWS))
     legacy_linux = read_json(first_existing(root, LEGACY_LINUX))
     version_history = read_json(data / "version-history.json")
-    framework_history = read_json(data / "framework-history.json")
-    sdk_components = read_json(data / "sdk-components.json")
     extension_history = read_json(data / "extension-history.json")
     extension_catalog = read_json(data / "extensions" / "catalog.json")
-    snapshots = sorted(first_existing(root, THEROCK_SNAPSHOTS).glob("*.json"))
+    snapshots = []
+    for path in sorted(first_existing(root, THEROCK_SNAPSHOTS).glob("*.json")):
+        if read_json(path).get("source", {}).get("enabled", True) is not False:
+            snapshots.append(path)
     expected = {
         "compatibility-matrix.md": render_compatibility_matrix(matrix),
-        "framework-history.md": render_framework_history(framework_history),
         "history.md": render_history(history),
         LEGACY_LINUX_DOC.removeprefix("docs/generated/"): render_legacy_linux(legacy_linux),
         LEGACY_WINDOWS_DOC.removeprefix("docs/generated/"): render_legacy_windows(legacy_windows),
         "package-availability.md": render_snapshots(snapshots),
-        "sdk-components.md": render_sdk_components(sdk_components),
         "extension-history.md": render_extension_history(extension_history),
         "extension-catalog.md": render_extension_catalog(extension_catalog),
         "version-history.md": render_version_history(version_history),

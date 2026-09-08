@@ -8,7 +8,7 @@ This adapter records historical Linux release indexes and artifact URLs. It does
 
 | ROCm release | Artifacts | Platform support evidence | Runtime verification |
 | --- | ---: | --- | --- |
-| `7.2.4` | 114 | not collected | not collected |
+| `7.2.4` | 123 | not collected | not collected |
 | `7.2.3` | 111 | not collected | not collected |
 | `7.2.2` | 138 | not collected | not collected |
 | `7.2.1` | 102 | not collected | not collected |
@@ -60,7 +60,7 @@ This adapter records historical Linux release indexes and artifact URLs. It does
 
 | ROCm release | Artifacts | Source |
 | --- | ---: | --- |
-| `7.2.4` | 114 | `legacy-linux-manylinux-artifacts` |
+| `7.2.4` | 123 | `legacy-linux-manylinux-artifacts` |
 | `7.2.3` | 111 | `legacy-linux-manylinux-artifacts` |
 | `7.2.2` | 138 | `legacy-linux-manylinux-artifacts` |
 | `7.2.1` | 102 | `legacy-linux-manylinux-artifacts` |

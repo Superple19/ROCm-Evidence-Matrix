@@ -1,13 +1,9 @@
-import json
 import re
 from pathlib import Path
 
-from .ci import CI_STATES
-from .identity import candidate_hash
-from .persistence import atomic_write_json, atomic_write_text
-from .simple_index import version_key
+from .persistence import atomic_write_text
+from .simple_index import package_names_for_target, version_key
 from .source_adapter import monotonic_generated_at
-from .validation import validate_history
 
 
 STATUS_ORDER = {
@@ -83,17 +79,28 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
     grouped = {}
 
     for gfx in gfx_targets:
-        rocm_device = package_versions.get(f"rocm-sdk-device-{gfx}", {})
+        device_names = package_names_for_target(gfx, package_versions)
         torch_device = package_versions.get(f"amd-torch-device-{gfx}", {})
         torchvision_device = package_versions.get(f"amd-torchvision-device-{gfx}", {})
         for torch_version, torch_tags in torch_versions.items():
             rocm_version = rocm_version_from_framework(torch_version)
             rule = compatibility.get(version_series(torch_version))
             required_rocm_packages = ("rocm", "rocm-sdk-core", "rocm-sdk-libraries")
-            rocm_packages_available = rocm_version is not None and all(
+            legacy_rocm_packages_available = rocm_version is not None and all(
                 rocm_version in package_versions.get(name, {}) for name in required_rocm_packages
             )
-            if not rocm_packages_available or rule is None or rocm_version not in rocm_device or torch_version not in torch_device:
+            current_device_packages_available = {
+                f"amd-torch-device-{gfx}",
+                f"amd-torchvision-device-{gfx}",
+            }.issubset(device_names)
+            rocm_packages_available = legacy_rocm_packages_available or (
+                source.get("layout") == "whl-next" and current_device_packages_available
+            )
+            device_version_available = (
+                torch_version in torch_device
+                and torch_version in package_versions.get(f"amd-torch-device-{gfx}", {})
+            )
+            if not rocm_packages_available or rule is None or not device_version_available:
                 continue
             matching_vision = [
                 version for version in torchvision_by_rocm_series.get((rocm_version, rule["torchvision_series"]), [])
@@ -190,188 +197,6 @@ def attach_therock_documentation_evidence(history, documentation):
         candidate["documentation_refs"] = refs
         status = candidate.setdefault("evidence_status", initial_evidence_status())
         status["documentation"] = "documented"
-    return history
-
-
-def update_execution_evidence(history_path, kind, candidate_id, result, *, record=None, requested_gfx=None, reviewed=False):
-    """Apply reviewed execution status to shared history.
-
-    Runtime and hardware commands intentionally write local evidence only. A
-    maintainer must opt into this shared-history mutation explicitly.
-    """
-
-    if not reviewed or not isinstance(record, dict):
-        return False
-    path = Path(history_path)
-    history = json.loads(path.read_text(encoding="utf-8"))
-    status = f"{kind}_verified" if result == "passed" else f"{kind}_failed"
-    candidate = next((item for item in history.get("candidates", []) if item.get("id") == candidate_id), None)
-    if candidate is None or record.get("candidate_id") != candidate_id or record.get("result") != result:
-        return False
-    if execution_platform_identity_errors(candidate, record):
-        return False
-    if execution_evidence_errors(candidate, record, kind, requested_gfx):
-        return False
-    candidate.setdefault("evidence_status", initial_evidence_status())[kind] = status
-    validate_history(history)
-    atomic_write_json(history, path)
-    return True
-
-
-def execution_evidence_errors(candidate, record, kind, requested_gfx=None):
-    errors = []
-    expected_platform = candidate.get("platform")
-    if expected_platform not in {"windows", "linux"}:
-        errors.append(f"candidate has no supported platform identity: {expected_platform}")
-    observed_platform = record.get("os")
-    if observed_platform not in {"windows", "linux"}:
-        errors.append(f"execution has no supported platform identity: {observed_platform}")
-    elif expected_platform != observed_platform:
-        errors.append(f"platform mismatch: candidate={expected_platform}, observed={observed_platform}")
-    if record.get("torch_version") and record["torch_version"] != candidate.get("torch_version"):
-        errors.append(f"Torch mismatch: candidate={candidate.get('torch_version')}, observed={record['torch_version']}")
-    for field, label in (("torchvision_version", "TorchVision"), ("torchaudio_version", "TorchAudio")):
-        expected = candidate.get(field)
-        observed = record.get(field)
-        if expected and observed != expected:
-            errors.append(f"{label} mismatch: candidate={expected}, observed={observed}")
-    expected_python_tags = set(candidate.get("python_tags") or ())
-    if not record.get("python_tag"):
-        errors.append("execution has no Python ABI identity")
-    elif expected_python_tags and record["python_tag"] not in expected_python_tags:
-        errors.append(
-            f"Python ABI mismatch: candidate={sorted(expected_python_tags)}, observed={record.get('python_tag')}"
-        )
-    if not record.get("platform_tag"):
-        errors.append("execution has no platform tag identity")
-    expected_hash = candidate_hash(candidate, record.get("gfx"), record.get("python_tag"), record.get("platform_tag"))
-    if record.get("candidate_hash") != expected_hash:
-        errors.append("candidate hash does not match the observed execution identity")
-    expected_rocm = candidate.get("rocm_version")
-    observed_rocm = record.get("rocm_version")
-    if observed_rocm != expected_rocm:
-        errors.append(f"ROCm mismatch: candidate={expected_rocm}, observed={observed_rocm}")
-    if record.get("result") == "passed" and not record.get("hip_version"):
-        errors.append("successful evidence has no observed HIP runtime version")
-    if candidate.get("hip_version") and record.get("hip_version") and candidate["hip_version"] != record["hip_version"]:
-        errors.append(f"HIP mismatch: candidate={candidate['hip_version']}, observed={record['hip_version']}")
-
-    requested = requested_gfx or record.get("gfx")
-    candidate_targets = set(candidate.get("gfx_targets", []))
-    observed_targets = set()
-    for device in record.get("devices", []):
-        if device.get("gfx"):
-            observed_targets.add(device["gfx"])
-    device = record.get("device")
-    if device and device.get("gfx"):
-        observed_targets.add(device["gfx"])
-    if requested and requested not in candidate_targets:
-        errors.append(f"GFX is not part of candidate support: {requested}")
-    if record.get("result") == "passed":
-        if candidate.get("gfx_support") != "known":
-            errors.append("candidate has no authoritative GFX support mapping")
-        if not candidate_targets:
-            errors.append("candidate has no supported GFX targets")
-        if not observed_targets:
-            errors.append("successful evidence has no observed GFX target")
-        elif requested and requested not in observed_targets:
-            errors.append(f"observed GFX does not match requested target: {requested}")
-        elif not candidate_targets.intersection(observed_targets):
-            errors.append("observed GFX is outside candidate support")
-        if kind == "hardware" and not record.get("correct"):
-            errors.append("hardware evidence is not marked correct")
-    return errors
-
-
-def execution_platform_identity_errors(candidate, record):
-    """Validate the normalized target and verifier host platform fields."""
-
-    expected = candidate.get("platform")
-    target = record.get("platform")
-    host = record.get("host_platform")
-    normalized_os = record.get("os")
-    errors = []
-    if target not in {"windows", "linux"}:
-        errors.append(f"execution has no supported target platform identity: {target}")
-    elif target != expected:
-        errors.append(f"target platform mismatch: candidate={expected}, observed={target}")
-    if host not in {"windows", "linux"}:
-        errors.append(f"execution has no supported host platform identity: {host}")
-    if normalized_os not in {"windows", "linux"}:
-        errors.append(f"execution has no supported normalized OS identity: {normalized_os}")
-    if target != host or host != normalized_os:
-        errors.append(f"execution platform fields disagree: platform={target}, host={host}, os={normalized_os}")
-    return errors
-
-
-def promote_execution_evidence(history_path, kind, record, requested_gfx=None, *, reviewed=False):
-    """Promote one exact execution record after explicit maintainer review."""
-
-    if not reviewed:
-        return False, ["shared history promotion requires explicit review"]
-    path = Path(history_path)
-    history = json.loads(path.read_text(encoding="utf-8"))
-    candidate_id = record.get("candidate_id")
-    candidate = next((item for item in history.get("candidates", []) if item.get("id") == candidate_id), None)
-    if candidate is None:
-        return False, [f"unknown candidate: {candidate_id}"]
-    identity_errors = execution_platform_identity_errors(candidate, record)
-    if identity_errors:
-        return False, identity_errors
-    errors = execution_evidence_errors(candidate, record, kind, requested_gfx)
-    if errors:
-        return False, errors
-    return update_execution_evidence(
-        path,
-        kind,
-        candidate_id,
-        record["result"],
-        record=record,
-        requested_gfx=requested_gfx,
-        reviewed=True,
-    ), []
-
-
-def attach_therock_ci_evidence(history, ci_document):
-    executions = ci_document.get("executions", []) if ci_document else []
-    for candidate in history.get("candidates", []):
-        if candidate.get("distribution_family") != "therock" or candidate.get("lifecycle") != "current":
-            continue
-        refs = []
-        targets = set(candidate.get("gfx_targets", []))
-        for execution in executions:
-            execution_targets = execution.get("targets")
-            observations = execution.get("observations")
-            if (
-                execution.get("platform") != candidate.get("platform")
-                or not isinstance(execution.get("id"), str)
-                or not isinstance(execution_targets, list)
-                or not targets.intersection(execution_targets)
-                or not isinstance(observations, list)
-            ):
-                continue
-            execution_states = [item.get("state") for item in observations if item.get("state") in CI_STATES]
-            if not execution_states:
-                continue
-            refs.append(execution["id"])
-        if not refs:
-            continue
-        candidate["ci_evidence_refs"] = sorted(set(refs))[-3:]
-        candidate["ci_evidence_scope"] = "gfx_platform"
-        status = candidate.setdefault("evidence_status", initial_evidence_status())
-        latest_states = []
-        for execution in executions:
-            if execution.get("id") not in refs:
-                continue
-            observations = sorted(execution.get("observations", []), key=lambda item: item.get("observed_at") or "")
-            if observations:
-                latest_states.append(observations[-1].get("state"))
-        if latest_states and all(state == "success" for state in latest_states):
-            status["ci"] = "ci_verified"
-        elif latest_states and all(state in {"failure", "cancelled", "skipped", "timed_out"} for state in latest_states):
-            status["ci"] = "ci_failed"
-        else:
-            status["ci"] = "partial"
     return history
 
 
@@ -491,10 +316,23 @@ def classify_lifecycle(candidates):
         candidate["lifecycle"] = "current" if version_key(candidate["rocm_version"]) == latest[key] else "historical"
 
 
-def merge_history(existing, observations, sources, observed_at, observed_source_ids, observed_gfx_targets=None):
+def merge_history(
+    existing,
+    observations,
+    sources,
+    observed_at,
+    observed_source_ids,
+    observed_gfx_targets=None,
+    replace_source_ids=None,
+):
     existing = migrate_history(existing)
     candidates = {item["id"]: dict(item) for item in existing["candidates"]}
     gfx_scope = set(observed_gfx_targets or ())
+    if not gfx_scope:
+        replace_source_ids = set(replace_source_ids or ())
+        for candidate_id in list(candidates):
+            if candidates[candidate_id]["source_id"] in replace_source_ids:
+                del candidates[candidate_id]
     for candidate in candidates.values():
         if candidate["source_id"] in observed_source_ids:
             if gfx_scope and candidate.get("gfx_support") == "known":

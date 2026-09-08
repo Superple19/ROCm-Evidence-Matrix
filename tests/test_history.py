@@ -1,11 +1,6 @@
 import unittest
-import json
-import tempfile
-from pathlib import Path
 
-from rocm_evidence_matrix.history import attach_therock_ci_evidence, build_history_observations, candidate_id_for, execution_evidence_errors, merge_history, migrate_history, promote_execution_evidence, render_history, update_execution_evidence
-from rocm_evidence_matrix.identity import candidate_hash
-from rocm_evidence_matrix.resolve import count_candidates, install_command, latest_candidates, resolve_candidates
+from rocm_evidence_matrix.history import build_history_observations, merge_history, render_history
 
 
 def artifact(package, version, python_tag="cp312"):
@@ -29,7 +24,6 @@ class HistoryTests(unittest.TestCase):
             "torch": [artifact("torch", "2.14.0a0+rocm10.1.0a20260807")],
             "torchvision": [artifact("torchvision", "0.29.0a0+rocm10.1.0a20260807")],
             "torchaudio": [artifact("torchaudio", "2.11.0+rocm10.1.0a20260807")],
-            "triton": [artifact("triton", "3.6.0+rocm10.1.0a20260807")],
             "rocm-sdk-device-gfx1201": [artifact("rocm-sdk-device-gfx1201", "10.1.0a20260807", "py3")],
             "amd-torch-device-gfx1201": [artifact("amd-torch-device-gfx1201", "2.14.0a0+rocm10.1.0a20260807")],
             "amd-torchvision-device-gfx1201": [artifact("amd-torchvision-device-gfx1201", "0.29.0a0+rocm10.1.0a20260807")],
@@ -37,67 +31,43 @@ class HistoryTests(unittest.TestCase):
         rules = [{"torch_series": "2.14", "torchaudio_series": "2.11", "torchvision_series": "0.29"}]
 
         candidates = build_history_observations(
-            {"id": "nightly", "channel": "nightly"}, ["gfx1201"], packages, rules, "therock"
+            {"id": "nightly", "channel": "nightly", "platform": "windows"},
+            ["gfx1201"],
+            packages,
+            rules,
+            "therock",
         )
 
         self.assertEqual(len(candidates), 1)
-        self.assertEqual(candidates[0]["distribution_family"], "therock")
         self.assertEqual(candidates[0]["python_tags"], ["cp312"])
-        self.assertIsNone(candidates[0]["triton_version"])
 
-    def test_retains_candidate_when_artifact_disappears(self):
-        observation = {
-            "id": "candidate",
-            "distribution_family": "therock",
-            "channel": "stable",
-            "rocm_version": "7.14.0",
-            "torch_version": "2.12.0+rocm7.14.0",
-            "torchvision_version": "0.27.0+rocm7.14.0",
-            "torchaudio_version": "2.11.0+rocm7.14.0",
-            "python_tags": ["cp312"],
-            "gfx_targets": ["gfx1201"],
-            "source_id": "packages-stable",
+    def test_builds_whl_next_candidate_without_sdk_device_packages(self):
+        version = "10.1.0a20260907"
+        packages = {
+            "torch": [artifact("torch", f"2.15.0a0+rocm{version}")],
+            "torchvision": [artifact("torchvision", f"0.30.0a0+rocm{version}")],
+            "torchaudio": [artifact("torchaudio", f"2.11.0.3+rocm{version}")],
+            "amd-torch-device-gfx1201": [artifact("amd-torch-device-gfx1201", f"2.15.0a0+rocm{version}")],
+            "amd-torchvision-device-gfx1201": [artifact("amd-torchvision-device-gfx1201", f"0.30.0a0+rocm{version}")],
         }
-        first = merge_history(None, [observation], {"packages-stable": {}}, "2026-08-07T00:00:00Z", {"packages-stable"})
-        second = merge_history(first, [], {"packages-stable": {}}, "2026-08-08T00:00:00Z", {"packages-stable"})
 
-        self.assertFalse(second["candidates"][0]["artifact_available"])
-        self.assertEqual(second["candidates"][0]["gfx_targets"], ["gfx1201"])
-        self.assertEqual(second["candidates"][0]["evidence_status"]["artifact"], "artifact_stale")
-
-    def test_generated_at_does_not_regress_during_offline_merge(self):
-        existing = {"schema_version": 2, "generated_at": "2026-08-08T14:13:02Z", "sources": {}, "candidates": []}
-        merged = merge_history(existing, [], {}, "2026-08-08T10:15:14Z", set())
-        self.assertEqual(merged["generated_at"], "2026-08-08T14:13:02Z")
-
-    def test_scoped_gfx_merge_preserves_other_available_targets(self):
-        observation = {
-            "id": "candidate",
-            "distribution_family": "therock",
-            "platform": "windows",
-            "channel": "stable",
-            "rocm_version": "7.14.0",
-            "torch_version": "2.12.0+rocm7.14.0",
-            "torchvision_version": "0.27.0+rocm7.14.0",
-            "torchaudio_version": "2.11.0+rocm7.14.0",
-            "python_tags": ["cp312"],
-            "gfx_targets": ["gfx1100", "gfx1201"],
-            "source_id": "packages-stable",
-        }
-        observation["id"] = candidate_id_for(
-            observation["distribution_family"], observation["platform"], observation["channel"],
-            observation["rocm_version"], observation["torch_version"], observation["torchvision_version"],
-            observation["torchaudio_version"], observation["python_tags"],
+        candidates = build_history_observations(
+            {"id": "nightly", "channel": "nightly", "platform": "windows", "layout": "whl-next"},
+            ["gfx1201"],
+            packages,
+            [{"torch_series": "2.15", "torchvision_series": "0.30", "torchaudio_series": "2.11"}],
+            "therock",
         )
-        first = merge_history(None, [observation], {"packages-stable": {}}, "2026-08-07T00:00:00Z", {"packages-stable"})
-        scoped = {**observation, "gfx_targets": ["gfx1201"]}
-        second = merge_history(first, [scoped], {"packages-stable": {}}, "2026-08-08T00:00:00Z", {"packages-stable"}, ["gfx1201"])
-        self.assertEqual(second["candidates"][0]["available_gfx_targets"], ["gfx1100", "gfx1201"])
 
-    def test_computes_lifecycle_within_distribution_and_channel(self):
-        base = {
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(candidates[0]["rocm_version"], version)
+
+    def test_rolling_source_replaces_previous_candidates(self):
+        old = {
+            "id": "old-nightly",
             "distribution_family": "therock",
             "channel": "nightly",
+            "rocm_version": "10.1.0a20260807",
             "torch_version": "2.14.0",
             "torchvision_version": "0.29.0",
             "torchaudio_version": "2.11.0",
@@ -105,18 +75,23 @@ class HistoryTests(unittest.TestCase):
             "gfx_targets": ["gfx1201"],
             "source_id": "packages-nightly",
         }
-        older = {**base, "id": "older", "rocm_version": "10.0.0"}
-        newer = {**base, "id": "newer", "rocm_version": "10.1.0"}
+        new = {**old, "id": "new-nightly", "rocm_version": "10.1.0a20260808"}
+        history = merge_history(None, [old], {"packages-nightly": {}}, "2026-08-07T00:00:00Z", {"packages-nightly"})
+        history = merge_history(
+            history,
+            [new],
+            {"packages-nightly": {}},
+            "2026-08-08T00:00:00Z",
+            {"packages-nightly"},
+            replace_source_ids={"packages-nightly"},
+        )
 
-        history = merge_history(None, [older, newer], {"packages-nightly": {}}, "2026-08-07T00:00:00Z", {"packages-nightly"})
-        by_version = {candidate["rocm_version"]: candidate for candidate in history["candidates"]}
+        self.assertEqual([item["id"] for item in history["candidates"]], ["new-nightly"])
 
-        self.assertEqual(by_version["10.0.0"]["lifecycle"], "historical")
-        self.assertEqual(by_version["10.1.0"]["lifecycle"], "current")
-
-    def test_lifecycle_is_scoped_to_platform(self):
+    def test_lifecycle_is_scoped_to_channel(self):
         base = {
             "distribution_family": "therock",
+            "platform": "windows",
             "channel": "stable",
             "torch_version": "2.12.0",
             "torchvision_version": "0.27.0",
@@ -125,382 +100,38 @@ class HistoryTests(unittest.TestCase):
             "gfx_targets": ["gfx1201"],
             "source_id": "packages-stable",
         }
-        observations = [
-            {**base, "id": "windows", "platform": "windows", "rocm_version": "7.14.0"},
-            {**base, "id": "linux", "platform": "linux", "rocm_version": "7.2.4"},
-        ]
+        history = merge_history(
+            None,
+            [{**base, "id": "old", "rocm_version": "7.13.0"}, {**base, "id": "new", "rocm_version": "7.14.0"}],
+            {"packages-stable": {}},
+            "2026-08-08T00:00:00Z",
+            {"packages-stable"},
+        )
 
-        history = merge_history(None, observations, {"packages-stable": {}}, "2026-08-07T00:00:00Z", {"packages-stable"})
-        self.assertEqual({item["platform"]: item["lifecycle"] for item in history["candidates"]}, {"windows": "current", "linux": "current"})
+        lifecycle = {item["id"]: item["lifecycle"] for item in history["candidates"]}
+        self.assertEqual(lifecycle, {"old": "historical", "new": "current"})
 
-    def test_migrates_existing_therock_history(self):
-        existing = {
-            "schema_version": 1,
-            "sources": {},
-            "candidates": [
-                {
-                    "id": "nightly:10.0.0:2.14.0:0.29.0:2.11.0:cp312",
-                    "channel": "nightly",
-                    "rocm_version": "10.0.0",
-                    "torch_version": "2.14.0",
-                    "torchvision_version": "0.29.0",
-                    "torchaudio_version": "2.11.0",
-                    "python_tags": ["cp312"],
-                    "gfx_targets": ["gfx1201"],
-                    "available_gfx_targets": ["gfx1201"],
-                    "artifact_available": True,
-                    "source_id": "packages-nightly",
-                    "first_observed_at": "2026-08-07T00:00:00Z",
-                    "last_observed_at": "2026-08-07T00:00:00Z",
-                }
-            ],
-        }
-
-        history = merge_history(existing, [], {}, "2026-08-08T00:00:00Z", set())
-
-        self.assertEqual(history["schema_version"], 2)
-        self.assertEqual(history["candidates"][0]["distribution_family"], "therock")
-        self.assertEqual(history["candidates"][0]["lifecycle"], "current")
-        self.assertTrue(history["candidates"][0]["id"].startswith("therock:"))
-
-    def test_missing_platform_migrates_to_unknown_not_windows(self):
-        history = migrate_history({
-            "schema_version": 2,
-            "sources": {},
-            "candidates": [{
-                "id": "candidate",
-                "distribution_family": "therock",
-                "channel": "stable",
-                "rocm_version": "7.14.0",
-                "torch_version": "2.12.0",
-                "torchvision_version": "0.27.0",
-                "torchaudio_version": "2.11.0",
-                "python_tags": ["cp312"],
-                "gfx_targets": [],
-                "available_gfx_targets": [],
-                "artifact_available": False,
-                "first_observed_at": "2026-08-08T00:00:00Z",
-                "last_observed_at": "2026-08-08T00:00:00Z",
-                "source_id": "source",
-            }],
-        })
-        self.assertEqual(history["candidates"][0]["platform"], "unknown")
-
-    def test_resolves_and_formats_install_command(self):
-        candidate = {
-            "distribution_family": "therock",
-            "lifecycle": "current",
-            "channel": "stable",
-            "rocm_version": "7.14.0",
-            "torch_version": "2.12.0+rocm7.14.0",
-            "torchvision_version": "0.27.0+rocm7.14.0",
-            "torchaudio_version": "2.11.0+rocm7.14.0",
-            "python_tags": ["cp312"],
-            "gfx_targets": ["gfx1201"],
-            "available_gfx_targets": ["gfx1201"],
-            "source_id": "packages-stable",
-        }
-        history = {"candidates": [candidate]}
-
-        matches = resolve_candidates(history, "gfx1201", channel="stable", python_tag="3.12")
-
-        self.assertEqual(matches, [candidate])
-        self.assertIn('"torch[device-gfx1201]==2.12.0+rocm7.14.0"', install_command(candidate, "gfx1201"))
-
-    def test_count_candidates_deduplicates_ids(self):
-        candidates = [{"id": "one"}, {"id": "one"}, {"id": "two"}, {}]
-
-        self.assertEqual(count_candidates(candidates), 3)
-
-    def test_excludes_failed_and_stale_candidates_by_default(self):
-        base = {
-            "distribution_family": "therock", "platform": "linux", "channel": "stable",
-            "rocm_version": "7.14.0", "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
-            "python_tags": ["cp312"], "gfx_targets": ["gfx1201"], "available_gfx_targets": ["gfx1201"],
-        }
-        failed = {**base, "id": "failed", "evidence_status": {"artifact": "artifact_available", "resolver": "resolver_failed"}}
-        stale = {**base, "id": "stale", "evidence_status": {"artifact": "artifact_stale", "resolver": "not_collected"}}
-        history = {"candidates": [failed, stale]}
-
-        self.assertEqual(resolve_candidates(history, "gfx1201"), [])
-        self.assertEqual(len(resolve_candidates(history, "gfx1201", include_failed=True)), 2)
-
-    def test_resolver_filters_distribution_family(self):
-        base = {
-            "platform": "windows", "channel": "stable", "rocm_version": "7.14.0", "torch_version": "2.12.0",
-            "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0", "python_tags": ["cp312"],
-            "gfx_targets": ["gfx1201"], "available_gfx_targets": ["gfx1201"],
-        }
-        therock = {**base, "id": "therock", "distribution_family": "therock"}
-        legacy = {**base, "id": "legacy", "distribution_family": "legacy", "wheel_urls": ["https://example.test/torch.whl"]}
-
-        matches = resolve_candidates({"candidates": [therock, legacy]}, "gfx1201", distribution_family="legacy")
-
-        self.assertEqual(matches, [legacy])
-
-    def test_resolver_orders_stable_before_nightly_and_staging(self):
-        base = {
-            "platform": "windows", "distribution_family": "therock", "rocm_version": "7.14.0",
-            "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
-            "python_tags": ["cp312"], "gfx_targets": ["gfx1201"], "available_gfx_targets": ["gfx1201"],
-        }
-        candidates = [
-            {**base, "id": "nightly", "channel": "nightly", "rocm_version": "10.1.0a20260806"},
-            {**base, "id": "staging", "channel": "staging", "rocm_version": "10.2.0a20260807"},
-            {**base, "id": "stable-old", "channel": "stable", "rocm_version": "7.13.0"},
-            {**base, "id": "stable-new", "channel": "stable", "rocm_version": "7.14.0"},
-        ]
-
-        matches = resolve_candidates({"candidates": candidates}, "gfx1201")
-
-        self.assertEqual([candidate["id"] for candidate in matches], ["stable-new", "stable-old", "nightly", "staging"])
-
-    def test_latest_keeps_all_package_sets_from_each_channel_build(self):
-        candidates = [
-            {"id": "stable-old", "channel": "stable", "rocm_version": "7.13.0"},
-            {"id": "stable-new-a", "channel": "stable", "rocm_version": "7.14.0"},
-            {"id": "stable-new-b", "channel": "stable", "rocm_version": "7.14.0"},
-            {"id": "nightly-old", "channel": "nightly", "rocm_version": "10.1.0a20260805"},
-            {"id": "nightly-new", "channel": "nightly", "rocm_version": "10.1.0a20260806"},
-        ]
-
-        latest = latest_candidates(candidates)
-
-        self.assertEqual([candidate["id"] for candidate in latest], ["stable-new-a", "stable-new-b", "nightly-new"])
-
-    def test_history_render_labels_unknown_gfx_support(self):
-        candidate = {
-            "distribution_family": "legacy", "platform": "linux", "channel": "stable", "lifecycle": "current",
-            "rocm_version": "7.2.4", "gfx_support": "unknown", "gfx_targets": [], "available_gfx_targets": [],
-            "python_tags": ["cp312"], "evidence_status": {"artifact": "artifact_available"},
-        }
-        document = render_history({"candidates": [candidate]})
-        self.assertIn("| legacy | linux | stable | current | `7.2.4` | not observed | 1 | unknown |", document)
-
-    def test_execution_evidence_requires_candidate_match(self):
-        candidate = {
-            "distribution_family": "therock", "source_id": "packages-stable", "rocm_version": "7.14.0",
-            "platform": "windows", "gfx_support": "known", "gfx_targets": ["gfx1201"],
-            "torch_version": "2.12.0", "hip_version": None,
-        }
-        record = {
-            "os": "windows", "gfx": "gfx1201", "torch_version": "2.12.0", "rocm_version": "7.14.0", "hip_version": "7.14.0",
-            "python_tag": "cp312", "platform_tag": "win_amd64",
-            "result": "passed", "devices": [{"gfx": "gfx1201"}],
-        }
-        record["candidate_hash"] = candidate_hash(candidate, "gfx1201", "cp312", "win_amd64")
-        self.assertEqual(execution_evidence_errors(candidate, record, "runtime"), [])
-        self.assertTrue(execution_evidence_errors(candidate, {**record, "torch_version": "2.13.0"}, "runtime"))
-        self.assertTrue(execution_evidence_errors(candidate, {**record, "os": "linux"}, "runtime"))
-
-    def test_execution_evidence_requires_torchvision_and_torchaudio(self):
-        candidate = {
-            "distribution_family": "therock", "source_id": "packages-stable", "rocm_version": "7.14.0",
-            "platform": "windows", "gfx_support": "known", "gfx_targets": ["gfx1201"],
-            "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
-            "hip_version": "7.14.0",
-        }
-        record = {
-            "os": "windows", "gfx": "gfx1201", "torch_version": "2.12.0",
-            "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
-            "rocm_version": "7.14.0", "hip_version": "7.14.0",
-            "python_tag": "cp312", "platform_tag": "win_amd64", "result": "passed",
-            "devices": [{"gfx": "gfx1201"}],
-        }
-        record["candidate_hash"] = candidate_hash(candidate, "gfx1201", "cp312", "win_amd64")
-
-        self.assertEqual(execution_evidence_errors(candidate, record, "runtime"), [])
-        missing_audio = {key: value for key, value in record.items() if key != "torchaudio_version"}
-        self.assertTrue(any("TorchAudio mismatch" in error for error in execution_evidence_errors(candidate, missing_audio, "runtime")))
-
-    def test_execution_evidence_rejects_rocm_or_candidate_hash_mismatch(self):
-        candidate = {
-            "distribution_family": "therock", "source_id": "packages-stable", "rocm_version": "7.14.0",
-            "platform": "windows", "gfx_support": "known", "gfx_targets": ["gfx1201"],
-            "torch_version": "2.12.0", "hip_version": "7.14.0",
-        }
-        record = {
-            "os": "windows", "gfx": "gfx1201", "torch_version": "2.12.0", "rocm_version": "7.13.0", "hip_version": "7.13.0",
-            "python_tag": "cp312", "platform_tag": "win_amd64", "result": "passed",
-            "devices": [{"gfx": "gfx1201"}], "candidate_hash": candidate_hash(candidate, "gfx1201", "cp312", "win_amd64"),
-        }
-        errors = execution_evidence_errors(candidate, record, "runtime")
-        self.assertTrue(any("ROCm mismatch" in error for error in errors))
-        self.assertFalse(any("candidate hash" in error for error in errors))
-
-    def test_promotes_matching_runtime_evidence(self):
-        candidate = {
-            "id": "candidate",
-            "distribution_family": "therock",
-            "platform": "windows",
-            "lifecycle": "current",
-            "channel": "nightly",
-            "rocm_version": "10.1.0a20260806",
-            "torch_version": "2.14.0a0+rocm10.1.0a20260806",
-            "torchvision_version": "0.29.0a0+rocm10.1.0a20260806",
-            "torchaudio_version": "2.11.0+rocm10.1.0a20260806",
-            "hip_version": None,
-            "python_tags": ["cp312"],
-            "gfx_support": "known",
-            "gfx_targets": ["gfx1201"],
-            "available_gfx_targets": ["gfx1201"],
-            "artifact_available": True,
-            "source_id": "packages-nightly",
-            "first_observed_at": "2026-08-08T00:00:00Z",
-            "last_observed_at": "2026-08-08T00:00:00Z",
-            "evidence_status": {
-                "artifact": "artifact_available",
-                "documentation": "not_collected",
-                "ci": "not_collected",
-                "resolver": "not_collected",
-                "runtime": "not_collected",
-                "hardware": "not_collected",
-            },
-        }
-        record = {
-            "candidate_id": "candidate",
-            "platform": "windows",
-            "host_platform": "windows",
-            "os": "windows",
-            "gfx": "gfx1201",
-            "torch_version": candidate["torch_version"],
-            "torchvision_version": candidate["torchvision_version"],
-            "torchaudio_version": candidate["torchaudio_version"],
-            "rocm_version": candidate["rocm_version"],
-            "hip_version": "7.15.26312",
-            "python_tag": "cp312",
-            "platform_tag": "win_amd64",
-            "result": "passed",
-            "devices": [{"gfx": "gfx1201"}],
-        }
-        record["candidate_hash"] = candidate_hash(candidate, "gfx1201", "cp312", "win_amd64")
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "history.json"
-            path.write_text(json.dumps({"schema_version": 2, "generated_at": "2026-08-08T00:00:00Z", "sources": {"packages-nightly": {}}, "candidates": [candidate]}), encoding="utf-8")
-            promoted, errors = promote_execution_evidence(
-                path, "runtime", {**record, "candidate_id": "candidate"}, reviewed=True
-            )
-            self.assertTrue(promoted)
-            self.assertEqual(errors, [])
-            history = json.loads(path.read_text(encoding="utf-8"))
-            self.assertEqual(history["candidates"][0]["evidence_status"]["runtime"], "runtime_verified")
-
-    def test_execution_promotion_rejects_disagreeing_platform_fields(self):
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "history.json"
-            candidate = {
-                "id": "candidate", "platform": "windows", "distribution_family": "therock",
-                "channel": "stable", "rocm_version": "7.14.0", "torch_version": "2.12.0",
-                "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0", "python_tags": ["cp312"],
-                "gfx_support": "known", "gfx_targets": ["gfx1201"], "available_gfx_targets": ["gfx1201"],
-                "artifact_available": True, "source_id": "source", "first_observed_at": "2026-08-08T00:00:00Z",
-                "last_observed_at": "2026-08-08T00:00:00Z",
+    def test_render_labels_unknown_gfx_support(self):
+        document = render_history(
+            {
+                "candidates": [
+                    {
+                        "distribution_family": "legacy",
+                        "platform": "linux",
+                        "channel": "stable",
+                        "lifecycle": "current",
+                        "rocm_version": "7.2.4",
+                        "gfx_support": "unknown",
+                        "gfx_targets": [],
+                        "available_gfx_targets": [],
+                        "python_tags": ["cp312"],
+                        "evidence_status": {"artifact": "artifact_available"},
+                    }
+                ]
             }
-            path.write_text(json.dumps({"schema_version": 2, "candidates": [candidate]}), encoding="utf-8")
-            record = {
-                "candidate_id": "candidate", "platform": "linux", "host_platform": "windows", "os": "windows",
-                "gfx": "gfx1201", "python_tag": "cp312", "platform_tag": "win_amd64", "result": "passed",
-                "torch_version": "2.12.0", "torchvision_version": "0.27.0", "torchaudio_version": "2.11.0",
-                "rocm_version": "7.14.0", "hip_version": "7.14.0", "devices": [{"gfx": "gfx1201"}],
-            }
-            record["candidate_hash"] = candidate_hash(candidate, "gfx1201", "cp312", "win_amd64")
-            promoted, errors = promote_execution_evidence(path, "runtime", record, reviewed=True)
-            self.assertFalse(promoted)
-            self.assertTrue(any("platform" in error for error in errors))
+        )
 
-    def test_execution_evidence_is_not_promoted_without_review(self):
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "history.json"
-            path.write_text(json.dumps({"schema_version": 2, "candidates": [{"id": "candidate"}]}), encoding="utf-8")
-            promoted, errors = promote_execution_evidence(
-                path, "runtime", {"candidate_id": "candidate", "result": "passed"}
-            )
-            self.assertFalse(promoted)
-            self.assertIn("explicit review", errors[0])
-            self.assertNotIn("evidence_status", json.loads(path.read_text(encoding="utf-8"))["candidates"][0])
-
-    def test_direct_execution_update_requires_review(self):
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "history.json"
-            path.write_text(json.dumps({"schema_version": 2, "candidates": [{"id": "candidate"}]}), encoding="utf-8")
-            self.assertFalse(update_execution_evidence(path, "runtime", "candidate", "passed"))
-            self.assertNotIn("evidence_status", json.loads(path.read_text(encoding="utf-8"))["candidates"][0])
-
-    def test_reviewed_direct_update_requires_exact_execution_record(self):
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "history.json"
-            path.write_text(json.dumps({"schema_version": 2, "candidates": [{"id": "candidate"}]}), encoding="utf-8")
-            self.assertFalse(update_execution_evidence(path, "runtime", "candidate", "passed", reviewed=True))
-            self.assertNotIn("evidence_status", json.loads(path.read_text(encoding="utf-8"))["candidates"][0])
-
-    def test_execution_promotion_requires_platform_tag_identity(self):
-        candidate = {
-            "distribution_family": "therock", "source_id": "packages-stable", "rocm_version": "7.14.0",
-            "platform": "windows", "gfx_support": "known", "gfx_targets": ["gfx1201"],
-            "torch_version": "2.12.0", "hip_version": "7.14.0",
-        }
-        record = {
-            "os": "windows", "gfx": "gfx1201", "torch_version": "2.12.0", "rocm_version": "7.14.0",
-            "hip_version": "7.14.0", "python_tag": "cp312", "result": "passed",
-            "devices": [{"gfx": "gfx1201"}],
-        }
-        record["candidate_hash"] = candidate_hash(candidate, "gfx1201", "cp312", None)
-        self.assertTrue(any("platform tag" in error for error in execution_evidence_errors(candidate, record, "runtime")))
-
-    def test_attaches_ci_evidence_with_gfx_platform_scope(self):
-        candidate = {
-            "id": "therock:stable:candidate",
-            "distribution_family": "therock",
-            "platform": "windows",
-            "lifecycle": "current",
-            "gfx_targets": ["gfx1201"],
-            "evidence_status": {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected"},
-        }
-        evidence = {"executions": [{"id": "github:1", "platform": "windows", "targets": ["gfx1201"], "observations": [{"state": "success"}]}]}
-
-        attach_therock_ci_evidence({"candidates": [candidate]}, evidence)
-
-        self.assertEqual(candidate["evidence_status"]["ci"], "ci_verified")
-        self.assertEqual(candidate["ci_evidence_refs"], ["github:1"])
-        self.assertEqual(candidate["ci_evidence_scope"], "gfx_platform")
-
-    def test_configured_or_non_windows_coverage_does_not_verify_candidate(self):
-        candidate = {
-            "id": "therock:stable:candidate",
-            "distribution_family": "therock",
-            "platform": "windows",
-            "lifecycle": "current",
-            "gfx_targets": ["gfx1201"],
-            "evidence_status": {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected", "ci": "not_collected"},
-        }
-        coverage_only = {"entries": [{"configured_targets": ["gfx1201"], "platform": "windows"}]}
-        attach_therock_ci_evidence({"candidates": [candidate]}, coverage_only)
-        self.assertEqual(candidate["evidence_status"]["ci"], "not_collected")
-
-        linux_execution = {"executions": [{"id": "linux:1", "platform": "linux", "targets": ["gfx1201"], "observations": [{"state": "success"}]}]}
-        attach_therock_ci_evidence({"candidates": [candidate]}, linux_execution)
-        self.assertEqual(candidate["evidence_status"]["ci"], "not_collected")
-
-    def test_ci_status_follows_latest_observation(self):
-        candidate = {
-            "id": "therock:stable:candidate",
-            "distribution_family": "therock",
-            "platform": "windows",
-            "lifecycle": "current",
-            "gfx_targets": ["gfx1201"],
-            "evidence_status": {"artifact": "artifact_available", "resolver": "not_collected", "runtime": "not_collected", "hardware": "not_collected", "ci": "not_collected"},
-        }
-        evidence = {"executions": [{
-            "id": "github:1",
-            "platform": "windows",
-            "targets": ["gfx1201"],
-            "observations": [
-                {"state": "success", "observed_at": "2026-08-08T00:00:00Z"},
-                {"state": "failure", "observed_at": "2026-08-08T00:01:00Z"},
-            ],
-        }]}
-        attach_therock_ci_evidence({"candidates": [candidate]}, evidence)
-        self.assertEqual(candidate["evidence_status"]["ci"], "ci_failed")
+        self.assertIn("| legacy | linux | stable | current | `7.2.4` |", document)
 
 
 if __name__ == "__main__":

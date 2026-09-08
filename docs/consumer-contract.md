@@ -8,10 +8,10 @@ Regenerate it with:
 rocm-matrix catalog
 ```
 
-The catalog lists each committed core evidence artifact, extension snapshots/catalog, standalone CI/status evidence,
-its schema, and its schema version. Local runtime, hardware, and resolver
-outputs remain machine-local evidence and are listed only when a reviewed copy
-is intentionally committed. Consumers must reject an unknown `schema_version`
+The catalog lists each committed core evidence artifact, extension snapshots/catalog,
+collection status, and source-manifest evidence with its schema and schema version.
+Upstream CI polling snapshots and Manager-local runtime, hardware, and resolver
+outputs are not part of the Matrix catalog. Consumers must reject an unknown `schema_version`
 or ignore fields they do not understand. Generated Markdown is presentation
 output and is not a stable API. Artifact SHA-256 values are calculated from
 UTF-8 JSON bytes with CRLF normalized to LF so Windows and Unix checkouts share
@@ -30,8 +30,8 @@ and `channel=external`; these dimensions describe PyPI or another explicitly
 configured upstream and are not core ROCm release channels.
 
 TheRock is the active distribution family. Consumers may use current TheRock
-records for package discovery and may optionally attach scoped verification
-workflows. Legacy records are retained as historical archive evidence and must
+records for package discovery; Manager may attach local execution results
+separately. Legacy records are retained as historical archive evidence and must
 not be interpreted as an actively maintained installation or verification path.
 
 Do not infer channel from a version string or URL. Use the recorded source
@@ -50,19 +50,19 @@ ordinary third-party dependencies; they must not
 apply TheRock's device-extra installation syntax to a `legacy` candidate.
 
 Some legacy Linux releases have package artifacts but no authoritative GFX
-mapping. Those candidates use `gfx_support: "unknown"` and may be listed with
-`rocm-resolve --platform linux` without `--gfx`; they must not be presented as
-hardware-compatible for a specific GPU.
+mapping. Those candidates use `gfx_support: "unknown"` and must not be
+presented as hardware-compatible for a specific GPU.
 
 Legacy Windows candidates may include `gfx_support_scope` and
 `gfx_support_refs`. A `series` scope means that a patch release was connected
 to a documented HIP SDK series rather than an exact release-specific table;
 consumers must preserve that provenance when presenting the candidate.
 
-Framework and SDK artifacts are separate machine-readable evidence. Use
-`framework_history` for JAX PJRT/plugin pairs and `sdk_components` for ROCm SDK
-and exact-GFX device packages. An observed alias or extension artifact is not a
-complete Torch candidate unless it appears in `package_history`.
+Package snapshots and candidate history contain observed package artifacts only.
+They do not establish resolver, runtime, or hardware compatibility. Manager
+must perform those checks against the user's target environment. An observed
+alias or extension artifact is not a complete Torch candidate unless it appears
+in `package_history`.
 
 Optional compiled extensions use `extension_history`. Triton records in that
 artifact are not part of core Torch candidate identity and must not be treated
@@ -121,9 +121,6 @@ runtime, or hardware evidence is explicitly linked. Consumers must not present
 an unverified extension as compatible automatically, and extension failures
 must remain separate from the ComfyUI core result.
 
-The local diagnostic export format uses `schemas/community-evidence.schema.json`.
-Records are `source=community` and `provenance=self-reported`, not official AMD
-support. `rocm-evidence` prepares the file locally; the Matrix and Manager have
-no upload, telemetry, background reporting, community intake, or maintainer
-review workflow. These records are never added to the shared catalog
-automatically.
+Local runtime and hardware diagnostics are outside the published Matrix
+catalog. They are not uploaded, transmitted, or treated as official AMD
+support evidence.

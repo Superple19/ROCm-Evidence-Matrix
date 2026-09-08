@@ -5,31 +5,25 @@ from typing import Any
 from urllib.request import Request, urlopen
 
 from .bundle import build_bundle, verify_bundle
-from .sources.therock import build_evidence, collect_documentation_sources, collect_github, collect_hud, collect_source, parse_matrix
+from .sources.therock import collect_documentation_sources, collect_source
 from .catalog import write_catalog
 from .extension_catalog import rebuild_extension_catalog, render_extension_catalog
 from .extension_sources import collect_extension_sources, rebuild_extension_catalog_from_sources
 from .extensions import rebuild_extension_history, render_extension_history
-from .history import attach_therock_ci_evidence, attach_therock_documentation_evidence, merge_history, migrate_history, write_history_document
-from .frameworks import rebuild_auxiliary_outputs, render_framework_history, render_sdk_components
+from .history import attach_therock_documentation_evidence, merge_history, migrate_history, write_history_document
 from .integration import build_compatibility_matrix
 from .sources.legacy_archive import build_legacy_candidates, build_legacy_linux_candidates, classify_legacy_linux_framework, collect_legacy_linux_sources, collect_legacy_version_history, collect_legacy_windows_sources, render_legacy_linux, render_legacy_windows
 from .matrix_render import write_compatibility_document
-from .paths import EXTENSION_ARTIFACT_HISTORY, EXTENSION_CATALOG, EXTENSION_SNAPSHOTS, LEGACY_LINUX, LEGACY_LINUX_DOC, LEGACY_STATUS, LEGACY_WINDOWS, LEGACY_WINDOWS_DOC, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS
+from .paths import EXTENSION_ARTIFACT_HISTORY, EXTENSION_CATALOG, EXTENSION_SNAPSHOTS, LEGACY_LINUX, LEGACY_LINUX_DOC, LEGACY_STATUS, LEGACY_WINDOWS, LEGACY_WINDOWS_DOC, THEROCK_SNAPSHOTS, THEROCK_STATUS
 from .render import write_rendered_document
 from .source_cache import CachedSourceReader, SourceCache
 from .source_adapter import collection_status, run_source_adapter, utc_now
 from .persistence import atomic_write_json, atomic_write_text
-from .validation import validate_ci_coverage, validate_ci_evidence, validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_extension_catalog, validate_history, validate_legacy_linux, validate_legacy_windows, validate_snapshot, validate_version_history
+from .validation import validate_collection_status, validate_compatibility_matrix, validate_documentation_snapshot, validate_extension_catalog, validate_history, validate_legacy_linux, validate_legacy_windows, validate_snapshot, validate_version_history
 from .version_history import collect_therock_version_history, render_version_history
 
 
 USER_AGENT = "rocm-evidence-matrix/0.1 (+https://github.com/Superple19/rocm-evidence-matrix)"
-
-
-def _error_details(error):
-    details = getattr(error, "details", None)
-    return details if isinstance(details, dict) else None
 
 
 def fetch_text(url, timeout):
@@ -77,8 +71,6 @@ def add_cache_paths(parser):
 
 
 def add_auxiliary_paths(parser):
-    parser.add_argument("--framework-history-output", default="data/framework-history.json")
-    parser.add_argument("--sdk-components-output", default="data/sdk-components.json")
     parser.add_argument("--extension-history-output", default="data/extension-history.json")
     parser.add_argument("--extension-catalog-output", default=EXTENSION_CATALOG)
 
@@ -98,8 +90,6 @@ def parse_args(argv=None):
     therock.add_argument("--history-output", default="data/history.json")
     therock.add_argument("--version-history-output", default="data/version-history.json")
     therock.add_argument("--status-output", default=THEROCK_STATUS)
-    therock.add_argument("--ci-coverage-output", default=THEROCK_CI_COVERAGE)
-    therock.add_argument("--ci-evidence-output", default=THEROCK_CI_EVIDENCE)
     therock.add_argument("--source", action="append", dest="sources", help="Collect only the named package source. Repeat to select multiple sources.")
     therock.add_argument("--gfx", action="append", dest="gfx_targets", default=[], help="Collect only the exact GFX target. Repeat to select multiple targets.")
     therock.add_argument("--timeout", type=int, default=20)
@@ -139,8 +129,6 @@ def parse_args(argv=None):
     normalize_therock.add_argument("--source", action="append", dest="sources", help="Normalize only the named package source. Repeat to select multiple sources.")
     normalize_therock.add_argument("--gfx", action="append", dest="gfx_targets", default=[], help="Normalize only the exact GFX target. Repeat to select multiple targets.")
     normalize_therock.add_argument("--workers", type=int, default=8)
-    normalize_therock.add_argument("--ci-coverage-output", default=THEROCK_CI_COVERAGE)
-    normalize_therock.add_argument("--ci-evidence-output", default=THEROCK_CI_EVIDENCE)
 
     normalize_legacy = normalizers.add_parser("legacy", help="Normalize cached archive-only pre-TheRock sources.")
     add_config_path(normalize_legacy)
@@ -182,7 +170,6 @@ def parse_args(argv=None):
     build.add_argument("--output-dir", default=THEROCK_SNAPSHOTS)
     build.add_argument("--documentation-output", default="data/documentation.json")
     build.add_argument("--history-output", default="data/history.json")
-    build.add_argument("--ci-evidence-output", default=THEROCK_CI_EVIDENCE)
     build.add_argument("--legacy-output", default=LEGACY_WINDOWS)
     build.add_argument("--version-history-output", default="data/version-history.json")
     build.add_argument("--docs-output", default="docs/generated/package-availability.md")
@@ -208,16 +195,6 @@ def parse_args(argv=None):
     verify.add_argument("bundle_path")
     check = commands.add_parser("check", help="Validate committed evidence and generated documentation without network access.")
     check.add_argument("--root", default=".")
-    runtime = commands.add_parser("runtime", help="Record ROCm runtime evidence from the current Python environment.")
-    runtime.add_argument("--output", default="data/verifications/runtime.json")
-    runtime.add_argument("--candidate-id")
-    runtime.add_argument("--gfx")
-    runtime.add_argument("--history", default="data/history.json")
-    hardware = commands.add_parser("hardware", help="Run a reproducible ROCm GPU tensor smoke test.")
-    hardware.add_argument("--output", default="data/verifications/hardware.json")
-    hardware.add_argument("--candidate-id")
-    hardware.add_argument("--gfx")
-    hardware.add_argument("--history", default="data/history.json")
     return parser.parse_args(argv)
 
 
@@ -246,10 +223,8 @@ def write_status(family, started_at, results, path):
 def auxiliary_paths(args):
     output_dir = Path(getattr(args, "output_dir", THEROCK_SNAPSHOTS))
     default_dir = output_dir.parent
-    framework_path = getattr(args, "framework_history_output", None) or default_dir / "framework-history.json"
-    components_path = getattr(args, "sdk_components_output", None) or default_dir / "sdk-components.json"
     extension_path = getattr(args, "extension_history_output", None) or default_dir / "extension-history.json"
-    return Path(framework_path), Path(components_path), Path(extension_path)
+    return Path(extension_path)
 
 
 def normalize_therock_sources(args, config, source_reader, observed_at, status_output=None):
@@ -287,7 +262,11 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
             print(f"Wrote {version_history_path}")
 
     selected = set(args.sources or [])
-    sources = [source for source in config["artifact_sources"] if not selected or source["id"] in selected]
+    sources = [
+        source
+        for source in config["artifact_sources"]
+        if (not selected or source["id"] in selected) and (source.get("enabled", True) or source["id"] in selected)
+    ]
     missing = selected - {source["id"] for source in sources}
     if missing:
         raise SystemExit(f"Unknown sources: {', '.join(sorted(missing))}")
@@ -334,56 +313,18 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
             max(snapshot["last_observed_at"] for snapshot in package_snapshots),
             {f"packages-{source['id']}" for source in successful_sources},
             args.gfx_targets,
+            {
+                f"packages-{source['id']}"
+                for source in successful_sources
+                if source.get("retention") == "rolling"
+            },
         )
         validate_history(history)
         write_json(history, args.history_output)
         print(f"Wrote {args.history_output}")
 
-    ci_config = config.get("ci_sources", {}).get("therock")
-    if ci_config and not ci_config.get("enabled", True):
-        ci_config = None
-    if ci_config:
-        ci_results = []
-        coverage = None
-        try:
-            coverage = parse_matrix(source_reader(ci_config["matrix"]["url"]), observed_at)
-            validate_ci_coverage(coverage)
-            write_json(coverage, args.ci_coverage_output)
-            print(f"Wrote {args.ci_coverage_output}")
-            ci_results.append({"source_id": ci_config["matrix"]["id"], "status": "passed", "error": None})
-        except Exception as error:
-            ci_results.append({"source_id": ci_config["matrix"]["id"], "status": "failed", "error": str(error)})
-            print(f"Failed {ci_config['matrix']['id']}: {error}")
-        records = []
-        failures = []
-        for adapter_name, adapter in (("github_actions", lambda: collect_github(ci_config, source_reader, observed_at)), ("hud", lambda: collect_hud(ci_config["hud"], source_reader, observed_at))):
-            try:
-                records.extend(adapter())
-                ci_results.append({"source_id": ci_config["workflows"]["id"] if adapter_name == "github_actions" else ci_config["hud"]["id"], "status": "passed", "error": None})
-            except Exception as error:
-                details = _error_details(error)
-                failure = {"adapter": adapter_name, "error": str(error), "observed_at": observed_at}
-                if details:
-                    failure["details"] = details
-                failures.append(failure)
-                ci_results.append({"source_id": ci_config["workflows"]["id"] if adapter_name == "github_actions" else ci_config["hud"]["id"], "status": "failed", "error": str(error), **({"details": details} if details else {})})
-                print(f"Failed {adapter_name}: {error}")
-        evidence = build_evidence(records, [], existing=read_json(args.ci_evidence_output), observed_at=observed_at, failures=failures)
-        validate_ci_evidence(evidence)
-        write_json(evidence, args.ci_evidence_output)
-        print(f"Wrote {args.ci_evidence_output}")
-        history = read_json(args.history_output)
-        if history is not None:
-            attach_therock_documentation_evidence(history, documentation)
-            attach_therock_ci_evidence(history, evidence)
-            validate_history(history)
-            write_json(history, args.history_output)
-        print(f"Updated {args.history_output} with CI evidence")
-        results.extend(ci_results)
-
     if successful_sources:
-        framework_path, components_path, extension_path = auxiliary_paths(args)
-        rebuild_auxiliary_outputs(args.output_dir, framework_path, components_path, observed_at, read_json, write_json)
+        extension_path = auxiliary_paths(args)
         rebuild_extension_history(args.output_dir, extension_path, observed_at, read_json, write_json, read_json(args.history_output))
         extension_catalog_output = getattr(args, "extension_catalog_output", None)
         if extension_catalog_output is None:
@@ -397,8 +338,6 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
             history_path=Path(extension_catalog_output).parent / "history.json",
         )
         validate_extension_catalog(extension_catalog)
-        print(f"Wrote {framework_path}")
-        print(f"Wrote {components_path}")
         print(f"Wrote {extension_path}")
         print(f"Wrote {extension_catalog_output}")
 
@@ -478,7 +417,11 @@ def normalize_therock(args, config):
     source_reader = CachedSourceReader(args.cache_dir, args.source_manifest)
     documentation_urls = [source["url"] for source in config["documentation_sources"]]
     selected = set(args.sources or [])
-    artifact_prefixes = [source["url"] for source in config["artifact_sources"] if not selected or source["id"] in selected]
+    artifact_prefixes = [
+        source["url"]
+        for source in config["artifact_sources"]
+        if (not selected or source["id"] in selected) and (source.get("enabled", True) or source["id"] in selected)
+    ]
     version_sources = config.get("version_history_sources", {}).get("therock")
     if version_sources:
         documentation_urls.extend((version_sources["releases"]["url"], version_sources["version"]["url"]))
@@ -525,6 +468,7 @@ def normalize_legacy_sources(args, config, source_reader, observed_at, status_ou
     for result in results:
         if result["status"] == "failed":
             print(f"Failed {result['source_id']}: {result['error']}")
+    legacy_linux = None
     linux_sources = config.get("legacy_linux_sources", [])
     if linux_sources:
         documentation = read_json(getattr(args, "documentation_output", "data/documentation.json")) or {}
@@ -571,6 +515,7 @@ def normalize_legacy_sources(args, config, source_reader, observed_at, status_ou
             legacy,
             existing=read_json(version_history_path),
             observed_at=observed_at,
+            legacy_linux=legacy_linux,
         )
         results.extend(version_results)
         if any(result["status"] == "passed" for result in version_results):
@@ -606,7 +551,12 @@ def normalize_legacy(args, config):
 
 
 def load_package_snapshots(output_dir):
-    snapshot_paths = sorted(Path(output_dir).glob("*.json"))
+    snapshot_paths = []
+    for path in sorted(Path(output_dir).glob("*.json")):
+        snapshot = read_required_json(path)
+        if snapshot.get("source", {}).get("enabled", True) is False:
+            continue
+        snapshot_paths.append(path)
     if not snapshot_paths:
         raise SystemExit("Package snapshots are required")
     package_snapshots = [read_json(path) for path in snapshot_paths]
@@ -641,9 +591,7 @@ def render_outputs(args):
     validate_compatibility_matrix(matrix)
     validate_version_history(version_history)
     snapshot_paths, _ = load_package_snapshots(args.output_dir)
-    framework_path, components_path, extension_path = auxiliary_paths(args)
-    framework_history = read_json(framework_path) or {"schema_version": 1, "generated_at": history["generated_at"], "sources": {}, "candidates": []}
-    sdk_components = read_json(components_path) or {"schema_version": 1, "generated_at": history["generated_at"], "components": []}
+    extension_path = auxiliary_paths(args)
     extension_history = read_json(extension_path) or {"schema_version": 1, "generated_at": history["generated_at"], "sources": {}, "extensions": []}
     extension_catalog_output = getattr(args, "extension_catalog_output", None)
     if extension_catalog_output is None:
@@ -664,12 +612,10 @@ def render_outputs(args):
     version_history_path = Path(args.version_history_docs_output)
     version_history_path.parent.mkdir(parents=True, exist_ok=True)
     atomic_write_text(version_history_path, render_version_history(version_history))
-    atomic_write_text("docs/generated/framework-history.md", render_framework_history(framework_history))
-    atomic_write_text("docs/generated/sdk-components.md", render_sdk_components(sdk_components))
     atomic_write_text("docs/generated/extension-history.md", render_extension_history(extension_history))
     atomic_write_text("docs/generated/extension-catalog.md", render_extension_catalog(extension_catalog))
     validate_extension_catalog(extension_catalog)
-    paths = (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output, args.version_history_docs_output, "docs/generated/framework-history.md", "docs/generated/sdk-components.md", "docs/generated/extension-history.md", "docs/generated/extension-catalog.md")
+    paths = (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output, args.version_history_docs_output, "docs/generated/extension-history.md", "docs/generated/extension-catalog.md")
     if legacy_linux is not None:
         paths += (args.legacy_linux_docs_output,)
     for path in paths:
@@ -678,11 +624,10 @@ def render_outputs(args):
 
 def build_outputs(args):
     integrate_outputs(args)
-    snapshot_paths = sorted(Path(args.output_dir).glob("*.json"))
+    snapshot_paths, _ = load_package_snapshots(args.output_dir)
     snapshot_times = [read_required_json(path)["last_observed_at"] for path in snapshot_paths]
     observed_at = max(snapshot_times) if snapshot_times else utc_now()
-    framework_path, components_path, extension_path = auxiliary_paths(args)
-    rebuild_auxiliary_outputs(args.output_dir, framework_path, components_path, observed_at, read_json, write_json)
+    extension_path = auxiliary_paths(args)
     rebuild_extension_history(args.output_dir, extension_path, observed_at, read_json, write_json, read_json(args.history_output))
     extension_catalog_output = getattr(args, "extension_catalog_output", None)
     if extension_catalog_output is None:
@@ -697,14 +642,11 @@ def build_outputs(args):
     )
     validate_extension_catalog(extension_catalog)
     history = read_json(args.history_output)
-    ci_evidence = read_json(args.ci_evidence_output)
     documentation = read_json(args.documentation_output)
     if history is not None:
         history = migrate_history(history)
     if history is not None and documentation is not None:
         attach_therock_documentation_evidence(history, documentation)
-    if history is not None and ci_evidence is not None:
-        attach_therock_ci_evidence(history, ci_evidence)
     if history is not None:
         validate_history(history)
         write_json(history, args.history_output)
@@ -714,24 +656,6 @@ def build_outputs(args):
 
 def main(argv=None):
     args = parse_args(argv)
-    if args.command == "runtime":
-        from .runtime import main as runtime_main
-        runtime_args = ["--output", args.output, "--history", args.history]
-        if args.candidate_id:
-            runtime_args += ["--candidate-id", args.candidate_id]
-        if args.gfx:
-            runtime_args += ["--gfx", args.gfx]
-        runtime_main(runtime_args)
-        return
-    if args.command == "hardware":
-        from .hardware import main as hardware_main
-        hardware_args = ["--output", args.output, "--history", args.history]
-        if args.candidate_id:
-            hardware_args += ["--candidate-id", args.candidate_id]
-        if args.gfx:
-            hardware_args += ["--gfx", args.gfx]
-        hardware_main(hardware_args)
-        return
     if args.command == "build":
         build_outputs(args)
         return

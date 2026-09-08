@@ -4,31 +4,28 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .persistence import atomic_write_json
-from .paths import EXTENSION_ARTIFACT_HISTORY, EXTENSION_CATALOG, EXTENSION_SNAPSHOTS, LEGACY_LINUX, LEGACY_STATUS, LEGACY_WINDOWS, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS, first_existing
+from .paths import EXTENSION_ARTIFACT_HISTORY, EXTENSION_CATALOG, EXTENSION_SNAPSHOTS, LEGACY_LINUX, LEGACY_STATUS, LEGACY_WINDOWS, THEROCK_SNAPSHOTS, THEROCK_STATUS, first_existing
+
+
+REQUIRED_ARTIFACT_IDS = frozenset({"compatibility_matrix", "package_history", "extension_catalog", "comfyui_profile"})
 
 
 ARTIFACTS = (
     ("compatibility_matrix", "data/matrix.json", "schemas/compatibility-matrix.schema.json"),
     ("package_history", "data/history.json", "schemas/history.schema.json"),
     ("package_snapshots", THEROCK_SNAPSHOTS, "schemas/package-snapshot.schema.json"),
-    ("framework_history", "data/framework-history.json", "schemas/framework-history.schema.json"),
     ("extension_history", "data/extension-history.json", "schemas/extension-history.schema.json"),
     ("extension_catalog", EXTENSION_CATALOG, "schemas/extension-catalog.schema.json"),
     ("extension_artifact_history", EXTENSION_ARTIFACT_HISTORY, "schemas/extension-catalog.schema.json"),
     ("extension_snapshots", EXTENSION_SNAPSHOTS, "schemas/extension-snapshot.schema.json"),
     ("extension_status", "data/extensions/status.json", "schemas/collection-status.schema.json"),
-    ("sdk_components", "data/sdk-components.json", "schemas/sdk-components.schema.json"),
     ("documentation", "data/documentation.json", "schemas/documentation-snapshot.schema.json"),
     ("legacy_windows", LEGACY_WINDOWS, "schemas/legacy-windows.schema.json"),
     ("legacy_linux", LEGACY_LINUX, "schemas/legacy-linux.schema.json"),
-    ("legacy_archive_manifest", "data/legacy/archive/manifest.json", "schemas/legacy-archive-manifest.schema.json"),
     ("version_history", "data/version-history.json", "schemas/version-history.schema.json"),
-    ("ci_coverage", THEROCK_CI_COVERAGE, "schemas/ci-coverage.schema.json"),
-    ("ci_evidence", THEROCK_CI_EVIDENCE, "schemas/ci-evidence.schema.json"),
     ("source_manifest", "data/observations/source-manifest.json", "schemas/source-manifest.schema.json"),
     ("collection_status:legacy", LEGACY_STATUS, "schemas/collection-status.schema.json"),
     ("collection_status:therock", THEROCK_STATUS, "schemas/collection-status.schema.json"),
-    ("resolver_verifications", "data/verifications/resolver.json", "schemas/resolver-verifications.schema.json"),
     ("comfyui_profile", "profiles/comfyui/profile.json", "schemas/profile.schema.json"),
     ("comfyui_extension_profiles", "profiles/comfyui/extensions", "schemas/profile.schema.json"),
 )
@@ -63,6 +60,8 @@ def build_catalog(root: str | Path = "."):
             paths = [path] if path.exists() else []
         for item in paths:
             value = read_json(item)
+            if path.is_dir() and value.get("source", {}).get("enabled", True) is False:
+                continue
             timestamp = value.get("generated_at") or value.get("last_observed_at")
             if timestamp:
                 timestamps.append(timestamp)

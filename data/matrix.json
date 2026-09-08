@@ -1,87 +1,87 @@
 {
-  "generated_at": "2026-08-08T14:13:02Z",
+  "generated_at": "2026-09-07T21:36:06Z",
   "schema_version": 1,
   "sources": {
     "amd-gpu-specifications": {
       "fallback_used": false,
       "id": "amd-gpu-specifications",
-      "observed_at": "2026-08-08T14:13:02Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst",
       "url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst"
     },
     "packages-nightly": {
       "channel": "nightly",
       "distribution_family": "therock",
+      "historical_fallback": "nightly-archive",
       "id": "nightly",
-      "observed_at": "2026-08-08T14:13:02Z",
+      "layout": "whl-next",
+      "observed_at": "2026-09-07T21:36:06Z",
       "platform": "windows",
-      "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
+      "retention": "rolling",
+      "retention_limit": 120,
+      "stream": "nightly",
+      "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/"
     },
     "packages-nightly-linux": {
       "channel": "nightly",
       "distribution_family": "therock",
+      "historical_fallback": "nightly-archive-linux",
       "id": "nightly-linux",
-      "observed_at": "2026-08-08T14:13:02Z",
+      "layout": "whl-next",
+      "observed_at": "2026-09-07T21:36:06Z",
       "platform": "linux",
-      "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
+      "retention": "rolling",
+      "retention_limit": 120,
+      "stream": "nightly",
+      "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/"
     },
     "packages-stable": {
       "channel": "stable",
       "distribution_family": "therock",
       "id": "stable",
-      "observed_at": "2026-08-08T14:13:02Z",
+      "layout": "whl-next",
+      "observed_at": "2026-09-07T21:36:06Z",
       "platform": "windows",
-      "url": "https://repo.amd.com/rocm/whl-multi-arch/"
+      "retention": "forever",
+      "stream": "stable",
+      "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/"
     },
     "packages-stable-linux": {
       "channel": "stable",
       "distribution_family": "therock",
       "id": "stable-linux",
-      "observed_at": "2026-08-08T14:13:02Z",
+      "layout": "whl-next",
+      "observed_at": "2026-09-07T21:36:06Z",
       "platform": "linux",
-      "url": "https://repo.amd.com/rocm/whl-multi-arch/"
-    },
-    "packages-staging": {
-      "channel": "staging",
-      "distribution_family": "therock",
-      "id": "staging",
-      "observed_at": "2026-08-08T14:13:02Z",
-      "platform": "windows",
-      "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
-    },
-    "packages-staging-linux": {
-      "channel": "staging",
-      "distribution_family": "therock",
-      "id": "staging-linux",
-      "observed_at": "2026-08-08T14:13:02Z",
-      "platform": "linux",
-      "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
+      "retention": "forever",
+      "stream": "stable",
+      "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/"
     },
     "pytorch-version-compatibility": {
       "fallback_used": false,
       "id": "pytorch-version-compatibility",
-      "observed_at": "2026-08-08T14:13:02Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "preferred_url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md",
       "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     },
     "rocm-compatibility-matrix": {
       "fallback_used": false,
       "id": "rocm-compatibility-matrix",
-      "observed_at": "2026-08-08T14:13:02Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "preferred_url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html",
       "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
     },
     "therock-release-packaging": {
       "fallback_used": false,
       "id": "therock-release-packaging",
-      "observed_at": "2026-08-08T14:13:02Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
     },
     "therock-supported-gpus": {
       "fallback_used": false,
       "id": "therock-supported-gpus",
-      "observed_at": "2026-08-08T14:13:02Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     }
@@ -95,7 +95,7 @@
           "rocm_device_version": null,
           "source_id": "packages-nightly",
           "torch_device_version": null,
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
           "torchvision_device_version": null
         },
         "stable": {
@@ -103,7 +103,7 @@
           "rocm_device_version": null,
           "source_id": "packages-stable",
           "torch_device_version": null,
-          "torchaudio_version": "2.11.0+rocm7.14.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
           "torchvision_device_version": null
         }
       },
@@ -112,19 +112,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.11.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.26.0+rocm7.14.0"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -135,7 +135,7 @@
               "rocm_device_version": null,
               "source_id": "packages-nightly",
               "torch_device_version": null,
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
               "torchvision_device_version": null
             },
             "stable": {
@@ -143,7 +143,7 @@
               "rocm_device_version": null,
               "source_id": "packages-stable",
               "torch_device_version": null,
-              "torchaudio_version": "2.11.0+rocm7.14.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
               "torchvision_device_version": null
             }
           },
@@ -160,27 +160,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -188,27 +180,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -216,48 +200,38 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": {
             "adrenalin_driver_versions": [
-              "26.6.4"
+              "26.8.1"
             ],
             "device_family": "radeon",
             "gfx": "gfx1201",
-            "rocm_version": "7.14.0",
+            "rocm_version": "10.0.0",
             "selector_ids": [
-              "ai-r9600d",
-              "ai-r9700",
-              "ai-r9700s",
-              "rx-9070",
-              "rx-9070-gre",
-              "rx-9070-xt"
+              "amd-radeon-ai-pro-r9600d",
+              "amd-radeon-ai-pro-r9700",
+              "amd-radeon-ai-pro-r9700s",
+              "amd-radeon-rx-9070",
+              "amd-radeon-rx-9070-gre",
+              "amd-radeon-rx-9070-xt"
             ],
             "source_id": "rocm-compatibility-matrix",
-            "windows_oem_driver_versions": [
-              "26.10.28"
-            ],
+            "windows_oem_driver_versions": [],
             "windows_versions": [
               "Windows 11 25H2"
             ]
@@ -290,23 +264,21 @@
       },
       "windows_release_support": {
         "adrenalin_driver_versions": [
-          "26.6.4"
+          "26.8.1"
         ],
         "device_family": "radeon",
         "gfx": "gfx1201",
-        "rocm_version": "7.14.0",
+        "rocm_version": "10.0.0",
         "selector_ids": [
-          "ai-r9600d",
-          "ai-r9700",
-          "ai-r9700s",
-          "rx-9070",
-          "rx-9070-gre",
-          "rx-9070-xt"
+          "amd-radeon-ai-pro-r9600d",
+          "amd-radeon-ai-pro-r9700",
+          "amd-radeon-ai-pro-r9700s",
+          "amd-radeon-rx-9070",
+          "amd-radeon-rx-9070-gre",
+          "amd-radeon-rx-9070-xt"
         ],
         "source_id": "rocm-compatibility-matrix",
-        "windows_oem_driver_versions": [
-          "26.10.28"
-        ],
+        "windows_oem_driver_versions": [],
         "windows_versions": [
           "Windows 11 25H2"
         ]
@@ -317,27 +289,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -345,27 +309,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -373,45 +329,37 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": {
             "adrenalin_driver_versions": [
-              "26.6.4"
+              "26.8.1"
             ],
             "device_family": "radeon",
             "gfx": "gfx1200",
-            "rocm_version": "7.14.0",
+            "rocm_version": "10.0.0",
             "selector_ids": [
-              "rx-9060",
-              "rx-9060-xt",
-              "rx-9060-xt-lp"
+              "amd-radeon-rx-9050",
+              "amd-radeon-rx-9050-(4gb)",
+              "amd-radeon-rx-9060",
+              "amd-radeon-rx-9060-xt",
+              "amd-radeon-rx-9060-xt-lp"
             ],
             "source_id": "rocm-compatibility-matrix",
-            "windows_oem_driver_versions": [
-              "26.10.28"
-            ],
+            "windows_oem_driver_versions": [],
             "windows_versions": [
               "Windows 11 25H2"
             ]
@@ -427,6 +375,8 @@
         }
       },
       "products": [
+        "Radeon RX 9050",
+        "Radeon RX 9050 (4GB)",
         "Radeon RX 9060",
         "Radeon RX 9060 XT",
         "Radeon RX 9060 XT LP"
@@ -441,20 +391,20 @@
       },
       "windows_release_support": {
         "adrenalin_driver_versions": [
-          "26.6.4"
+          "26.8.1"
         ],
         "device_family": "radeon",
         "gfx": "gfx1200",
-        "rocm_version": "7.14.0",
+        "rocm_version": "10.0.0",
         "selector_ids": [
-          "rx-9060",
-          "rx-9060-xt",
-          "rx-9060-xt-lp"
+          "amd-radeon-rx-9050",
+          "amd-radeon-rx-9050-(4gb)",
+          "amd-radeon-rx-9060",
+          "amd-radeon-rx-9060-xt",
+          "amd-radeon-rx-9060-xt-lp"
         ],
         "source_id": "rocm-compatibility-matrix",
-        "windows_oem_driver_versions": [
-          "26.10.28"
-        ],
+        "windows_oem_driver_versions": [],
         "windows_versions": [
           "Windows 11 25H2"
         ]
@@ -465,27 +415,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -493,27 +435,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -521,43 +455,33 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": {
             "adrenalin_driver_versions": [
-              "26.6.4"
+              "26.8.1"
             ],
             "device_family": "ryzen",
             "gfx": "gfx1153",
-            "rocm_version": "7.14.0",
+            "rocm_version": "10.0.0",
             "selector_ids": [
               "gfx1153"
             ],
             "source_id": "rocm-compatibility-matrix",
-            "windows_oem_driver_versions": [
-              "26.10.28"
-            ],
+            "windows_oem_driver_versions": [],
             "windows_versions": [
               "Windows 11 25H2"
             ]
@@ -583,18 +507,16 @@
       },
       "windows_release_support": {
         "adrenalin_driver_versions": [
-          "26.6.4"
+          "26.8.1"
         ],
         "device_family": "ryzen",
         "gfx": "gfx1153",
-        "rocm_version": "7.14.0",
+        "rocm_version": "10.0.0",
         "selector_ids": [
           "gfx1153"
         ],
         "source_id": "rocm-compatibility-matrix",
-        "windows_oem_driver_versions": [
-          "26.10.28"
-        ],
+        "windows_oem_driver_versions": [],
         "windows_versions": [
           "Windows 11 25H2"
         ]
@@ -605,27 +527,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -633,27 +547,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -661,43 +567,33 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": {
             "adrenalin_driver_versions": [
-              "26.6.4"
+              "26.8.1"
             ],
             "device_family": "ryzen",
             "gfx": "gfx1152",
-            "rocm_version": "7.14.0",
+            "rocm_version": "10.0.0",
             "selector_ids": [
               "gfx1152"
             ],
             "source_id": "rocm-compatibility-matrix",
-            "windows_oem_driver_versions": [
-              "26.10.28"
-            ],
+            "windows_oem_driver_versions": [],
             "windows_versions": [
               "Windows 11 25H2"
             ]
@@ -725,18 +621,16 @@
       },
       "windows_release_support": {
         "adrenalin_driver_versions": [
-          "26.6.4"
+          "26.8.1"
         ],
         "device_family": "ryzen",
         "gfx": "gfx1152",
-        "rocm_version": "7.14.0",
+        "rocm_version": "10.0.0",
         "selector_ids": [
           "gfx1152"
         ],
         "source_id": "rocm-compatibility-matrix",
-        "windows_oem_driver_versions": [
-          "26.10.28"
-        ],
+        "windows_oem_driver_versions": [],
         "windows_versions": [
           "Windows 11 25H2"
         ]
@@ -747,27 +641,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -775,27 +661,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -803,43 +681,33 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": {
             "adrenalin_driver_versions": [
-              "26.6.4"
+              "26.8.1"
             ],
             "device_family": "ryzen",
             "gfx": "gfx1151",
-            "rocm_version": "7.14.0",
+            "rocm_version": "10.0.0",
             "selector_ids": [
               "gfx1151"
             ],
             "source_id": "rocm-compatibility-matrix",
-            "windows_oem_driver_versions": [
-              "26.10.28"
-            ],
+            "windows_oem_driver_versions": [],
             "windows_versions": [
               "Windows 11 25H2"
             ]
@@ -867,18 +735,16 @@
       },
       "windows_release_support": {
         "adrenalin_driver_versions": [
-          "26.6.4"
+          "26.8.1"
         ],
         "device_family": "ryzen",
         "gfx": "gfx1151",
-        "rocm_version": "7.14.0",
+        "rocm_version": "10.0.0",
         "selector_ids": [
           "gfx1151"
         ],
         "source_id": "rocm-compatibility-matrix",
-        "windows_oem_driver_versions": [
-          "26.10.28"
-        ],
+        "windows_oem_driver_versions": [],
         "windows_versions": [
           "Windows 11 25H2"
         ]
@@ -889,27 +755,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -917,27 +775,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -945,43 +795,33 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": {
             "adrenalin_driver_versions": [
-              "26.6.4"
+              "26.8.1"
             ],
             "device_family": "ryzen",
             "gfx": "gfx1150",
-            "rocm_version": "7.14.0",
+            "rocm_version": "10.0.0",
             "selector_ids": [
               "gfx1150"
             ],
             "source_id": "rocm-compatibility-matrix",
-            "windows_oem_driver_versions": [
-              "26.10.28"
-            ],
+            "windows_oem_driver_versions": [],
             "windows_versions": [
               "Windows 11 25H2"
             ]
@@ -1009,18 +849,16 @@
       },
       "windows_release_support": {
         "adrenalin_driver_versions": [
-          "26.6.4"
+          "26.8.1"
         ],
         "device_family": "ryzen",
         "gfx": "gfx1150",
-        "rocm_version": "7.14.0",
+        "rocm_version": "10.0.0",
         "selector_ids": [
           "gfx1150"
         ],
         "source_id": "rocm-compatibility-matrix",
-        "windows_oem_driver_versions": [
-          "26.10.28"
-        ],
+        "windows_oem_driver_versions": [],
         "windows_versions": [
           "Windows 11 25H2"
         ]
@@ -1031,27 +869,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -1059,27 +889,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -1087,43 +909,33 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": {
             "adrenalin_driver_versions": [
-              "26.6.4"
+              "26.8.1"
             ],
             "device_family": "ryzen",
             "gfx": "gfx1103",
-            "rocm_version": "7.14.0",
+            "rocm_version": "10.0.0",
             "selector_ids": [
               "gfx1103"
             ],
             "source_id": "rocm-compatibility-matrix",
-            "windows_oem_driver_versions": [
-              "26.10.28"
-            ],
+            "windows_oem_driver_versions": [],
             "windows_versions": [
               "Windows 11 25H2"
             ]
@@ -1152,18 +964,16 @@
       },
       "windows_release_support": {
         "adrenalin_driver_versions": [
-          "26.6.4"
+          "26.8.1"
         ],
         "device_family": "ryzen",
         "gfx": "gfx1103",
-        "rocm_version": "7.14.0",
+        "rocm_version": "10.0.0",
         "selector_ids": [
           "gfx1103"
         ],
         "source_id": "rocm-compatibility-matrix",
-        "windows_oem_driver_versions": [
-          "26.10.28"
-        ],
+        "windows_oem_driver_versions": [],
         "windows_versions": [
           "Windows 11 25H2"
         ]
@@ -1174,27 +984,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -1202,27 +1004,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -1230,43 +1024,33 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": {
             "adrenalin_driver_versions": [
-              "26.6.4"
+              "26.8.1"
             ],
             "device_family": "radeon",
             "gfx": "gfx1102",
-            "rocm_version": "7.14.0",
+            "rocm_version": "10.0.0",
             "selector_ids": [
-              "rx-7600"
+              "amd-radeon-rx-7600"
             ],
             "source_id": "rocm-compatibility-matrix",
-            "windows_oem_driver_versions": [
-              "26.10.28"
-            ],
+            "windows_oem_driver_versions": [],
             "windows_versions": [
               "Windows 11 25H2"
             ]
@@ -1294,18 +1078,16 @@
       },
       "windows_release_support": {
         "adrenalin_driver_versions": [
-          "26.6.4"
+          "26.8.1"
         ],
         "device_family": "radeon",
         "gfx": "gfx1102",
-        "rocm_version": "7.14.0",
+        "rocm_version": "10.0.0",
         "selector_ids": [
-          "rx-7600"
+          "amd-radeon-rx-7600"
         ],
         "source_id": "rocm-compatibility-matrix",
-        "windows_oem_driver_versions": [
-          "26.10.28"
-        ],
+        "windows_oem_driver_versions": [],
         "windows_versions": [
           "Windows 11 25H2"
         ]
@@ -1316,27 +1098,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -1344,27 +1118,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -1372,47 +1138,37 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": {
             "adrenalin_driver_versions": [
-              "26.6.4"
+              "26.8.1"
             ],
             "device_family": "radeon",
             "gfx": "gfx1101",
-            "rocm_version": "7.14.0",
+            "rocm_version": "10.0.0",
             "selector_ids": [
-              "rx-7700",
-              "rx-7700-xt",
-              "rx-7800-xt",
-              "v710",
-              "w7700"
+              "amd-radeon-pro-v710",
+              "amd-radeon-pro-w7700",
+              "amd-radeon-rx-7700",
+              "amd-radeon-rx-7700-xt",
+              "amd-radeon-rx-7800-xt"
             ],
             "source_id": "rocm-compatibility-matrix",
-            "windows_oem_driver_versions": [
-              "26.10.28"
-            ],
+            "windows_oem_driver_versions": [],
             "windows_versions": [
               "Windows 11 25H2"
             ]
@@ -1444,22 +1200,20 @@
       },
       "windows_release_support": {
         "adrenalin_driver_versions": [
-          "26.6.4"
+          "26.8.1"
         ],
         "device_family": "radeon",
         "gfx": "gfx1101",
-        "rocm_version": "7.14.0",
+        "rocm_version": "10.0.0",
         "selector_ids": [
-          "rx-7700",
-          "rx-7700-xt",
-          "rx-7800-xt",
-          "v710",
-          "w7700"
+          "amd-radeon-pro-v710",
+          "amd-radeon-pro-w7700",
+          "amd-radeon-rx-7700",
+          "amd-radeon-rx-7700-xt",
+          "amd-radeon-rx-7800-xt"
         ],
         "source_id": "rocm-compatibility-matrix",
-        "windows_oem_driver_versions": [
-          "26.10.28"
-        ],
+        "windows_oem_driver_versions": [],
         "windows_versions": [
           "Windows 11 25H2"
         ]
@@ -1470,27 +1224,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -1498,27 +1244,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -1526,49 +1264,39 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": {
             "adrenalin_driver_versions": [
-              "26.6.4"
+              "26.8.1"
             ],
             "device_family": "radeon",
             "gfx": "gfx1100",
-            "rocm_version": "7.14.0",
+            "rocm_version": "10.0.0",
             "selector_ids": [
-              "rx-7900-gre",
-              "rx-7900-xt",
-              "rx-7900-xtx",
-              "w7800",
-              "w7800-48gb",
-              "w7900",
-              "w7900-dual-slot"
+              "amd-radeon-pro-w7800",
+              "amd-radeon-pro-w7800-48gb",
+              "amd-radeon-pro-w7900",
+              "amd-radeon-pro-w7900-dual-slot",
+              "amd-radeon-rx-7900-gre",
+              "amd-radeon-rx-7900-xt",
+              "amd-radeon-rx-7900-xtx"
             ],
             "source_id": "rocm-compatibility-matrix",
-            "windows_oem_driver_versions": [
-              "26.10.28"
-            ],
+            "windows_oem_driver_versions": [],
             "windows_versions": [
               "Windows 11 25H2"
             ]
@@ -1602,24 +1330,22 @@
       },
       "windows_release_support": {
         "adrenalin_driver_versions": [
-          "26.6.4"
+          "26.8.1"
         ],
         "device_family": "radeon",
         "gfx": "gfx1100",
-        "rocm_version": "7.14.0",
+        "rocm_version": "10.0.0",
         "selector_ids": [
-          "rx-7900-gre",
-          "rx-7900-xt",
-          "rx-7900-xtx",
-          "w7800",
-          "w7800-48gb",
-          "w7900",
-          "w7900-dual-slot"
+          "amd-radeon-pro-w7800",
+          "amd-radeon-pro-w7800-48gb",
+          "amd-radeon-pro-w7900",
+          "amd-radeon-pro-w7900-dual-slot",
+          "amd-radeon-rx-7900-gre",
+          "amd-radeon-rx-7900-xt",
+          "amd-radeon-rx-7900-xtx"
         ],
         "source_id": "rocm-compatibility-matrix",
-        "windows_oem_driver_versions": [
-          "26.10.28"
-        ],
+        "windows_oem_driver_versions": [],
         "windows_versions": [
           "Windows 11 25H2"
         ]
@@ -1630,27 +1356,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -1658,27 +1376,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -1686,27 +1396,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": null,
@@ -1736,27 +1438,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -1764,27 +1458,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -1792,27 +1478,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": null,
@@ -1842,27 +1520,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -1870,27 +1540,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -1898,27 +1560,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": null,
@@ -1948,27 +1602,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -1976,27 +1622,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -2004,27 +1642,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": null,
@@ -2054,27 +1684,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -2082,27 +1704,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -2110,27 +1724,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": null,
@@ -2160,27 +1766,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -2188,27 +1786,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -2216,27 +1806,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": null,
@@ -2266,27 +1848,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -2294,27 +1868,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -2322,44 +1888,34 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": {
             "adrenalin_driver_versions": [
-              "26.6.4"
+              "26.8.1"
             ],
             "device_family": "radeon",
             "gfx": "gfx1030",
-            "rocm_version": "7.14.0",
+            "rocm_version": "10.0.0",
             "selector_ids": [
-              "v620",
-              "w6800"
+              "amd-radeon-pro-v620",
+              "amd-radeon-pro-w6800"
             ],
             "source_id": "rocm-compatibility-matrix",
-            "windows_oem_driver_versions": [
-              "26.10.28"
-            ],
+            "windows_oem_driver_versions": [],
             "windows_versions": [
               "Windows 11 25H2"
             ]
@@ -2385,19 +1941,17 @@
       },
       "windows_release_support": {
         "adrenalin_driver_versions": [
-          "26.6.4"
+          "26.8.1"
         ],
         "device_family": "radeon",
         "gfx": "gfx1030",
-        "rocm_version": "7.14.0",
+        "rocm_version": "10.0.0",
         "selector_ids": [
-          "v620",
-          "w6800"
+          "amd-radeon-pro-v620",
+          "amd-radeon-pro-w6800"
         ],
         "source_id": "rocm-compatibility-matrix",
-        "windows_oem_driver_versions": [
-          "26.10.28"
-        ],
+        "windows_oem_driver_versions": [],
         "windows_versions": [
           "Windows 11 25H2"
         ]
@@ -2408,27 +1962,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -2436,27 +1982,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -2464,27 +2002,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": null,
@@ -2514,27 +2044,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -2542,27 +2064,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -2570,27 +2084,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": null,
@@ -2620,27 +2126,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -2648,27 +2146,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -2676,27 +2166,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": null,
@@ -2729,7 +2211,7 @@
           "rocm_device_version": null,
           "source_id": "packages-nightly",
           "torch_device_version": null,
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
           "torchvision_device_version": null
         },
         "stable": {
@@ -2737,15 +2219,7 @@
           "rocm_device_version": null,
           "source_id": "packages-stable",
           "torch_device_version": null,
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": null
-        },
-        "staging": {
-          "all_device_packages_available": false,
-          "rocm_device_version": null,
-          "source_id": "packages-staging",
-          "torch_device_version": null,
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
           "torchvision_device_version": null
         }
       },
@@ -2754,27 +2228,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -2785,7 +2251,7 @@
               "rocm_device_version": null,
               "source_id": "packages-nightly",
               "torch_device_version": null,
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
               "torchvision_device_version": null
             },
             "stable": {
@@ -2793,15 +2259,7 @@
               "rocm_device_version": null,
               "source_id": "packages-stable",
               "torch_device_version": null,
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": null
-            },
-            "staging": {
-              "all_device_packages_available": false,
-              "rocm_device_version": null,
-              "source_id": "packages-staging",
-              "torch_device_version": null,
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
               "torchvision_device_version": null
             }
           },
@@ -2824,7 +2282,7 @@
           "rocm_device_version": null,
           "source_id": "packages-nightly",
           "torch_device_version": null,
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
           "torchvision_device_version": null
         },
         "stable": {
@@ -2832,15 +2290,7 @@
           "rocm_device_version": null,
           "source_id": "packages-stable",
           "torch_device_version": null,
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": null
-        },
-        "staging": {
-          "all_device_packages_available": false,
-          "rocm_device_version": null,
-          "source_id": "packages-staging",
-          "torch_device_version": null,
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
           "torchvision_device_version": null
         }
       },
@@ -2849,27 +2299,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -2880,7 +2322,7 @@
               "rocm_device_version": null,
               "source_id": "packages-nightly",
               "torch_device_version": null,
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
               "torchvision_device_version": null
             },
             "stable": {
@@ -2888,15 +2330,7 @@
               "rocm_device_version": null,
               "source_id": "packages-stable",
               "torch_device_version": null,
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": null
-            },
-            "staging": {
-              "all_device_packages_available": false,
-              "rocm_device_version": null,
-              "source_id": "packages-staging",
-              "torch_device_version": null,
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
               "torchvision_device_version": null
             }
           },
@@ -2917,11 +2351,11 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         }
       },
       "platforms": {
@@ -2929,11 +2363,11 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.12.0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.27.0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             }
           }
         },
@@ -2941,11 +2375,11 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             }
           },
           "release_support": null,
@@ -2975,27 +2409,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -3003,27 +2429,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -3031,27 +2449,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": null,
@@ -3071,27 +2481,19 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         },
         "stable": {
           "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0",
+          "rocm_device_version": null,
           "source_id": "packages-stable",
-          "torch_device_version": "2.12.0+rocm7.14.0",
-          "torchaudio_version": "2.11.0+rocm7.14.0",
-          "torchvision_device_version": "0.27.0+rocm7.14.0"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.13.0+rocm10.0.0",
+          "torchaudio_version": "2.11.0.2+rocm10.0.0",
+          "torchvision_device_version": "0.28.0+rocm10.0.0"
         }
       },
       "platforms": {
@@ -3099,27 +2501,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable-linux",
-              "torch_device_version": "2.13.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0.2+rocm7.14.0",
-              "torchvision_device_version": "0.28.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           }
         },
@@ -3127,27 +2521,19 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             },
             "stable": {
               "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0",
+              "rocm_device_version": null,
               "source_id": "packages-stable",
-              "torch_device_version": "2.12.0+rocm7.14.0",
-              "torchaudio_version": "2.11.0+rocm7.14.0",
-              "torchvision_device_version": "0.27.0+rocm7.14.0"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.13.0+rocm10.0.0",
+              "torchaudio_version": "2.11.0.2+rocm10.0.0",
+              "torchvision_device_version": "0.28.0+rocm10.0.0"
             }
           },
           "release_support": null,
@@ -3165,19 +2551,11 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         }
       },
       "platforms": {
@@ -3185,19 +2563,11 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             }
           }
         },
@@ -3205,19 +2575,11 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             }
           },
           "release_support": null,
@@ -3251,19 +2613,11 @@
       "package_channels": {
         "nightly": {
           "all_device_packages_available": true,
-          "rocm_device_version": "10.1.0a20260807",
+          "rocm_device_version": null,
           "source_id": "packages-nightly",
-          "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-          "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-          "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
-        },
-        "staging": {
-          "all_device_packages_available": true,
-          "rocm_device_version": "7.14.0a20260519",
-          "source_id": "packages-staging",
-          "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-          "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-          "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+          "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+          "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+          "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
         }
       },
       "platforms": {
@@ -3271,19 +2625,11 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly-linux",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0.2+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging-linux",
-              "torch_device_version": "2.12.0+rocm7.14.0a20260519",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             }
           }
         },
@@ -3291,19 +2637,11 @@
           "package_channels": {
             "nightly": {
               "all_device_packages_available": true,
-              "rocm_device_version": "10.1.0a20260807",
+              "rocm_device_version": null,
               "source_id": "packages-nightly",
-              "torch_device_version": "2.14.0a0+rocm10.1.0a20260807",
-              "torchaudio_version": "2.11.0+rocm10.1.0a20260807",
-              "torchvision_device_version": "0.29.0a0+rocm10.1.0a20260807"
-            },
-            "staging": {
-              "all_device_packages_available": true,
-              "rocm_device_version": "7.14.0a20260519",
-              "source_id": "packages-staging",
-              "torch_device_version": "2.13.0a0+rocm7.13.0a20260504",
-              "torchaudio_version": "2.11.0+rocm7.14.0a20260519",
-              "torchvision_device_version": "0.27.0+rocm7.14.0a20260519"
+              "torch_device_version": "2.15.0a0+rocm10.1.0a20260907",
+              "torchaudio_version": "2.11.0.3+rocm10.1.0a20260907",
+              "torchvision_device_version": "0.30.0a0+rocm10.1.0a20260907"
             }
           },
           "release_support": null,

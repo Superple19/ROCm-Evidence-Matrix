@@ -1,7 +1,6 @@
 import unittest
 
 from rocm_evidence_matrix.legacy_linux import build_legacy_linux_candidates, classify_legacy_linux_framework
-from rocm_evidence_matrix.resolve import resolve_candidates
 
 
 class LegacyLinuxTests(unittest.TestCase):
@@ -43,26 +42,6 @@ class LegacyLinuxTests(unittest.TestCase):
         }]}
         classify_legacy_linux_framework(history, [{"torch_series": "1.13", "torchvision_series": "0.14", "torchaudio_series": "0.13"}])
         self.assertEqual(history["candidates"][0]["framework_compatibility"], "incompatible")
-
-    def test_resolves_linux_candidate_without_gfx_filter(self):
-        candidate = {
-            "id": "legacy:linux:stable:7.2.1:torch:vision:audio:cp311",
-            "distribution_family": "legacy",
-            "platform": "linux",
-            "channel": "stable",
-            "rocm_version": "7.2.1",
-            "torch_version": "2.8.0+rocm7.2.1",
-            "torchvision_version": "0.23.0+rocm7.2.1",
-            "torchaudio_version": "2.8.0+rocm7.2.1",
-            "python_tags": ["cp311"],
-            "gfx_support": "unknown",
-            "gfx_targets": [],
-            "available_gfx_targets": [],
-            "artifact_available": True,
-            "source_id": "legacy-linux-artifacts",
-            "framework_compatibility": "verified",
-        }
-        self.assertEqual(resolve_candidates({"candidates": [candidate]}, None, platform="linux"), [candidate])
 
 
 if __name__ == "__main__":

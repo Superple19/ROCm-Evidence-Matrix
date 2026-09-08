@@ -22,7 +22,7 @@
       "name": "ROCm PyTorch package candidate",
       "value": {
         "distribution_families": ["therock", "legacy"],
-        "channels": ["stable", "nightly", "staging"]
+        "channels": ["stable", "nightly"]
       },
       "claim_status": "documented",
       "evidence_refs": ["source:packages-stable", "source:packages-nightly"]
@@ -50,7 +50,7 @@
         "selection": "explicit"
       },
       "claim_status": "documented",
-      "evidence_refs": ["source:packages-stable", "source:packages-nightly", "source:packages-staging"]
+      "evidence_refs": ["source:packages-stable", "source:packages-nightly"]
     },
     {
       "id": "supported-platform",
@@ -86,7 +86,7 @@
       "name": "Python interpreter",
       "value": {
         "selected_from": "candidate.python_tags",
-        "requested_by": "resolver"
+        "requested_by": "manager"
       },
       "claim_status": "documented",
       "evidence_refs": ["source:packages-stable", "source:packages-stable-linux"]

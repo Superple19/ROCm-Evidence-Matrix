@@ -163,7 +163,7 @@
       "torchvision_series": "0.29"
     }
   ],
-  "last_observed_at": "2026-08-08T14:13:02Z",
+  "last_observed_at": "2026-09-07T21:36:06Z",
   "platforms": {
     "linux": {
       "release_support": [],
@@ -173,216 +173,196 @@
       "release_support": [
         {
           "adrenalin_driver_versions": [
-            "26.6.4"
+            "26.8.1"
           ],
           "device_family": "radeon",
           "gfx": "gfx1030",
-          "rocm_version": "7.14.0",
+          "rocm_version": "10.0.0",
           "selector_ids": [
-            "v620",
-            "w6800"
+            "amd-radeon-pro-v620",
+            "amd-radeon-pro-w6800"
           ],
           "source_id": "rocm-compatibility-matrix",
-          "windows_oem_driver_versions": [
-            "26.10.28"
-          ],
+          "windows_oem_driver_versions": [],
           "windows_versions": [
             "Windows 11 25H2"
           ]
         },
         {
           "adrenalin_driver_versions": [
-            "26.6.4"
+            "26.8.1"
           ],
           "device_family": "radeon",
           "gfx": "gfx1100",
-          "rocm_version": "7.14.0",
+          "rocm_version": "10.0.0",
           "selector_ids": [
-            "rx-7900-gre",
-            "rx-7900-xt",
-            "rx-7900-xtx",
-            "w7800",
-            "w7800-48gb",
-            "w7900",
-            "w7900-dual-slot"
+            "amd-radeon-pro-w7800",
+            "amd-radeon-pro-w7800-48gb",
+            "amd-radeon-pro-w7900",
+            "amd-radeon-pro-w7900-dual-slot",
+            "amd-radeon-rx-7900-gre",
+            "amd-radeon-rx-7900-xt",
+            "amd-radeon-rx-7900-xtx"
           ],
           "source_id": "rocm-compatibility-matrix",
-          "windows_oem_driver_versions": [
-            "26.10.28"
-          ],
+          "windows_oem_driver_versions": [],
           "windows_versions": [
             "Windows 11 25H2"
           ]
         },
         {
           "adrenalin_driver_versions": [
-            "26.6.4"
+            "26.8.1"
           ],
           "device_family": "radeon",
           "gfx": "gfx1101",
-          "rocm_version": "7.14.0",
+          "rocm_version": "10.0.0",
           "selector_ids": [
-            "rx-7700",
-            "rx-7700-xt",
-            "rx-7800-xt",
-            "v710",
-            "w7700"
+            "amd-radeon-pro-v710",
+            "amd-radeon-pro-w7700",
+            "amd-radeon-rx-7700",
+            "amd-radeon-rx-7700-xt",
+            "amd-radeon-rx-7800-xt"
           ],
           "source_id": "rocm-compatibility-matrix",
-          "windows_oem_driver_versions": [
-            "26.10.28"
-          ],
+          "windows_oem_driver_versions": [],
           "windows_versions": [
             "Windows 11 25H2"
           ]
         },
         {
           "adrenalin_driver_versions": [
-            "26.6.4"
+            "26.8.1"
           ],
           "device_family": "radeon",
           "gfx": "gfx1102",
-          "rocm_version": "7.14.0",
+          "rocm_version": "10.0.0",
           "selector_ids": [
-            "rx-7600"
+            "amd-radeon-rx-7600"
           ],
           "source_id": "rocm-compatibility-matrix",
-          "windows_oem_driver_versions": [
-            "26.10.28"
-          ],
+          "windows_oem_driver_versions": [],
           "windows_versions": [
             "Windows 11 25H2"
           ]
         },
         {
           "adrenalin_driver_versions": [
-            "26.6.4"
+            "26.8.1"
           ],
           "device_family": "ryzen",
           "gfx": "gfx1103",
-          "rocm_version": "7.14.0",
+          "rocm_version": "10.0.0",
           "selector_ids": [
             "gfx1103"
           ],
           "source_id": "rocm-compatibility-matrix",
-          "windows_oem_driver_versions": [
-            "26.10.28"
-          ],
+          "windows_oem_driver_versions": [],
           "windows_versions": [
             "Windows 11 25H2"
           ]
         },
         {
           "adrenalin_driver_versions": [
-            "26.6.4"
+            "26.8.1"
           ],
           "device_family": "ryzen",
           "gfx": "gfx1150",
-          "rocm_version": "7.14.0",
+          "rocm_version": "10.0.0",
           "selector_ids": [
             "gfx1150"
           ],
           "source_id": "rocm-compatibility-matrix",
-          "windows_oem_driver_versions": [
-            "26.10.28"
-          ],
+          "windows_oem_driver_versions": [],
           "windows_versions": [
             "Windows 11 25H2"
           ]
         },
         {
           "adrenalin_driver_versions": [
-            "26.6.4"
+            "26.8.1"
           ],
           "device_family": "ryzen",
           "gfx": "gfx1151",
-          "rocm_version": "7.14.0",
+          "rocm_version": "10.0.0",
           "selector_ids": [
             "gfx1151"
           ],
           "source_id": "rocm-compatibility-matrix",
-          "windows_oem_driver_versions": [
-            "26.10.28"
-          ],
+          "windows_oem_driver_versions": [],
           "windows_versions": [
             "Windows 11 25H2"
           ]
         },
         {
           "adrenalin_driver_versions": [
-            "26.6.4"
+            "26.8.1"
           ],
           "device_family": "ryzen",
           "gfx": "gfx1152",
-          "rocm_version": "7.14.0",
+          "rocm_version": "10.0.0",
           "selector_ids": [
             "gfx1152"
           ],
           "source_id": "rocm-compatibility-matrix",
-          "windows_oem_driver_versions": [
-            "26.10.28"
-          ],
+          "windows_oem_driver_versions": [],
           "windows_versions": [
             "Windows 11 25H2"
           ]
         },
         {
           "adrenalin_driver_versions": [
-            "26.6.4"
+            "26.8.1"
           ],
           "device_family": "ryzen",
           "gfx": "gfx1153",
-          "rocm_version": "7.14.0",
+          "rocm_version": "10.0.0",
           "selector_ids": [
             "gfx1153"
           ],
           "source_id": "rocm-compatibility-matrix",
-          "windows_oem_driver_versions": [
-            "26.10.28"
-          ],
+          "windows_oem_driver_versions": [],
           "windows_versions": [
             "Windows 11 25H2"
           ]
         },
         {
           "adrenalin_driver_versions": [
-            "26.6.4"
+            "26.8.1"
           ],
           "device_family": "radeon",
           "gfx": "gfx1200",
-          "rocm_version": "7.14.0",
+          "rocm_version": "10.0.0",
           "selector_ids": [
-            "rx-9060",
-            "rx-9060-xt",
-            "rx-9060-xt-lp"
+            "amd-radeon-rx-9050",
+            "amd-radeon-rx-9050-(4gb)",
+            "amd-radeon-rx-9060",
+            "amd-radeon-rx-9060-xt",
+            "amd-radeon-rx-9060-xt-lp"
           ],
           "source_id": "rocm-compatibility-matrix",
-          "windows_oem_driver_versions": [
-            "26.10.28"
-          ],
+          "windows_oem_driver_versions": [],
           "windows_versions": [
             "Windows 11 25H2"
           ]
         },
         {
           "adrenalin_driver_versions": [
-            "26.6.4"
+            "26.8.1"
           ],
           "device_family": "radeon",
           "gfx": "gfx1201",
-          "rocm_version": "7.14.0",
+          "rocm_version": "10.0.0",
           "selector_ids": [
-            "ai-r9600d",
-            "ai-r9700",
-            "ai-r9700s",
-            "rx-9070",
-            "rx-9070-gre",
-            "rx-9070-xt"
+            "amd-radeon-ai-pro-r9600d",
+            "amd-radeon-ai-pro-r9700",
+            "amd-radeon-ai-pro-r9700s",
+            "amd-radeon-rx-9070",
+            "amd-radeon-rx-9070-gre",
+            "amd-radeon-rx-9070-xt"
           ],
           "source_id": "rocm-compatibility-matrix",
-          "windows_oem_driver_versions": [
-            "26.10.28"
-          ],
+          "windows_oem_driver_versions": [],
           "windows_versions": [
             "Windows 11 25H2"
           ]
@@ -712,6 +692,20 @@
       "architecture": "RDNA4",
       "category": "radeon",
       "gfx": "gfx1200",
+      "name": "Radeon RX 9050",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA4",
+      "category": "radeon",
+      "gfx": "gfx1200",
+      "name": "Radeon RX 9050 (4GB)",
+      "source_id": "amd-gpu-specifications"
+    },
+    {
+      "architecture": "RDNA4",
+      "category": "radeon",
+      "gfx": "gfx1200",
       "name": "Radeon RX 9060",
       "source_id": "amd-gpu-specifications"
     },
@@ -882,35 +876,35 @@
     "amd-gpu-specifications": {
       "fallback_used": false,
       "id": "amd-gpu-specifications",
-      "observed_at": "2026-08-08T14:13:02Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst",
       "url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst"
     },
     "pytorch-version-compatibility": {
       "fallback_used": false,
       "id": "pytorch-version-compatibility",
-      "observed_at": "2026-08-08T14:13:02Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "preferred_url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md",
       "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     },
     "rocm-compatibility-matrix": {
       "fallback_used": false,
       "id": "rocm-compatibility-matrix",
-      "observed_at": "2026-08-08T14:13:02Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "preferred_url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html",
       "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
     },
     "therock-release-packaging": {
       "fallback_used": false,
       "id": "therock-release-packaging",
-      "observed_at": "2026-08-08T14:13:02Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
     },
     "therock-supported-gpus": {
       "fallback_used": false,
       "id": "therock-supported-gpus",
-      "observed_at": "2026-08-08T14:13:02Z",
+      "observed_at": "2026-09-07T21:36:06Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     }
@@ -1104,216 +1098,196 @@
   "windows_release_support": [
     {
       "adrenalin_driver_versions": [
-        "26.6.4"
+        "26.8.1"
       ],
       "device_family": "radeon",
       "gfx": "gfx1030",
-      "rocm_version": "7.14.0",
+      "rocm_version": "10.0.0",
       "selector_ids": [
-        "v620",
-        "w6800"
+        "amd-radeon-pro-v620",
+        "amd-radeon-pro-w6800"
       ],
       "source_id": "rocm-compatibility-matrix",
-      "windows_oem_driver_versions": [
-        "26.10.28"
-      ],
+      "windows_oem_driver_versions": [],
       "windows_versions": [
         "Windows 11 25H2"
       ]
     },
     {
       "adrenalin_driver_versions": [
-        "26.6.4"
+        "26.8.1"
       ],
       "device_family": "radeon",
       "gfx": "gfx1100",
-      "rocm_version": "7.14.0",
+      "rocm_version": "10.0.0",
       "selector_ids": [
-        "rx-7900-gre",
-        "rx-7900-xt",
-        "rx-7900-xtx",
-        "w7800",
-        "w7800-48gb",
-        "w7900",
-        "w7900-dual-slot"
+        "amd-radeon-pro-w7800",
+        "amd-radeon-pro-w7800-48gb",
+        "amd-radeon-pro-w7900",
+        "amd-radeon-pro-w7900-dual-slot",
+        "amd-radeon-rx-7900-gre",
+        "amd-radeon-rx-7900-xt",
+        "amd-radeon-rx-7900-xtx"
       ],
       "source_id": "rocm-compatibility-matrix",
-      "windows_oem_driver_versions": [
-        "26.10.28"
-      ],
+      "windows_oem_driver_versions": [],
       "windows_versions": [
         "Windows 11 25H2"
       ]
     },
     {
       "adrenalin_driver_versions": [
-        "26.6.4"
+        "26.8.1"
       ],
       "device_family": "radeon",
       "gfx": "gfx1101",
-      "rocm_version": "7.14.0",
+      "rocm_version": "10.0.0",
       "selector_ids": [
-        "rx-7700",
-        "rx-7700-xt",
-        "rx-7800-xt",
-        "v710",
-        "w7700"
+        "amd-radeon-pro-v710",
+        "amd-radeon-pro-w7700",
+        "amd-radeon-rx-7700",
+        "amd-radeon-rx-7700-xt",
+        "amd-radeon-rx-7800-xt"
       ],
       "source_id": "rocm-compatibility-matrix",
-      "windows_oem_driver_versions": [
-        "26.10.28"
-      ],
+      "windows_oem_driver_versions": [],
       "windows_versions": [
         "Windows 11 25H2"
       ]
     },
     {
       "adrenalin_driver_versions": [
-        "26.6.4"
+        "26.8.1"
       ],
       "device_family": "radeon",
       "gfx": "gfx1102",
-      "rocm_version": "7.14.0",
+      "rocm_version": "10.0.0",
       "selector_ids": [
-        "rx-7600"
+        "amd-radeon-rx-7600"
       ],
       "source_id": "rocm-compatibility-matrix",
-      "windows_oem_driver_versions": [
-        "26.10.28"
-      ],
+      "windows_oem_driver_versions": [],
       "windows_versions": [
         "Windows 11 25H2"
       ]
     },
     {
       "adrenalin_driver_versions": [
-        "26.6.4"
+        "26.8.1"
       ],
       "device_family": "ryzen",
       "gfx": "gfx1103",
-      "rocm_version": "7.14.0",
+      "rocm_version": "10.0.0",
       "selector_ids": [
         "gfx1103"
       ],
       "source_id": "rocm-compatibility-matrix",
-      "windows_oem_driver_versions": [
-        "26.10.28"
-      ],
+      "windows_oem_driver_versions": [],
       "windows_versions": [
         "Windows 11 25H2"
       ]
     },
     {
       "adrenalin_driver_versions": [
-        "26.6.4"
+        "26.8.1"
       ],
       "device_family": "ryzen",
       "gfx": "gfx1150",
-      "rocm_version": "7.14.0",
+      "rocm_version": "10.0.0",
       "selector_ids": [
         "gfx1150"
       ],
       "source_id": "rocm-compatibility-matrix",
-      "windows_oem_driver_versions": [
-        "26.10.28"
-      ],
+      "windows_oem_driver_versions": [],
       "windows_versions": [
         "Windows 11 25H2"
       ]
     },
     {
       "adrenalin_driver_versions": [
-        "26.6.4"
+        "26.8.1"
       ],
       "device_family": "ryzen",
       "gfx": "gfx1151",
-      "rocm_version": "7.14.0",
+      "rocm_version": "10.0.0",
       "selector_ids": [
         "gfx1151"
       ],
       "source_id": "rocm-compatibility-matrix",
-      "windows_oem_driver_versions": [
-        "26.10.28"
-      ],
+      "windows_oem_driver_versions": [],
       "windows_versions": [
         "Windows 11 25H2"
       ]
     },
     {
       "adrenalin_driver_versions": [
-        "26.6.4"
+        "26.8.1"
       ],
       "device_family": "ryzen",
       "gfx": "gfx1152",
-      "rocm_version": "7.14.0",
+      "rocm_version": "10.0.0",
       "selector_ids": [
         "gfx1152"
       ],
       "source_id": "rocm-compatibility-matrix",
-      "windows_oem_driver_versions": [
-        "26.10.28"
-      ],
+      "windows_oem_driver_versions": [],
       "windows_versions": [
         "Windows 11 25H2"
       ]
     },
     {
       "adrenalin_driver_versions": [
-        "26.6.4"
+        "26.8.1"
       ],
       "device_family": "ryzen",
       "gfx": "gfx1153",
-      "rocm_version": "7.14.0",
+      "rocm_version": "10.0.0",
       "selector_ids": [
         "gfx1153"
       ],
       "source_id": "rocm-compatibility-matrix",
-      "windows_oem_driver_versions": [
-        "26.10.28"
-      ],
+      "windows_oem_driver_versions": [],
       "windows_versions": [
         "Windows 11 25H2"
       ]
     },
     {
       "adrenalin_driver_versions": [
-        "26.6.4"
+        "26.8.1"
       ],
       "device_family": "radeon",
       "gfx": "gfx1200",
-      "rocm_version": "7.14.0",
+      "rocm_version": "10.0.0",
       "selector_ids": [
-        "rx-9060",
-        "rx-9060-xt",
-        "rx-9060-xt-lp"
+        "amd-radeon-rx-9050",
+        "amd-radeon-rx-9050-(4gb)",
+        "amd-radeon-rx-9060",
+        "amd-radeon-rx-9060-xt",
+        "amd-radeon-rx-9060-xt-lp"
       ],
       "source_id": "rocm-compatibility-matrix",
-      "windows_oem_driver_versions": [
-        "26.10.28"
-      ],
+      "windows_oem_driver_versions": [],
       "windows_versions": [
         "Windows 11 25H2"
       ]
     },
     {
       "adrenalin_driver_versions": [
-        "26.6.4"
+        "26.8.1"
       ],
       "device_family": "radeon",
       "gfx": "gfx1201",
-      "rocm_version": "7.14.0",
+      "rocm_version": "10.0.0",
       "selector_ids": [
-        "ai-r9600d",
-        "ai-r9700",
-        "ai-r9700s",
-        "rx-9070",
-        "rx-9070-gre",
-        "rx-9070-xt"
+        "amd-radeon-ai-pro-r9600d",
+        "amd-radeon-ai-pro-r9700",
+        "amd-radeon-ai-pro-r9700s",
+        "amd-radeon-rx-9070",
+        "amd-radeon-rx-9070-gre",
+        "amd-radeon-rx-9070-xt"
       ],
       "source_id": "rocm-compatibility-matrix",
-      "windows_oem_driver_versions": [
-        "26.10.28"
-      ],
+      "windows_oem_driver_versions": [],
       "windows_versions": [
         "Windows 11 25H2"
       ]

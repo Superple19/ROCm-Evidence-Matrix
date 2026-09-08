@@ -1,106 +1,106 @@
 {
-  "completed_at": "2026-08-08T10:15:14Z",
+  "completed_at": "2026-09-07T21:24:05Z",
   "distribution_family": "legacy",
   "results": [
     {
       "error": null,
-      "observed_at": "2026-08-08T10:14:57Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "source_id": "hip-sdk-gpus-6.1",
       "status": "passed",
       "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.1.2/reference/system-requirements.html"
     },
     {
       "error": null,
-      "observed_at": "2026-08-08T10:14:57Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "source_id": "hip-sdk-gpus-6.4",
       "status": "passed",
       "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.4.0/reference/system-requirements.html"
     },
     {
       "error": null,
-      "observed_at": "2026-08-08T10:14:57Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "source_id": "hip-sdk-gpus-7.1",
       "status": "passed",
       "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/docs-7.1.1/reference/system-requirements.html"
     },
     {
       "error": null,
-      "observed_at": "2026-08-08T10:14:57Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "source_id": "hip-sdk-release-versioning",
       "status": "passed",
       "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/latest/conceptual/release-versioning.html"
     },
     {
       "error": null,
-      "observed_at": "2026-08-08T10:14:57Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "source_id": "legacy-linux-manylinux-artifacts",
       "status": "passed",
       "url": "https://repo.radeon.com/rocm/manylinux/"
     },
     {
       "error": null,
-      "observed_at": "2026-08-08T10:14:57Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "source_id": "legacy-windows-artifacts",
       "status": "passed",
       "url": "https://repo.radeon.com/rocm/windows/"
     },
     {
       "error": null,
-      "observed_at": "2026-08-08T10:14:57Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "source_id": "pytorch-windows-radeon-6.4.4",
       "status": "passed",
       "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-6.4.4/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
     },
     {
       "error": null,
-      "observed_at": "2026-08-08T10:14:57Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "source_id": "pytorch-windows-radeon-7.2",
       "status": "passed",
       "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-7.2/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
     },
     {
       "error": null,
-      "observed_at": "2026-08-08T10:14:57Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "source_id": "pytorch-windows-radeon-7.2.1",
       "status": "passed",
       "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityrad/windows/windows_compatibility.html"
     },
     {
       "error": null,
-      "observed_at": "2026-08-08T10:14:57Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "source_id": "pytorch-windows-ryzen-6.4.4",
       "status": "passed",
       "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-6.4.4/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
     },
     {
       "error": null,
-      "observed_at": "2026-08-08T10:14:57Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "source_id": "pytorch-windows-ryzen-7.2",
       "status": "passed",
       "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/docs-7.2/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
     },
     {
       "error": null,
-      "observed_at": "2026-08-08T10:14:57Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "source_id": "pytorch-windows-ryzen-7.2.1",
       "status": "passed",
       "url": "https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityryz/windows/windows_compatibility.html"
     },
     {
       "error": null,
-      "observed_at": "2026-08-08T10:14:57Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "source_id": "rocm-release-history",
       "status": "passed",
       "url": "https://rocm.docs.amd.com/en/latest/release/versions.html"
     },
     {
       "error": null,
-      "observed_at": "2026-08-08T10:14:57Z",
+      "observed_at": "2026-09-07T21:23:27Z",
       "source_id": "windows-documentation-branches",
       "status": "passed",
       "url": "https://api.github.com/repos/ROCm/rocm-install-on-windows/branches?per_page=100"
     }
   ],
   "schema_version": 1,
-  "started_at": "2026-08-08T10:14:57Z"
+  "started_at": "2026-09-07T21:23:27Z"
 }

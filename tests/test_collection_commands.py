@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 from rocm_evidence_matrix.collect import collect_therock, collect_source, parse_args
 from rocm_evidence_matrix.legacy import collect_legacy_windows_sources
-from rocm_evidence_matrix.paths import LEGACY_LINUX, LEGACY_STATUS, LEGACY_WINDOWS, THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE, THEROCK_SNAPSHOTS, THEROCK_STATUS
+from rocm_evidence_matrix.paths import LEGACY_LINUX, LEGACY_STATUS, LEGACY_WINDOWS, THEROCK_SNAPSHOTS, THEROCK_STATUS
 from rocm_evidence_matrix.source_adapter import collection_status, run_source_adapter
 from rocm_evidence_matrix.validation import validate_collection_status
 
@@ -35,7 +35,6 @@ class CollectionCommandTests(unittest.TestCase):
         snapshot, _ = collect_source(
             {"id": "stable-linux", "channel": "stable", "platform": "linux", "url": "https://example.test/"},
             fetch=fetch,
-            framework_compatibility=[],
             workers=1,
         )
 
@@ -60,7 +59,6 @@ class CollectionCommandTests(unittest.TestCase):
         self.assertEqual((normalize_therock.command, normalize_therock.family), ("normalize", "therock"))
         self.assertEqual((normalize_legacy.command, normalize_legacy.family), ("normalize", "legacy"))
         self.assertEqual((therock.output_dir, therock.status_output), (THEROCK_SNAPSHOTS, THEROCK_STATUS))
-        self.assertEqual((therock.ci_coverage_output, therock.ci_evidence_output), (THEROCK_CI_COVERAGE, THEROCK_CI_EVIDENCE))
         self.assertEqual((legacy.legacy_output, legacy.legacy_linux_output, legacy.status_output), (LEGACY_WINDOWS, LEGACY_LINUX, LEGACY_STATUS))
         self.assertEqual(integrate.command, "integrate")
         self.assertEqual(render.command, "render")
@@ -150,9 +148,20 @@ class CollectionCommandTests(unittest.TestCase):
                 "platform": "windows",
                 "url": "https://example.test/nightly/",
             },
+            {
+                "id": "staging",
+                "distribution_family": "therock",
+                "channel": "staging",
+                "platform": "windows",
+                "url": "https://example.test/staging/",
+                "enabled": False,
+            },
         ]
 
+        seen_sources = []
+
         def package_result(source, **_kwargs):
+            seen_sources.append(source["id"])
             if source["id"] == "stable":
                 raise OSError("offline")
             return (
@@ -192,6 +201,8 @@ class CollectionCommandTests(unittest.TestCase):
             self.assertFalse(success)
             self.assertFalse((root / "snapshots" / "stable.json").exists())
             self.assertTrue((root / "snapshots" / "nightly.json").exists())
+            self.assertEqual(seen_sources, ["stable", "nightly"])
+            self.assertFalse((root / "snapshots" / "staging.json").exists())
             self.assertEqual(archive_path.read_text(encoding="utf-8"), "archive-sentinel")
 
 

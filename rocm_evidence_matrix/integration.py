@@ -41,15 +41,22 @@ def build_compatibility_matrix(documentation, package_snapshots):
                 target = next((item for item in snapshot["gfx_targets"] if item["gfx"] == gfx), None)
                 if target is None:
                     continue
-                names = package_names_for_target(gfx)
+                names = target.get("device_packages") or package_names_for_target(gfx)
+                rocm_name = next((name for name in names if name.startswith("rocm-sdk-device-")), None)
+                torch_name = next((name for name in names if name.startswith("amd-torch-device-")), None)
+                vision_name = next((name for name in names if name.startswith("amd-torchvision-device-")), None)
+                rocm_device_version = latest_version(snapshot["packages"].get(rocm_name, [])) if rocm_name else None
+                torch_device_version = latest_version(snapshot["packages"].get(torch_name, [])) if torch_name else None
+                torchvision_device_version = latest_version(snapshot["packages"].get(vision_name, [])) if vision_name else None
+                rocm_version = rocm_device_version or _rocm_build(torch_device_version)
                 channels[channel] = {
                     "all_device_packages_available": target["all_device_packages_available"],
-                    "rocm_device_version": latest_version(snapshot["packages"].get(names[0], [])),
-                    "torch_device_version": latest_version(snapshot["packages"].get(names[1], [])),
-                    "torchvision_device_version": latest_version(snapshot["packages"].get(names[2], [])),
+                    "rocm_device_version": rocm_device_version,
+                    "torch_device_version": torch_device_version,
+                    "torchvision_device_version": torchvision_device_version,
                     "torchaudio_version": _latest_framework_version(
                         snapshot["packages"].get("torchaudio", []),
-                        latest_version(snapshot["packages"].get(names[0], [])),
+                        rocm_version,
                     ),
                     "source_id": f"packages-{snapshot['source']['id']}",
                 }

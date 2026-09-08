@@ -12,7 +12,7 @@ being merged into one generic ROCm result.
 
 Collectors prefer authoritative machine-readable data or source markup over rendered pages. A rendered HTML parser remains available only when the configuration declares it as a fallback, and each observation records the URL that actually succeeded plus whether the fallback was used.
 
-AMD's Python package repositories currently return the standardized HTML Simple API even when PEP 691 JSON is requested. Those indexes therefore remain the primary artifact source. TheRock publishes several different kinds of official evidence: roadmap status and release guidance are maintained in Markdown, the repository version is JSON, CI coverage is configured in Python source, and build artifact structure is TOML. Collectors must use each source only for the claim it owns instead of treating one source as a complete compatibility matrix.
+AMD's Python package repositories currently return the standardized HTML Simple API even when PEP 691 JSON is requested. Those indexes therefore remain the primary artifact source. TheRock publishes several different kinds of official evidence: roadmap status and release guidance are maintained in Markdown, the repository version is JSON, and build artifact structure is TOML. Collectors must use each source only for the claim it owns instead of treating one source as a complete compatibility matrix.
 
 ## Compatibility and hardware documentation
 
@@ -57,7 +57,7 @@ AMD's Python package repositories currently return the standardized HTML Simple 
 - Authority: ROCm TheRock repository
 - Use: Architecture-specific Build Passing, Sanity Tested, and Release Ready status for Windows and Linux.
 - Evidence: `artifact_available` for Build Passing; stronger test claims must remain separate.
-- Notes: This is TheRock's prioritized roadmap and the authoritative source for these three declared readiness fields. Build Passing means an artifact was produced. It does not prove device enumeration, library loading, or kernel execution on the target GPU. Configured CI coverage and observed CI results are separate evidence and must not overwrite these fields.
+- Notes: This is TheRock's prioritized roadmap and the authoritative source for these three declared readiness fields. Build Passing means an artifact was produced. It does not prove device enumeration, library loading, or kernel execution on the target GPU.
 
 ### Repository version
 
@@ -66,14 +66,6 @@ AMD's Python package repositories currently return the standardized HTML Simple 
 - Use: Current ROCm version declared by the TheRock source tree.
 - Evidence: `documented`
 - Notes: Use the `rocm-version` value directly. Do not infer the repository version from a wheel filename, documentation heading, or branch name.
-
-### CI GPU family configuration
-
-- URL: https://github.com/ROCm/TheRock/blob/main/build_tools/github_actions/amdgpu_family_matrix.py
-- Authority: ROCm TheRock repository
-- Use: Configured presubmit, postsubmit, and nightly GPU families, operating systems, runner labels, fetched GFX targets, build variants, and test scope modifiers.
-- Evidence: `ci_configured`
-- Notes: The file identifies itself as the source of truth for GitHub workflows. A configured Windows runner or GFX target proves intended CI coverage only; it does not prove that the latest job passed and must not be converted into Build Passing, Sanity Tested, or Release Ready.
 
 ### Build artifact topology
 
@@ -98,14 +90,6 @@ AMD's Python package repositories currently return the standardized HTML Simple 
 - Use: Historical Torch, TorchVision, and TorchAudio release-series compatibility.
 - Evidence: `documented`
 - Notes: This source establishes framework release relationships only. ROCm build suffixes and Windows wheel availability must still be observed in AMD package indexes.
-
-### TheRock HUD
-
-- URL: https://therock-hud.amd.com/
-- Authority: AMD TheRock CI status service
-- Use: Current build and test status.
-- Evidence: Depends on the reported job and result.
-- Notes: Preserve the job identity, target, commit or build identifier, result, and observation time. This is observed CI execution evidence, unlike the configured coverage in the GPU family matrix. Do not reduce all HUD results to a single supported flag or use them to rewrite TheRock's declared roadmap fields.
 
 ### TheRock releases
 
@@ -269,16 +253,12 @@ Sources establish different facts and must not be collapsed into a single compat
 
 Every collected observation should retain its source URL and `last_observed_at` timestamp. Historical records should retain their original URLs and exact version strings even after a source stops publishing the artifact.
 
-## Profiles and local diagnostic observations
+## Profiles and local observations
 
 Consumer profiles are maintained separately from upstream source authority.
 `profiles/comfyui/` currently describes ComfyUI core and extension policy;
 profile claims remain documented or unverified until linked to stronger evidence.
 
 Runtime and hardware results generated on a user's physical machine are local
-diagnostics, not official support claims. `rocm-evidence` can create a
-privacy-redacted, hashed report with `source=community` and
-`provenance=self-reported` locally. The command does not upload, transmit, or
-contact a submission service. The Matrix does not operate a community intake or
-review workflow, and these reports are never added to the shared catalog
-automatically.
+diagnostics, not official support claims. They are outside the Matrix package
+catalog pipeline and are never published automatically.

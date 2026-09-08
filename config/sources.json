@@ -6,42 +6,110 @@
       "distribution_family": "therock",
       "channel": "stable",
       "platform": "windows",
-      "url": "https://repo.amd.com/rocm/whl-multi-arch/"
+      "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/",
+      "stream": "stable",
+      "layout": "whl-next",
+      "retention": "forever"
     },
     {
       "id": "nightly",
       "distribution_family": "therock",
       "channel": "nightly",
       "platform": "windows",
-      "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
+      "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/",
+      "stream": "nightly",
+      "layout": "whl-next",
+      "retention": "rolling",
+      "retention_limit": 120,
+      "historical_fallback": "nightly-archive"
     },
     {
       "id": "staging",
       "distribution_family": "therock",
       "channel": "staging",
       "platform": "windows",
-      "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
+      "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/",
+      "stream": "staging",
+      "layout": "whl-multi-arch",
+      "historical": true,
+      "enabled": false
     },
     {
       "id": "stable-linux",
       "distribution_family": "therock",
       "channel": "stable",
       "platform": "linux",
-      "url": "https://repo.amd.com/rocm/whl-multi-arch/"
+      "url": "https://stable.repo.amd.com/rocm/pytorch/whl-next/",
+      "stream": "stable",
+      "layout": "whl-next",
+      "retention": "forever"
     },
     {
       "id": "nightly-linux",
       "distribution_family": "therock",
       "channel": "nightly",
       "platform": "linux",
-      "url": "https://rocm.nightlies.amd.com/whl-multi-arch/"
+      "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/",
+      "stream": "nightly",
+      "layout": "whl-next",
+      "retention": "rolling",
+      "retention_limit": 120,
+      "historical_fallback": "nightly-archive-linux"
     },
     {
       "id": "staging-linux",
       "distribution_family": "therock",
       "channel": "staging",
       "platform": "linux",
-      "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/"
+      "url": "https://rocm.nightlies.amd.com/whl-staging-multi-arch/",
+      "stream": "staging",
+      "layout": "whl-multi-arch",
+      "historical": true,
+      "enabled": false
+    },
+    {
+      "id": "stable-archive",
+      "distribution_family": "therock",
+      "channel": "stable",
+      "platform": "windows",
+      "url": "https://repo.amd.com/rocm/whl-multi-arch/",
+      "stream": "stable",
+      "layout": "whl-multi-arch",
+      "historical": true,
+      "enabled": false
+    },
+    {
+      "id": "stable-archive-linux",
+      "distribution_family": "therock",
+      "channel": "stable",
+      "platform": "linux",
+      "url": "https://repo.amd.com/rocm/whl-multi-arch/",
+      "stream": "stable",
+      "layout": "whl-multi-arch",
+      "historical": true,
+      "enabled": false
+    },
+    {
+      "id": "nightly-archive",
+      "distribution_family": "therock",
+      "channel": "nightly",
+      "platform": "windows",
+      "url": "https://rocm.nightlies.amd.com/whl-multi-arch/",
+      "stream": "nightly",
+      "layout": "whl-multi-arch",
+      "historical": true,
+      "enabled": false
+    },
+    {
+      "id": "nightly-archive-linux",
+      "distribution_family": "therock",
+      "channel": "nightly",
+      "platform": "linux",
+      "url": "https://rocm.nightlies.amd.com/whl-multi-arch/",
+      "stream": "nightly",
+      "layout": "whl-multi-arch",
+      "historical": true,
+      "enabled": false
     }
   ],
   "documentation_sources": [
@@ -94,25 +162,6 @@
       "documentation_branches": {
         "id": "windows-documentation-branches",
         "url": "https://api.github.com/repos/ROCm/rocm-install-on-windows/branches?per_page=100"
-      }
-    }
-  },
-  "ci_sources": {
-    "therock": {
-      "enabled": false,
-      "matrix": {
-        "id": "therock-ci-matrix",
-        "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/build_tools/github_actions/amdgpu_family_matrix.py"
-      },
-      "workflows": {
-        "id": "therock-github-workflows",
-        "url": "https://api.github.com/repos/ROCm/TheRock/actions/workflows?per_page=100"
-      },
-      "runs_api": "https://api.github.com/repos/ROCm/TheRock/actions/workflows/{workflow_id}/runs?per_page=100",
-      "jobs_api": "https://api.github.com/repos/ROCm/TheRock/actions/runs/{run_id}/jobs?per_page=100",
-      "hud": {
-        "id": "therock-hud-ci",
-        "url": "https://therock-hud.amd.com/api/ci-hud.json"
       }
     }
   },

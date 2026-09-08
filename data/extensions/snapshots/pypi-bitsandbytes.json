@@ -1,6 +1,6 @@
 {
   "gfx_targets": [],
-  "last_observed_at": "2026-08-10T18:32:51Z",
+  "last_observed_at": "2026-09-07T21:24:48Z",
   "packages": {
     "bitsandbytes": [
       {
@@ -1439,6 +1439,116 @@
         "filename": "bitsandbytes-0.50.0-py3-none-macosx_14_0_arm64.whl",
         "platform_tag": "macosx_14_0_arm64",
         "python_tag": "py3",
+        "requires_dist": [],
+        "sha256": "c6f482df4dc18c7c150246577025de40dd0935031ea10a1e4122599a525b39bb",
+        "url": "https://files.pythonhosted.org/packages/8b/6c/b3c2a6b05e0fb06c6258b675436b2b090192450d7f283826e6323471e270/bitsandbytes-0.50.0-py3-none-macosx_14_0_arm64.whl",
+        "version": "0.50.0"
+      },
+      {
+        "abi_tag": "none",
+        "build_tag": null,
+        "filename": "bitsandbytes-0.50.0-py3-none-manylinux_2_24_aarch64.whl",
+        "platform_tag": "manylinux_2_24_aarch64",
+        "python_tag": "py3",
+        "requires_dist": [],
+        "sha256": "824d931d8e77d7db09bb26d940268d36920e0757e2a2f49cce8766e309e13048",
+        "url": "https://files.pythonhosted.org/packages/d2/3a/fe0f0c7186436038319f15156386e844abc2ae1e54b8cda3f53b81a96cb9/bitsandbytes-0.50.0-py3-none-manylinux_2_24_aarch64.whl",
+        "version": "0.50.0"
+      },
+      {
+        "abi_tag": "none",
+        "build_tag": null,
+        "filename": "bitsandbytes-0.50.0-py3-none-manylinux_2_24_x86_64.whl",
+        "platform_tag": "manylinux_2_24_x86_64",
+        "python_tag": "py3",
+        "requires_dist": [],
+        "sha256": "173d137610468bec9cddbaa2e049254e97792657ab984e3e737bec1772c1668c",
+        "url": "https://files.pythonhosted.org/packages/22/08/9501f4fc830448a6862bd5313df94a7dd1ae678f4f81087b96569d4a6f8b/bitsandbytes-0.50.0-py3-none-manylinux_2_24_x86_64.whl",
+        "version": "0.50.0"
+      },
+      {
+        "abi_tag": "none",
+        "build_tag": null,
+        "filename": "bitsandbytes-0.50.0-py3-none-win_amd64.whl",
+        "platform_tag": "win_amd64",
+        "python_tag": "py3",
+        "requires_dist": [],
+        "sha256": "7f9ebf51d76a00341711cdd557af97555274b5aad3444975ff9927866a18bc11",
+        "url": "https://files.pythonhosted.org/packages/78/40/7b2253f94ec8c6235606aa393f315d941d02c44f141b7bccae14202b3fea/bitsandbytes-0.50.0-py3-none-win_amd64.whl",
+        "version": "0.50.0"
+      },
+      {
+        "abi_tag": "none",
+        "build_tag": null,
+        "filename": "bitsandbytes-0.50.0-py3-none-win_arm64.whl",
+        "platform_tag": "win_arm64",
+        "python_tag": "py3",
+        "requires_dist": [],
+        "sha256": "9c6f63f7f35c4425661256daca56664d2e4f05a5d230a9a148cb14df207bcca2",
+        "url": "https://files.pythonhosted.org/packages/b5/e9/3cbda2ff7574753a493fd2bc27c1dc64cb51d97534ad2136f64e68d34344/bitsandbytes-0.50.0-py3-none-win_arm64.whl",
+        "version": "0.50.0"
+      },
+      {
+        "abi_tag": "none",
+        "build_tag": null,
+        "filename": "bitsandbytes-0.50.1-py3-none-macosx_14_0_arm64.whl",
+        "platform_tag": "macosx_14_0_arm64",
+        "python_tag": "py3",
+        "requires_dist": [],
+        "sha256": "5bac232206d9568fb560db566b522e230af95ba3fb833a1023744625c66f1d6b",
+        "url": "https://files.pythonhosted.org/packages/85/b0/d2eb57f5ff40bea2aa4037fcd07b8a8c8e012bbdd36b6f4954c9cb55041d/bitsandbytes-0.50.1-py3-none-macosx_14_0_arm64.whl",
+        "version": "0.50.1"
+      },
+      {
+        "abi_tag": "none",
+        "build_tag": null,
+        "filename": "bitsandbytes-0.50.1-py3-none-manylinux_2_24_aarch64.whl",
+        "platform_tag": "manylinux_2_24_aarch64",
+        "python_tag": "py3",
+        "requires_dist": [],
+        "sha256": "55ec205fa7073bbe680f905b16d66666be4b4cf7e85ab3d28b5d39d73f153db6",
+        "url": "https://files.pythonhosted.org/packages/9e/1d/44b2e6e33acf81c656b0e44cf42431b0e2ef2562be0880034632763dd520/bitsandbytes-0.50.1-py3-none-manylinux_2_24_aarch64.whl",
+        "version": "0.50.1"
+      },
+      {
+        "abi_tag": "none",
+        "build_tag": null,
+        "filename": "bitsandbytes-0.50.1-py3-none-manylinux_2_24_x86_64.whl",
+        "platform_tag": "manylinux_2_24_x86_64",
+        "python_tag": "py3",
+        "requires_dist": [],
+        "sha256": "649b4348c24c05c406a3b8fa9ed6ea00ffecb9dc93dcf838af1a2783844bf3e3",
+        "url": "https://files.pythonhosted.org/packages/1f/6b/aa0c77ad6eb11c364502ee67620226b4bb42a58ce94654485eacab1b97c1/bitsandbytes-0.50.1-py3-none-manylinux_2_24_x86_64.whl",
+        "version": "0.50.1"
+      },
+      {
+        "abi_tag": "none",
+        "build_tag": null,
+        "filename": "bitsandbytes-0.50.1-py3-none-win_amd64.whl",
+        "platform_tag": "win_amd64",
+        "python_tag": "py3",
+        "requires_dist": [],
+        "sha256": "86f76e8a3278fbbfc3fa0d79d1c4e706ebc214babd57f0ea30e2da509bbdaad5",
+        "url": "https://files.pythonhosted.org/packages/1e/47/bec1bc02e782ed11d50e04b2bd3f32c57694a414a72ddf311ecc953c3b6a/bitsandbytes-0.50.1-py3-none-win_amd64.whl",
+        "version": "0.50.1"
+      },
+      {
+        "abi_tag": "none",
+        "build_tag": null,
+        "filename": "bitsandbytes-0.50.1-py3-none-win_arm64.whl",
+        "platform_tag": "win_arm64",
+        "python_tag": "py3",
+        "requires_dist": [],
+        "sha256": "b79489c5067e187b37a044faa567d9affa8ad75f690f6cd4b8712005789c5365",
+        "url": "https://files.pythonhosted.org/packages/3c/d8/0900bd9d8826851e1bca731c9f48f10709471e457877e0479502a5f0cd75/bitsandbytes-0.50.1-py3-none-win_arm64.whl",
+        "version": "0.50.1"
+      },
+      {
+        "abi_tag": "none",
+        "build_tag": null,
+        "filename": "bitsandbytes-0.50.2-py3-none-macosx_14_0_arm64.whl",
+        "platform_tag": "macosx_14_0_arm64",
+        "python_tag": "py3",
         "requires_dist": [
           "bitsandbytes[test]; extra == \"dev\"",
           "build<2,>=1.0.0; extra == \"dev\"",
@@ -1457,14 +1567,14 @@
           "transformers<5,>=4.30.1; extra == \"test\"",
           "wheel<1,>=0.42; extra == \"dev\""
         ],
-        "sha256": "c6f482df4dc18c7c150246577025de40dd0935031ea10a1e4122599a525b39bb",
-        "url": "https://files.pythonhosted.org/packages/8b/6c/b3c2a6b05e0fb06c6258b675436b2b090192450d7f283826e6323471e270/bitsandbytes-0.50.0-py3-none-macosx_14_0_arm64.whl",
-        "version": "0.50.0"
+        "sha256": "4311f52a880b341bada639e4edd1a3c8d786830c9c93cdde29eaa1f062c8f8e5",
+        "url": "https://files.pythonhosted.org/packages/55/bf/5290208ce1ecf0f2e6a916fc72a75f6e68021ecfd69e7014fc95998532eb/bitsandbytes-0.50.2-py3-none-macosx_14_0_arm64.whl",
+        "version": "0.50.2"
       },
       {
         "abi_tag": "none",
         "build_tag": null,
-        "filename": "bitsandbytes-0.50.0-py3-none-manylinux_2_24_aarch64.whl",
+        "filename": "bitsandbytes-0.50.2-py3-none-manylinux_2_24_aarch64.whl",
         "platform_tag": "manylinux_2_24_aarch64",
         "python_tag": "py3",
         "requires_dist": [
@@ -1485,14 +1595,14 @@
           "transformers<5,>=4.30.1; extra == \"test\"",
           "wheel<1,>=0.42; extra == \"dev\""
         ],
-        "sha256": "824d931d8e77d7db09bb26d940268d36920e0757e2a2f49cce8766e309e13048",
-        "url": "https://files.pythonhosted.org/packages/d2/3a/fe0f0c7186436038319f15156386e844abc2ae1e54b8cda3f53b81a96cb9/bitsandbytes-0.50.0-py3-none-manylinux_2_24_aarch64.whl",
-        "version": "0.50.0"
+        "sha256": "d5772560dd94c4d9c57f50c9b017450a1707f7687bfd4b3dc86f7342aafe721e",
+        "url": "https://files.pythonhosted.org/packages/88/d5/b2cb5b5a9daf7349a02b1af2c49b6a044fda2702c9cc5dc296f648358327/bitsandbytes-0.50.2-py3-none-manylinux_2_24_aarch64.whl",
+        "version": "0.50.2"
       },
       {
         "abi_tag": "none",
         "build_tag": null,
-        "filename": "bitsandbytes-0.50.0-py3-none-manylinux_2_24_x86_64.whl",
+        "filename": "bitsandbytes-0.50.2-py3-none-manylinux_2_24_x86_64.whl",
         "platform_tag": "manylinux_2_24_x86_64",
         "python_tag": "py3",
         "requires_dist": [
@@ -1513,14 +1623,14 @@
           "transformers<5,>=4.30.1; extra == \"test\"",
           "wheel<1,>=0.42; extra == \"dev\""
         ],
-        "sha256": "173d137610468bec9cddbaa2e049254e97792657ab984e3e737bec1772c1668c",
-        "url": "https://files.pythonhosted.org/packages/22/08/9501f4fc830448a6862bd5313df94a7dd1ae678f4f81087b96569d4a6f8b/bitsandbytes-0.50.0-py3-none-manylinux_2_24_x86_64.whl",
-        "version": "0.50.0"
+        "sha256": "55348a9a4a21bfd99cf8c7b32fe67b4030ae5c2a05738e03c1747f65fa6ec283",
+        "url": "https://files.pythonhosted.org/packages/a5/6e/e4e8b75716dbe5e50964f070266e06f4e6806ce051bfb97f52ee162b9310/bitsandbytes-0.50.2-py3-none-manylinux_2_24_x86_64.whl",
+        "version": "0.50.2"
       },
       {
         "abi_tag": "none",
         "build_tag": null,
-        "filename": "bitsandbytes-0.50.0-py3-none-win_amd64.whl",
+        "filename": "bitsandbytes-0.50.2-py3-none-win_amd64.whl",
         "platform_tag": "win_amd64",
         "python_tag": "py3",
         "requires_dist": [
@@ -1541,14 +1651,14 @@
           "transformers<5,>=4.30.1; extra == \"test\"",
           "wheel<1,>=0.42; extra == \"dev\""
         ],
-        "sha256": "7f9ebf51d76a00341711cdd557af97555274b5aad3444975ff9927866a18bc11",
-        "url": "https://files.pythonhosted.org/packages/78/40/7b2253f94ec8c6235606aa393f315d941d02c44f141b7bccae14202b3fea/bitsandbytes-0.50.0-py3-none-win_amd64.whl",
-        "version": "0.50.0"
+        "sha256": "c697963c8fda3dcd0d7ebd9b5211ae4067feef7cd06e0350d4e816a434fe683d",
+        "url": "https://files.pythonhosted.org/packages/72/82/742dc27a1feab90c8f87f2ed14e6d72d05f9e1cf764b4d2ba30aa9b4a2cb/bitsandbytes-0.50.2-py3-none-win_amd64.whl",
+        "version": "0.50.2"
       },
       {
         "abi_tag": "none",
         "build_tag": null,
-        "filename": "bitsandbytes-0.50.0-py3-none-win_arm64.whl",
+        "filename": "bitsandbytes-0.50.2-py3-none-win_arm64.whl",
         "platform_tag": "win_arm64",
         "python_tag": "py3",
         "requires_dist": [
@@ -1569,9 +1679,9 @@
           "transformers<5,>=4.30.1; extra == \"test\"",
           "wheel<1,>=0.42; extra == \"dev\""
         ],
-        "sha256": "9c6f63f7f35c4425661256daca56664d2e4f05a5d230a9a148cb14df207bcca2",
-        "url": "https://files.pythonhosted.org/packages/b5/e9/3cbda2ff7574753a493fd2bc27c1dc64cb51d97534ad2136f64e68d34344/bitsandbytes-0.50.0-py3-none-win_arm64.whl",
-        "version": "0.50.0"
+        "sha256": "8437ab68a04ea56daf1d6ecb54230fb1d88be4b89fe2d79bc399bc0203b487cf",
+        "url": "https://files.pythonhosted.org/packages/a2/57/61636c5b11b0a32e505127a6dce6fa8fcbf73978babe8fa37082ab547f1c/bitsandbytes-0.50.2-py3-none-win_arm64.whl",
+        "version": "0.50.2"
       }
     ]
   },
