@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T21:36:06Z",
+  "generated_at": "2026-09-08T19:41:01Z",
   "releases": [
     {
       "channel": "stable",
@@ -2400,7 +2400,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 0,
       "id": "therock:7.10",
-      "last_observed_at": "2026-09-07T21:36:06Z",
+      "last_observed_at": "2026-09-08T19:41:01Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
       "platform": "windows",
@@ -2438,7 +2438,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 13,
       "id": "therock:7.11",
-      "last_observed_at": "2026-09-07T21:36:06Z",
+      "last_observed_at": "2026-09-08T19:41:01Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
       "platform": "windows",
@@ -2477,7 +2477,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 13,
       "id": "therock:7.12",
-      "last_observed_at": "2026-09-07T21:36:06Z",
+      "last_observed_at": "2026-09-08T19:41:01Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
       "platform": "windows",
@@ -2516,7 +2516,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 13,
       "id": "therock:7.13",
-      "last_observed_at": "2026-09-07T21:36:06Z",
+      "last_observed_at": "2026-09-08T19:41:01Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
       "platform": "windows",
@@ -2555,7 +2555,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 23,
       "id": "therock:7.14.1",
-      "last_observed_at": "2026-09-07T21:36:06Z",
+      "last_observed_at": "2026-09-08T19:41:01Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
       "platform": "windows",
@@ -2595,7 +2595,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 23,
       "id": "therock:10.0",
-      "last_observed_at": "2026-09-07T21:36:06Z",
+      "last_observed_at": "2026-09-08T19:41:01Z",
       "lifecycle": "current",
       "package_artifacts": 0,
       "platform": "windows",
@@ -2634,7 +2634,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 23,
       "id": "therock:10.1.0",
-      "last_observed_at": "2026-09-07T21:36:06Z",
+      "last_observed_at": "2026-09-08T19:41:01Z",
       "lifecycle": "current",
       "package_artifacts": 0,
       "platform": "windows",
@@ -2746,47 +2746,47 @@
     },
     "therock-releases": {
       "id": "therock-releases",
-      "observed_at": "2026-09-07T21:36:06Z",
+      "observed_at": "2026-09-08T19:41:01Z",
       "url": "https://api.github.com/repos/ROCm/TheRock/releases?per_page=100"
     },
     "therock-supported-gpus": {
       "id": "therock-supported-gpus",
-      "observed_at": "2026-09-07T21:36:06Z",
+      "observed_at": "2026-09-08T19:41:01Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-10.0": {
       "id": "therock-supported-gpus-10.0",
-      "observed_at": "2026-09-07T21:36:06Z",
+      "observed_at": "2026-09-08T19:41:01Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-10.0/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-7.11": {
       "id": "therock-supported-gpus-7.11",
-      "observed_at": "2026-09-07T21:36:06Z",
+      "observed_at": "2026-09-08T19:41:01Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.11/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-7.12": {
       "id": "therock-supported-gpus-7.12",
-      "observed_at": "2026-09-07T21:36:06Z",
+      "observed_at": "2026-09-08T19:41:01Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.12/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-7.13": {
       "id": "therock-supported-gpus-7.13",
-      "observed_at": "2026-09-07T21:36:06Z",
+      "observed_at": "2026-09-08T19:41:01Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.13/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-7.14": {
       "id": "therock-supported-gpus-7.14",
-      "observed_at": "2026-09-07T21:36:06Z",
+      "observed_at": "2026-09-08T19:41:01Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.14/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-7.14.1": {
       "id": "therock-supported-gpus-7.14.1",
-      "observed_at": "2026-09-07T21:36:06Z",
+      "observed_at": "2026-09-08T19:41:01Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.14.1/SUPPORTED_GPUS.md"
     },
     "therock-version": {
       "id": "therock-version",
-      "observed_at": "2026-09-07T21:36:06Z",
+      "observed_at": "2026-09-08T19:41:01Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/version.json"
     },
     "windows-documentation-branches": {
