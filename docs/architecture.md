@@ -55,9 +55,8 @@ integrations must use the grouped representation.
 
 - `config/sources.json`: upstream source declarations and platform metadata
 - `rocm_evidence_matrix/simple_index.py`: package index parsing
-- `rocm_evidence_matrix/documentation.py`: shared GPU/framework documentation plus Windows-specific tables
+- `rocm_evidence_matrix/documentation.py`: shared GPU documentation plus Windows-specific tables
 - `rocm_evidence_matrix/legacy.py` and `legacy_linux.py`: legacy platform adapters
-- `rocm_evidence_matrix/frameworks.py`: JAX framework and ROCm SDK component evidence
 - `rocm_evidence_matrix/extensions.py`: optional compiled-extension artifact history
 - `rocm_evidence_matrix/extension_sources.py`: explicit PyPI, Simple API, and GitHub extension artifact adapters
 - `rocm_evidence_matrix/extension_catalog.py`: append-only extension catalog/history and human-readable rendering
@@ -67,7 +66,7 @@ integrations must use the grouped representation.
 - `schemas/`: contracts for each persisted evidence type
 - `data/`: committed normalized evidence and generated views
 - `docs/generated/`: rebuildable Markdown views
-- `profiles/`: application, runtime, framework, extension, and option profiles
+- `profiles/`: application and extension policy profiles
 
 The public package namespace is `rocm_evidence_matrix`.
 The primary and only Matrix command is `rocm-matrix`. Candidate execution and

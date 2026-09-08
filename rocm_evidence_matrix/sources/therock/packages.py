@@ -18,12 +18,6 @@ BASE_PACKAGES = (
     "torchvision",
     "torchaudio",
     "triton",
-    "jax-rocm7-pjrt",
-    "jax-rocm7-plugin",
-    "jax-rocm10-pjrt",
-    "jax-rocm10-plugin",
-    "rocm-bootstrap",
-    "rocm-profiler",
 )
 
 DEVICE_ALIAS_PREFIXES = ("amd-torch-device-", "amd-torchvision-device-")

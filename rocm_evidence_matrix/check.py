@@ -7,7 +7,6 @@ from jsonschema.validators import validator_for
 from .catalog import REQUIRED_ARTIFACT_IDS, build_catalog
 from .extensions import render_extension_history
 from .extension_catalog import render_extension_catalog
-from .frameworks import render_framework_history, render_sdk_components
 from .history import migrate_history, render_history
 from .legacy import render_legacy_windows
 from .legacy_linux import render_legacy_linux
@@ -22,11 +21,9 @@ from .validation import (
     validate_extension_history,
     validate_extension_catalog,
     validate_extension_snapshot,
-    validate_framework_history,
     validate_history,
     validate_legacy_linux,
     validate_legacy_windows,
-    validate_sdk_components,
     validate_snapshot,
     validate_source_manifest,
     validate_version_history,
@@ -41,13 +38,11 @@ SCHEMA_VALIDATORS = {
     "extension-history.schema.json": validate_extension_history,
     "extension-catalog.schema.json": validate_extension_catalog,
     "extension-snapshot.schema.json": validate_extension_snapshot,
-    "framework-history.schema.json": validate_framework_history,
     "history.schema.json": validate_history,
     "legacy-linux.schema.json": validate_legacy_linux,
     "legacy-windows.schema.json": validate_legacy_windows,
     "package-snapshot.schema.json": validate_snapshot,
     "source-manifest.schema.json": validate_source_manifest,
-    "sdk-components.schema.json": validate_sdk_components,
     "version-history.schema.json": validate_version_history,
     "profile.schema.json": validate_profile,
 }
@@ -160,8 +155,6 @@ def validate_generated_documents(root):
     legacy_windows = read_json(first_existing(root, LEGACY_WINDOWS))
     legacy_linux = read_json(first_existing(root, LEGACY_LINUX))
     version_history = read_json(data / "version-history.json")
-    framework_history = read_json(data / "framework-history.json")
-    sdk_components = read_json(data / "sdk-components.json")
     extension_history = read_json(data / "extension-history.json")
     extension_catalog = read_json(data / "extensions" / "catalog.json")
     snapshots = []
@@ -170,12 +163,10 @@ def validate_generated_documents(root):
             snapshots.append(path)
     expected = {
         "compatibility-matrix.md": render_compatibility_matrix(matrix),
-        "framework-history.md": render_framework_history(framework_history),
         "history.md": render_history(history),
         LEGACY_LINUX_DOC.removeprefix("docs/generated/"): render_legacy_linux(legacy_linux),
         LEGACY_WINDOWS_DOC.removeprefix("docs/generated/"): render_legacy_windows(legacy_windows),
         "package-availability.md": render_snapshots(snapshots),
-        "sdk-components.md": render_sdk_components(sdk_components),
         "extension-history.md": render_extension_history(extension_history),
         "extension-catalog.md": render_extension_catalog(extension_catalog),
         "version-history.md": render_version_history(version_history),

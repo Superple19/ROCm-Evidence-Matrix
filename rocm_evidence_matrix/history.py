@@ -80,7 +80,6 @@ def build_history_observations(source, gfx_targets, packages, framework_compatib
 
     for gfx in gfx_targets:
         device_names = package_names_for_target(gfx, package_versions)
-        rocm_device = package_versions.get(f"rocm-sdk-device-{gfx}", {})
         torch_device = package_versions.get(f"amd-torch-device-{gfx}", {})
         torchvision_device = package_versions.get(f"amd-torchvision-device-{gfx}", {})
         for torch_version, torch_tags in torch_versions.items():

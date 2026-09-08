@@ -11,7 +11,6 @@ from .extension_catalog import rebuild_extension_catalog, render_extension_catal
 from .extension_sources import collect_extension_sources, rebuild_extension_catalog_from_sources
 from .extensions import rebuild_extension_history, render_extension_history
 from .history import attach_therock_documentation_evidence, merge_history, migrate_history, write_history_document
-from .frameworks import rebuild_auxiliary_outputs, render_framework_history, render_sdk_components
 from .integration import build_compatibility_matrix
 from .sources.legacy_archive import build_legacy_candidates, build_legacy_linux_candidates, classify_legacy_linux_framework, collect_legacy_linux_sources, collect_legacy_version_history, collect_legacy_windows_sources, render_legacy_linux, render_legacy_windows
 from .matrix_render import write_compatibility_document
@@ -72,8 +71,6 @@ def add_cache_paths(parser):
 
 
 def add_auxiliary_paths(parser):
-    parser.add_argument("--framework-history-output", default="data/framework-history.json")
-    parser.add_argument("--sdk-components-output", default="data/sdk-components.json")
     parser.add_argument("--extension-history-output", default="data/extension-history.json")
     parser.add_argument("--extension-catalog-output", default=EXTENSION_CATALOG)
 
@@ -226,10 +223,8 @@ def write_status(family, started_at, results, path):
 def auxiliary_paths(args):
     output_dir = Path(getattr(args, "output_dir", THEROCK_SNAPSHOTS))
     default_dir = output_dir.parent
-    framework_path = getattr(args, "framework_history_output", None) or default_dir / "framework-history.json"
-    components_path = getattr(args, "sdk_components_output", None) or default_dir / "sdk-components.json"
     extension_path = getattr(args, "extension_history_output", None) or default_dir / "extension-history.json"
-    return Path(framework_path), Path(components_path), Path(extension_path)
+    return Path(extension_path)
 
 
 def normalize_therock_sources(args, config, source_reader, observed_at, status_output=None):
@@ -329,8 +324,7 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
         print(f"Wrote {args.history_output}")
 
     if successful_sources:
-        framework_path, components_path, extension_path = auxiliary_paths(args)
-        rebuild_auxiliary_outputs(args.output_dir, framework_path, components_path, observed_at, read_json, write_json)
+        extension_path = auxiliary_paths(args)
         rebuild_extension_history(args.output_dir, extension_path, observed_at, read_json, write_json, read_json(args.history_output))
         extension_catalog_output = getattr(args, "extension_catalog_output", None)
         if extension_catalog_output is None:
@@ -344,8 +338,6 @@ def normalize_therock_sources(args, config, source_reader, observed_at, status_o
             history_path=Path(extension_catalog_output).parent / "history.json",
         )
         validate_extension_catalog(extension_catalog)
-        print(f"Wrote {framework_path}")
-        print(f"Wrote {components_path}")
         print(f"Wrote {extension_path}")
         print(f"Wrote {extension_catalog_output}")
 
@@ -599,9 +591,7 @@ def render_outputs(args):
     validate_compatibility_matrix(matrix)
     validate_version_history(version_history)
     snapshot_paths, _ = load_package_snapshots(args.output_dir)
-    framework_path, components_path, extension_path = auxiliary_paths(args)
-    framework_history = read_json(framework_path) or {"schema_version": 1, "generated_at": history["generated_at"], "sources": {}, "candidates": []}
-    sdk_components = read_json(components_path) or {"schema_version": 1, "generated_at": history["generated_at"], "components": []}
+    extension_path = auxiliary_paths(args)
     extension_history = read_json(extension_path) or {"schema_version": 1, "generated_at": history["generated_at"], "sources": {}, "extensions": []}
     extension_catalog_output = getattr(args, "extension_catalog_output", None)
     if extension_catalog_output is None:
@@ -622,12 +612,10 @@ def render_outputs(args):
     version_history_path = Path(args.version_history_docs_output)
     version_history_path.parent.mkdir(parents=True, exist_ok=True)
     atomic_write_text(version_history_path, render_version_history(version_history))
-    atomic_write_text("docs/generated/framework-history.md", render_framework_history(framework_history))
-    atomic_write_text("docs/generated/sdk-components.md", render_sdk_components(sdk_components))
     atomic_write_text("docs/generated/extension-history.md", render_extension_history(extension_history))
     atomic_write_text("docs/generated/extension-catalog.md", render_extension_catalog(extension_catalog))
     validate_extension_catalog(extension_catalog)
-    paths = (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output, args.version_history_docs_output, "docs/generated/framework-history.md", "docs/generated/sdk-components.md", "docs/generated/extension-history.md", "docs/generated/extension-catalog.md")
+    paths = (args.docs_output, args.history_docs_output, args.matrix_docs_output, args.legacy_docs_output, args.version_history_docs_output, "docs/generated/extension-history.md", "docs/generated/extension-catalog.md")
     if legacy_linux is not None:
         paths += (args.legacy_linux_docs_output,)
     for path in paths:
@@ -639,8 +627,7 @@ def build_outputs(args):
     snapshot_paths, _ = load_package_snapshots(args.output_dir)
     snapshot_times = [read_required_json(path)["last_observed_at"] for path in snapshot_paths]
     observed_at = max(snapshot_times) if snapshot_times else utc_now()
-    framework_path, components_path, extension_path = auxiliary_paths(args)
-    rebuild_auxiliary_outputs(args.output_dir, framework_path, components_path, observed_at, read_json, write_json)
+    extension_path = auxiliary_paths(args)
     rebuild_extension_history(args.output_dir, extension_path, observed_at, read_json, write_json, read_json(args.history_output))
     extension_catalog_output = getattr(args, "extension_catalog_output", None)
     if extension_catalog_output is None:

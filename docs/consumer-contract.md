@@ -58,10 +58,11 @@ Legacy Windows candidates may include `gfx_support_scope` and
 to a documented HIP SDK series rather than an exact release-specific table;
 consumers must preserve that provenance when presenting the candidate.
 
-Framework and SDK artifacts are separate machine-readable evidence. Use
-`framework_history` for JAX PJRT/plugin pairs and `sdk_components` for ROCm SDK
-and exact-GFX device packages. An observed alias or extension artifact is not a
-complete Torch candidate unless it appears in `package_history`.
+Package snapshots and candidate history contain observed package artifacts only.
+They do not establish resolver, runtime, or hardware compatibility. Manager
+must perform those checks against the user's target environment. An observed
+alias or extension artifact is not a complete Torch candidate unless it appears
+in `package_history`.
 
 Optional compiled extensions use `extension_history`. Triton records in that
 artifact are not part of core Torch candidate identity and must not be treated

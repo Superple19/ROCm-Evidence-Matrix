@@ -8,11 +8,12 @@ The repository keeps machine-readable observations separate from generated docum
 
 ## Current scope
 
-The collector reads official AMD and TheRock stable, nightly, and staging sources. It:
+The collector reads official AMD and TheRock stable and nightly sources, with
+legacy and historical archives refreshed explicitly. It:
 
 - Discovers exact `gfx` targets from `rocm-sdk-device-{gfx}` packages.
 - Records platform-specific wheel filenames, versions, Python tags, ABI tags, platform tags, URLs, and observation times.
-- Records ROCm-specific framework and extension artifacts, including Triton, JAX ROCm PJRT/plugin wheels, and Apex.
+- Records ROCm package artifacts and optional external extension artifacts, including PyTorch device wheels and Triton.
 - Checks whether ROCm, PyTorch, and TorchVision device packages exist for each target.
 - Reports device-package aliases without matching complete targets as separate observed artifacts.
 - Keeps every platform ABI variant for the latest observed version of each package.
@@ -38,17 +39,14 @@ write results locally. The Matrix has no upload client, submission endpoint, or
 local-diagnostic intake, and those records are never added to the shared catalog.
 
 Official documentation sources and their evidence boundaries are listed in [docs/sources.md](docs/sources.md). The data boundaries and processing layers are documented in [docs/architecture.md](docs/architecture.md), the machine-readable consumer contract is in [docs/consumer-contract.md](docs/consumer-contract.md), and the ComfyUI Manager boundary is in [docs/manager-boundary.md](docs/manager-boundary.md). Schema changes follow [docs/schema-versioning.md](docs/schema-versioning.md).
-The latest repository audit and hardening notes are in [docs/code-audit.md](docs/code-audit.md).
 
 Current generated views:
 
 - [Integrated compatibility matrix](docs/generated/compatibility-matrix.md)
 - [Package availability](docs/generated/package-availability.md)
 - [Historical package candidates](docs/generated/history.md)
-- [JAX framework artifact history](docs/generated/framework-history.md)
 - [Optional extension artifact history](docs/generated/extension-history.md)
 - [Extension artifact catalog](docs/generated/extension-catalog.md)
-- [ROCm SDK component evidence](docs/generated/sdk-components.md)
 - [Legacy platform ROCm support](docs/generated/legacy/legacy-windows.md)
 - [Legacy Linux ROCm artifacts](docs/generated/legacy/legacy-linux.md)
 

@@ -35,7 +35,6 @@ class CollectionCommandTests(unittest.TestCase):
         snapshot, _ = collect_source(
             {"id": "stable-linux", "channel": "stable", "platform": "linux", "url": "https://example.test/"},
             fetch=fetch,
-            framework_compatibility=[],
             workers=1,
         )
 

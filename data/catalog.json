@@ -43,13 +43,6 @@
       "sha256": "2bb38bed01ecab2486652845768121200f2a19d08008aa04275643a4ad495d1d"
     },
     {
-      "id": "framework_history",
-      "path": "data/framework-history.json",
-      "schema": "schemas/framework-history.schema.json",
-      "schema_version": 1,
-      "sha256": "9698cc6835958f45f71117647a02a8e5375f9e26a69a1347d7b5beb4ffc0e550"
-    },
-    {
       "id": "extension_history",
       "path": "data/extension-history.json",
       "schema": "schemas/extension-history.schema.json",
@@ -111,13 +104,6 @@
       "schema": "schemas/collection-status.schema.json",
       "schema_version": 1,
       "sha256": "a4fc20d9ce7230d9bf794b9e316c1fc671d2f81621b2b25d0e1243509ee7ecc4"
-    },
-    {
-      "id": "sdk_components",
-      "path": "data/sdk-components.json",
-      "schema": "schemas/sdk-components.schema.json",
-      "schema_version": 1,
-      "sha256": "e8658abd584b50c2d74cfe59e5d24a9445a810997b309731fd7e7e7b483d6d17"
     },
     {
       "id": "documentation",
