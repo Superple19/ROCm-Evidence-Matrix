@@ -6,7 +6,8 @@ Platform support, documentation availability, and observed package or test evide
 
 | Distribution | Platform | Version | Channel | Lifecycle | Platform support | Package available | CI verified | Documentation | GPU observations | Framework observations | Package artifacts |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: |
-| therock | windows | `10.1.0` | nightly | current | unknown | False | None | available | 23 | 0 | 0 |
+| therock | windows | `10.2.0` | nightly | current | unknown | False | None | available | 23 | 0 | 0 |
+| therock | windows | `10.1.0` | nightly | historical | unknown | False | None | available | 23 | 0 | 0 |
 | therock | windows | `10.0` | stable | current | unknown | False | None | available | 23 | 0 | 0 |
 | therock | windows | `7.14.1` | stable | historical | unknown | False | None | available | 23 | 0 | 0 |
 | therock | windows | `7.13` | stable | historical | unknown | False | None | available | 13 | 0 | 0 |
