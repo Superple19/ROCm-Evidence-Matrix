@@ -201,7 +201,7 @@
       "gfx": "gfx1250"
     }
   ],
-  "last_observed_at": "2026-09-15T19:56:04Z",
+  "last_observed_at": "2026-09-16T19:48:50Z",
   "packages": {
     "amd-torch-device-gfx1010": [
       {
