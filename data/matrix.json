@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-18T19:21:12Z",
+  "generated_at": "2026-09-19T19:06:19Z",
   "schema_version": 1,
   "sources": {
     "amd-gpu-specifications": {
       "fallback_used": false,
       "id": "amd-gpu-specifications",
-      "observed_at": "2026-09-18T19:21:12Z",
+      "observed_at": "2026-09-19T19:06:19Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst",
       "url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst"
     },
@@ -15,7 +15,7 @@
       "historical_fallback": "nightly-archive",
       "id": "nightly",
       "layout": "whl-next",
-      "observed_at": "2026-09-18T19:21:12Z",
+      "observed_at": "2026-09-19T19:06:19Z",
       "platform": "windows",
       "retention": "rolling",
       "retention_limit": 120,
@@ -28,7 +28,7 @@
       "historical_fallback": "nightly-archive-linux",
       "id": "nightly-linux",
       "layout": "whl-next",
-      "observed_at": "2026-09-18T19:21:12Z",
+      "observed_at": "2026-09-19T19:06:19Z",
       "platform": "linux",
       "retention": "rolling",
       "retention_limit": 120,
@@ -40,7 +40,7 @@
       "distribution_family": "therock",
       "id": "stable",
       "layout": "whl-next",
-      "observed_at": "2026-09-18T19:21:12Z",
+      "observed_at": "2026-09-19T19:06:19Z",
       "platform": "windows",
       "retention": "forever",
       "stream": "stable",
@@ -51,7 +51,7 @@
       "distribution_family": "therock",
       "id": "stable-linux",
       "layout": "whl-next",
-      "observed_at": "2026-09-18T19:21:12Z",
+      "observed_at": "2026-09-19T19:06:19Z",
       "platform": "linux",
       "retention": "forever",
       "stream": "stable",
@@ -60,28 +60,28 @@
     "pytorch-version-compatibility": {
       "fallback_used": false,
       "id": "pytorch-version-compatibility",
-      "observed_at": "2026-09-18T19:21:12Z",
+      "observed_at": "2026-09-19T19:06:19Z",
       "preferred_url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md",
       "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     },
     "rocm-compatibility-matrix": {
       "fallback_used": false,
       "id": "rocm-compatibility-matrix",
-      "observed_at": "2026-09-18T19:21:12Z",
+      "observed_at": "2026-09-19T19:06:19Z",
       "preferred_url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html",
       "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
     },
     "therock-release-packaging": {
       "fallback_used": false,
       "id": "therock-release-packaging",
-      "observed_at": "2026-09-18T19:21:12Z",
+      "observed_at": "2026-09-19T19:06:19Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
     },
     "therock-supported-gpus": {
       "fallback_used": false,
       "id": "therock-supported-gpus",
-      "observed_at": "2026-09-18T19:21:12Z",
+      "observed_at": "2026-09-19T19:06:19Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     }

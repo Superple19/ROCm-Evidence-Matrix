@@ -7,7 +7,7 @@ A package listed here was observed in an official AMD index. Versions are select
 ## Windows — Stable
 
 - Source: https://stable.repo.amd.com/rocm/pytorch/whl-next/
-- Last observed: `2026-09-18T19:21:12Z`
+- Last observed: `2026-09-19T19:06:19Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -55,7 +55,7 @@ These artifacts are reported separately because they are not complete GFX device
 ## Windows — Nightly
 
 - Source: https://nightly.repo.amd.com/rocm/pytorch/whl-next/
-- Last observed: `2026-09-18T19:21:12Z`
+- Last observed: `2026-09-19T19:06:19Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -106,7 +106,7 @@ These artifacts are reported separately because they are not complete GFX device
 ## Linux — Stable
 
 - Source: https://stable.repo.amd.com/rocm/pytorch/whl-next/
-- Last observed: `2026-09-18T19:21:12Z`
+- Last observed: `2026-09-19T19:06:19Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -154,7 +154,7 @@ These artifacts are reported separately because they are not complete GFX device
 ## Linux — Nightly
 
 - Source: https://nightly.repo.amd.com/rocm/pytorch/whl-next/
-- Last observed: `2026-09-18T19:21:12Z`
+- Last observed: `2026-09-19T19:06:19Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
