@@ -5,112 +5,112 @@
       "path": "data/matrix.json",
       "schema": "schemas/compatibility-matrix.schema.json",
       "schema_version": 1,
-      "sha256": "7d8f9c6400c7fcd4db5f80dc3037d8cd88155ea0472c9d67e0bbba38d0176380"
+      "sha256": "6791d07655dfafd46acdae8dadff0c05ea91b2b7b918110d93035a35d1546e2f"
     },
     {
       "id": "package_history",
       "path": "data/history.json",
       "schema": "schemas/history.schema.json",
       "schema_version": 2,
-      "sha256": "4969b20f89de9a1a98a89c1abb76360407caa1be8f84e4d71ab037ccc6185f45"
+      "sha256": "4d9a4d8090a392fd5fac0cd1e752e38293d3360d37a3ed957391bd4c7a12514f"
     },
     {
       "id": "package_snapshots:nightly-linux",
       "path": "data/therock/snapshots/nightly-linux.json",
       "schema": "schemas/package-snapshot.schema.json",
       "schema_version": 1,
-      "sha256": "77980c06a6ac057b360fb4aa1f6eb8049e9309fcc217604ccebaaa0e314ff6cb"
+      "sha256": "b9d3d15fd72e9f5e92b319f0ef20c143f960bf01539d9e41f0ab905a6235b4b4"
     },
     {
       "id": "package_snapshots:nightly",
       "path": "data/therock/snapshots/nightly.json",
       "schema": "schemas/package-snapshot.schema.json",
       "schema_version": 1,
-      "sha256": "06ed32bf95a53383bdc0caa7d1ad413f7fc3cc56dc01edbc8b8a6de491a79323"
+      "sha256": "a752c2e3a87519d14c3bf911134a73a797a324bc0c0f3b7784c0f03fffbd9693"
     },
     {
       "id": "package_snapshots:stable-linux",
       "path": "data/therock/snapshots/stable-linux.json",
       "schema": "schemas/package-snapshot.schema.json",
       "schema_version": 1,
-      "sha256": "f8c1cae27939886d7242caa443bbdb37e3167d45c2295bf00b592be59ef7b4ad"
+      "sha256": "775e716f53abeb489f4a054b0d4a97138d20c462d9b0e80abe6b1dccc68c0481"
     },
     {
       "id": "package_snapshots:stable",
       "path": "data/therock/snapshots/stable.json",
       "schema": "schemas/package-snapshot.schema.json",
       "schema_version": 1,
-      "sha256": "2c3c54d4b767459ac17a3de3d8e34176ca85cbff00eba185507c80b3e41fd8d8"
+      "sha256": "0823b03da31905313f7cd32070b6c0fa2908b744958e0031bdabd91226982922"
     },
     {
       "id": "extension_history",
       "path": "data/extension-history.json",
       "schema": "schemas/extension-history.schema.json",
       "schema_version": 1,
-      "sha256": "2a3e1422205e9c110520821aca6c5fd4606922693838ddeefde3250e1574fedc"
+      "sha256": "120716a012d5cd8aab6809f99cc7c4370977196e5dfdb9e57d47619a205819d1"
     },
     {
       "id": "extension_catalog",
       "path": "data/extensions/catalog.json",
       "schema": "schemas/extension-catalog.schema.json",
       "schema_version": 1,
-      "sha256": "9c55fdfb396141079458bea7229d3f2135c503aae7f138f79f9abb80cc87bbd1"
+      "sha256": "afe7af8609769cf7c43063462ec46ae774de7b5a75f4968f3866ea653b901443"
     },
     {
       "id": "extension_artifact_history",
       "path": "data/extensions/history.json",
       "schema": "schemas/extension-catalog.schema.json",
       "schema_version": 1,
-      "sha256": "493b467ffbbae8fe8713501c49008e291b6558a3122ece1ea5c8c652b1e95d29"
+      "sha256": "a08d7863a54787527b1ad8823a71e5fd2815daf39c3aef163e59fe766ac07d2c"
     },
     {
       "id": "extension_snapshots:pypi-aiter",
       "path": "data/extensions/snapshots/pypi-aiter.json",
       "schema": "schemas/extension-snapshot.schema.json",
       "schema_version": 1,
-      "sha256": "ffd6ae6f8ec01814af65b700d6a33b6c759536689c1c0789a2dede7a885083ee"
+      "sha256": "a59e87416219bf1c4d1a3ada3362b75b71ace131c95c830f5fd253ad51ddd626"
     },
     {
       "id": "extension_snapshots:pypi-bitsandbytes",
       "path": "data/extensions/snapshots/pypi-bitsandbytes.json",
       "schema": "schemas/extension-snapshot.schema.json",
       "schema_version": 1,
-      "sha256": "1994373a8ceaee5faa7bba2d2b4a92fb9fadd27e1a7335b4d2737541da1aee79"
+      "sha256": "ea6a32066221a9de14fd47d4e10cef23b05b0f62f1560a7a8eb0a97261a03164"
     },
     {
       "id": "extension_snapshots:pypi-flash-attn",
       "path": "data/extensions/snapshots/pypi-flash-attn.json",
       "schema": "schemas/extension-snapshot.schema.json",
       "schema_version": 1,
-      "sha256": "f1348054d01edec970d00c55762444fe5ae93d4e4ba1051868ba39460f3aa0bb"
+      "sha256": "8f2301890d598b36fa323f812bb170113099d357b4f2e52ca8d26c8c427dd6cf"
     },
     {
       "id": "extension_snapshots:pypi-sageattention",
       "path": "data/extensions/snapshots/pypi-sageattention.json",
       "schema": "schemas/extension-snapshot.schema.json",
       "schema_version": 1,
-      "sha256": "ad869133eea6f2c1f0926bc56269f15b771e5ea7021a54be9cdd09eeb7bb0728"
+      "sha256": "9f9f11ca88e13ca550c9b2ff17e16df36fc3b78e77b298dc92a959a04ce3652b"
     },
     {
       "id": "extension_snapshots:pypi-triton",
       "path": "data/extensions/snapshots/pypi-triton.json",
       "schema": "schemas/extension-snapshot.schema.json",
       "schema_version": 1,
-      "sha256": "205cc0d593c20375764d993039c8fb9c0a63bf3ff29536a7275eb73f34b559fb"
+      "sha256": "0c8e121f442739d8746140b3da5a4be80d278b890d7407bb3394a4092cbb3948"
     },
     {
       "id": "extension_status",
       "path": "data/extensions/status.json",
       "schema": "schemas/collection-status.schema.json",
       "schema_version": 1,
-      "sha256": "899d8c23bb2e05c6aa85b0d42ef4c58fd5300d0206219c1d9a3e4718f2259557"
+      "sha256": "85dd303932209b49352b63938032140956732ee723a9f8435c23c4407ce5e064"
     },
     {
       "id": "documentation",
       "path": "data/documentation.json",
       "schema": "schemas/documentation-snapshot.schema.json",
       "schema_version": 1,
-      "sha256": "f48288e11ff38a3fb5fa501e8d8dfec903b8c8060838a05075be7d4525b759be"
+      "sha256": "e5e0e418940905d9cc6ef8c584b5cc51c7f8af316e900daf276112b48203194e"
     },
     {
       "id": "legacy_windows",
@@ -131,14 +131,14 @@
       "path": "data/version-history.json",
       "schema": "schemas/version-history.schema.json",
       "schema_version": 1,
-      "sha256": "add1b55468c38f0461e7f42a40941311a4ba0216429ac615bfaffe3ffb1136c1"
+      "sha256": "065c0c8d89515a3de1c1bfd31f7d42cc3a69ea2c55956b2a9a2375e6cd699028"
     },
     {
       "id": "source_manifest",
       "path": "data/observations/source-manifest.json",
       "schema": "schemas/source-manifest.schema.json",
       "schema_version": 1,
-      "sha256": "73c444ec15e6c0eea5c8e8d138abb4d7cdb2f5c03cb52784a17efbfc4b90fc8d"
+      "sha256": "7f219d64cc19e190d25b04b020bef902bc12a9a872cb569881d3c3b97196d434"
     },
     {
       "id": "collection_status:legacy",
@@ -152,7 +152,7 @@
       "path": "data/therock/status.json",
       "schema": "schemas/collection-status.schema.json",
       "schema_version": 1,
-      "sha256": "7c4bf20315bbbe6773609ed2852725f8fdf57d1779501fb6e5a8bf21bd3c6317"
+      "sha256": "1b2d3ebc11464d014e46be522dd186e48710f774f37109280a1e730f90d10621"
     },
     {
       "id": "comfyui_profile",
@@ -214,6 +214,6 @@
       "windows"
     ]
   },
-  "generated_at": "2026-09-19T19:06:36Z",
+  "generated_at": "2026-09-20T19:12:24Z",
   "schema_version": 1
 }
