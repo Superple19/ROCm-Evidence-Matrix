@@ -225,7 +225,7 @@
       "gfx": "gfx1250"
     }
   ],
-  "last_observed_at": "2026-09-26T19:30:20Z",
+  "last_observed_at": "2026-09-27T19:55:55Z",
   "packages": {
     "amd-torch-device-gfx1010": [
       {
@@ -2505,43 +2505,43 @@
     "torchaudio": [
       {
         "abi_tag": "cp310",
-        "filename": "torchaudio-2.11.0.3+rocm10.2.0a20260926-cp310-cp310-win_amd64.whl",
+        "filename": "torchaudio-2.11.0.3+rocm10.2.0a20260927-cp310-cp310-win_amd64.whl",
         "platform_tag": "win_amd64",
         "python_tag": "cp310",
-        "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/torchaudio/torchaudio-2.11.0.3%2Brocm10.2.0a20260926-cp310-cp310-win_amd64.whl",
-        "version": "2.11.0.3+rocm10.2.0a20260926"
+        "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/torchaudio/torchaudio-2.11.0.3%2Brocm10.2.0a20260927-cp310-cp310-win_amd64.whl",
+        "version": "2.11.0.3+rocm10.2.0a20260927"
       },
       {
         "abi_tag": "cp311",
-        "filename": "torchaudio-2.11.0.3+rocm10.2.0a20260926-cp311-cp311-win_amd64.whl",
+        "filename": "torchaudio-2.11.0.3+rocm10.2.0a20260927-cp311-cp311-win_amd64.whl",
         "platform_tag": "win_amd64",
         "python_tag": "cp311",
-        "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/torchaudio/torchaudio-2.11.0.3%2Brocm10.2.0a20260926-cp311-cp311-win_amd64.whl",
-        "version": "2.11.0.3+rocm10.2.0a20260926"
+        "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/torchaudio/torchaudio-2.11.0.3%2Brocm10.2.0a20260927-cp311-cp311-win_amd64.whl",
+        "version": "2.11.0.3+rocm10.2.0a20260927"
       },
       {
         "abi_tag": "cp312",
-        "filename": "torchaudio-2.11.0.3+rocm10.2.0a20260926-cp312-cp312-win_amd64.whl",
+        "filename": "torchaudio-2.11.0.3+rocm10.2.0a20260927-cp312-cp312-win_amd64.whl",
         "platform_tag": "win_amd64",
         "python_tag": "cp312",
-        "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/torchaudio/torchaudio-2.11.0.3%2Brocm10.2.0a20260926-cp312-cp312-win_amd64.whl",
-        "version": "2.11.0.3+rocm10.2.0a20260926"
+        "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/torchaudio/torchaudio-2.11.0.3%2Brocm10.2.0a20260927-cp312-cp312-win_amd64.whl",
+        "version": "2.11.0.3+rocm10.2.0a20260927"
       },
       {
         "abi_tag": "cp313",
-        "filename": "torchaudio-2.11.0.3+rocm10.2.0a20260926-cp313-cp313-win_amd64.whl",
+        "filename": "torchaudio-2.11.0.3+rocm10.2.0a20260927-cp313-cp313-win_amd64.whl",
         "platform_tag": "win_amd64",
         "python_tag": "cp313",
-        "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/torchaudio/torchaudio-2.11.0.3%2Brocm10.2.0a20260926-cp313-cp313-win_amd64.whl",
-        "version": "2.11.0.3+rocm10.2.0a20260926"
+        "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/torchaudio/torchaudio-2.11.0.3%2Brocm10.2.0a20260927-cp313-cp313-win_amd64.whl",
+        "version": "2.11.0.3+rocm10.2.0a20260927"
       },
       {
         "abi_tag": "cp314",
-        "filename": "torchaudio-2.11.0.3+rocm10.2.0a20260926-cp314-cp314-win_amd64.whl",
+        "filename": "torchaudio-2.11.0.3+rocm10.2.0a20260927-cp314-cp314-win_amd64.whl",
         "platform_tag": "win_amd64",
         "python_tag": "cp314",
-        "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/torchaudio/torchaudio-2.11.0.3%2Brocm10.2.0a20260926-cp314-cp314-win_amd64.whl",
-        "version": "2.11.0.3+rocm10.2.0a20260926"
+        "url": "https://nightly.repo.amd.com/rocm/pytorch/whl-next/torchaudio/torchaudio-2.11.0.3%2Brocm10.2.0a20260927-cp314-cp314-win_amd64.whl",
+        "version": "2.11.0.3+rocm10.2.0a20260927"
       }
     ],
     "torchvision": [
