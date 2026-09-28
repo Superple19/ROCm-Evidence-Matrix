@@ -163,7 +163,7 @@
       "torchvision_series": "0.29"
     }
   ],
-  "last_observed_at": "2026-09-27T19:55:55Z",
+  "last_observed_at": "2026-09-28T22:22:04Z",
   "platforms": {
     "linux": {
       "release_support": [],
@@ -509,24 +509,24 @@
           "architecture": "RDNA3.5",
           "build_passing": true,
           "gfx": "gfx1153",
-          "release_ready": false,
-          "sanity_tested": false,
+          "release_ready": true,
+          "sanity_tested": true,
           "source_id": "therock-supported-gpus"
         },
         {
           "architecture": "RDNA4",
           "build_passing": true,
           "gfx": "gfx1200",
-          "release_ready": false,
-          "sanity_tested": false,
+          "release_ready": true,
+          "sanity_tested": true,
           "source_id": "therock-supported-gpus"
         },
         {
           "architecture": "RDNA4",
           "build_passing": true,
           "gfx": "gfx1201",
-          "release_ready": false,
-          "sanity_tested": false,
+          "release_ready": true,
+          "sanity_tested": true,
           "source_id": "therock-supported-gpus"
         },
         {
@@ -541,6 +541,22 @@
           "architecture": "GCN5.1",
           "build_passing": true,
           "gfx": "gfx906",
+          "release_ready": false,
+          "sanity_tested": false,
+          "source_id": "therock-supported-gpus"
+        },
+        {
+          "architecture": "CDNA",
+          "build_passing": true,
+          "gfx": "gfx908",
+          "release_ready": false,
+          "sanity_tested": false,
+          "source_id": "therock-supported-gpus"
+        },
+        {
+          "architecture": "CDNA2",
+          "build_passing": true,
+          "gfx": "gfx90a",
           "release_ready": false,
           "sanity_tested": false,
           "source_id": "therock-supported-gpus"
@@ -876,35 +892,35 @@
     "amd-gpu-specifications": {
       "fallback_used": false,
       "id": "amd-gpu-specifications",
-      "observed_at": "2026-09-27T19:55:55Z",
+      "observed_at": "2026-09-28T22:22:04Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst",
       "url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst"
     },
     "pytorch-version-compatibility": {
       "fallback_used": false,
       "id": "pytorch-version-compatibility",
-      "observed_at": "2026-09-27T19:55:55Z",
+      "observed_at": "2026-09-28T22:22:04Z",
       "preferred_url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md",
       "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     },
     "rocm-compatibility-matrix": {
       "fallback_used": false,
       "id": "rocm-compatibility-matrix",
-      "observed_at": "2026-09-27T19:55:55Z",
+      "observed_at": "2026-09-28T22:22:04Z",
       "preferred_url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html",
       "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
     },
     "therock-release-packaging": {
       "fallback_used": false,
       "id": "therock-release-packaging",
-      "observed_at": "2026-09-27T19:55:55Z",
+      "observed_at": "2026-09-28T22:22:04Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
     },
     "therock-supported-gpus": {
       "fallback_used": false,
       "id": "therock-supported-gpus",
-      "observed_at": "2026-09-27T19:55:55Z",
+      "observed_at": "2026-09-28T22:22:04Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     }
@@ -1050,24 +1066,24 @@
       "architecture": "RDNA3.5",
       "build_passing": true,
       "gfx": "gfx1153",
-      "release_ready": false,
-      "sanity_tested": false,
+      "release_ready": true,
+      "sanity_tested": true,
       "source_id": "therock-supported-gpus"
     },
     {
       "architecture": "RDNA4",
       "build_passing": true,
       "gfx": "gfx1200",
-      "release_ready": false,
-      "sanity_tested": false,
+      "release_ready": true,
+      "sanity_tested": true,
       "source_id": "therock-supported-gpus"
     },
     {
       "architecture": "RDNA4",
       "build_passing": true,
       "gfx": "gfx1201",
-      "release_ready": false,
-      "sanity_tested": false,
+      "release_ready": true,
+      "sanity_tested": true,
       "source_id": "therock-supported-gpus"
     },
     {
@@ -1082,6 +1098,22 @@
       "architecture": "GCN5.1",
       "build_passing": true,
       "gfx": "gfx906",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "CDNA",
+      "build_passing": true,
+      "gfx": "gfx908",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus"
+    },
+    {
+      "architecture": "CDNA2",
+      "build_passing": true,
+      "gfx": "gfx90a",
       "release_ready": false,
       "sanity_tested": false,
       "source_id": "therock-supported-gpus"

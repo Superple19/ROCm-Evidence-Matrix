@@ -4,7 +4,7 @@
 
 This matrix keeps official release documentation, TheRock development status, and package availability as separate evidence. A package being available does not prove runtime or hardware compatibility.
 
-Generated at: `2026-09-27T19:55:55Z`
+Generated at: `2026-09-28T22:22:04Z`
 
 ## Released Windows support
 
@@ -30,9 +30,9 @@ Build Passing only means an artifact was produced. Sanity Tested and Release Rea
 
 | GFX target | Architecture | Build passing | Sanity tested | Release ready |
 | --- | --- | --- | --- | --- |
-| `gfx1201` | RDNA4 | Yes | No | No |
-| `gfx1200` | RDNA4 | Yes | No | No |
-| `gfx1153` | RDNA3.5 | Yes | No | No |
+| `gfx1201` | RDNA4 | Yes | Yes | Yes |
+| `gfx1200` | RDNA4 | Yes | Yes | Yes |
+| `gfx1153` | RDNA3.5 | Yes | Yes | Yes |
 | `gfx1152` | RDNA3.5 | Yes | Yes | Yes |
 | `gfx1151` | RDNA3.5 | Yes | Yes | Yes |
 | `gfx1150` | RDNA3.5 | Yes | Yes | Yes |
@@ -51,6 +51,8 @@ Build Passing only means an artifact was produced. Sanity Tested and Release Rea
 | `gfx1011` | RDNA1 | Yes | Yes | Yes |
 | `gfx1010` | RDNA1 | Yes | Yes | Yes |
 | `gfx90c` | GCN5.0 | Yes | No | No |
+| `gfx90a` | CDNA2 | Yes | No | No |
+| `gfx908` | CDNA | Yes | No | No |
 | `gfx906` | GCN5.1 | Yes | No | No |
 | `gfx900` | GCN5.0 | Yes | No | No |
 
@@ -63,106 +65,106 @@ Versions are selected independently per device package and do not establish a re
 | windows | `gfx1250` | stable | — | — | — | 2.11.0.2+rocm10.0.0 | No |
 | windows | `gfx1250` | nightly | — | — | — | 2.11.0.3+rocm10.2.0a20260927 | No |
 | linux | `gfx1250` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1250` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1250` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1201` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1201` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1201` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1201` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1201` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1200` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1200` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1200` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1200` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1200` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1153` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1153` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1153` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1153` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1153` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1152` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1152` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1152` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1152` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1152` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1151` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1151` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1151` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1151` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1151` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1150` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1150` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1150` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1150` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1150` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1103` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1103` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1103` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1103` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1103` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1102` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1102` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1102` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1102` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1102` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1101` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1101` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1101` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1101` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1101` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1100` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1100` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1100` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1100` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1100` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1036` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1036` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1036` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1036` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1036` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1035` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1035` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1035` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1035` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1035` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1034` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1034` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1034` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1034` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1034` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1033` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1033` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1033` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1033` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1033` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1032` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1032` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1032` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1032` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1032` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1031` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1031` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1031` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1031` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1031` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1030` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1030` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1030` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1030` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1030` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1012` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1012` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1012` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1012` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1012` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1011` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1011` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1011` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1011` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1011` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx1010` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx1010` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx1010` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx1010` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx1010` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx950` | stable | — | — | — | 2.11.0.2+rocm10.0.0 | No |
 | windows | `gfx950` | nightly | — | — | — | 2.11.0.3+rocm10.2.0a20260927 | No |
 | linux | `gfx950` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx950` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx950` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx942` | stable | — | — | — | 2.11.0.2+rocm10.0.0 | No |
 | windows | `gfx942` | nightly | — | — | — | 2.11.0.3+rocm10.2.0a20260927 | No |
 | linux | `gfx942` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx942` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx942` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx90c` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
-| linux | `gfx90c` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx90c` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx90a` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx90a` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx90a` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx90a` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx90a` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx908` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
 | windows | `gfx908` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
 | linux | `gfx908` | stable | — | 2.13.0+rocm10.0.0 | 0.28.0+rocm10.0.0 | 2.11.0.2+rocm10.0.0 | Yes |
-| linux | `gfx908` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx908` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx906` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
-| linux | `gfx906` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx906` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
 | windows | `gfx900` | nightly | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
-| linux | `gfx900` | nightly | — | 2.15.0a0+rocm10.2.0a20260927 | 0.30.0a0+rocm10.2.0a20260927 | 2.11.0.3+rocm10.2.0a20260927 | Yes |
+| linux | `gfx900` | nightly | — | 2.15.0a0+rocm10.2.0a20260928 | 0.30.0a0+rocm10.2.0a20260928 | 2.11.0.3+rocm10.2.0a20260928 | Yes |
