@@ -7,7 +7,7 @@ A package listed here was observed in an official AMD index. Versions are select
 ## Windows — Stable
 
 - Source: https://stable.repo.amd.com/rocm/pytorch/whl-next/
-- Last observed: `2026-09-30T21:07:13Z`
+- Last observed: `2026-10-01T21:31:10Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -55,38 +55,38 @@ These artifacts are reported separately because they are not complete GFX device
 ## Windows — Nightly
 
 - Source: https://nightly.repo.amd.com/rocm/pytorch/whl-next/
-- Last observed: `2026-09-30T21:07:13Z`
+- Last observed: `2026-10-01T21:31:10Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
 | `gfx1250` | — | — | — | No |
-| `gfx1201` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1200` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1153` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1152` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1151` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1150` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1103` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1102` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1101` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1100` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1036` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1035` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1034` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1033` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1032` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1031` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1030` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1012` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1011` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx1010` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
+| `gfx1201` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1200` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1153` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1152` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1151` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1150` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1103` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1102` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1101` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1100` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1036` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1035` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1034` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1033` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1032` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1031` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1030` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1012` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1011` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1010` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
 | `gfx950` | — | — | — | No |
 | `gfx942` | — | — | — | No |
-| `gfx90c` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx90a` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx908` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx906` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
-| `gfx900` | — | 2.15.0a0+rocm10.2.0a20260926 | 0.30.0a0+rocm10.2.0a20260926 | Yes |
+| `gfx90c` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx90a` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx908` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx906` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx900` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
 
 ### Other observed packages
 
@@ -94,19 +94,19 @@ These artifacts are reported separately because they are not complete GFX device
 
 | Package | Version | Artifacts |
 | --- | --- | --- |
-| `amd-torch-device-gfx110x` | `2.15.0a0+rocm10.2.0a20260926` | 5 |
-| `amd-torch-device-gfx115x` | `2.15.0a0+rocm10.2.0a20260926` | 5 |
-| `amd-torch-device-gfx12-0` | `2.15.0a0+rocm10.2.0a20260926` | 5 |
+| `amd-torch-device-gfx110x` | `2.15.0a0+rocm10.2.0a20261001` | 5 |
+| `amd-torch-device-gfx115x` | `2.15.0a0+rocm10.2.0a20261001` | 5 |
+| `amd-torch-device-gfx12-0` | `2.15.0a0+rocm10.2.0a20261001` | 5 |
 | `apex` | `—` | 0 |
-| `torch` | `2.15.0a0+rocm10.2.0a20260926` | 5 |
-| `torchaudio` | `2.11.0.3+rocm10.2.0a20260929` | 5 |
-| `torchvision` | `0.30.0a0+rocm10.2.0a20260926` | 5 |
+| `torch` | `2.15.0a0+rocm10.2.0a20261001` | 5 |
+| `torchaudio` | `2.11.0.3+rocm10.2.0a20261001` | 5 |
+| `torchvision` | `0.30.0a0+rocm10.2.0a20261001` | 5 |
 | `triton` | `—` | 0 |
 
 ## Linux — Stable
 
 - Source: https://stable.repo.amd.com/rocm/pytorch/whl-next/
-- Last observed: `2026-09-30T21:07:13Z`
+- Last observed: `2026-10-01T21:31:10Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -154,38 +154,38 @@ These artifacts are reported separately because they are not complete GFX device
 ## Linux — Nightly
 
 - Source: https://nightly.repo.amd.com/rocm/pytorch/whl-next/
-- Last observed: `2026-09-30T21:07:13Z`
+- Last observed: `2026-10-01T21:31:10Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
-| `gfx1250` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1201` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1200` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1153` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1152` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1151` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1150` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1103` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1102` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1101` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1100` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1036` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1035` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1034` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1033` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1032` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1031` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1030` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1012` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1011` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx1010` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx950` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx942` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx90c` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx90a` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx908` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx906` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
-| `gfx900` | — | 2.15.0a0+rocm10.2.0a20260930 | 0.30.0a0+rocm10.2.0a20260930 | Yes |
+| `gfx1250` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1201` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1200` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1153` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1152` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1151` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1150` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1103` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1102` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1101` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1100` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1036` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1035` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1034` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1033` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1032` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1031` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1030` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1012` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1011` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx1010` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx950` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx942` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx90c` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx90a` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx908` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx906` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
+| `gfx900` | — | 2.15.0a0+rocm10.2.0a20261001 | 0.30.0a0+rocm10.2.0a20261001 | Yes |
 
 ### Other observed packages
 
@@ -193,11 +193,11 @@ These artifacts are reported separately because they are not complete GFX device
 
 | Package | Version | Artifacts |
 | --- | --- | --- |
-| `amd-torch-device-gfx110x` | `2.15.0a0+rocm10.2.0a20260930` | 5 |
-| `amd-torch-device-gfx115x` | `2.15.0a0+rocm10.2.0a20260930` | 5 |
-| `amd-torch-device-gfx12-0` | `2.15.0a0+rocm10.2.0a20260930` | 5 |
-| `apex` | `1.15.0a0+rocm10.2.0a20260930` | 5 |
-| `torch` | `2.15.0a0+rocm10.2.0a20260930` | 5 |
-| `torchaudio` | `2.11.0.3+rocm10.2.0a20260930` | 5 |
-| `torchvision` | `0.30.0a0+rocm10.2.0a20260930` | 5 |
-| `triton` | `3.8.0+gitc01b6774.rocm10.2.0a20260930` | 5 |
+| `amd-torch-device-gfx110x` | `2.15.0a0+rocm10.2.0a20261001` | 5 |
+| `amd-torch-device-gfx115x` | `2.15.0a0+rocm10.2.0a20261001` | 5 |
+| `amd-torch-device-gfx12-0` | `2.15.0a0+rocm10.2.0a20261001` | 5 |
+| `apex` | `1.15.0a0+rocm10.2.0a20261001` | 5 |
+| `torch` | `2.15.0a0+rocm10.2.0a20261001` | 5 |
+| `torchaudio` | `2.11.0.3+rocm10.2.0a20261001` | 5 |
+| `torchvision` | `0.30.0a0+rocm10.2.0a20261001` | 5 |
+| `triton` | `3.8.0+gitc01b6774.rocm10.2.0a20261001` | 5 |
