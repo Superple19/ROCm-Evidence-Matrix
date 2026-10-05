@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T19:51:34Z",
+  "generated_at": "2026-10-05T23:01:29Z",
   "releases": [
     {
       "channel": "stable",
@@ -2400,7 +2400,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 0,
       "id": "therock:7.10",
-      "last_observed_at": "2026-10-04T19:51:34Z",
+      "last_observed_at": "2026-10-05T23:01:29Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
       "platform": "windows",
@@ -2438,7 +2438,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 13,
       "id": "therock:7.11",
-      "last_observed_at": "2026-10-04T19:51:34Z",
+      "last_observed_at": "2026-10-05T23:01:29Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
       "platform": "windows",
@@ -2477,7 +2477,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 13,
       "id": "therock:7.12",
-      "last_observed_at": "2026-10-04T19:51:34Z",
+      "last_observed_at": "2026-10-05T23:01:29Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
       "platform": "windows",
@@ -2516,7 +2516,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 13,
       "id": "therock:7.13",
-      "last_observed_at": "2026-10-04T19:51:34Z",
+      "last_observed_at": "2026-10-05T23:01:29Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
       "platform": "windows",
@@ -2555,7 +2555,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 23,
       "id": "therock:7.14.1",
-      "last_observed_at": "2026-10-04T19:51:34Z",
+      "last_observed_at": "2026-10-05T23:01:29Z",
       "lifecycle": "historical",
       "package_artifacts": 0,
       "platform": "windows",
@@ -2595,7 +2595,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 23,
       "id": "therock:10.0",
-      "last_observed_at": "2026-10-04T19:51:34Z",
+      "last_observed_at": "2026-10-05T23:01:29Z",
       "lifecycle": "current",
       "package_artifacts": 0,
       "platform": "windows",
@@ -2656,7 +2656,9 @@
       },
       "release_date": null,
       "source_ids": [
+        "therock-releases",
         "therock-supported-gpus",
+        "therock-supported-gpus-10.1",
         "therock-version"
       ],
       "version": "10.1.0",
@@ -2673,7 +2675,7 @@
       "framework_support_observations": 0,
       "gpu_support_observations": 25,
       "id": "therock:10.2.0",
-      "last_observed_at": "2026-10-04T19:51:34Z",
+      "last_observed_at": "2026-10-05T23:01:29Z",
       "lifecycle": "current",
       "package_artifacts": 0,
       "platform": "windows",
@@ -2785,47 +2787,52 @@
     },
     "therock-releases": {
       "id": "therock-releases",
-      "observed_at": "2026-10-04T19:51:34Z",
+      "observed_at": "2026-10-05T23:01:29Z",
       "url": "https://api.github.com/repos/ROCm/TheRock/releases?per_page=100"
     },
     "therock-supported-gpus": {
       "id": "therock-supported-gpus",
-      "observed_at": "2026-10-04T19:51:34Z",
+      "observed_at": "2026-10-05T23:01:29Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-10.0": {
       "id": "therock-supported-gpus-10.0",
-      "observed_at": "2026-10-04T19:51:34Z",
+      "observed_at": "2026-10-05T23:01:29Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-10.0/SUPPORTED_GPUS.md"
+    },
+    "therock-supported-gpus-10.1": {
+      "id": "therock-supported-gpus-10.1",
+      "observed_at": "2026-10-05T23:01:29Z",
+      "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-10.1/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-7.11": {
       "id": "therock-supported-gpus-7.11",
-      "observed_at": "2026-10-04T19:51:34Z",
+      "observed_at": "2026-10-05T23:01:29Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.11/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-7.12": {
       "id": "therock-supported-gpus-7.12",
-      "observed_at": "2026-10-04T19:51:34Z",
+      "observed_at": "2026-10-05T23:01:29Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.12/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-7.13": {
       "id": "therock-supported-gpus-7.13",
-      "observed_at": "2026-10-04T19:51:34Z",
+      "observed_at": "2026-10-05T23:01:29Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.13/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-7.14": {
       "id": "therock-supported-gpus-7.14",
-      "observed_at": "2026-10-04T19:51:34Z",
+      "observed_at": "2026-10-05T23:01:29Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.14/SUPPORTED_GPUS.md"
     },
     "therock-supported-gpus-7.14.1": {
       "id": "therock-supported-gpus-7.14.1",
-      "observed_at": "2026-10-04T19:51:34Z",
+      "observed_at": "2026-10-05T23:01:29Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/therock-7.14.1/SUPPORTED_GPUS.md"
     },
     "therock-version": {
       "id": "therock-version",
-      "observed_at": "2026-10-04T19:51:34Z",
+      "observed_at": "2026-10-05T23:01:29Z",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/version.json"
     },
     "windows-documentation-branches": {
@@ -3929,7 +3936,37 @@
       "architecture": "RDNA1",
       "build_passing": true,
       "distribution_family": "therock",
+      "gfx": "gfx1010",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
       "gfx": "gfx1011",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1011",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
+    },
+    {
+      "architecture": "RDNA1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1012",
       "release_ready": true,
       "sanity_tested": true,
       "source_id": "therock-supported-gpus",
@@ -3942,8 +3979,8 @@
       "gfx": "gfx1012",
       "release_ready": true,
       "sanity_tested": true,
-      "source_id": "therock-supported-gpus",
-      "version": "10.1.0"
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
     },
     {
       "architecture": "RDNA2",
@@ -3959,11 +3996,31 @@
       "architecture": "RDNA2",
       "build_passing": true,
       "distribution_family": "therock",
+      "gfx": "gfx1030",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
       "gfx": "gfx1031",
       "release_ready": true,
       "sanity_tested": true,
       "source_id": "therock-supported-gpus",
       "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1031",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
     },
     {
       "architecture": "RDNA2",
@@ -3979,11 +4036,31 @@
       "architecture": "RDNA2",
       "build_passing": true,
       "distribution_family": "therock",
+      "gfx": "gfx1032",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
       "gfx": "gfx1033",
       "release_ready": true,
       "sanity_tested": true,
       "source_id": "therock-supported-gpus",
       "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1033",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
     },
     {
       "architecture": "RDNA2",
@@ -3999,7 +4076,37 @@
       "architecture": "RDNA2",
       "build_passing": true,
       "distribution_family": "therock",
+      "gfx": "gfx1034",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
       "gfx": "gfx1035",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1035",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
+    },
+    {
+      "architecture": "RDNA2",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1036",
       "release_ready": true,
       "sanity_tested": true,
       "source_id": "therock-supported-gpus",
@@ -4012,8 +4119,8 @@
       "gfx": "gfx1036",
       "release_ready": true,
       "sanity_tested": true,
-      "source_id": "therock-supported-gpus",
-      "version": "10.1.0"
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
     },
     {
       "architecture": "RDNA3",
@@ -4029,11 +4136,31 @@
       "architecture": "RDNA3",
       "build_passing": true,
       "distribution_family": "therock",
+      "gfx": "gfx1100",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
       "gfx": "gfx1101",
       "release_ready": true,
       "sanity_tested": true,
       "source_id": "therock-supported-gpus",
       "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1101",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
     },
     {
       "architecture": "RDNA3",
@@ -4049,11 +4176,31 @@
       "architecture": "RDNA3",
       "build_passing": true,
       "distribution_family": "therock",
+      "gfx": "gfx1102",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
       "gfx": "gfx1103",
       "release_ready": true,
       "sanity_tested": true,
       "source_id": "therock-supported-gpus",
       "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA3",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1103",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
     },
     {
       "architecture": "RDNA3.5",
@@ -4069,11 +4216,31 @@
       "architecture": "RDNA3.5",
       "build_passing": true,
       "distribution_family": "therock",
+      "gfx": "gfx1150",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
       "gfx": "gfx1151",
       "release_ready": true,
       "sanity_tested": true,
       "source_id": "therock-supported-gpus",
       "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1151",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
     },
     {
       "architecture": "RDNA3.5",
@@ -4089,11 +4256,31 @@
       "architecture": "RDNA3.5",
       "build_passing": true,
       "distribution_family": "therock",
+      "gfx": "gfx1152",
+      "release_ready": true,
+      "sanity_tested": true,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
       "gfx": "gfx1153",
       "release_ready": false,
       "sanity_tested": false,
       "source_id": "therock-supported-gpus",
       "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA3.5",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1153",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
     },
     {
       "architecture": "RDNA4",
@@ -4109,11 +4296,31 @@
       "architecture": "RDNA4",
       "build_passing": true,
       "distribution_family": "therock",
+      "gfx": "gfx1200",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
+    },
+    {
+      "architecture": "RDNA4",
+      "build_passing": true,
+      "distribution_family": "therock",
       "gfx": "gfx1201",
       "release_ready": false,
       "sanity_tested": false,
       "source_id": "therock-supported-gpus",
       "version": "10.1.0"
+    },
+    {
+      "architecture": "RDNA4",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx1201",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
     },
     {
       "architecture": "GCN5.0",
@@ -4126,10 +4333,40 @@
       "version": "10.1.0"
     },
     {
+      "architecture": "GCN5.0",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx900",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
+    },
+    {
       "architecture": "GCN5.1",
       "build_passing": true,
       "distribution_family": "therock",
       "gfx": "gfx906",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus",
+      "version": "10.1.0"
+    },
+    {
+      "architecture": "GCN5.1",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx906",
+      "release_ready": false,
+      "sanity_tested": false,
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
+    },
+    {
+      "architecture": "GCN5.0",
+      "build_passing": true,
+      "distribution_family": "therock",
+      "gfx": "gfx90c",
       "release_ready": false,
       "sanity_tested": false,
       "source_id": "therock-supported-gpus",
@@ -4142,8 +4379,8 @@
       "gfx": "gfx90c",
       "release_ready": false,
       "sanity_tested": false,
-      "source_id": "therock-supported-gpus",
-      "version": "10.1.0"
+      "source_id": "therock-supported-gpus-10.1",
+      "version": "10.1"
     },
     {
       "architecture": "RDNA1",
