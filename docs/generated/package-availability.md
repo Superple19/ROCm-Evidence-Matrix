@@ -7,7 +7,7 @@ A package listed here was observed in an official AMD index. Versions are select
 ## Windows — Stable
 
 - Source: https://stable.repo.amd.com/rocm/pytorch/whl-next/
-- Last observed: `2026-10-16T19:46:32Z`
+- Last observed: `2026-10-17T18:57:44Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -55,7 +55,7 @@ These artifacts are reported separately because they are not complete GFX device
 ## Windows — Nightly
 
 - Source: https://nightly.repo.amd.com/rocm/pytorch/whl-next/
-- Last observed: `2026-10-16T19:46:32Z`
+- Last observed: `2026-10-17T18:57:44Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -106,7 +106,7 @@ These artifacts are reported separately because they are not complete GFX device
 ## Linux — Stable
 
 - Source: https://stable.repo.amd.com/rocm/pytorch/whl-next/
-- Last observed: `2026-10-16T19:46:32Z`
+- Last observed: `2026-10-17T18:57:44Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -154,7 +154,7 @@ These artifacts are reported separately because they are not complete GFX device
 ## Linux — Nightly
 
 - Source: https://nightly.repo.amd.com/rocm/pytorch/whl-next/
-- Last observed: `2026-10-16T19:46:32Z`
+- Last observed: `2026-10-17T18:57:44Z`
 
 | GFX target | ROCm device | Torch device | TorchVision device | All device packages available |
 | --- | --- | --- | --- | --- |
@@ -198,6 +198,6 @@ These artifacts are reported separately because they are not complete GFX device
 | `amd-torch-device-gfx12-0` | `2.16.0a0+rocm10.2.0a20261015` | 4 |
 | `apex` | `1.16.0a0+rocm10.2.0a20261015` | 4 |
 | `torch` | `2.16.0a0+rocm10.2.0a20261015` | 4 |
-| `torchaudio` | `2.11.0.3+rocm10.2.0a20261016` | 4 |
+| `torchaudio` | `2.11.1+rocm10.2.0a20261017` | 1 |
 | `torchvision` | `0.30.0a0+rocm10.2.0a20261015` | 1 |
 | `triton` | `3.9.0+gitfc8d31a5.rocm10.2.0a20261015` | 4 |
