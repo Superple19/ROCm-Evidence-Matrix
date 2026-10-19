@@ -43,7 +43,8 @@ Triton is tracked separately from core Torch candidates. These artifacts are opt
 | therock | linux | nightly | historical | `10.2.0a20261013` | `3.9.0+gitfc8d31a5.rocm10.2.0a20261013` | `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `10.2.0a20261014` | `3.9.0+gitfc8d31a5.rocm10.2.0a20261014` | `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | nightly | historical | `10.2.0a20261015` | `3.9.0+gitfc8d31a5.rocm10.2.0a20261015` | `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | nightly | current | `10.2.0a20261018` | `3.9.0+gitfc8d31a5.rocm10.2.0a20261018` | `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | historical | `10.2.0a20261018` | `3.9.0+gitfc8d31a5.rocm10.2.0a20261018` | `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | nightly | current | `10.2.0a20261019` | `3.9.0+gitfc8d31a5.rocm10.2.0a20261019` | `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | stable | historical | `7.14.1` | `3.8.0+git4cff872c.rocm7.14.1` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | stable | historical | `10.0.0` | `3.8.0+git4cff872c.rocm10.0.0` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | stable | current | `10.1.0` | `3.8.0+git669b31ac.rocm10.1.0` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
