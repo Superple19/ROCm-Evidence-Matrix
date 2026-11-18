@@ -163,7 +163,7 @@
       "torchvision_series": "0.29"
     }
   ],
-  "last_observed_at": "2026-11-17T00:35:24Z",
+  "last_observed_at": "2026-11-18T23:13:29Z",
   "platforms": {
     "linux": {
       "release_support": [],
@@ -173,11 +173,11 @@
       "release_support": [
         {
           "adrenalin_driver_versions": [
-            "26.10.41.05"
+            "26.11.2"
           ],
           "device_family": "radeon",
           "gfx": "gfx1030",
-          "rocm_version": "10.1.0",
+          "rocm_version": "10.2.0",
           "selector_ids": [
             "amd-radeon-pro-v620",
             "amd-radeon-pro-w6800"
@@ -190,16 +190,17 @@
         },
         {
           "adrenalin_driver_versions": [
-            "26.10.41.05"
+            "26.11.2"
           ],
           "device_family": "radeon",
           "gfx": "gfx1100",
-          "rocm_version": "10.1.0",
+          "rocm_version": "10.2.0",
           "selector_ids": [
             "amd-radeon-pro-w7800",
             "amd-radeon-pro-w7800-48gb",
             "amd-radeon-pro-w7900",
             "amd-radeon-pro-w7900-dual-slot",
+            "amd-radeon-pro-w7900d",
             "amd-radeon-rx-7900-gre",
             "amd-radeon-rx-7900-xt",
             "amd-radeon-rx-7900-xtx"
@@ -212,11 +213,11 @@
         },
         {
           "adrenalin_driver_versions": [
-            "26.10.41.05"
+            "26.11.2"
           ],
           "device_family": "radeon",
           "gfx": "gfx1101",
-          "rocm_version": "10.1.0",
+          "rocm_version": "10.2.0",
           "selector_ids": [
             "amd-radeon-pro-v710",
             "amd-radeon-pro-w7700",
@@ -232,11 +233,11 @@
         },
         {
           "adrenalin_driver_versions": [
-            "26.10.41.05"
+            "26.11.2"
           ],
           "device_family": "radeon",
           "gfx": "gfx1102",
-          "rocm_version": "10.1.0",
+          "rocm_version": "10.2.0",
           "selector_ids": [
             "amd-radeon-rx-7600"
           ],
@@ -248,11 +249,11 @@
         },
         {
           "adrenalin_driver_versions": [
-            "26.10.41.05"
+            "26.11.2"
           ],
           "device_family": "ryzen",
           "gfx": "gfx1103",
-          "rocm_version": "10.1.0",
+          "rocm_version": "10.2.0",
           "selector_ids": [
             "gfx1103"
           ],
@@ -264,11 +265,11 @@
         },
         {
           "adrenalin_driver_versions": [
-            "26.10.41.05"
+            "26.11.2"
           ],
           "device_family": "ryzen",
           "gfx": "gfx1150",
-          "rocm_version": "10.1.0",
+          "rocm_version": "10.2.0",
           "selector_ids": [
             "gfx1150"
           ],
@@ -280,11 +281,11 @@
         },
         {
           "adrenalin_driver_versions": [
-            "26.10.41.05"
+            "26.11.2"
           ],
           "device_family": "ryzen",
           "gfx": "gfx1151",
-          "rocm_version": "10.1.0",
+          "rocm_version": "10.2.0",
           "selector_ids": [
             "gfx1151"
           ],
@@ -296,11 +297,11 @@
         },
         {
           "adrenalin_driver_versions": [
-            "26.10.41.05"
+            "26.11.2"
           ],
           "device_family": "ryzen",
           "gfx": "gfx1152",
-          "rocm_version": "10.1.0",
+          "rocm_version": "10.2.0",
           "selector_ids": [
             "gfx1152"
           ],
@@ -312,11 +313,11 @@
         },
         {
           "adrenalin_driver_versions": [
-            "26.10.41.05"
+            "26.11.2"
           ],
           "device_family": "ryzen",
           "gfx": "gfx1153",
-          "rocm_version": "10.1.0",
+          "rocm_version": "10.2.0",
           "selector_ids": [
             "gfx1153"
           ],
@@ -328,11 +329,11 @@
         },
         {
           "adrenalin_driver_versions": [
-            "26.10.41.05"
+            "26.11.2"
           ],
           "device_family": "radeon",
           "gfx": "gfx1200",
-          "rocm_version": "10.1.0",
+          "rocm_version": "10.2.0",
           "selector_ids": [
             "amd-radeon-rx-9050",
             "amd-radeon-rx-9050-(4gb)",
@@ -348,11 +349,11 @@
         },
         {
           "adrenalin_driver_versions": [
-            "26.10.41.05"
+            "26.11.2"
           ],
           "device_family": "radeon",
           "gfx": "gfx1201",
-          "rocm_version": "10.1.0",
+          "rocm_version": "10.2.0",
           "selector_ids": [
             "amd-radeon-ai-pro-r9600",
             "amd-radeon-ai-pro-r9600d",
@@ -901,35 +902,35 @@
     "amd-gpu-specifications": {
       "fallback_used": false,
       "id": "amd-gpu-specifications",
-      "observed_at": "2026-11-17T00:35:24Z",
+      "observed_at": "2026-11-18T23:13:29Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst",
       "url": "https://raw.githubusercontent.com/ROCm/ROCm/develop/docs/reference/gpu-specs.rst"
     },
     "pytorch-version-compatibility": {
       "fallback_used": false,
       "id": "pytorch-version-compatibility",
-      "observed_at": "2026-11-17T00:35:24Z",
+      "observed_at": "2026-11-18T23:13:29Z",
       "preferred_url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md",
       "url": "https://raw.githubusercontent.com/wiki/pytorch/pytorch/PyTorch-Versions.md"
     },
     "rocm-compatibility-matrix": {
       "fallback_used": false,
       "id": "rocm-compatibility-matrix",
-      "observed_at": "2026-11-17T00:35:24Z",
+      "observed_at": "2026-11-18T23:13:29Z",
       "preferred_url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html",
       "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html"
     },
     "therock-release-packaging": {
       "fallback_used": false,
       "id": "therock-release-packaging",
-      "observed_at": "2026-11-17T00:35:24Z",
+      "observed_at": "2026-11-18T23:13:29Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/RELEASES.md"
     },
     "therock-supported-gpus": {
       "fallback_used": false,
       "id": "therock-supported-gpus",
-      "observed_at": "2026-11-17T00:35:24Z",
+      "observed_at": "2026-11-18T23:13:29Z",
       "preferred_url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md",
       "url": "https://raw.githubusercontent.com/ROCm/TheRock/main/SUPPORTED_GPUS.md"
     }
@@ -1147,11 +1148,11 @@
   "windows_release_support": [
     {
       "adrenalin_driver_versions": [
-        "26.10.41.05"
+        "26.11.2"
       ],
       "device_family": "radeon",
       "gfx": "gfx1030",
-      "rocm_version": "10.1.0",
+      "rocm_version": "10.2.0",
       "selector_ids": [
         "amd-radeon-pro-v620",
         "amd-radeon-pro-w6800"
@@ -1164,16 +1165,17 @@
     },
     {
       "adrenalin_driver_versions": [
-        "26.10.41.05"
+        "26.11.2"
       ],
       "device_family": "radeon",
       "gfx": "gfx1100",
-      "rocm_version": "10.1.0",
+      "rocm_version": "10.2.0",
       "selector_ids": [
         "amd-radeon-pro-w7800",
         "amd-radeon-pro-w7800-48gb",
         "amd-radeon-pro-w7900",
         "amd-radeon-pro-w7900-dual-slot",
+        "amd-radeon-pro-w7900d",
         "amd-radeon-rx-7900-gre",
         "amd-radeon-rx-7900-xt",
         "amd-radeon-rx-7900-xtx"
@@ -1186,11 +1188,11 @@
     },
     {
       "adrenalin_driver_versions": [
-        "26.10.41.05"
+        "26.11.2"
       ],
       "device_family": "radeon",
       "gfx": "gfx1101",
-      "rocm_version": "10.1.0",
+      "rocm_version": "10.2.0",
       "selector_ids": [
         "amd-radeon-pro-v710",
         "amd-radeon-pro-w7700",
@@ -1206,11 +1208,11 @@
     },
     {
       "adrenalin_driver_versions": [
-        "26.10.41.05"
+        "26.11.2"
       ],
       "device_family": "radeon",
       "gfx": "gfx1102",
-      "rocm_version": "10.1.0",
+      "rocm_version": "10.2.0",
       "selector_ids": [
         "amd-radeon-rx-7600"
       ],
@@ -1222,11 +1224,11 @@
     },
     {
       "adrenalin_driver_versions": [
-        "26.10.41.05"
+        "26.11.2"
       ],
       "device_family": "ryzen",
       "gfx": "gfx1103",
-      "rocm_version": "10.1.0",
+      "rocm_version": "10.2.0",
       "selector_ids": [
         "gfx1103"
       ],
@@ -1238,11 +1240,11 @@
     },
     {
       "adrenalin_driver_versions": [
-        "26.10.41.05"
+        "26.11.2"
       ],
       "device_family": "ryzen",
       "gfx": "gfx1150",
-      "rocm_version": "10.1.0",
+      "rocm_version": "10.2.0",
       "selector_ids": [
         "gfx1150"
       ],
@@ -1254,11 +1256,11 @@
     },
     {
       "adrenalin_driver_versions": [
-        "26.10.41.05"
+        "26.11.2"
       ],
       "device_family": "ryzen",
       "gfx": "gfx1151",
-      "rocm_version": "10.1.0",
+      "rocm_version": "10.2.0",
       "selector_ids": [
         "gfx1151"
       ],
@@ -1270,11 +1272,11 @@
     },
     {
       "adrenalin_driver_versions": [
-        "26.10.41.05"
+        "26.11.2"
       ],
       "device_family": "ryzen",
       "gfx": "gfx1152",
-      "rocm_version": "10.1.0",
+      "rocm_version": "10.2.0",
       "selector_ids": [
         "gfx1152"
       ],
@@ -1286,11 +1288,11 @@
     },
     {
       "adrenalin_driver_versions": [
-        "26.10.41.05"
+        "26.11.2"
       ],
       "device_family": "ryzen",
       "gfx": "gfx1153",
-      "rocm_version": "10.1.0",
+      "rocm_version": "10.2.0",
       "selector_ids": [
         "gfx1153"
       ],
@@ -1302,11 +1304,11 @@
     },
     {
       "adrenalin_driver_versions": [
-        "26.10.41.05"
+        "26.11.2"
       ],
       "device_family": "radeon",
       "gfx": "gfx1200",
-      "rocm_version": "10.1.0",
+      "rocm_version": "10.2.0",
       "selector_ids": [
         "amd-radeon-rx-9050",
         "amd-radeon-rx-9050-(4gb)",
@@ -1322,11 +1324,11 @@
     },
     {
       "adrenalin_driver_versions": [
-        "26.10.41.05"
+        "26.11.2"
       ],
       "device_family": "radeon",
       "gfx": "gfx1201",
-      "rocm_version": "10.1.0",
+      "rocm_version": "10.2.0",
       "selector_ids": [
         "amd-radeon-ai-pro-r9600",
         "amd-radeon-ai-pro-r9600d",

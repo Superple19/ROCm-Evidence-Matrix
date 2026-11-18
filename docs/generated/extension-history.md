@@ -51,4 +51,5 @@ Triton is tracked separately from core Torch candidates. These artifacts are opt
 | therock | linux | nightly | current | `10.3.0a20261024` | `3.9.0+gitfc8d31a5.rocm10.3.0a20261024` | `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | stable | historical | `7.14.1` | `3.8.0+git4cff872c.rocm7.14.1` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
 | therock | linux | stable | historical | `10.0.0` | `3.8.0+git4cff872c.rocm10.0.0` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
-| therock | linux | stable | current | `10.1.0` | `3.8.0+git669b31ac.rocm10.1.0` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | stable | historical | `10.1.0` | `3.8.0+git669b31ac.rocm10.1.0` | `cp310`, `cp311`, `cp312`, `cp313`, `cp314` |
+| therock | linux | stable | current | `10.2.0` | `3.9.0+git0a6e13e6.rocm10.2.0` | `cp311`, `cp312`, `cp313`, `cp314` |
